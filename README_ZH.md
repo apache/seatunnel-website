@@ -8,10 +8,9 @@
 
 
 ## 分支 
-dev为开发分支，修改请先fork到自己的仓库，然后在dev分支上进行开发修改。
+main为默认主分支，修改请先fork到自己的仓库，然后在main分支上进行开发修改。
 ```
-master  主分支
-dev     开发分支
+main  默认分支
 asf-site    官网正式环境  通过https://seatunnel.apache.org 访问
 asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 ```
