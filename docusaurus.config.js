@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'Apache SeaTunnel',
     tagline: 'Dinosaurs are cool',
-    url: 'https://your-docusaurus-test-site.com',
+    url: 'https://seatunnel.apache.org',
     baseUrl: '/',
     onBrokenLinks: 'ignore',
     onBrokenMarkdownLinks: 'warn',
