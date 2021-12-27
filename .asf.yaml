@@ -14,6 +14,14 @@
 # limitations under the License.
 #
 
+staging:
+  profile: ~
+  whoami: main
+  foo: trigger
+
+# asf-site branch will show up at https://seatunnel.apache.org
+publish:
+  whoami:  asf-site
 github:
   features:
     # Enable issue management
@@ -23,12 +31,14 @@ github:
   labels:
     - seatunnel
     - website
-
-# If this branch is asf-staging, it will be published to https://seatunnel.staged.apache.org/
-staging:
-  profile: ~
-  whoami:  asf-staging
-
-# asf-site branch will show up at https://seatunnel.apache.org
-publish:
-  whoami:  asf-site
+  enabled_merge_buttons:
+    squash: true
+    merge: false
+    rebase: false
+  protected_branches:
+    main:
+      required_status_checks:
+        strict: true
+      required_pull_request_reviews:
+        dismiss_stale_reviews: true
+        required_approving_review_count: 1
