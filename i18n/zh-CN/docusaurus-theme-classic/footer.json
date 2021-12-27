@@ -1,0 +1,52 @@
+{
+  "link.item.label.Document": {
+    "message": "文档",
+    "description": "The label of footer link with label=Document linking to /docs/latest/introduction"
+  },
+  "link.item.label.FAQ": {
+    "message": "FAQ",
+    "description": "The label of footer link with label=FAQ linking to /faq/main"
+  },
+  "link.item.label.Releases": {
+    "message": "版本",
+    "description": "The label of footer link with label=Releases linking to https://github.com/apache/incubator-seatunnel/releases"
+  },
+  "link.title.Community": {
+    "message": "社区",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/apache/incubator-seatunnel"
+  },
+  "link.item.label.Issue Tracker": {
+    "message": "Issue Tracker",
+    "description": "The label of footer link with label=Issue Tracker linking to https://github.com/apache/incubator-seatunnel/issues"
+  },
+
+  "link.item.label.Pull Requests": {
+    "message": "Pull Requests",
+    "description": "The label of footer link with label=Pull Requests linking to https://github.com/apache/incubator-seatunnel/pulls"
+  },
+
+  "link.title.Subscribe Mailing List": {
+    "message": "订阅邮件组",
+    "description": "The title of the footer links column with title=Subscribe mailing list in the footer"
+  },
+  "link.item.label.How to subscribe": {
+    "message": "如何定阅",
+    "description": "The label of footer link with label=How to subscribe linking to /community/how-to-subscribe"
+  },
+  "link.item.label.Subscribe Mail": {
+    "message": "订阅邮件",
+    "description": "The label of footer link with label=Subscribe Mail linking to mailto://dev-subscribe@seatunnel.apache.org"
+  },
+  "link.item.label.Mail Archive": {
+    "message": "邮件归档",
+    "description": "The label of footer link with label=Mail Archive linking to https://lists.apache.org/list.html?dev@seatunnel.apache.org"
+  },
+  "copyright": {
+    "message": "<div style=\"text-align: left;\">\n          <div>\n            <p style=\"font-family: Avenir-Medium;font-size: 14px;color: #999;line-height: 20px;\">Apache SeaTunnel (incubating) is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p>\n          </div>\n          <div style=\"border-top: 1px solid #ccc;min-height: 60px;line-height: 20px;text-align: center;font-family: Avenir-Medium;font-size: 14px;color: #999;display: flex;align-items: center;\"><span>Copyright © 2019-2020 The Apache Software Foundation. Apache SeaTunnel, SeaTunnel, and its feather logo are trademarks of The Apache Software Foundation.</span></div>\n        </div>",
+    "description": "The footer copyright"
+  }
+}
