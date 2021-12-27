@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[3212],{4434:function(s){s.exports=JSON.parse('{"allTagsPath":"/zh-CN/blog/tags","slug":"/zh-CN/blog/tags/docusaurus","name":"docusaurus","count":4,"permalink":"/zh-CN/blog/tags/docusaurus"}')}}]);
