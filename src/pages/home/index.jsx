@@ -57,7 +57,7 @@ export default function () {
                 <div className="block">
                     <h1 className="main_subtitle text_center">{dataSource.common.architecture}</h1>
                     <div className="item_block" style={{position: 'relative'}}>
-                        <p className="paragraph" style={{width: '750px'}}>{dataSource.home.architecture.desc}</p>
+                        <p className="paragraph">{dataSource.home.architecture.desc}</p>
                         <div className="bold_dot" style={{top: '64px', left: '416px'}}></div>
                         <div className="bold_dot" style={{top: '700px', left: '240px'}}></div>
                         <img src={useBaseUrl('/home/processes.svg')} alt="Architecture" className="architecture-image"/>
