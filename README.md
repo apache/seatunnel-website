@@ -9,8 +9,8 @@ This guide will guide you how to contribute to the SeaTunnel website.
 
 ## Branch
 main is the default branch. For all modifications, please fork first, and then proceed on the main branch.
+
 ```
-master 
 main #default branch
 asf-site   #The official environment of asf-site official website is accessed through https://seatunnel.apache.org
 asf-staging #The asf-staging official website test environment is accessed through https://seatunnel.staged.apache.org
