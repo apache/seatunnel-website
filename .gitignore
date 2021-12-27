@@ -1,0 +1,23 @@
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Dependencies
+/node_modules
+
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+
+.DS_Store
+dist
+dist-ssr
+*.local
+*.idea
+*.iml.
+.vscode
+/package-lock.json

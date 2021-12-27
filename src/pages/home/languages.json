@@ -1,0 +1,75 @@
+{
+  "zh-CN": {
+    "common": {
+      "getStart": "开始",
+      "architecture": "系统架构",
+      "description": "描述",
+      "learnMore": "了解更多",
+      "coreFeatures": "核心特性",
+      "components": "组件丰富",
+      "scalability": "高扩展性",
+      "batchStream": "批流一体",
+      "simplicity": "简单易用",
+      "stable": "成熟稳定",
+      "ourUsers": "Our Users",
+      "readMore": "阅读更多",
+      "download": "下载",
+      "releaseDate": "发布日期",
+      "newFeatures": "新特性",
+      "enhancement": "增强点",
+      "bugFixs": "Bug修复",
+      "changeLog": "详细变更"
+    },
+    "home": {
+      "banner": {
+        "slogan": "下一代高性能、分布式、海量数据集成框架"
+      },
+      "feature": {
+        "components": "内置丰富插件,支持各种数据产品的传输和集成",
+        "scalability": "模块化和插件化,支持热插拔, 带来更好的扩展性",
+        "batchStream": "基于Flink为底层引擎,天然批量一体",
+        "simplicity": "特有的架构设计下,使得开发配置简单,无使用成本",
+        "stable": "经历大规模生产环境使用和海量数据的洗礼"
+      },
+      "architecture": {
+      }
+    }
+  },
+  "en": {
+    "common": {
+      "getStart": "快速开始",
+      "architecture": "系统架构",
+      "description": "描述",
+      "learnMore": "了解更多",
+      "coreFeatures": "核心特性",
+      "components": "组件丰富",
+      "scalability": "高扩展性",
+      "batchStream": "批流一体",
+      "simplicity": "简单易用",
+      "stable": "成熟稳定",
+      "ourUsers": "Our Users",
+      "readMore": "阅读更多",
+      "download": "下载",
+      "releaseDate": "发布日期",
+      "newFeatures": "新特性",
+      "enhancement": "增强点",
+      "bugFixs": "Bug修复",
+      "changeLog": "详细变更"
+    },
+    "home": {
+      "banner": {
+        "slogan": "下一代高性能、分布式、海量数据集成框架"
+      },
+      "feature": {
+        "components": "内置丰富插件,支持各种数据产品的传输和集成",
+        "scalability": "模块化和插件化,支持热插拔, 带来更好的扩展性",
+        "batchStream": "基于Flink为底层引擎,天然批量一体",
+        "simplicity": "特有的架构设计下,使得开发配置简单,无使用成本",
+        "stable": "经历大规模生产环境使用和海量数据的洗礼"
+      },
+      "architecture": {
+        "desc": "Apache SeaTunnel是下一代高性能、分布式、海量数据集成框架。通过我们的努力让Spark的使用更简单，更高效，并将业界和我们使用Spark的优质经验固化到seatunnel这个产品中，明显减少学习成本，加快分布式数据处理能力在生产环境落地"
+      }
+    }
+  }
+}
