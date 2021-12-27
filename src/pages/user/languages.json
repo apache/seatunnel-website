@@ -2,7 +2,7 @@
   "zh-CN": {
       "common": {
           "ourUsers": "Our Users",
-          "tip":"下列公司在使用SeaTunnel<br/>如果您也在使用?<a href=\"https://github.com/apache/incubator-seatunnel-website/edit/main/src/pages/user/data.json\" target=\"_blank\" rel=\"noopener\"><u>可以在这里添加</u></a>"
+          "tip":"诸多公司和组织将 SeaTunnel 用于研究、生产和商业产品中<br/> 如果您也在使用 ? <a href=\"https://github.com/apache/incubator-seatunnel-website/edit/main/src/pages/user/data.json\" target=\"_blank\" rel=\"noopener\"><u>可以在这里添加</u></a>"
       }
   },
   "en": {
