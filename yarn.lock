@@ -6478,7 +6478,7 @@
 "react-dev-utils@12.0.0-next.47":
   "integrity" "sha1-5VwxoF6zDP1pylFui4fWFyTogPs="
   "resolved" "https://registry.npmmirror.com/react-dev-utils/download/react-dev-utils-12.0.0-next.47.tgz"
-  "version" "12.0.0-next.47"
+  "version" "12.0.0-next.47+1465357b"
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "address" "^1.1.2"
@@ -6522,7 +6522,7 @@
 "react-error-overlay@7.0.0-next.54+1465357b":
   "integrity" "sha1-wetauGruFelVLm2XiXsI8r0G0UA="
   "resolved" "https://registry.npmmirror.com/react-error-overlay/download/react-error-overlay-7.0.0-next.54.tgz"
-  "version" "7.0.0-next.54"
+  "version" "7.0.0-next.54+1465357b"
 
 "react-fast-compare@^3.1.1":
   "integrity" "sha1-ZBqdqBtqYyDycOiXJPtFoLOeQ7s="

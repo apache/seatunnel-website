@@ -87,9 +87,10 @@ const config = {
                     label: '下载'
                 },
                 {
-                    to: 'https://github.com/InterestingLab/seatunnel/issues/686',
-                    label: '用户',
-                    position: 'right'
+                    to: '/user',
+                    label: 'Users',
+                    position: 'right',
+                    activeBaseRegex: `/user`,
                 },
                 {
                     to: 'https://github.com/InterestingLab/seatunnel/issues/267',
