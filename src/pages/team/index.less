@@ -2,6 +2,10 @@
 
 .team_page {
 
+  a {
+    text-decoration: none;
+  }
+
   margin-top: 50px;
 
   .team_title {
@@ -11,6 +15,10 @@
     margin-top: 50px;
   }
 
+  .team_desc {
+    margin-bottom: 40px;
+  }
+
   .character_list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -18,50 +26,56 @@
     grid-row-gap: 20px;
     padding: 20px 0 30px;
 
-    &.committer {
-      grid-template-columns: repeat(5, 224px);
-
-      .character_item {
-        display: flex;
-        padding: 20px;
-        align-items: center;
-
-        .character_avatar {
-          width: 60px;
-          height: 60px;
-          margin: 0;
-        }
-
-        .character_desc {
-          flex: 1;
-          padding-left: 16px;
-          min-width: 0;
-        }
-      }
-    }
-
     .character_item {
-      border: 1px solid rgba(15, 18, 34, 0.20);
-      border-radius: 4px;
+      border: 1px solid rgba(205, 221, 250, 0.8);
+      background-color: rgba(205, 222, 234, 0.2);
+      box-shadow: 0 3px 5px rgb(47 85 212 / 8%);
+      border-radius: 2px;
       min-width: 0;
-      padding: 0 15px 15px;
+      padding: 0 10px 5px;
+      margin: 40px 0 42px 0;
 
       .character_avatar {
         width: 120px;
         height: 120px;
-        margin: 30px auto 10px;
         background: #D8D8D8;
+        display: inline-block;
         border-radius: 50%;
+        border: 5px solid rgba(255,255,255,.08);
+        margin: -4rem auto -.5rem;
       }
 
       .character_name {
         color: @enhance-color;
-        line-height: 33px;
+        line-height: 36px;
         font-size: 16px;
         white-space: nowrap;
+        font-weight: 400;
         overflow: hidden;
-        background-color: rgba(205, 222, 234, 0.3);
+        background-color: #fff;
+        margin-top: 20px;
+        border-radius: 18px;
         text-overflow: ellipsis;
+        border: 1px solid rgba(205, 221, 250, 0.6);
+        box-shadow: 0 3px 5px rgb(47 85 212 / 5%);
+      }
+
+      .character_id {
+        color: #333;
+        line-height: 36px;
+        font-size: 14px;
+        white-space: nowrap;
+        font-weight: 400;
+        overflow: hidden;
+        border-radius: 18px;
+        background-color: #fff;
+        text-overflow: ellipsis;
+        border: 1px solid rgba(205, 221, 250, 0.6);
+        box-shadow: 0 3px 5px rgb(47 85 212 / 5%);
+        .githubId {
+          color: #666;
+          margin-right: 5px;
+        }
       }
 
       .character_link {
