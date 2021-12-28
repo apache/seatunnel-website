@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import config from './languages';
@@ -22,7 +22,7 @@ export default function () {
                         <div className="user_case home_block">
                             {
                                 img.map((item, i) => (
-                                    <div key={i} index={i} className="case-item">
+                                    <div key={i} index={i} className="case_item">
                                         <img src={useBaseUrl('/user/' + item.url)} alt="name"/>
                                     </div>
                                 ))

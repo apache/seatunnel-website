@@ -87,6 +87,12 @@ const config = {
                     label: '下载'
                 },
                 {
+                    to: '/team',
+                    label: 'Team',
+                    position: 'right',
+                    activeBaseRegex: `/team`,
+                },
+                {
                     to: '/user',
                     label: 'Users',
                     position: 'right',
