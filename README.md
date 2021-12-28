@@ -31,9 +31,9 @@ This website is compiled using node, using Docusaurus framework components
 ## 2. Directory structure
 ```html
 |-- community 
-|-- docs     //The next version of the document that will be released soon
+|-- docs     // The next version of the document that will be released soon
 |-- download 
-|-- faq      //Q&A
+|-- faq      // Q&A
 |-- i18n    
 |   `-- zh-CN  //Internationalized Chinese
 |       |-- code.json
@@ -54,11 +54,11 @@ This website is compiled using node, using Docusaurus framework components
 |   |   |-- user
 |   |   `-- versions
 |   |-- styles
-|-- static //Picture static resource
-|   |-- doc  //document picture
-|   |-- user //users picture
-|   |-- home //homepage picture
-|   |-- img  //common picture
+|-- static // Picture static resource
+|   |-- doc  // document picture
+|   |-- user // users picture
+|   |-- home // homepage picture
+|   |-- img  // common picture
 |-- docusaurus.config.js
 
 ```
@@ -96,8 +96,8 @@ Located in `src/pages/home`
 
 ```
 ├─home
-│ languages.json Home page Chinese and English configuration
-│ index.less homepage style
+│ languages.json // Home page Chinese and English configuration
+│ index.less     // homepage style
 ```
 ### 3.6 Team page modification
 Visit the page https://seatunnel.apache.org/team
