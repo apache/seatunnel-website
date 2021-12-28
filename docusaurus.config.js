@@ -1,7 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
@@ -68,12 +67,12 @@ const config = {
                 {
                     to: '/',
                     position: 'right',
-                    label: '首页',
+                    label: 'Home',
                     activeBaseRegex: `^/$`,
                 },
                 {
                     position: 'right',
-                    label: '文档',
+                    label: 'Document',
                     items: [
                         {
                             "label": "1.x(Not apache release)",
@@ -84,7 +83,7 @@ const config = {
                 {
                     to: 'https://github.com/InterestingLab/seatunnel/releases',
                     position: 'right',
-                    label: '下载'
+                    label: 'Download'
                 },
                 {
                     to: '/team',
