@@ -43,4 +43,3 @@ sidebar_position: 1
 * 完成后，发送一个 Pull Request 到 Apache Seatunnel，提交过程具体请参考下面《[提交代码流程](submit_guide/document.md)》。
 
 如果是想提交 Pull Request 完成某一个 Feature 或者修复某个 Bug，这里都建议大家从小处做起，完成一个小功能就提交一次，每次别改动太多文件，改动文件太多也会给 Reviewer 造成很大的心理压力，建议通过多次 Pull Request 的方式完成。
-
