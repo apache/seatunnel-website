@@ -75,10 +75,14 @@ const config = {
                     label: 'Document',
                     items: [
                         {
-                            "label": "1.x(Not apache release)",
-                            "to": "https://interestinglab.github.io/seatunnel-docs"
+                            label: "Next-2.x (WIP)",
+                            to: "/docs/introduction",
+                        },
+                        {
+                            label: "1.x(Not apache release)",
+                            to: "https://interestinglab.github.io/seatunnel-docs"
                         }
-                    ],
+                    ]
                 },
                 {
                     to: 'https://github.com/InterestingLab/seatunnel/releases',
