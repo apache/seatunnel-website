@@ -49,25 +49,6 @@ export default function () {
                         ))
                     }
                 </ul>
-
-               {/* <h3 className="team_title">Committer</h3>
-                <p className="team_desc">{dataSource.info.tip}</p>
-                <ul className="character_list">
-                    {
-                        dataSource.committer.map((item, i) => (
-                            <a href={'https://github.com/' + item.githubId} key={i} target="_blank">
-                                <li className="character_item text_center" style={{'listStyle': 'none'}}>
-                                    <img className="character_avatar" src={item.avatarUrl} alt={item.name}/>
-                                    <div className="character_desc">
-                                        <h3 className="character_name">{item.name}</h3>
-                                        <h3 className="character_id"><span className="githubId">githubId:</span>{item.githubId}</h3>
-                                    </div>
-                                </li>
-                            </a>
-                        ))
-                    }
-                </ul>*/}
-
             </div>
         </Layout>
     );

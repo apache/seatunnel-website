@@ -25,11 +25,10 @@
         "slogan": "下一代高性能、分布式、海量数据集成框架"
       },
       "feature": {
-        "components": "内置丰富插件,支持各种数据产品的传输和集成",
-        "scalability": "模块化和插件化,支持热插拔, 带来更好的扩展性",
-        "batchStream": "基于Flink为底层引擎,天然批量一体",
-        "simplicity": "特有的架构设计下,使得开发配置简单,无使用成本",
-        "stable": "经历大规模生产环境使用和海量数据的洗礼"
+        "components": "内置丰富插件,支持各种数据产品方便快捷的传输和集成数据",
+        "scalability": "基于模块化和插件化设计,支持热插拔, 带来更好的扩展性",
+        "simplicity": "特有的架构设计下,使得开发配置更简单,几乎零代码,无使用成本",
+        "stable": "经历多家企业,大规模生产环境使用和海量数据的洗礼,稳定健壮"
       },
       "architecture": {
         "desc": "Apache SeaTunnel是下一代高性能、分布式、海量数据集成框架。通过我们的努力让Spark的使用更简单，更高效，并将业界和我们使用Spark的优质经验固化到seatunnel这个产品中，明显减少学习成本，加快分布式数据处理能力在生产环境落地."
@@ -47,7 +46,7 @@
       "scalability": "High Scalability",
       "batchStream": "Batch Flow Integration",
       "simplicity": "Easy to use",
-      "stable": "Mature and stable",
+      "stable": "Mature & stable",
       "ourUsers": "Our Users",
       "readMore": "Read More",
       "download": "Download",
@@ -64,8 +63,7 @@
       "feature": {
         "components": "Built-in rich plugins to support the transmission and integration of various data products",
         "scalability": "Modularization and plugin, support hot swap, bring better scalability",
-        "batchStream": "Based on Flink as the underlying engine, natural batch integration",
-        "simplicity": "Under the unique architecture design, the development and configuration are simple, and there is no use cost",
+        "simplicity": "Unique architecture design,make development and configuration easier",
         "stable": "Experience the baptism of large-scale production environment use and massive data"
       },
       "architecture": {
