@@ -17,7 +17,6 @@
 staging:
   profile: ~
   whoami: main
-  foo: trigger
 
 # asf-site branch will show up at https://seatunnel.apache.org
 publish:
