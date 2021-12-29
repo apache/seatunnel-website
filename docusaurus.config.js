@@ -86,6 +86,11 @@ const config = {
                     label: 'Download'
                 },
                 {
+                    label: 'Community',
+                    position: 'right',
+                    to: '/community/contribution_guide/contribute'
+                },
+                {
                     to: '/team',
                     label: 'Team',
                     position: 'right',
@@ -179,7 +184,16 @@ const config = {
     }),
 
     plugins: [
-        'docusaurus-plugin-less'
+        'docusaurus-plugin-less',
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'community',
+                path: 'community',
+                routeBasePath: 'community',
+                sidebarPath: require.resolve('./sidebars.js'),
+            },
+        ],
     ]
 };
 

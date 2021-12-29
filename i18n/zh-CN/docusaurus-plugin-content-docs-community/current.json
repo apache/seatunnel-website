@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Contribution Guide": {
+    "message": "贡献指南",
+    "description": "The label for category Contribution Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Submit Guide": {
+    "message": "提交指南",
+    "description": "The label for category Submit Guide in sidebar tutorialSidebar"
+  }
+}
