@@ -4,41 +4,657 @@
         <title>Apache SeaTunnel Blog</title>
         <link>https://seatunnel.apache.org/zh-CN/blog</link>
         <description>Apache SeaTunnel Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Dec 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[Welcome]]></title>
-            <link>https://seatunnel.apache.org/zh-CN/blog/welcome</link>
-            <guid>welcome</guid>
-            <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
-            <content:encoded><![CDATA[<p><a href="https://docusaurus.io/docs/blog">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog">blog plugin</a>.</p><p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p><p>Regular blog authors can be added to <code>authors.yml</code>.</p><p>The blog post date can be extracted from filenames, such as:</p><ul><li><code>2019-05-30-welcome.md</code></li><li><code>2019-05-30-welcome/index.md</code></li></ul><p>A blog post folder can be convenient to co-locate blog post images:</p><p><img src="./docusaurus-plushie-banner.jpeg" alt="Docusaurus Plushie"/></p><p>The blog supports tags as well!</p><p><strong>And if you don&#x27;t want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
+            <title><![CDATA[如何快速地把 HDFS 中的数据导入 ClickHouse]]></title>
+            <link>https://seatunnel.apache.org/zh-CN/blog/hdfs-to-clickhouse</link>
+            <guid>hdfs-to-clickhouse</guid>
+            <pubDate>Thu, 30 Dec 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[ClickHouse 是面向 OLAP 的分布式列式 DBMS。我们部门目前已经把所有数据分析相关的日志数据存储至 ClickHouse 这个优秀的数据仓库之中，当前日数据量达到了 300 亿。]]></description>
+            <content:encoded><![CDATA[<p>ClickHouse 是面向 OLAP 的分布式列式 DBMS。我们部门目前已经把所有数据分析相关的日志数据存储至 ClickHouse 这个优秀的数据仓库之中，当前日数据量达到了 300 亿。</p><p>之前介绍的有关数据处理入库的经验都是基于实时数据流，数据存储在 Kafka 中，我们使用 Java 或者 Golang 将数据从 Kafka 中读取、解析、清洗之后写入 ClickHouse 中，这样可以实现数据的快速接入。然而在很多同学的使用场景中，数据都不是实时的，可能需要将 HDFS 或者是 Hive 中的数据导入 ClickHouse。有的同学通过编写 Spark 程序来实现数据的导入，那么是否有更简单、高效的方法呢。</p><p>目前开源社区上有一款工具 <strong>Seatunnel</strong>，项目地址 <a href="https://github.com/apache/incubator-seatunnel">https://github.com/apache/incubator-seatunnel</a>，可以快速地将 HDFS 中的数据导入 ClickHouse。</p><h2>HDFS To ClickHouse</h2><p>假设我们的日志存储在 HDFS 中，我们需要将日志进行解析并筛选出我们关心的字段，将对应的字段写入 ClickHouse 的表中。</p><h3>Log Sample</h3><p>我们在 HDFS 中存储的日志格式如下， 是很常见的 Nginx 日志</p><pre><code class="language-shell">10.41.1.28 github.com 114.250.140.241 0.001s &quot;127.0.0.1:80&quot; [26/Oct/2018:03:09:32 +0800] &quot;GET /Apache/Seatunnel HTTP/1.1&quot; 200 0 &quot;-&quot; - &quot;Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)&quot; &quot;196&quot; &quot;-&quot; &quot;mainpage&quot; &quot;443&quot; &quot;-&quot; &quot;172.16.181.129&quot;
+</code></pre><h3>ClickHouse Schema</h3><p>我们的 ClickHouse 建表语句如下，我们的表按日进行分区</p><pre><code class="language-shell">CREATE TABLE cms.cms_msg
+(
+    date Date, 
+    datetime DateTime, 
+    url String, 
+    request_time Float32, 
+    status String, 
+    hostname String, 
+    domain String, 
+    remote_addr String, 
+    data_size Int32, 
+    pool String
+) ENGINE = MergeTree PARTITION BY date ORDER BY date SETTINGS index_granularity = 16384
+</code></pre><h2>Seatunnel with ClickHouse</h2><p>接下来会给大家详细介绍，我们如何通过 Seatunnel 满足上述需求，将 HDFS 中的数据写入 ClickHouse 中。</p><h3>Seatunnel</h3><p><a href="https://github.com/apache/incubator-seatunnel">Seatunnel</a> 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从 Kafka、HDFS、Kudu 中读取数据，进行各种各样的数据处理，并将结果写入 ClickHouse、Elasticsearch 或者 Kafka 中。</p><h3>Prerequisites</h3><p>首先我们需要安装 Seatunnel，安装十分简单，无需配置系统环境变量</p><ol><li>准备 Spark 环境</li><li>安装 Seatunnel</li><li>配置 Seatunnel</li></ol><p>以下是简易步骤，具体安装可以参照 <a href="/docs/quick-start">Quick Start</a></p><pre><code class="language-shell">cd /usr/local
+
+wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+
+wget https://github.com/InterestingLab/seatunnel/releases/download/v1.1.1/seatunnel-1.1.1.zip
+
+unzip seatunnel-1.1.1.zip
+
+cd seatunnel-1.1.1
+vim config/seatunnel-env.sh
+
+# 指定Spark安装路径
+SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
+</code></pre><h3>seatunnel Pipeline</h3><p>我们仅需要编写一个 seatunnel Pipeline 的配置文件即可完成数据的导入。</p><p>配置文件包括四个部分，分别是 Spark、Input、filter 和 Output。</p><h4>Spark</h4><p>这一部分是 Spark 的相关配置，主要配置 Spark 执行时所需的资源大小。</p><pre><code class="language-shell">spark {
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+}
+</code></pre><h4>Input</h4><p>这一部分定义数据源，如下是从 HDFS 文件中读取 text 格式数据的配置案例。</p><pre><code class="language-shell">input {
+    hdfs {
+        path = &quot;hdfs://nomanode:8020/rowlog/accesslog&quot;
+        table_name = &quot;access_log&quot;
+        format = &quot;text&quot;
+    }
+}
+</code></pre><h4>Filter</h4><p>在 Filter 部分，这里我们配置一系列的转化，包括正则解析将日志进行拆分、时间转换将 HTTPDATE 转化为 ClickHouse 支持的日期格式、对 Number 类型的字段进行类型转换以及通过 SQL 进行字段筛减等</p><pre><code class="language-shell">filter {
+    # 使用正则解析原始日志
+    grok {
+        source_field = &quot;raw_message&quot;
+        pattern = &#x27;%{IP:ha_ip}\\s%{NOTSPACE:domain}\\s%{IP:remote_addr}\\s%{NUMBER:request_time}s\\s\&quot;%{DATA:upstream_ip}\&quot;\\s\\[%{HTTPDATE:timestamp}\\]\\s\&quot;%{NOTSPACE:method}\\s%{DATA:url}\\s%{NOTSPACE:http_ver}\&quot;\\s%{NUMBER:status}\\s%{NUMBER:body_bytes_send}\\s%{DATA:referer}\\s%{NOTSPACE:cookie_info}\\s\&quot;%{DATA:user_agent}\&quot;\\s%{DATA:uid}\\s%{DATA:session_id}\\s\&quot;%{DATA:pool}\&quot;\\s\&quot;%{DATA:tag2}\&quot;\\s%{DATA:tag3}\\s%{DATA:tag4}&#x27;
+    }
+
+    # 将&quot;dd/MMM/yyyy:HH:mm:ss Z&quot;格式的数据转换为
+    # &quot;yyyy/MM/dd HH:mm:ss&quot;格式的数据
+    date {
+        source_field = &quot;timestamp&quot;
+        target_field = &quot;datetime&quot;
+        source_time_format = &quot;dd/MMM/yyyy:HH:mm:ss Z&quot;
+        target_time_format = &quot;yyyy/MM/dd HH:mm:ss&quot;
+    }
+
+    # 使用SQL筛选关注的字段，并对字段进行处理
+    # 甚至可以通过过滤条件过滤掉不关心的数据
+    sql {
+        table_name = &quot;access&quot;
+        sql = &quot;select substring(date, 1, 10) as date, datetime, hostname, url, http_code, float(request_time), int(data_size), domain from access&quot;
+    }
+}
+</code></pre><h4>Output</h4><p>最后我们将处理好的结构化数据写入 ClickHouse</p><pre><code class="language-shell">output {
+    clickhouse {
+        host = &quot;your.clickhouse.host:8123&quot;
+        database = &quot;seatunnel&quot;
+        table = &quot;access_log&quot;
+        fields = [&quot;date&quot;, &quot;datetime&quot;, &quot;hostname&quot;, &quot;uri&quot;, &quot;http_code&quot;, &quot;request_time&quot;, &quot;data_size&quot;, &quot;domain&quot;]
+        username = &quot;username&quot;
+        password = &quot;password&quot;
+    }
+}
+</code></pre><h3>Running seatunnel</h3><p>我们将上述四部分配置组合成为我们的配置文件 <code>config/batch.conf</code>。</p><pre><code class="language-shell">vim config/batch.conf
+</code></pre><pre><code class="language-shell">spark {
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+}
+
+input {
+    hdfs {
+        path = &quot;hdfs://nomanode:8020/rowlog/accesslog&quot;
+        table_name = &quot;access_log&quot;
+        format = &quot;text&quot;
+    }
+}
+
+filter {
+    # 使用正则解析原始日志
+    grok {
+        source_field = &quot;raw_message&quot;
+        pattern = &#x27;%{IP:ha_ip}\\s%{NOTSPACE:domain}\\s%{IP:remote_addr}\\s%{NUMBER:request_time}s\\s\&quot;%{DATA:upstream_ip}\&quot;\\s\\[%{HTTPDATE:timestamp}\\]\\s\&quot;%{NOTSPACE:method}\\s%{DATA:url}\\s%{NOTSPACE:http_ver}\&quot;\\s%{NUMBER:status}\\s%{NUMBER:body_bytes_send}\\s%{DATA:referer}\\s%{NOTSPACE:cookie_info}\\s\&quot;%{DATA:user_agent}\&quot;\\s%{DATA:uid}\\s%{DATA:session_id}\\s\&quot;%{DATA:pool}\&quot;\\s\&quot;%{DATA:tag2}\&quot;\\s%{DATA:tag3}\\s%{DATA:tag4}&#x27;
+    }
+
+    # 将&quot;dd/MMM/yyyy:HH:mm:ss Z&quot;格式的数据转换为
+    # &quot;yyyy/MM/dd HH:mm:ss&quot;格式的数据
+    date {
+        source_field = &quot;timestamp&quot;
+        target_field = &quot;datetime&quot;
+        source_time_format = &quot;dd/MMM/yyyy:HH:mm:ss Z&quot;
+        target_time_format = &quot;yyyy/MM/dd HH:mm:ss&quot;
+    }
+
+    # 使用SQL筛选关注的字段，并对字段进行处理
+    # 甚至可以通过过滤条件过滤掉不关心的数据
+    sql {
+        table_name = &quot;access&quot;
+        sql = &quot;select substring(date, 1, 10) as date, datetime, hostname, url, http_code, float(request_time), int(data_size), domain from access&quot;
+    }
+}
+
+output {
+    clickhouse {
+        host = &quot;your.clickhouse.host:8123&quot;
+        database = &quot;seatunnel&quot;
+        table = &quot;access_log&quot;
+        fields = [&quot;date&quot;, &quot;datetime&quot;, &quot;hostname&quot;, &quot;uri&quot;, &quot;http_code&quot;, &quot;request_time&quot;, &quot;data_size&quot;, &quot;domain&quot;]
+        username = &quot;username&quot;
+        password = &quot;password&quot;
+    }
+}
+</code></pre><p>执行命令，指定配置文件，运行 Seatunnel，即可将数据写入 ClickHouse。这里我们以本地模式为例。</p><pre><code class="language-shell">./bin/start-seatunnel.sh --config config/batch.conf -e client -m &#x27;local[2]&#x27;
+</code></pre><h2>Conclusion</h2><p>在这篇文章中，我们介绍了如何使用 Seatunnel 将 HDFS 中的 Nginx 日志文件导入 ClickHouse 中。仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码。除了支持 HDFS 数据源之外，Seatunnel 同样支持将数据从 Kafka 中实时读取处理写入 ClickHouse 中。我们的下一篇文章将会介绍，如何将 Hive 中的数据快速导入 ClickHouse 中。</p><p>当然，Seatunnel 不仅仅是 ClickHouse 数据写入的工具，在 Elasticsearch 以及 Kafka等 数据源的写入上同样可以扮演相当重要的角色。</p><p>希望了解 Seatunnel 和 ClickHouse、Elasticsearch、Kafka 结合使用的更多功能和案例，可以直接进入官网 <a href="https://seatunnel.apache.org/">https://seatunnel.apache.org/</a></p><p>-- Power by <a href="https://github.com/InterestingLab">InterestingLab</a></p>]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[MDX Blog Post]]></title>
-            <link>https://seatunnel.apache.org/zh-CN/blog/mdx-blog-post</link>
-            <guid>mdx-blog-post</guid>
-            <pubDate>Sun, 01 Aug 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></description>
-            <content:encoded><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/">MDX</a>.</p><p>:::tip</p><p>Use the power of React to create interactive blog posts.</p><pre><code class="language-js">&lt;button onClick={() =&gt; alert(&#x27;button clicked!&#x27;)}&gt;Click me!&lt;/button&gt;
-</code></pre><button>Click me!</button><p>:::</p>]]></content:encoded>
+            <title><![CDATA[如何快速地把 Hive 中的数据导入 ClickHouse]]></title>
+            <link>https://seatunnel.apache.org/zh-CN/blog/hive-to-clickhouse</link>
+            <guid>hive-to-clickhouse</guid>
+            <pubDate>Thu, 30 Dec 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[ClickHouse是面向OLAP的分布式列式DBMS。我们部门目前已经把所有数据分析相关的日志数据存储至ClickHouse这个优秀的数据仓库之中，当前日数据量达到了300亿。]]></description>
+            <content:encoded><![CDATA[<p>ClickHouse是面向OLAP的分布式列式DBMS。我们部门目前已经把所有数据分析相关的日志数据存储至ClickHouse这个优秀的数据仓库之中，当前日数据量达到了300亿。</p><p>在之前的文章 <a href="2021-12-30-hdfs-to-clickhouse.md">如何快速地把HDFS中的数据导入ClickHouse</a> 中我们提到过使用 Seatunnel <a href="https://github.com/apache/incubator-seatunnel">https://github.com/apache/incubator-seatunnel</a> 对HDFS中的数据经过很简单的操作就可以将数据写入ClickHouse。HDFS中的数据一般是非结构化的数据，那么针对存储在Hive中的结构化数据，我们应该怎么操作呢？</p><p><img src="/doc/image_zh/hive-logo.png"/></p><h2>Hive to ClickHouse</h2><p>假定我们的数据已经存储在Hive中，我们需要读取Hive表中的数据并筛选出我们关心的字段，或者对字段进行转换，最后将对应的字段写入ClickHouse的表中。</p><h3>Hive Schema</h3><p>我们在Hive中存储的数据表结构如下，存储的是很常见的Nginx日志</p><pre><code>CREATE TABLE `nginx_msg_detail`(
+   `hostname` string,
+   `domain` string,
+   `remote_addr` string,
+   `request_time` float,
+   `datetime` string,
+   `url` string,
+   `status` int,
+   `data_size` int,
+   `referer` string,
+   `cookie_info` string,
+   `user_agent` string,
+   `minute` string)
+ PARTITIONED BY (
+   `date` string,
+   `hour` string)
+
+</code></pre><h3>ClickHouse Schema</h3><p>我们的ClickHouse建表语句如下，我们的表按日进行分区</p><pre><code>CREATE TABLE cms.cms_msg
+(
+    date Date,
+    datetime DateTime,
+    url String,
+    request_time Float32,
+    status String,
+    hostname String,
+    domain String,
+    remote_addr String,
+    data_size Int32
+) ENGINE = MergeTree PARTITION BY date ORDER BY (date, hostname) SETTINGS index_granularity = 16384
+</code></pre><h2>Seatunnel with ClickHouse</h2><p>接下来会给大家介绍，我们如何通过 Seatunnel 将Hive中的数据写入ClickHouse中。</p><h3>Seatunnel</h3><p><a href="https://github.com/apache/incubator-seatunnel">Seatunnel</a> 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中。</p><p>Seatunnel的环境准备以及安装步骤这里就不一一赘述了，具体安装步骤可以参考上一篇文章或者访问 <a href="/docs/introduction">Seatunnel Docs</a></p><h3>Seatunnel Pipeline</h3><p>我们仅需要编写一个Seatunnel Pipeline的配置文件即可完成数据的导入。</p><p>配置文件包括四个部分，分别是Spark、Input、filter和Output。</p><h4>Spark</h4><p>这一部分是Spark的相关配置，主要配置Spark执行时所需的资源大小。</p><pre><code>spark {
+  // 这个配置必需填写
+  spark.sql.catalogImplementation = &quot;hive&quot;
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+}
+</code></pre><h4>Input</h4><p>这一部分定义数据源，如下是从Hive文件中读取text格式数据的配置案例。</p><pre><code>input {
+    hive {
+        pre_sql = &quot;select * from access.nginx_msg_detail&quot;
+        table_name = &quot;access_log&quot;
+    }
+}
+</code></pre><p>看，很简单的一个配置就可以从Hive中读取数据了。其中<code>pre_sql</code>是从Hive中读取数据SQL，<code>table_name</code>是将读取后的数据，注册成为Spark中临时表的表名，可为任意字段。</p><p>需要注意的是，必须保证hive的metastore是在服务状态。</p><p>在Cluster、Client、Local模式下运行时，必须把<code>hive-site.xml</code>文件置于提交任务节点的$HADOOP_CONF目录下</p><h4>Filter</h4><p>在Filter部分，这里我们配置一系列的转化，我们这里把不需要的minute和hour字段丢弃。当然我们也可以在读取Hive的时候通过<code>pre_sql</code>不读取这些字段</p><pre><code>filter {
+    remove {
+        source_field = [&quot;minute&quot;, &quot;hour&quot;]
+    }
+}
+</code></pre><h4>Output</h4><p>最后我们将处理好的结构化数据写入ClickHouse</p><pre><code>output {
+    clickhouse {
+        host = &quot;your.clickhouse.host:8123&quot;
+        database = &quot;seatunnel&quot;
+        table = &quot;nginx_log&quot;
+        fields = [&quot;date&quot;, &quot;datetime&quot;, &quot;hostname&quot;, &quot;url&quot;, &quot;http_code&quot;, &quot;request_time&quot;, &quot;data_size&quot;, &quot;domain&quot;]
+        username = &quot;username&quot;
+        password = &quot;password&quot;
+    }
+}
+</code></pre><h3>Running Seatunnel</h3><p>我们将上述四部分配置组合成为我们的配置文件<code>config/batch.conf</code>。</p><pre><code>vim config/batch.conf
+</code></pre><pre><code>spark {
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+  // 这个配置必需填写
+  spark.sql.catalogImplementation = &quot;hive&quot;
+}
+input {
+    hive {
+        pre_sql = &quot;select * from access.nginx_msg_detail&quot;
+        table_name = &quot;access_log&quot;
+    }
+}
+filter {
+    remove {
+        source_field = [&quot;minute&quot;, &quot;hour&quot;]
+    }
+}
+output {
+    clickhouse {
+        host = &quot;your.clickhouse.host:8123&quot;
+        database = &quot;seatunnel&quot;
+        table = &quot;access_log&quot;
+        fields = [&quot;date&quot;, &quot;datetime&quot;, &quot;hostname&quot;, &quot;uri&quot;, &quot;http_code&quot;, &quot;request_time&quot;, &quot;data_size&quot;, &quot;domain&quot;]
+        username = &quot;username&quot;
+        password = &quot;password&quot;
+    }
+}
+</code></pre><p>执行命令，指定配置文件，运行 Seatunnel，即可将数据写入ClickHouse。这里我们以本地模式为例。</p><pre><code>./bin/start-seatunnel.sh --config config/batch.conf -e client -m &#x27;local[2]&#x27;
+</code></pre><h2>Conclusion</h2><p>在这篇文章中，我们介绍了如何使用 Seatunnel 将Hive中的数据导入ClickHouse中。仅仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码，十分简单。</p><p>希望了解 Seatunnel 与ClickHouse、Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 <a href="https://seatunnel.apache.org/">https://seatunnel.apache.org/</a></p><p>-- Power by <a href="https://github.com/InterestingLab">InterestingLab</a></p>]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[Long Blog Post]]></title>
-            <link>https://seatunnel.apache.org/zh-CN/blog/long-blog-post</link>
-            <guid>long-blog-post</guid>
-            <pubDate>Wed, 29 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[This is the summary of a very long blog post,]]></description>
-            <content:encoded><![CDATA[<p>This is the summary of a very long blog post,</p><p>Use a <code>&lt;!--</code> <code>truncate</code> <code>--&gt;</code> comment to limit blog post size in the list view.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
+            <title><![CDATA[如何使用 Spark 快速将数据写入 Elasticsearch]]></title>
+            <link>https://seatunnel.apache.org/zh-CN/blog/spark-execute-elasticsearch</link>
+            <guid>spark-execute-elasticsearch</guid>
+            <pubDate>Thu, 30 Dec 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[说到数据写入 Elasticsearch，最先想到的肯定是Logstash。Logstash因为其简单上手、可扩展、可伸缩等优点被广大用户接受。但是尺有所短，寸有所长，Logstash肯定也有它无法适用的应用场景，比如：]]></description>
+            <content:encoded><![CDATA[<p>说到数据写入 Elasticsearch，最先想到的肯定是Logstash。Logstash因为其简单上手、可扩展、可伸缩等优点被广大用户接受。但是尺有所短，寸有所长，Logstash肯定也有它无法适用的应用场景，比如：</p><ul><li>海量数据ETL</li><li>海量数据聚合</li><li>多源数据处理</li></ul><p>为了满足这些场景，很多同学都会选择Spark，借助Spark算子进行数据处理，最后将处理结果写入Elasticsearch。</p><p>我们部门之前利用Spark对Nginx日志进行分析，统计我们的Web服务访问情况，将Nginx日志每分钟聚合一次最后将结果写入Elasticsearch，然后利用Kibana配置实时监控Dashboard。Elasticsearch和Kibana都很方便、实用，但是随着类似需求越来越多，如何快速通过Spark将数据写入Elasticsearch成为了我们的一大问题。</p><p>今天给大家推荐一款能够实现数据快速写入的黑科技 Seatunnel <a href="https://github.com/apache/incubator-seatunnel">https://github.com/apache/incubator-seatunnel</a> 一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上，简单易用，灵活配置，无需开发。</p><p><img src="/doc/image_zh/wd-struct.png"/></p><h2>Kafka to Elasticsearch</h2><p>和Logstash一样，Seatunnel同样支持多种类型的数据输入，这里我们以最常见的Kakfa作为输入源为例，讲解如何使用 Seatunnel 将数据快速写入Elasticsearch</p><h3>Log Sample</h3><p>原始日志格式如下:</p><pre><code>127.0.0.1 elasticsearch.cn 114.250.140.241 0.001s &quot;127.0.0.1:80&quot; [26/Oct/2018:21:54:32 +0800] &quot;GET /article HTTP/1.1&quot; 200 123 &quot;-&quot; - &quot;Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)&quot;
+</code></pre><h3>Elasticsearch Document</h3><p>我们想要统计，一分钟每个域名的访问情况，聚合完的数据有以下字段:</p><pre><code>domain String
+hostname String
+status int
+datetime String
+count int
+</code></pre><h2>Seatunnel with Elasticsearch</h2><p>接下来会给大家详细介绍，我们如何通过 Seatunnel 读取Kafka中的数据，对数据进行解析以及聚合，最后将处理结果写入Elasticsearch中。</p><h3>Seatunnel</h3><p><a href="https://github.com/apache/incubator-seatunnel">Seatunnel</a> 同样拥有着非常丰富的插件，支持从Kafka、HDFS、Hive中读取数据，进行各种各样的数据处理，并将结果写入Elasticsearch、Kudu或者Kafka中。</p><h3>Prerequisites</h3><p>首先我们需要安装seatunnel，安装十分简单，无需配置系统环境变量</p><ol><li>准备Spark环境</li><li>安装 Seatunnel</li><li>配置 Seatunnel</li></ol><p>以下是简易步骤，具体安装可以参照 <a href="/docs/quick-start">Quick Start</a></p><pre><code class="language-yaml">cd /usr/local
+wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+wget https://github.com/InterestingLab/seatunnel/releases/download/v1.1.1/seatunnel-1.1.1.zip
+unzip seatunnel-1.1.1.zip
+cd seatunnel-1.1.1
+
+vim config/seatunnel-env.sh
+# 指定Spark安装路径
+SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
+</code></pre><h3>Seatunnel Pipeline</h3><p>与Logstash一样，我们仅需要编写一个Seatunnel Pipeline的配置文件即可完成数据的导入，相信了解Logstash的朋友可以很快入手 Seatunnel 配置。</p><p>配置文件包括四个部分，分别是Spark、Input、filter和Output。</p><h4>Spark</h4><p>这一部分是Spark的相关配置，主要配置Spark执行时所需的资源大小。</p><pre><code>spark {
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+  spark.streaming.batchDuration = 5
+}
+</code></pre><h4>Input</h4><p>这一部分定义数据源，如下是从Kafka中读取数据的配置案例，</p><pre><code>kafkaStream {
+    topics = &quot;seatunnel-es&quot;
+    consumer.bootstrap.servers = &quot;localhost:9092&quot;
+    consumer.group.id = &quot;seatunnel_es_group&quot;
+    consumer.rebalance.max.retries = 100
+}
+</code></pre><h4>Filter</h4><p>在Filter部分，这里我们配置一系列的转化，包括正则解析将日志进行拆分、时间转换将HTTPDATE转化为Elasticsearch支持的日期格式、对Number类型的字段进行类型转换以及通过SQL进行数据聚合</p><pre><code class="language-yaml">filter {
+    # 使用正则解析原始日志
+    # 最开始数据都在raw_message字段中
+    grok {
+        source_field = &quot;raw_message&quot;
+        pattern = &#x27;%{NOTSPACE:hostname}\\s%{NOTSPACE:domain}\\s%{IP:remote_addr}\\s%{NUMBER:request_time}s\\s\&quot;%{DATA:upstream_ip}\&quot;\\s\\[%{HTTPDATE:timestamp}\\]\\s\&quot;%{NOTSPACE:method}\\s%{DATA:url}\\s%{NOTSPACE:http_ver}\&quot;\\s%{NUMBER:status}\\s%{NUMBER:body_bytes_send}\\s%{DATA:referer}\\s%{NOTSPACE:cookie_info}\\s\&quot;%{DATA:user_agent}&#x27;
+   }
+    # 将&quot;dd/MMM/yyyy:HH:mm:ss Z&quot;格式的数据转换为
+    # Elasticsearch中支持的格式
+    date {
+        source_field = &quot;timestamp&quot;
+        target_field = &quot;datetime&quot;
+        source_time_format = &quot;dd/MMM/yyyy:HH:mm:ss Z&quot;
+        target_time_format = &quot;yyyy-MM-dd&#x27;T&#x27;HH:mm:ss.SSS+08:00&quot;
+    }
+    ## 利用SQL对数据进行聚合
+    sql {
+        table_name = &quot;access_log&quot;
+        sql = &quot;select domain, hostname, int(status), datetime, count(*) from access_log group by domain, hostname, status, datetime&quot;
+    }
+ }
+</code></pre><h4>Output</h4><p>最后我们将处理好的结构化数据写入Elasticsearch。</p><pre><code class="language-yaml">output {
+    elasticsearch {
+        hosts = [&quot;localhost:9200&quot;]
+        index = &quot;seatunnel-${now}&quot;
+        es.batch.size.entries = 100000
+        index_time_format = &quot;yyyy.MM.dd&quot;
+    }
+}
+</code></pre><h3>Running Seatunnel</h3><p>我们将上述四部分配置组合成为我们的配置文件 <code>config/batch.conf</code>。</p><pre><code>vim config/batch.conf
+</code></pre><pre><code>spark {
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+  spark.streaming.batchDuration = 5
+}
+input {
+    kafkaStream {
+        topics = &quot;seatunnel-es&quot;
+        consumer.bootstrap.servers = &quot;localhost:9092&quot;
+        consumer.group.id = &quot;seatunnel_es_group&quot;
+        consumer.rebalance.max.retries = 100
+    }
+}
+filter {
+    # 使用正则解析原始日志
+    # 最开始数据都在raw_message字段中
+    grok {
+        source_field = &quot;raw_message&quot;
+        pattern = &#x27;%{IP:hostname}\\s%{NOTSPACE:domain}\\s%{IP:remote_addr}\\s%{NUMBER:request_time}s\\s\&quot;%{DATA:upstream_ip}\&quot;\\s\\[%{HTTPDATE:timestamp}\\]\\s\&quot;%{NOTSPACE:method}\\s%{DATA:url}\\s%{NOTSPACE:http_ver}\&quot;\\s%{NUMBER:status}\\s%{NUMBER:body_bytes_send}\\s%{DATA:referer}\\s%{NOTSPACE:cookie_info}\\s\&quot;%{DATA:user_agent}&#x27;
+   }
+    # 将&quot;dd/MMM/yyyy:HH:mm:ss Z&quot;格式的数据转换为
+    # Elasticsearch中支持的格式
+    date {
+        source_field = &quot;timestamp&quot;
+        target_field = &quot;datetime&quot;
+        source_time_format = &quot;dd/MMM/yyyy:HH:mm:ss Z&quot;
+        target_time_format = &quot;yyyy-MM-dd&#x27;T&#x27;HH:mm:00.SSS+08:00&quot;
+    }
+    ## 利用SQL对数据进行聚合
+    sql {
+        table_name = &quot;access_log&quot;
+        sql = &quot;select domain, hostname, status, datetime, count(*) from access_log group by domain, hostname, status, datetime&quot;
+    }
+ }
+output {
+    elasticsearch {
+        hosts = [&quot;localhost:9200&quot;]
+        index = &quot;seatunnel-${now}&quot;
+        es.batch.size.entries = 100000
+        index_time_format = &quot;yyyy.MM.dd&quot;
+    }
+}
+</code></pre><p>执行命令，指定配置文件，运行 Seatunnel，即可将数据写入Elasticsearch。这里我们以本地模式为例。</p><pre><code>./bin/start-seatunnel.sh --config config/batch.conf -e client -m &#x27;local[2]&#x27;
+</code></pre><p>最后，写入Elasticsearch中的数据如下，再配上Kibana就可以实现Web服务的实时监控了^_^.</p><pre><code>&quot;_source&quot;: {
+    &quot;domain&quot;: &quot;elasticsearch.cn&quot;,
+    &quot;hostname&quot;: &quot;localhost&quot;,
+    &quot;status&quot;: &quot;200&quot;,
+    &quot;datetime&quot;: &quot;2018-11-26T21:54:00.000+08:00&quot;,
+    &quot;count&quot;: 26
+  }
+</code></pre><h2>Conclusion</h2><p>在这篇文章中，我们介绍了如何通过 Seatunnel 将Kafka中的数据写入Elasticsearch中。仅仅通过一个配置文件便可快速运行一个Spark Application，完成数据的处理、写入，无需编写任何代码，十分简单。</p><p>当数据处理过程中有遇到Logstash无法支持的场景或者Logstah性能无法达到预期的情况下，都可以尝试使用 Seatunnel 解决问题。</p><p>希望了解 Seatunnel 与Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 <a href="https://seatunnel.apache.org/">https://seatunnel.apache.org/</a></p><p><strong>我们近期会再发布一篇《如何用Spark和Elasticsearch做交互式数据分析》，敬请期待.</strong></p><h2>Contract us</h2><ul><li>邮件列表 : <strong><a href="mailto:dev@seatunnel.apache.org">dev@seatunnel.apache.org</a></strong>. 发送任意内容至 <code>dev-subscribe@seatunnel.apache.org</code>， 按照回复订阅邮件列表。</li><li>Slack: 发送 <code>Request to join SeaTunnel slack</code> 邮件到邮件列表 (<code>dev@seatunnel.apache.org</code>), 我们会邀请你加入（在此之前请确认已经注册Slack）.</li><li><a href="https://space.bilibili.com/1542095008">bilibili B站 视频</a></li></ul>]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[First Blog Post]]></title>
-            <link>https://seatunnel.apache.org/zh-CN/blog/first-blog-post</link>
-            <guid>first-blog-post</guid>
-            <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></description>
-            <content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
+            <title><![CDATA[怎么用 Spark 在 TiDB 上做 OLAP 分析]]></title>
+            <link>https://seatunnel.apache.org/zh-CN/blog/spark-execute-tidb</link>
+            <guid>spark-execute-tidb</guid>
+            <pubDate>Thu, 30 Dec 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[TiDB 是一款定位于在线事务处理/在线分析处理的融合型数据库产品，实现了一键水平伸缩，强一致性的多副本数据安全，分布式事务，实时 OLAP 等重要特性。]]></description>
+            <content:encoded><![CDATA[<p><img src="https://download.pingcap.com/images/tidb-planet.jpg"/></p><p><a href="https://github.com/pingcap/tidb">TiDB</a> 是一款定位于在线事务处理/在线分析处理的融合型数据库产品，实现了一键水平伸缩，强一致性的多副本数据安全，分布式事务，实时 OLAP 等重要特性。</p><p>TiSpark 是 PingCAP 为解决用户复杂 OLAP 需求而推出的产品。它借助 Spark 平台，同时融合 TiKV 分布式集群的优势。</p><p>直接使用 TiSpark 完成 OLAP 操作需要了解 Spark，还需要一些开发工作。那么，有没有一些开箱即用的工具能帮我们更快速地使用 TiSpark 在 TiDB 上完成 OLAP 分析呢？</p><p>目前开源社区上有一款工具 <strong>Seatunnel</strong>，项目地址 <a href="https://github.com/apache/incubator-seatunnel">https://github.com/apache/incubator-seatunnel</a> ，可以基于Spark，在 TiSpark 的基础上快速实现 TiDB 数据读取和 OLAP 分析。</p><h2>使用 Seatunnel 操作TiDB</h2><p>在我们线上有这么一个需求，从 TiDB 中读取某一天的网站访问数据，统计每个域名以及服务返回状态码的访问次数，最后将统计结果写入 TiDB 另外一个表中。 我们来看看 Seatunnel 是如何实现这么一个功能的。</p><h3>Seatunnel</h3><p><a href="https://github.com/apache/incubator-seatunnel">Seatunnel</a> 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在 Spark 之上。Seatunnel 拥有着非常丰富的插件，支持从 TiDB、Kafka、HDFS、Kudu 中读取数据，进行各种各样的数据处理，然后将结果写入 TiDB、ClickHouse、Elasticsearch 或者 Kafka 中。</p><h4>准备工作</h4><h5>1. TiDB 表结构介绍</h5><p><strong>Input</strong>（存储访问日志的表）</p><pre><code>CREATE TABLE access_log (
+    domain VARCHAR(255),
+    datetime VARCHAR(63),
+    remote_addr VARCHAR(63),
+    http_ver VARCHAR(15),
+    body_bytes_send INT,
+    status INT,
+    request_time FLOAT,
+    url TEXT
+)
+</code></pre><pre><code>+-----------------+--------------+------+------+---------+-------+
+| Field           | Type         | Null | Key  | Default | Extra |
++-----------------+--------------+------+------+---------+-------+
+| domain          | varchar(255) | YES  |      | NULL    |       |
+| datetime        | varchar(63)  | YES  |      | NULL    |       |
+| remote_addr     | varchar(63)  | YES  |      | NULL    |       |
+| http_ver        | varchar(15)  | YES  |      | NULL    |       |
+| body_bytes_send | int(11)      | YES  |      | NULL    |       |
+| status          | int(11)      | YES  |      | NULL    |       |
+| request_time    | float        | YES  |      | NULL    |       |
+| url             | text         | YES  |      | NULL    |       |
++-----------------+--------------+------+------+---------+-------+
+</code></pre><p><strong>Output</strong>（存储结果数据的表）</p><pre><code>CREATE TABLE access_collect (
+    date VARCHAR(23),
+    domain VARCHAR(63),
+    status INT,
+    hit INT
+)
+</code></pre><pre><code>+--------+-------------+------+------+---------+-------+
+| Field  | Type        | Null | Key  | Default | Extra |
++--------+-------------+------+------+---------+-------+
+| date   | varchar(23) | YES  |      | NULL    |       |
+| domain | varchar(63) | YES  |      | NULL    |       |
+| status | int(11)     | YES  |      | NULL    |       |
+| hit    | int(11)     | YES  |      | NULL    |       |
++--------+-------------+------+------+---------+-------+
+</code></pre><h5>2. 安装 Seatunnel</h5><p>有了 TiDB 输入和输出表之后， 我们需要安装 Seatunnel，安装十分简单，无需配置系统环境变量</p><ol><li>准备 Spark环境</li><li>安装 Seatunnel</li><li>配置 Seatunnel</li></ol><p>以下是简易步骤，具体安装可以参照 <a href="/docs/quick-start">Quick Start</a></p><pre><code># 下载安装Spark
+cd /usr/local
+wget https://archive.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
+wget
+# 下载安装seatunnel
+https://github.com/InterestingLab/seatunnel/releases/download/v1.2.0/seatunnel-1.2.0.zip
+unzip seatunnel-1.2.0.zip
+cd seatunnel-1.2.0
+
+vim config/seatunnel-env.sh
+# 指定Spark安装路径
+SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.1.0-bin-hadoop2.7}
+</code></pre><h3>实现 Seatunnel 处理流程</h3><p>我们仅需要编写一个 Seatunnel 配置文件即可完成数据的读取、处理、写入。</p><p>Seatunnel 配置文件由四个部分组成，分别是 <code>Spark</code>、<code>Input</code>、<code>Filter</code> 和 <code>Output</code>。<code>Input</code> 部分用于指定数据的输入源，<code>Filter</code> 部分用于定义各种各样的数据处理、聚合，<code>Output</code> 部分负责将处理之后的数据写入指定的数据库或者消息队列。</p><p>整个处理流程为 <code>Input</code> -&gt; <code>Filter</code> -&gt; <code>Output</code>，整个流程组成了 Seatunnel 的 处理流程（Pipeline）。</p><blockquote><p>以下是一个具体配置，此配置来源于线上实际应用，但是为了演示有所简化。</p></blockquote><h5>Input (TiDB)</h5><p>这里部分配置定义输入源，如下是从 TiDB 一张表中读取数据。</p><pre><code>input {
+    tidb {
+        database = &quot;nginx&quot;
+        pre_sql = &quot;select * from nginx.access_log&quot;
+        table_name = &quot;spark_nginx_input&quot;
+    }
+}
+</code></pre><h5>Filter</h5><p>在Filter部分，这里我们配置一系列的转化, 大部分数据分析的需求，都是在Filter完成的。Seatunnel 提供了丰富的插件，足以满足各种数据分析需求。这里我们通过 SQL 插件完成数据的聚合操作。</p><pre><code>filter {
+    sql {
+        table_name = &quot;spark_nginx_log&quot;
+        sql = &quot;select count(*) as hit, domain, status, substring(datetime, 1, 10) as date from spark_nginx_log where substring(datetime, 1, 10)=&#x27;2019-01-20&#x27; group by domain, status, substring(datetime, 1, 10)&quot;
+    }
+}
+</code></pre><h5>Output (TiDB)</h5><p>最后， 我们将处理后的结果写入TiDB另外一张表中。TiDB Output是通过JDBC实现的</p><pre><code>output {
+    tidb {
+        url = &quot;jdbc:mysql://127.0.0.1:4000/nginx?useUnicode=true&amp;characterEncoding=utf8&quot;
+        table = &quot;access_collect&quot;
+        user = &quot;username&quot;
+        password = &quot;password&quot;
+        save_mode = &quot;append&quot;
+    }
+}
+</code></pre><h5>Spark</h5><p>这一部分是 Spark 的相关配置，主要配置 Spark 执行时所需的资源大小以及其他 Spark 配置。</p><p>我们的 TiDB Input 插件是基于 TiSpark 实现的，而 TiSpark 依赖于 TiKV 集群和 Placement Driver (PD)。因此我们需要指定 PD 节点信息以及 TiSpark 相关配置<code>spark.tispark.pd.addresses</code>和<code>spark.sql.extensions</code>。</p><pre><code>spark {
+  spark.app.name = &quot;seatunnel-tidb&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+  # Set for TiSpark
+  spark.tispark.pd.addresses = &quot;localhost:2379&quot;
+  spark.sql.extensions = &quot;org.apache.spark.sql.TiExtensions&quot;
+}
+</code></pre><h4>运行 Seatunnel</h4><p>我们将上述四部分配置组合成我们最终的配置文件 <code>conf/tidb.conf</code></p><pre><code>spark {
+    spark.app.name = &quot;seatunnel-tidb&quot;
+    spark.executor.instances = 2
+    spark.executor.cores = 1
+    spark.executor.memory = &quot;1g&quot;
+    # Set for TiSpark
+    spark.tispark.pd.addresses = &quot;localhost:2379&quot;
+    spark.sql.extensions = &quot;org.apache.spark.sql.TiExtensions&quot;
+}
+input {
+    tidb {
+        database = &quot;nginx&quot;
+        pre_sql = &quot;select * from nginx.access_log&quot;
+        table_name = &quot;spark_table&quot;
+    }
+}
+filter {
+    sql {
+        table_name = &quot;spark_nginx_log&quot;
+        sql = &quot;select count(*) as hit, domain, status, substring(datetime, 1, 10) as date from spark_nginx_log where substring(datetime, 1, 10)=&#x27;2019-01-20&#x27; group by domain, status, substring(datetime, 1, 10)&quot;
+    }
+}
+output {
+    tidb {
+        url = &quot;jdbc:mysql://127.0.0.1:4000/nginx?useUnicode=true&amp;characterEncoding=utf8&quot;
+        table = &quot;access_collect&quot;
+        user = &quot;username&quot;
+        password = &quot;password&quot;
+        save_mode = &quot;append&quot;
+    }
+}
+</code></pre><p>执行命令，指定配置文件，运行 Seatunnel ，即可实现我们的数据处理逻辑。</p><ul><li>Local</li></ul><blockquote><p>./bin/start-seatunnel.sh --config config/tidb.conf --deploy-mode client --master &#x27;local<!-- -->[2]<!-- -->&#x27;</p></blockquote><ul><li>yarn-client</li></ul><blockquote><p>./bin/start-seatunnel.sh --config config/tidb.conf --deploy-mode client --master yarn</p></blockquote><ul><li>yarn-cluster</li></ul><blockquote><p>./bin/start-seatunnel.sh --config config/tidb.conf --deploy-mode cluster -master yarn</p></blockquote><p>如果是本机测试验证逻辑，用本地模式（Local）就可以了，一般生产环境下，都是使用<code>yarn-client</code>或者<code>yarn-cluster</code>模式。</p><h4>检查结果</h4><pre><code>mysql&gt; select * from access_collect;
++------------+--------+--------+------+
+| date       | domain | status | hit  |
++------------+--------+--------+------+
+| 2019-01-20 | b.com  |    200 |   63 |
+| 2019-01-20 | a.com  |    200 |   85 |
++------------+--------+--------+------+
+2 rows in set (0.21 sec)
+</code></pre><h2>总结</h2><p>在这篇文章中，我们介绍了如何使用 Seatunnel 从 TiDB 中读取数据，做简单的数据处理之后写入 TiDB 另外一个表中。仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码。</p><p>除了支持 TiDB 数据源之外，Seatunnel 同样支持Elasticsearch, Kafka, Kudu, ClickHouse等数据源。</p><p><strong>于此同时，我们正在研发一个重要功能，就是在 Seatunnel 中，利用 TiDB 的事务特性，实现从 Kafka 到 TiDB 流式数据处理，并且支持端（Kafka）到端（TiDB）的 Exactly-Once 数据一致性。</strong></p><p>希望了解 Seatunnel 和 TiDB，ClickHouse、Elasticsearch、Kafka结合使用的更多功能和案例，可以直接进入官网 <a href="https://seatunnel.apache.org/">https://seatunnel.apache.org/</a></p><h2>联系我们</h2><ul><li>邮件列表 : <strong><a href="mailto:dev@seatunnel.apache.org">dev@seatunnel.apache.org</a></strong>. 发送任意内容至 <code>dev-subscribe@seatunnel.apache.org</code>， 按照回复订阅邮件列表。</li><li>Slack: 发送 <code>Request to join SeaTunnel slack</code> 邮件到邮件列表 (<code>dev@seatunnel.apache.org</code>), 我们会邀请你加入（在此之前请确认已经注册Slack）.</li><li><a href="https://space.bilibili.com/1542095008">bilibili B站 视频</a></li></ul><p>-- Power by <a href="https://github.com/InterestingLab">InterestingLab</a></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[如何支持的 Spark StructuredStreaming]]></title>
+            <link>https://seatunnel.apache.org/zh-CN/blog/spark-structured-streaming</link>
+            <guid>spark-structured-streaming</guid>
+            <pubDate>Thu, 30 Dec 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[前言]]></description>
+            <content:encoded><![CDATA[<h3>前言</h3><p>StructuredStreaming是Spark 2.0以后新开放的一个模块，相比SparkStreaming，它有一些比较突出的优点：<br/> <!-- --> <!-- --> <!-- -->一、它能做到更低的延迟;<br/>
+<!-- --> <!-- --> <!-- -->二、可以做实时的聚合，例如实时计算每天每个商品的销售总额；<br/>
+<!-- --> <!-- --> <!-- -->三、可以做流与流之间的关联，例如计算广告的点击率，需要将广告的曝光记录和点击记录关联。<br/>
+以上几点如果使用SparkStreaming来实现可能会比较麻烦或者说是很难实现，但是使用StructuredStreaming实现起来会比较轻松。</p><h3>如何使用StructuredStreaming</h3><p>可能你没有详细研究过StructuredStreaming，但是发现StructuredStreaming能很好的解决你的需求，如何快速利用StructuredStreaming来解决你的需求？目前社区有一款工具 <strong>Seatunnel</strong>，项目地址：<a href="https://github.com/apache/incubator-seatunnel">https://github.com/apache/incubator-seatunnel</a> ,
+可以高效低成本的帮助你利用StructuredStreaming来完成你的需求。</p><h3>Seatunnel</h3><p>Seatunnel 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中</p><h3>准备工作</h3><p>首先我们需要安装 Seatunnel，安装十分简单，无需配置系统环境变量</p><ol><li>准备Spark环境</li><li>安装 Seatunnel</li><li>配置 Seatunnel</li></ol><p>以下是简易步骤，具体安装可以参照 <a href="/docs/quick-start">Quick Start</a></p><pre><code>cd /usr/local
+wget https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+tar -xvf https://archive.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+wget https://github.com/InterestingLab/seatunnel/releases/download/v1.3.0/seatunnel-1.3.0.zip
+unzip seatunnel-1.3.0.zip
+cd seatunnel-1.3.0
+
+vim config/seatunnel-env.sh
+# 指定Spark安装路径
+SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
+</code></pre><h3>Seatunnel Pipeline</h3><p>我们仅需要编写一个 Seatunnel Pipeline的配置文件即可完成数据的导入。</p><p>配置文件包括四个部分，分别是Spark、Input、filter和Output。</p><h4>Spark</h4><p>这一部分是Spark的相关配置，主要配置Spark执行时所需的资源大小。</p><pre><code>spark {
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+}
+</code></pre><h4>Input</h4><p>下面是一个从kafka读取数据的例子</p><pre><code>kafkaStream {
+    topics = &quot;seatunnel&quot;
+    consumer.bootstrap.servers = &quot;localhost:9092&quot;
+    schema = &quot;{\&quot;name\&quot;:\&quot;string\&quot;,\&quot;age\&quot;:\&quot;integer\&quot;,\&quot;addrs\&quot;:{\&quot;country\&quot;:\&quot;string\&quot;,\&quot;city\&quot;:\&quot;string\&quot;}}&quot;
+}
+</code></pre><p>通过上面的配置就可以读取kafka里的数据了 ，topics是要订阅的kafka的topic，同时订阅多个topic可以以逗号隔开，consumer.bootstrap.servers就是Kafka的服务器列表，schema是可选项，因为StructuredStreaming从kafka读取到的值(官方固定字段value)是binary类型的，详见<a href="http://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html">http://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html</a>
+但是如果你确定你kafka里的数据是json字符串的话，你可以指定schema，input插件将按照你指定的schema解析</p><h4>Filter</h4><p>下面是一个简单的filter例子</p><pre><code>filter{
+    sql{
+        table_name = &quot;student&quot;
+        sql = &quot;select name,age from student&quot;
+    }
+}
+</code></pre><p><code>table_name</code>是注册成的临时表名，以便于在下面的sql使用</p><h4>Output</h4><p>处理好的数据往外输出，假设我们的输出也是kafka</p><pre><code>output{
+    kafka {
+        topic = &quot;seatunnel&quot;
+        producer.bootstrap.servers = &quot;localhost:9092&quot;
+        streaming_output_mode = &quot;update&quot;
+        checkpointLocation = &quot;/your/path&quot;
+    }
+}
+</code></pre><p><code>topic</code> 是你要输出的topic，<code> producer.bootstrap.servers</code>是kafka集群列表，<code>streaming_output_mode</code>是StructuredStreaming的一个输出模式参数，有三种类型<code>append|update|complete</code>，具体使用参见文档<a href="http://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-modes">http://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-modes</a></p><p><code>checkpointLocation</code>是StructuredStreaming的checkpoint路径，如果配置了的话，这个目录会存储程序的运行信息，比如程序退出再启动的话会接着上次的offset进行消费。</p><h3>场景分析</h3><p>以上就是一个简单的例子，接下来我们就来介绍的稍微复杂一些的业务场景</p><h4>场景一：实时聚合场景</h4><p>假设现在有一个商城，上面有10种商品，现在需要实时求每天每种商品的销售额，甚至是求每种商品的购买人数（不要求十分精确）。
+这么做的巨大的优势就是海量数据可以在实时处理的时候，完成聚合，再也不需要先将数据写入数据仓库，再跑离线的定时任务进行聚合，
+操作起来还是很方便的。</p><p>kafka的数据如下</p><pre><code>{&quot;good_id&quot;:&quot;abc&quot;,&quot;price&quot;:300,&quot;user_id&quot;:123456,&quot;time&quot;:1553216320}
+</code></pre><p>那我们该怎么利用 Seatunnel 来完成这个需求呢，当然还是只需要配置就好了。</p><pre><code>#spark里的配置根据业务需求配置
+spark {
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+}
+
+#配置input
+input {
+    kafkaStream {
+        topics = &quot;good_topic&quot;
+        consumer.bootstrap.servers = &quot;localhost:9092&quot;
+        schema = &quot;{\&quot;good_id\&quot;:\&quot;string\&quot;,\&quot;price\&quot;:\&quot;integer\&quot;,\&quot;user_id\&quot;:\&quot;Long\&quot;,\&quot;time\&quot;:\&quot;Long\&quot;}&quot;
+    }
+}
+
+#配置filter    
+filter {
+    
+    #在程序做聚合的时候，内部会去存储程序从启动开始的聚合状态，久而久之会导致OOM,如果设置了watermark，程序自动的会去清理watermark之外的状态
+    #这里表示使用ts字段设置watermark，界限为1天
+
+    Watermark {
+        time_field = &quot;time&quot;
+        time_type = &quot;UNIX&quot;              #UNIX表示时间字段为10为的时间戳，还有其他的类型详细可以查看插件文档
+        time_pattern = &quot;yyyy-MM-dd&quot;     #这里之所以要把ts对其到天是因为求每天的销售额，如果是求每小时的销售额可以对其到小时`yyyy-MM-dd HH`
+        delay_threshold = &quot;1 day&quot;
+        watermark_field = &quot;ts&quot;          #设置watermark之后会新增一个字段，`ts`就是这个字段的名字
+    }
+    
+    #之所以要group by ts是要让watermark生效，approx_count_distinct是一个估值，并不是精确的count_distinct
+    sql {
+        table_name = &quot;good_table_2&quot;
+        sql = &quot;select good_id,sum(price) total, approx_count_distinct(user_id) person from good_table_2 group by ts,good_id&quot;
+    }
+}
+
+#接下来我们选择将结果实时输出到Kafka
+output{
+    kafka {
+        topic = &quot;seatunnel&quot;
+        producer.bootstrap.servers = &quot;localhost:9092&quot;
+        streaming_output_mode = &quot;update&quot;
+        checkpointLocation = &quot;/your/path&quot;
+    }
+}
+
+</code></pre><p>如上配置完成，启动 Seatunnel，就可以获取你想要的结果了。</p><h4>场景二：多个流关联场景</h4><p>假设你在某个平台投放了广告，现在要实时计算出每个广告的CTR(点击率)，数据分别来自两个topic，一个是广告曝光日志，一个是广告点击日志,
+此时我们就需要把两个流数据关联到一起做计算，而 Seatunnel 最近也支持了此功能，让我们一起看一下该怎么做：</p><p>点击topic数据格式</p><pre><code>{&quot;ad_id&quot;:&quot;abc&quot;,&quot;click_time&quot;:1553216320,&quot;user_id&quot;:12345}
+
+</code></pre><p>曝光topic数据格式</p><pre><code>{&quot;ad_id&quot;:&quot;abc&quot;,&quot;show_time&quot;:1553216220,&quot;user_id&quot;:12345}
+
+</code></pre><pre><code>#spark里的配置根据业务需求配置
+spark {
+  spark.app.name = &quot;seatunnel&quot;
+  spark.executor.instances = 2
+  spark.executor.cores = 1
+  spark.executor.memory = &quot;1g&quot;
+}
+
+#配置input
+input {
+    
+    kafkaStream {
+        topics = &quot;click_topic&quot;
+        consumer.bootstrap.servers = &quot;localhost:9092&quot;
+        schema = &quot;{\&quot;ad_id\&quot;:\&quot;string\&quot;,\&quot;user_id\&quot;:\&quot;Long\&quot;,\&quot;click_time\&quot;:\&quot;Long\&quot;}&quot;
+        table_name = &quot;click_table&quot;
+    }
+    
+    kafkaStream {
+        topics = &quot;show_topic&quot;
+        consumer.bootstrap.servers = &quot;localhost:9092&quot;
+        schema = &quot;{\&quot;ad_id\&quot;:\&quot;string\&quot;,\&quot;user_id\&quot;:\&quot;Long\&quot;,\&quot;show_time\&quot;:\&quot;Long\&quot;}&quot;
+        table_name = &quot;show_table&quot;
+    }
+}
+
+filter {
+    
+    #左关联右表必须设置watermark
+    #右关左右表必须设置watermark
+    #http://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#inner-joins-with-optional-watermarking
+    Watermark {
+              source_table_name = &quot;click_table&quot; #这里可以指定为某个临时表添加watermark，不指定的话就是为input中的第一个
+              time_field = &quot;time&quot;
+              time_type = &quot;UNIX&quot;               
+              delay_threshold = &quot;3 hours&quot;
+              watermark_field = &quot;ts&quot; 
+              result_table_name = &quot;click_table_watermark&quot; #添加完watermark之后可以注册成临时表，方便后续在sql中使用
+    }
+    
+    Watermark {
+                source_table_name = &quot;show_table&quot; 
+                time_field = &quot;time&quot;
+                time_type = &quot;UNIX&quot;               
+                delay_threshold = &quot;2 hours&quot;
+                watermark_field = &quot;ts&quot; 
+                result_table_name = &quot;show_table_watermark&quot; 
+     }
+    
+    
+    sql {
+        table_name = &quot;show_table_watermark&quot;
+        sql = &quot;select a.ad_id,count(b.user_id)/count(a.user_id) ctr from show_table_watermark as a left join click_table_watermark as b on a.ad_id = b.ad_id and a.user_id = b.user_id &quot;
+    }
+    
+}
+
+#接下来我们选择将结果实时输出到Kafka
+output {
+    kafka {
+        topic = &quot;seatunnel&quot;
+        producer.bootstrap.servers = &quot;localhost:9092&quot;
+        streaming_output_mode = &quot;append&quot; #流关联只支持append模式
+        checkpointLocation = &quot;/your/path&quot;
+    }
+}
+</code></pre><p>通过配置，到这里流关联的案例也完成了。</p><h3>结语</h3><p>通过配置能很快的利用StructuredStreaming做实时数据处理，但是还是需要对StructuredStreaming的一些概念了解，比如其中的watermark机制，还有程序的输出模式。</p><p>最后，Seatunnel 当然还支持spark streaming和spark 批处理。
+如果你对这两个也感兴趣的话，可以阅读我们以前发布的文章《<a href="2021-12-30-hive-to-clickhouse.md">如何快速地将Hive中的数据导入ClickHouse</a>》、
+《<a href="2021-12-30-spark-execute-tidb.md">优秀的数据工程师，怎么用Spark在TiDB上做OLAP分析</a>》、
+《<a href="2021-12-30-spark-execute-elasticsearch.md">如何使用Spark快速将数据写入Elasticsearch</a>》</p><p>希望了解 Seatunnel 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 <a href="https://seatunnel.apache.org/">https://seatunnel.apache.org/</a></p><h2>联系我们</h2><ul><li>邮件列表 : <strong><a href="mailto:dev@seatunnel.apache.org">dev@seatunnel.apache.org</a></strong>. 发送任意内容至 <code>dev-subscribe@seatunnel.apache.org</code>， 按照回复订阅邮件列表。</li><li>Slack: 发送 <code>Request to join SeaTunnel slack</code> 邮件到邮件列表 (<code>dev@seatunnel.apache.org</code>), 我们会邀请你加入（在此之前请确认已经注册Slack）.</li><li><a href="https://space.bilibili.com/1542095008">bilibili B站 视频</a></li></ul>]]></content:encoded>
         </item>
     </channel>
 </rss>

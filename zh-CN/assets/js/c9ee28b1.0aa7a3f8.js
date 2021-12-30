@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[7495],{2100:function(e){e.exports=JSON.parse('{"allTagsPath":"/zh-CN/blog/tags","slug":"/zh-CN/blog/tags/hola","name":"hola","count":1,"permalink":"/zh-CN/blog/tags/hola"}')}}]);
