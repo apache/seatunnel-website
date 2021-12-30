@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://seatunnel.apache.org/blog"/>
     <subtitle>Apache SeaTunnel Blog</subtitle>
-    <icon>https://seatunnel.apache.org/img/favicon.ico</icon>
+    <icon>https://seatunnel.apache.org/image/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
