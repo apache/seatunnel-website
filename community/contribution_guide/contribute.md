@@ -303,12 +303,6 @@ decisions are discussed in ISSUE.
             // SeaTunnel-12345: a short description of the test
             ...
           ```
-        - Python
-          ```
-          def test_case(self):
-              # SeaTunnel-12345: a short description of the test
-              ...
-          ```
 
 <h3>The review process</h3>
 
