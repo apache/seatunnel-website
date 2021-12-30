@@ -11,7 +11,7 @@ const config = {
     baseUrl: '/',
     onBrokenLinks: 'ignore',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/favicon.ico',
+    favicon: 'image/favicon.ico',
     organizationName: 'Apache SeaTunnel',
     projectName: 'Apache SeaTunnel',
     i18n: {
@@ -61,7 +61,7 @@ const config = {
             title: 'Apache SeaTunnel',
             logo: {
                 alt: 'Apache SeaTunnel Logo',
-                src: 'img/logo.png',
+                src: 'image/logo.png',
             },
             items: [
                 {
@@ -75,10 +75,14 @@ const config = {
                     label: 'Document',
                     items: [
                         {
-                            "label": "1.x(Not apache release)",
-                            "to": "https://interestinglab.github.io/seatunnel-docs"
+                            label: "Next-2.x (WIP)",
+                            to: "/docs/introduction",
+                        },
+                        {
+                            label: "1.x(Not apache release)",
+                            to: "https://interestinglab.github.io/seatunnel-docs"
                         }
-                    ],
+                    ]
                 },
                 {
                     to: 'https://github.com/InterestingLab/seatunnel/releases',
@@ -171,7 +175,7 @@ const config = {
                     ],
                 }
             ],
-            copyright: `<div><img style="height:50px" alt="Apache Software Foundation" src="/img/incubator-logo.svg" /><p style="color: #999999;  padding: 0 20px 30px;font-weight:400;text-align:left">Apache SeaTunnel is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p></p>
+            copyright: `<div><img style="height:50px" alt="Apache Software Foundation" src="/image/incubator-logo.svg" /><p style="color: #999999;  padding: 0 20px 30px;font-weight:400;text-align:left">Apache SeaTunnel is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p></p>
              <p style="padding: 0 20px 30px;color: #999999;font-weight: 400;"> Copyright © ${new Date().getFullYear()} The Apache Software Foundation. Licensed under the Apache License, Version 2.0. Apache SeaTunnel, Apache Incubator, Apache, the Apache feather logo, the Apache SeaTunnel Logo and the Apache Incubator project logo are trademarks of The Apache Software Foundation.</p>
              <div>`,
         },

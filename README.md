@@ -56,9 +56,12 @@ This website is compiled using node, using Docusaurus framework components
 |   |-- styles
 |-- static // Picture static resource
 |   |-- doc  // document picture
+|        |-- image //document common picture
+|        |-- image_en //English document picture
+|        |-- image_zh //Chinese document picture
 |   |-- user // users picture
 |   |-- home // homepage picture
-|   |-- img  // common picture
+|   |-- image  // common picture
 |-- docusaurus.config.js
 
 ```
@@ -73,7 +76,7 @@ Positive example: `scripts / styles / components / images / utils / layouts / de
 
 Counter example: `script / style / demoStyles / imgs / docs`
 
-### 3.2 Vue and the naming convention of static resource files
+### 3.2 javascript and the naming convention of static resource files
 
 All lowercase, separated by a dash
 

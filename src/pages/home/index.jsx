@@ -60,7 +60,11 @@ export default function () {
                         <p className="paragraph">{dataSource.home.architecture.desc}</p>
                         <div className="bold_dot" style={{top: '64px', left: '416px'}}></div>
                         <div className="bold_dot" style={{top: '700px', left: '240px'}}></div>
-                        <img src={useBaseUrl('/home/processes.svg')} alt="Architecture" className="architecture-image"/>
+
+                        <div className="architecture-image">
+                            <img className="button_icon github1" src={useBaseUrl('/home/processes_' + (language === 'en' ? 'en' : 'zh')  + '.svg')} alt="System Architecture"/>
+                        </div>
+
                         <svg width="860" height="860" viewBox="0 0 100 100">
                             <circle cx="50" cy="50" r="49.8" className="dotted"/>
                         </svg>

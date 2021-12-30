@@ -60,7 +60,7 @@ Databricks 开源的 Apache Spark 对于分布式数据处理来说是一个伟�
 Input/Source[数据源输入] -> Filter/Transform[数据处理] -> Output/Sink[结果输出]
 ```
 
-![wd-workflow](/doc/wd-workflow.png ':size=300%')
+![wd-workflow](/doc/image_zh/wd-workflow.png ':size=300%')
 
 多个Filter构建了数据处理的Pipeline，满足各种各样的数据处理需求，如果您熟悉SQL，也可以直接通过SQL构建数据处理的Pipeline，简单高效。目前seatunnel支持的[Filter列表](https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/filter-plugin), 仍然在不断扩充中。您也可以开发自己的数据处理插件，整个系统是易于扩展的。
 
@@ -106,25 +106,25 @@ Elasticsearch, File, Hdfs, Jdbc, Kafka, Mysql, S3, Stdout, 自行开发的Output
 
 * [新浪](http://www.sina.com.cn/), 大数据运维分析平台
 
-![新浪 Logo](/doc/sina-logo.png ':size=170%')
+![新浪 Logo](/doc/image_zh/sina-logo.png ':size=170%')
 
 新浪运维数据分析平台使用seatunnel为新浪新闻，CDN等服务做运维大数据的实时和离线分析，并写入Clickhouse。
 
 * [字节跳动](https://bytedance.com/zh)，广告数据平台
 
-![字节跳动 Logo](/doc/bytedance-logo.jpeg ':size=40%')
+![字节跳动 Logo](/doc/image_zh/bytedance-logo.jpeg ':size=40%')
 
 字节跳动使用seatunnel实现了多源数据的关联分析(如Hive和ES的数据源关联查询分析)，大大简化了不同数据源之间的分析对比工作，并且节省了大量的Spark程序的学习和开发时间。
 
 * [搜狗](http://agent.e.sogou.com/)，搜狗奇点系统
 
-![搜狗 Logo](/doc/sougou-logo.png ':size=40%')
+![搜狗 Logo](/doc/image_zh/sougou-logo.png ':size=40%')
 
 搜狗奇点系统使用 seatunnel 作为 etl 工具, 帮助建立实时数仓体系
 
 * [趣头条](https://www.qutoutiao.net/)，趣头条数据中心
 
-![趣头条 Logo](/doc/qutoutiao-logo.jpg ':size=40%')
+![趣头条 Logo](/doc/image_zh/qutoutiao-logo.jpg ':size=40%')
 
  趣头条数据中心，使用seatunnel支撑mysql to hive的离线etl任务、实时hive to clickhouse的backfill技术支撑，很好的cover离线、实时大部分任务场景。
 
@@ -134,25 +134,25 @@ Elasticsearch, File, Hdfs, Jdbc, Kafka, Mysql, S3, Stdout, 自行开发的Output
 
 * 永辉超市子公司-永辉云创，会员电商数据分析平台
 
-![永辉云创 Logo](/doc/yonghuiyunchuang-logo.png)
+![永辉云创 Logo](/doc/image_zh/yonghuiyunchuang-logo.png)
 
 seatunnel 为永辉云创旗下新零售品牌永辉生活提供电商用户行为数据实时流式与离线SQL计算。
 
 * 水滴筹, 数据平台
 
-![水滴筹 logo](/doc/shuidichou-logo.jpg ':size=130%')
+![水滴筹 logo](/doc/image_zh/shuidichou-logo.jpg ':size=130%')
 
 水滴筹在Yarn上使用seatunnel做实时流式以及定时的离线批处理，每天处理3～4T的数据量，最终将数据写入Clickhouse。
 
 * 浙江乐控信息科技有限公司
 
-![浙江乐控信息科技有限公司 logo](/doc/zhejiang_lekong_xinxi_keji-logo.jpg ':size=130%')
+![浙江乐控信息科技有限公司 logo](/doc/image_zh/zhejiang_lekong_xinxi_keji-logo.jpg ':size=130%')
 
 Watedrop 为浙江乐控信息科技有限公司旗下乐控智能提供物联网交互数据实时流sql分析(Structured Streaming 引擎)和离线数据分析。每天处理的数据量8千万到一亿条数据 最终数据落地到kafka和mysql数据库。
 
 * [上海分蛋信息科技](https://91fd.com)，大数据数据分析平台
 
-![上海分蛋信息科技 logo](/doc/fendan-keji-logo.jpeg ':size=70%')
+![上海分蛋信息科技 logo](/doc/image_zh/fendan-keji-logo.jpeg ':size=70%')
 
 分蛋科技使用seatunnel做数据仓库实时同步，近百个Pipeline同步处理；数据流实时统计，数据平台指标离线计算。
 

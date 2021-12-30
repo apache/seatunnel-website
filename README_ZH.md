@@ -53,11 +53,14 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 |   |   |-- team
 |   |   |-- user
 |   |-- styles
-|-- static //图片静态资源
-|   |-- doc  //文档的图片
+|-- static //静态资源
+|   |-- doc  //文档的静态资源
+|        |-- image //文档通用图片
+|        |-- image_en //英文文档图片
+|        |-- image_zh //中文文档图片
 |   |-- user //用户的图片
 |   |-- home //首页的图片
-|   |-- img  //公用图片
+|   |-- image  //模块公用图片
 |-- docusaurus.config.js
 
 ```
@@ -72,7 +75,7 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 
 反例： `script / style / demoStyles / imgs / docs`
 
-### 3.2 vue以及静态资源文件命名规范
+### 3.2 javascript 以及静态资源文件命名规范
 
 全部采用小写方式， 以中划线分隔
 
