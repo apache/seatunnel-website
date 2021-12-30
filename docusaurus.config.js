@@ -37,13 +37,13 @@ const config = {
                     sidebarCollapsible: true,
                     editLocalizedFiles: true,
                     // Please change this to your repo.
-                    editUrl: 'https://github.com/apache/incubator-seatunnel-website/edit/dev/',
+                    editUrl: 'https://github.com/apache/incubator-seatunnel-website/edit/main/',
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     editUrl:
-                        'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                        'https://github.com/apache/incubator-seatunnel-website/edit/main/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -93,6 +93,12 @@ const config = {
                     label: 'Community',
                     position: 'right',
                     to: '/community/contribution_guide/contribute'
+                },
+                {
+                    to: '/blog',
+                    label: 'Blog',
+                    position: 'right',
+                    activeBaseRegex: `/blog`,
                 },
                 {
                     to: '/team',
