@@ -62,7 +62,7 @@ export default function () {
                         <div className="bold_dot" style={{top: '700px', left: '240px'}}></div>
 
                         <div className="architecture-image">
-                            <img className="button_icon github1" src={useBaseUrl('/home/processes_' + (language === 'en' ? 'en' : 'zh')  + '.svg')} alt="System Architecture"/>
+                            <img className="button_icon github1" src={useBaseUrl('/image/seatunnel-workflow.svg')} alt="System Architecture"/>
                         </div>
 
                         <svg width="860" height="860" viewBox="0 0 100 100">
