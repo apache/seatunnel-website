@@ -15,7 +15,7 @@ So, this guide organizes contributions in order that they should probably be con
 contributors who intend to get involved long-term. Build some track record of helping others,
 rather than just open pull requests.
 
-<h2>Contributing by helping other users</h2>
+## Contributing by helping other users
 
 A great way to contribute to SeaTunnel is to help answer user questions on the `dev@seatunnel.apache.org`
 mailing list or on StackOverflow. There are always many new SeaTunnel users; taking a few minutes to
@@ -29,14 +29,14 @@ See the [Mailing Lists guide](https://lists.apache.org/list.html?dev@seatunnel.a
 about how to effectively participate in discussions on the mailing list, as well as forums
 like ISSUE.
 
-<h2>Contributing by testing releases</h2>
+## Contributing by testing releases
 
 SeaTunnel's release process is community-oriented, and members of the community can vote on new
 releases on the `dev@seatunnel.apache.org` mailing list. SeaTunnel users are invited to subscribe to
 this list to receive announcements, and test their workloads on newer release and provide
 feedback on any performance or correctness issues found in the newer release.
 
-<h2>Contributing by reviewing changes</h2>
+## Contributing by reviewing changes
 
 Changes to SeaTunnel source code are proposed, reviewed and committed via
 [GitHub pull requests ](https://github.com/apache/incubator-seatunnel/pulls) (described later).
@@ -45,7 +45,7 @@ Reviewing others' changes is a good way to learn how the change process works an
 to activity in various parts of the code. You can help by reviewing the changes and asking
 questions or pointing out issues -- as simple as typos or small issues of style.
 
-<h2>Contributing documentation changes</h2>
+## Contributing documentation changes
 
 To propose a change to _release_ documentation (that is, docs that appear under
 [docs](https://github.com/apache/incubator-seatunnel/tree/dev/docs)
@@ -59,7 +59,7 @@ To propose a change to the rest of the documentation (that is, docs that do _not
 [docs](https://github.com/apache/incubator-seatunnel/tree/dev/docs) , similarly, edit the Markdown in the
 [website](https://github.com/apache/incubator-seatunnel-website) and open a pull request.
 
-<h2>Contributing bug reports</h2>
+## Contributing bug reports
 
 Ideally, bug reports are accompanied by a proposed code change to fix the bug. This isn't
 always possible, as those who discover a bug may not have the experience to fix it. A bug
@@ -87,7 +87,7 @@ accompanied by detail, such as a design document and/or code change. Large new c
 should consider be discussed on the mailing list first.
 Feature requests may be rejected, or closed after a long period of inactivity.
 
-<h2>Contributing to ISSUE maintenance</h2>
+## Contributing to ISSUE maintenance
 
 Given the sheer volume of issues raised in the Apache SeaTunnel ISSUE, inevitably some issues are
 duplicates, or become obsolete and eventually fixed otherwise, or can't be reproduced, or could
@@ -118,9 +118,9 @@ When resolving ISSUEs, observe a few useful conventions:
 - Umbrellas are frequently marked **Done** if they are just container issues that don't correspond
   to an actionable change of their own
 
-<h2>Preparing to contribute code changes</h2>
+## Preparing to contribute code changes
 
-<h3>Choosing what to contribute</h3>
+### Choosing what to contribute
 
 Review can take hours or days of committer time. Everyone benefits if contributors focus on
 changes that are useful, clear, easy to evaluate, and already pass basic checks.
@@ -151,7 +151,7 @@ new and actionable:
 It's worth reemphasizing that changes to the core of SeaTunnel, or to highly complex and important modules are more difficult to make correctly. They will be subjected to more scrutiny
 and held to a higher standard of review than changes to less critical code.
 
-<h3>Error message guidelines</h3>
+### Error message guidelines
 
 Exceptions thrown in SeaTunnel should be associated with standardized and actionable
 error messages.
@@ -172,7 +172,7 @@ When writing error messages, you should:
 - Be direct
 - Do not use programming jargon in user-facing errors
 
-<h3>Code review criteria</h3>
+### Code review criteria
 
 Before considering how to contribute code, it's useful to understand how code is reviewed,
 and why changes may be rejected. See the
@@ -183,7 +183,7 @@ positives, and few negative effects or risks, are much more likely to be merged,
 Risky and less valuable changes are very unlikely to be merged, and may be rejected outright
 rather than receive iterations of review.
 
-<h4>Positives</h4>
+#### Positives
 
 - Fixes the root cause of a bug in existing functionality
 - Adds functionality or fixes a problem needed by a large number of users
@@ -192,7 +192,7 @@ rather than receive iterations of review.
 - Reduces complexity and lines of code
 - Change has already been discussed and is known to committers
 
-<h4>Negatives, risks</h4>
+#### Negatives, risks
 
 - Band-aids a symptom of a bug only
 - Introduces complex new functionality, especially an API that needs to be supported
@@ -203,7 +203,7 @@ rather than receive iterations of review.
 - Adds a large amount of code
 - Makes lots of modifications in one "big bang" change
 
-<h2>Contributing code changes</h2>
+## Contributing code changes
 
 Please review the preceding section before proposing a code change. This section documents how to do so.
 
@@ -213,7 +213,7 @@ this explicitly, by submitting any copyrighted material via pull request, email,
 you agree to license the material under the project's open source license and warrant that you
 have the legal authority to do so.**
 
-<h3>Cloning the Apache SeaTunnel<span class="tm">&trade;</span> source code</h3>
+### Cloning the Apache SeaTunnel<span class="tm">&trade;</span> source code
 
 If you are interested in working with the newest under-development code or contributing to Apache SeaTunnel development, you can check out the master branch from Git:
 
@@ -222,7 +222,7 @@ If you are interested in working with the newest under-development code or contr
 
 Once you've downloaded SeaTunnel, you can find instructions for installing and building it on the [documentation page](https://github.com/apache/incubator-seatunnel/tree/dev/docs)
 
-<h3>ISSUE</h3>
+### ISSUE
 
 Generally, SeaTunnel uses ISSUE to track logical issues, including bugs and improvements, and uses
 GitHub pull requests to manage the review and merge of specific code changes. That is, ISSUEs are
@@ -280,7 +280,7 @@ decisions are discussed in ISSUE.
 1. If the change is a large change, consider inviting discussion on the issue at
    `dev@seatunnel.apache.org` first before proceeding to implement the change.
 
-<h3>Pull request</h3>
+### Pull request
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the GitHub repository at
    [incubator-seatunnel](https://github.com/apache/incubator-seatunnel/) if you haven't already
@@ -304,7 +304,7 @@ decisions are discussed in ISSUE.
             ...
           ```
 
-<h3>The review process</h3>
+### The review process
 
 - Other reviewers, including committers, may comment on the changes and suggest modifications.
   Changes can be added by simply pushing more commits to the same branch.
@@ -326,7 +326,7 @@ decisions are discussed in ISSUE.
   then pushing the result to your branch.
 - Try to be responsive to the discussion rather than let days pass between replies
 
-<h3>Closing your pull request / ISSUE</h3>
+### Closing your pull request / ISSUE
 
 - If a change is accepted, it will be merged and the pull request will automatically be closed,
   along with the associated ISSUE if any
@@ -350,13 +350,13 @@ decisions are discussed in ISSUE.
   the ISSUE is not going to be resolved by any pull request (not a problem, won't fix) then also
   resolve the ISSUE.
 
-<h3>If in doubt</h3>
+### If in doubt
 
 If you're not sure about the right style for something, try to follow the style of the existing
 codebase. Look at whether there are other examples in the code that use your feature. Feel free
 to ask on the `dev@seatunnel.apache.org` list as well and/or ask committers.
 
-<h2>Code of conduct</h2>
+## Code of conduct
 The Apache SeaTunnel project follows the [Apache Software Foundation Code of Conduct](https://www.apache.org/foundation/policies/conduct.html). The [code of conduct](https://www.apache.org/foundation/policies/conduct.html) applies to all spaces managed by the Apache Software Foundation, including IRC, all public and private mailing lists, issue trackers, wikis, blogs, Twitter, and any other communication channel used by our communities. A code of conduct which is specific to in-person events (ie., conferences) is codified in the published ASF anti-harassment policy.
 
 We expect this code of conduct to be honored by everyone who participates in the Apache community formally or informally, or claims any affiliation with the Foundation, in any Foundation-related activities and especially when representing the ASF, in any role.
