@@ -1,0 +1,74 @@
+{
+  "zh-CN": {
+    "common": {
+      "getStart": "快速开始",
+      "architecture": "系统架构",
+      "description": "描述",
+      "learnMore": "了解更多",
+      "coreFeatures": "核心特性",
+      "components": "组件丰富",
+      "scalability": "高扩展性",
+      "batchStream": "批流一体",
+      "simplicity": "简单易用",
+      "stable": "成熟稳定",
+      "ourUsers": "Our Users",
+      "readMore": "阅读更多",
+      "download": "下载",
+      "releaseDate": "发布日期",
+      "newFeatures": "新特性",
+      "enhancement": "增强点",
+      "bugFixs": "Bug修复",
+      "changeLog": "详细变更"
+    },
+    "home": {
+      "banner": {
+        "slogan": "下一代高性能、分布式、海量数据集成框架"
+      },
+      "feature": {
+        "components": "内置丰富插件,支持各种数据产品方便快捷的传输和集成数据",
+        "scalability": "基于模块化和插件化设计,支持热插拔, 带来更好的扩展性",
+        "simplicity": "特有的架构设计下,使得开发配置更简单,几乎零代码,无使用成本",
+        "stable": "经历多家企业,大规模生产环境使用和海量数据的洗礼,稳定健壮"
+      },
+      "architecture": {
+        "desc": "Apache SeaTunnel是下一代高性能、分布式、海量数据集成框架。通过我们的努力让Spark的使用更简单，更高效，并将业界和我们使用Spark的优质经验固化到seatunnel这个产品中，明显减少学习成本，加快分布式数据处理能力在生产环境落地."
+      }
+    }
+  },
+  "en": {
+    "common": {
+      "getStart": "Quick Start",
+      "architecture": "System Architecture",
+      "description": "Description",
+      "learnMore": "Learn More",
+      "coreFeatures": "Core Features",
+      "components": "Rich Components",
+      "scalability": "High Scalability",
+      "batchStream": "Batch Flow Integration",
+      "simplicity": "Easy to use",
+      "stable": "Mature & stable",
+      "ourUsers": "Our Users",
+      "readMore": "Read More",
+      "download": "Download",
+      "releaseDate": "Release Date",
+      "newFeatures": "New Features",
+      "enhancement": "Enhancement point",
+      "bugFixs": "Bug Fix",
+      "changeLog": "Change Log"
+    },
+    "home": {
+      "banner": {
+        "slogan": "Next-generation high-performance, distributed, massive data integration framework"
+      },
+      "feature": {
+        "components": "Built-in rich plugins to support the transmission and integration of various data products",
+        "scalability": "Modularization and plugin, support hot swap, bring better scalability",
+        "simplicity": "Unique architecture design,make development and configuration easier",
+        "stable": "Experience the baptism of large-scale production environment use and massive data"
+      },
+      "architecture": {
+        "desc": "Apache SeaTunnel is a next-generation high-performance, distributed, and massive data integration framework. Through our efforts to make the use of Spark simpler and more efficient, and solidify the high-quality experience of the industry and our use of Spark into the product SeaTunnel, it significantly reduces the cost of learning and accelerates the deployment of distributed data processing capabilities in the production environment."
+      }
+    }
+  }
+}

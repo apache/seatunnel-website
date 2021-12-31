@@ -1,0 +1,230 @@
+{
+  "zh-CN": {
+    "info": {
+      "desc": "SeaTunnel 社区由贡献者组成。 贡献者可以直接访问 SeaTunnel 项目的源代码并参与贡献当中(包括但不限于代码的贡献)。 贡献者通过提交补丁和建议来改善项目。 该项目的贡献者数量是无限的。 无论是琐碎的清理工作，重要的新功能还是其他重大的奖励，对 SeaTunnel 所做的所有贡献都将受到极大的赞赏。",
+      "tip": "(排名不分先后)"
+    },
+    "mentor": [
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/219644?v=4",
+        "email": "willem.jiang@gmail.com",
+        "gitUrl": "https://github.com/WillemJiang",
+        "githubId": "WillemJiang",
+        "name": "WillemJiang"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/15965696?v=4",
+        "email": "kezhenxu94@apache.org",
+        "gitUrl": "https://github.com/kezhenxu94",
+        "githubId": "kezhenxu94",
+        "name": "Zhenxu Ke"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/25520639?v=4",
+        "email": "guowei@apache.org",
+        "gitUrl": "https://github.com/William-GuoWei",
+        "githubId": "William-GuoWei",
+        "name": "William Guo"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/1346010?v=4",
+        "email": "djkevincr@apache.org",
+        "gitUrl": "https://github.com/djkevincr",
+        "githubId": "djkevincr",
+        "name": "Kevin Ratnasekera"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/158903?v=4",
+        "email": "jbonofre@apache.org",
+        "gitUrl": "https://github.com/jbonofre",
+        "githubId": "jbonofre",
+        "name": "Jean-Baptiste Onofré"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/10952755?v=4",
+        "email": "",
+        "gitUrl": "https://github.com/tedliu1",
+        "githubId": "tedliu1",
+        "name": "Ted Liu"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/15833811?v=4",
+        "email": "lidongdai@apache.org",
+        "gitUrl": "https://github.com/dailidong",
+        "githubId": "dailidong",
+        "name": "Lidong Dai"
+      }
+    ],
+    "ppmc": [
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/16631152?v=4",
+        "email": "kirs@apache.org",
+        "gitUrl": "https://github.com/CalvinKirs",
+        "githubId": "CalvinKirs",
+        "name": "Calvin Kirs"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/18550072?v=4",
+        "email": "",
+        "gitUrl": "https://github.com/RickyHuo",
+        "githubId": "RickyHuo",
+        "name": "Ricky Huo"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/2291859?v=4",
+        "email": "",
+        "gitUrl": "https://github.com/garyelephant",
+        "githubId": "garyelephant",
+        "name": "Gary Gao"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/41584238?v=4",
+        "email": "lidongdai@apache.org",
+        "gitUrl": "https://github.com/kid-xiong",
+        "githubId": "kid-xiong",
+        "name": "Kid Xiong"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/53861852?v=4",
+        "email": "lidongdai@apache.org",
+        "gitUrl": "https://github.com/nielifeng",
+        "githubId": "nielifeng",
+        "name": "LiFeng Nie"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/15820530?v=4",
+        "email": "zhongjiajie@apache.org",
+        "gitUrl": "https://github.com/zhongjiajie",
+        "githubId": "zhongjiajie",
+        "name": "Jiajie Zhong"
+      }
+    ]
+  },
+  "en": {
+    "info": {
+      "desc": "The SeaTunnel team is comprised of Members and Contributors. Members have direct access to the source of SeaTunnel project and actively evolve the code-base. Contributors improve the project through submission of patches and suggestions to the Members. The number of Contributors to the project is unbounded. All contributions to SeaTunnel are greatly appreciated, whether for trivial cleanups, big new features or other material rewards.",
+      "tip": "(In no particular order)"
+    },
+    "mentor": [
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/219644?v=4",
+        "email": "willem.jiang@gmail.com",
+        "gitUrl": "https://github.com/WillemJiang",
+        "githubId": "WillemJiang",
+        "name": "WillemJiang"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/15965696?v=4",
+        "email": "kezhenxu94@apache.org",
+        "gitUrl": "https://github.com/kezhenxu94",
+        "githubId": "kezhenxu94",
+        "name": "Zhenxu Ke"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/25520639?v=4",
+        "email": "guowei@apache.org",
+        "gitUrl": "https://github.com/William-GuoWei",
+        "githubId": "William-GuoWei",
+        "name": "William Guo"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/1346010?v=4",
+        "email": "djkevincr@apache.org",
+        "gitUrl": "https://github.com/djkevincr",
+        "githubId": "djkevincr",
+        "name": "Kevin Ratnasekera"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/158903?v=4",
+        "email": "jbonofre@apache.org",
+        "gitUrl": "https://github.com/jbonofre",
+        "githubId": "jbonofre",
+        "name": "Jean-Baptiste Onofré"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/10952755?v=4",
+        "email": "",
+        "gitUrl": "https://github.com/tedliu1",
+        "githubId": "tedliu1",
+        "name": "Ted Liu"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/15833811?v=4",
+        "email": "lidongdai@apache.org",
+        "gitUrl": "https://github.com/dailidong",
+        "githubId": "dailidong",
+        "name": "LiDong Dai"
+      }
+    ],
+    "ppmc": [
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/16631152?v=4",
+        "email": "kirs@apache.org",
+        "gitUrl": "https://github.com/CalvinKirs",
+        "githubId": "CalvinKirs",
+        "name": "Calvin Kirs"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/18550072?v=4",
+        "email": "",
+        "gitUrl": "https://github.com/RickyHuo",
+        "githubId": "RickyHuo",
+        "name": "Ricky Huo"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/2291859?v=4",
+        "email": "",
+        "gitUrl": "https://github.com/garyelephant",
+        "githubId": "garyelephant",
+        "name": "Gary Gao"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/41584238?v=4",
+        "email": "lidongdai@apache.org",
+        "gitUrl": "https://github.com/kid-xiong",
+        "githubId": "kid-xiong",
+        "name": "Kid Xiong"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/53861852?v=4",
+        "email": "lidongdai@apache.org",
+        "gitUrl": "https://github.com/nielifeng",
+        "githubId": "nielifeng",
+        "name": "LiFeng Nie"
+      },
+      {
+        "apacheId": "",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/15820530?v=4",
+        "email": "zhongjiajie@apache.org",
+        "gitUrl": "https://github.com/zhongjiajie",
+        "githubId": "zhongjiajie",
+        "name": "Jiajie Zhong"
+      }
+    ]
+  }
+}
