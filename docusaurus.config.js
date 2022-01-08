@@ -113,9 +113,9 @@ const config = {
                     activeBaseRegex: `/user`,
                 },
                 {
-                    to: 'https://github.com/InterestingLab/seatunnel/issues/267',
+                    label: 'FAQ',
                     position: 'right',
-                    label: 'FAQ'
+                    to: '/faq/faq'
                 },
                 {
                     label: 'ASF',
