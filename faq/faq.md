@@ -48,7 +48,7 @@ your string 1
 """${you_var}""" your string 2"""
 ```
 
-refer to：[lightbend/config#456](https://github.com/lightbend/config/issues/456)
+refer to: [lightbend/config#456](https://github.com/lightbend/config/issues/456)
 
 **FAQ 5.** Is SeaTunnel supportted in Azkaban, Oozie, DolphinScheduler?
 
@@ -87,7 +87,7 @@ sink {
 
 **FAQ 7.** Are there any HBase plugins?
 
-There is hbase input plugin, download it from here：https://github.com/garyelephant/waterdrop-input-hbase
+There is hbase input plugin, download it from here: https://github.com/garyelephant/waterdrop-input-hbase
 
 **FAQ 8.** How to use SeaTunnel to write data to Hive?
 
@@ -176,7 +176,7 @@ The following conclusions can be drawn:
 
 2. When data delay occurs, if you want the consumption speed not to be too fast, resulting in spark executor OOM, then you need to configure `spark.streaming.kafka.maxRatePerPartition` <= (`spark.executor.cores` * `spark.executor.instances`) * M / N
 
-3. In general, both M and N are determined, and the conclusion can be drawn from 2：The size of `spark.streaming.kafka.maxRatePerPartition` is positively correlated with the size of `spark.executor.cores` * `spark.executor.instances`, and it can be increased while increasing the resource `maxRatePerPartition` to speed up consumption.
+3. In general, both M and N are determined, and the conclusion can be drawn from 2: The size of `spark.streaming.kafka.maxRatePerPartition` is positively correlated with the size of `spark.executor.cores` * `spark.executor.instances`, and it can be increased while increasing the resource `maxRatePerPartition` to speed up consumption.
 
 ![kafka](/doc/image/faq.assets/kafka.png)
 
@@ -241,7 +241,7 @@ There are 3 ways to configure Logging related parameters (such as Log Level):
   - This will affect all programs submitted via `$SPARK_HOME/bin/spark-submit` 
 - [Not recommended] Modify logging related parameters directly in the Spark code of SeaTunnel
   - This is equivalent to writing dead, and each change needs to be recompiled
-- [Recommended] Use the following methods to change the logging configuration in the SeaTunnel configuration file（It only takes effect after SeaTunnel >= 1.5.5 ）：
+- [Recommended] Use the following methods to change the logging configuration in the SeaTunnel configuration file(It only takes effect after SeaTunnel >= 1.5.5 ): 
 
     ```
     env {
@@ -259,7 +259,7 @@ There are 3 ways to configure Logging related parameters (such as Log Level):
     }
     ```
 
-参考的log4j配置文件内容如下：
+The contents of the log4j configuration file for reference are as follows:
 
 ```
 $ cat log4j.properties
@@ -284,8 +284,8 @@ How to configure logging related parameters in SeaTunnel-v2(Spark, Flink)?
 
 Currently, it cannot be set directly. The user needs to modify the SeaTunnel startup script.The relevant parameters are specified in the task submission command. For specific parameters, please refer to the official document:
 
-- Spark official documentation：http://spark.apache.org/docs/latest/configuration.html#configuring-logging
-- Flink official documentation：https://ci.apache.org/projects/flink/flink-docs-stable/monitoring/logging.html
+- Spark official documentation: http://spark.apache.org/docs/latest/configuration.html#configuring-logging
+- Flink official documentation: https://ci.apache.org/projects/flink/flink-docs-stable/monitoring/logging.html
 
 Reference:
 
@@ -308,13 +308,13 @@ Data conversion, data conversion can be achieved through the following two plug-
 1. Filter Convert plugin
 2. Filter Sql plugin
 
-Detailed data type conversion reference：[https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse%e7%b1%bb%e5%9e%8b%e5%af%b9%e7%85%a7%e8%a1%a8](https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse类型对照表)
+Detailed data type conversion reference: [https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse%e7%b1%bb%e5%9e%8b%e5%af%b9%e7%85%a7%e8%a1%a8](https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse类型对照表)
 
-参考Issue： [#488](https://github.com/apache/incubator-seatunnel/issues/488) [#382](https://github.com/apache/incubator-seatunnel/issues/382)
+Refer to issue:[#488](https://github.com/apache/incubator-seatunnel/issues/488) [#382](https://github.com/apache/incubator-seatunnel/issues/382)
 
 **FAQ 18.** How does SeaTunnel access kerberos-authenticated HDFS, YARN, Hive and other resources?
 
-Please refer to：[#590](https://github.com/apache/incubator-seatunnel/issues/590)
+Please refer to: [#590](https://github.com/apache/incubator-seatunnel/issues/590)
 
 **FAQ 19.** How to troubleshoot NoClassDefFoundError, ClassNotFoundException and other issues?
 
@@ -330,13 +330,13 @@ spark-submit --verbose
 
 **FAQ 20.** How to use SeaTunnel to synchronize data across HDFS clusters?
 
-Just configure hdfs-site.xml properly, refer to：https://www.cnblogs.com/suanec/p/7828139.html
+Just configure hdfs-site.xml properly, refer to: https://www.cnblogs.com/suanec/p/7828139.html
 
 There is an article on how to modify the spark code to complete the configuration(SeaTunnel does not need to do this): https://www.jianshu.com/p/3e84c4c97610
 
 **FAQ 21.** I want to learn the source code of SeaTunnel, where should I start?
 
-SeaTunnel has a completely abstract and structured code implementation, and many people have chosen  SeaTunnel As a way to learn Spark, you can learn the source code from the main program entry：[Seatunnel.java](https://github.com/apache/incubator-seatunnel/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/seatunnel-core/seatunnel-core-base/src/main/java/org/apache/seatunnel/Seatunnel.java)
+SeaTunnel has a completely abstract and structured code implementation, and many people have chosen  SeaTunnel As a way to learn Spark, you can learn the source code from the main program entry: [Seatunnel.java](https://github.com/apache/incubator-seatunnel/blob/72b57b22688f17376fe7e5cf522b4bdd3f62cce0/seatunnel-core/seatunnel-core-base/src/main/java/org/apache/seatunnel/Seatunnel.java)
 
 **FAQ 22.** When SeaTunnel developers develop their own plugins, do they need to understand the SeaTunnel code? Should these code integrated into the SeaTunnel project?
 
