@@ -308,7 +308,7 @@ Data conversion, data conversion can be achieved through the following two plug-
 1. Filter Convert plugin
 2. Filter Sql plugin
 
-Detailed data type conversion reference: [https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse%e7%b1%bb%e5%9e%8b%e5%af%b9%e7%85%a7%e8%a1%a8](https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/configuration/output-plugins/Clickhouse?id=clickhouse类型对照表)
+Detailed data type conversion reference: [ClickHouse Data Type Check List](https://interestinglab.github.io/seatunnel-docs/#/en/configuration/output-plugins/Clickhouse?id=clickhouse-data-type-check-list)
 
 Refer to issue:[#488](https://github.com/apache/incubator-seatunnel/issues/488) [#382](https://github.com/apache/incubator-seatunnel/issues/382)
 
