@@ -113,7 +113,7 @@ const config = {
                     activeBaseRegex: `/user`,
                 },
                 {
-                    to: 'https://github.com/InterestingLab/seatunnel/issues/267',
+                    to: '/faq/faq',
                     position: 'right',
                     label: 'FAQ'
                 },
@@ -164,6 +164,19 @@ const config = {
             style: 'light',
             links: [
                 {
+                    title: 'SeaTunnel',
+                    items: [
+                        {
+                            label: 'FAQ',
+                            href: '/faq/faq',
+                        },
+                        {
+                            label: 'Releases',
+                            href: 'https://github.com/apache/incubator-seatunnel/releases',
+                        },
+                    ],
+                },
+                {
                     title: 'Community',
                     items: [
                         {
@@ -179,7 +192,26 @@ const config = {
                             href: 'https://github.com/apache/incubator-seatunnel/pulls',
                         },
                     ],
-                }
+                },
+                {
+                    title: 'Subscribe Mailing List',
+                    items: [
+                        {
+                            label: 'How to Subscribe',
+                            to: '/community/contribution_guide/subscribe',
+                        },
+                        {
+                            label: 'Subscribe Mail',
+                            href: 'mailto:dev-subscribe@seatunnel.apache.org',
+                        },
+                        {
+                            label: 'Mail Archive',
+                            href: 'https://lists.apache.org/list.html?dev@seatunnel.apache.org',
+                        },
+                    ],
+                },
+
+
             ],
             copyright: `<div><img style="height:50px" alt="Apache Software Foundation" src="/image/incubator-logo.svg" /><p style="color: #999999;  padding: 0 20px 30px;font-weight:400;text-align:left">Apache SeaTunnel is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p></p>
              <p style="padding: 0 20px 30px;color: #999999;font-weight: 400;"> Copyright © ${new Date().getFullYear()} The Apache Software Foundation. Licensed under the Apache License, Version 2.0. Apache SeaTunnel, Apache Incubator, Apache, the Apache feather logo, the Apache SeaTunnel Logo and the Apache Incubator project logo are trademarks of The Apache Software Foundation.</p>
@@ -201,6 +233,28 @@ const config = {
                 id: 'community',
                 path: 'community',
                 routeBasePath: 'community',
+                editUrl: ({locale, versionDocsDirPath, docPath}) => {
+                    if (locale !== 'en') {
+                        return `https://github.com/apache/incubator-seatunnel-website/edit/dev/i18n/${locale}/${docPath}`;
+                    }
+                    return `https://github.com/apache/incubator-seatunnel-website/edit/dev/${versionDocsDirPath}/${docPath}`;
+                },
+                sidebarPath: require.resolve('./sidebars.js'),
+            },
+        ],
+
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'faq',
+                path: 'faq',
+                routeBasePath: 'faq',
+                editUrl: ({locale, versionDocsDirPath, docPath}) => {
+                    if (locale !== 'en') {
+                        return `https://github.com/apache/incubator-seatunnel-website/edit/dev/i18n/${locale}/${docPath}`;
+                    }
+                    return `https://github.com/apache/incubator-seatunnel-website/edit/dev/${versionDocsDirPath}/${docPath}`;
+                },
                 sidebarPath: require.resolve('./sidebars.js'),
             },
         ],
