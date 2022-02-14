@@ -28,7 +28,7 @@ git clone --depth 1 ${WEBSITE_REPO} ${WORK_PATH}/${WEBSITE_NAME}
 echo "===>>>: Clone ${WEBSITE_NAME} repositories"
 git clone --depth 1 ${MAIN_REPO} ${WORK_PATH}/${MAIN_NAME}
 
-echo "===>>>: Replace elements inside MD files"
+echo "===>>>: Replace elements inside md files"
 cp -rf ${WORK_PATH}/${MAIN_NAME}/docs/en/ ${WORK_PATH}/${WEBSITE_NAME}/docs
 
 echo "===>>>: Replace Done"
