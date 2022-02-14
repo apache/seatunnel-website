@@ -1,9 +1,0 @@
-@seatunnelPlugin
-@pluginGroup filter
-@pluginName Remove
-@pluginDesc "删除数据中的字段"
-@pluginAuthor InterestingLab
-@pluginHomepage https://interestinglab.github.io/seatunnel-docs
-@pluginVersion 1.0.0
-
-@pluginOption array source_field yes "需要删除的字段列表"

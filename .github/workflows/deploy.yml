@@ -16,7 +16,9 @@ jobs:
       - uses: actions/setup-node@v2.2.0
         with:
           node-version: 14
-
+      - name: Documents Sync
+        run: |
+          bash ./tools/build-docs.sh
       - name: install
         run: |
           npm install

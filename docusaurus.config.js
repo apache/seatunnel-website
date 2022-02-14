@@ -76,7 +76,7 @@ const config = {
                     items: [
                         {
                             label: "Next-2.x (WIP)",
-                            to: "https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v2/",
+                            to: "/docs/introduction",
                         },
                         {
                             label: "1.x(Not apache release)",
