@@ -17,8 +17,11 @@ fi
 
 echo "===>>>: Start documents sync"
 
+CURRENT_PATH=$(cd "$(dirname "$0")"; pwd)
+echo "===>>>: current path: ${CURRENT_PATH}"
+
 cd ${WORK_PATH}
-echo "===>>>: current path: ${WORK_PATH}"
+echo "===>>>: current work path: ${WORK_PATH}"
 
 echo "===>>>: Clone git repositories"
 
@@ -29,6 +32,11 @@ echo "===>>>: Clone ${WEBSITE_NAME} repositories"
 git clone --depth 1 ${MAIN_REPO} ${WORK_PATH}/${MAIN_NAME}
 
 echo "===>>>: Replace elements inside md files"
-cp -rf ${WORK_PATH}/${MAIN_NAME}/docs/en/* ${WORK_PATH}/${WEBSITE_NAME}/docs
+cp -rf ${WORK_PATH}/${MAIN_NAME}/docs/en/* ${WORK_PATH}/${WEBSITE_NAME}/docs/
 
-echo "===>>>: Replace Done"
+echo "===>>>: Replace docs Done"
+
+echo "===>>>: Copy ${WEBSITE_NAME} to home directory"
+cp -rf ${WORK_PATH}/${WEBSITE_NAME} ~/web
+
+echo "===>>>: Replace web Done"

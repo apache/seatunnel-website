@@ -12,23 +12,29 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2.3.4
-      - uses: actions/setup-node@v2.2.0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
       - name: Documents Sync
         run: |
           bash ./tools/build-docs.sh
+        shell: bash
       - name: install
         run: |
+          cd ~/web
           npm install
       - name: Build
         run: |
+          cd ~/web
           npm run build
-          cp .asf.yaml build
+      - name: Copy .asf.yaml
+        run: |
+          cp .asf.yaml ~/web/build
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3.8.0
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build
+          publish_dir: ~/web/build
           publish_branch: asf-site
