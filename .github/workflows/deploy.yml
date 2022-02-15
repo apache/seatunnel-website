@@ -18,23 +18,22 @@ jobs:
           node-version: 14
       - name: Documents Sync
         run: |
+          chmod -R 775 ./tools/build-docs.sh
           bash ./tools/build-docs.sh
         shell: bash
       - name: install
         run: |
-          cd ~/web
           npm install
       - name: Build
         run: |
-          cd ~/web
           npm run build
       - name: Copy .asf.yaml
         run: |
-          cp .asf.yaml ~/web/build
+          cp .asf.yaml build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: web/build
+          publish_dir: build
           publish_branch: asf-site
