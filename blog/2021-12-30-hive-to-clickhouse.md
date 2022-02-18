@@ -1,22 +1,22 @@
 ---
 slug: hive-to-clickhouse
-title: 如何快速地把 Hive 中的数据导入 ClickHouse
+title: How to quickly import data from Hive into ClickHouse
 tags: [Hive, ClickHouse]
 ---
 
-ClickHouse是面向OLAP的分布式列式DBMS。我们部门目前已经把所有数据分析相关的日志数据存储至ClickHouse这个优秀的数据仓库之中，当前日数据量达到了300亿。
+ClickHouse is a distributed columnar DBMS for OLAP. Our department has stored all log data related to data analysis in ClickHouse, an excellent data warehouse, and the current daily data volume has reached 30 billion.
 
-在之前的文章 [如何快速地把HDFS中的数据导入ClickHouse](2021-12-30-hdfs-to-clickhouse.md) 中我们提到过使用 Seatunnel [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel) 对HDFS中的数据经过很简单的操作就可以将数据写入ClickHouse。HDFS中的数据一般是非结构化的数据，那么针对存储在Hive中的结构化数据，我们应该怎么操作呢？
+In the previous article [How to quickly import data from HDFS into ClickHouse] (2021-12-30-hdfs-to-clickhouse.md), we mentioned the use of Seatunnel [https://github.com/apache/incubator -seatunnel](https://github.com/apache/incubator-seatunnel) After a very simple operation on the data in HDFS, the data can be written to ClickHouse. The data in HDFS is generally unstructured data, so what should we do with the structured data stored in Hive?
 
 ![](/doc/image_zh/hive-logo.png)
 
 ## Hive to ClickHouse
 
-假定我们的数据已经存储在Hive中，我们需要读取Hive表中的数据并筛选出我们关心的字段，或者对字段进行转换，最后将对应的字段写入ClickHouse的表中。
+Assuming that our data has been stored in Hive, we need to read the data in the Hive table and filter out the fields we care about, or convert the fields, and finally write the corresponding fields into the ClickHouse table.
 
 ### Hive Schema
 
-我们在Hive中存储的数据表结构如下，存储的是很常见的Nginx日志
+The structure of the data table we store in Hive is as follows, which stores common Nginx logs.
 
 ```
 CREATE TABLE `nginx_msg_detail`(
@@ -40,7 +40,7 @@ CREATE TABLE `nginx_msg_detail`(
 
 ### ClickHouse Schema
 
-我们的ClickHouse建表语句如下，我们的表按日进行分区
+Our ClickHouse table creation statement is as follows, our table is partitioned by day
 
 ```
 CREATE TABLE cms.cms_msg
@@ -59,27 +59,28 @@ CREATE TABLE cms.cms_msg
 
 ## Seatunnel with ClickHouse
 
-接下来会给大家介绍，我们如何通过 Seatunnel 将Hive中的数据写入ClickHouse中。
+Next, I will introduce to you how we write data from Hive to ClickHouse through Seatunnel.
 
 ### Seatunnel
 
-[Seatunnel](https://github.com/apache/incubator-seatunnel) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中。
+[Seatunnel](https://github.com/apache/incubator-seatunnel) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plug-ins that support reading data from Kafka, HDFS, and Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
 
-Seatunnel的环境准备以及安装步骤这里就不一一赘述了，具体安装步骤可以参考上一篇文章或者访问 [Seatunnel Docs](/docs/introduction)
+The environment preparation and installation steps of Seatunnel will not be repeated here. For specific installation steps, please refer to the previous article or visit [Seatunnel Docs](/docs/introduction)
 
 ### Seatunnel Pipeline
 
-我们仅需要编写一个Seatunnel Pipeline的配置文件即可完成数据的导入。
+We only need to write a configuration file of Seatunnel Pipeline to complete the data import.
 
-配置文件包括四个部分，分别是Spark、Input、filter和Output。
+The configuration file includes four parts, namely Spark, Input, filter and Output.
 
 #### Spark
 
 
-这一部分是Spark的相关配置，主要配置Spark执行时所需的资源大小。
+This part is the related configuration of Spark, which mainly configures the resource size required for Spark execution.
+
 ```
 spark {
-  // 这个配置必需填写
+  // This configuration is required
   spark.sql.catalogImplementation = "hive"
   spark.app.name = "seatunnel"
   spark.executor.instances = 2
@@ -90,7 +91,7 @@ spark {
 
 #### Input
 
-这一部分定义数据源，如下是从Hive文件中读取text格式数据的配置案例。
+This part defines the data source. The following is a configuration example of reading data in text format from a Hive file.
 
 ```
 input {
@@ -101,15 +102,15 @@ input {
 }
 ```
 
-看，很简单的一个配置就可以从Hive中读取数据了。其中`pre_sql`是从Hive中读取数据SQL，`table_name`是将读取后的数据，注册成为Spark中临时表的表名，可为任意字段。
+See, a very simple configuration can read data from Hive. `pre_sql` is the SQL to read data from Hive, and `table_name` is the name of the table that will register the read data as a temporary table in Spark, which can be any field.
 
-需要注意的是，必须保证hive的metastore是在服务状态。
+It should be noted that it must be ensured that the metastore of hive is in the service state.
 
-在Cluster、Client、Local模式下运行时，必须把`hive-site.xml`文件置于提交任务节点的$HADOOP_CONF目录下
+When running in Cluster, Client, Local mode, the `hive-site.xml` file must be placed in the $HADOOP_CONF directory of the submit task node
 
 #### Filter
 
-在Filter部分，这里我们配置一系列的转化，我们这里把不需要的minute和hour字段丢弃。当然我们也可以在读取Hive的时候通过`pre_sql`不读取这些字段
+In the Filter section, here we configure a series of transformations, and here we discard the unnecessary minute and hour fields. Of course, we can also not read these fields through `pre_sql` when reading Hive
 
 ```
 filter {
@@ -120,7 +121,8 @@ filter {
 ```
 
 #### Output
-最后我们将处理好的结构化数据写入ClickHouse
+
+Finally, we write the processed structured data to ClickHouse
 
 ```
 output {
@@ -137,7 +139,7 @@ output {
 
 ### Running Seatunnel
 
-我们将上述四部分配置组合成为我们的配置文件`config/batch.conf`。
+We combine the above four-part configuration into our configuration file `config/batch.conf`.
 
     vim config/batch.conf
 
@@ -147,7 +149,7 @@ spark {
   spark.executor.instances = 2
   spark.executor.cores = 1
   spark.executor.memory = "1g"
-  // 这个配置必需填写
+  // This configuration is required
   spark.sql.catalogImplementation = "hive"
 }
 input {
@@ -173,15 +175,15 @@ output {
 }
 ```
 
-执行命令，指定配置文件，运行 Seatunnel，即可将数据写入ClickHouse。这里我们以本地模式为例。
+Execute the command, specify the configuration file, and run Seatunnel to write data to ClickHouse. Here we take the local mode as an example.
 
     ./bin/start-seatunnel.sh --config config/batch.conf -e client -m 'local[2]'
 
 
 ## Conclusion
 
-在这篇文章中，我们介绍了如何使用 Seatunnel 将Hive中的数据导入ClickHouse中。仅仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码，十分简单。
+In this post, we covered how to import data from Hive into ClickHouse using Seatunnel. The data import can be completed quickly through only one configuration file without writing any code, which is very simple.
 
-希望了解 Seatunnel 与ClickHouse、Elasticsearch、Kafka、Hadoop结合使用的更多功能和案例，可以直接进入官网 [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+If you want to know more functions and cases of Seatunnel combined with ClickHouse, Elasticsearch, Kafka, Hadoop, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)

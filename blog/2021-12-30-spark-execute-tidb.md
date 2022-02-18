@@ -1,36 +1,36 @@
 ---
 slug: spark-execute-tidb
-title: 怎么用 Spark 在 TiDB 上做 OLAP 分析
+title: How to use Spark to do OLAP analysis on TiDB
 tags: [Spark, TiDB]
 ---
 
-# 怎么用Spark在TiDB上做OLAP分析
+# How to use Spark to do OLAP analysis on TiDB
 
 ![](https://download.pingcap.com/images/tidb-planet.jpg)
 
-[TiDB](https://github.com/pingcap/tidb) 是一款定位于在线事务处理/在线分析处理的融合型数据库产品，实现了一键水平伸缩，强一致性的多副本数据安全，分布式事务，实时 OLAP 等重要特性。
+[TiDB](https://github.com/pingcap/tidb) is a fusion database product targeting online transaction processing/online analytical processing. Distributed transactions, real-time OLAP and other important features.
 
-TiSpark 是 PingCAP 为解决用户复杂 OLAP 需求而推出的产品。它借助 Spark 平台，同时融合 TiKV 分布式集群的优势。
+TiSpark is a product launched by PingCAP to solve the complex OLAP needs of users. It uses the Spark platform and integrates the advantages of TiKV distributed clusters.
 
-直接使用 TiSpark 完成 OLAP 操作需要了解 Spark，还需要一些开发工作。那么，有没有一些开箱即用的工具能帮我们更快速地使用 TiSpark 在 TiDB 上完成 OLAP 分析呢？
+Completing OLAP operations with TiSpark directly requires knowledge of Spark and some development work. So, are there some out-of-the-box tools that can help us use TiSpark to complete OLAP analysis on TiDB more quickly?
 
-目前开源社区上有一款工具 **Seatunnel**，项目地址 [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel) ，可以基于Spark，在 TiSpark 的基础上快速实现 TiDB 数据读取和 OLAP 分析。
+At present, there is a tool **Seatunnel** in the open source community, the project address [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel), which can be based on Spark, Quickly implement TiDB data reading and OLAP analysis based on TiSpark.
 
 
-## 使用 Seatunnel 操作TiDB
+## Operating TiDB with Seatunnel
 
-在我们线上有这么一个需求，从 TiDB 中读取某一天的网站访问数据，统计每个域名以及服务返回状态码的访问次数，最后将统计结果写入 TiDB 另外一个表中。 我们来看看 Seatunnel 是如何实现这么一个功能的。
+We have such a requirement online. Read the website access data of a certain day from TiDB, count the number of visits of each domain name and the status code returned by the service, and finally write the statistical results to another table in TiDB. Let's see how Seatunnel implements such a function.
 
 ### Seatunnel
 
-[Seatunnel](https://github.com/apache/incubator-seatunnel) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在 Spark 之上。Seatunnel 拥有着非常丰富的插件，支持从 TiDB、Kafka、HDFS、Kudu 中读取数据，进行各种各样的数据处理，然后将结果写入 TiDB、ClickHouse、Elasticsearch 或者 Kafka 中。
+[Seatunnel](https://github.com/apache/incubator-seatunnel) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plugins that support reading data from TiDB, Kafka, HDFS, Kudu, perform various data processing, and then write the results to TiDB, ClickHouse, Elasticsearch or Kafka.
 
 
-#### 准备工作
+#### Ready to work
 
-##### 1. TiDB 表结构介绍
+##### 1. Introduction to TiDB table structure
 
-**Input**（存储访问日志的表）
+**Input** (table where access logs are stored)
 
 ```
 CREATE TABLE access_log (
@@ -60,7 +60,7 @@ CREATE TABLE access_log (
 +-----------------+--------------+------+------+---------+-------+
 ```
 
-**Output**（存储结果数据的表）
+**Output** (table where result data is stored)
 
 ```
 CREATE TABLE access_collect (
@@ -82,46 +82,46 @@ CREATE TABLE access_collect (
 +--------+-------------+------+------+---------+-------+
 ```
 
-##### 2. 安装 Seatunnel
+##### 2. Install Seatunnel
 
-有了 TiDB 输入和输出表之后， 我们需要安装 Seatunnel，安装十分简单，无需配置系统环境变量
-1. 准备 Spark环境
-2. 安装 Seatunnel
-3. 配置 Seatunnel
+After we have the input and output tables of TiDB, we need to install Seatunnel. The installation is very simple, and there is no need to configure system environment variables
+1. Prepare the Spark environment
+2. Install Seatunnel
+3. Configure Seatunnel
 
-以下是简易步骤，具体安装可以参照 [Quick Start](/docs/quick-start)
+The following are simple steps, the specific installation can refer to [Quick Start](/docs/quick-start)
 
 ```
-# 下载安装Spark
+# Download and install Spark
 cd /usr/local
 wget https://archive.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
 tar -xvf https://archive.apache.org/dist/spark/spark-2.1.0/spark-2.1.0-bin-hadoop2.7.tgz
 wget
-# 下载安装seatunnel
+# Download and install seatunnel
 https://github.com/InterestingLab/seatunnel/releases/download/v1.2.0/seatunnel-1.2.0.zip
 unzip seatunnel-1.2.0.zip
 cd seatunnel-1.2.0
 
 vim config/seatunnel-env.sh
-# 指定Spark安装路径
+# Specify the Spark installation path
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.1.0-bin-hadoop2.7}
 ```
 
 
-### 实现 Seatunnel 处理流程
+### Implement the Seatunnel processing flow
 
-我们仅需要编写一个 Seatunnel 配置文件即可完成数据的读取、处理、写入。
+We only need to write a Seatunnel configuration file to read, process, and write data.
 
-Seatunnel 配置文件由四个部分组成，分别是 `Spark`、`Input`、`Filter` 和 `Output`。`Input` 部分用于指定数据的输入源，`Filter` 部分用于定义各种各样的数据处理、聚合，`Output` 部分负责将处理之后的数据写入指定的数据库或者消息队列。
+The Seatunnel configuration file consists of four parts, `Spark`, `Input`, `Filter` and `Output`. The `Input` part is used to specify the input source of the data, the `Filter` part is used to define various data processing and aggregation, and the `Output` part is responsible for writing the processed data to the specified database or message queue.
 
-整个处理流程为 `Input` -> `Filter` -> `Output`，整个流程组成了 Seatunnel 的 处理流程（Pipeline）。
+The whole processing flow is `Input` -> `Filter` -> `Output`, which constitutes the processing flow (Pipeline) of Seatunnel.
 
-> 以下是一个具体配置，此配置来源于线上实际应用，但是为了演示有所简化。
+> The following is a specific configuration, which is derived from an online practical application, but simplified for demonstration.
 
 
 ##### Input (TiDB)
 
-这里部分配置定义输入源，如下是从 TiDB 一张表中读取数据。
+This part of the configuration defines the input source. The following is to read data from a table in TiDB.
 
     input {
         tidb {
@@ -133,7 +133,7 @@ Seatunnel 配置文件由四个部分组成，分别是 `Spark`、`Input`、`Fil
 
 ##### Filter
 
-在Filter部分，这里我们配置一系列的转化, 大部分数据分析的需求，都是在Filter完成的。Seatunnel 提供了丰富的插件，足以满足各种数据分析需求。这里我们通过 SQL 插件完成数据的聚合操作。
+In the Filter section, here we configure a series of transformations, most of the data analysis requirements are completed in the Filter. Seatunnel provides a wealth of plug-ins enough to meet various data analysis needs. Here we complete the data aggregation operation through the SQL plugin.
 
     filter {
         sql {
@@ -145,7 +145,7 @@ Seatunnel 配置文件由四个部分组成，分别是 `Spark`、`Input`、`Fil
 
 ##### Output (TiDB)
 
-最后， 我们将处理后的结果写入TiDB另外一张表中。TiDB Output是通过JDBC实现的
+Finally, we write the processed results to another table in TiDB. TiDB Output is implemented through JDBC
 
     output {
         tidb {
@@ -159,10 +159,9 @@ Seatunnel 配置文件由四个部分组成，分别是 `Spark`、`Input`、`Fil
 
 ##### Spark
 
-这一部分是 Spark 的相关配置，主要配置 Spark 执行时所需的资源大小以及其他 Spark 配置。
+This part is related to Spark configuration. It mainly configures the resource size required for Spark execution and other Spark configurations.
 
-我们的 TiDB Input 插件是基于 TiSpark 实现的，而 TiSpark 依赖于 TiKV 集群和 Placement Driver (PD)。因此我们需要指定 PD 节点信息以及 TiSpark 相关配置`spark.tispark.pd.addresses`和`spark.sql.extensions`。
-
+Our TiDB Input plugin is implemented based on TiSpark, which relies on TiKV cluster and Placement Driver (PD). So we need to specify PD node information and TiSpark related configuration `spark.tispark.pd.addresses` and `spark.sql.extensions`.
 
     spark {
       spark.app.name = "seatunnel-tidb"
@@ -175,9 +174,9 @@ Seatunnel 配置文件由四个部分组成，分别是 `Spark`、`Input`、`Fil
     }
 
 
-#### 运行 Seatunnel
+#### Run Seatunnel
 
-我们将上述四部分配置组合成我们最终的配置文件 `conf/tidb.conf`
+We combine the above four parts into our final configuration file `conf/tidb.conf`
 
 ```
 spark {
@@ -213,7 +212,7 @@ output {
 }
 ```
 
-执行命令，指定配置文件，运行 Seatunnel ，即可实现我们的数据处理逻辑。
+Execute the command, specify the configuration file, and run Seatunnel to implement our data processing logic.
 
 * Local
 
@@ -227,9 +226,9 @@ output {
 
 > ./bin/start-seatunnel.sh --config config/tidb.conf --deploy-mode cluster -master yarn
 
-如果是本机测试验证逻辑，用本地模式（Local）就可以了，一般生产环境下，都是使用`yarn-client`或者`yarn-cluster`模式。
+If it is a local test and verification logic, you can use the local mode (Local). Generally, in the production environment, the `yarn-client` or `yarn-cluster` mode is used.
 
-#### 检查结果
+#### test result
 
 ```
 mysql> select * from access_collect;
@@ -244,20 +243,20 @@ mysql> select * from access_collect;
 
 
 
-## 总结
+## Conclusion
 
-在这篇文章中，我们介绍了如何使用 Seatunnel 从 TiDB 中读取数据，做简单的数据处理之后写入 TiDB 另外一个表中。仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码。
+In this article, we introduced how to use Seatunnel to read data from TiDB, do simple data processing and write it to another table in TiDB. Data can be imported quickly with only one configuration file without writing any code.
 
-除了支持 TiDB 数据源之外，Seatunnel 同样支持Elasticsearch, Kafka, Kudu, ClickHouse等数据源。
+In addition to supporting TiDB data sources, Seatunnel also supports Elasticsearch, Kafka, Kudu, ClickHouse and other data sources.
 
-**于此同时，我们正在研发一个重要功能，就是在 Seatunnel 中，利用 TiDB 的事务特性，实现从 Kafka 到 TiDB 流式数据处理，并且支持端（Kafka）到端（TiDB）的 Exactly-Once 数据一致性。**
+**At the same time, we are developing an important function, which is to use the transaction features of TiDB in Seatunnel to realize streaming data processing from Kafka to TiDB, and support Exactly-Once data from end (Kafka) to end (TiDB). consistency. **
 
-希望了解 Seatunnel 和 TiDB，ClickHouse、Elasticsearch、Kafka结合使用的更多功能和案例，可以直接进入官网 [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+If you want to know more functions and cases of Seatunnel combined with TiDB, ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
 
-## 联系我们
-* 邮件列表 : **dev@seatunnel.apache.org**. 发送任意内容至 `dev-subscribe@seatunnel.apache.org`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join SeaTunnel slack` 邮件到邮件列表 (`dev@seatunnel.apache.org`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
-* [bilibili B站 视频](https://space.bilibili.com/1542095008)
+## Contract us
+* Mailing list : **dev@seatunnel.apache.org**. Send anything to `dev-subscribe@seatunnel.apache.org` and subscribe to the mailing list according to the replies.
+* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@seatunnel.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* [bilibili B station video](https://space.bilibili.com/1542095008)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)
 

@@ -1,34 +1,34 @@
 ---
 slug: spark-structured-streaming
-title: 如何支持的 Spark StructuredStreaming
+title: How to support Spark StructuredStreaming
 tags: [Spark, StructuredStreaming]
 ---
 
-# Seatunnel 最近支持的 StructuredStreaming 怎么用
+# How to use StructuredStreaming recently supported by Seatunnel
 
-### 前言
+### Foreword
 
-StructuredStreaming是Spark 2.0以后新开放的一个模块，相比SparkStreaming，它有一些比较突出的优点：<br/> &emsp;&emsp;一、它能做到更低的延迟;<br/>
-&emsp;&emsp;二、可以做实时的聚合，例如实时计算每天每个商品的销售总额；<br/>
-&emsp;&emsp;三、可以做流与流之间的关联，例如计算广告的点击率，需要将广告的曝光记录和点击记录关联。<br/>
-以上几点如果使用SparkStreaming来实现可能会比较麻烦或者说是很难实现，但是使用StructuredStreaming实现起来会比较轻松。
-### 如何使用StructuredStreaming
-可能你没有详细研究过StructuredStreaming，但是发现StructuredStreaming能很好的解决你的需求，如何快速利用StructuredStreaming来解决你的需求？目前社区有一款工具 **Seatunnel**，项目地址：[https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel) ,
-可以高效低成本的帮助你利用StructuredStreaming来完成你的需求。
+StructuredStreaming is a newly opened module after Spark 2.0. Compared with SparkStreaming, it has some prominent advantages:<br/> &emsp;&emsp;First, it can achieve lower latency;<br/>
+&emsp;&emsp;Second, real-time aggregation can be done, such as real-time calculation of the total sales of each commodity every day;<br/>
+&emsp;&emsp;Third, you can do the association between streams, for example, to calculate the click rate of an advertisement, you need to associate the exposure record of the advertisement with the click record. <br/>
+The above points may be cumbersome or difficult to implement if using SparkStreaming, but it will be easier to implement using StructuredStreaming.
+### How to use StructuredStreaming
+Maybe you have not studied StructuredStreaming in detail, but found that StructuredStreaming can solve your needs very well. How to quickly use StructuredStreaming to solve your needs? Currently there is a tool **Seatunnel** in the community, the project address: [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel) ,
+It can help you use StructuredStreaming to complete your needs efficiently and at low cost.
 
 ### Seatunnel
 
-Seatunnel 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中
+Seatunnel is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plug-ins, supports reading data from Kafka, HDFS, Kudu, performs various data processing, and writes the results to ClickHouse, Elasticsearch or Kafka
 
-### 准备工作
+### Ready to work
 
-首先我们需要安装 Seatunnel，安装十分简单，无需配置系统环境变量
+First we need to install Seatunnel, the installation is very simple, no need to configure system environment variables
 
-1. 准备Spark环境
-2. 安装 Seatunnel
-3. 配置 Seatunnel
+1. Prepare the Spark environment
+2. Install Seatunnel
+3. Configure Seatunnel
 
-以下是简易步骤，具体安装可以参照 [Quick Start](/docs/quick-start)
+The following are simple steps, the specific installation can refer to [Quick Start](/docs/quick-start)
 
 ```
 cd /usr/local
@@ -39,19 +39,19 @@ unzip seatunnel-1.3.0.zip
 cd seatunnel-1.3.0
 
 vim config/seatunnel-env.sh
-# 指定Spark安装路径
+# Specify the Spark installation path
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
 ### Seatunnel Pipeline
 
-我们仅需要编写一个 Seatunnel Pipeline的配置文件即可完成数据的导入。
+We only need to write a configuration file of Seatunnel Pipeline to complete the data import.
 
-配置文件包括四个部分，分别是Spark、Input、filter和Output。
+The configuration file includes four parts, namely Spark, Input, filter and Output.
 
 #### Spark
 
-这一部分是Spark的相关配置，主要配置Spark执行时所需的资源大小。
+This part is the related configuration of Spark, which mainly configures the resource size required for Spark execution.
 
 ```
 spark {
@@ -64,7 +64,7 @@ spark {
 
 #### Input
 
-下面是一个从kafka读取数据的例子
+Below is an example of reading data from kafka
 
 ```
 kafkaStream {
@@ -74,12 +74,12 @@ kafkaStream {
 }
 ```
 
-通过上面的配置就可以读取kafka里的数据了 ，topics是要订阅的kafka的topic，同时订阅多个topic可以以逗号隔开，consumer.bootstrap.servers就是Kafka的服务器列表，schema是可选项，因为StructuredStreaming从kafka读取到的值(官方固定字段value)是binary类型的，详见http://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html
-但是如果你确定你kafka里的数据是json字符串的话，你可以指定schema，input插件将按照你指定的schema解析
+Through the above configuration, the data in kafka can be read. Topics is the topic of kafka to be subscribed to. Subscribing to multiple topics at the same time can be separated by commas. Consumer.bootstrap.servers is the list of Kafka servers, and schema is optional. Because the value read by StructuredStreaming from kafka (official fixed field value) is of binary type, see http://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html
+But if you are sure that the data in your kafka is a json string, you can specify the schema, and the input plugin will parse it according to the schema you specify
 
 #### Filter
 
-下面是一个简单的filter例子
+Here is a simple filter example
 
 ```
 filter{
@@ -89,11 +89,11 @@ filter{
     }
 }
 ```
-`table_name`是注册成的临时表名，以便于在下面的sql使用
+`table_name` is the registered temporary table name for easy use in the following sql
 
 #### Output
 
-处理好的数据往外输出，假设我们的输出也是kafka
+The processed data is output, assuming that our output is also kafka
 
 ```
 output{
@@ -106,30 +106,30 @@ output{
 }
 ```
 
-`topic` 是你要输出的topic，` producer.bootstrap.servers`是kafka集群列表，`streaming_output_mode`是StructuredStreaming的一个输出模式参数，有三种类型`append|update|complete`，具体使用参见文档http://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-modes
+`topic` is the topic you want to output, `producer.bootstrap.servers` is a list of kafka clusters, `streaming_output_mode` is an output mode parameter of StructuredStreaming, there are three types of `append|update|complete`, for details, see the documentation http: //spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-modes
 
-`checkpointLocation`是StructuredStreaming的checkpoint路径，如果配置了的话，这个目录会存储程序的运行信息，比如程序退出再启动的话会接着上次的offset进行消费。
+`checkpointLocation` is the checkpoint path of StructuredStreaming. If configured, this directory will store the running information of the program. For example, if the program exits and restarts, it will continue to consume the last offset.
 
-### 场景分析
+### Scenario Analysis
 
-以上就是一个简单的例子，接下来我们就来介绍的稍微复杂一些的业务场景
+The above is a simple example. Next, we will introduce a slightly more complex business scenario.
 
-#### 场景一：实时聚合场景
+#### Scenario 1: Real-time aggregation scenario
 
-假设现在有一个商城，上面有10种商品，现在需要实时求每天每种商品的销售额，甚至是求每种商品的购买人数（不要求十分精确）。
-这么做的巨大的优势就是海量数据可以在实时处理的时候，完成聚合，再也不需要先将数据写入数据仓库，再跑离线的定时任务进行聚合，
-操作起来还是很方便的。
+Suppose there is now a mall with 10 kinds of products on it, and now it is necessary to find the daily sales of each product in real time, and even to find the number of buyers of each product (not very precise).
+The huge advantage of this is that massive data can be aggregated during real-time processing, and there is no need to write data into the data warehouse first, and then run offline scheduled tasks for aggregation.
+It is still very convenient to operate.
 
-kafka的数据如下
+The data of kafka is as follows
 
 ```
 {"good_id":"abc","price":300,"user_id":123456,"time":1553216320}
 ```
 
-那我们该怎么利用 Seatunnel 来完成这个需求呢，当然还是只需要配置就好了。
+So how do we use Seatunnel to fulfill this requirement, of course, we only need to configure it.
 
 ```
-#spark里的配置根据业务需求配置
+#The configuration in spark is configured according to business requirements
 spark {
   spark.app.name = "seatunnel"
   spark.executor.instances = 2
@@ -137,7 +137,7 @@ spark {
   spark.executor.memory = "1g"
 }
 
-#配置input
+#configure input
 input {
     kafkaStream {
         topics = "good_topic"
@@ -146,28 +146,28 @@ input {
     }
 }
 
-#配置filter    
+#configure filter    
 filter {
     
-    #在程序做聚合的时候，内部会去存储程序从启动开始的聚合状态，久而久之会导致OOM,如果设置了watermark，程序自动的会去清理watermark之外的状态
-    #这里表示使用ts字段设置watermark，界限为1天
+    #When the program is doing aggregation, it will internally store the aggregation state of the program since startup, which will lead to OOM over time. If the watermark is set, the program will automatically clean up the state other than the watermark.
+    #Here means use the ts field to set the watermark, the limit is 1 day
 
     Watermark {
         time_field = "time"
-        time_type = "UNIX"              #UNIX表示时间字段为10为的时间戳，还有其他的类型详细可以查看插件文档
-        time_pattern = "yyyy-MM-dd"     #这里之所以要把ts对其到天是因为求每天的销售额，如果是求每小时的销售额可以对其到小时`yyyy-MM-dd HH`
+        time_type = "UNIX"              #UNIX represents a timestamp with a time field of 10, and other types can be found in the plugin documentation for details.
+        time_pattern = "yyyy-MM-dd"     #The reason why the ts is assigned to the day is because the daily sales are sought, if the hourly sales are sought, the hour can be assigned `yyyy-MM-dd HH`
         delay_threshold = "1 day"
-        watermark_field = "ts"          #设置watermark之后会新增一个字段，`ts`就是这个字段的名字
+        watermark_field = "ts"          #After setting the watermark, a new field will be added, `ts` is the name of this field
     }
     
-    #之所以要group by ts是要让watermark生效，approx_count_distinct是一个估值，并不是精确的count_distinct
+    #The reason for group by ts is to make the watermark take effect, approx_count_distinct is an estimate, not an exact count_distinct
     sql {
         table_name = "good_table_2"
         sql = "select good_id,sum(price) total,	approx_count_distinct(user_id) person from good_table_2 group by ts,good_id"
     }
 }
 
-#接下来我们选择将结果实时输出到Kafka
+#Next we choose to output the results to Kafka in real time
 output{
     kafka {
         topic = "seatunnel"
@@ -178,22 +178,22 @@ output{
 }
 
 ```
-如上配置完成，启动 Seatunnel，就可以获取你想要的结果了。
+The above configuration is complete, start Seatunnel, and you can get the results you want.
 
-#### 场景二：多个流关联场景
+#### Scenario 2: Multiple stream association scenarios
 
-假设你在某个平台投放了广告，现在要实时计算出每个广告的CTR(点击率)，数据分别来自两个topic，一个是广告曝光日志，一个是广告点击日志,
-此时我们就需要把两个流数据关联到一起做计算，而 Seatunnel 最近也支持了此功能，让我们一起看一下该怎么做：
+Suppose you have placed an advertisement on a certain platform, and now you need to calculate the CTR (click-through rate) of each advertisement in real time. The data comes from two topics, one is the advertisement exposure log, and the other is the advertisement click log.
+At this point, we need to associate the two stream data together for calculation, and Seatunnel also supports this function recently, let's take a look at how to do it:
 
 
-点击topic数据格式
+Click on topic data format
 
 ```
 {"ad_id":"abc","click_time":1553216320,"user_id":12345}
 
 ```
 
-曝光topic数据格式
+Exposure topic data format
 
 ```
 {"ad_id":"abc","show_time":1553216220,"user_id":12345}
@@ -201,7 +201,7 @@ output{
 ```
 
 ```
-#spark里的配置根据业务需求配置
+#The configuration in spark is configured according to business requirements
 spark {
   spark.app.name = "seatunnel"
   spark.executor.instances = 2
@@ -209,7 +209,7 @@ spark {
   spark.executor.memory = "1g"
 }
 
-#配置input
+#configure input
 input {
     
     kafkaStream {
@@ -229,16 +229,16 @@ input {
 
 filter {
     
-    #左关联右表必须设置watermark
-    #右关左右表必须设置watermark
+    #Left association right table must set watermark
+    #Right off left and right tables must set watermark
     #http://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#inner-joins-with-optional-watermarking
     Watermark {
-              source_table_name = "click_table" #这里可以指定为某个临时表添加watermark，不指定的话就是为input中的第一个
+              source_table_name = "click_table" #Here you can specify to add a watermark to a temporary table. If you don't specify it, it will be the first one in the input.
               time_field = "time"
               time_type = "UNIX"               
               delay_threshold = "3 hours"
               watermark_field = "ts" 
-              result_table_name = "click_table_watermark" #添加完watermark之后可以注册成临时表，方便后续在sql中使用
+              result_table_name = "click_table_watermark" #After adding the watermark, it can be registered as a temporary table, which is convenient for subsequent use in sql
     }
     
     Watermark {
@@ -258,30 +258,29 @@ filter {
     
 }
 
-#接下来我们选择将结果实时输出到Kafka
+#Next we choose to output the results to Kafka in real time
 output {
     kafka {
         topic = "seatunnel"
         producer.bootstrap.servers = "localhost:9092"
-        streaming_output_mode = "append" #流关联只支持append模式
+        streaming_output_mode = "append" #Stream association only supports append mode
         checkpointLocation = "/your/path"
     }
 }
 ```
+Through configuration, the case of stream association is also completed here.
 
-通过配置，到这里流关联的案例也完成了。
+### Conclusion
+Through configuration, you can quickly use StructuredStreaming for real-time data processing, but you still need to understand some concepts of StructuredStreaming, such as the watermark mechanism, and the output mode of the program.
 
-### 结语
-通过配置能很快的利用StructuredStreaming做实时数据处理，但是还是需要对StructuredStreaming的一些概念了解，比如其中的watermark机制，还有程序的输出模式。
+Finally, Seatunnel also supports spark streaming and spark batching of course.
+If you are also interested in these two, you can read our previous article "[How to quickly import data from Hive into ClickHouse](2021-12-30-hive-to-clickhouse.md)",
+"[Excellent data engineer, how to use Spark to do OLAP analysis on TiDB] (2021-12-30-spark-execute-tidb.md)",
+"[How to use Spark to quickly write data to Elasticsearch] (2021-12-30-spark-execute-elasticsearch.md)"
 
-最后，Seatunnel 当然还支持spark streaming和spark 批处理。
-如果你对这两个也感兴趣的话，可以阅读我们以前发布的文章《[如何快速地将Hive中的数据导入ClickHouse](2021-12-30-hive-to-clickhouse.md)》、
-《[优秀的数据工程师，怎么用Spark在TiDB上做OLAP分析](2021-12-30-spark-execute-tidb.md)》、
-《[如何使用Spark快速将数据写入Elasticsearch](2021-12-30-spark-execute-elasticsearch.md)》
-
-希望了解 Seatunnel 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+If you want to know more functions and cases of Seatunnel combined with HBase, ClickHouse, Elasticsearch, Kafka, MySQL and other data sources, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache. org/)
 
 ## 联系我们
-* 邮件列表 : **dev@seatunnel.apache.org**. 发送任意内容至 `dev-subscribe@seatunnel.apache.org`， 按照回复订阅邮件列表。
-* Slack: 发送 `Request to join SeaTunnel slack` 邮件到邮件列表 (`dev@seatunnel.apache.org`), 我们会邀请你加入（在此之前请确认已经注册Slack）.
-* [bilibili B站 视频](https://space.bilibili.com/1542095008)
+* Mailing list : **dev@seatunnel.apache.org**. Send anything to `dev-subscribe@seatunnel.apache.org` and subscribe to the mailing list according to the replies.
+* Slack: Send a `Request to join SeaTunnel slack` email to the mailing list (`dev@seatunnel.apache.org`), and we will invite you to join (please make sure you are registered with Slack before doing so).
+* [bilibili B station video](https://space.bilibili.com/1542095008)
