@@ -1,6 +1,6 @@
 ---
 slug: SeaTunnel在唯品会的实践
-title: SeaTunnel在唯品会的实践。
+title: SeaTunnel在唯品会的实践
 tags: [唯品会, ClickHouse]
 ---
 
