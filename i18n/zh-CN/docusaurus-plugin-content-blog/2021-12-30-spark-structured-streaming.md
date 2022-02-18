@@ -277,7 +277,7 @@ output {
 最后，Seatunnel 当然还支持spark streaming和spark 批处理。
 如果你对这两个也感兴趣的话，可以阅读我们以前发布的文章《[如何快速地将Hive中的数据导入ClickHouse](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-hive-to-clickhouse.mdtent-blog/current/2021-12-30-hive-to-clickhouse.md)》、
 《[优秀的数据工程师，怎么用Spark在TiDB上做OLAP分析](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-spark-execute-tidb.mdtent-blog/current/2021-12-30-spark-execute-tidb.md)》、
-《[如何使用Spark快速将数据写入Elasticsearch](i18n/zh-CN/docusaurus-plugin-content-blog/current/2021-12-30-spark-execute-elasticsearch.md/current/2021-12-30-spark-execute-elasticsearch.md)》
+《[如何使用Spark快速将数据写入Elasticsearch](i18n/zh-CN/docusaurus-plugin-content-blog/2021-12-30-spark-execute-elasticsearch.md/current/2021-12-30-spark-execute-elasticsearch.md)》
 
 希望了解 Seatunnel 和 HBase, ClickHouse、Elasticsearch、Kafka、MySQL 等数据源结合使用的更多功能和案例，可以直接进入官网 [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
 
