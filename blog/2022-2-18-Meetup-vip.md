@@ -12,12 +12,12 @@ tags:
 导读: 唯品会早在1.0版本时就引用了SeaTunnel，我们使用SeaTunnel进行一些Hive到ClickHouse之间数据交互的工作。
 今天的介绍会围绕下面几点展开：
 
-* ClickHouse数据导入的需求和痛点
-* ClickHouse出仓入仓工具选型
-* Hive to ClickHouse
-* ClickHouse to Hive
-* SeaTunnel与唯品会数据平台的集成
-* 未来展望
+* ClickHouse数据导入的需求和痛点；
+* ClickHouse出仓入仓工具选型；
+* Hive to ClickHouse；
+* ClickHouse to Hive；
+* SeaTunnel与唯品会数据平台的集成；
+* 未来展望；
 
 # ClickHouse数据导入的需求和痛点
 ## 1.唯品会数据OLAP架构
