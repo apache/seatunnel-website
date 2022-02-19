@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[4460],{9523:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/vip","name":"Vip","count":1,"permalink":"/blog/tags/vip"}')}}]);
