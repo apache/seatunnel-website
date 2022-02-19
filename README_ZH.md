@@ -37,6 +37,7 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 |-- i18n    
 |   -- zh-CN  //国际化中文
 |       |-- code.json
+|       |-- docusaurus-plugin-content-blog
 |       |-- docusaurus-plugin-content-docs
 |       |-- docusaurus-plugin-content-docs-community
 |       |-- docusaurus-plugin-content-docs-download

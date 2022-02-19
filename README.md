@@ -37,6 +37,7 @@ This website is compiled using node, using Docusaurus framework components
 |-- i18n    
 |   `-- zh-CN  //Internationalized Chinese
 |       |-- code.json
+|       |-- docusaurus-plugin-content-blog
 |       |-- docusaurus-plugin-content-docs
 |       |-- docusaurus-plugin-content-docs-community
 |       |-- docusaurus-plugin-content-docs-download

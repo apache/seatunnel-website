@@ -1,24 +1,24 @@
 ---
 slug: hdfs-to-clickhouse
-title: 如何快速地把 HDFS 中的数据导入 ClickHouse
+title: How to quickly import data from HDFS into ClickHouse
 tags: [HDFS, ClickHouse]
 ---
 
-# 如何快速地把 HDFS 中的数据导入 ClickHouse
+# How to quickly import data from HDFS into ClickHouse
 
-ClickHouse 是面向 OLAP 的分布式列式 DBMS。我们部门目前已经把所有数据分析相关的日志数据存储至 ClickHouse 这个优秀的数据仓库之中，当前日数据量达到了 300 亿。
+ClickHouse is a distributed columnar DBMS for OLAP. Our department has now stored all log data related to data analysis in ClickHouse, an excellent data warehouse, and the current daily data volume has reached 30 billion.
 
-之前介绍的有关数据处理入库的经验都是基于实时数据流，数据存储在 Kafka 中，我们使用 Java 或者 Golang 将数据从 Kafka 中读取、解析、清洗之后写入 ClickHouse 中，这样可以实现数据的快速接入。然而在很多同学的使用场景中，数据都不是实时的，可能需要将 HDFS 或者是 Hive 中的数据导入 ClickHouse。有的同学通过编写 Spark 程序来实现数据的导入，那么是否有更简单、高效的方法呢。
+The experience of data processing and storage introduced earlier is based on real-time data streams. The data is stored in Kafka. We use Java or Golang to read, parse, and clean the data from Kafka and write it into ClickHouse, so that the data can be stored in ClickHouse. Quick access. However, in the usage scenarios of many students, the data is not real-time, and it may be necessary to import the data in HDFS or Hive into ClickHouse. Some students implement data import by writing Spark programs, so is there a simpler and more efficient way?
 
-目前开源社区上有一款工具 **Seatunnel**，项目地址 [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel)，可以快速地将 HDFS 中的数据导入 ClickHouse。
+At present, there is a tool **Seatunnel** in the open source community, the project address [https://github.com/apache/incubator-seatunnel](https://github.com/apache/incubator-seatunnel), can quickly Data in HDFS is imported into ClickHouse.
 
 ## HDFS To ClickHouse
 
-假设我们的日志存储在 HDFS 中，我们需要将日志进行解析并筛选出我们关心的字段，将对应的字段写入 ClickHouse 的表中。
+Assuming that our logs are stored in HDFS, we need to parse the logs and filter out the fields we care about, and write the corresponding fields into the ClickHouse table.
 
 ### Log Sample
 
-我们在 HDFS 中存储的日志格式如下， 是很常见的 Nginx 日志
+The log format we store in HDFS is as follows, which is a very common Nginx log
 
 ```shell
 10.41.1.28 github.com 114.250.140.241 0.001s "127.0.0.1:80" [26/Oct/2018:03:09:32 +0800] "GET /Apache/Seatunnel HTTP/1.1" 200 0 "-" - "Dalvik/2.1.0 (Linux; U; Android 7.1.1; OPPO R11 Build/NMF26X)" "196" "-" "mainpage" "443" "-" "172.16.181.129"
@@ -26,7 +26,7 @@ ClickHouse 是面向 OLAP 的分布式列式 DBMS。我们部门目前已经把�
 
 ### ClickHouse Schema
 
-我们的 ClickHouse 建表语句如下，我们的表按日进行分区
+Our ClickHouse table creation statement is as follows, our table is partitioned by day
 
 ```shell
 CREATE TABLE cms.cms_msg
@@ -46,21 +46,21 @@ CREATE TABLE cms.cms_msg
 
 ## Seatunnel with ClickHouse
 
-接下来会给大家详细介绍，我们如何通过 Seatunnel 满足上述需求，将 HDFS 中的数据写入 ClickHouse 中。
+Next, I will introduce to you in detail how we can meet the above requirements through Seatunnel and write the data in HDFS into ClickHouse.
 
 ### Seatunnel
 
-[Seatunnel](https://github.com/apache/incubator-seatunnel) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从 Kafka、HDFS、Kudu 中读取数据，进行各种各样的数据处理，并将结果写入 ClickHouse、Elasticsearch 或者 Kafka 中。
+[Seatunnel](https://github.com/apache/incubator-seatunnel) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plugins that support reading data from Kafka, HDFS, Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
 
 ### Prerequisites
 
-首先我们需要安装 Seatunnel，安装十分简单，无需配置系统环境变量
+First we need to install Seatunnel, the installation is very simple, no need to configure system environment variables
 
-1. 准备 Spark 环境
-2. 安装 Seatunnel
-3. 配置 Seatunnel
+1. Prepare the Spark environment
+2. Install Seatunnel
+3. Configure Seatunnel
 
-以下是简易步骤，具体安装可以参照 [Quick Start](/docs/quick-start)
+The following are simple steps, the specific installation can refer to [Quick Start](/docs/quick-start)
 
 ```shell
 cd /usr/local
@@ -75,19 +75,19 @@ unzip seatunnel-1.1.1.zip
 cd seatunnel-1.1.1
 vim config/seatunnel-env.sh
 
-# 指定Spark安装路径
+# Specify the Spark installation path
 SPARK_HOME=${SPARK_HOME:-/usr/local/spark-2.2.0-bin-hadoop2.7}
 ```
 
 ### seatunnel Pipeline
 
-我们仅需要编写一个 seatunnel Pipeline 的配置文件即可完成数据的导入。
+We only need to write a configuration file of seatunnel Pipeline to complete the data import.
 
-配置文件包括四个部分，分别是 Spark、Input、filter 和 Output。
+The configuration file consists of four parts, Spark, Input, filter and Output.
 
 #### Spark
 
-这一部分是 Spark 的相关配置，主要配置 Spark 执行时所需的资源大小。
+This part is the related configuration of Spark, which mainly configures the size of the resources required for Spark to execute.
 
 ```shell
 spark {
@@ -100,7 +100,7 @@ spark {
 
 #### Input
 
-这一部分定义数据源，如下是从 HDFS 文件中读取 text 格式数据的配置案例。
+This part defines the data source. The following is a configuration example for reading data in text format from HDFS files.
 
 ```shell
 input {
@@ -114,18 +114,18 @@ input {
 
 #### Filter
 
-在 Filter 部分，这里我们配置一系列的转化，包括正则解析将日志进行拆分、时间转换将 HTTPDATE 转化为 ClickHouse 支持的日期格式、对 Number 类型的字段进行类型转换以及通过 SQL 进行字段筛减等
+In the Filter section, here we configure a series of transformations, including regular parsing to split the log, time transformation to convert HTTPDATE to the date format supported by ClickHouse, type conversion to Number type fields, and field filtering through SQL, etc.
 
 ```shell
 filter {
-    # 使用正则解析原始日志
+    # Parse raw logs using regular expressions
     grok {
         source_field = "raw_message"
         pattern = '%{IP:ha_ip}\\s%{NOTSPACE:domain}\\s%{IP:remote_addr}\\s%{NUMBER:request_time}s\\s\"%{DATA:upstream_ip}\"\\s\\[%{HTTPDATE:timestamp}\\]\\s\"%{NOTSPACE:method}\\s%{DATA:url}\\s%{NOTSPACE:http_ver}\"\\s%{NUMBER:status}\\s%{NUMBER:body_bytes_send}\\s%{DATA:referer}\\s%{NOTSPACE:cookie_info}\\s\"%{DATA:user_agent}\"\\s%{DATA:uid}\\s%{DATA:session_id}\\s\"%{DATA:pool}\"\\s\"%{DATA:tag2}\"\\s%{DATA:tag3}\\s%{DATA:tag4}'
     }
 
-    # 将"dd/MMM/yyyy:HH:mm:ss Z"格式的数据转换为
-    # "yyyy/MM/dd HH:mm:ss"格式的数据
+    # Convert data in "dd/MMM/yyyy:HH:mm:ss Z" format to
+    # Data in "yyyy/MM/dd HH:mm:ss" format
     date {
         source_field = "timestamp"
         target_field = "datetime"
@@ -133,8 +133,8 @@ filter {
         target_time_format = "yyyy/MM/dd HH:mm:ss"
     }
 
-    # 使用SQL筛选关注的字段，并对字段进行处理
-    # 甚至可以通过过滤条件过滤掉不关心的数据
+    # Use SQL to filter the fields of interest and process the fields
+    # You can even filter out data you don't care about by filter conditions
     sql {
         table_name = "access"
         sql = "select substring(date, 1, 10) as date, datetime, hostname, url, http_code, float(request_time), int(data_size), domain from access"
@@ -144,7 +144,7 @@ filter {
 
 #### Output
 
-最后我们将处理好的结构化数据写入 ClickHouse
+Finally, we write the processed structured data to ClickHouse
 
 ```shell
 output {
@@ -161,7 +161,7 @@ output {
 
 ### Running seatunnel
 
-我们将上述四部分配置组合成为我们的配置文件 `config/batch.conf`。
+We combine the above four-part configuration into our configuration file `config/batch.conf`.
 
 ```shell
 vim config/batch.conf
@@ -184,14 +184,14 @@ input {
 }
 
 filter {
-    # 使用正则解析原始日志
+    # Parse raw logs using regular expressions
     grok {
         source_field = "raw_message"
         pattern = '%{IP:ha_ip}\\s%{NOTSPACE:domain}\\s%{IP:remote_addr}\\s%{NUMBER:request_time}s\\s\"%{DATA:upstream_ip}\"\\s\\[%{HTTPDATE:timestamp}\\]\\s\"%{NOTSPACE:method}\\s%{DATA:url}\\s%{NOTSPACE:http_ver}\"\\s%{NUMBER:status}\\s%{NUMBER:body_bytes_send}\\s%{DATA:referer}\\s%{NOTSPACE:cookie_info}\\s\"%{DATA:user_agent}\"\\s%{DATA:uid}\\s%{DATA:session_id}\\s\"%{DATA:pool}\"\\s\"%{DATA:tag2}\"\\s%{DATA:tag3}\\s%{DATA:tag4}'
     }
 
-    # 将"dd/MMM/yyyy:HH:mm:ss Z"格式的数据转换为
-    # "yyyy/MM/dd HH:mm:ss"格式的数据
+    # Convert data in "dd/MMM/yyyy:HH:mm:ss Z" format to
+    # Data in "yyyy/MM/dd HH:mm:ss" format
     date {
         source_field = "timestamp"
         target_field = "datetime"
@@ -199,8 +199,8 @@ filter {
         target_time_format = "yyyy/MM/dd HH:mm:ss"
     }
 
-    # 使用SQL筛选关注的字段，并对字段进行处理
-    # 甚至可以通过过滤条件过滤掉不关心的数据
+    # Use SQL to filter the fields of interest and process the fields
+    # You can even filter out data you don't care about by filter conditions
     sql {
         table_name = "access"
         sql = "select substring(date, 1, 10) as date, datetime, hostname, url, http_code, float(request_time), int(data_size), domain from access"
@@ -219,7 +219,7 @@ output {
 }
 ```
 
-执行命令，指定配置文件，运行 Seatunnel，即可将数据写入 ClickHouse。这里我们以本地模式为例。
+Execute the command, specify the configuration file, and run Seatunnel to write data to ClickHouse. Here we take the local mode as an example.
 
 ```shell
 ./bin/start-seatunnel.sh --config config/batch.conf -e client -m 'local[2]'
@@ -227,10 +227,10 @@ output {
 
 ## Conclusion
 
-在这篇文章中，我们介绍了如何使用 Seatunnel 将 HDFS 中的 Nginx 日志文件导入 ClickHouse 中。仅通过一个配置文件便可快速完成数据的导入，无需编写任何代码。除了支持 HDFS 数据源之外，Seatunnel 同样支持将数据从 Kafka 中实时读取处理写入 ClickHouse 中。我们的下一篇文章将会介绍，如何将 Hive 中的数据快速导入 ClickHouse 中。
+In this post, we covered how to import Nginx log files from HDFS into ClickHouse using Seatunnel. Data can be imported quickly with only one configuration file without writing any code. In addition to supporting HDFS data sources, Seatunnel also supports real-time reading and processing of data from Kafka to ClickHouse. Our next article will describe how to quickly import data from Hive into ClickHouse.
 
-当然，Seatunnel 不仅仅是 ClickHouse 数据写入的工具，在 Elasticsearch 以及 Kafka等 数据源的写入上同样可以扮演相当重要的角色。
+Of course, Seatunnel is not only a tool for ClickHouse data writing, but also plays a very important role in the writing of data sources such as Elasticsearch and Kafka.
 
-希望了解 Seatunnel 和 ClickHouse、Elasticsearch、Kafka 结合使用的更多功能和案例，可以直接进入官网 [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
+If you want to know more functions and cases of Seatunnel combined with ClickHouse, Elasticsearch and Kafka, you can go directly to the official website [https://seatunnel.apache.org/](https://seatunnel.apache.org/)
 
 -- Power by [InterestingLab](https://github.com/InterestingLab)
