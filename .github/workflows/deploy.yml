@@ -1,6 +1,13 @@
 name: Build and Deploy
 
-on: [push]
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    # Run everyday at 5:00 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
+    - cron: "0 5 * * *"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

@@ -4,7 +4,7 @@ WEBSITE_REPO="https://github.com/apache/incubator-seatunnel-website.git"
 MAIN_REPO="https://github.com/apache/incubator-seatunnel.git"
 
 WEBSITE_REPO_NAME="incubator-seatunnel-website"
-WEBSITE_NAME="seatunnel-website"
+WEBSITE_NAME="website"
 MAIN_NAME="seatunnel"
 
 WORK_PATH=~/work/incubator-seatunnel-website
@@ -17,9 +17,6 @@ else
 fi
 
 echo "===>>>: Start documents sync"
-
-CURRENT_PATH=$(cd "$(dirname "$0")"; pwd)
-echo "===>>>: current path: ${CURRENT_PATH}"
 
 cd ${WORK_PATH}
 echo "===>>>: current work path: ${WORK_PATH}"
