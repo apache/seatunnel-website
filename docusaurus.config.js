@@ -113,11 +113,6 @@ const config = {
                     activeBaseRegex: `/user`,
                 },
                 {
-                    to: '/faq/faq',
-                    position: 'right',
-                    label: 'FAQ'
-                },
-                {
                     label: 'ASF',
                     position: 'right',
                     items: [
@@ -168,7 +163,7 @@ const config = {
                     items: [
                         {
                             label: 'FAQ',
-                            href: '/faq/faq',
+                            href: '/docs/developement/FAQ',
                         },
                         {
                             label: 'Releases',
@@ -241,22 +236,6 @@ const config = {
                 id: 'community',
                 path: 'community',
                 routeBasePath: 'community',
-                editUrl: ({locale, versionDocsDirPath, docPath}) => {
-                    if (locale !== 'en') {
-                        return `https://github.com/apache/incubator-seatunnel-website/edit/dev/i18n/${locale}/${docPath}`;
-                    }
-                    return `https://github.com/apache/incubator-seatunnel-website/edit/dev/${versionDocsDirPath}/${docPath}`;
-                },
-                sidebarPath: require.resolve('./sidebars.js'),
-            },
-        ],
-
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'faq',
-                path: 'faq',
-                routeBasePath: 'faq',
                 editUrl: ({locale, versionDocsDirPath, docPath}) => {
                     if (locale !== 'en') {
                         return `https://github.com/apache/incubator-seatunnel-website/edit/dev/i18n/${locale}/${docPath}`;
