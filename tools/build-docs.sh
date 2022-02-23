@@ -7,8 +7,7 @@ WEBSITE_REPO_NAME="incubator-seatunnel-website"
 WEBSITE_NAME="website"
 MAIN_NAME="seatunnel"
 
-#WORK_PATH=~/work/${WEBSITE_REPO_NAME}
-WORK_PATH=~/yyyy/${WEBSITE_REPO_NAME}
+WORK_PATH=~/work/${WEBSITE_REPO_NAME}
 
 # To be compatible with MacOS and Linux
 txt=""
