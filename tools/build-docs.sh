@@ -7,7 +7,24 @@ WEBSITE_REPO_NAME="incubator-seatunnel-website"
 WEBSITE_NAME="website"
 MAIN_NAME="seatunnel"
 
-WORK_PATH=~/work/incubator-seatunnel-website
+WORK_PATH=~/work/${WEBSITE_REPO_NAME}
+
+# To be compatible with MacOS and Linux
+txt=""
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Mac OSX
+  txt=''
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+  # linux
+  txt=""
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+  # ...
+  txt=""
+else
+  # Unknown.
+  echo "Operating system unknown, please tell us(submit issue) for better service"
+  exit 1
+fi
 
 if [ ! -d ${WORK_PATH} ]; then
   mkdir -p ${WORK_PATH}
@@ -28,6 +45,12 @@ git clone --depth 1 ${WEBSITE_REPO} ${WORK_PATH}/${WEBSITE_NAME}
 
 echo "===>>>: Clone ${MAIN_REPO} repositories to ${MAIN_NAME}"
 git clone --depth 1 ${MAIN_REPO} ${WORK_PATH}/${MAIN_NAME}
+
+echo "===>>>: Copy images to ${WORK_PATH}/${WEBSITE_NAME}/static/doc/image_en/"
+cp -rf ${WORK_PATH}/${MAIN_NAME}/docs/en/images/* ${WORK_PATH}/${WEBSITE_NAME}/static/doc/image_en/
+
+echo "===>>>: Replace images path to /doc/image_en"
+sed -r -i ${txt} "s/(\.\.\/)+images/\/doc\/image_en/g" ${WORK_PATH}/${MAIN_NAME}/docs/en/**/*.md
 
 echo "===>>>: Replace elements inside md files"
 cp -rf ${WORK_PATH}/${MAIN_NAME}/docs/en/* ${WORK_PATH}/${WEBSITE_NAME}/docs/
