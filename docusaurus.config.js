@@ -85,9 +85,10 @@ const config = {
                     ]
                 },
                 {
-                    to: 'https://github.com/InterestingLab/seatunnel/releases',
+                    to: '/download',
                     position: 'right',
-                    label: 'Download'
+                    label: 'Download',
+                    activeBaseRegex: `/download`,
                 },
                 {
                     label: 'Community',
