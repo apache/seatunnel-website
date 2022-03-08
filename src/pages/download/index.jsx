@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.less';
 import Layout from '@theme/Layout';
-import data from './data.js'
+import version from './version.json'
 
 export default function () {
   return (
@@ -24,7 +24,7 @@ export default function () {
             </thead>
             <tbody>
               {
-                data.map(item => {
+                version.map(item => {
                   return (
                     <tr key={item.version}>
                       <td>{item.date}</td>
