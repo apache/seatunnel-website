@@ -30,7 +30,8 @@ jobs:
         shell: bash
       - name: install
         run: |
-          npm install
+          npm install pnpm -g
+          pnpm install
       - name: Build
         run: |
           npm run build
