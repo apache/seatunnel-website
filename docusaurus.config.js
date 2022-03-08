@@ -85,10 +85,10 @@ const config = {
                     ]
                 },
                 {
-                    to: '/download',
+                    to: '/blog',
                     position: 'right',
                     label: 'Download',
-                    activeBaseRegex: `/download`,
+                    activeBaseRegex: `/blog`,
                 },
                 {
                     label: 'Community',
