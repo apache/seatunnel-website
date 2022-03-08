@@ -1,7 +1,7 @@
 import React from 'react';
+import './index.less';
 import Layout from '@theme/Layout';
 import data from './data.js'
-import './index.less';
 
 export default function () {
   return (
