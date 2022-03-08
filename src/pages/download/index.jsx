@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.less';
 import Layout from '@theme/Layout';
-// import data from './data.json'
 
 export default function () {
   return (
@@ -23,25 +22,6 @@ export default function () {
               </tr>
             </thead>
             <tbody>
-              {/*{*/}
-              {/*  data.map(item => {*/}
-              {/*    return (*/}
-              {/*      <tr key={item.version}>*/}
-              {/*        <td>{item.date}</td>*/}
-              {/*        <td>{item.version}</td>*/}
-              {/*        <td>*/}
-              {/*          <a href={item.download}>Incubator-SeaTunnel-{item.version}.zip</a>*/}
-              {/*        </td>*/}
-              {/*        <td>*/}
-              {/*          <a href={item.sourceCodeZip}>Incubator-SeaTunnel-{item.version}.zip</a>*/}
-              {/*        </td>*/}
-              {/*        <td>*/}
-              {/*          <a href={item.sourceCodeGz}>Incubator-SeaTunnel-{item.version}.tar.gz</a>*/}
-              {/*        </td>*/}
-              {/*      </tr>*/}
-              {/*    )*/}
-              {/*  })*/}
-              {/*}*/}
             </tbody>
           </table>
           <h2>Historical versions of non-Apache</h2>
