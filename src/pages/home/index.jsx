@@ -36,6 +36,13 @@ export default function () {
                                 <img className="button_icon github1" src={useBaseUrl('/home/icons/github' + flag + '.svg')} alt="github"/>
                                 <span>GitHub</span>
                             </a>
+                            <a href="https://join.slack.com/t/apacheseatunnel/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ"
+                               target="_blank"
+                               className="corner_button blue"
+                            >
+                                <img className="button_icon" src={useBaseUrl('/home/icons/slack.svg')} alt="slack"/>
+                                <span>Slack</span>
+                            </a>
                         </div>
 
                         <div>
