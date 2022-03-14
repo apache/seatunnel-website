@@ -9,7 +9,8 @@ WEBSITE_REPO_NAME="incubator-seatunnel-website"
 WEBSITE_NAME="website"
 MAIN_NAME="seatunnel"
 
-WORK_PATH=~/work/${WEBSITE_REPO_NAME}
+#WORK_PATH=~/work/${WEBSITE_REPO_NAME}
+WORK_PATH=~/xxxx/${WEBSITE_REPO_NAME}
 
 MAIN_PATH=${WORK_PATH}/${MAIN_NAME}
 WEBSITE_PATH=${WORK_PATH}/${WEBSITE_NAME}
@@ -52,9 +53,9 @@ function replaceImagesPath(){
       if [ "${filePath##*.}"x = "md"x ]; then
         echo "===>>: Replace images path to /doc/image_en in ${filePath}"
         if [[ "$OSTYPE" == "darwin"* ]]; then
-          sed -r -i '' "s/(\.\.\/)+images/\/doc\/image_en/g" ${filePath}
+          sed -r -i '' "s/(\.\.\/)*images/\/doc\/image_en/g" ${filePath}
         else
-          sed -r -i "s/(\.\.\/)+images/\/doc\/image_en/g" ${filePath}
+          sed -r -i "s/(\.\.\/)*images/\/doc\/image_en/g" ${filePath}
         fi
       fi
     else
