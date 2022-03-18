@@ -1,6 +1,6 @@
 ---
-slug: The practice of SeaTunnel in Vip
-title: The practice of SeaTunnel in Vip
+slug:The-practice-of-SeaTunnel-in-Vip
+title:The practice of SeaTunnel in Vip
 tags:
 - Vip
 - ClickHouse
