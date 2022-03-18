@@ -1,3 +1,10 @@
+---
+slug: Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
+title: Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
+tags:
+- 2.1.0
+- Release
+---
 # Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
  
 2021 年 12 月 9 日，Apache SeaTunnel(Incubating) 进入 Apache 孵化器，在经过社区各位贡献者近四个月的努力下，我们于2022年3月18日发布了首个Apache版本，并且保证了首个版本一次性通过检查。这意味着 2.1.0 版本，是经过 Apache SeaTunnel(Incubating) 社区和 Apache 孵化器投票检查发布的官方版本，企业和个人用户可以放心安全使用。
