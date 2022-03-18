@@ -1,6 +1,6 @@
-# Apache SeaTunnel（incubator）首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
+# Apache SeaTunnel（Incubating）首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
  
-2021 年 12 月 9 日，Apache SeaTunnel（incubator） 进入 Apache 孵化器，在经过社区各位贡献者近四个月的努力下，我们于2022年3月18日发布了首个Apache版本，并且保证了首个版本一次性通过检查。这意味着 2.1.0 版本，是经过 Apache SeaTunnel（incubator） 社区和 Apache 孵化器投票检查发布的官方版本，企业和个人用户可以放心安全使用。
+2021 年 12 月 9 日，Apache SeaTunnel（Incubating） 进入 Apache 孵化器，在经过社区各位贡献者近四个月的努力下，我们于2022年3月18日发布了首个Apache版本，并且保证了首个版本一次性通过检查。这意味着 2.1.0 版本，是经过 Apache SeaTunnel（Incubating） 社区和 Apache 孵化器投票检查发布的官方版本，企业和个人用户可以放心安全使用。
 
 **Note：** **软件许可协议**是一种具有法律性质的合同或指导，目的在于规范受著作权保护的软件的使用或散布行为。通常的许可方式会允许用户来使用单一或多份该软件的复制，因为若无许可而径予使用该软件，将违反著作权法给予该软件开发者的专属保护。效用上来说，软件许可是软件开发者与其用户之间的一份合约，用来保证在符合许可范围的情况下，用户将不会受到控告。进入孵化器前后，我们花费了大量的时间来梳理整个项目的外部依赖以确保整个项目的合规性。需要说明的是，开源软件选择怎样的License并不意外着项目本身就一定合规。而ASF严苛的版本检查最大程度地保证了软件License的合规性，以及软件合理合法的流通分发。
 ## 本次发布版本说明
@@ -41,9 +41,9 @@ Al-assad, BenJFan, CalvinKirs, JNSimba, JiangTChen, Rianico, TyrantLucifer, Yves
 ## 社区发展
 ### 【近期概况】
 自进入Apache孵化器以来，贡献者从13 人增长至 55 人，且持续保持上升趋势，平均周commits维持在20+，来自不同公司的三位贡献者（Lei Xie, HuaJie Wang,Chunfu Wu,）通过他们对社区的贡献被邀请成为Committer。我们举办了两场MeetUp，来自B站，OPPO、唯品会等企业讲师分享了SeaTunnel在他们在企业中的大规模生产落地实践(后续我们也会保持每月一次的meetup，欢迎各位使用SeaTunnel的用户或者贡献者分享SeaTunnel和你们的故事)。
-### 【Apache SeaTunnel（incubator）的用户】
+### 【Apache SeaTunnel（Incubating）的用户】
 Note:仅包含已登记用户
-Apache SeaTunnel（incubator） 目前登记用户如下，如果您也在使用Apache SeaTunnel，欢迎在[Who is using SeaTunne](https://github.com/apache/incubator-seatunnel/issues/686)! 中登记！
+Apache SeaTunnel（Incubating） 目前登记用户如下，如果您也在使用Apache SeaTunnel，欢迎在[Who is using SeaTunne](https://github.com/apache/incubator-seatunnel/issues/686)! 中登记！
  <div align=center>
 
 <img src="/static/image/20220321/1.png"/>
