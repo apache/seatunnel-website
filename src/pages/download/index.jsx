@@ -35,16 +35,16 @@ export default function () {
 										<td>{item.date}</td>
 										<td>{item.version}</td>
 										<td>
-											<a href={item.sourceCode.src}>[src] {getLastPath(item.sourceCode.src)}</a>
-											<a href={item.sourceCode.asc}>[asc] {getLastPath(item.sourceCode.asc)}</a>
-											<hr />
-											<a href={item.sourceCode.sha512}>[sha512] {getLastPath(item.sourceCode.sha512)}</a>
-										</td>
-										<td>
 											<a href={item.binaryDistribution.bin}>[bin] {getLastPath(item.binaryDistribution.bin)}</a>
 											<a href={item.binaryDistribution.asc}>[asc] {getLastPath(item.binaryDistribution.asc)}</a>
 											<hr />
 											<a href={item.binaryDistribution.sha512}>[sha512] {getLastPath(item.binaryDistribution.sha512)}</a>
+										</td>
+										<td>
+											<a href={item.sourceCode.src}>[src] {getLastPath(item.sourceCode.src)}</a>
+											<a href={item.sourceCode.asc}>[asc] {getLastPath(item.sourceCode.asc)}</a>
+											<hr />
+											<a href={item.sourceCode.sha512}>[sha512] {getLastPath(item.sourceCode.sha512)}</a>
 										</td>
 									</tr>
 								)
