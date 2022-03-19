@@ -3,6 +3,12 @@ import './index.less';
 import Layout from '@theme/Layout';
 import data from './data.json'
 
+const getLastPath = path => {
+	if (!path) { return '' }
+
+	return path.substring(path.lastIndexOf('/') + 1)
+}
+
 export default function () {
 	return (
 		<Layout>
@@ -17,9 +23,8 @@ export default function () {
 						<tr>
 							<th>Date</th>
 							<th>Version</th>
-							<th>Download</th>
-							<th>Source Code(zip)</th>
-							<th>Source Code(tar.gz)</th>
+							<th>Binary Distribution</th>
+							<th>Source Code</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -30,13 +35,16 @@ export default function () {
 										<td>{item.date}</td>
 										<td>{item.version}</td>
 										<td>
-											<a href={item.download}>Incubator-SeaTunnel-{item.version}.zip</a>
+											<a href={item.sourceCode.src}>[src] {getLastPath(item.sourceCode.src)}</a>
+											<a href={item.sourceCode.asc}>[asc] {getLastPath(item.sourceCode.asc)}</a>
+											<hr />
+											<a href={item.sourceCode.sha512}>[sha512] {getLastPath(item.sourceCode.sha512)}</a>
 										</td>
 										<td>
-											<a href={item.sourceCodeZip}>Incubator-SeaTunnel-{item.version}.zip</a>
-										</td>
-										<td>
-											<a href={item.sourceCodeGz}>Incubator-SeaTunnel-{item.version}.tar.gz</a>
+											<a href={item.binaryDistribution.bin}>[bin] {getLastPath(item.binaryDistribution.bin)}</a>
+											<a href={item.binaryDistribution.asc}>[asc] {getLastPath(item.binaryDistribution.asc)}</a>
+											<hr />
+											<a href={item.binaryDistribution.sha512}>[sha512] {getLastPath(item.binaryDistribution.sha512)}</a>
 										</td>
 									</tr>
 								)
