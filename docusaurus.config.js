@@ -1,7 +1,7 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+
+const versions = require('./versions.json');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -38,6 +38,14 @@ const config = {
                     editLocalizedFiles: true,
                     // Please change this to your repo.
                     editUrl: 'https://github.com/apache/incubator-seatunnel-website/edit/main/',
+                    versions: {
+                        current: {
+                            path: '',
+                        },
+                        [versions[0]]: {
+                            path: versions[0],
+                        }
+                    }
                 },
                 blog: {
                     showReadingTime: true,
@@ -79,8 +87,20 @@ const config = {
                             to: "/docs/introduction",
                         },
                         {
+                            label: versions[0],
+                            to: `docs/${versions[0]}/introduction`,
+                        },
+                        ...versions.slice(1).map((version) => ({
+                            label: version,
+                            to: `docs/${version}/introduction`,
+                        })),
+                        {
                             label: "1.x(Not apache release)",
                             to: "https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/"
+                        },
+                        {
+                            label: "All versions",
+                            to: "/versions/",
                         }
                     ]
                 },
