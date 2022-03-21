@@ -1,5 +1,5 @@
 ---
-slug: Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
+slug: Apache-SeaTunnel(Incubating)首个Apache 版本2.1.0发布，内核重构,全面支持Flink
 title: Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
 tags:
 - 2.1.0
@@ -35,7 +35,7 @@ tags:
  
 Al-assad, BenJFan, CalvinKirs, JNSimba, JiangTChen, Rianico, TyrantLucifer, Yves-yuan, ZhangchengHu0923, agendazhang, an-shi-chi-fan, asdf2014, bigdataf, chaozwn, choucmei, dailidong, dongzl, felix-thinkingdata, fengyuceNv, garyelephant, kalencaya, kezhenxu94, legendtkl, leo65535, liujinhui1994, mans2singh, marklightning, mosence, nielifeng, ououtt, ruanwenjun, simon824, totalo, wntp, wolfboys, wuchunfu, xbkaishui, xtr1993, yx91490, zhangbutao, zhaomin1423, zhongjiajie, zhuangchong, zixi0825.
  
-同时也诚挚的感谢我们的Mentor：Zhenxu Ke，Willem Jiang， William Guo，LiDong Dai ，Ted Liu, Kevin，JB 在这个过程中给予的帮助
+同时也诚挚的感谢我们的Mentor：Zhenxu Ke，Willem Jiang， William Guo，LiDong Dai ，Ted Liu, Kevin Ratnasekera，Jean-Baptiste Onofré 在这个过程中给予的帮助
 ## 未来几个版本的规划：
 * CDC的支持；
 * 监控体系的支持；
