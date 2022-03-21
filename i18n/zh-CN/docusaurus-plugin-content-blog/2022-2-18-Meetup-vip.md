@@ -1,9 +1,7 @@
 ---
 slug: SeaTunnel 在唯品会的实践
 title: SeaTunnel 在唯品会的实践
-tags:
-- 唯品会
-- ClickHouse
+tags: [唯品会, ClickHouse]
 ---
 
 分享嘉宾：唯品会 资深大数据工程师 王玉
