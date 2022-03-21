@@ -1,10 +1,3 @@
----
-slug:2.1.0-Released!-Apache-SeaTunnel(Incubating)-First-Apache-Release-Refactors-Kernel-and-Supports-Flink-Overall
-title:2.1.0 Released! Apache SeaTunnel(Incubating) First Apache Release Refactors Kernel and Supports Flink Overall
-tags:
-- 2.1.0
-- SeaTunnel
----
 # 2.1.0 Released! Apache SeaTunnel(Incubating) First Apache Release Refactors Kernel and Supports Flink Overall
 
 On December 9, 2021, Apache SeaTunnel(Incubating) entered the Apache Incubator, and after nearly four months of endeavor by the community contributors, we passed the first Apache version control in one go and released it on March 18, 2022. This means that version 2.1.0 is an official release that is safe for corporate and individual users to use, which has been voted on by the Apache SeaTunnel(Incubating) community and the Apache Incubator.
