@@ -3,7 +3,7 @@ slug:2.1.0-Released!-Apache-SeaTunnel(Incubating)-First-Apache-Release-Refactors
 title:2.1.0 Released! Apache SeaTunnel(Incubating) First Apache Release Refactors Kernel and Supports Flink Overall
 tags:
 - 2.1.0
-- Release
+- SeaTunnel
 ---
 # 2.1.0 Released! Apache SeaTunnel(Incubating) First Apache Release Refactors Kernel and Supports Flink Overall
 
