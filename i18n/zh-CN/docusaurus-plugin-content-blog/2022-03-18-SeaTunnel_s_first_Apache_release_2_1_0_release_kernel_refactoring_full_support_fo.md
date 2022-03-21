@@ -51,7 +51,7 @@ Note:仅包含已登记用户
 Apache SeaTunnel(Incubating) 目前登记用户如下，如果您也在使用Apache SeaTunnel，欢迎在[Who is using SeaTunne](https://github.com/apache/incubator-seatunnel/issues/686)! 中登记！
  <div align="center">
 
-<img src="/static/image/20220321/1.png"/>
+<img src="/image/20220321/1.png"/>
 
 </div>
 

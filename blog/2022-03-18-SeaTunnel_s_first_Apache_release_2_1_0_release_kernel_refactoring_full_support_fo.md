@@ -70,7 +70,7 @@ Registered users of Apache SeaTunnel(Incubating) are shown below. If you are als
 
 <div align="center">
 
-<img src="/static/image/20220321/1.png"/>
+<img src="/image/20220321/1.png"/>
 
 </div>
 
