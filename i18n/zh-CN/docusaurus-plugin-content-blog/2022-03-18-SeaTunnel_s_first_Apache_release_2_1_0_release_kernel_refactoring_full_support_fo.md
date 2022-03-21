@@ -1,6 +1,6 @@
 ---
-slug: Apache-SeaTunnel(Incubating)首个Apache版本2.1.0发布,内核重构,全面支持Flink
-title: Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
+slug:Apache-SeaTunnel(Incubating)首个Apache版本2.1.0发布,内核重构,全面支持Flink
+title:Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
 tags:
 - 2.1.0
 - Release
