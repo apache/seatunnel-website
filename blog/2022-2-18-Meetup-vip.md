@@ -1,9 +1,7 @@
 ---
 slug: The-practice-of-SeaTunnel-in-Vip
 title: The practice of SeaTunnel in Vip
-tags:
-- Vip
-- ClickHouse
+tags: [Vip, ClickHouse]
 ---
 
 Guest speaker: Vip Senior Big Data Engineer Wang Yu
