@@ -70,7 +70,7 @@ Note: Only registered users are included.
 
 Registered users of Apache SeaTunnel(Incubating) are shown below. If you are also using Apache SeaTunnel(Incubating), too, welcome to register on [Who is using SeaTunne](https://github.com/apache/incubator-seatunnel/issues/686)!
 
-<div align=center>
+<div align="center">
 
 <img src="/static/image/20220321/1.png"/>
 
