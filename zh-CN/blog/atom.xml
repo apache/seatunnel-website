@@ -2,11 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://seatunnel.apache.org/zh-CN/blog</id>
     <title>Apache SeaTunnel Blog</title>
-    <updated>2022-02-18T00:00:00.000Z</updated>
+    <updated>2022-03-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://seatunnel.apache.org/zh-CN/blog"/>
     <subtitle>Apache SeaTunnel Blog</subtitle>
     <icon>https://seatunnel.apache.org/zh-CN/image/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink]]></title>
+        <id>Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink</id>
+        <link href="https://seatunnel.apache.org/zh-CN/blog/Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink"/>
+        <updated>2022-03-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2021 年 12 月 9 日，Apache SeaTunnel(Incubating) 进入 Apache 孵化器，在经过社区各位贡献者近四个月的努力下，我们于2022年3月18日发布了首个Apache版本，并且保证了首个版本一次性通过检查。这意味着 2.1.0 版本，是经过 Apache SeaTunnel(Incubating) 社区和 Apache 孵化器投票检查发布的官方版本，企业和个人用户可以放心安全使用。]]></summary>
+        <category label="2.1.0" term="2.1.0"/>
+        <category label="Release" term="Release"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SeaTunnel 在唯品会的实践]]></title>
         <id>SeaTunnel 在唯品会的实践</id>

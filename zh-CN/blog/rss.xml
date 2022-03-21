@@ -4,9 +4,18 @@
         <title>Apache SeaTunnel Blog</title>
         <link>https://seatunnel.apache.org/zh-CN/blog</link>
         <description>Apache SeaTunnel Blog</description>
-        <lastBuildDate>Fri, 18 Feb 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 18 Mar 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink]]></title>
+            <link>https://seatunnel.apache.org/zh-CN/blog/Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink</link>
+            <guid>Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink</guid>
+            <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[2021 年 12 月 9 日，Apache SeaTunnel(Incubating) 进入 Apache 孵化器，在经过社区各位贡献者近四个月的努力下，我们于2022年3月18日发布了首个Apache版本，并且保证了首个版本一次性通过检查。这意味着 2.1.0 版本，是经过 Apache SeaTunnel(Incubating) 社区和 Apache 孵化器投票检查发布的官方版本，企业和个人用户可以放心安全使用。]]></description>
+            <category>2.1.0</category>
+            <category>Release</category>
+        </item>
         <item>
             <title><![CDATA[SeaTunnel 在唯品会的实践]]></title>
             <link>https://seatunnel.apache.org/zh-CN/blog/SeaTunnel 在唯品会的实践</link>

@@ -2,15 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://seatunnel.apache.org/blog</id>
     <title>Apache SeaTunnel Blog</title>
-    <updated>2022-02-18T00:00:00.000Z</updated>
+    <updated>2022-03-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://seatunnel.apache.org/blog"/>
     <subtitle>Apache SeaTunnel Blog</subtitle>
     <icon>https://seatunnel.apache.org/image/favicon.ico</icon>
     <entry>
+        <title type="html"><![CDATA[2.1.0 Released! Apache SeaTunnel(Incubating) First Apache Release Refactors Kernel and Supports Flink Overall]]></title>
+        <id>2.1.0-Released!-Apache-SeaTunnel(Incubating)-First-Apache-Release-Refactors-Kernel-and-Supports-Flink-Overall</id>
+        <link href="https://seatunnel.apache.org/blog/2.1.0-Released!-Apache-SeaTunnel(Incubating)-First-Apache-Release-Refactors-Kernel-and-Supports-Flink-Overall"/>
+        <updated>2022-03-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[On December 9, 2021, Apache SeaTunnel(Incubating) entered the Apache Incubator, and after nearly four months of endeavor by the community contributors, we passed the first Apache version control in one go and released it on March 18, 2022. This means that version 2.1.0 is an official release that is safe for corporate and individual users to use, which has been voted on by the Apache SeaTunnel(Incubating) community and the Apache Incubator.]]></summary>
+        <category label="2.1.0" term="2.1.0"/>
+        <category label="Release" term="Release"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[The practice of SeaTunnel in Vip]]></title>
-        <id>The practice of SeaTunnel in Vip</id>
-        <link href="https://seatunnel.apache.org/blog/The practice of SeaTunnel in Vip"/>
+        <id>The-practice-of-SeaTunnel-in-Vip</id>
+        <link href="https://seatunnel.apache.org/blog/The-practice-of-SeaTunnel-in-Vip"/>
         <updated>2022-02-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Guest speaker: Vip Senior Big Data Engineer Wang Yu]]></summary>
         <content type="html"><![CDATA[<p>Guest speaker: Vip Senior Big Data Engineer Wang Yu
