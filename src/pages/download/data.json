@@ -4,13 +4,13 @@
 		"version": "v2.1.0",
 		"sourceCode": {
 			"src": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-src.tar.gz",
-			"asc": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-src.tar.gz.asc",
-			"sha512": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-src.tar.gz.sha512"
+			"asc": "https://downloads.apache.org/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-src.tar.gz.sha512"
 		},
 		"binaryDistribution": {
 			"bin": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-bin.tar.gz",
-			"asc": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-bin.tar.gz.asc",
-			"sha512": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-bin.tar.gz.sha512"
+			"asc": "https://downloads.apache.org/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/incubator/seatunnel/2.1.0/apache-seatunnel-incubating-2.1.0-bin.tar.gz.sha512"
 		}
 	}
 ]
