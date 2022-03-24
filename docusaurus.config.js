@@ -33,6 +33,9 @@ const config = {
             'classic',
             ({
                 docs: {
+                    id: 'docs',
+                    path: 'docs',
+                    routeBasePath: 'docs',
                     sidebarPath: require.resolve('./sidebars.js'),
                     sidebarCollapsible: true,
                     editLocalizedFiles: true,
@@ -184,7 +187,7 @@ const config = {
                     items: [
                         {
                             label: 'FAQ',
-                            href: '/docs/developement/FAQ',
+                            href: '/docs/FAQ',
                         },
                         {
                             label: 'Releases',

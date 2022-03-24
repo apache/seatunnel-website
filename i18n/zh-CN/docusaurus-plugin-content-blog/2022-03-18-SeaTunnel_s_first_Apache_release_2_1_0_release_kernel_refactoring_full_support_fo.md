@@ -1,9 +1,7 @@
 ---
 slug: Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
 title: Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
-tags:
-- 2.1.0
-- Release
+tags: [2.1.0, Release]
 ---
 # Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink
  
@@ -51,9 +49,9 @@ Al-assad, BenJFan, CalvinKirs, JNSimba, JiangTChen, Rianico, TyrantLucifer, Yves
 ### 【Apache SeaTunnel(Incubating)的用户】
 Note:仅包含已登记用户
 Apache SeaTunnel(Incubating) 目前登记用户如下，如果您也在使用Apache SeaTunnel，欢迎在[Who is using SeaTunne](https://github.com/apache/incubator-seatunnel/issues/686)! 中登记！
- <div align=center>
+ <div align="center">
 
-<img src="/static/image/20220321/1.png"/>
+<img src="/image/20220321/1.png"/>
 
 </div>
 
