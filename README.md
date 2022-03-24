@@ -52,6 +52,7 @@ This website is compiled using node, using Docusaurus framework components
 │           └── docusaurus-theme-classic
 ├── package.json
 ├── sidebars.js
+├── sidebarsCommunity.js
 ├── src
 │       ├── components
 │       ├── css
