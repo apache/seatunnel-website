@@ -109,7 +109,7 @@ The V.P. could request through the [Apache Account Submission Helper Form](https
 After several days, the new committer will receive an email confirming creation of the account, titled `Welcome to the Apache Software Foundation (ASF)!`.
 Congratulations! The new committer now has an official Apache ID.
 
-The PPMC member should add the new committer to the official committer list through [roster](https://whimsy.apache.org/roster/committee/SeaTunnel).
+The PPMC member should add the new committer to the official committer list through [roster](https://whimsy.apache.org/roster/ppmc/seatunnel).
 
 ### Set up the Apache ID and dev env
 1. Go to [Apache Account Utility Platform](https://id.apache.org/), create your password, set up your personal mailbox (`Forwarding email address`) and GitHub account(`Your GitHub Username`). An organizational invite will be sent to you via email shortly thereafter (within 2 hours).
