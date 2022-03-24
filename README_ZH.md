@@ -52,6 +52,7 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 │           └── docusaurus-theme-classic
 ├── package.json
 ├── sidebars.js
+├── sidebarsCommunity.js
 ├── src
 │       ├── components
 │       ├── css

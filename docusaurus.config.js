@@ -33,6 +33,9 @@ const config = {
             'classic',
             ({
                 docs: {
+                    id: 'docs',
+                    path: 'docs',
+                    routeBasePath: 'docs',
                     sidebarPath: require.resolve('./sidebars.js'),
                     sidebarCollapsible: true,
                     editLocalizedFiles: true,
