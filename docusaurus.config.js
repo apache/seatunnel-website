@@ -33,7 +33,6 @@ const config = {
             'classic',
             ({
                 docs: {
-                    id: 'docs',
                     path: 'docs',
                     routeBasePath: 'docs',
                     sidebarPath: require.resolve('./sidebars.js'),
@@ -266,7 +265,7 @@ const config = {
                     }
                     return `https://github.com/apache/incubator-seatunnel-website/edit/dev/${versionDocsDirPath}/${docPath}`;
                 },
-                sidebarPath: require.resolve('./sidebars.js'),
+                sidebarPath: require.resolve('./sidebarsCommunity.js'),
             },
         ],
     ]

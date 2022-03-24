@@ -52,9 +52,9 @@ function replaceImagesPath(){
       if [ "${filePath##*.}"x = "md"x ]; then
         echo "===>>: Replace images path to /doc/image_en in ${filePath}"
         if [[ "$OSTYPE" == "darwin"* ]]; then
-          sed -r -i '' "s/(\.\.\/)*images/\/doc\/image_en/g" ${filePath}
+          sed -E -i '' "s/(\.\.\/)*images/\/doc\/image_en/g" ${filePath}
         else
-          sed -r -i "s/(\.\.\/)*images/\/doc\/image_en/g" ${filePath}
+          sed -E -i "s/(\.\.\/)*images/\/doc\/image_en/g" ${filePath}
         fi
       fi
     else
