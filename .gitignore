@@ -23,7 +23,7 @@ build/
 # Temp directory for perpare docs for main repository
 # those directories will be create when you run script `./tool/build_docs.sh`
 swap/
-docs/
+#docs/
 static/image_en/
 
 dist
