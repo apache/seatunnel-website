@@ -25,6 +25,7 @@ build/
 swap/
 docs/
 static/image_en/
+sidebars.js
 
 dist
 dist-ssr
