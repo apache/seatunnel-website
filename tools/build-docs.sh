@@ -17,6 +17,7 @@ PROJECT_SITE_DOC_DIR="${SOURCE_PATH}/docs"
 PROJECT_DIR="${SWAP_DIR}/${PROJECT_NAME}"
 PROJECT_IMG_DIR="${PROJECT_DIR}/docs/en/images"
 PROJECT_DOC_DIR="${PROJECT_DIR}/docs/en"
+PROJECT_SIDEBAR_PATH="${PROJECT_DIR}/docs/sidebars.js"
 
 # Repository Codebase(current) File Path
 DOCUSAURUS_DOC_SIDEBARS_FILE="${SOURCE_PATH}/sidebars.js"
@@ -149,6 +150,9 @@ function prepare_docs() {
 
     echo "===>>>: Clone project main codebase repositories."
     clone_repo "${PROJECT_REPO}" "${PROJECT_BRANCH_NAME}" "${PROJECT_DIR}"
+
+    echo "===>>>: Rsync sidebars.js to ${DOCUSAURUS_DOC_SIDEBARS_FILE}"
+    rsync -av "${PROJECT_SIDEBAR_PATH}" "${DOCUSAURUS_DOC_SIDEBARS_FILE}"
 
     echo "===>>>: Rsync images to ${PROJECT_SITE_IMG_DIR}"
     rsync -av "${PROJECT_IMG_DIR}"/ "${PROJECT_SITE_IMG_DIR}"
