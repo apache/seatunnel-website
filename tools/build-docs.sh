@@ -4,17 +4,23 @@ set -euo pipefail
 
 SOURCE_PATH="$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")" )" && pwd)"
 
+# Codebase Repository
 PROJECT_NAME="seatunnel"
 PROJECT_BRANCH_NAME="dev"
-# PROJECT_WEBSITE_NAME="${PROJECT_NAME}-website"
 
+# Repository Website(current) Directory
 SWAP_DIR="${SOURCE_PATH}/swap"
 PROJECT_SITE_IMG_DIR="${SOURCE_PATH}/static/image_en"
 PROJECT_SITE_DOC_DIR="${SOURCE_PATH}/docs"
 
+# Repository Codebase(current) Directory
 PROJECT_DIR="${SWAP_DIR}/${PROJECT_NAME}"
 PROJECT_IMG_DIR="${PROJECT_DIR}/docs/en/images"
 PROJECT_DOC_DIR="${PROJECT_DIR}/docs/en"
+PROJECT_SIDEBAR_PATH="${PROJECT_DIR}/docs/sidebars.js"
+
+# Repository Codebase(current) File Path
+DOCUSAURUS_DOC_SIDEBARS_FILE="${SOURCE_PATH}/sidebars.js"
 
 
 # Choose the protocol for git communication to server, default is HTTP because it do not requests password or secret key,
@@ -29,11 +35,12 @@ fi
 ##############################################################
 #
 # Rebuild specific directory, if directory exists, will remove
-# it before create it, otherwise create it directly.
+# it before create it, otherwise create it directly. It
+# supports one or more parameters.
 #
 # Arguments:
 #
-#   path: One or more directories want to rebuild
+#   <path...>: One or more directories want to rebuild
 #
 ##############################################################
 function rebuild_dirs() {
@@ -43,6 +50,25 @@ function rebuild_dirs() {
           rm -rf "${dir}"
         fi
         mkdir -p "${dir}"
+    done
+}
+
+##############################################################
+#
+# Remove specific exists file. It supports one or more
+# parameters.
+#
+# Arguments:
+#
+#   <file...>: One or more files want to remove
+#
+##############################################################
+function rm_exists_files() {
+    for file in "$@"; do
+        echo "  ---> Remove exists ${file}"
+        if [ -f "${file}" ]; then
+          rm -rf "${file}"
+        fi
     done
 }
 
@@ -119,8 +145,14 @@ function prepare_docs() {
     echo "===>>>: Rebuild directory swap, docs, static/image_en."
     rebuild_dirs "${SWAP_DIR}" "${PROJECT_SITE_DOC_DIR}" "${PROJECT_SITE_IMG_DIR}"
 
+    echo "===>>>: Remove exists file sidebars.js."
+    rm_exists_files "${DOCUSAURUS_DOC_SIDEBARS_FILE}"
+
     echo "===>>>: Clone project main codebase repositories."
     clone_repo "${PROJECT_REPO}" "${PROJECT_BRANCH_NAME}" "${PROJECT_DIR}"
+
+    echo "===>>>: Rsync sidebars.js to ${DOCUSAURUS_DOC_SIDEBARS_FILE}"
+    rsync -av "${PROJECT_SIDEBAR_PATH}" "${DOCUSAURUS_DOC_SIDEBARS_FILE}"
 
     echo "===>>>: Rsync images to ${PROJECT_SITE_IMG_DIR}"
     rsync -av "${PROJECT_IMG_DIR}"/ "${PROJECT_SITE_IMG_DIR}"
