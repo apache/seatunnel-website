@@ -65,7 +65,7 @@ Next, I will introduce to you how we write data from Hive to ClickHouse through 
 
 [Seatunnel](https://github.com/apache/incubator-seatunnel) is a very easy-to-use, high-performance, real-time data processing product that can deal with massive data. It is built on Spark. Seatunnel has a very rich set of plug-ins that support reading data from Kafka, HDFS, and Kudu, performing various data processing, and writing the results to ClickHouse, Elasticsearch or Kafka.
 
-The environment preparation and installation steps of Seatunnel will not be repeated here. For specific installation steps, please refer to the previous article or visit [Seatunnel Docs](/docs/introduction)
+The environment preparation and installation steps of Seatunnel will not be repeated here. For specific installation steps, please refer to the previous article or visit [Seatunnel Docs](/docs/intro/about)
 
 ### Seatunnel Pipeline
 

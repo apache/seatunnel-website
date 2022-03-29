@@ -65,7 +65,7 @@ CREATE TABLE cms.cms_msg
 
 [Seatunnel](https://github.com/apache/incubator-seatunnel) 是一个非常易用，高性能，能够应对海量数据的实时数据处理产品，它构建在Spark之上。Seatunnel 拥有着非常丰富的插件，支持从Kafka、HDFS、Kudu中读取数据，进行各种各样的数据处理，并将结果写入ClickHouse、Elasticsearch或者Kafka中。
 
-Seatunnel的环境准备以及安装步骤这里就不一一赘述了，具体安装步骤可以参考上一篇文章或者访问 [Seatunnel Docs](/docs/introduction)
+Seatunnel的环境准备以及安装步骤这里就不一一赘述了，具体安装步骤可以参考上一篇文章或者访问 [Seatunnel Docs](/docs/intro/about)
 
 ### Seatunnel Pipeline
 
