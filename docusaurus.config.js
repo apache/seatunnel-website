@@ -86,7 +86,7 @@ const config = {
                     items: [
                         {
                             label: "Next-2.x (WIP)",
-                            to: "/docs/introduction",
+                            to: "/docs/intro/about",
                         },
                         {
                             label: versions[0],
@@ -247,7 +247,10 @@ const config = {
         prism: {
             theme: require('prism-react-renderer/themes/dracula'),
             darkTheme: darkCodeTheme,
-        }
+        },
+
+        // would collapse all sibling categories when expanding one category
+        autoCollapseSidebarCategories: true,
 
     }),
 

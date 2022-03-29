@@ -25,7 +25,6 @@ jobs:
           node-version: 14
       - name: Documents Sync
         run: |
-          chmod -R 775 ./tools/build-docs.sh
           bash ./tools/build-docs.sh
         shell: bash
       - name: install

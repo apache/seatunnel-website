@@ -1,23 +1,34 @@
+# System Temp
+.DS_Store
+
 # Intellij
 .idea/
 *.iml
 *.iws
 
+# vscode
+.vscode
+
 # Dependencies
-/node_modules
+node_modules/
+package-lock.json
 
 # Production
-/build
+build/
 
 # Generated files
 .docusaurus
 .cache-loader
 
-.DS_Store
+# Temp directory for perpare docs for main repository
+# those directories will be create when you run script `./tool/build_docs.sh`
+swap/
+docs/
+static/image_en/
+sidebars.js
+
 dist
 dist-ssr
 *.local
 *.idea
 *.iml.
-.vscode
-/package-lock.json

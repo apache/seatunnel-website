@@ -23,10 +23,11 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 
 1. 下载并安装 nodejs(version>12.5.0)
 2. 克隆代码到本地 `git clone  git@github.com:apache/incubator-seatunnel-website.git`
-2. 运行 `npm install` 来安装所需的依赖库。
-3. 在根目录运行`npm run start`，可以访问http://localhost:3000查看站点英文模式预览
-4. 在根目录运行`npm run start-zh`，可以访问http://localhost:3000查看站点的中文模式预览
-5. 要生成静态网站资源文件，运行 `npm run build`。构建的静态资源在build目录中。
+3. 运行 `./tools/build-docs.sh` 从 **apache/incubator-seatunnel** 中拉取、准备文档。如果想要了解更多细节和操作请阅读[文档如何工作](HOW_DOC_WORK.md)
+4. 运行 `npm install` 来安装所需的依赖库。
+5. 在根目录运行`npm run start`，可以访问http://localhost:3000查看站点英文模式预览
+6. 在根目录运行`npm run start-zh`，可以访问http://localhost:3000查看站点的中文模式预览
+7. 要生成静态网站资源文件，运行 `npm run build`。构建的静态资源在build目录中。
 
 ## 2.目录结构
 
@@ -38,7 +39,6 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 ├── babel.config.js
 ├── blog
 ├── community  // 社区
-├── docs  // 文档
 ├── docusaurus.config.js
 |-- download  // 下载
 ├── faq  // Q&A
