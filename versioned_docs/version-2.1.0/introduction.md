@@ -97,7 +97,7 @@ https://seatunnel.apache.org/docs/spark/quick-start
 https://seatunnel.apache.org/docs/flink/quick-start
 
 Detailed documentation on SeaTunnel
-https://seatunnel.apache.org/docs/introduction
+https://seatunnel.apache.org/docs/intro/about
 
 ## Application practice cases
 
