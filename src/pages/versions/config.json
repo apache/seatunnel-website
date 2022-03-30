@@ -11,7 +11,7 @@
       "doc": "文档",
       "source": "源代码",
       "release": "Release Note",
-      "nextLink": "/docs/introduction",
+      "nextLink": "/docs/intro/about",
       "latestData": [
         {
           "versionLabel": "2.1.0",
@@ -22,8 +22,8 @@
       ],
       "nextData": [
         {
-          "versionLabel": "2.1.1",
-          "docUrl": "/docs/introduction"
+          "versionLabel": "Next",
+          "docUrl": "/docs/intro/about"
         }
       ],
       "historyData": [
@@ -47,7 +47,7 @@
       "doc": "Document",
       "source": "Source Code",
       "release": "Release Note",
-      "nextLink": "/docs/introduction",
+      "nextLink": "/docs/intro/about",
       "latestData": [
         {
           "versionLabel": "2.1.0",
@@ -59,7 +59,7 @@
       "nextData": [
         {
           "versionLabel": "Next",
-          "docUrl": "/docs/introduction"
+          "docUrl": "/docs/intro/about"
         }
       ],
       "historyData": [

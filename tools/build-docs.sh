@@ -122,7 +122,7 @@ function replace_images_path(){
   replace_dir=$1
   for file_path in "${replace_dir}"/*; do
     if test -f "${file_path}"; then
-      if [ "${file_path##*.}"x = "md"x ]; then
+      if [ "${file_path##*.}"x = "md"x ] || [ "${file_path##*.}"x = "mdx"x ]; then
         echo "  ---> Replace images path to /doc/image_en in ${file_path}"
         if [[ "$OSTYPE" == "darwin"* ]]; then
           sed -E -i '' "s/(\.\.\/)*images/\/image_en/g" "${file_path}"
