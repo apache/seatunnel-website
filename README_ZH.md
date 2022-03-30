@@ -167,4 +167,4 @@ css等样式文件放在`src/css`目录下
 ### 3.9 为文档添加新版本
 
 - 1、在本地运行 npm run docusaurus docs:version replace_by_target_version 以复制文档。
-- 2、修改 `/src/pages/version/index.js` 中的最新的版本。
+- 2、修改 `/src/pages/version/config.json` 中的最新的版本以及历史版本。
