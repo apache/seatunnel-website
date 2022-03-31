@@ -85,10 +85,6 @@ const config = {
                     label: 'Document',
                     items: [
                         {
-                            label: "Next-2.x (WIP)",
-                            to: "/docs/intro/about",
-                        },
-                        {
                             label: versions[0],
                             to: `docs/${versions[0]}/introduction`,
                         },
@@ -99,6 +95,10 @@ const config = {
                         {
                             label: "1.x(Not apache release)",
                             to: "https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/"
+                        },
+                        {
+                            label: "Next",
+                            to: "/docs/intro/about",
                         },
                         {
                             label: "All versions",

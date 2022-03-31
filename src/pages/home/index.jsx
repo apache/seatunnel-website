@@ -5,6 +5,8 @@ import config from './languages.json';
 import './index.less';
 import systemConfiguration from '../../js/sysConfig'
 
+const versions = require('../../../versions.json');
+
 export default function () {
     const [flag, setFlag] = useState(1)
     const isBrowser = useIsBrowser();
@@ -30,7 +32,8 @@ export default function () {
                         <p className="main_slogan">{dataSource.home.banner.slogan}</p>
 
                         <div className="button_row center">
-                            <a href="https://seatunnel.apache.org/docs/category/start" className="corner_button blue_fill">{dataSource.common.getStart}</a>
+                            {/* TODO next release should be change to /category/start */}
+                            <a href={'/docs/' + versions[0] + '/introduction'} className="corner_button blue_fill">{dataSource.common.getStart}</a>
                             <a href={systemConfiguration.github.projectUrl} target="_blank"
                                className="corner_button blue" onMouseOver={() => changeFlag(1)} onMouseOut={() => changeFlag(2)}>
                                 <img className="button_icon github1" src={useBaseUrl('/home/icons/github' + flag + '.svg')} alt="github"/>
