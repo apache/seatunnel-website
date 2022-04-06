@@ -93,10 +93,6 @@ const config = {
                             to: `docs/${version}/introduction`,
                         })),
                         {
-                            label: "1.x(Not apache release)",
-                            to: "https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/"
-                        },
-                        {
                             label: "Next",
                             to: "/docs/intro/about",
                         },
