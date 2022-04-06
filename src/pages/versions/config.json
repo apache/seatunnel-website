@@ -69,6 +69,13 @@
           "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.1.0",
           "sourceTag": "2.1.0"
         }
+      ],
+      "historyData1.x": [
+        {
+          "versionLabel": "1.x",
+          "docUrl": "/docs/1.x/introduction",
+          "sourceTag": "1.x"
+        }
       ]
     }
   }

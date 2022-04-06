@@ -89,13 +89,9 @@ const config = {
                             to: `docs/${versions[0]}/introduction`,
                         },
                         ...versions.slice(1).map((version) => ({
-                            label: version,
+                            label: (version === "1.x") ? "1.x(Not Apache Release)" : version,
                             to: `docs/${version}/introduction`,
                         })),
-                        {
-                            label: "1.x(Not apache release)",
-                            to: "https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/"
-                        },
                         {
                             label: "Next",
                             to: "/docs/intro/about",
