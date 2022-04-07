@@ -144,6 +144,14 @@
         "gitUrl": "https://github.com/yx91490",
         "githubId": "yx91490",
         "name": "Yang Xiang"
+      },
+      {
+        "apacheId": "wenjun",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/22415594?v=4",
+        "email": "wenjun@apache.org",
+        "gitUrl": "https://github.com/ruanwenjun",
+        "githubId": "ruanwenjun",
+        "name": "Wenjun Ruan"
       }
     ]
   },
@@ -292,6 +300,14 @@
         "gitUrl": "https://github.com/yx91490",
         "githubId": "yx91490",
         "name": "Yang Xiang"
+      },
+      {
+        "apacheId": "wenjun",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/22415594?v=4",
+        "email": "wenjun@apache.org",
+        "gitUrl": "https://github.com/ruanwenjun",
+        "githubId": "ruanwenjun",
+        "name": "Wenjun Ruan"
       }
     ]
   }
