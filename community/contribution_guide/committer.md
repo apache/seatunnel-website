@@ -30,11 +30,11 @@ The PPMC member who starts the promotion is responsible for sending an invitatio
 
 The PPMC member should send an email using the following template to the new committer:
 ```
-To: klein@gmail.com
+To: <invitee name>@gmail.com
 Cc: private@seatunnel.apache.org
-Subject: Invitation to become SeaTunnel committer: klein
+Subject: Invitation to become SeaTunnel committer: <invitee name>
 
-Hello [invitee name],
+Hello <invitee name>,
 
 The SeaTunnel Project Management Committee] (PPMC) 
 hereby offers you committer privileges to the project. These privileges are
