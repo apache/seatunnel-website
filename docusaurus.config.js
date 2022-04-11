@@ -260,9 +260,9 @@ const config = {
                 routeBasePath: 'community',
                 editUrl: ({locale, versionDocsDirPath, docPath}) => {
                     if (locale !== 'en') {
-                        return `https://github.com/apache/incubator-seatunnel-website/edit/dev/i18n/${locale}/${docPath}`;
+                        return `https://github.com/apache/incubator-seatunnel-website/edit/main/i18n/${locale}/${docPath}`;
                     }
-                    return `https://github.com/apache/incubator-seatunnel-website/edit/dev/${versionDocsDirPath}/${docPath}`;
+                    return `https://github.com/apache/incubator-seatunnel-website/edit/main/${versionDocsDirPath}/${docPath}`;
                 },
                 sidebarPath: require.resolve('./sidebarsCommunity.js'),
             },
