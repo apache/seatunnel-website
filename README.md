@@ -38,6 +38,7 @@ This website is compiled using node, using Docusaurus framework components
 ├── README_ZH.md
 ├── babel.config.js
 ├── blog
+├── user_cases
 ├── community  // Community
 ├── docusaurus.config.js
 |-- download  // Download
