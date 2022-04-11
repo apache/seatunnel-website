@@ -120,6 +120,12 @@ const config = {
                     activeBaseRegex: `/blog`,
                 },
                 {
+                    to: '/user_cases',
+                    label: 'UserCases',
+                    position: 'right',
+                    activeBaseRegex: `/user_cases`,
+                },
+                {
                     to: '/team',
                     label: 'Team',
                     position: 'right',
@@ -129,7 +135,7 @@ const config = {
                     to: '/user',
                     label: 'Users',
                     position: 'right',
-                    activeBaseRegex: `/user`,
+                    activeBaseRegex: `/user/`,
                 },
                 {
                     label: 'ASF',
@@ -265,6 +271,14 @@ const config = {
                     return `https://github.com/apache/incubator-seatunnel-website/edit/dev/${versionDocsDirPath}/${docPath}`;
                 },
                 sidebarPath: require.resolve('./sidebarsCommunity.js'),
+            },
+        ],
+        [
+            '@docusaurus/plugin-content-blog',
+            {
+                id: 'user_cases',
+                path: 'user_cases',
+                routeBasePath: 'user_cases',
             },
         ],
     ]
