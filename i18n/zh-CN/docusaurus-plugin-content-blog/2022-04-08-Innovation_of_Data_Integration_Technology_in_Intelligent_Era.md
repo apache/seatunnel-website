@@ -7,7 +7,7 @@ tags: [Meetup]
 
 <div align=center>
 
-<img src="static/image/20220416/1.png"/>
+<img src="/static/image/20220416/1.png"/>
 
 </div>
 
@@ -33,7 +33,7 @@ Apache SeaTunnel**(Incubating)** Meetup | 4 月线上直播报名通道已开�
 
 <div align=center>
 
-<img src="static/image/20220416/2.png"/>
+<img src="/static/image/20220416/2.png"/>
 
 </div>
 
@@ -41,7 +41,7 @@ Apache SeaTunnel**(Incubating)** Meetup | 4 月线上直播报名通道已开�
 
 <div align=center>
 
-<img src="static/image/20220416/4.png"/>
+<img src="/static/image/20220416/4.png"/>
 
 </div>
 
@@ -62,7 +62,7 @@ Apache SeaTunnel**(Incubating)** Meetup | 4 月线上直播报名通道已开�
 
 <div align=center>
 
-<img src="static/image/20220416/5.png"/>
+<img src="/static/image/20220416/5.png"/>
 
 </div>
 
@@ -78,7 +78,7 @@ Apache SeaTunnel**(Incubating)** Meetup | 4 月线上直播报名通道已开�
 
 <div align=center>
 
-<img src="static/image/20220416/6.png"/>
+<img src="/static/image/20220416/6.png"/>
 
 </div>
 
@@ -93,7 +93,7 @@ Apache SeaTunnel**(Incubating)** Meetup | 4 月线上直播报名通道已开�
 
 <div align=center>
 
-<img src="static/image/20220416/7.png"/>
+<img src="/static/image/20220416/7.png"/>
 
 </div>
 

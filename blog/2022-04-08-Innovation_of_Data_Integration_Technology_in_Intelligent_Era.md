@@ -7,7 +7,7 @@ tags: [Meetup]
 
 <div align=center>
 
-<img src="static/image/20220416/EN/1.png"/>
+<img src="/static/image/20220416/EN/1.png"/>
 
 </div>
 
@@ -49,7 +49,7 @@ On the day of the event, big data engineers from Kidswant and oppo will share th
 
 <div align=center>
 
-<img src="static/image/20220416/EN/2.png"/>
+<img src="/static/image/20220416/EN/2.png"/>
 
 </div>
 
@@ -65,7 +65,7 @@ Speech outline: How to push data efficiently? How to improve the quality of the 
 
 <div align=center>
 
-<img src="static/image/20220416/EN/3.png"/>
+<img src="/static/image/20220416/EN/3.png"/>
 
 </div>
 
@@ -79,7 +79,7 @@ Speech outline: How to implement the bulk load data synchronization function of 
 
 <div align=center>
 
-<img src="static/image/20220416/EN/4.png"/>
+<img src="/static/image/20220416/EN/4.png"/>
 
 </div>
 
