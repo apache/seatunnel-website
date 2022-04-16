@@ -5,11 +5,10 @@ tags: [Meetup]
 ---
 # Innovation of Data Integration Technology in the Intelligent Era
 
-<div align=center>
 
-<img src="/static/image/20220416/EN/1.png"/>
 
-</div>
+![1](/static/image/20220416/EN/1.png)
+
 
 As we know, only manageable, callable, computable, and magnetizable data resources can be deposited as assets. The interconnection of information systems has created a huge demand for multi-source and multidimensional data integration, which imposes strict requirements on data processing and integration tools.
 
@@ -47,11 +46,9 @@ Join Slack:
 
 On the day of the event, big data engineers from Kidswant and oppo will share the front-line practical experience, and senior engineers from WhaleOps will give a “hard-core” explanation of the important function updates of Apache SeaTunnel.
 
-<div align=center>
 
-<img src="/static/image/20220416/EN/2.png"/>
+![2](/static/image/20220416/EN/2.png)
 
-</div>
 
 Yuan Hongjun, Kidswant Big Data Expert, OLAP Platform Architect
 
@@ -63,11 +60,9 @@ Topic: Application Practice of Apache SeaTunnel in Kidswant
 
 Speech outline: How to push data efficiently? How to improve the quality of the platform? How to ensure data security? What changes did Kidswant make to Apache SeaTunnel?
 
-<div align=center>
 
-<img src="/static/image/20220416/EN/3.png"/>
+![3](/static/image/20220416/EN/3.png)
 
-</div>
 
 Fan Jia, WhaleOps Senior Engineer
 
@@ -77,11 +72,9 @@ Topic: Clickhouse Bulk Load Implementation Based on Apache SeaTunnel
 
 Speech outline: How to implement the bulk load data synchronization function of Clickhouse by extending the Connector of Apache SeaTunnel?
 
-<div align=center>
 
-<img src="/static/image/20220416/EN/4.png"/>
+![4](/static/image/20220416/EN/4.png)
 
-</div>
 
 Wang Zichao, Oppo Senior Backend Engineer
 

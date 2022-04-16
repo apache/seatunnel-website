@@ -5,11 +5,8 @@ tags: [Meetup]
 ---
 # 智能化时代的数据集成技术革新
 
-<div align=center>
+![1](/static/image/20220416/1.png)
 
-<img src="/static/image/20220416/1.png"/>
-
-</div>
 
 可管理，可调用，可计算，可变现的数据资源才能成为资产，信息系统的互联互通使得多源和多维度的数据集成需求巨大，这就对数据处理和集成的工具提出了严苛的要求。
 
@@ -31,19 +28,13 @@ Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，
 
 点击链接或扫码预约报名（免费）：
 
-<div align=center>
+![2](/static/image/20220416/2.png)
 
-<img src="/static/image/20220416/2.png"/>
-
-</div>
 
 扫码预约报名
 
-<div align=center>
+![3](/static/image/20220416/4.png)
 
-<img src="/static/image/20220416/4.png"/>
-
-</div>
 
 扫码进直播群
 
@@ -60,11 +51,8 @@ Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，
 
 活动当天，将有来自孩子王、oppo 的工程师现场分享来自厂商的一线前沿实践经验，还有来自白鲸开源的高级工程师对 Apache SeaTunnel(Incubating)的重要功能更新进行“硬核”讲解，干货满满。
 
-<div align=center>
+![4](/static/image/20220416/5.png)
 
-<img src="/static/image/20220416/5.png"/>
-
-</div>
 
 袁洪军 孩子王 大数据专家、OLAP 平台架构师
 
@@ -76,11 +64,7 @@ Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，
 
 演讲概要： 如何实现高效数据推送？如何提高平台质量？如何保障数据安全？孩子王又对 Apache SeaTunnel(Incubating)做了哪些改造？
 
-<div align=center>
-
-<img src="/static/image/20220416/6.png"/>
-
-</div>
+![6](/static/image/20220416/6.png)
 
 
 范佳 白鲸开源  高级工程师 Apache SeaTunnel Contributor
@@ -91,11 +75,9 @@ Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，
 
 演讲概要： 通过扩展 Apache SeaTunnel(Incubating)的 Connector实现 Clickhouse的 bulk load 数据同步功能。
 
-<div align=center>
 
-<img src="/static/image/20220416/7.png"/>
+![7](/static/image/20220416/7.png)
 
-</div>
 
 王子超 oppo 高级后端工程师
 
