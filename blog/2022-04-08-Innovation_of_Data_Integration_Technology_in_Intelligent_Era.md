@@ -7,7 +7,7 @@ tags: [Meetup]
 
 
 
-![1](/static/image/20220416/EN/1.png)
+![1](/image/20220416/EN/1.png)
 
 
 As we know, only manageable, callable, computable, and magnetizable data resources can be deposited as assets. The interconnection of information systems has created a huge demand for multi-source and multidimensional data integration, which imposes strict requirements on data processing and integration tools.
@@ -47,7 +47,7 @@ Join Slack:
 On the day of the event, big data engineers from Kidswant and oppo will share the front-line practical experience, and senior engineers from WhaleOps will give a “hard-core” explanation of the important function updates of Apache SeaTunnel.
 
 
-![2](/static/image/20220416/EN/2.png)
+![2](/image/20220416/EN/2.png)
 
 
 Yuan Hongjun, Kidswant Big Data Expert, OLAP Platform Architect
@@ -61,7 +61,7 @@ Topic: Application Practice of Apache SeaTunnel in Kidswant
 Speech outline: How to push data efficiently? How to improve the quality of the platform? How to ensure data security? What changes did Kidswant make to Apache SeaTunnel?
 
 
-![3](/static/image/20220416/EN/3.png)
+![3](/image/20220416/EN/3.png)
 
 
 Fan Jia, WhaleOps Senior Engineer
