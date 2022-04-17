@@ -73,7 +73,7 @@ Topic: Clickhouse Bulk Load Implementation Based on Apache SeaTunnel
 Speech outline: How to implement the bulk load data synchronization function of Clickhouse by extending the Connector of Apache SeaTunnel?
 
 
-![4](/static/image/20220416/EN/4.png)
+![4](/image/20220416/EN/4.png)
 
 
 Wang Zichao, Oppo Senior Backend Engineer
