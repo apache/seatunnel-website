@@ -51,7 +51,7 @@ Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，
 
 活动当天，将有来自孩子王、oppo 的工程师现场分享来自厂商的一线前沿实践经验，还有来自白鲸开源的高级工程师对 Apache SeaTunnel(Incubating)的重要功能更新进行“硬核”讲解，干货满满。
 
-![4](/static/image/20220416/5.png)
+![4](/image/20220416/5.png)
 
 
 袁洪军 孩子王 大数据专家、OLAP 平台架构师
