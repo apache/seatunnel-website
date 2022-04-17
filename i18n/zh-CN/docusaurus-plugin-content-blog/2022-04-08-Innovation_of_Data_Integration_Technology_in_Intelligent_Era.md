@@ -5,7 +5,7 @@ tags: [Meetup]
 ---
 # 智能化时代的数据集成技术革新
 
-![1](/static/image/20220416/1.png)
+![1](/image/20220416/1.png)
 
 
 可管理，可调用，可计算，可变现的数据资源才能成为资产，信息系统的互联互通使得多源和多维度的数据集成需求巨大，这就对数据处理和集成的工具提出了严苛的要求。
@@ -28,12 +28,12 @@ Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，
 
 点击链接或扫码预约报名（免费）：
 
-![2](/static/image/20220416/2.png)
+![2](/image/20220416/2.png)
 
 
 扫码预约报名
 
-![3](/static/image/20220416/4.png)
+![3](/image/20220416/4.png)
 
 
 扫码进直播群
@@ -64,7 +64,7 @@ Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，
 
 演讲概要： 如何实现高效数据推送？如何提高平台质量？如何保障数据安全？孩子王又对 Apache SeaTunnel(Incubating)做了哪些改造？
 
-![6](/static/image/20220416/6.png)
+![6](/image/20220416/6.png)
 
 
 范佳 白鲸开源  高级工程师 Apache SeaTunnel Contributor
@@ -76,7 +76,7 @@ Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，
 演讲概要： 通过扩展 Apache SeaTunnel(Incubating)的 Connector实现 Clickhouse的 bulk load 数据同步功能。
 
 
-![7](/static/image/20220416/7.png)
+![7](/image/20220416/7.png)
 
 
 王子超 oppo 高级后端工程师
