@@ -2,11 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://seatunnel.apache.org/zh-CN/blog</id>
     <title>Apache SeaTunnel Blog</title>
-    <updated>2022-03-18T00:00:00.000Z</updated>
+    <updated>2022-04-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://seatunnel.apache.org/zh-CN/blog"/>
     <subtitle>Apache SeaTunnel Blog</subtitle>
     <icon>https://seatunnel.apache.org/zh-CN/image/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[智能化时代的数据集成技术革新]]></title>
+        <id>智能化时代的数据集成技术革新</id>
+        <link href="https://seatunnel.apache.org/zh-CN/blog/智能化时代的数据集成技术革新"/>
+        <updated>2022-04-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[1]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="1" src="/zh-CN/assets/images/1-3abb262dd4a58a521e31f7249b2058d2.png" width="900" height="383"></p><p>可管理，可调用，可计算，可变现的数据资源才能成为资产，信息系统的互联互通使得多源和多维度的数据集成需求巨大，这就对数据处理和集成的工具提出了严苛的要求。</p><p>智能化时代，在“智慧城市”、“智慧治理”、“产品智能化”等的趋势下，企业大多面临如何实现高效数据推送，提高平台质量，以及保障数据安全的挑战。选对数据集成工具和平台，数据才能发挥出做大的作用。</p><p>Apache SeaTunnel (Incubating) 作为下一代高性能、分布式、海量数据集成框架，致力于让数据同步更简单，更高效，加快分布式数据处理能力在生产环境落地。</p><p>在 Apache SeaTunnel(Incubating) Meetup（2022&nbsp;年&nbsp;4&nbsp;月&nbsp;16日），Apache SeaTunnel(Incubating) 社区将邀请了 Apache SeaTunnel(Incubating)的资深用户，分享 Apache SeaTunnel(Incubating)在智能化生产环境中落地的最佳实践。此外，还会有贡献者现场进行 Apache SeaTunnel(Incubating)的源码解析，让你对 Apache SeaTunnel(Incubating)有一个更加全面而深入的了解。</p><p>无论你是对 Apache SeaTunnel(Incubating)抱有兴趣的初学者，还是在日常的生产实践中遭遇了复杂棘手的部署问题，都可以来到这里，与我们的讲师近距离沟通，得到你想要的答案。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="01-报-名-通-道">01 报 名 通 道<a class="hash-link" href="#01-报-名-通-道" title="Direct link to heading">​</a></h2><p>Apache SeaTunnel (Incubating) Meetup | 4 月线上直播报名通道已开启，赶快预约吧！</p><p>时间：2022-4-16 14:00-17:00</p><p>形式：线上直播</p><p>点击链接或扫码预约报名（免费）：</p><p><img loading="lazy" alt="2" src="/zh-CN/assets/images/2-e9c01734f2c74a12f59e2f3eecd2a2c6.png" width="300" height="300"></p><p>扫码预约报名</p><p><img loading="lazy" alt="3" src="/zh-CN/assets/images/4-b0dd1cb8a1432483e3f3202cbea5c271.png" width="498" height="507"></p><p>扫码进直播群</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="02-活-动-亮-点">02 活 动 亮 点<a class="hash-link" href="#02-活-动-亮-点" title="Direct link to heading">​</a></h2><ul><li>行业案例详解</li><li>特色功能分析</li><li>一线企业踩坑心得</li><li>开源社区实战攻略</li><li>行业技术专家面对面 Q&amp;A</li><li>惊喜礼品送不停</li></ul><h2 class="anchor anchorWithStickyNavbar_mojV" id="03-活-动-议-程">03 活 动 议 程<a class="hash-link" href="#03-活-动-议-程" title="Direct link to heading">​</a></h2><p>活动当天，将有来自孩子王、oppo 的工程师现场分享来自厂商的一线前沿实践经验，还有来自白鲸开源的高级工程师对 Apache SeaTunnel(Incubating)的重要功能更新进行“硬核”讲解，干货满满。</p><p><img loading="lazy" alt="4" src="/zh-CN/assets/images/5-f80f0bce07f15e8f83f603d16825dde4.png" width="1080" height="1075"></p><p>袁洪军&nbsp;孩子王 大数据专家、OLAP 平台架构师</p><p>多年大数据平台研发管理经验，在数据资产、血缘图谱、数据治理、OLAP 等领域有着丰富的研究经验</p><p>演讲时间：14:00-14:40</p><p>演讲题目：Apache SeaTunnel(Incubating) 在孩子王的应用实践</p><p>演讲概要： 如何实现高效数据推送？如何提高平台质量？如何保障数据安全？孩子王又对 Apache SeaTunnel(Incubating)做了哪些改造？</p><p><img loading="lazy" alt="6" src="/zh-CN/assets/images/6-8f02c4507ef50d7a109ddf227c45a7a5.png" width="1080" height="1080"></p><p>范佳&nbsp;白鲸开源&nbsp; 高级工程师 Apache SeaTunnel Contributor</p><p>演讲时间： 14:40-15:20</p><p>演讲题目： 基于 Apache SeaTunnel(Incubating)的 Clickhouse Bulk Load 实现</p><p>演讲概要： 通过扩展 Apache SeaTunnel(Incubating)的 Connector实现 Clickhouse的 bulk load 数据同步功能。</p><p><img loading="lazy" alt="7" src="/zh-CN/assets/images/7-8b4c7798dd107093cb31b526eb3d8476.png" width="1080" height="1078"></p><p>王子超&nbsp;oppo&nbsp;高级后端工程师</p><p>演讲时间： 15:50-16:30</p><p>演讲题目： oppo智能推荐样本中心基于 Apache SeaTunnel(Incubating)的技术革新</p><p>演讲概要： 介绍 oppo 智能推荐机器学习样本流程的演进及 Apache &nbsp;SeaTunnel(Incubating)&nbsp;在其中发挥的作用。</p><p>除了精彩的演讲之外，现场还设置了多个抽奖环节，参与抽奖有机会获得&nbsp;Apache&nbsp;SeaTunnel(Incubating)&nbsp;精美定制礼品，敬请期待~</p>]]></content>
+        <category label="Meetup" term="Meetup"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink]]></title>
         <id>Apache SeaTunnel(Incubating) 首个Apache 版本 2.1.0 发布，内核重构，全面支持Flink</id>
