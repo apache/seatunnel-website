@@ -152,6 +152,14 @@
         "gitUrl": "https://github.com/ruanwenjun",
         "githubId": "ruanwenjun",
         "name": "Wenjun Ruan"
+      },
+      {
+        "apacheId": "ming",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/18065113?v=4",
+        "email": "ming@apache.org",
+        "gitUrl": "https://github.com/simon824",
+        "githubId": "simon824",
+        "name": "Simon"
       }
     ]
   },
@@ -308,6 +316,14 @@
         "gitUrl": "https://github.com/ruanwenjun",
         "githubId": "ruanwenjun",
         "name": "Wenjun Ruan"
+      },
+      {
+        "apacheId": "ming",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/18065113?v=4",
+        "email": "ming@apache.org",
+        "gitUrl": "https://github.com/simon824",
+        "githubId": "simon824",
+        "name": "Simon"
       }
     ]
   }
