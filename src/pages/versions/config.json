@@ -51,7 +51,7 @@
       "latestData": [
         {
           "versionLabel": "2.1.1",
-          "docUrl": "/docs/2.1.1/introduction",
+          "docUrl": "/docs/2.1.1/intro/about",
           "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.1.1",
           "sourceTag": "2.1.1"
         }
@@ -65,7 +65,7 @@
       "historyData": [
         {
           "versionLabel": "2.1.1",
-          "docUrl": "/docs/2.1.1/introduction",
+          "docUrl": "/docs/2.1.1/intro/about",
           "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.1.1",
           "sourceTag": "2.1.1"
         },

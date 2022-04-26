@@ -85,7 +85,8 @@ const config = {
                     items: [
                         {
                             label: versions[0],
-                            to: `docs/${versions[0]}/introduction`,
+                            to: `docs/${versions[0]}/intro/about`,
+
                         },
                         ...versions.slice(1).map((version) => ({
                             label: (version === "1.x") ? "1.x(Not Apache Release)" : version,
