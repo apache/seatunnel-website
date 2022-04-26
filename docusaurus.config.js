@@ -61,7 +61,6 @@ const config = {
             }),
         ],
     ],
-
     themeConfig: ({
         colorMode: {
             defaultMode: 'light',
@@ -85,20 +84,16 @@ const config = {
                     label: 'Document',
                     items: [
                         {
-                            label: "Next-2.x (WIP)",
-                            to: "/docs/intro/about",
-                        },
-                        {
                             label: versions[0],
                             to: `docs/${versions[0]}/introduction`,
                         },
                         ...versions.slice(1).map((version) => ({
-                            label: version,
+                            label: (version === "1.x") ? "1.x(Not Apache Release)" : version,
                             to: `docs/${version}/introduction`,
                         })),
                         {
-                            label: "1.x(Not apache release)",
-                            to: "https://interestinglab.github.io/seatunnel-docs/#/zh-cn/v1/"
+                            label: "Next",
+                            to: "/docs/intro/about",
                         },
                         {
                             label: "All versions",
@@ -253,7 +248,6 @@ const config = {
         autoCollapseSidebarCategories: true,
 
     }),
-
     plugins: [
         'docusaurus-plugin-less',
         [
@@ -264,13 +258,16 @@ const config = {
                 routeBasePath: 'community',
                 editUrl: ({locale, versionDocsDirPath, docPath}) => {
                     if (locale !== 'en') {
-                        return `https://github.com/apache/incubator-seatunnel-website/edit/dev/i18n/${locale}/${docPath}`;
+                        return `https://github.com/apache/incubator-seatunnel-website/edit/main/i18n/${locale}/${docPath}`;
                     }
-                    return `https://github.com/apache/incubator-seatunnel-website/edit/dev/${versionDocsDirPath}/${docPath}`;
+                    return `https://github.com/apache/incubator-seatunnel-website/edit/main/${versionDocsDirPath}/${docPath}`;
                 },
                 sidebarPath: require.resolve('./sidebarsCommunity.js'),
             },
         ],
+    ],
+    scripts: [
+        {src: 'https://hm.baidu.com/hm.js?33a9aab233e1082f91e4e347ad716701',  async: true}
     ]
 };
 
