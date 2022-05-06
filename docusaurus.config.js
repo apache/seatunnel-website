@@ -182,7 +182,7 @@ const config = {
                     items: [
                         {
                             label: 'FAQ',
-                            href: '/docs/FAQ',
+                            href: '/docs/faq',
                         },
                         {
                             label: 'Releases',
