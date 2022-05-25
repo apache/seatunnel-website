@@ -56,7 +56,7 @@ Sink plugin common parameters, please refer to [Sink Plugin](common-options.md) 
 
 ```bash
 kafka {
-    topic = "seatunnel"
+    topics = "seatunnel"
     producer.bootstrap.servers = "localhost:9092"
 }
 ```
