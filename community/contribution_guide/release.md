@@ -91,8 +91,10 @@ Among them, 85E11560 is public key ID.
 The command is as follow:
 
 ```shell
-gpg --keyserver hkp://pool.sks-keyservers.net --send-key 85E11560
+gpg --keyserver pgpkeys.mit.edu/ --send-key 85E11560
 ```
+* Here pgpkeys.mit.edu is a random selection of keyserver. Any key server from the list https://sks-keyservers.net/status/ is acceptable because they are automatically synchronized.
+
 
 `pool.sks-keyservers.net` is randomly chosen from [public key server](https://sks-keyservers.net/status/).
 Each server will automatically synchronize with one another, so it would be okay to choose any one.
@@ -233,12 +235,12 @@ cp -f ~/incubator-seatunnel/seatunnel-dist/target/*.tar.gz ~/st_svn/dev/seatunne
 
 ```shell
 shasum -a 512 apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz >> apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz.sha512
-shasum -b -a 512 apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz >> apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz.sha512
+shasum -b -a 512 apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz >> apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz.sha512
 ```
 
 ```shell
 gpg --armor --detach-sig apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz
-gpg --armor --detach-sig apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz
+gpg --armor --detach-sig apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz
 ```
 
 ### Commit to Apache SVN
@@ -252,8 +254,8 @@ svn --username=${APACHE LDAP username} commit -m "release ${RELEASE.VERSION}"
 ### Check sha512 hash
 
 ```shell
-shasum -c apache-seatunnel-incubating-${RELEASE.VERSION}-src.zip.sha512
-shasum -c apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz.sha512
+shasum -c apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz.sha512
+shasum -c apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz.sha512
 ```
 
 ### Check gpg Signature
