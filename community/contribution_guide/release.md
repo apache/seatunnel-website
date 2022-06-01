@@ -142,12 +142,12 @@ git push origin ${RELEASE.VERSION}-release
 ### Pre-Release Check
 
 ```shell
-mvn release:prepare -Prelease -Darguments="-DskipTests" -DautoVersionSubmodules=true -DdryRun=true -Dusername=${Github username}
+mvn release:prepare -Prelease -Darguments="-DskipTests" -DdryRun=true -Drevison=${RELEASE-VERSION} -Dusername=${Github username}
 ```
 
 -Prelease: choose release profile, which will pack all the source codes, jar files and executable binary packages.
 
--DautoVersionSubmodules=true：it can make the version number is inputted only once and not for each sub-module.
+--Drevison=${RELEASE-VERSION}：it can make the version number is inputted.
 
 -DdryRun=true：rehearsal, which means not to generate or submit new version number and new tag.
 
@@ -162,7 +162,7 @@ mvn release:clean
 Then, prepare to execute the release.
 
 ```shell
-mvn release:prepare -Prelease -Darguments="-DskipTests" -DautoVersionSubmodules=true -DpushChanges=false -Dusername=${Github username}
+mvn release:prepare -Prelease -Darguments="-DskipTests"  -Drevison=${RELEASE-VERSION} -DpushChanges=false -Dusername=${Github username}
 ```
 
 It is basically the same as the previous rehearsal command, but deleting -DdryRun=true parameter.
@@ -179,7 +179,7 @@ git push origin --tags
 ### Deploy the Release
 
 ```shell
-mvn release:perform -Prelease -Darguments="-DskipTests" -DautoVersionSubmodules=true -Dusername=${Github username}
+mvn release:perform -Prelease -Darguments="-DskipTests" -Drevison=${RELEASE-VERSION} -Dusername=${Github username}
 ```
 
 After that command is executed, the version to be released will be uploaded to Apache staging repository automatically.
