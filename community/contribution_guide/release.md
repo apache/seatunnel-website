@@ -287,7 +287,7 @@ Your decision? 5
 Then, check the gpg signature.
 
 ```shell
-gpg --verify apache-seatunnel-incubating-${RELEASE.VERSION}-src.zip.asc apache-seatunnel-incubating-${RELEASE.VERSION}-src.zip
+gpg --verify apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz.asc apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz
 gpg --verify apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz.asc apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz
 ```
 
@@ -295,7 +295,7 @@ gpg --verify apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz
 
 #### Check source package
 
-Decompress `apache-seatunnel-incubating-${RELEASE.VERSION}-src.zip` and check the following items:
+Decompress `apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz` and check the following items:
 
 *   Check whether source tarball is oversized for including nonessential files
 *   The release files have the word `incubating` in their name
@@ -310,7 +310,7 @@ Decompress `apache-seatunnel-incubating-${RELEASE.VERSION}-src.zip` and check th
 
 #### Check binary packages
 
-Decompress `apache-SeaTunnel-incubating-${RELEASE.VERSION}-SeaTunnel-bin.tar.gz`
+Decompress `apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz`
 to check the following items:
 
 - The release files have the word `incubating` in their name
