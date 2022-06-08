@@ -1,8 +1,12 @@
+---
+slug: How to synchronize tens of billions of data based on SeaTunnel's ClickHouse
+title: How to synchronize tens of billions of data based on SeaTunnel's ClickHouse
+tags: [Meetup]
+---
+
 # How to synchronize tens of billions of data based on SeaTunnel's ClickHouse 
 
-<div align=center>
-<img src="/static/image/20220510/en/0.jpg"/>
-</div>
+![](/image/20220510/en/0.jpg)
 
 
 Author | Fan Jia, Apache SeaTunnel(Incubating) Contributor
@@ -27,9 +31,9 @@ This presentation contains seven parts.
 - Post-optimization directions
 
 
-<div align=center>
-<img src="/static/image/20220510/en/0-1.png"/>
-</div>
+
+![](/image/20220510/en/0-1.png)
+
 
 Fan Jia,  Apache SeaTunnel (Incubating) contributor, Senior Enginee of WhaleOps.
 
@@ -37,9 +41,9 @@ Fan Jia,  Apache SeaTunnel (Incubating) contributor, Senior Enginee of WhaleOps.
 
 At present, the process of synchronizing data from SeaTunnel to ClickHouse is as follows: as long as the data source is supported by SeaTunnel, the data can be extracted, converted (or not), and written directly to the ClickHouse sink connector, and then written to the ClickHouse server via JDBC. 
 
-<div align=center>
-<img src="/static/image/20220510/en/1.png"/>
-</div>
+
+![](/image/20220510/en/1.png)
+
 
 However, there are some problems with writing to the ClickHouse server via traditional JDBC.
 
@@ -66,9 +70,9 @@ These two features mean that users can work directly with local files without ha
 ClickHouse local core is used in the following ways.
 
 
-<div align=center>
-<img src="/static/image/20220510/en/2.png"/>
-</div>
+
+![](/image/20220510/en/2.png)
+
 
 
 First line: pass the data to the test_table table of the ClickHouse-local program via the Linux pipeline.
@@ -84,9 +88,9 @@ By calling the Clickhouse-local component, the Apache SeaTunnel (Incubating) is 
 Comparison of the original and current implementations.
 
 
-<div align=center>
-<img src="/static/image/20220510/en/3.png"/>
-</div>
+
+![](/image/20220510/en/3.png)
+
 
 
 Originally, the data, including the insert statements was sent by Spark to the server, and the server did the SQL parsing, generated and compressed the table data files, generated the corresponding files, and created the corresponding indexes. If we use ClickHouse local technology, the data file generation, file compression and index creation are done by SeaTunnel, and the final output is a file or folder for the server-side, which is synchronized to the server and the server can queries the data without additional operations.
@@ -95,9 +99,9 @@ Originally, the data, including the insert statements was sent by Spark to the s
 ## 04 Core technical points
 
 
-<div align=center>
-<img src="/static/image/20220510/en/4.png"/>
-</div>
+
+![](/image/20220510/en/4.png)
+
 
 
 The above process makes data synchronization more efficient, thanks to three optimizations we have made to it.
@@ -105,17 +109,17 @@ The above process makes data synchronization more efficient, thanks to three opt
 Firstly, the data is transferred from the pipeline to the ClickHouseFile by the division, which imposes limitations in terms of length and memory. For this reason, we write the data received by the ClickHouse connector, i.e. the sink side, to a temporary file via MMAP technology, and then the ClickHouse local reads the data from the temporary file to generate our target local file, in order to achieve the effect of incremental data reading and solve the OM problem.
 
 
-<div align=center>
-<img src="/static/image/20220510/en/5.png"/>
-</div>
+
+![](/image/20220510/en/5.png)
+
 
 
 Secondly, it supports sharding. If only one file or folder is generated in a cluster, the file is distributed to only one node, which will greatly reduce the performance of the query. Therefore, we carry out slicing support. Users can set the key for slicing in the configuration folder, and the algorithm will divide the data into multiple log files and write them to different cluster nodes, significantly improving the read performance.
 
 
-<div align=center>
-<img src="/static/image/20220510/en/6.png"/>
-</div>
+
+![](/image/20220510/en/6.png)
+
 
 
 The third key optimization is file transfer. Currently, SeaTunnel supports two file transfer methods, one is SCP, which is characterized by security, versatility, and no additional configuration; the other is RSYNC, which is somewhat fast and efficient and supports breakpoint resume, but requires additional configuration, users can choose between the way suits their needs.
@@ -125,9 +129,9 @@ The third key optimization is file transfer. Currently, SeaTunnel supports two f
 In summary, the general implementation process of ClickHouseFile is as follows.
 
 
-<div align=center>
-<img src="/static/image/20220510/en/7.png"/>
-</div>
+
+![](/image/20220510/en/7.png)
+
 
 
 1.caching data to the ClickHouse sink side.
@@ -140,9 +144,9 @@ With the above four steps, the generated data reaches a queryable state.
 ## 06 Comparison of plug-in capabilities
 
 
-<div align=center>
-<img src="/static/image/20220510/en/8.png"/>
-</div>
+
+![](/image/20220510/en/8.png)
+
 
 (a) In terms of data transfer, ClickHouseFile is more suitable for massive amounts of data, with the advantage that no additional configuration is required and it is highly versatile, while ClickHouseFile is more complex to configure and currently supports fewer engines.
 

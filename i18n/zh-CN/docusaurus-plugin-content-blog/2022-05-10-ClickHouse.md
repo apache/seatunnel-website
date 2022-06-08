@@ -1,8 +1,8 @@
 # 百亿级数据同步，如何基于 SeaTunnel 的 ClickHouse 实现？
 
-<div align=center>
-<img src="/static/image/20220510/ch/0.jpg"/>
-</div>
+
+![](/image/20220510/ch/0.jpg)
+
 
 
 作者 | Apache SeaTunnel(Incubating) Contributor 范佳
@@ -34,9 +34,9 @@ Bulk load 指把海量数据同步到目标 DB 中，目前 SeaTunnel 已实现�
 - 后期优化方向
    
 
-<div align=center>
-<img src="/static/image/20220510/ch/0-1.png"/>
-</div>
+
+![](/image/20220510/ch/0-1.png)
+
 
 
 ​范 佳白鲸开源 高级工程师
@@ -45,9 +45,9 @@ Bulk load 指把海量数据同步到目标 DB 中，目前 SeaTunnel 已实现�
 
 现阶段，SeaTunnel 把数据同步到 ClickHouse 的流程是：只要是 SeaTunnel 支持的数据源，都可以把数据抽取出来，抽取出来之后，经过转换（也可以不转换），直接把源数据写入 ClickHouse sink connector 中，再通过 JDBC 写入到 ClickHouse 的服务器中。
 
-<div align=center>
-<img src="/static/image/20220510/ch/1.png"/>
-</div>
+
+![](/image/20220510/ch/1.png)
+
 
 但是，通过传统的 JDBC 写入到 ClickHouse 服务器中会存在一些问题。
 
@@ -73,9 +73,9 @@ ClickHouseFile 插件的关键技术是 ClickHouse -local。ClickHouse-local 模
 
 ClickHouse local 核心使用方式：
 
-<div align=center>
-<img src="/static/image/20220510/ch/2.png"/>
-</div>
+
+![](/image/20220510/ch/2.png)
+
 
 第一行：将数据通过 Linux 管道传递给 ClickHouse-local 程序的 test_table 表。
 
@@ -89,31 +89,31 @@ ClickHouse local 核心使用方式：
 
 原阶段和现阶段实现方式对比：
 
-<div align=center>
-<img src="/static/image/20220510/ch/3.png"/>
-</div>
+
+![](/image/20220510/ch/3.png)
+
 
 原来是 Spark 把数据包括 insert 语句，发送给服务器端，服务器端做 SQL 的解析，表的数据文件生成、压缩，生成对应的文件、建立对应索引。若使用 ClickHouse local 技术，则由 SeaTunnel 端做数据文件的生成、文件压缩，以及索引的创建，最终产出就是给服务器端使用的文件或文件夹，同步给服务器后，服务器就只需对数据查询，不需要做额外的操作。
 
 # 04 核心技术点
 
-<div align=center>
-<img src="/static/image/20220510/ch/4.png"/>
-</div>
+
+![](/image/20220510/ch/4.png)
+
 
 以上流程可以促使数据同步更加高效，得益于我们对其中的三点优化。
 
 第一，数据实际上师从管道传输到 ClickHouseFile，在长度和内存上会有限制。为此，我们将 ClickHouse connector，也就是 sink 端收到的数据通过 MMAP 技术写入临时文件，再由 ClickHouse local 读取临时文件的数据，生成我们的目标 local file，以达到增量读取数据的效果，解决 OM 的问题。
 
-<div align=center>
-<img src="/static/image/20220510/ch/5.png"/>
-</div>
+
+![](/image/20220510/ch/5.png)
+
 
 第二，支持分片。因为如果在集群中使用，如果只生成一个文件或文件夹，实际上文件只分发到一个节点上，会大大降低查询的性能。因此，我们进行了分片支持，用户可以在配置文件夹中设置分片的 key，算法会将数据分为多个 log file，写入到不同的集群节点中，大幅提升读取性能。
 
-<div align=center>
-<img src="/static/image/20220510/ch/6.png"/>
-</div>
+
+![](/image/20220510/ch/6.png)
+
 
 第三个重要的优化是文件传输，目前 SeaTunnel 支持两种文件传输方式，一种是 SCP，其特点是安全、通用、无需额外配置；另一种是 RSYNC，其有点事快速高效，支持断点续传，但需要额外配置，用户可以根据需要选择适合自己的方式。
 
@@ -121,9 +121,9 @@ ClickHouse local 核心使用方式：
 
 概括而言，ClickHouseFile 的总体实现流程如下：
 
-<div align=center>
-<img src="/static/image/20220510/ch/7.png"/>
-</div>
+
+![](/image/20220510/ch/7.png)
+
 
 - 缓存数据，缓存到 ClickHouse sink 端；
     
@@ -138,9 +138,9 @@ ClickHouse local 核心使用方式：
 
 # 06 插件能力对比
 
-<div align=center>
-<img src="/static/image/20220510/ch/8.png"/>
-</div>
+
+![](/image/20220510/ch/8.png)
+
 
 从数据传输角度来说，ClickHouseFile 更适用于海量数据，优势在于不需要额外的配置，通用性强，而 ClickHouseFile 配置比较复杂，目前支持的 engine 较少；
 
