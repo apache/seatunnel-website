@@ -42,7 +42,7 @@ To run the image with SeaTunnel, first create a `Dockerfile`:
 ```Dockerfile
 FROM flink:1.13
 
-ENV SEATUNNEL_VERSION="2.1.0"
+ENV SEATUNNEL_VERSION="2.1.2"
 
 RUN wget https://archive.apache.org/dist/incubator/seatunnel/${SEATUNNEL_VERSION}/apache-seatunnel-incubating-${SEATUNNEL_VERSION}-bin.tar.gz
 RUN tar -xzvf apache-seatunnel-incubating-${SEATUNNEL_VERSION}-bin.tar.gz
@@ -55,13 +55,13 @@ RUN rm -fr apache-seatunnel-incubating-${SEATUNNEL_VERSION}*
 
 Then run the following commands to build the image:
 ```bash
-docker build -t seatunnel:2.1.0-flink-1.13 -f Dockerfile .
+docker build -t seatunnel:2.1.2-flink-1.13 -f Dockerfile .
 ```
-Image `seatunnel:2.1.0-flink-1.13` need to be present in the host (minikube) so that the deployment can take place.
+Image `seatunnel:2.1.2-flink-1.13` need to be present in the host (minikube) so that the deployment can take place.
 
 Load image to minikube via: 
 ```bash
-minikube image load seatunnel:2.1.0-flink-1.13
+minikube image load seatunnel:2.1.2-flink-1.13
 ```
 
 </TabItem>
@@ -166,7 +166,7 @@ metadata:
   namespace: default
   name: seatunnel-flink-streaming-example
 spec:
-  image: seatunnel:2.1.0-flink-1.13
+  image: seatunnel:2.1.2-flink-1.13
   flinkVersion: v1_14
   flinkConfiguration:
     taskmanager.numberOfTaskSlots: "2"

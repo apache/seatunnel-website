@@ -1,4 +1,3 @@
-
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const versions = require('./versions.json');
@@ -83,12 +82,11 @@ const config = {
                     position: 'right',
                     label: 'Document',
                     items: [
-                        {
-                            label: versions[0],
-                            to: `docs/${versions[0]}/intro/about`,
-
-                        },
-                        ...versions.slice(1).map((version) => ({
+                        ...versions.slice(0, versions.length - 2).map((version) => ({
+                            label: version,
+                            to: `docs/${version}/intro/about`,
+                        })),
+                        ...versions.slice(versions.length - 2, versions.length).map((version) => ({
                             label: (version === "1.x") ? "1.x(Not Apache Release)" : version,
                             to: `docs/${version}/introduction`,
                         })),
@@ -268,7 +266,7 @@ const config = {
         ],
     ],
     scripts: [
-        {src: 'https://hm.baidu.com/hm.js?33a9aab233e1082f91e4e347ad716701',  async: true}
+        {src: 'https://hm.baidu.com/hm.js?33a9aab233e1082f91e4e347ad716701', async: true}
     ]
 };
 
