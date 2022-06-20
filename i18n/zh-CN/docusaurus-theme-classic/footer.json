@@ -1,0 +1,52 @@
+{
+  "link.item.label.Document": {
+    "message": "文档",
+    "description": "The label of footer link with label=Document linking to /docs/latest/introduction"
+  },
+  "link.item.label.FAQ": {
+    "message": "FAQ",
+    "description": "The label of footer link with label=FAQ linking to /faq/main"
+  },
+  "link.item.label.Releases": {
+    "message": "版本",
+    "description": "The label of footer link with label=Releases linking to https://github.com/apache/incubator-seatunnel/releases"
+  },
+  "link.title.Community": {
+    "message": "社区",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/apache/incubator-seatunnel"
+  },
+  "link.item.label.Issue Tracker": {
+    "message": "Issue Tracker",
+    "description": "The label of footer link with label=Issue Tracker linking to https://github.com/apache/incubator-seatunnel/issues"
+  },
+
+  "link.item.label.Pull Requests": {
+    "message": "Pull Requests",
+    "description": "The label of footer link with label=Pull Requests linking to https://github.com/apache/incubator-seatunnel/pulls"
+  },
+
+  "link.title.Subscribe Mailing List": {
+    "message": "订阅邮件组",
+    "description": "The title of the footer links column with title=Subscribe mailing list in the footer"
+  },
+  "link.item.label.How to subscribe": {
+    "message": "如何定阅",
+    "description": "The label of footer link with label=How to subscribe linking to /community/how-to-subscribe"
+  },
+  "link.item.label.Subscribe Mail": {
+    "message": "订阅邮件",
+    "description": "The label of footer link with label=Subscribe Mail linking to mailto://dev-subscribe@seatunnel.apache.org"
+  },
+  "link.item.label.Mail Archive": {
+    "message": "邮件归档",
+    "description": "The label of footer link with label=Mail Archive linking to https://lists.apache.org/list.html?dev@seatunnel.apache.org"
+  },
+  "copyright": {
+    "message": "<div style=\"margin-top: 20px;background: #f4f8fa\">\n                <img style=\"height:50px;margin-bottom: 10px\" alt=\"Apache Software Foundation\" src=\"/zh-CN/image/incubator-logo.svg\" />\n                <p style=\"color: #999999;font-weight:400;text-align:left\">Apache SeaTunnel is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</p>\n                <div style=\"border-top: 1px solid #ccc;min-height: 60px;line-height: 20px;text-align: center;font-family: Avenir-Medium;font-size: 14px;color: #999;display: flex;align-items: center;\"><span>Copyright © 2021-2022 The Apache Software Foundation. Apache SeaTunnel, SeaTunnel, and its feather logo are trademarks of The Apache Software Foundation.</span></div>\n                <div style=\"text-align: center;\">\n                    <a href=\"https://twitter.com/asfseatunnel?s=21\" target=\"_blank\" title=\"Twitter\" ><svg t=\"1644553365083\" class=\"icon\" viewBox=\"0 0 1260 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"7015\" width=\"25\" height=\"25\"><path d=\"M1259.846921 121.148242c-46.524504 20.728739-96.273478 34.547899-148.325646 40.536201 53.434084-31.784067 94.430924-82.454319 113.777747-142.797982-50.209613 29.480874-105.486251 51.13089-164.447999 62.646857A257.584528 257.584528 0 0 0 872.449815 0.000276c-142.797982 0-258.418284 115.620302-258.418284 258.418284 0 20.268101 2.303193 40.075563 6.909579 58.961748C405.82286 306.32498 215.579097 203.602561 87.98219 47.446058c-22.110655 38.233008-35.008538 82.454319-35.008538 129.900099 0 89.824537 45.603227 168.593747 115.159663 215.118251-42.378756-1.381916-81.99368-12.897882-117.002217-32.244706v3.224471c0 125.293713 88.90326 229.398049 207.287393 253.351259-21.650017 5.988302-44.681949 9.212773-68.17452 9.212773-16.582991 0-32.705344-1.842555-48.827697-4.606387 32.705344 102.722419 128.518184 177.345881 241.374653 179.649074-88.442621 69.095798-199.917175 110.553277-321.06514 110.553277-20.728739 0-41.457479-1.381916-61.72558-3.685109 114.238386 73.241546 250.126788 116.08094 396.149241 116.08094 475.379089 0 735.179289-393.846048 735.179289-735.179289 0-11.055328-0.460639-22.571294-0.921277-33.626621 51.13089-36.851092 94.891562-82.454319 129.439461-134.045848z\" fill=\"#909094\" p-id=\"7016\"></path></svg></a> \n                    <a href=\"https://apacheseatunnel.slack.com\" target=\"_blank\" title=\"Slack\" style=\"margin-left: 20px;\"><svg t=\"1644553076784\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"3088\" width=\"23\" height=\"23\"><path d=\"M215.125333 647.04a107.861333 107.861333 0 0 1-107.52 107.648A107.861333 107.861333 0 0 1 0 647.04a107.818667 107.818667 0 0 1 107.605333-107.52h107.52v107.52z m54.229334 0a107.818667 107.818667 0 0 1 107.562666-107.52 107.818667 107.818667 0 0 1 107.562667 107.52v269.354667A107.861333 107.861333 0 0 1 376.917333 1024a107.861333 107.861333 0 0 1-107.562666-107.605333v-269.354667zM376.917333 215.125333a107.861333 107.861333 0 0 1-107.562666-107.52A107.861333 107.861333 0 0 1 376.917333 0a107.861333 107.861333 0 0 1 107.562667 107.605333v107.52H376.917333z m0 54.229334a107.861333 107.861333 0 0 1 107.562667 107.562666 107.861333 107.861333 0 0 1-107.562667 107.562667H107.605333A107.861333 107.861333 0 0 1 0 376.917333a107.861333 107.861333 0 0 1 107.605333-107.562666h269.312z m431.872 107.562666a107.861333 107.861333 0 0 1 107.605334-107.562666A107.861333 107.861333 0 0 1 1024 376.917333a107.861333 107.861333 0 0 1-107.605333 107.562667h-107.605334V376.917333z m-54.101333 0a107.861333 107.861333 0 0 1-107.648 107.562667 107.818667 107.818667 0 0 1-107.52-107.562667V107.605333A107.818667 107.818667 0 0 1 647.04 0a107.861333 107.861333 0 0 1 107.648 107.605333v269.312z m-107.648 431.872a107.861333 107.861333 0 0 1 107.648 107.605334A107.861333 107.861333 0 0 1 647.04 1024a107.818667 107.818667 0 0 1-107.52-107.605333v-107.605334h107.52z m0-54.101333a107.818667 107.818667 0 0 1-107.52-107.648 107.776 107.776 0 0 1 107.52-107.52h269.354667A107.818667 107.818667 0 0 1 1024 647.04a107.861333 107.861333 0 0 1-107.605333 107.648h-269.354667z\" p-id=\"3089\" fill=\"#909094\"></path></svg></a> \n                    <a href=\"https://lists.apache.org/list.html?dev@seatunnel.apache.org\" target=\"_blank\" title=\"Mailing list\" style=\"margin-left: 20px;\"><svg t=\"1644553175467\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"5304\" width=\"26\" height=\"26\"><path d=\"M853.333333 170.666667H170.666667c-46.933333 0-85.333333 38.4-85.333334 85.333333v512c0 46.933333 38.4 85.333333 85.333334 85.333333h682.666666c46.933333 0 85.333333-38.4 85.333334-85.333333V256c0-46.933333-38.4-85.333333-85.333334-85.333333z m0 170.666666l-341.333333 213.333334-341.333333-213.333334V256l341.333333 213.333333 341.333333-213.333333v85.333333z\" p-id=\"5305\" fill=\"#909094\"></path></svg></a> \n                    <a href=\"https://github.com/apache/incubator-seatunnel\" target=\"_blank\" title=\"GitHub\" style=\"margin-left: 20px;\"><svg t=\"1644553223000\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"6156\" width=\"23\" height=\"23\"><path d=\"M512 12.64c-282.752 0-512 229.216-512 512 0 226.208 146.72 418.144 350.144 485.824 25.6 4.736 35.008-11.104 35.008-24.64 0-12.192-0.48-52.544-0.704-95.328-142.464 30.976-172.512-60.416-172.512-60.416-23.296-59.168-56.832-74.912-56.832-74.912-46.464-31.776 3.52-31.136 3.52-31.136 51.392 3.616 78.464 52.768 78.464 52.768 45.664 78.272 119.776 55.648 148.992 42.56 4.576-33.088 17.856-55.68 32.512-68.48-113.728-12.928-233.28-56.864-233.28-253.024 0-55.904 20-101.568 52.768-137.44-5.312-12.896-22.848-64.96 4.96-135.488 0 0 43.008-13.76 140.832 52.48a491.296 491.296 0 0 1 128.16-17.248c43.488 0.192 87.328 5.888 128.256 17.248 97.728-66.24 140.64-52.48 140.64-52.48 27.872 70.528 10.336 122.592 5.024 135.488 32.832 35.84 52.704 81.536 52.704 137.44 0 196.64-119.776 239.936-233.792 252.64 18.368 15.904 34.72 47.04 34.72 94.816 0 68.512-0.608 123.648-0.608 140.512 0 13.632 9.216 29.6 35.168 24.576C877.472 942.624 1024 750.784 1024 524.64c0-282.784-229.248-512-512-512z\" p-id=\"6157\" fill=\"#909094\"></path></svg></a> \n                </div>\n            <div>",
+    "description": "The footer copyright"
+  }
+}

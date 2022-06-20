@@ -1,0 +1,58 @@
+@brandColor: #2DACEC;
+@startColor: #03DDE4;
+@intermediateColor: #30AFED;
+@endColor: #8755FF;
+@mobileWidth: 640px;
+@contentWidth: 1280px;
+
+@import url('/src/styles/variable.less');
+@import url('/src/styles/base.less');
+
+.main {
+  padding: 64px 0 30px;
+
+  .main_title {
+    padding: 30px 0 20px 0;
+    color: #2c3e50;
+    font-size: 32px;
+    line-height: 46px;
+  }
+
+  .desc {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+
+  .home_block {
+    padding: 20px 0;
+  }
+
+  .user_case {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    margin-bottom: 20px;
+
+    .case_item {
+      display: flex;
+      display: flex;
+      min-width: 0;
+      background: #FFFFFF;
+      margin: 5px;
+      height: 70px;
+      border: 1px solid rgba(0, 0, 0, .2);
+      box-shadow: 0 3px 5px rgb(47 85 212 / 10%);
+      border-radius: 2px;
+      align-items: center;
+      justify-content: center;
+
+      > img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+    }
+  }
+}

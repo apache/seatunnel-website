@@ -1,0 +1,414 @@
+@brandColor: #2DACEC;
+@startColor: #03DDE4;
+@intermediateColor: #30AFED;
+@endColor: #8755FF;
+@mobileWidth: 640px;
+@contentWidth: 1280px;
+
+@import url('/src/styles/variable.less');
+@import url('/src/styles/base.less');
+
+.main {
+  padding: 64px 0 30px;
+  position: relative;
+
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &.slogan {
+    background-color: #fff;
+    margin-top: -54px;
+  }
+
+
+  &.feature {
+    background-color: rgba(219, 238, 253, 0.3);
+    .block {
+      width: 80%;
+    }
+  }
+
+  .cover_bg {
+    background: url(/static/home/wave_bg.png);
+    height: 150px;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .cover_page {
+    background-image: url(/static/home/banner.png);
+    width: 700px;
+    height: 450px;
+    background-position: 10% 44px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 0px auto 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+
+  .main_subtitle {
+    margin-bottom: 40px;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 46px;
+  }
+
+  .item_block {
+    padding: 20px 0;
+
+    .paragraph {
+      padding-left: 50px;
+      font-size: 18px;
+      color: #4A4A4A;
+      line-height: 26px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+  }
+
+  &.architecture {
+    background-color: #fff;
+
+    .item_block {
+      padding: 40px 0;
+
+      .button_row {
+        padding: 20px 0 40px;
+      }
+    }
+
+    .paragraph {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .architecture-image {
+      display: flex;
+      justify-content: center;
+      min-height: 460px;
+      margin: 52px auto 20px;
+    }
+
+    .bold_dot {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: @active-color;
+    }
+
+    svg {
+      height: 860px;
+      width: 860px;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      margin-left: -430px;
+
+      circle {
+        fill: transparent;
+        stroke: @active-color;
+        stroke-width: 0.3;
+      }
+
+      .dotted {
+        stroke-dasharray: 0, 3;
+        stroke-linecap: round;
+      }
+    }
+  }
+
+  .concept {
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    grid-column-gap: 20px;
+
+    .concept_item {
+      &.before {
+        .before-image {
+          background: rgb(250, 250, 251);
+          margin-left: -30px;
+          padding-left: 30px;
+          padding-right: 30px;
+          margin-right: -30px;
+          margin-bottom: -30px;
+          padding-bottom: 30px;
+          padding-top: 40px;
+        }
+
+        .concept_ctn {
+          padding: 40px 50px 30px 30px;
+          background: #e4e5e9 url(/static/home/banner.png) 320px 0px no-repeat;
+          background-size: 280px;
+        }
+
+        .concept_title {
+          background: #E4E5E9;
+        }
+      }
+
+      &.after {
+        position: relative;
+        z-index: 10;
+        left: -60px;
+        top: 52px;
+
+        .concept_ctn {
+          background: @active-color url(/static/home/banner.png) 230px -120px no-repeat;
+          background-size: 450px;
+          box-shadow: -12px 0 34px rgba(51, 89, 218, 0.3);
+
+          .paragraph {
+            color: #fff;
+          }
+
+          .concept_image {
+            border-radius: 4px;
+          }
+        }
+
+        .concept_title {
+          color: #fff;
+          background: @active-color;
+        }
+      }
+
+      .concept_ctn {
+        padding: 40px 30px 30px;
+        border-radius: 10px;
+
+        .paragraph {
+          margin-bottom: 30px;
+        }
+      }
+
+      .concept_title {
+        display: inline-block;
+        padding: 0 24px;
+        font-size: 24px;
+        line-height: 48px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: @enhance-color;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+      }
+
+      .concept_image {
+        width: 100%;
+      }
+    }
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    .feature_item {
+      width: 25%;
+      height: 350px;
+      margin-bottom: 20px;
+      border-radius: 2px;
+      padding: 126px 50px 24px;
+      background-repeat: no-repeat;
+      background-size: 80px;
+      background-position: center 30px;
+      transition: all 0.5s;
+
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+
+      &.components {
+        background-image: url(/static/home/icons/components.svg);
+      }
+
+      &.scalability {
+        background-image: url(/static/home/icons/scalability.svg);
+      }
+
+      &.simplicity {
+        background-image: url(/static/home/icons/simplicity.svg);
+      }
+
+      &.stable {
+        background-image: url(/static/home/icons/stable.svg);
+      }
+
+      .item-title {
+        color: #333;
+        font-weight: 500;
+        line-height: 32px;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+
+      .item-desc {
+        color: #666666;
+        line-height: 32px;
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 25px;
+        font-family: Avenir-Medium;
+      }
+    }
+
+    .feature_item:hover {
+      background-color: #fff;
+      box-shadow: 0 0 12px 0 rgb(0 15 32 / 10%);
+    }
+  }
+
+  .banner {
+    padding: 80px 0 60px;
+
+    .main_title {
+      font-size: 0;
+      line-height: 40px;
+      position: relative;
+      margin-bottom: 20px;
+
+      .apache {
+        font-size: 5rem;
+        font-weight: lighter;
+        color: #0f1223;
+        letter-spacing: 2px;
+        white-space: nowrap;
+        margin-right: 10px;
+      }
+
+      .seatunnel {
+        background: linear-gradient(130deg, rgb(36, 198, 220), rgb(84, 51, 255) 41.07%, rgb(255, 0, 153) 76.05%);
+        --text-accent: #24c6dc;
+        --text-sub-accent: #ff0099;
+        --main-gradient: linear-gradient(130deg, #24c6dc, #5433ff 41.07%, #ff0099 76.05%);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-box-decoration-break: clone;
+        font-weight: lighter;
+        font-size: 5rem;
+        margin-right: 8px;
+        margin-left: 10px;
+      }
+
+      .badge {
+        font-weight: 500;
+        color: #666;
+        font-size: 14px;
+        position: absolute;
+        border: 1px solid #E4E5E9;
+        border-radius: 30px 30px 30px 0;
+        padding: 5px 9px;
+        background: #E4E5E9;
+        top: -17px;
+        text-shadow: none;
+      }
+    }
+
+    .main_slogan {
+      margin-bottom: 50px;
+      font-size: 24px;
+      color: #0f1223;
+      text-align: center;
+      line-height: 32px;
+      font-weight: 500;
+    }
+
+  }
+
+  .button_row {
+    display: flex;
+
+    &.center {
+      justify-content: center;
+    }
+  }
+
+
+  @keyframes move_wave {
+    0% {
+      transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+  }
+
+  .wave_wrapper_inner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    left: 0;
+    height: 12%;
+    bottom: -1px;
+  }
+
+  .bg_top {
+    z-index: 15;
+    opacity: 0.5;
+  }
+
+  .bg_middle {
+    z-index: 10;
+    opacity: 0.75;
+  }
+
+  .bg_bottom {
+    z-index: 5;
+  }
+
+  .wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    bottom: 0;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+  }
+
+  .wave_top {
+    background-size: 50% 100px;
+  }
+
+  .wave_animation .wave_top {
+    background-image: url(/static/home/wave_top.png);
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+
+  .wave_middle {
+    background-image: url(/static/home/wave_mid.png);
+    background-size: 50% 120px;
+  }
+
+  .wave_animation .wave_middle {
+    animation: move_wave 10s linear infinite;
+  }
+
+  .wave_bottom {
+    background-image: url(/static/home/wave_bot.png);
+    background-size: 50% 100px;
+  }
+
+  .wave_animation .wave_bottom {
+    animation: move_wave 15s linear infinite;
+  }
+
+}
