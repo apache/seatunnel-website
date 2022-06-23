@@ -12,7 +12,7 @@ After days of community development, the preliminary development of the new Conn
 - Environment configuration: JDK8 and Scala2.11 are recommended.
 - As before, we need to download the latest code locally through git and import it into the IDE, project address: https://github.com/apache/incubator-seatunnel . At the same time, switch the branch to api-draft, and currently use this branch to develop the new version of the API and the corresponding Connector. The project structure is as follows:
 
-  ![Project Structure](/image/20220623/0.png)
+  ![Project Structure](/image/20220623/en/0.png)
 
 ## Prerequisites
 - At present, in order to distinguish different Connectors, we put the connectors that support
@@ -28,7 +28,7 @@ Taking Fake Connector as an example, let's introduce how to implement a new Conn
 - Create a corresponding module with a path under ``seatunnel-connectors-seatunnel``, which is at the same level as other new connectors.
 - Modify the ``seatunnel-connectors-seatunnel/pom.xml`` file, add a new module to modules, modify ``seatunnel-connectors-seatunnel/seatunnel-connector-seatunnel-fake/pom.xml``, add seatunnel-api dependencies, and correct parent Quote. The resulting style is as follows:
 
-  ![Style](/image/20220623/1.png)
+  ![Style](/image/20220623/en/1.png)
 
 - The next step is to create the corresponding package and related classes, create FakeSource, and need to inherit SeaTunnel Source.
 
@@ -39,7 +39,7 @@ Taking Fake Connector as an example, let's introduce how to implement a new Conn
   Then create FakeSourceReader, FakeSource SplitEnumerator, and FakeSourceSplit to inherit the corresponding abstract classes (which can be found in the corresponding classes). As long as we implement the corresponding methods of these classes, then our SeaTunnel Source Connector is basically completed.
 - Next, just follow the existing example to write the corresponding code. The most important one is the FakeSource Reader, which defines how we obtain data from the outside, which is the most critical part of the Source Connector. Every time a piece of data is generated, we need to place it in the collector as shown:
 
-  ![Source](/image/20220623/2.png)
+  ![Source](/image/20220623/en/2.png)
 - After the code development is complete, we need to configure the configuration file ``plugin-mapping.properties`` located under ``seatunnel-connectors/modules``. Adding a seatunnel
   ``.source.FakeSource = seatunnel-connector-fake``
   means that SeaTunnel can find the jar package corresponding to the project by looking for a Source named FakeSource. This allows the Connector to be used in the normal configuration file.
