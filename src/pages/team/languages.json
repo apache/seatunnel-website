@@ -110,6 +110,14 @@
         "gitUrl": "https://github.com/zhongjiajie",
         "githubId": "zhongjiajie",
         "name": "Jiajie Zhong"
+      },
+      {
+        "apacheId": "wenjun",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/22415594?v=4",
+        "email": "wenjun@apache.org",
+        "gitUrl": "https://github.com/ruanwenjun",
+        "githubId": "ruanwenjun",
+        "name": "Wenjun Ruan"
       }
     ],
     "committer": [
@@ -146,12 +154,20 @@
         "name": "Yang Xiang"
       },
       {
-        "apacheId": "wenjun",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/22415594?v=4",
-        "email": "wenjun@apache.org",
-        "gitUrl": "https://github.com/ruanwenjun",
-        "githubId": "ruanwenjun",
-        "name": "Wenjun Ruan"
+        "apacheId": "ming",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/18065113?v=4",
+        "email": "ming@apache.org",
+        "gitUrl": "https://github.com/simon824",
+        "githubId": "simon824",
+        "name": "Simon"
+      },
+      {
+        "apacheId": "fanjia",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/32387433?v=4",
+        "email": "fanjia@apache.org",
+        "gitUrl": "https://github.com/Hisoka-X",
+        "githubId": "Hisoka-X",
+        "name": "Hisoka"
       }
     ]
   },
@@ -266,6 +282,14 @@
         "gitUrl": "https://github.com/zhongjiajie",
         "githubId": "zhongjiajie",
         "name": "Jiajie Zhong"
+      },
+      {
+        "apacheId": "wenjun",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/22415594?v=4",
+        "email": "wenjun@apache.org",
+        "gitUrl": "https://github.com/ruanwenjun",
+        "githubId": "ruanwenjun",
+        "name": "Wenjun Ruan"
       }
     ],
     "committer": [
@@ -302,12 +326,20 @@
         "name": "Yang Xiang"
       },
       {
-        "apacheId": "wenjun",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/22415594?v=4",
-        "email": "wenjun@apache.org",
-        "gitUrl": "https://github.com/ruanwenjun",
-        "githubId": "ruanwenjun",
-        "name": "Wenjun Ruan"
+        "apacheId": "ming",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/18065113?v=4",
+        "email": "ming@apache.org",
+        "gitUrl": "https://github.com/simon824",
+        "githubId": "simon824",
+        "name": "Simon"
+      },
+      {
+        "apacheId": "fanjia",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/32387433?v=4",
+        "email": "fanjia@apache.org",
+        "gitUrl": "https://github.com/Hisoka-X",
+        "githubId": "Hisoka-X",
+        "name": "Hisoka"
       }
     ]
   }

@@ -1,4 +1,3 @@
-
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const versions = require('./versions.json');
@@ -61,7 +60,6 @@ const config = {
             }),
         ],
     ],
-
     themeConfig: ({
         colorMode: {
             defaultMode: 'light',
@@ -84,11 +82,11 @@ const config = {
                     position: 'right',
                     label: 'Document',
                     items: [
-                        {
-                            label: versions[0],
-                            to: `docs/${versions[0]}/introduction`,
-                        },
-                        ...versions.slice(1).map((version) => ({
+                        ...versions.slice(0, versions.length - 2).map((version) => ({
+                            label: version,
+                            to: `docs/${version}/intro/about`,
+                        })),
+                        ...versions.slice(versions.length - 2, versions.length).map((version) => ({
                             label: (version === "1.x") ? "1.x(Not Apache Release)" : version,
                             to: `docs/${version}/introduction`,
                         })),
@@ -188,7 +186,7 @@ const config = {
                     items: [
                         {
                             label: 'FAQ',
-                            href: '/docs/FAQ',
+                            href: '/docs/faq',
                         },
                         {
                             label: 'Releases',
@@ -255,7 +253,6 @@ const config = {
         autoCollapseSidebarCategories: true,
 
     }),
-
     plugins: [
         'docusaurus-plugin-less',
         [
@@ -266,9 +263,9 @@ const config = {
                 routeBasePath: 'community',
                 editUrl: ({locale, versionDocsDirPath, docPath}) => {
                     if (locale !== 'en') {
-                        return `https://github.com/apache/incubator-seatunnel-website/edit/dev/i18n/${locale}/${docPath}`;
+                        return `https://github.com/apache/incubator-seatunnel-website/edit/main/i18n/${locale}/${docPath}`;
                     }
-                    return `https://github.com/apache/incubator-seatunnel-website/edit/dev/${versionDocsDirPath}/${docPath}`;
+                    return `https://github.com/apache/incubator-seatunnel-website/edit/main/${versionDocsDirPath}/${docPath}`;
                 },
                 sidebarPath: require.resolve('./sidebarsCommunity.js'),
             },
@@ -281,6 +278,9 @@ const config = {
                 routeBasePath: 'user_cases',
             },
         ],
+    ],
+    scripts: [
+        {src: 'https://hm.baidu.com/hm.js?33a9aab233e1082f91e4e347ad716701', async: true}
     ]
 };
 

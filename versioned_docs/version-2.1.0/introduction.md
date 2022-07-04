@@ -91,10 +91,10 @@ Download address for run-directly software package :https://github.com/apache/in
 ## Quick start
 
 **Spark**
-https://seatunnel.apache.org/docs/spark/quick-start
+https://seatunnel.apache.org/docs/2.1.0/spark/quick-start
 
 **Flink**
-https://seatunnel.apache.org/docs/flink/quick-start
+https://seatunnel.apache.org/docs/2.1.0/flink/quick-start
 
 Detailed documentation on SeaTunnel
 https://seatunnel.apache.org/docs/2.1.0/introduction
