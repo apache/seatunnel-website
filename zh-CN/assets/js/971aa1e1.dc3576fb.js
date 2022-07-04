@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[3200],{55172:function(e){e.exports=JSON.parse('{"allTagsPath":"/zh-CN/blog/tags","slug":"/zh-CN/blog/tags/\u552f\u54c1\u4f1a","name":"\u552f\u54c1\u4f1a","count":1,"permalink":"/zh-CN/blog/tags/\u552f\u54c1\u4f1a"}')}}]);

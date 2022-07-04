@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[5244],{11368:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/click-house","name":"ClickHouse","count":2,"permalink":"/blog/tags/click-house"}')}}]);
