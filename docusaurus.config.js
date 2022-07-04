@@ -61,6 +61,14 @@ const config = {
         ],
     ],
     themeConfig: ({
+        announcementBar: {
+            id: 'announcementBar', // Increment on change
+            content: `🤔 Have queries regarding Apache SeaTunnel, Join Slack channel to discuss them join <a target="_blank" rel="noopener noreferrer" href="https://join.slack.com/t/apacheseatunnel/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ">#SeaTunnel</a> channel! 🌟`,
+            backgroundColor: "rgb(70, 125, 175, 0.8)",
+            isCloseable: false,
+        },
+        hideOnScroll: false, // Whether to hide the sidebar on scroll
+        hideableSidebar: true, // Whether to hide the sidebar in mobile
         colorMode: {
             defaultMode: 'light',
             disableSwitch: true
