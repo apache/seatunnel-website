@@ -27,6 +27,10 @@
     "message": "博客",
     "description": "Navbar item with label BLOG"
   },
+  "item.label.UserCases": {
+    "message": "用户案例",
+    "description": "Navbar item with label UserCases"
+  },
   "item.label.Team": {
     "message": "团队",
     "description": "Navbar item with label Team"

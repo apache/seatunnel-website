@@ -1,4 +1,3 @@
-
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const versions = require('./versions.json');
@@ -83,11 +82,11 @@ const config = {
                     position: 'right',
                     label: 'Document',
                     items: [
-                        {
-                            label: versions[0],
-                            to: `docs/${versions[0]}/introduction`,
-                        },
-                        ...versions.slice(1).map((version) => ({
+                        ...versions.slice(0, versions.length - 2).map((version) => ({
+                            label: version,
+                            to: `docs/${version}/intro/about`,
+                        })),
+                        ...versions.slice(versions.length - 2, versions.length).map((version) => ({
                             label: (version === "1.x") ? "1.x(Not Apache Release)" : version,
                             to: `docs/${version}/introduction`,
                         })),
@@ -119,6 +118,12 @@ const config = {
                     activeBaseRegex: `/blog`,
                 },
                 {
+                    to: '/user_cases',
+                    label: 'UserCases',
+                    position: 'right',
+                    activeBaseRegex: `/user_cases`,
+                },
+                {
                     to: '/team',
                     label: 'Team',
                     position: 'right',
@@ -128,7 +133,7 @@ const config = {
                     to: '/user',
                     label: 'Users',
                     position: 'right',
-                    activeBaseRegex: `/user`,
+                    activeBaseRegex: `/user/`,
                 },
                 {
                     label: 'ASF',
@@ -181,7 +186,7 @@ const config = {
                     items: [
                         {
                             label: 'FAQ',
-                            href: '/docs/FAQ',
+                            href: '/docs/faq',
                         },
                         {
                             label: 'Releases',
@@ -265,9 +270,17 @@ const config = {
                 sidebarPath: require.resolve('./sidebarsCommunity.js'),
             },
         ],
+        [
+            '@docusaurus/plugin-content-blog',
+            {
+                id: 'user_cases',
+                path: 'user_cases',
+                routeBasePath: 'user_cases',
+            },
+        ],
     ],
     scripts: [
-        {src: 'https://hm.baidu.com/hm.js?33a9aab233e1082f91e4e347ad716701',  async: true}
+        {src: 'https://hm.baidu.com/hm.js?33a9aab233e1082f91e4e347ad716701', async: true}
     ]
 };
 
