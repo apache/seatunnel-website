@@ -470,7 +470,7 @@ Release Commit ID:
 https://github.com/apache/incubator-seatunnel/commit/xxxxxxxxxxxxxxxxxxxxxxx
 
 Keys to verify the Release Candidate:
-https://dist.apache.org/repos/dist/dev/incubator/seatunnel/KEYS
+https://downloads.apache.org/incubator/seatunnel/KEYS
 
 
 The vote will be open for at least 72 hours or until necessary number of votes are reached.
