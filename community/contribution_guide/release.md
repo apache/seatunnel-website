@@ -472,8 +472,6 @@ https://github.com/apache/incubator-seatunnel/commit/xxxxxxxxxxxxxxxxxxxxxxx
 Keys to verify the Release Candidate:
 https://dist.apache.org/repos/dist/dev/incubator/seatunnel/KEYS
 
-Look at here for how to verify this release candidate:
-https://github.com/apache/incubator-seatunnel/blob/1.2.0-release/README.md
 
 The vote will be open for at least 72 hours or until necessary number of votes are reached.
 Please vote accordingly:
