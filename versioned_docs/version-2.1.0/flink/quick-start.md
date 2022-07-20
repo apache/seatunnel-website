@@ -6,7 +6,7 @@
 
 > If you are familiar with `Flink` or have prepared the `Flink` operating environment, you can ignore this step. `Flink` does not require any special configuration.
 
-Please [download Flink](https://flink.apache.org/downloads.html) first, please choose Flink version >= 1.9.0 and version < version < 1.14.x . The download is complete to [install Flink](https://nightlies.apache.org/flink/flink-docs-release-1.14/zh/docs/deployment/resource-providers/standalone/overview/)
+Please [download Flink](https://flink.apache.org/downloads.html) first, please choose Flink version >= 1.12.0 and version < version < 1.14.x . The download is complete to [install Flink](https://nightlies.apache.org/flink/flink-docs-release-1.14/zh/docs/deployment/resource-providers/standalone/overview/)
 
 ## Step 2: Download seatunnel
 
