@@ -58,7 +58,7 @@
           "label": "Sink",
           "link": {
             "type": "generated-index",
-            "title": "Source of SeaTunnel",
+            "title": "Sink of SeaTunnel",
             "description": "List all sink supported Apache SeaTunnel for now.",
             "slug": "/category/sink",
             "keywords": [
