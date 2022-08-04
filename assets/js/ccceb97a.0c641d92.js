@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[9532],{15770:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/ti-db","name":"TiDB","count":1,"permalink":"/blog/tags/ti-db"}')}}]);
