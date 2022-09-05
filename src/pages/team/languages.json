@@ -168,6 +168,38 @@
         "gitUrl": "https://github.com/Hisoka-X",
         "githubId": "Hisoka-X",
         "name": "Hisoka"
+      },
+      {
+        "apacheId": "tyrantlucifer",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/51053924?v=4",
+        "email": "tyrantlucifer@apache.org",
+        "gitUrl": "https://github.com/tyrantlucifer",
+        "githubId": "tyrantlucifer",
+        "name": "Chao Tian"
+      },
+      {
+        "apacheId": "dijiekstra",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/19817318?v=4",
+        "email": "dijiekstra@apache.org",
+        "gitUrl": "https://github.com/dijiekstra",
+        "githubId": "dijiekstra",
+        "name": "Jinxin Shen"
+      },
+      {
+        "apacheId": "zongwen",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/36807946?v=4",
+        "email": "zongwen@apache.org",
+        "gitUrl": "https://github.com/ashulin",
+        "githubId": "ashulin",
+        "name": "Zongwen Li"
+      },
+      {
+        "apacheId": "gaojun2048",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/32193458?v=4",
+        "email": "gaojun2048@apache.org",
+        "gitUrl": "https://github.com/EricJoy2048",
+        "githubId": "EricJoy2048",
+        "name": "Jun Gao"
       }
     ]
   },
@@ -340,6 +372,38 @@
         "gitUrl": "https://github.com/Hisoka-X",
         "githubId": "Hisoka-X",
         "name": "Hisoka"
+      },
+      {
+        "apacheId": "tyrantlucifer",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/51053924?v=4",
+        "email": "tyrantlucifer@apache.org",
+        "gitUrl": "https://github.com/tyrantlucifer",
+        "githubId": "tyrantlucifer",
+        "name": "Chao Tian"
+      },
+      {
+        "apacheId": "dijiekstra",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/19817318?v=4",
+        "email": "dijiekstra@apache.org",
+        "gitUrl": "https://github.com/dijiekstra",
+        "githubId": "dijiekstra",
+        "name": "Jinxin Shen"
+      },
+      {
+        "apacheId": "zongwen",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/36807946?v=4",
+        "email": "zongwen@apache.org",
+        "gitUrl": "https://github.com/ashulin",
+        "githubId": "ashulin",
+        "name": "Zongwen Li"
+      },
+      {
+        "apacheId": "gaojun2048",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/32193458?v=4",
+        "email": "gaojun2048@apache.org",
+        "gitUrl": "https://github.com/EricJoy2048",
+        "githubId": "EricJoy2048",
+        "name": "Jun Gao"
       }
     ]
   }
