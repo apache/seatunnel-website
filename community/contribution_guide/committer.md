@@ -146,9 +146,9 @@ The V.P. and chair of the PPMC is the secretary, who is responsible for initiali
 In most cases, a new PPMC member is nominated from the committer team. But it is also possible to become a PPMC member directly, so long as the PPMC agrees to the nomination and is confident that the candidate is ready. For instance, this can be demonstrated by the fact that he/she has been an Apache member, an Apache officer, or a PPMC member of another project.
 
 The new PPMC voting process should also follow the `[DISCUSS]`, `[VOTE]` and `[RESULT][VOTE]` procedures using a private mail list, just like the [voting process for new committers](#new-committer-nomination).
-Before sending the invitation, the PPMC [must also send a NOTICE mail to the Apache board](http://www.apache.org/dev/PPMC.html#newPPMC).
+Before sending the invitation, the PPMC [must also send a NOTICE mail to the Apache Incubator](http://www.apache.org/dev/PPMC.html#newPPMC).
 ```
-To: board@apache.org
+To: private@incubator.apache.org
 Cc: private@seatunnel.apache.org
 Subject: [NOTICE] Jane Doe for SeaTunnel PPMC
 
