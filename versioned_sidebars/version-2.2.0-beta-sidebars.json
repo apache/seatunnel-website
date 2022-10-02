@@ -104,7 +104,7 @@
             "type": "generated-index",
             "title": "Source(V2) of SeaTunnel",
             "description": "List all source(v2) supported Apache SeaTunnel for now.",
-            "slug": "/category/connector/v2/source",
+            "slug": "/category/source-v2",
             "keywords": ["source"],
             "image": "/img/favicon.ico"
           },
@@ -122,7 +122,7 @@
             "type": "generated-index",
             "title": "Sink(V2) of SeaTunnel",
             "description": "List all sink(v2) supported Apache SeaTunnel for now.",
-            "slug": "/category/connector/v2/sink",
+            "slug": "/category/sink-v2",
             "keywords": ["sink"],
             "image": "/img/favicon.ico"
           },
