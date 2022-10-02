@@ -52,7 +52,7 @@ RUN tar -xzvf apache-seatunnel-incubating-${SEATUNNEL_VERSION}-bin.tar.gz
 
 RUN cp -r apache-seatunnel-incubating-${SEATUNNEL_VERSION}/* $SEATUNNEL_HOME/
 RUN rm -rf apache-seatunnel-incubating-${SEATUNNEL_VERSION}*
-RUN rm -rf $SEATUNNEL_HOME/connectors/flink
+RUN rm -rf $SEATUNNEL_HOME/connectors/seatunnel
 ```
 
 Then run the following commands to build the image:
@@ -196,8 +196,8 @@ spec:
             type: Directory
 
   job:
-    jarURI: local:///opt/seatunnel/lib/seatunnel-core-flink.jar
-    entryClass: org.apache.seatunnel.core.flink.SeatunnelFlink
+    jarURI: local:///opt/seatunnel/lib/seatunnel-flink-starter.jar
+    entryClass: org.apache.seatunnel.core.starter.flink.SeatunnelFlink
     args: ["--config", "/data/flink.streaming.conf"]
     parallelism: 2
     upgradeMode: stateless
