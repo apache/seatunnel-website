@@ -7,17 +7,19 @@ import TabItem from '@theme/TabItem';
 
 # Set Up with Locally
 
-## Prepare
+> Let's take an application that randomly generates data in memory, processes it through SQL, and finally outputs it to the console as an example.
+
+## Step 1: Prepare the environment
 
 Before you getting start the local run, you need to make sure you already have installed the following software which SeaTunnel required:
 
 * [Java](https://www.java.com/en/download/) (Java 8 or 11, other versions greater than Java 8 can theoretically work as well) installed and `JAVA_HOME` set.
 * Download the engine, you can choose and download one of them from below as your favour, you could see more information about [why we need engine in SeaTunnel](../faq.md#why-i-should-install-computing-engine-like-spark-or-flink)
-  * Spark: Please [download Spark](https://spark.apache.org/downloads.html) first(**required version >= 2 and version < 3.x **). For more information you could
-  see [Getting Started: standalone](https://spark.apache.org/docs/latest/spark-standalone.html#installing-spark-standalone-to-a-cluster)
-  * Flink: Please [download Flink](https://flink.apache.org/downloads.html) first(**required version >= 1.12.0 and version < 1.14.x **). For more information you could see [Getting Started: standalone](https://nightlies.apache.org/flink/flink-docs-release-1.14/docs/deployment/resource-providers/standalone/overview/)
+* Spark: Please [download Spark](https://spark.apache.org/downloads.html) first(**required version >= 2 and version < 3.x **). For more information you could
+see [Getting Started: standalone](https://spark.apache.org/docs/latest/spark-standalone.html#installing-spark-standalone-to-a-cluster)
+* Flink: Please [download Flink](https://flink.apache.org/downloads.html) first(**required version >= 1.12.0 and version < 1.14.x **). For more information you could see [Getting Started: standalone](https://nightlies.apache.org/flink/flink-docs-release-1.14/docs/deployment/resource-providers/standalone/overview/)
 
-## Installation
+## Step 2: Download SeaTunnel
 
 Enter the [seatunnel download page](https://seatunnel.apache.org/download) and download the latest version of distribute
 package `seatunnel-<version>-bin.tar.gz`
@@ -31,7 +33,7 @@ tar -xzvf "apache-seatunnel-incubating-${version}-bin.tar.gz"
 ```
 <!-- TODO: We should add example module as quick start which is no need for install Spark or Flink -->
 
-## Install connectors plugin
+## Step 3: Install connectors plugin
 Since 2.2.0, the binary package does not provide connector dependencies by default, so when using it for the first time, we need to execute the following command to install the connector: (Of course, you can also manually download the connector from [Apache Maven Repository](https://repo. maven.apache.org/maven2/org/apache/seatunnel/ to download, then manually move to the connectors directory).
 ```bash
 sh bin/install_plugin.sh
@@ -40,20 +42,78 @@ If you need to specify the version of the connector, take 2.2.0 as an example, w
 ```bash
 sh bin/install_plugin.sh 2.2.0
 ```
-Usually we don't need all the connector plugins, so you can specify the plugins you need by configuring `config/plugin_config`, for example, you only need the `flink-assert` plugin, then you can modify plugin.properties as
+Usually we don't need all the connector plugins, so you can specify the plugins you need by configuring `config/plugin_config`, for example, you only need the `connector-console` plugin, then you can modify plugin.properties as
 ```plugin_config
---flink-connectors--
-seatunnel-connector-flink-assert
+--seatunnel-connectors--
+connector-console
+--end--
+```
+If we want our sample application to work properly, we need to add the following plugins
+
+```plugin_config
+--seatunnel-connectors--
+connector-fake
+connector-console
 --end--
 ```
 
-## Run SeaTunnel Application
+You can find all supported connectors and corresponding plugin_config configuration names under `${SEATUNNEL_HOME}/connectors/plugins-mapping.properties`.
+
+## Step 4: Configure SeaTunnel Application
 
 **Configure SeaTunnel**: Change the setting in `config/seatunnel-env.sh`, it is base on the path your engine install at [prepare step two](#prepare).
 Change `SPARK_HOME` if you using Spark as your engine, or change `FLINK_HOME` if you're using Flink.
 
-**Run Application with Build-in Configure**: We already providers and out-of-box configuration in directory `config` which
-you could find when you extract the tarball. You could start the application by the following commands
+Edit `config/seatunnel.streaming.conf.template`, which determines the way and logic of data input, processing, and output after seatunnel is started.
+The following is an example of the configuration file, which is the same as the example application mentioned above.
+
+```hocon
+env {
+  # You can set flink configuration here
+  execution.parallelism = 1
+  job.mode = "STREAMING"
+  #execution.checkpoint.interval = 10000
+  #execution.checkpoint.data-uri = "hdfs://localhost:9000/checkpoint"
+
+
+  # For Spark
+  #spark.app.name = "SeaTunnel"
+  #spark.executor.instances = 2
+  #spark.executor.cores = 1
+  #spark.executor.memory = "1g"
+  #spark.master = local
+}
+
+source {
+    FakeSource {
+      result_table_name = "fake"
+      row.num = 16
+      schema = {
+        fields {
+          name = "string"
+          age = "int"
+        }
+      }
+    }
+}
+
+transform {
+    sql {
+      sql = "select name,age from fake"
+    }
+}
+
+sink {
+  Console {}
+}
+
+```
+
+More information about config please check [config concept](../concept/config)
+
+## Step 5: Run SeaTunnel Application
+
+You could start the application by the following commands
 
 <Tabs
   groupId="engine-type"
@@ -66,10 +126,10 @@ you could find when you extract the tarball. You could start the application by 
 
 ```shell
 cd "apache-seatunnel-incubating-${version}"
-./bin/start-seatunnel-spark.sh \
+./bin/start-seatunnel-spark-connector-v2.sh \
 --master local[4] \
 --deploy-mode client \
---config ./config/spark.streaming.conf.template
+--config ./config/seatunnel.streaming.conf.template
 ```
 
 </TabItem>
@@ -77,50 +137,40 @@ cd "apache-seatunnel-incubating-${version}"
 
 ```shell
 cd "apache-seatunnel-incubating-${version}"
-./bin/start-seatunnel-flink.sh \
---config ./config/flink.streaming.conf.template
+./bin/start-seatunnel-flink-connector-v2.sh \
+--config ./config/seatunnel.streaming.conf.template
 ```
 
 </TabItem>
 </Tabs>
 
-**See The Output**: When you run the command, you could see its output in your console or in Flink UI, You can think this
+**See The Output**: When you run the command, you could see its output in your console or in Flink/Spark UI, You can think this
 is a sign that the command ran successfully or not.
 
-<Tabs
-  groupId="engine-type"
-  defaultValue="spark"
-  values={[
-    {label: 'Spark', value: 'spark'},
-    {label: 'Flink', value: 'flink'},
-  ]}>
-<TabItem value="spark">
 The SeaTunnel console will prints some logs as below:
 
 ```shell
-Hello World, SeaTunnel
-Hello World, SeaTunnel
-Hello World, SeaTunnel
-...
-Hello World, SeaTunnel
+fields : name, age
+types : STRING, INT
+row=1 : elWaB, 1984352560
+row=2 : uAtnp, 762961563
+row=3 : TQEIB, 2042675010
+row=4 : DcFjo, 593971283
+row=5 : SenEb, 2099913608
+row=6 : DHjkg, 1928005856
+row=7 : eScCM, 526029657
+row=8 : sgOeE, 600878991
+row=9 : gwdvw, 1951126920
+row=10 : nSiKE, 488708928
+row=11 : xubpl, 1420202810
+row=12 : rHZqb, 331185742
+row=13 : rciGD, 1112878259
+row=14 : qLhdI, 1457046294
+row=15 : ZTkRx, 1240668386
+row=16 : SGZCr, 94186144
 ```
 
-</TabItem>
-<TabItem value="flink">
-
-The content printed in the TaskManager Stdout log of `flink WebUI`, is two columned record just like below(your
-content maybe different cause we use fake source to create data random):
-
-```shell
-apache, 15
-seatunnel, 30
-incubator, 20
-...
-topLevel, 20
-```
-
-</TabItem>
-</Tabs>
+If use Flink, The content printed in the TaskManager Stdout log of `flink WebUI`.
 
 ## Explore More Build-in Examples
 
@@ -140,7 +190,7 @@ template in `config` as examples:
 
 ```shell
 cd "apache-seatunnel-incubating-${version}"
-./bin/start-seatunnel-spark.sh \
+./bin/start-seatunnel-spark-connector-v2.sh \
 --master local[4] \
 --deploy-mode client \
 --config ./config/spark.batch.conf.template
@@ -151,7 +201,7 @@ cd "apache-seatunnel-incubating-${version}"
 
 ```shell
 cd "apache-seatunnel-incubating-${version}"
-./bin/start-seatunnel-flink.sh \
+./bin/start-seatunnel-flink-connector-v2.sh \
 --config ./config/flink.batch.conf.template
 ```
 

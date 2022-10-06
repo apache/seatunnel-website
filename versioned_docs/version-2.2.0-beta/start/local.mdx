@@ -7,7 +7,9 @@ import TabItem from '@theme/TabItem';
 
 # Set Up with Locally
 
-## Prepare
+> Let's take an application that randomly generates data in memory, processes it through SQL, and finally outputs it to the console as an example.
+
+## Step 1: Prepare the environment
 
 Before you getting start the local run, you need to make sure you already have installed the following software which SeaTunnel required:
 
@@ -17,7 +19,7 @@ Before you getting start the local run, you need to make sure you already have i
   see [Getting Started: standalone](https://spark.apache.org/docs/latest/spark-standalone.html#installing-spark-standalone-to-a-cluster)
   * Flink: Please [download Flink](https://flink.apache.org/downloads.html) first(**required version >= 1.12.0 and version < 1.14.x **). For more information you could see [Getting Started: standalone](https://nightlies.apache.org/flink/flink-docs-release-1.14/docs/deployment/resource-providers/standalone/overview/)
 
-## Installation
+## Step 2: Download SeaTunnel
 
 Enter the [seatunnel download page](https://seatunnel.apache.org/download) and download the latest version of distribute
 package `seatunnel-<version>-bin.tar.gz`
@@ -31,29 +33,102 @@ tar -xzvf "apache-seatunnel-incubating-${version}-bin.tar.gz"
 ```
 <!-- TODO: We should add example module as quick start which is no need for install Spark or Flink -->
 
-## Install connectors plugin
+## Step 3: Install connectors plugin
 Since 2.2.0, the binary package does not provide connector dependencies by default, so when using it for the first time, we need to execute the following command to install the connector: (Of course, you can also manually download the connector from [Apache Maven Repository](https://repo. maven.apache.org/maven2/org/apache/seatunnel/ to download, then manually move to the connectors directory).
 ```bash
 sh bin/install_plugin.sh
-````
+```
 If you need to specify the version of the connector, take 2.2.0 as an example, we need to execute
 ```bash
 sh bin/install_plugin.sh 2.2.0
-````
-Usually we don't need all the connector plugins, so you can specify the plugins you need by configuring `config/plugin_config`, for example, you only need the `flink-assert` plugin, then you can modify plugin.properties as
-````plugin_config
+```
+Usually we don't need all the connector plugins, so you can specify the plugins you need by configuring `config/plugin_config`, for example, you only need the `flink-console` plugin, then you can modify plugin.properties as
+```plugin_config
 --flink-connectors--
-seatunnel-connector-flink-assert
+seatunnel-connector-flink-console
 --end--
-```bash
+```
+If we want our sample application to work properly, we need to add the following plugins
+<Tabs
+    groupId="engine-type"
+    defaultValue="spark"
+    values={[
+        {label: 'Spark', value: 'spark'},
+        {label: 'Flink', value: 'flink'},
+    ]}>
+<TabItem value="spark">
 
-## Run SeaTunnel Application
+```plugin_config
+--spark-connectors--
+seatunnel-connector-spark-fake
+seatunnel-connector-spark-console
+--end--
+```
+
+</TabItem>
+<TabItem value="flink">
+
+```plugin_config
+--flink-connectors--
+seatunnel-connector-flink-fake
+seatunnel-connector-flink-console
+--end--
+```
+
+</TabItem>
+</Tabs>
+
+You can find all supported connectors and corresponding plugin_config configuration names under `${SEATUNNEL_HOME}/connectors/plugins-mapping.properties`.
+
+## Step 4: Configure SeaTunnel Application
 
 **Configure SeaTunnel**: Change the setting in `config/seatunnel-env.sh`, it is base on the path your engine install at [prepare step two](#prepare).
 Change `SPARK_HOME` if you using Spark as your engine, or change `FLINK_HOME` if you're using Flink.
 
-**Run Application with Build-in Configure**: We already providers and out-of-box configuration in directory `config` which
-you could find when you extract the tarball. You could start the application by the following commands
+Edit `config/flink(spark).streaming.conf.template`, which determines the way and logic of data input, processing, and output after seatunnel is started.
+The following is an example of the configuration file, which is the same as the example application mentioned above.
+
+```hocon
+######
+###### This config file is a demonstration of streaming processing in SeaTunnel config
+######
+
+env {
+  # You can set flink configuration here
+  execution.parallelism = 1
+
+  # For Spark
+  #spark.app.name = "SeaTunnel"
+  #spark.executor.instances = 2
+  #spark.executor.cores = 1
+  #spark.executor.memory = "1g"
+  #spark.master = local
+}
+
+source {
+    FakeSourceStream {
+      result_table_name = "fake"
+      field_name = "name,age"
+    }
+}
+
+transform {
+    sql {
+      sql = "select name,age from fake"
+    }
+}
+
+sink {
+  ConsoleSink {}
+}
+
+```
+
+More information about config please check [config concept](../concept/config)
+
+## Step 5: Run SeaTunnel Application
+
+You could start the application by the following commands
 
 <Tabs
   groupId="engine-type"
