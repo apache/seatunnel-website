@@ -82,6 +82,23 @@ seatunnel-connector-flink-console
 
 You can find all supported connectors and corresponding plugin_config configuration names under `${SEATUNNEL_HOME}/connectors/plugins-mapping.properties`.
 
+:::tip
+
+If you need to install connectors plugin manually, you need to pay special attention to the following
+
+:::
+
+The connectors directory contains the following subdirectories, if they do not exist, you need to create them manually
+
+```
+flink
+flink-sql
+seatunnel
+spark
+```
+
+If you want to manually install the connector plugin of the flink engine, you need to download the connector plugin of the flink engine you need, and then put them in the flink directory. Similarly, if you want to manually install the connector plugin of the spark engine, you need to download the connector plugin of the spark engine you need, and then put them in the spark directory
+
 ## Step 4: Configure SeaTunnel Application
 
 **Configure SeaTunnel**: Change the setting in `config/seatunnel-env.sh`, it is base on the path your engine install at [prepare step two](#prepare).
