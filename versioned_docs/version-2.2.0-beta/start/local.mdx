@@ -34,7 +34,7 @@ tar -xzvf "apache-seatunnel-incubating-${version}-bin.tar.gz"
 <!-- TODO: We should add example module as quick start which is no need for install Spark or Flink -->
 
 ## Step 3: Install connectors plugin
-Since 2.2.0-beta, the binary package does not provide connector dependencies by default, so when using it for the first time, we need to execute the following command to install the connector: (Of course, you can also manually download the connector from [Apache Maven Repository](https://repo. maven.apache.org/maven2/org/apache/seatunnel/ to download, then manually move to the connectors directory).
+Since 2.2.0-beta, the binary package does not provide connector dependencies by default, so when using it for the first time, we need to execute the following command to install the connector: (Of course, you can also manually download the connector from [Apache Maven Repository](https://repo. maven.apache.org/maven2/org/apache/seatunnel/ to download, then manually move to the corresponding subdirectory of the connectors directory, for example, flink plugins should be placed in the flink directory, spark plugins should be placed in the spark directory).
 ```bash
 sh bin/install_plugin.sh 2.2.0-beta
 ```
@@ -81,6 +81,23 @@ seatunnel-connector-flink-console
 </Tabs>
 
 You can find all supported connectors and corresponding plugin_config configuration names under `${SEATUNNEL_HOME}/connectors/plugins-mapping.properties`.
+
+:::tip
+
+If you want to install the connector plugin by manually downloading the connector, you need to pay special attention to the following
+
+:::
+
+The connectors directory contains the following subdirectories, if they do not exist, you need to create them manually
+
+```
+flink
+flink-sql
+seatunnel
+spark
+```
+
+If you want to manually install the connector plugin of the flink engine, you need to download the connector plugin of the flink engine you need, and then put them in the flink directory. Similarly, if you want to manually install the connector plugin of the spark engine, you need to download the connector plugin of the spark engine you need, and then put them in the spark directory
 
 ## Step 4: Configure SeaTunnel Application
 
