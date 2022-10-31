@@ -13,13 +13,13 @@ This section provides a quick guide to using SeaTunnel with Kubernetes.
 
 We assume that you have a local installations of the following:
 
-- [Docker](https://docs.docker.com/)
-- [Kubernetes](https://kubernetes.io/)
-- [Helm](https://helm.sh/docs/intro/quickstart/)
+- [docker](https://docs.docker.com/)
+- [kubernetes](https://kubernetes.io/)
+- [helm](https://helm.sh/docs/intro/quickstart/)
 
 So that the `kubectl` and `helm` commands are available on your local system.
 
-For Kubernetes [minikube](https://minikube.sigs.k8s.io/docs/start/) is our choice, at the time of writing this we are using version v1.23.3. You can start a cluster with the following command:
+For kubernetes [minikube](https://minikube.sigs.k8s.io/docs/start/) is our choice, at the time of writing this we are using version v1.23.3. You can start a cluster with the following command:
 
 ```bash
 minikube start --kubernetes-version=v1.23.3
@@ -42,7 +42,7 @@ To run the image with SeaTunnel, first create a `Dockerfile`:
 ```Dockerfile
 FROM flink:1.13
 
-ENV SEATUNNEL_VERSION="2.2.0-beta"
+ENV SEATUNNEL_VERSION="2.1.2"
 ENV SEATUNNEL_HOME = "/opt/seatunnel"
 
 RUN mkdir -p $SEATUNNEL_HOME
@@ -52,18 +52,18 @@ RUN tar -xzvf apache-seatunnel-incubating-${SEATUNNEL_VERSION}-bin.tar.gz
 
 RUN cp -r apache-seatunnel-incubating-${SEATUNNEL_VERSION}/* $SEATUNNEL_HOME/
 RUN rm -rf apache-seatunnel-incubating-${SEATUNNEL_VERSION}*
-RUN rm -rf $SEATUNNEL_HOME/connectors/flink
+RUN rm -rf $SEATUNNEL_HOME/connectors/spark
 ```
 
 Then run the following commands to build the image:
 ```bash
-docker build -t seatunnel:2.2.0-beta-flink-1.13 -f Dockerfile .
+docker build -t seatunnel:2.1.2-flink-1.13 -f Dockerfile .
 ```
-Image `seatunnel:2.2.0-beta-flink-1.13` need to be present in the host (minikube) so that the deployment can take place.
+Image `seatunnel:2.1.2-flink-1.13` need to be present in the host (minikube) so that the deployment can take place.
 
 Load image to minikube via:
 ```bash
-minikube image load seatunnel:2.2.0-beta-flink-1.13
+minikube image load seatunnel:2.1.2-flink-1.13
 ```
 
 </TabItem>
@@ -168,7 +168,7 @@ metadata:
   namespace: default
   name: seatunnel-flink-streaming-example
 spec:
-  image: seatunnel:2.2.0-beta-flink-1.13
+  image: seatunnel:2.1.2-flink-1.13
   flinkVersion: v1_14
   flinkConfiguration:
     taskmanager.numberOfTaskSlots: "2"
