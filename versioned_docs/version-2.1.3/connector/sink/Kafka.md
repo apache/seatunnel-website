@@ -18,7 +18,7 @@ Engine Supported and plugin name
 | name                       | type   | required | default value |
 | -------------------------- | ------ | -------- | ------------- |
 | producer.bootstrap.servers | string | yes      | -             |
-| topic                      | string | yes      | -             |
+| topics                     | string | yes      | -             |
 | producer.*                 | string | no       | -             |
 | semantic                   | string | no       | -             |
 | common-options             | string | no       | -             |
