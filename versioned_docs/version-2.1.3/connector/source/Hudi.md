@@ -28,6 +28,7 @@ Engine Supported and plugin name
 | [as.of.instant](#asofinstant)    | string | no      | -             |
 | [hoodie.datasource.query.type](#hoodiedatasourcequerytype)         | string | no      | -             |
 | [hoodie.datasource.read.schema.use.end.instanttime](#hoodiedatasourcereadschemauseendinstanttime)      | string | no      | -             |
+| common-options             | string | yes      | -             |
 
 Refer to [hudi read options](https://hudi.apache.org/docs/configurations/#Read-Options) for configurations.
 
@@ -65,11 +66,15 @@ Whether data needs to be read, in incremental mode (new data since an instantTim
 ### hoodie.datasource.read.schema.use.end.instanttime
 Uses end instant schema when incrementally fetched data to. Default: users latest instant schema.
 
+### common options [string]
+Source plugin common parameters, please refer to [Source Plugin](common-options.mdx) for details.
+
 ## Example
 
 ```bash
 hudi {
     hoodie.datasource.read.paths = "hdfs://"
+    result_table_name = "test"
 }
 ```
 
