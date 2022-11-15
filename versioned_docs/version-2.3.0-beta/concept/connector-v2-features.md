@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Intro To Connector V2 Features
 
 ## Differences Between Connector V2 And Connector v1
