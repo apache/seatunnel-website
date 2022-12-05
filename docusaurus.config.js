@@ -100,7 +100,7 @@ const config = {
                         })),
                         {
                             label: "Next",
-                            to: "/docs/intro/about",
+                            to: "/docs/about",
                         },
                         {
                             label: "All versions",
