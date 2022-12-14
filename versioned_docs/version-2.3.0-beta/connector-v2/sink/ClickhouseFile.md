@@ -107,7 +107,7 @@ Sink plugin common parameters, please refer to [Sink Common Options](common-opti
     table = "fake_all"
     username = "default"
     password = ""
-    clickhouse_local_path = "/Users/seatunnel/Tool/clickhouse local"
+    clickhouse_local_path = "/Users/seatunnel/Tool/clickhouse-local"
     sharding_key = "age"
     node_free_password = false
     node_pass = [{
