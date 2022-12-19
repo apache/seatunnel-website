@@ -4,7 +4,7 @@ title: SeaTunnel engine, designed for tens-of-billions data integration
 tags: [Meetup]
 ---
 # SeaTunnel engine, designed for tens-of-billions data integration
-![](/static/image/16714309762810/16714309876928.jpg)
+![](/image/16714309762810/16714309876928.jpg)
 Apache SeaTunnel Committer | Zongwen Li
 
 ## Introduction to Apache SeaTunnel
@@ -19,9 +19,9 @@ In October 2021, the Waterdrop community joined the Apache incubator and changed
 
 ## SeaTunnel Growth
 
-![](/static/image/16714309762810/16714310892722.jpg)
-![](/static/image/16714309762810/16714310916195.jpg)
-![](/static/image/16714309762810/16714310939883.jpg)
+![](/image/16714309762810/16714310892722.jpg)
+![](/image/16714309762810/16714310916195.jpg)
+![](/image/16714309762810/16714310939883.jpg)
 When SeaTunnel entered the Apache incubator, the SeaTunnel community ushered in rapid growth.
 
 As of now, the SeaTunnel community has a total of 151 contributors, 4314 Stars, and 804 forks.
@@ -35,7 +35,7 @@ There are many pain points faced by the existing computing engines in the field 
 
 ## fault tolerance
 Global Failover
-![Global-failover](/static/image/16714309762810/16714311670656.jpg)
+![Global-failover](/image/16714309762810/16714311670656.jpg)
 For distributed streaming processing systems, high throughput and low latency are often the most important requirements. At the same time, fault tolerance is also very important in distributed systems. For scenarios that require high correctness, the implementation of exactly once is often very important.
 
 In a distributed streaming processing system, since the computing power, network, load, etc. of each node are different, the state of each node cannot be directly merged to obtain a true global state. To obtain consistent results, the distributed processing system needs to be resilient to node failure, that is, it can recover to consistent results when it fails.
@@ -47,7 +47,7 @@ Flink implemented Checkpoint as a fault-tolerant mechanism based on the above al
 In the current industrial implementation, when a job fails, all nodes of the job DAG need to failover, and the whole process will last for a long time, which will cause a lot of upstream data to accumulate.
 
 ## Loss of Data
-![](/static/image/16714309762810/16714312426416.jpg)
+![](/image/16714309762810/16714312426416.jpg)
 The previous problem will cause a long-time recovery, and the business service may accept a certain degree of data delay.
 
 In a worse case, a single sink node cannot be recovered for a long time, and the source data has a limited storage time, such as MySQL and Oracle log data, which will lead to data loss.
@@ -55,14 +55,14 @@ In a worse case, a single sink node cannot be recovered for a long time, and the
 ## Configuration is cumbersome
 Single table Configuration
 
-![](/static/image/16714309762810/16714312637015.jpg)
+![](/image/16714309762810/16714312637015.jpg)
 The previous examples are cases regarding a small number of tables, but in real business service development, we usually need to synchronize thousands of tables, which may be divided into databases and tables at the same time;
 
 The status quo is that we need to configure each table, a large number of table synchronization takes a lot of time for users, and it is prone to problems such as field mapping errors, which are difficult to maintain.
 
 ## Not supporting Schema Evolution
 
-![Not-supports-DDL](/static/image/16714309762810/16714312769761.jpg)
+![Not-supports-DDL](/image/16714309762810/16714312769761.jpg)
 Besides, according to the research report of Fivetran, 60% of the company’s schema will change every month, and 30% will change every week.
 
 However, none of the existing engines supports Schema Evolution. After changing the Schema each time, the user needs to reconfigure the entire link, which makes the maintenance of the job very cumbersome.
@@ -71,11 +71,11 @@ However, none of the existing engines supports Schema Evolution. After changing 
 
 The database link takes up too much
 
-![](/static/image/16714309762810/16714313100541.jpg)
+![](/image/16714309762810/16714313100541.jpg)
 If our Source or Sink is of JDBC type, since the existing engine only supports one or more links per table, when there are many tables to be synchronized, more link resources will be occupied, which will bring a great burden to the database server.
 ## Operator pressure is uncontrollable
 
-![](/static/image/16714309762810/16714313301435.jpg)
+![](/image/16714309762810/16714313301435.jpg)
 In the existing engine, a buffer and other control operators are used to control the pressure, that is, the back pressure mechanism; since the back pressure is transmitted level by level, there will be pressure delay, and at the same time, the processing of data will not be smooth enough, increasing the GC time, fault-tolerant completion time, etc.
 
 Another case is that neither the source nor the sink has reached the maximum pressure, but the user still needs to control the synchronization rate to prevent too much impact on the source database or the target database, which cannot be controlled through the back pressure mechanism.
@@ -87,14 +87,14 @@ Firstly, let’s get through what goals this engine wants to achieve.
 
 ## Pipeline Failover
 
-![](/static/image/16714309762810/16714313559400.jpg)
+![](/image/16714309762810/16714313559400.jpg)
 In the data integration case, there is a possibility that a job can synchronize hundreds of sheets, and the failure of one node or one table will lead to the failure of all tables, which is too costly.
 
 We expect that unrelated Job Tasks will not affect each other during fault tolerance, so we call a vertex collection with upstream and downstream relationships a Pipeline, and a Job can consist of one or more pipelines.
 
 ## Regional Failover
 Now if there is an exception in the pipeline, we still need to failover all the vertex in the pipeline; but can we restore only part of the vertex?
-![](/static/image/16714309762810/16714313919617.jpg)
+![](/image/16714309762810/16714313919617.jpg)
 For example, if the Source fails, the Sink does not need to restart. In the case of a single Source and multiple Sinks, if a single Sink fails, only the Sink and Source that failed will be restored; that is, only the node that failed and its upstream nodes will be restored.
 
 Obviously, the stateless vertex does not need to be restarted, and since SeaTunnel is a data integration framework, we do not have aggregation state vertexes such as Agg and Count, so we only need to consider Sink;
@@ -108,7 +108,7 @@ Obviously, the stateless vertex does not need to be restarted, and since SeaTunn
 We use the pipeline as the minimum granularity for fault-tolerant management, and use the Chandy-Lamport algorithm to realize fault-tolerant distributed jobs.
 
 ## Data Cache
-![](/static/image/16714309762810/16714314318184.jpg)
+![](/image/16714309762810/16714314318184.jpg)
 For sink failure, when data cannot be written, a possible solution is to work two jobs at the same time.
 
 One job reads the database logs using the CDC source connector and then writes the data to Kafka using the Kafka Sink connector. Another job reads data from Kafka using the Kafka source connector and writes data to the destination using the destination sink connector.
@@ -118,7 +118,7 @@ This solution requires users to have a deep understanding of the underlying tech
 Ideally, the user only knows that they will be reading data from the source and writing data to the sink, and at the same time, during this process, the data can be cached in case the sink fails. The sync engine needs to automatically add caching operations to the execution plan and ensure that the source still works in the event of a sink failure. In this process, the engine needs to ensure that the data written to the cache and read from the cache are transactional, to ensure data consistency.
 
 ## Sharding & Multi-table Sync
-![](/static/image/16714309762810/16714314489916.jpg)
+![](/image/16714309762810/16714314489916.jpg)
 
 For a large number of table synchronization, we expect that a single Source can support reading multiple structural tables, and then use the side stream output to keep consistent with a single table stream.
 
@@ -127,7 +127,7 @@ The advantage of this is that it can reduce the link occupation of the data sour
 At the same time, in SeaTunnel Engine, these multiple tables will be regarded as a pipeline, which will increase the granularity of fault tolerance; there are trade-offs, and the user can choose how many tables a pipeline can pass through.
 
 ## Schema Evolution
-![](/static/image/16714309762810/16714314658701.jpg)
+![](/image/16714309762810/16714314658701.jpg)
 Schema Evolution is a feature that allows users to easily change the current schema of a table to accommodate changing data over time. Most commonly, it is used when performing an append or overwrite operation, to automatically adjust the schema to include one or more new columns.
 
 This feature is required for real-time data warehouse scenarios. Currently, the Flink and Spark engines do not support this feature.
@@ -135,11 +135,11 @@ This feature is required for real-time data warehouse scenarios. Currently, the 
 In SeaTunnel Engine, we will use the Chandy-Lamport algorithm to send DDL events, make them flow in the DAG graph and change the structure of each operator, and then synchronize them to the Sink.
 
 ## Shared Resource
-![Shared-resource](/static/image/16714309762810/16714314806989.jpg)
+![Shared-resource](/image/16714309762810/16714314806989.jpg)
 The Multi-table feature can reduce the use of some Source and Sink link resources. At the same time, we have implemented Dynamic Thread Resource Sharing in SeaTunnel Engine, reducing the resource usage of the engine on the server.
 
 ## Speed Control
-![](/static/image/16714309762810/16714315001348.jpg)
+![](/image/16714309762810/16714315001348.jpg)
 As for the problems that cannot be solved by the back pressure mechanism, we will optimize the Buffer and Checkpoint mechanism:
 
 * Firstly, We try to allow Buffer to control the amount of data in a period;

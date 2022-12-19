@@ -4,9 +4,9 @@ title: Mafengwo finally chose Apache SeaTunnel after analyzing these 9 points of
 tags: [Meetup]
 ---
 # Mafengwo finally chose Apache SeaTunnel after analyzing these 9 points of how it works!
-![](/static/image/16714322747890/16714322908857.jpg)
+![](/image/16714322747890/16714322908857.jpg)
 
-![](/static/image/16714322747890/16714322944041.jpg)
+![](/image/16714322747890/16714322944041.jpg)
 Bo Bi, data engineer at Mafengwo
 
 > During the joint Apache SeaTunnel & IoTDB Meetup on October 15, Bo Bi, the data engineer at a leading Chinese travel-social e-commerce platform Mafengwo, introduced the basic principles of SeaTunnel and related enterprise practice thinking, the pain points and optimization thinking in typical scenarios of Mafengwo’s big data development and scheduling platform, and shared his experience of participating in community contributions. We hope to help you understand SeaTunnel and the paths and skills of community building at the same time.
@@ -21,7 +21,7 @@ In a synchronization scenario, such as importing Kafka to Elasticsearch, Kafka i
 
 If, during the import process, the field columns do not match the external data columns to be written and some column or type conversion is required, or if you need to join multiple data sources and then do some data widening, field expansion, etc., then you need to add some Transform in the process, corresponding to the middle part of the picture.
 
-![](/static/image/16714322747890/16714323322988.jpg)
+![](/image/16714322747890/16714323322988.jpg)
 This shows that the core of SeaTunnel is the Source, Transform and Sink process definitions.
 
 In Source we can define the data sources we need to read, in Sink, we can define the data pipeline and eventually write the external storage, and we can transform the data in between, either using SQL or custom functions.
@@ -38,26 +38,26 @@ The SeaTunnel architecture consists of three main parts.
 2. SeaTunnel’s plug-in system.
 
 ## SeaTunnel Basic API
-![](/static/image/16714322747890/16714323668557.jpg)
+![](/image/16714322747890/16714323668557.jpg)
 The above diagram shows the definition of the interface, the Plugin interface in SeaTunnel abstracts the various actions of data processing into a Plugin.
 
 The five parts of the diagram below, Basesource, Basetransfform, Basesink, Runtimeenv, and Execution, all inherit from the Plugin interface.
-![](/static/image/16714322747890/16714323741126.jpg)
+![](/image/16714322747890/16714323741126.jpg)
 
 As a process definition plug-in, Source is responsible for reading data, Transform is responsible for transforming, Sink is responsible for writing and Runtimeenv is setting the base environment variables.
 
 The overall SeaTunnel base API is shown below
 
-![](/static/image/16714322747890/16714323846302.jpg)
+![](/image/16714322747890/16714323846302.jpg)
 Execution, the data flow builder used to build the entire data flow based on the first three, is also part of the base API
 
-![](/static/image/16714322747890/16714323920717.jpg)
+![](/image/16714322747890/16714323920717.jpg)
 
 ## SeaTunnel Base API Implementation
 
 Based on the previous basic APIs, SeaTunnel has been implemented in separate packages for different computing engines, currently the Spark API abstraction and the Flink API abstraction, which logically completes the process of building the data pipeline.
 
-![](/static/image/16714322747890/16714323741126.jpg)
+![](/image/16714322747890/16714323741126.jpg)
 
 Due to space constraints, we will focus on Spark batch processing. Based on the wrapped implementation of the previous base Api, the first is that Base spark source implements Base source, base Spark transform implements Base transform and Base Spark sink implements Base sink.
 
@@ -65,15 +65,15 @@ The method definition uses Spark’s Dataset as the carrier of the data, and all
 
 The SparkEnvironment, which internally encapsulates Spark’s Sparksession in an Env, makes it easy for individual plugins to use.
 
-![](/static/image/16714322747890/16714324136843.jpg)
+![](/image/16714322747890/16714324136843.jpg)
 
 The Spark batch process ends with SparkBatchExecution (the data stream builder), which is the core code snippet used to functionally build our data stream Pipeline, the most basic data stream on the left in the diagram below.
 
 The user-based definition of each process component is also the configuration of Source Sink, Transform. More complex data flow logic can be implemented, such as multi-source Join, multi-pipeline processing, etc., all of which can be built through Execution.
 
-![](/static/image/16714322747890/16714324237449.jpg)
+![](/image/16714322747890/16714324237449.jpg)
 ## SeaTunnel Connector V1 API Architecture Summary
-![](/static/image/16714322747890/16714324336701.jpg)
+![](/image/16714322747890/16714324336701.jpg)
 SeaTunnel’s API consists of three main parts.
 
 The first part is the SeaTunnel base API, which provides the basic abstract interfaces such as Source, Sink, Transform, and Plugin.
@@ -88,7 +88,7 @@ SeaTunnel Implementation Principle
 Currently, SeaTunnel offers a variety of ways to use Flink, Spark, and FlinkSQL. Due to space limitations, we will introduce the execution principles of the Spark method.
 
 First, the entry starts the command Start-seatunnel-spark.sh via the shell, which internally calls Sparkstarter’s Class, which parses the parameters passed by the shell script, and also parses the Config file to determine which Connectors are defined in the Config file, such as Fake, Console, etc.
-![](/static/image/16714322747890/16714324454477.jpg)
+![](/image/16714322747890/16714324454477.jpg)
 Then find the Connector path from the Connector plugin directory and stitch it into the Spark-submit launch command with — jar, so that the found Plugin jar package can be passed to the Spark cluster as a dependency.
 
 For Connector plugins, all Spark Connectors are packaged in the plugin directory of the distribution (this directory is managed centrally).
@@ -105,7 +105,7 @@ As the Container is currently a strongly coupled engine, i.e. Flink and Spark AP
 
 This can lead to multiple implementations for different engines and inconsistent parameters to develop a new Connector. Therefore, the community has designed and implemented the V2 version of the API based on these pain points.
 
-![](/static/image/16714322747890/16714324726276.jpg)
+![](/image/16714322747890/16714324726276.jpg)
 
 ## SeaTunnel V2 API Architecture
 
@@ -137,14 +137,14 @@ The design of the v2 Source & Sink API is highlighted below
 ## SeaTunnel Connector V2 Source API
 The current version of SeaTunnel’s API design draws on some of Flink’s design concepts, and the more core classes of the Source API are shown below.
 
-![](/static/image/16714322747890/16714325444078.jpg)
-![](/static/image/16714322747890/16714325474972.jpg)
+![](/image/16714322747890/16714325444078.jpg)
+![](/image/16714322747890/16714325474972.jpg)
 The core Source API interaction flow is shown above. In the case of concurrent reads, the enumerator SourceSplitEnumerator is required to split the task and send the SourceSplit down to the SourceReader, which receives the split and uses it to read the external data source.
 
 In order to support breakpoints and Eos semantics, it is necessary to preserve and restore the state, for example by preserving the current Reader’s Split consumption state and restoring it after a failure in each Reader through the Checkpoint state and Checkpoint mechanism, so that the data can be read from the place where it failed.
 
 ## SeaTunnel Connector V2 Sink API
-![](/static/image/16714322747890/16714325600316.jpg)
+![](/image/16714322747890/16714325600316.jpg)
 The overall Sink API interaction flow is shown in the diagram below. The SeaTunnel sink is currently designed to support distributed transactions, based on a two-stage transaction commit.
 
 First SinkWriter continuously writes data to an external data source, then when the engine does a checkpoint, it triggers a first-stage commit.
@@ -153,7 +153,7 @@ SinkWriter needs to do a Prepare commit, which is the first stage of the commit.
 
 The engine will determine if all the Writer's first stage succeeds, and if they all succeed, the engine will combine the Subtask’s Commit info with the Commit method of the Committer to do the actual commit of the transaction and operate the database for the Commit, i.e. the second stage of the commit. This is the second stage of commit.
 
-![](/static/image/16714322747890/16714325681738.jpg)
+![](/image/16714322747890/16714325681738.jpg)
 For the Kafka sink connector implementation, the first stage is to do a pre-commit by calling KafkaProducerSender.prepareCommit().
 
 The second commit is performed via Producer.commitTransaction();.
@@ -171,7 +171,7 @@ It is therefore recommended that the SinkAggregatedCommitter be used in preferen
 ## Comparison of SeaTunnel V1 and V2 API processing flows
 We can look at the changes before and after the V1 V2 upgrade from a data processing perspective, which is more intuitive, Spark batch processing as an example: SeaTunnel V1: The entire data processing process is based on the Spark dataset API, and the Connector and the compute engine are strongly coupled.
 
-![](/static/image/16714322747890/16714325887598.jpg)
+![](/image/16714322747890/16714325887598.jpg)
 SeaTunnel V2: Thanks to the work of the engine translator, the Connector API, and the SeaTunnelRow, the data source of the SeaTunnel internal data structures accessed through the Connector, are translated by the translation layer into a runnable Spark API and spark dataset that is recognized inside the engine during data transformation.
 
 As data is written out, the Spark API and Spark dataset are translated through the translation layer into an executable connector API inside the SeaTunnel connector and a data source of internal SeaTunnel structures that can be used.
@@ -184,7 +184,7 @@ As data is written out, the Spark API and Spark dataset are translated through t
 
 ### Practice and reflections on our off-line development scheduling platform
 
-![](/static/image/16714322747890/16714326227360.jpg)
+![](/image/16714322747890/16714326227360.jpg)
 Hornet’s Nest Big Data Development Platform, which focuses on providing one-stop big data development and scheduling services, helps businesses solve complex problems such as data development management, task scheduling and task monitoring in offline scenarios.
 
 The offline development and scheduling platform plays the role of the top and the bottom. The top is to provide open interface API and UI to connect with various data application platforms and businesses, and the bottom is to drive various computations and storage, and then run in an orderly manner according to the task dependency and scheduling time.
@@ -213,7 +213,7 @@ Library table management, permission management, API management, script manageme
 In summary, the core capabilities of the offline development scheduling platform are openness, versatility, and one-stop shopping. Through standardized processes, the entire task development cycle is managed and a one-stop service experience is provided.
 
 ## The architecture of the platform
-![](/static/image/16714322747890/16714326749427.jpg)
+![](/image/16714322747890/16714326749427.jpg)
 The Hornet’s Nest Big Data Development and Scheduling Platform consists of four main modules: the task component layer, the scheduling layer, the service layer, and the monitoring layer.
 
 The service layer is mainly responsible for job lifecycle management (e.g. job creation, testing, release, offline); Airflow dagphthon file building and generating, task bloodline dependency management, permission management, API (providing data readiness, querying of task execution status).
@@ -234,7 +234,7 @@ Self-developed task components: the high cost of platform integration, long deve
 We wanted to investigate a data integration tool that, firstly, supported a rich set of components, provided out-of-the-box capabilities, was easy to extend, and offered a uniform configuration of parameters and a uniform way of using them to facilitate platform integration and maintenance.
 
 * Selection of data integration tools
-![](/static/image/16714322747890/16714327002726.jpg)
+![](/image/16714322747890/16714327002726.jpg)
 To address the pain points mentioned above, we actively explored solutions and conducted a selection analysis of several mainstream data integration products in the industry. As you can see from the comparison above, Datax and SeaTunnel both offer good scalability, and high stability, support rich connector plugins, provide scripted, uniformly configurable usage, and have active communities.
 
 However, Datax is limited by being distributed and is not well suited to massive data scenarios.
@@ -257,7 +257,7 @@ The current pain points are twofold.
 
 ·Outbound efficiency: From the perspective of outbound efficiency, many Hive models themselves are processed by Spark SQL, and based on the processing the Spark Dataset in memory can be pushed directly to StarRocks without dropping the disk, improving the model’s regional time.
 
-![](/static/image/16714322747890/16714327218590.jpg)
+![](/image/16714322747890/16714327218590.jpg)
 StarRocks currently also supports Spark Load, based on the Spark bulk data import method, but our ETL is more complex, needs to support data conversion multi-table Join, data aggregation operations, etc., so temporarily can not meet.
 
 We know from the SeaTunnel community that there are plans to support the StarRocks Sink Connector, and we are working on that part as well, so we will continue to communicate with the community to build it together later.
