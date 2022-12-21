@@ -37,6 +37,7 @@ const config = {
                     sidebarPath: require.resolve('./sidebars.js'),
                     sidebarCollapsible: true,
                     editLocalizedFiles: true,
+                    sidebarCollapsed: false,
                     // Please change this to your repo.
                     editUrl: 'https://github.com/apache/incubator-seatunnel-website/edit/main/',
                     versions: {
