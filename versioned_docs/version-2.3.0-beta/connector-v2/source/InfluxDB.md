@@ -50,7 +50,7 @@ The query sql used to search data
 select name,age from test
 ```
 
-### fields [string]
+### fields [config]
 
 the fields of the InfluxDB when you select
 
@@ -62,7 +62,7 @@ e.g.
 fields{
     name=STRING
     age=INT
-    }
+}
 ```
 
 ### database [string]
@@ -97,7 +97,7 @@ lower bound of the `split_column` column
 ```
      split the $split_column range into $partition_num parts
      if partition_num is 1, use the whole `split_column` range
-     if partition_num < (upper_bound - lower_bound), use (upper_bound - lower_bound) partitions
+     if partition_num > (upper_bound - lower_bound), use (upper_bound - lower_bound) partitions
      
      eg: lower_bound = 1, upper_bound = 10, partition_num = 2
      sql = "select * from test where age > 0 and age < 10"
@@ -144,7 +144,7 @@ source {
             value = INT
             rt = STRING
             time = BIGINT
-            }
+        }
     }
 
 }
@@ -163,7 +163,7 @@ source {
             value = INT
             rt = STRING
             time = BIGINT
-            }
+        }
     }
 
 }
