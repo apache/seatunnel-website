@@ -34,6 +34,7 @@ Source connector for Apache Iceberg. It can support batch and stream mode.
 | namespace                | string  | yes      | -                    |
 | table                    | string  | yes      | -                    |
 | case_sensitive           | boolean | no       | false                |
+| fields                   | config  | no       | -                    |
 | start_snapshot_timestamp | long    | no       | -                    |
 | start_snapshot_id        | long    | no       | -                    |
 | end_snapshot_id          | long    | no       | -                    |
@@ -72,7 +73,7 @@ The iceberg table name in the backend catalog.
 
 If data columns where selected via fields(Collection), controls whether the match to the schema will be done with case sensitivity.
 
-### fields [array]
+### fields [config]
 
 Use projection to select data columns and columns order.
 
