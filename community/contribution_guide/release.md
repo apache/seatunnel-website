@@ -91,13 +91,14 @@ Among them, 85E11560 is public key ID.
 The command is as follow:
 
 ```shell
-gpg --keyserver pgpkeys.mit.edu/ --send-key 85E11560
+gpg --keyserver keyserver.ubuntu.com --send-key 85E11560
 ```
-* Here pgpkeys.mit.edu is a random selection of keyserver. Any key server from the list https://sks-keyservers.net/status/ is acceptable because they are automatically synchronized.
 
+### Search Key in key server
 
-`pool.sks-keyservers.net` is randomly chosen from [public key server](https://sks-keyservers.net/status/).
-Each server will automatically synchronize with one another, so it would be okay to choose any one.
+```shell
+gpg --keyserver keyserver.ubuntu.com --search-keys 85E11560
+```
 
 ## Apache Maven Central Repository Release
 
@@ -119,6 +120,10 @@ For encryption settings, please see [here](http://maven.apache.org/guides/mini/g
       <username> <!-- APACHE LDAP username --> </username>
       <password> <!-- APACHE LDAP encrypted password --> </password>
     </server>
+    <server>
+        <id>gpg.passphrase</id>
+        <passphrase><!-- GPG password --></passphrase>
+    </server>
   </servers>
 </settings>
 ```
@@ -126,7 +131,7 @@ For encryption settings, please see [here](http://maven.apache.org/guides/mini/g
 ### Update Release Notes
 
 ```
-https://github.com/apache/incubator-seatunnel/blob/dev/ReleaseNotes.md
+https://github.com/apache/incubator-seatunnel/blob/dev/release-note.md
 ```
 
 ### Create Release Branch
@@ -144,12 +149,10 @@ git push origin ${RELEASE.VERSION}-release
 ### Pre-Release Check
 
 ```shell
-mvn release:prepare -Prelease -Darguments="-DskipTests" -DdryRun=true -Drevison=${RELEASE-VERSION} -Dusername=${Github username}
+mvn release:prepare -Prelease -Darguments="-DskipTests" -DdryRun=true -Dusername=${Github username}
 ```
 
 -Prelease: choose release profile, which will pack all the source codes, jar files and executable binary packages.
-
---Drevison=${RELEASE-VERSION}：it can make the version number is inputted.
 
 -DdryRun=true：rehearsal, which means not to generate or submit new version number and new tag.
 
@@ -164,7 +167,7 @@ mvn release:clean
 Then, prepare to execute the release.
 
 ```shell
-mvn release:prepare -Prelease -Darguments="-DskipTests"  -Drevison=${RELEASE-VERSION} -DpushChanges=false -Dusername=${Github username}
+mvn release:prepare -Prelease -Darguments="-DskipTests" -DpushChanges=false -Dusername=${Github username}
 ```
 
 It is basically the same as the previous rehearsal command, but deleting -DdryRun=true parameter.
@@ -181,7 +184,7 @@ git push origin --tags
 ### Deploy the Release
 
 ```shell
-mvn release:perform -Prelease -Darguments="-DskipTests" -Drevison=${RELEASE-VERSION} -Dusername=${Github username}
+mvn release:perform -Prelease -Darguments="-DskipTests" -Dusername=${Github username}
 ```
 
 After that command is executed, the version to be released will be uploaded to Apache staging repository automatically.
@@ -191,7 +194,7 @@ If there is any problem in gpg signature, `Close` will fail, but you can see the
 
 ## Apache SVN Repository Release
 
-### Checkout SeaTunnel Release Directory
+### Checkout SeaTunnel dev Directory
 
 If there is no local work directory, create one at first.
 
@@ -207,7 +210,7 @@ svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/dev
 cd ~/st_svn/dev/seatunnel
 ```
 
-### Add gpg Public Key
+### Add gpg Public Key to dev svn
 
 Only the account in its first deployment needs to add that.
 It is alright for `KEYS` to only include the public key of the deployed account.
@@ -243,12 +246,46 @@ gpg --armor --detach-sig apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.
 gpg --armor --detach-sig apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz
 ```
 
-### Commit to Apache SVN
+### Commit to Apache dev SVN
 
 ```shell
 svn add *
 svn --username=${APACHE LDAP username} commit -m "release ${RELEASE.VERSION}"
 ```
+
+### Checkout SeaTunnel release Directory
+
+If there is no local work directory, create one at first.
+
+```shell
+mkdir -p ~/st_svn/release/
+cd ~/st_svn/release/
+```
+
+After the creation, checkout SeaTunnel release directory from Apache SVN.
+
+```shell
+svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/release/incubator/seatunnel
+cd ~/st_svn/release/seatunnel
+```
+
+### Add gpg public key to release svn
+
+Only the account in its first deployment needs to add that.
+
+It is alright for `KEYS` to only include the public key of the deployed account.
+
+```shell
+gpg -a --export ${GPG username} >> KEYS
+```
+
+### Commit to Apache release SVN
+
+```shell
+svn add *
+svn --username=${APACHE LDAP username} commit -m "Add ${APACHE LDAP username} gpg public key"
+```
+
 ## Check Release
 
 ### Check sha512 hash
