@@ -219,7 +219,7 @@ sink {
 - [Feature] Support StarRocks JDBC Sink ([3060](https://github.com/apache/incubator-seatunnel/pull/3060))
 - [Feature] Support DB2 JDBC Sink ([2410](https://github.com/apache/incubator-seatunnel/pull/2410))
 
-### next version
+### 2.3.0 2022-12-30
 
 - [Feature] Support CDC write DELETE/UPDATE/INSERT events ([3378](https://github.com/apache/incubator-seatunnel/issues/3378))
 - [Feature] Support Teradata JDBC　Sink ([3362](https://github.com/apache/incubator-seatunnel/pull/3362))

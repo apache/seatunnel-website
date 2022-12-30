@@ -99,6 +99,6 @@ sink {
 
 - Add Elasticsearch Sink Connector
 
-### next version
+### 2.3.0 2022-12-30
 
 - [Feature] Support CDC write DELETE/UPDATE/INSERT events ([3673](https://github.com/apache/incubator-seatunnel/pull/3673))

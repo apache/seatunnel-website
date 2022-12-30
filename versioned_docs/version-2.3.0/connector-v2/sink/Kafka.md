@@ -183,7 +183,7 @@ sink {
 
 - Add Kafka Sink Connector
 
-### next version
+### 2.3.0 2022-12-30
 
 - [Improve] Support to specify multiple partition keys [3230](https://github.com/apache/incubator-seatunnel/pull/3230)
 - [Improve] Add text format for kafka sink connector [3711](https://github.com/apache/incubator-seatunnel/pull/3711)

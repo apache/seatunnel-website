@@ -143,7 +143,7 @@ sink {
 ### 2.3.0-beta 2022-10-20
 - [Improve] Hive Sink supports automatic partition repair ([3133](https://github.com/apache/incubator-seatunnel/pull/3133))
 
-### Next version
+### 2.3.0 2022-12-30
 - [BugFix] Fixed the following bugs that failed to write data to files ([3258](https://github.com/apache/incubator-seatunnel/pull/3258))
   - When field from upstream is null it will throw NullPointerException
   - Sink columns mapping failed
