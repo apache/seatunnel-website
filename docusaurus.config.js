@@ -92,7 +92,7 @@ const config = {
                     items: [
                         ...versions.slice(0, versions.length - 2).map((version) => ({
                             label: version,
-                            to: `docs/${version}/intro/about`,
+                            to: (version >= '2.3.0') ? `docs/${version}/about` : `docs/${version}/intro/about`,
                         })),
                         ...versions.slice(versions.length - 2, versions.length).map((version) => ({
                             label: (version === "1.x") ? "1.x(Not Apache Release)" : version,

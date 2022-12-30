@@ -33,7 +33,7 @@ export default function () {
 
                         <div className="button_row center">
                             {/* TODO next release should be change to /category/start */}
-                            <a href={'/docs/' + versions[0] + '/intro/about'} className="corner_button blue_fill">{dataSource.common.getStart}</a>
+                            <a href={'/docs/' + versions[0] + '/about'} className="corner_button blue_fill">{dataSource.common.getStart}</a>
                             <a href={systemConfiguration.github.projectUrl} target="_blank"
                                className="corner_button blue" onMouseOver={() => changeFlag(1)} onMouseOut={() => changeFlag(2)}>
                                 <img className="button_icon github1" src={useBaseUrl('/home/icons/github' + flag + '.svg')} alt="github"/>
