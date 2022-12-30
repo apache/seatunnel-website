@@ -1,5 +1,19 @@
 [
 	{
+		"date": "2022-12-30",
+		"version": "v2.3.0",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-src.tar.gz",
+			"asc": "https://downloads.apache.org/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-bin.tar.gz",
+			"asc": "https://downloads.apache.org/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-bin.tar.gz.sha512"
+		}
+	},
+	{
 		"date": "2022-10-31",
 		"version": "v2.3.0-beta",
 		"sourceCode": {
