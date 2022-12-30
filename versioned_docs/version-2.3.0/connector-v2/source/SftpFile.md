@@ -209,6 +209,6 @@ Source plugin common parameters, please refer to [Source Common Options](common-
 
 ## Changelog
 
-### next version
+### 2.3.0 2022-12-30
 
 - Add SftpFile Source Connector

@@ -74,6 +74,6 @@ simple:
 
 ## Changelog
 
-### next version
+### 2.3.0 2022-12-30
 
 - Add GoogleSheets Source Connector

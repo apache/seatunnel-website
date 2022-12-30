@@ -89,6 +89,6 @@ mongodb {
 
 - Add MongoDB Source Connector
 
-### Next Version
+### 2.3.0 2022-12-30
 
 - common-options is not a required option

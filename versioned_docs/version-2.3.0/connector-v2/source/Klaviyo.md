@@ -302,7 +302,7 @@ Klaviyo {
 
 ## Changelog
 
-### next version
+### 2.3.0 2022-12-30
 
 - Add Klaviyo Source Connector
 - [Feature][Connector-V2][HTTP] Use json-path parsing ([3510](https://github.com/apache/incubator-seatunnel/pull/3510))

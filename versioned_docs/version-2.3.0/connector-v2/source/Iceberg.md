@@ -180,6 +180,6 @@ Some versions of the hive-exec package do not have libfb303-xxx.jar, so you also
 
 - Add Iceberg Source Connector
 
-### next version
+### 2.3.0 2022-12-30
 
 - [Feature] Support Hadoop3.x ([3046](https://github.com/apache/incubator-seatunnel/pull/3046))

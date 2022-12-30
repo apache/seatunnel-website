@@ -257,7 +257,7 @@ Source plugin common parameters, please refer to [Source Common Options](common-
 
 - Add S3File Source Connector
 
-### Next version
+### 2.3.0 2022-12-30
 - [Feature] Support S3A protocol ([3632](https://github.com/apache/incubator-seatunnel/pull/3632))
   - Allow user to add additional hadoop-s3 parameters
   - Allow the use of the s3a protocol

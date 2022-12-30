@@ -86,7 +86,7 @@ source {
 
 - [Improve] Clickhouse Source random use host when config multi-host ([3108](https://github.com/apache/incubator-seatunnel/pull/3108))
 
-### next version
+### 2.3.0 2022-12-30
 
 - [Improve] Clickhouse Source support nest type and array type([3047](https://github.com/apache/incubator-seatunnel/pull/3047))
 

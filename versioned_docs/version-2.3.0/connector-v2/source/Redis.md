@@ -253,6 +253,6 @@ simple:
 
 - Add Redis Source Connector
 
-### next version
+### 2.3.0 2022-12-30
 
 - [Improve] Support redis cluster mode connection and user authentication [3188](https://github.com/apache/incubator-seatunnel/pull/3188)
