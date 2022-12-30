@@ -47,22 +47,28 @@
       "doc": "Document",
       "source": "Source Code",
       "release": "Release Note",
-      "nextLink": "/docs/intro/about",
+      "nextLink": "/docs/about",
       "latestData": [
         {
-          "versionLabel": "2.3.0-beta",
-          "docUrl": "/docs/2.3.0-beta/intro/about",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.3.0-beta",
-          "sourceTag": "2.3.0-beta"
+          "versionLabel": "2.3.0",
+          "docUrl": "/docs/2.3.0/about",
+          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.3.0",
+          "sourceTag": "2.3.0"
         }
       ],
       "nextData": [
         {
           "versionLabel": "Next",
-          "docUrl": "/docs/intro/about"
+          "docUrl": "/docs/about"
         }
       ],
       "historyData": [
+        {
+          "versionLabel": "2.3.0",
+          "docUrl": "/docs/2.3.0/about",
+          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.3.0",
+          "sourceTag": "2.3.0"
+        },
         {
           "versionLabel": "2.3.0-beta",
           "docUrl": "/docs/2.3.0-beta/intro/about",
