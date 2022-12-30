@@ -63,7 +63,7 @@ Amazondynamodb {
 
 ## Changelog
 
-### 2.3.0 2022-12-30
+### next version
 
 - Add Amazon DynamoDB Sink Connector
 

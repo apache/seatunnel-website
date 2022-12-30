@@ -210,6 +210,6 @@ For orc file format
 
 ## Changelog
 
-### 2.3.0 2022-12-30
+### Next version
 
 - Add OSS Jindo File Sink Connector

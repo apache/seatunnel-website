@@ -141,6 +141,7 @@ Sink plugin common parameters, please refer to [Sink Common Options](common-opti
 
 - Support write data to ClickHouse File and move to ClickHouse data dir
 
-### 2.3.0 2022-12-30
+### Next version
+
 - [BugFix] Fix generated data part name conflict and improve file commit logic [3416](https://github.com/apache/incubator-seatunnel/pull/3416)
 - [Feature] Support compatible_mode compatible with lower version Clickhouse  [3416](https://github.com/apache/incubator-seatunnel/pull/3416)

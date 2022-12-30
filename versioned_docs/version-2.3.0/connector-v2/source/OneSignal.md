@@ -317,7 +317,7 @@ OneSignal {
 
 ## Changelog
 
-### 2.3.0 2022-12-30
+### next version
 
 - Add OneSignal Source Connector
 - [Feature][Connector-V2][HTTP] Use json-path parsing ([3510](https://github.com/apache/incubator-seatunnel/pull/3510))

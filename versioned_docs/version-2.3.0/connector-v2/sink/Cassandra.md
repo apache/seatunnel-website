@@ -90,7 +90,7 @@ sink {
 
 ## Changelog
 
-### 2.3.0
+### next version
 
 - Add Cassandra Sink Connector
 

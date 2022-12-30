@@ -103,6 +103,6 @@ Source Plugin common parameters, refer to [Source Plugin](common-options.md) for
 
 ## Changelog
 
-### 2.3.0 2022-12-30
+### next version
 
 - Add Amazon DynamoDB Source Connector

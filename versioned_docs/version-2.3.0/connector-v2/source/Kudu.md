@@ -62,6 +62,6 @@ source {
 
 - Add Kudu Source Connector
 
-### 2.3.0 2022-12-30
+### Next Version
 
 - Change plugin name from `KuduSource` to `Kudu` [3432](https://github.com/apache/incubator-seatunnel/pull/3432)

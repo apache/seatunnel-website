@@ -242,6 +242,6 @@ Source plugin common parameters, please refer to [Source Common Options](common-
 
 ## Changelog
 
-### 2.3.0 2022-12-30
+### next version
 
 - Add OSS Jindo File Source Connector

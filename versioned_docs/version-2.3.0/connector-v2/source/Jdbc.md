@@ -18,7 +18,7 @@ e.g. If you use MySQL, should download and copy `mysql-connector-java-xxx.jar` t
 
 - [x] [batch](../../concept/connector-v2-features.md)
 - [ ] [stream](../../concept/connector-v2-features.md)
-- [ ] [exactly-once](../../concept/connector-v2-features.md)
+- [x] [exactly-once](../../concept/connector-v2-features.md)
 - [x] [schema projection](../../concept/connector-v2-features.md)
 
 supports query SQL and can achieve projection effect.
@@ -163,7 +163,7 @@ parallel:
 - [Feature] Support GBase8a JDBC Source ([3026](https://github.com/apache/incubator-seatunnel/pull/3026))
 - [Feature] Support DB2 JDBC Source ([2410](https://github.com/apache/incubator-seatunnel/pull/2410))
 
-### 2.3.0 2022-12-30
+### next version
 
 - [BugFix] Fix jdbc split bug ([3220](https://github.com/apache/incubator-seatunnel/pull/3220))
 - [Feature] Support Sqlite JDBC Source ([3089](https://github.com/apache/incubator-seatunnel/pull/3089))

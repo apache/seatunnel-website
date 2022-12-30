@@ -62,9 +62,6 @@ source {
     }
 }
 
-transform {
-}
-
 sink {
   Console {}
 }
@@ -104,6 +101,6 @@ spark
 
 - Add Socket Source Connector
 
-### 2.3.0 2022-12-30
+### Next Version
 
 - `host` and `port` become required ([3317](https://github.com/apache/incubator-seatunnel/pull/3317))

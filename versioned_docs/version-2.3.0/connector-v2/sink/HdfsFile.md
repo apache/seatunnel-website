@@ -19,6 +19,9 @@ By default, we use 2PC commit to ensure `exactly-once`
   - [x] parquet
   - [x] orc
   - [x] json
+- [x] compress codec
+  - [x] lzo
+
 
 ## Options
 
@@ -41,6 +44,7 @@ In order to use this connector, You must ensure your spark/flink cluster already
 | is_enable_transaction            | boolean | no       | true                                                      |
 | batch_size                       | int     | no       | 1000000                                                   |
 | common-options                   |         | no       | -                                                         |
+| compressCodec                    | string  | no       | none                                                      |
 
 ### fs.defaultFS [string]
 
@@ -125,8 +129,10 @@ Only support `true` now.
 
 The maximum number of rows in a file. For SeaTunnel Engine, the number of lines in the file is determined by `batch_size` and `checkpoint.interval` jointly decide. If the value of `checkpoint.interval` is large enough, sink writer will write rows in a file until the rows in the file larger than `batch_size`. If `checkpoint.interval` is small, the sink writer will create a new file when a new checkpoint trigger.
 
-### common options
+### compressCodec [string]
+Support lzo compression for text in file format. The file name ends with ".lzo.txt" .
 
+### common options
 Sink plugin common parameters, please refer to [Sink Common Options](common-options.md) for details
 
 ## Example
@@ -201,10 +207,11 @@ HdfsFile {
 - [BugFix] Fix filesystem get error ([3117](https://github.com/apache/incubator-seatunnel/pull/3117))
 - [BugFix] Solved the bug of can not parse '\t' as delimiter from config file ([3083](https://github.com/apache/incubator-seatunnel/pull/3083))
 
-### 2.3.0 2022-12-30
+### Next version
 - [BugFix] Fixed the following bugs that failed to write data to files ([3258](https://github.com/apache/incubator-seatunnel/pull/3258))
   - When field from upstream is null it will throw NullPointerException
   - Sink columns mapping failed
   - When restore writer from states getting transaction directly failed
 
 - [Improve] Support setting batch size for every file ([3625](https://github.com/apache/incubator-seatunnel/pull/3625))
+- [Improve] Support lzo compression for text in file format ([3782](https://github.com/apache/incubator-seatunnel/pull/3782))

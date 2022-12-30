@@ -164,7 +164,7 @@ SftpFile {
 
 ## Changelog
 
-### 2.3.0 2022-12-30
+### Next version
 
 - Add SftpFile Sink Connector
 - [BugFix] Fixed the following bugs that failed to write data to files ([3258](https://github.com/apache/incubator-seatunnel/pull/3258))

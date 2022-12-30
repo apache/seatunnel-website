@@ -74,6 +74,6 @@ sink {
 
 ## Changelog
 
-### 2.3.0 2022-12-30
+### next version
 
 - [Feature] Add Maxcompute Sink Connector([3640](https://github.com/apache/incubator-seatunnel/pull/3640))
