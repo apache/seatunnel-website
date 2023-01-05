@@ -23,7 +23,7 @@ Used to read data from Http.
 | schema                      | Config | No       | -             |
 | schema.fields               | Config | No       | -             |
 | json_field                  | Config | No       | -             |
-| content_json                | String | No       | -             |
+| content_field               | String | No       | -             |
 | format                      | String | No       | json          |
 | method                      | String | No       | get           |
 | headers                     | Map    | No       | -             |
@@ -131,7 +131,7 @@ connector will generate data as the following:
 
 the schema fields of upstream data
 
-### content_json [String]
+### content_field [String]
 
 This parameter can get some json data.If you only need the data in the 'book' section, configure `content_field = "$.store.book.*"`.
 
