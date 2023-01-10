@@ -4,7 +4,7 @@ title: In the recently released SeaTunnel 2.3.0 official version
 tags: [Meetup]
 ---
 # Reveal the core design of the SeaTunnel Zeta synchronization engine!
-![](/image/16733429185569/16733443077196.jpg)
+![](/image/16733429185569/16733443077196.png)
 
 
 In the recently released SeaTunnel 2.3.0 official version, the community self-developed engine SeaTunnel Zeta which has been under preparation for more than a year——is officially released, and it will be used as the default engine of SeaTunnel in the future, providing users with high throughput, low latency, reliable consistent synchronization job operation guarantee.
@@ -38,7 +38,7 @@ The general idea of engine design is as follows:
 ## 03 Architecture design
 
 SeaTunnel Engine is mainly composed of a set of APIs for data synchronization processing and a core computing engine. Here we mainly introduce the architecture design of the SeaTunnel Engine core engine.
-![](/image/16733429185569/16733443263288.jpg)
+![](/image/16733429185569/16733443263288.png)
 picture
 
 SeaTunnel Engine consists of three main services: **CoordinatorService, TaskExecutionService, and SlotService.**
