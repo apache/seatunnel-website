@@ -12,7 +12,6 @@
   padding: 64px 0 30px;
   position: relative;
 
-
   a {
     text-decoration: none;
     cursor: pointer;
@@ -411,4 +410,102 @@
     animation: move_wave 15s linear infinite;
   }
 
+}
+
+.connector {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #f5f6f7;
+  padding: 64px 0;
+
+  > h1 {
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 46px;
+    text-align: center;
+  }
+
+  > p {
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+    line-height: 32px;
+    font-size: 20px;
+    margin: 20px 0 60px 0;
+
+    > span:nth-of-type(2) {
+      color: #ff0099;
+      font-weight: 700;
+      font-size: 50px;
+      margin-left: 20px;
+    }
+  }
+
+  > div {
+    display: flex;
+    margin: 0 auto;
+
+    .connector_box {
+      display: flex;
+      flex-direction: column;
+      margin: 0 100px;
+
+      > h3 {
+        text-align: center;
+      }
+
+      .connector_row {
+        display: flex;
+
+        > div {
+          padding: 30px 20px;
+          margin: 25px 15px;
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px 0 rgb(26 25 77 / 12%);
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 0 27px 12px -17px rgb(26 25 77 / 40%), 0 4px 8px 0 rgb(26 25 77 / 20%);
+            transition: 0.3s;
+          }
+
+          > svg {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+    }
+
+    .connector_transforms {
+      > h3 {
+        text-align: center;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 872px;
+
+        > div {
+          margin: 25px 0;
+          padding: 10px 40px;
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px 0 rgb(26 25 77 / 12%);
+          text-align: center;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 0 27px 12px -17px rgb(26 25 77 / 40%), 0 4px 8px 0 rgb(26 25 77 / 20%);
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
 }
