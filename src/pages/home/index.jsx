@@ -138,6 +138,7 @@ export default function () {
                             <div>Filter</div>
                             <div>Replace</div>
                             <div>Split</div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/Connector-v2-release-state'}>Show More</div>
                         </div>
                     </div>
                     <div className="connector_box">
