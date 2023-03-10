@@ -287,9 +287,6 @@ const config = {
             },
         ],
     ],
-    scripts: [
-        {src: 'https://hm.baidu.com/hm.js?33a9aab233e1082f91e4e347ad716701', async: true}
-    ]
 };
 
 module.exports = config;
