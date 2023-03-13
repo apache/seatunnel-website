@@ -171,6 +171,10 @@ const config = {
                             label: "Thanks",
                             to: "https://www.apache.org/foundation/thanks.html",
                         },
+                        {
+                            label: "Privacy",
+                            to: "https://apache.org/foundation/policies/privacy.html",
+                        },
                     ],
                 },
 
