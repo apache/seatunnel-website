@@ -26,7 +26,7 @@ import Firebase from './img/Firebase.svg'
 import ConvertKit from './img/ConvertKit.svg'
 import GitLab from './img/GitLab.svg'
 import Jira from './img/Jira.svg'
-import CoinApi from './img/CoinApi.svg'
+import Doris from './img/Doris.svg'
 import Convex from './img/Convex.svg'
 
 const versions = require('../../../versions.json');
@@ -156,7 +156,7 @@ export default function () {
                         </div>
                         <div className="connector_row">
                             <div>
-                                <CoinApi />
+                                <Doris />
                             </div>
                             <div>
                                 <ClickHouse />
