@@ -2,7 +2,7 @@
 
 Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.
 
-Tips: The Release Manager needs to have an Apache LDAP account, which means you need to become a Committer of the project before you can have an Apache LDAP account
+Tips: The Release Manager needs to have an Apache LDAP account, which means you need to become a Committer of the project before you can have an Apache LDAP account. All of the following words for `tyrantlucifer` will serve as an example of a userId in the document, and the release manager needs to use their own userId.
 
 An Apache release is a set of valid, signed, artifacts, voted on by the appropriate PMC and distributed on the official ASF release infrastructure.
 
@@ -112,9 +112,9 @@ gpg: key 0983DF85 marked as ultimately trusted
 public and secret key created and signed.
 
 pub   4096R/0983DF85 2022-12-28
-keys fingerprint = AE63 FC40 ECCD 600D 724B  5625 05FD AE73 0983 DF85
+keys fingerprint = AE** FC** EC** 60** 72**  56** 05** AE** 09** DF**
 uid                  tyrantlucifer (The key of Apache SeaTunnel) <tyrantlucifer@apache.org>
-sub   4096R/B7023D46 2022-12-28
+sub   4***R/B7****46 2022-12-28
 ```
 
 Note: gpg keys, which need to be remembered and used in subsequent releases.
@@ -128,7 +128,7 @@ gpg --list-keys
 -------------------------------
 pub   4096R/0983DF85 2022-12-28
 uid                  tyrantlucifer (The key of Apache SeaTunnel) <tyrantlucifer@apache.org>
-sub   4096R/B7023D46 2022-12-28
+sub   4***R/B7****46 2022-12-28
 ```
 Tips: 0983DF85 is your public key abbreviation.
 
