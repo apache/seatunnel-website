@@ -108,7 +108,7 @@ some other action (type on the keyboard, move the mouse, utilize the
 disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 
-gpg: key 0983DF85 marked as ultimately trusted
+gpg: key 09****85 marked as ultimately trusted
 public and secret key created and signed.
 
 pub   4096R/0983DF85 2022-12-28
