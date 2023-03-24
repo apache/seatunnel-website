@@ -1,0 +1,9 @@
+{
+  "en": {
+    "info": {
+      "desc": "The Apache Software Foundation takes a rigorous standpoint in annihilating the security issues in its software projects. Apache SeaTunnel is highly sensitive and forthcoming to issues pertaining to its features and functionality.",
+      "securitylink": "If you have apprehensions regarding SeaTunnel’s security or you discover vulnerability or potential threat, don’t hesitate to get in touch with the Apache Security Team by dropping a mail at security@apache.org. In the mail, specify the project name SeaTunnel with the description of the issue or potential threat. You are also urged to recommend the way to reproduce and replicate the issue. The security team and the SeaTunnel community will get back to you after assessing and analysing the findings.",
+      "tip": "PLEASE PAY ATTENTION to report the security issue on the security email before disclosing it on public domain."
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import url('/src/styles/variable.less');
+
+.team_page {
+
+  a {
+    text-decoration: none;
+  }
+
+  margin-top: 50px;
+
+  .team_title {
+    font-size: 25px;
+    font-weight: 500;
+    color: #0F1222;
+    margin-top: 50px;
+  }
+
+  .team_desc {
+    margin-bottom: 40px;
+  }
+
+  .character_list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    padding: 20px 0 0px;
+
+    .character_item {
+      border: 1px solid rgba(205, 221, 250, 0.8);
+      background-color: rgba(205, 222, 234, 0.2);
+      box-shadow: 0 3px 5px rgb(47 85 212 / 8%);
+      border-radius: 2px;
+      min-width: 0;
+      padding: 0 10px 5px;
+      margin: 40px 0 42px 0;
+
+      .character_avatar {
+        width: 120px;
+        height: 120px;
+        background: #D8D8D8;
+        display: inline-block;
+        border-radius: 50%;
+        border: 5px solid rgba(255,255,255,.08);
+        margin: -4rem auto -.5rem;
+      }
+
+      .character_name {
+        color: @enhance-color;
+        line-height: 36px;
+        font-size: 15px;
+        white-space: nowrap;
+        font-weight: 400;
+        overflow: hidden;
+        background-color: #fff;
+        margin-top: 20px;
+        border-radius: 18px;
+        text-overflow: ellipsis;
+        border: 1px solid rgba(205, 221, 250, 0.6);
+        box-shadow: 0 3px 5px rgb(47 85 212 / 5%);
+      }
+
+      .character_id {
+        color: #333;
+        line-height: 36px;
+        font-size: 12px;
+        white-space: nowrap;
+        font-weight: 400;
+        overflow: hidden;
+        border-radius: 18px;
+        background-color: #fff;
+        text-overflow: ellipsis;
+        border: 1px solid rgba(205, 221, 250, 0.6);
+        box-shadow: 0 3px 5px rgb(47 85 212 / 5%);
+        .githubId {
+          color: #666;
+          margin-right: 2px;
+        }
+      }
+
+      .character_link {
+        color: rgba(15, 18, 34, 0.65);
+        font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
