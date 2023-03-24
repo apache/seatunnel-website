@@ -183,6 +183,13 @@ const config = {
                     label: 'GitHub',
                     position: 'right',
                 },
+
+                {
+                    to: '/security',
+                    label: 'Security',
+                    position: 'right',
+                    activeBaseRegex: `/security`,
+                },
                 // {
                 //     type: "localeDropdown",
                 //     position: "right",
