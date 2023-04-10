@@ -4,30 +4,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import config from './languages.json';
 import './index.less';
 import systemConfiguration from '../../js/sysConfig'
-import Airtable from './img/Airtable.svg'
-import AppStore from './img/AppStore.svg'
+import GitHub from './img/GitHub.svg'
+import GoogleSheets from './img/GoogleSheets.svg'
 import Elasticsearch from './img/Elasticsearch.svg'
 import S3 from './img/S3.svg'
-import Clockify from './img/Clockify.svg'
-import HubSpot from './img/HubSpot.svg'
-import BingAds from './img/BingAds.svg'
+import Lemlist from './img/Lemlist.svg'
+import Notion from './img/Notion.svg'
 import MongoDB from './img/MongoDB.svg'
 import MySQL from './img/MySQL.svg'
-import PostgreSQL from './img/PostgreSQL.svg'
-import SalesForce from './img/SalesForce.svg'
-import TiDB from './img/TiDB.svg'
-import Redshift from './img/Redshift.svg'
-import Kyriba from './img/Kyriba.svg'
-import Flexport from './img/Flexport.svg'
+import OneSignal from './img/OneSignal.svg'
+import Persistlq from './img/Persistlq.svg'
+import ApacheKafka from './img/ApacheKafka.svg'
+import Sentry from './img/Sentry.svg'
+import Slack from './img/Slack.svg'
 import ClickHouse from './img/ClickHouse.svg'
-import Courier from './img/Courier.svg'
 import DynamoDB from './img/DynamoDB.svg'
-import Firebase from './img/Firebase.svg'
-import ConvertKit from './img/ConvertKit.svg'
 import GitLab from './img/GitLab.svg'
 import Jira from './img/Jira.svg'
 import Doris from './img/Doris.svg'
-import Convex from './img/Convex.svg'
 
 const versions = require('../../../versions.json');
 
@@ -85,106 +79,84 @@ export default function () {
                     <div className="connector_box">
                         <h3>Source</h3>
                         <div className="connector_row">
-                            <div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/MySQL-CDC'}>
                                 <MySQL />
                             </div>
-                            <div>
-                                <PostgreSQL />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/OneSignal'}>
+                                <OneSignal />
                             </div>
-                            <div>
-                                <BingAds />
-                            </div>
-                        </div>
-                        <div className="connector_row">
-                            <div>
-                                <MongoDB />
-                            </div>
-                            <div>
-                                <Elasticsearch />
-                            </div>
-                            <div>
-                                <TiDB />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/Notion'}>
+                                <Notion />
                             </div>
                         </div>
                         <div className="connector_row">
-                            <div>
-                                <S3 />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/GoogleSheets'}>
+                                <GoogleSheets />
                             </div>
-                            <div>
-                                <HubSpot />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/Lemlist'}>
+                                <Lemlist />
                             </div>
-                            <div>
-                                <SalesForce />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/Jira'}>
+                                <Jira />
                             </div>
                         </div>
                         <div className="connector_row">
-                            <div>
-                                <Airtable />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/Persistiq'}>
+                                <Persistlq />
                             </div>
-                            <div>
-                                <AppStore />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/Github'}>
+                                <GitHub />
                             </div>
-                            <div>
-                                <Clockify />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/source/Gitlab'}>
+                                <GitLab />
                             </div>
                         </div>
                     </div>
                     <div className="connector_transforms">
                         <h3>Transforms</h3>
                         <div>
-                            <div>Copy</div>
-                            <div>FieldMapper</div>
-                            <div>FilterRowKind</div>
-                            <div>Filter</div>
-                            <div>Replace</div>
-                            <div>Split</div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/transform-v2/copy'}>Copy</div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/transform-v2/field-mapper'}>FieldMapper</div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/transform-v2/filter-rowkind'}>FilterRowKind</div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/transform-v2/filter'}>Filter</div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/transform-v2/replace'}>Replace</div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/transform-v2/split'}>Split</div>
                             <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/Connector-v2-release-state'}>Show More</div>
                         </div>
                     </div>
                     <div className="connector_box">
                         <h3>Sink</h3>
                         <div className="connector_row">
-                            <div>
-                                <Redshift />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/Sentry'}>
+                                <Sentry />
                             </div>
-                            <div>
-                                <Jira />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/Kafka'}>
+                                <ApacheKafka />
                             </div>
-                            <div>
-                                <Kyriba />
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/Slack'}>
+                                <Slack />
                             </div>
                         </div>
                         <div className="connector_row">
-                            <div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/Doris'}>
                                 <Doris />
                             </div>
-                            <div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/Clickhouse'}>
                                 <ClickHouse />
                             </div>
-                            <div>
-                                <Courier />
-                            </div>
-                        </div>
-                        <div className="connector_row">
-                            <div>
-                                <Convex />
-                            </div>
-                            <div>
-                                <Firebase />
-                            </div>
-                            <div>
-                                <ConvertKit />
-                            </div>
-                        </div>
-                        <div className="connector_row">
-                            <div>
-                                <Flexport />
-                            </div>
-                            <div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/AmazonDynamoDB'}>
                                 <DynamoDB />
                             </div>
-                            <div>
-                                <GitLab />
+                        </div>
+                        <div className="connector_row">
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/S3File'}>
+                                <S3 />
+                            </div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/Elasticsearch'}>
+                                <Elasticsearch />
+                            </div>
+                            <div onClick={() => window.location.href = 'https://seatunnel.apache.org/docs/2.3.1/connector-v2/sink/MongoDB'}>
+                                <MongoDB />
                             </div>
                         </div>
                     </div>
