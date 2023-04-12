@@ -124,3 +124,11 @@ seatunnel:
           fs.defaultFS: /tmp/ # Ensure that the directory has written permission 
 
 ```
+#### Notice
+
+Because of original binary package lack of class file about hadoop, so, if you use `hdfs` as checkpoint type, you need to download following package and put it in the directory `$SEATUNNEL_HOME/lib`. The problem will be fixd in the next version.
+
+```
+https://repo1.maven.org/maven2/org/apache/seatunnel/seatunnel-hadoop3-3.1.4-uber/2.3.0/seatunnel-hadoop3-3.1.4-uber-2.3.0-optional.jar
+```
+
