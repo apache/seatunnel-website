@@ -28,6 +28,7 @@ By default, we use 2PC commit to ensure `exactly-once`
 |----------------|--------|----------|---------------|
 | table_name     | string | yes      | -             |
 | metastore_uri  | string | yes      | -             |
+| hdfs_site_path | string | no       | -             |
 | common-options |        | no       | -             |
 
 ### table_name [string]
@@ -37,6 +38,10 @@ Target Hive table name eg: db1.table1
 ### metastore_uri [string]
 
 Hive metastore uri
+
+### hdfs_site_path [string]
+
+The path of `hdfs-site.xml`, used to load ha configuration of namenodes
 
 ### common options
 
