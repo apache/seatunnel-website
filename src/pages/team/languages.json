@@ -142,6 +142,14 @@
         "gitUrl": "https://github.com/EricJoy2048",
         "githubId": "EricJoy2048",
         "name": "Jun Gao"
+      },
+      {
+        "apacheId": "dijiekstra",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/19817318?v=4",
+        "email": "dijiekstra@apache.org",
+        "gitUrl": "https://github.com/dijiekstra",
+        "githubId": "dijiekstra",
+        "name": "Jinxin Shen"
       }
     ],
     "committer": [
@@ -184,14 +192,6 @@
         "gitUrl": "https://github.com/simon824",
         "githubId": "simon824",
         "name": "Simon"
-      },
-      {
-        "apacheId": "dijiekstra",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/19817318?v=4",
-        "email": "dijiekstra@apache.org",
-        "gitUrl": "https://github.com/dijiekstra",
-        "githubId": "dijiekstra",
-        "name": "Jinxin Shen"
       },
       {
         "apacheId": "zongwen",
