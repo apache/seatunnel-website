@@ -34,6 +34,8 @@ been used in the production of nearly 100 companies.
 
 ## Workflow
 
+![seatunnel-workflow.svg](/image_en/seatunnel-workflow.svg)
+
 ```text
 Source[Data Source Input] -> Transform[Data Processing] -> Sink[Result Output]
 ```
