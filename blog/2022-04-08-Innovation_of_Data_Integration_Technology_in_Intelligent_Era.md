@@ -140,7 +140,7 @@ dev@seatunnel.apache.org
 
 Join Slack:
 
-[https://join.slack.com/t/apacheseatunnel/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ](https://join.slack.com/t/apacheseatunnel/shared_invite/zt-123jmewxe-RjB_DW3M3gV~xL91pZ0oVQ)
+[https://the-asf.slack.com/archives/C053HND1D6X](https://the-asf.slack.com/archives/C053HND1D6X)
 
 Follow Twitter:
 
