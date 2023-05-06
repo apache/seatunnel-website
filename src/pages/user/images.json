@@ -1,4 +1,8 @@
 [
+    {"url":"JPM.jpg"},
+    {"url":"coupang.jpg"},
+    {"url":"stey.jpg"},
+    {"url":"Byte.jpg"},
     {"url":"360.png"},
     {"url":"bilibili.png"},
     {"url":"boss直聘.png"},
@@ -6,6 +10,7 @@
     {"url":"foxcoon.png"},
     {"url":"T3出行.png"},
     {"url":"tencent_cloud.png"},
+    {"url":"Dmall.jpg"},
     {"url":"huya.png"},
     {"url":"qunar.png"},
     {"url":"anchnet.png"},
@@ -21,5 +26,9 @@
     {"url":"Big_Data_Academy.png"},
     {"url":"ShiHang_Fresh.png"},
     {"url":"OPPO.png"},
-    {"url":"Shopee.png"}
+    {"url":"Shopee.png"},
+    {"url":"songguo.png"},
+    {"url":"cqdw.jpg"},
+    {"url":"SYzz.jpg"},
+    {"url":"sfy.jpg"}
 ]
