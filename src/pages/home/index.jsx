@@ -30,18 +30,18 @@ export default function () {
                         </h1>
 
                         <p className="main_slogan">{dataSource.home.banner.slogan}</p>
-
+                        
                         <div className="button_row center">
                             {/* TODO next release should be change to /category/start */}
-                            <a href={'/docs/' + versions[0] + '/about'} className="corner_button blue_fill">{dataSource.common.getStart}</a>
+                            <a href={'/docs/' + versions[0] + '/about'} className="corner_button link_btn blue_fill">{dataSource.common.getStart}</a>
                             <a href={systemConfiguration.github.projectUrl} target="_blank"
-                               className="corner_button blue" onMouseOver={() => changeFlag(1)} onMouseOut={() => changeFlag(2)}>
+                            className="corner_button link_btn blue" onMouseOver={() => changeFlag(1)} onMouseOut={() => changeFlag(2)}>
                                 <img className="button_icon github1" src={useBaseUrl('/home/icons/github' + flag + '.svg')} alt="github"/>
                                 <span>GitHub</span>
                             </a>
                             <a href="https://the-asf.slack.com/archives/C053HND1D6X"
-                               target="_blank"
-                               className="corner_button blue"
+                            target="_blank"
+                            className="corner_button link_btn blue"
                             >
                                 <img className="button_icon" src={useBaseUrl('/home/icons/slack.svg')} alt="slack"/>
                                 <span>Slack</span>
@@ -51,19 +51,30 @@ export default function () {
                 </div>
             </div>
 
+            <div className="main introduction">
+                <div className="block">
+                    <div className="main_intro">
+                        <img src={useBaseUrl('/home/intro_en.png')} alt="" />
+                    </div>
+                
+                </div>
+            </div>
+
             <div className="main feature">
                 <div className="block">
-                    <h1 className="main_subtitle text_center">{dataSource.common.coreFeatures}</h1>
+                    <h1 className="main_subtitle text_center">{dataSource.home.feature.mainTitle}</h1>
+                    <h2 className="sub_subtitle text_center">{dataSource.home.feature.subTitle}</h2>
+                    
                     <div className="features item_block text_center">
 
                         <div className="feature_item components">
-                            <h3 className="item-title">{dataSource.common.components}</h3>
-                            <p className="item-desc">{dataSource.home.feature.components}</p>
+                            <h3 className="item-title">{dataSource.common.reduceComplexity}</h3>
+                            <p className="item-desc">{dataSource.home.feature.reduceComplexity}</p>
                         </div>
 
                         <div className="feature_item scalability">
-                            <h3 className="item-title">{dataSource.common.scalability}</h3>
-                            <p className="item-desc">{dataSource.home.feature.scalability}</p>
+                            <h3 className="item-title">{dataSource.common.lesstime}</h3>
+                            <p className="item-desc">{dataSource.home.feature.lesstime}</p>
                         </div>
 
                         <div className="feature_item simplicity">
@@ -78,7 +89,49 @@ export default function () {
                     </div>
                 </div>
             </div>
-        </div>
 
+            <div className="main fun_feature">
+                <div className="block">
+                    <div className="feature_list">
+                        {
+                            dataSource.home.featureList.map((item, index) => {
+                                return (
+                                    <div className="feat_item" key={index}>
+                                        {
+                                            item.leftImg && 
+                                            <div className="feature_img">
+                                                <img src={useBaseUrl(item.imgSrc || `/home/introduction${ index + 1}.png`)} alt="" />
+                                            </div>
+                                        }
+
+                                        <div className="img_explain">
+                                            {
+                                                item.features.map(feature => {
+                                                    return (
+                                                        <div className="explain_item" key={feature.title}>
+                                                            <a className="see_more" href={feature.link || '/docs/' + versions[0] + '/about' || '/'} target="_blank">
+                                                                <h3 className="explain_title">{feature.title}</h3>
+                                                            </a>
+                                                            <p className="explain_desc">{feature.desc}</p>
+                                                        </div>
+                                                    )
+                                                })                                                
+                                            }
+                                        </div>
+
+                                        {
+                                            !item.leftImg && 
+                                            <div className="feature_img">
+                                                <img src={useBaseUrl(item.imgSrc || `/home/introduction${ index + 1}.png`)} alt="" />
+                                            </div>
+                                        }
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
