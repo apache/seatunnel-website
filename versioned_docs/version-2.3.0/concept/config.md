@@ -79,8 +79,7 @@ transform {
 }
 ```
 
-Like source, transform has specific parameters that belong to each module. The supported source at now check.
-The supported transform at now check [Transform of SeaTunnel](../transform)
+Like source, transform has specific parameters that belong to each module. The supported transform at now check [Transform of SeaTunnel](../transform)
 
 ### sink
 
