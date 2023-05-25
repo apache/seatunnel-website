@@ -109,9 +109,14 @@ export default function () {
                                                 item.features.map(feature => {
                                                     return (
                                                         <div className="explain_item" key={feature.title}>
-                                                            <a className="see_more" href={feature.link || '/docs/' + versions[0] + '/about' || '/'} target="_blank">
+                                                          {
+                                                            feature.link ? <a className="see_more" href={`/docs/${versions[0]}${feature.link}`} target="_blank">
                                                                 <h3 className="explain_title">{feature.title}</h3>
                                                             </a>
+                                                            :
+                                                            <h3 className="explain_title">{feature.title}</h3>
+
+                                                          }
                                                             <p className="explain_desc">{feature.desc}</p>
                                                         </div>
                                                     )

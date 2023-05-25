@@ -154,7 +154,7 @@
 						{
 							"title": "Rich Connectors",
 							"desc": "There are hundreds of connectors that can run on many different engines based on APIs.",
-							"link": ""
+							"link": "/category/source-v2"
 						},
 						{
 							"title": "Batch & Realtime Integration",
@@ -170,12 +170,12 @@
 						{
 							"title": "Transforming Massive Data",
 							"desc": "Use ultra-high performance distributed data synchronization, which will synchronize massive data in real time to ingest or obtain changed data.",
-							"link": ""
+							"link": "/category/transform-v2"
 						},
 						{
 							"title": "SeaTunel Zeta, Spark, Flink Supported",
 							"desc": "The zeta engine is used by default, and multiple versions of spark and flink are also supported.",
-							"link": ""
+							"link": "/seatunnel-engine/about"
 						}
 					]
 				},
@@ -186,12 +186,12 @@
 						{
 							"title": "Easy Management And Maintenance",
 							"desc": "Provide a unified development and management platform.",
-							"link": ""
+							"link": "/start-v2/locally/quick-start-seatunnel-engine"
 						},
 						{
 							"title": "Fully-fledged Monitoring",
 							"desc": "Provides detailed monitoring during data synchronization to understand the actual data situation.",
-							"link": ""
+							"link": "/start-v2/locally/quick-start-seatunnel-engine"
 						}
 					]
 				}
