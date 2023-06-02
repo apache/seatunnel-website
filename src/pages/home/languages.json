@@ -1,74 +1,206 @@
 {
-  "zh-CN": {
-    "common": {
-      "getStart": "快速开始",
-      "architecture": "系统架构",
-      "description": "描述",
-      "learnMore": "了解更多",
-      "coreFeatures": "核心特性",
-      "components": "组件丰富",
-      "scalability": "高扩展性",
-      "batchStream": "批流一体",
-      "simplicity": "简单易用",
-      "stable": "成熟稳定",
-      "ourUsers": "Our Users",
-      "readMore": "阅读更多",
-      "download": "下载",
-      "releaseDate": "发布日期",
-      "newFeatures": "新特性",
-      "enhancement": "增强点",
-      "bugFixs": "Bug修复",
-      "changeLog": "详细变更"
-    },
-    "home": {
-      "banner": {
-        "slogan": "下一代高性能、分布式、海量数据集成框架"
-      },
-      "feature": {
-        "components": "内置丰富插件,支持各种数据产品方便快捷的传输和集成数据",
-        "scalability": "基于模块化和插件化设计,支持热插拔, 带来更好的扩展性",
-        "simplicity": "特有的架构设计下,使得开发配置更简单,几乎零代码,无使用成本",
-        "stable": "经历多家企业,大规模生产环境使用和海量数据的洗礼,稳定健壮"
-      },
-      "architecture": {
-        "desc": "Apache SeaTunnel是下一代高性能、分布式、海量数据集成框架。通过我们的努力让Spark的使用更简单，更高效，并将业界和我们使用Spark的优质经验固化到seatunnel这个产品中，明显减少学习成本，加快分布式数据处理能力在生产环境落地."
-      }
-    }
-  },
-  "en": {
-    "common": {
-      "getStart": "Quick Start",
-      "architecture": "System Architecture",
-      "description": "Description",
-      "learnMore": "Learn More",
-      "coreFeatures": "Core Features",
-      "components": "Rich Components",
-      "scalability": "High Scalability",
-      "batchStream": "Batch Flow Integration",
-      "simplicity": "Easy to use",
-      "stable": "Mature & stable",
-      "ourUsers": "Our Users",
-      "readMore": "Read More",
-      "download": "Download",
-      "releaseDate": "Release Date",
-      "newFeatures": "New Features",
-      "enhancement": "Enhancement point",
-      "bugFixs": "Bug Fix",
-      "changeLog": "Change Log"
-    },
-    "home": {
-      "banner": {
-        "slogan": "Next-generation high-performance, distributed, massive data integration framework"
-      },
-      "feature": {
-        "components": "Built-in rich plugins to support the transmission and integration of various data products",
-        "scalability": "Modularization and plugin, support hot swap, bring better scalability",
-        "simplicity": "Unique architecture design,make development and configuration easier",
-        "stable": "Experience the baptism of large-scale production environment use and massive data"
-      },
-      "architecture": {
-        "desc": "Apache SeaTunnel is a next-generation high-performance, distributed, and massive data integration framework. Through our efforts to make the use of Spark simpler and more efficient, and solidify the high-quality experience of the industry and our use of Spark into the product SeaTunnel, it significantly reduces the cost of learning and accelerates the deployment of distributed data processing capabilities in the production environment."
-      }
-    }
-  }
+	"zh-CN": {
+		"common": {
+			"getStart": "快速开始",
+			"architecture": "系统架构",
+			"description": "描述",
+			"learnMore": "了解更多",
+			"coreFeatures": "核心特性",
+			"components": "组件丰富",
+			"scalability": "高扩展性",
+			"batchStream": "批流一体",
+			"stable": "成熟稳定",
+			"ourUsers": "Our Users",
+			"readMore": "阅读更多",
+			"download": "下载",
+			"releaseDate": "发布日期",
+			"newFeatures": "新特性",
+			"enhancement": "增强点",
+			"bugFixs": "Bug修复",
+			"changeLog": "详细变更",
+			"reduceComplexity": "降低复杂性",
+			"lesstime": "节省更多时间",
+			"simplicity": "简单易维护",
+			"seeMore": "查看更多"
+		},
+		"home": {
+			"banner": {
+				"slogan": "下一代高性能、分布式、海量数据集成框架"
+			},
+			"introduction": {
+				"texts": [
+					"支持数百个连接器, 支持CDC和大批量数据, 稳定高效同步百亿数据。",
+					"获取Apache SeaTunnel的最新信息, 包括更新、社区贡献、新闻博客等。"
+				],
+				"placeholder": "输入你的邮箱地址",
+				"subscribe": "订阅"
+			},
+			"feature": {
+				"mainTitle": "支持上百个数据源、传输速度快、准确率高",
+				"subTitle": "丰富易扩展的连接器和插件化的连接器设计，能够更轻松的运行复杂的集成。",
+				"components": "内置丰富插件,支持各种数据产品方便快捷的传输和集成数据",
+				"scalability": "基于模块化和插件化设计,支持热插拔, 带来更好的扩展性",
+				"stable": "经历多家企业,大规模生产环境使用和海量数据的洗礼,稳定健壮",
+				"reduceComplexity": "基于API开发的连接器能兼容离线同步、实时同步、全量同步、增量同步等多种场景。",
+				"lesstime": "提供了作业可视化管理、调度、运行和监控能力。加速低代码和无代码工具的集成。",
+				"simplicity": "支持单机、集群部署, 选择Zeta引擎部署, 无需依赖Spark, Flink 等大数据组件。"
+			},
+			"featureList": [
+				{
+					"leftImg": true,
+					"imgSrc": "",
+					"name": "connector",
+					"features": [
+						{
+							"title": "丰富的连接器",
+							"desc": "已有数百种连接器，基于API可以运行在多种不同的引擎上。",
+							"link": ""
+						},
+						{
+							"title": "批流一体、多种开发模式",
+							"desc": "完美兼容离线同步、实时同步、全量/增量同步等场景。支持可视化开发和代码开发。",
+							"link": ""
+						}
+					]
+				},
+				{
+					"leftImg": false,
+					"imgSrc": "",
+					"features": [
+						{
+							"title": "转换海量数据",
+							"desc": "使用超高性能分布式数据同步、将会实时同步海量数据摄取或获取变更数据。",
+							"link": ""
+						},
+						{
+							"title": "多引擎",
+							"desc": "默认使用zeta引擎，同时也支持多个版本的spark和flink。",
+							"link": ""
+						}
+					]
+				},
+				{
+					"leftImg": true,
+					"imgSrc": "",
+					"features": [
+						{
+							"title": "易管理维护",
+							"desc": "提供统一的开发和管理平台。",
+							"link": ""
+						},
+						{
+							"title": "完善的监控",
+							"desc": "提供数据同步过程中的详细监控，直观了解数据的真实情况。",
+							"link": ""
+						}
+					]
+				}
+			],
+			"architecture": {
+				"desc": "Apache SeaTunnel是下一代高性能、分布式、海量数据集成框架。通过我们的努力让Spark的使用更简单，更高效，并将业界和我们使用Spark的优质经验固化到seatunnel这个产品中，明显减少学习成本，加快分布式数据处理能力在生产环境落地."
+			}
+		}
+	},
+	"en": {
+		"common": {
+			"getStart": "Quick Start",
+			"architecture": "System Architecture",
+			"description": "Description",
+			"learnMore": "Learn More",
+			"coreFeatures": "Core Features",
+			"components": "Rich Components",
+			"scalability": "High Scalability",
+			"batchStream": "Batch Flow Integration",
+			"stable": "Mature & Stable",
+			"ourUsers": "Our Users",
+			"readMore": "Read More",
+			"download": "Download",
+			"releaseDate": "Release Date",
+			"newFeatures": "New Features",
+			"enhancement": "Enhancement point",
+			"bugFixs": "Bug Fix",
+			"changeLog": "Change Log",
+			"reduceComplexity": "Reduce Complexity",
+			"lesstime": "Save More Time",
+			"simplicity": "Simple And Easy To Maintain",
+			"seeMore": "More"
+		},
+		"home": {
+			"banner": {
+				"slogan": "Next-generation high-performance,\n distributed, massive data integration tool."
+			},
+			"introduction": {
+				"texts": [
+					"Our system supports hundreds of connectors, enabling efficient synchronization of massive amounts of data. It seamlessly handles both CDC and bulk data transfers, ensuring stability and high performance.",
+					"Apache SeaTunnel provides the latest information on updates, community contributions, news, and blog posts."
+				],
+				"placeholder": "Enter your email address",
+				"subscribe": "Subscribe"
+			},
+			"feature": {
+				"mainTitle": "Support Hundreds Of Data Sources, \nFast Speed & High Accuracy",
+				"subTitle": "Inteagate massive data between Transaction DB, Cloud DB, SaaS, \n Binlog with SQL-like code or Drag & Drop.",
+				"reduceComplexity": "The connector developed based on API can be compatible with offline synchronization, real-time synchronization, full synchronization, incremental synchronization and other scenarios.",
+				"lesstime": "Provides visual job management, scheduling, running, and monitoring capabilities. Accelerates the integration of low-code and no-code tools.",
+				"simplicity": "Support stand-alone, cluster deployment, choose Zeta engine deployment, no need to rely on Spark, Flink and other big data components.",
+				"components": "Built-in rich plugins to support the transmission and integration of various data products",
+				"scalability": "Modularization and plugin, support hot swap, bring better scalability",
+				"stable": "Experience the baptism of large-scale production environment use and massive data."
+			},
+			"featureList": [
+				{
+					"leftImg": true,
+					"imgSrc": "",
+					"name": "connector",
+					"features": [
+						{
+							"title": "Rich Connectors",
+							"desc": "There are hundreds of connectors that can run on many different engines based on APIs.",
+							"link": "/category/source-v2"
+						},
+						{
+							"title": "Batch & Realtime Integration",
+							"desc": "Perfect compatibility with offline synchronization, real-time synchronization, and full/incremental synchronization scenarios. Supports visual development and code development.",
+							"link": ""
+						}
+					]
+				},
+				{
+					"leftImg": false,
+					"imgSrc": "",
+					"features": [
+						{
+							"title": "Transforming Massive Data",
+							"desc": "Use ultra-high performance distributed data synchronization, which will synchronize massive data in real time to ingest or obtain changed data.",
+							"link": "/category/transform-v2"
+						},
+						{
+							"title": "SeaTunel Zeta, Spark, Flink Supported",
+							"desc": "The zeta engine is used by default, and multiple versions of spark and flink are also supported.",
+							"link": "/seatunnel-engine/about"
+						}
+					]
+				},
+				{
+					"leftImg": true,
+					"imgSrc": "",
+					"features": [
+						{
+							"title": "Easy Management And Maintenance",
+							"desc": "Provide a unified development and management platform.",
+							"link": "/start-v2/locally/quick-start-seatunnel-engine"
+						},
+						{
+							"title": "Fully-fledged Monitoring",
+							"desc": "Provides detailed monitoring during data synchronization to understand the actual data situation.",
+							"link": "/start-v2/locally/quick-start-seatunnel-engine"
+						}
+					]
+				}
+			],
+			"architecture": {
+				"desc": "Apache SeaTunnel is a next-generation high-performance, distributed, and massive data integration framework. Through our efforts to make the use of Spark simpler and more efficient, and solidify the high-quality experience of the industry and our use of Spark into the product SeaTunnel, it significantly reduces the cost of learning and accelerates the deployment of distributed data processing capabilities in the production environment."
+			}
+		}
+	}
 }
