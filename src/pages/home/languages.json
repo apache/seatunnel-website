@@ -18,7 +18,6 @@
 			"enhancement": "增强点",
 			"bugFixs": "Bug修复",
 			"changeLog": "详细变更",
-
 			"reduceComplexity": "降低复杂性",
 			"lesstime": "节省更多时间",
 			"simplicity": "简单易维护",
@@ -29,18 +28,19 @@
 				"slogan": "下一代高性能、分布式、海量数据集成框架"
 			},
 			"introduction": {
-				"texts": ["支持数百个连接器, 支持CDC和大批量数据, 稳定高效同步百亿数据。", "获取Apache SeaTunnel的最新信息, 包括更新、社区贡献、新闻博客等。"],
+				"texts": [
+					"支持数百个连接器, 支持CDC和大批量数据, 稳定高效同步百亿数据。",
+					"获取Apache SeaTunnel的最新信息, 包括更新、社区贡献、新闻博客等。"
+				],
 				"placeholder": "输入你的邮箱地址",
 				"subscribe": "订阅"
 			},
 			"feature": {
 				"mainTitle": "支持上百个数据源、传输速度快、准确率高",
 				"subTitle": "丰富易扩展的连接器和插件化的连接器设计，能够更轻松的运行复杂的集成。",
-
 				"components": "内置丰富插件,支持各种数据产品方便快捷的传输和集成数据",
 				"scalability": "基于模块化和插件化设计,支持热插拔, 带来更好的扩展性",
 				"stable": "经历多家企业,大规模生产环境使用和海量数据的洗礼,稳定健壮",
-
 				"reduceComplexity": "基于API开发的连接器能兼容离线同步、实时同步、全量同步、增量同步等多种场景。",
 				"lesstime": "提供了作业可视化管理、调度、运行和监控能力。加速低代码和无代码工具的集成。",
 				"simplicity": "支持单机、集群部署, 选择Zeta引擎部署, 无需依赖Spark, Flink 等大数据组件。"
@@ -120,7 +120,6 @@
 			"enhancement": "Enhancement point",
 			"bugFixs": "Bug Fix",
 			"changeLog": "Change Log",
-
 			"reduceComplexity": "Reduce Complexity",
 			"lesstime": "Save More Time",
 			"simplicity": "Simple And Easy To Maintain",
@@ -131,18 +130,19 @@
 				"slogan": "Next-generation high-performance,\n distributed, massive data integration tool."
 			},
 			"introduction": {
-				"texts": ["Our system supports hundreds of connectors, enabling efficient synchronization of massive amounts of data. It seamlessly handles both CDC and bulk data transfers, ensuring stability and high performance.", "Apache SeaTunnel provides the latest information on updates, community contributions, news, and blog posts."],
+				"texts": [
+					"Our system supports hundreds of connectors, enabling efficient synchronization of massive amounts of data. It seamlessly handles both CDC and bulk data transfers, ensuring stability and high performance.",
+					"Apache SeaTunnel provides the latest information on updates, community contributions, news, and blog posts."
+				],
 				"placeholder": "Enter your email address",
 				"subscribe": "Subscribe"
 			},
 			"feature": {
 				"mainTitle": "Support Hundreds Of Data Sources, \nFast Speed & High Accuracy",
 				"subTitle": "Inteagate massive data between Transaction DB, Cloud DB, SaaS, \n Binlog with SQL-like code or Drag & Drop.",
-
 				"reduceComplexity": "The connector developed based on API can be compatible with offline synchronization, real-time synchronization, full synchronization, incremental synchronization and other scenarios.",
 				"lesstime": "Provides visual job management, scheduling, running, and monitoring capabilities. Accelerates the integration of low-code and no-code tools.",
 				"simplicity": "Support stand-alone, cluster deployment, choose Zeta engine deployment, no need to rely on Spark, Flink and other big data components.",
-
 				"components": "Built-in rich plugins to support the transmission and integration of various data products",
 				"scalability": "Modularization and plugin, support hot swap, bring better scalability",
 				"stable": "Experience the baptism of large-scale production environment use and massive data."
