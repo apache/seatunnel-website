@@ -7,6 +7,53 @@ import systemConfiguration from '../../js/sysConfig'
 
 const versions = require('../../../versions.json');
 
+const connectorImgs = [
+    { key: 'MySQL-CDC', path: 'MySQL-CDC', imgSrc: 'MySQL-CDC.svg', type: 'source' },
+    { key: 'PostgreSql', path: 'Jdbc#appendix', imgSrc: 'PostgreSql.svg', type: 'source' },
+    { key: 'Neo4j', path: 'Neo4j', imgSrc: 'Neo4j.jpeg', type: 'source' },
+    { key: 'Clickhouse', path: 'Clickhouse', imgSrc: 'Clickhouse.png', type: 'source' },
+    { key: 'InfluxDB', path: 'InfluxDB', imgSrc: 'InfluxDB.png', type: 'source' },
+    { key: 'MongoDB', path: 'MongoDB', imgSrc: 'MongoDB.png', type: 'source' },
+    { key: 'Hive', path: 'Hive', imgSrc: 'Hive.png', type: 'source' },
+    { key: 'Greenplum', path: 'Greenplum', imgSrc: 'Greenplum.jpeg', type: 'source' },
+    { key: 'Hudi', path: 'Hudi', imgSrc: 'Hudi.png', type: 'source' },
+    { key: 'Iceberg', path: 'Iceberg', imgSrc: 'Iceberg.png', type: 'source' },
+    { key: 'oracle', path: 'Jdbc#appendix', imgSrc: 'oracle.png', type: 'source' },
+    { key: 'db2', path: 'Jdbc#appendix', imgSrc: 'db2.svg', type: 'source' },
+    { key: 'SqlServer-CDC', path: 'SqlServer-CDC', imgSrc: 'SqlServer-CDC.svg', type: 'source' },
+    { key: 'S3File', path: 'S3File', imgSrc: 'S3File.svg', type: 'source' },
+    { key: 'S3-Redshift', path: 'S3-Redshift', imgSrc: 'S3-Redshift.png', type: 'sink' },
+    { key: 'kafka', path: 'kafka', imgSrc: 'kafka.svg', type: 'source' },
+    { key: 'GoogleSheets', path: 'GoogleSheets', imgSrc: 'GoogleSheets.svg', type: 'source' },
+    { key: 'Notion', path: 'Notion', imgSrc: 'Notion.svg', type: 'source' },
+    { key: 'Doris', path: 'Doris', imgSrc: 'Doris.png', type: 'sink' },
+    { key: 'Datahub', path: 'Datahub', imgSrc: 'Datahub.jpeg', type: 'sink' },
+    { key: 'SftpFile', path: 'SftpFile', imgSrc: 'SftpFile.png', type: 'source' },
+    { key: 'Github', path: 'Github', imgSrc: 'Github.svg', type: 'source' },
+    { key: 'excel', path: 'Jdbc#appendix', imgSrc: 'excel.png', type: 'source' },
+    { key: 'Elasticsearch', path: 'Elasticsearch', imgSrc: 'Elasticsearch.svg', type: 'source' },
+];
+
+// postgreSql db2 excel oracle => jdbc
+const Connector =  function(){
+    return (
+        <div className="connector_img_wrap">
+            {
+                connectorImgs.map(connector => {
+                    return (
+                                <div className="connector_img_item" key={connector.key}>
+                                    <a href={`/docs/${versions[0]}/connector-v2/${connector.type}/${connector.path}`} target="_blank" className="connector_link">
+                                        <img src={useBaseUrl(`/home/connector/${connector.imgSrc}`)} alt="" />
+                                    </a>
+                                </div>
+                            )
+                })
+            }
+        </div>
+    )
+
+} 
+
 export default function () {
     const [flag, setFlag] = useState(1)
     const isBrowser = useIsBrowser();
@@ -17,6 +64,9 @@ export default function () {
     function changeFlag(val) {
         setFlag(val == 1 ? 2 : 1)
     }
+
+   
+    
 
     return (
         <div>
@@ -100,7 +150,12 @@ export default function () {
                                         {
                                             item.leftImg && 
                                             <div className="feature_img">
-                                                <img src={useBaseUrl(item.imgSrc || `/home/introduction${ index + 1}.png`)} alt="" />
+                                                {
+                                                    item.name === 'connector' 
+                                                    ? <Connector/>
+                                                    : <img src={useBaseUrl(item.imgSrc || `/home/introduction${ index + 1}.png`)} alt="" />
+                                                }
+                                                
                                             </div>
                                         }
 
@@ -109,14 +164,11 @@ export default function () {
                                                 item.features.map(feature => {
                                                     return (
                                                         <div className="explain_item" key={feature.title}>
-                                                          {
-                                                            feature.link ? <a className="see_more" href={`/docs/${versions[0]}${feature.link}`} target="_blank">
+                                                          
+                                                            <a className="see_more" href={`/docs/${versions[0]}${feature.link || '/about'}`} target="_blank">
                                                                 <h3 className="explain_title">{feature.title}</h3>
                                                             </a>
-                                                            :
-                                                            <h3 className="explain_title">{feature.title}</h3>
-
-                                                          }
+                                                            
                                                             <p className="explain_desc">{feature.desc}</p>
                                                         </div>
                                                     )

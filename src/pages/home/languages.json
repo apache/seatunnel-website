@@ -49,6 +49,7 @@
 				{
 					"leftImg": true,
 					"imgSrc": "",
+					"name": "connector",
 					"features": [
 						{
 							"title": "丰富的连接器",
@@ -150,6 +151,7 @@
 				{
 					"leftImg": true,
 					"imgSrc": "",
+					"name": "connector",
 					"features": [
 						{
 							"title": "Rich Connectors",
