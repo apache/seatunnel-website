@@ -32,7 +32,7 @@ export default function () {
                     }
                 </ul>
 
-                <h3 className="team_title">PPMC</h3>
+                <h3 className="team_title">PMC</h3>
                 <p className="team_desc">{dataSource.info.tip}</p>
                 <ul className="character_list">
                     {
