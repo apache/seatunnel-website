@@ -50,10 +50,10 @@
       "nextLink": "/docs/about",
       "latestData": [
         {
-          "versionLabel": "2.3.1",
-          "docUrl": "/docs/2.3.1/about",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.3.1",
-          "sourceTag": "2.3.1"
+          "versionLabel": "2.3.2",
+          "docUrl": "/docs/2.3.2/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.2",
+          "sourceTag": "2.3.2"
         }
       ],
       "nextData": [
@@ -63,6 +63,12 @@
         }
       ],
       "historyData": [
+        {
+          "versionLabel": "2.3.2",
+          "docUrl": "/docs/2.3.2/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.2",
+          "sourceTag": "2.3.2"
+        },
         {
           "versionLabel": "2.3.1",
           "docUrl": "/docs/2.3.1/about",

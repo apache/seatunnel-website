@@ -1,5 +1,19 @@
 [
 	{
+		"date": "2023-06-16",
+		"version": "v2.3.2",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.2/apache-seatunnel-2.3.2-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.2/apache-seatunnel-2.3.2-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.2/apache-seatunnel-2.3.2-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.2/apache-seatunnel-2.3.2-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.2/apache-seatunnel-2.3.2-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.2/apache-seatunnel-2.3.2-bin.tar.gz.sha512"
+		}
+	},
+	{
 		"date": "2023-03-26",
 		"version": "v2.3.1",
 		"sourceCode": {
