@@ -34,13 +34,13 @@ tar -xzvf "apache-seatunnel-${version}-bin.tar.gz"
 Since 2.2.0-beta, the binary package does not provide connector dependencies by default, so when using it for the first time, we need to execute the following command to install the connector: (Of course, you can also manually download the connector from [Apache Maven Repository](https://repo.maven.apache.org/maven2/org/apache/seatunnel/) to download, then manually move to the seatunnel subdirectory under the connectors directory).
 
 ```bash
-sh bin/install_plugin.sh 2.3.2
+sh bin/install-plugin.sh 2.3.2
 ```
 
 If you need to specify the version of the connector, take 2.3.2 as an example, we need to execute
 
 ```bash
-sh bin/install_plugin.sh 2.3.2
+sh bin/install-plugin.sh 2.3.2
 ```
 
 Usually we don't need all the connector plugins, so you can specify the plugins you need by configuring `config/plugin_config`, for example, you only need the `connector-console` plugin, then you can modify plugin.properties as
