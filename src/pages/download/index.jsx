@@ -14,8 +14,8 @@ export default function () {
 		<Layout>
 			<div className="main">
 				<div>
-					<h1>Download the SeaTunnel(Incubating) releases</h1>
-					<p>Use the links below to download the Apache SeaTunnel(Incubating) from one of our mirrors.</p>
+					<h1>Download the SeaTunnel releases</h1>
+					<p>Use the links below to download the Apache SeaTunnel from one of our mirrors.</p>
 					<h2>SeaTunnel</h2>
 					<table className="version-table">
 						<thead>
