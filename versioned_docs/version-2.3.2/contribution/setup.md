@@ -84,12 +84,11 @@ Here we use `seatunnel-examples/seatunnel-flink-connector-v2-example/src/main/ja
 as an example, when you run it successfully you could see the output as below:
 
 ```log
-+I[Ricky Huo, 71]
-+I[Gary, 12]
-+I[Ricky Huo, 93]
+org.apache.seatunnel.connectors.seatunnel.console.sink.ConsoleSinkWriter - subtaskIndex=1  rowIndex=4:  SeaTunnelRow#tableId= SeaTunnelRow#kind=INSERT : jpEgH, 2036822176
+org.apache.seatunnel.connectors.seatunnel.console.sink.ConsoleSinkWriter - subtaskIndex=2  rowIndex=4:  SeaTunnelRow#tableId= SeaTunnelRow#kind=INSERT : KNaVA, 1295072156
 ...
 ...
-+I[Ricky Huo, 83]
+org.apache.seatunnel.connectors.seatunnel.console.sink.ConsoleSinkWriter - subtaskIndex=1  rowIndex=11:  SeaTunnelRow#tableId= SeaTunnelRow#kind=INSERT : lxclk, 1523020468
 ```
 
 ## What's More
