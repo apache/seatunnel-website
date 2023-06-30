@@ -71,7 +71,7 @@ spark 2.4.x
 ```bash
 cd "apache-seatunnel-incubating-${version}"
 ./bin/start-seatunnel-spark-2-connector-v2.sh \
---master local[4] \
+--master 'local[4]' \
 --deploy-mode client \
 --config ./config/seatunnel.streaming.conf.template
 ```
@@ -81,7 +81,7 @@ spark3.x.x
 ```shell
 cd "apache-seatunnel-incubating-${version}"
 ./bin/start-seatunnel-spark-3-connector-v2.sh \
---master local[4] \
+--master 'local[4]' \
 --deploy-mode client \
 --config ./config/seatunnel.streaming.conf.template
 ```
