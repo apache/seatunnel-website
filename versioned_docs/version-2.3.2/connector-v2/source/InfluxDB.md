@@ -160,6 +160,7 @@ source {
                 rt = STRING
                 time = BIGINT
             }
+        }
     }
 
 }
@@ -182,6 +183,7 @@ source {
                 rt = STRING
                 time = BIGINT
             }
+        }
     }
 
 }
