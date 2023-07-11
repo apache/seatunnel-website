@@ -891,3 +891,15 @@ Returns NULL if 'a' is equal to 'b', otherwise 'a'.
 Example:
 
 NULLIF(A, B)
+
+## Condition Functions
+
+### CASE WHEN
+
+```CASE [field] WHEN [field comparator] conditionValue THEN aValue ELSE bValue END```
+
+Converts a value to another.
+
+Example:
+
+CASE state WHEN state>0 THEN 1 ELSE 0 END
