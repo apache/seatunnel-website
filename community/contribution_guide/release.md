@@ -29,7 +29,7 @@ Download GnuPG binary releases from [the official GnuPG website](https://www.gnu
 Note: The commands of 1. x and 2. x versions of GnuPG are slightly different. The following description takes 2.2.28 as an example. After the installation, the GPG command is added to the system environment variable and is available.
 ```bash
 # Check the version, which should be 2. x
-gpg --version 
+gpg --full-gen-key
 ```
 
 ### Install SHASUM
@@ -45,7 +45,7 @@ Used to compile the project.
 ### Configure GPG KEY
 #### Create the Key
 ```shell
-gpg --gen-key
+gpg --full-gen-key
 ```
 ```bash
 gpg (GnuPG) 2.0.22; Copyright (C) 2013 Free Software Foundation, Inc.
@@ -237,6 +237,8 @@ git push origin --tags
 ```bash
 mvn release:perform -Prelease -Darguments="-DskipTests" -Dusername=${GITHUB USERNAME}
 ```
+Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.
+
 - Close the stage repository
 [https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
 ![](/image/20230324/20221228225445.png)
@@ -247,9 +249,9 @@ mvn release:perform -Prelease -Darguments="-DskipTests" -Dusername=${GITHUB USER
 mkdir -p ~/seatunnel-release-prepare/dev
 mkdir -p ~/seatunnel-release-prepare/release
 cd ~/seatunnel-release-prepare/dev
-svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/dev/incubator/seatunnel
+svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/dev/seatunnel
 cd ~/seatunnel-release-prepare/release
-svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/release/incubator/seatunnel
+svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/release/seatunnel
 ```
 
 ### Upload the key to the dev and release repositories
@@ -272,32 +274,32 @@ svn --username=${APACHE LDAP USERNAME} commit -m "Add ${APACHE LDAP USERNAME} GP
 #### Copy source code and binary packages
 ```bash
 mkdir -p ~/seatunnel-release-prepare/dev/seatunnel/${RELEASE.VERSION}
-cp -f ~/seatunnel-release-prepare/incubator-seatunnel/seatunnel-dist/target/*.tar.gz ~/seatunnel-release-prepare/dev/seatunnel/${RELEASE.VERSION}
+cp -f ~/seatunnel-release-prepare/seatunnel/seatunnel-dist/target/*.tar.gz ~/seatunnel-release-prepare/dev/seatunnel/${RELEASE.VERSION}
 cd ~/seatunnel-release-prepare/dev/seatunnel/${RELEASE.VERSION}
 ```
 
 #### Generate signature
 ```bash
-shasum -a 512 apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz >> apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz.sha512
-shasum -b -a 512 apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz >> apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz.sha512
+shasum -a 512 apache-seatunnel-${RELEASE.VERSION}-src.tar.gz >> apache-seatunnel-${RELEASE.VERSION}-src.tar.gz.sha512
+shasum -b -a 512 apache-seatunnel-${RELEASE.VERSION}-bin.tar.gz >> apache-seatunnel-${RELEASE.VERSION}-bin.tar.gz.sha512
 ```
 
 #### Generate GPG signature
 ```bash
-gpg --armor --detach-sig apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz
-gpg --armor --detach-sig apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz
+gpg --armor --detach-sig apache-seatunnel-${RELEASE.VERSION}-src.tar.gz
+gpg --armor --detach-sig apache-seatunnel-${RELEASE.VERSION}-bin.tar.gz
 ```
 
 #### Check file signature
 ```bash
-shasum -c apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz.sha512
-shasum -c apache-seatunnel-incubating-${RELEASE.VERSION}-bin.tar.gz.sha512
+shasum -c apache-seatunnel-${RELEASE.VERSION}-src.tar.gz.sha512
+shasum -c apache-seatunnel-${RELEASE.VERSION}-bin.tar.gz.sha512
 ```
 
 #### Check digital signatures
 step1: Import (Release Manager does not need to do this step)
 ```bash
-curl https://dist.apache.org/repos/dist/dev/incubator/seatunnel/KEYS >> KEYS
+curl https://dist.apache.org/repos/dist/dev/seatunnel/KEYS >> KEYS
 gpg --import KEYS
 gpg --edit-key "${GPG username of releaser}"
   > trust
@@ -319,14 +321,15 @@ Your decision? 5
 step2: Check the gpg digital signature
 
 ```bash
-gpg --verify apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz.asc apache-seatunnel-incubating-${RELEASE.VERSION}-src.tar.gz
-gpg --verify apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz.asc apache-seatunnel-incubating-${RELEASE.VERSION}-seatunnel-bin.tar.gz
+gpg --verify apache-seatunnel-${RELEASE.VERSION}-src.tar.gz.asc apache-seatunnel-${RELEASE.VERSION}-src.tar.gz
+gpg --verify apache-seatunnel-${RELEASE.VERSION}-bin.tar.gz.asc apache-seatunnel-${RELEASE.VERSION}-bin.tar.gz
 ```
 
 #### Commit
 Commit all files to the dev repository.
 ```bash
-svn add *
+cd ..
+svn add ${RELEASE.VERSION}
 svn --username=${APACHE LDAP USERNAME} commit -m "release ${RELEASE.VERSION}"
 ```
 
@@ -334,29 +337,29 @@ svn --username=${APACHE LDAP USERNAME} commit -m "release ${RELEASE.VERSION}"
 ### dev@seatunnel.apache.org Voting
 #### Voting initiate
 ```bash
-[VOTE] Release Apache SeaTunnel(Incubating) 2.3.0
+[VOTE] Release Apache SeaTunnel 2.3.3
 
 Hello SeaTunnel Community,
 
-This is a call for vote to release Apache SeaTunnel (Incubating) version 2.3.0
+This is a call for vote to release Apache SeaTunnel version 2.3.3
 
 Release notes:
-https://github.com/apache/incubator-seatunnel/blob/2.3.0/release-note.md
+https://github.com/apache/seatunnel/blob/2.3.3/release-note.md
 
 The release candidates:
-https://dist.apache.org/repos/dist/dev/incubator/seatunnel/2.3.0 
+https://dist.apache.org/repos/dist/dev/seatunnel/2.3.3 
 
 Git tag for the release:
-https://github.com/apache/incubator-seatunnel/tree/2.3.0
+https://github.com/apache/seatunnel/tree/2.3.3
 
 Maven 2 staging repository:
 https://repository.apache.org/content/repositories/orgapacheseatunnel-1015/org/apache/seatunnel/
 
 Release Commit ID:
-https://github.com/apache/incubator-seatunnel/commit/d7280abbe9e72262640836182a7f090a5706988a
+https://github.com/apache/seatunnel/commit/6977e9f10ff766944a925ddaae31ea9a8ca3bfef
 
 Keys to verify the Release Candidate: 
-https://downloads.apache.org/incubator/seatunnel/KEYS
+https://downloads.apache.org/seatunnel/KEYS
  
 The vote will be open for at least 72 hours or until necessary numbers of votes are reached.
 
@@ -394,7 +397,7 @@ Chao Tian
 
 #### Voting close
 ```bash
-[VOTE] Release Apache SeaTunnel(Incubating) 2.3.0
+[VOTE] Release Apache SeaTunnel 2.3.3
 
 Hi SeaTunnel Community,
 
@@ -403,7 +406,7 @@ Thanks, everyone, I will close this vote thread and the results will be tallied.
 Best wishes!
 Chao Tian
 #### 归票
-[RESULT] [VOTE] Release Apache SeaTunnel(Incubating) 2.3.0
+[RESULT] [VOTE] Release Apache SeaTunnel 2.3.3
 
 Hi SeaTunnel community,
 
