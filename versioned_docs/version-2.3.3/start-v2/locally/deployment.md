@@ -22,7 +22,7 @@ package `seatunnel-<version>-bin.tar.gz`
 Or you can download it by terminal
 
 ```shell
-export version="2.3.2"
+export version="2.3.3"
 wget "https://archive.apache.org/dist/seatunnel/${version}/apache-seatunnel-${version}-bin.tar.gz"
 tar -xzvf "apache-seatunnel-${version}-bin.tar.gz"
 ```
