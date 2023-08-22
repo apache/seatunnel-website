@@ -1,7 +1,7 @@
 [
 	{
 		"date": "2023-08-21",
-		"version": "v2.3.2",
+		"version": "v2.3.3",
 		"sourceCode": {
 			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.3/apache-seatunnel-2.3.3-src.tar.gz",
 			"asc": "https://downloads.apache.org/seatunnel/2.3.3/apache-seatunnel-2.3.3-src.tar.gz.asc",

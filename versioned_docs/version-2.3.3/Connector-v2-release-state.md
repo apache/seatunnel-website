@@ -10,7 +10,7 @@ SeaTunnel uses a grading system for connectors to help you understand what to ex
 
 ## Connector V2 Health
 
-|                       Connector Name                        |  Type  | Status | Support Version |
+| Connector Name                                              | Type   | Status | Support Version |
 |-------------------------------------------------------------|--------|--------|-----------------|
 | [AmazonDynamoDB](connector-v2/sink/AmazonDynamoDB.md)       | Sink   | Beta   | 2.3.0           |
 | [AmazonDynamoDB](connector-v2/source/AmazonDynamoDB.md)     | Source | Beta   | 2.3.0           |
@@ -81,6 +81,7 @@ SeaTunnel uses a grading system for connectors to help you understand what to ex
 | [Slack](connector-v2/sink/Slack.md)                         | Sink   | Beta   | 2.3.0           |
 | [Socket](connector-v2/sink/Socket.md)                       | Sink   | Beta   | 2.2.0-beta      |
 | [Socket](connector-v2/source/Socket.md)                     | Source | Beta   | 2.2.0-beta      |
-| [StarRocks](connector-v2/sink/StarRocks.md)                 | Sink   | Alpha  | 2.3.0           |
+| [StarRocks](connector-v2/sink/StarRocks.md)                 | Sink   | Beta   | 2.3.0           |
 | [Tablestore](connector-v2/sink/Tablestore.md)               | Sink   | Alpha  | 2.3.0           |
+| [MongoDBCDC](connector-v2/source/MongoDB-CDC.md)            | Source | Alpha  | 2.3.3           |
 
