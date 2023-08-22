@@ -43,15 +43,15 @@ To run the image with SeaTunnel, first create a `Dockerfile`:
 FROM flink:1.13
 
 ENV SEATUNNEL_VERSION="2.3.2"
-ENV SEATUNNEL_HOME = "/opt/seatunnel"
+ENV SEATUNNEL_HOME="/opt/seatunnel"
 
 RUN mkdir -p $SEATUNNEL_HOME
 
-RUN wget https://archive.apache.org/dist/seatunnel/${SEATUNNEL_VERSION}/apache-seatunnel-incubating-${SEATUNNEL_VERSION}-bin.tar.gz
-RUN tar -xzvf apache-seatunnel-incubating-${SEATUNNEL_VERSION}-bin.tar.gz
+RUN wget https://archive.apache.org/dist/seatunnel/${SEATUNNEL_VERSION}/apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
+RUN tar -xzvf apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
 
-RUN cp -r apache-seatunnel-incubating-${SEATUNNEL_VERSION}/* $SEATUNNEL_HOME/
-RUN rm -rf apache-seatunnel-incubating-${SEATUNNEL_VERSION}*
+RUN cp -r apache-seatunnel-${SEATUNNEL_VERSION}/* $SEATUNNEL_HOME/
+RUN rm -rf apache-seatunnel-${SEATUNNEL_VERSION}*
 ```
 
 Then run the following commands to build the image:
