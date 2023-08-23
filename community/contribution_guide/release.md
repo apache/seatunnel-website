@@ -445,141 +445,6 @@ Best wishes,
 Chao Tian
 ```
 
-### general@incubator.apache.org Voting
-#### Voting initiate
-```bashing
-[VOTE] Release Apache SeaTunnel(Incubating) 2.3.0
-
-Hello IPMC, This is an official vote for the Apache
-SeaTunnel(Incubating) 2.3.0  that we have been working toward.
-
-To learn more about Apache SeaTunnel(Incubating), please see:
-
-https://seatunnel.apache.org
-
-The Apache SeaTunnel (incubating) community has voted and approved the release.
-
-Vote thread:
-
-https://lists.apache.org/thread/98oc6q6vghlg8qpfyf5yttzy925tfp9g
-
-Result thread:
-
-https://lists.apache.org/thread/6c0463dsoh8r0gmvqo67lttgy4o40xst
-
-Release changes:
-
-https://github.com/apache/incubator-seatunnel/blob/2.3.0/release-note.md
-
-The release candidates:
-
-https://dist.apache.org/repos/dist/dev/incubator/seatunnel/2.3.0
-
-Maven 2 staging repository:
-
-https://repository.apache.org/content/repositories/orgapacheseatunnel-1015/org/apache/seatunnel/
-
-Git tag for the release:
-
-https://github.com/apache/incubator-seatunnel/tree/2.3.0
-
-Release Commit ID:
-
-https://github.com/apache/incubator-seatunnel/commit/d7280abbe9e72262640836182a7f090a5706988a
-
-Keys to verify the Release Candidate:
-
-https://downloads.apache.org/incubator/seatunnel/KEYS
-
-GPG user ID:
-
-tyrantlucifer
-
-The vote will be open for at least 72 hours or until necessary numbers
-of votes are reached.
-
-Please vote accordingly:
-
-[ ] +1 approve
-[ ] +0 no opinion
-[ ] -1 disapprove with the reason
-
-Checklist for reference:
-
-[ ] Download links are valid.
-[ ] Checksums and PGP signatures are valid.
-[ ] DISCLAIMER is included.
-[ ] Source code artifacts have correct names matching the current release.
-[ ] LICENSE and NOTICE files are correct for each SeaTunnel repo.
-[ ] All files have license headers if necessary.
-[ ] No compiled archives bundled in source archive.
-
-More detail checklist please refer:
-https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist
-
-The following votes are carried over from the SeaTunnel dev mailing list:
-
-+1(binding)
-David,
-William-Guowei,
-Calvin Kirs
-
-Best Regards,
-Chao Tian
-```
-
-#### Voting close
-```bash
-[VOTE] Release Apache SeaTunnel(Incubating) 2.3.0
-
-Hi IPMC,
-
-Thanks, everyone, I will close this vote thread and the results will be tallied.
-
-Best wishes!
-Chao Tian
-```
-
-#### Voting summary
-```bash
-[RESULT] [VOTE] Release Apache SeaTunnel(Incubating) 2.3.0
-
-Hi SeaTunnel community,
-
-This vote now closes since 72 hours have passed.
-
-The vote PASSES with
-
-3 (+1 binding) votes from the IPMC,
-David,
-Guo Wei,
-Calvin Kirs  
-
-6 (+1 non-binding) votes from the developer from the community
-
-Jun Gao, 
-TaoZex, 
-hailin0,
-Peng Yuan,
-Zongwen Li,
-Guangdong Liu
-and no further 0 or -1 votes.
-
-
-The vote thread: 
-
-https://lists.apache.org/thread/98oc6q6vghlg8qpfyf5yttzy925tfp9g 
-
-
-Thanks for your participation, I will now bring the vote to
-[general@incubator.apache.org](mailto:general@incubator.apache.org) <mailto:
-[general@incubator.apache.org](mailto:general@incubator.apache.org)> to get
-approval by the IPMC.
-If this vote passes also, the release is accepted and will be published.
-
-Best wishes,
-Chao Tian
-```
 
 ## Official Release
 ### Moving files
@@ -593,19 +458,20 @@ svn mv https://dist.apache.org/repos/dist/dev/incubator/seatunnel/${RELEASE.VERS
 
 ### Send notification email
 [dev@seatunnel.apache.org](dev@seatunnel.apache.org)
-[general@incubator.apache.org](dev@seatunnel.apache.org)
+[announce@apache.org](announce@apache.org)
 
+Please note that you should send emails in plain text mode, otherwise they will be rejected by Apache's email server.
 ```bash
 Hi all,
 
-We are glad to announce the release of Apache SeaTunnel(incubating) ${RELEASE.VERSION}.
+We are glad to announce the release of Apache SeaTunnel 2.3.3.
 
 Once again I would like to express my thanks to your help.
 
-SeaTunnel: SeaTunnel(Incubating) is a distributed, high-performance data integration platform for the synchronization and transformation of massive
+SeaTunnel: SeaTunnel is a distributed, high-performance data integration tool for the synchronization and transformation of massive
 data (offline & real-time).
 
-Apache SeaTunnel(Incubating) website: 
+Apache SeaTunnel website: 
 
 http://seatunnel.apache.org/
 
@@ -615,20 +481,20 @@ https://seatunnel.apache.org/download/
 
 Release Notes:
 
-https://github.com/apache/incubator-seatunnel/blob/${RELEASE.VERSION}/release-note.md
+https://github.com/apache/seatunnel/blob/2.3.3/release-note.md
 
 Documents: 
 
-https://seatunnel.apache.org/docs/${RELEASE.VERSION}/intro/about
+https://seatunnel.apache.org/docs/2.3.3/about/
 
 Twitter: 
 
 https://twitter.com/ASFSeaTunnel
 
-SeaTunnel(Incubating) Resources:
-- GitHub: https://github.com/apache/incubator-seatunnel
-- Issue: https://github.com/apache/incubator-seatunnel/issues
+SeaTunnel Resources:
+- GitHub: https://github.com/apache/seatunnel
+- Issue: https://github.com/apache/seatunnel/issues
 - Mailing list: dev@seatunnel.apache.org
 
-- Apache SeaTunnel(Incubating) Team
+- Apache SeaTunnel Team
 ```
