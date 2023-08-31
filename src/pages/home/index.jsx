@@ -88,7 +88,7 @@ export default function () {
                                 <img className="button_icon github1" src={useBaseUrl('/home/icons/github' + flag + '.svg')} alt="github"/>
                                 <span>GitHub</span>
                             </a>
-                            <a href="https://the-asf.slack.com/archives/C053HND1D6X"
+                            <a href="https://s.apache.org/seatunnel-slack"
                             target="_blank"
                             className="corner_button link_btn blue"
                             >
