@@ -34,13 +34,6 @@
     <download-page rdf:resource="https://seatunnel.apache.org/download" />
     <programming-language>Java</programming-language>
     <category rdf:resource="https://projects.apache.org/category/big-data" />
-    <release>
-      <Version>
-        <name>Apache SeaTunnel</name>
-        <created>2023-08-21</created>
-        <revision>2.3.3</revision>
-      </Version>
-    </release>
     <repository>
       <GitRepository>
         <location rdf:resource="https://gitbox.apache.org/repos/asf/seatunnel.git"/>
