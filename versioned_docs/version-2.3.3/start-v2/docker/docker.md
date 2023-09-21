@@ -2,8 +2,10 @@
 
 sidebar_position: 3
 -------------------
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
 # Set Up with Docker
 
 This section provides a quick guide to using SeaTunnel with Docker.
