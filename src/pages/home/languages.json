@@ -139,7 +139,7 @@
 			},
 			"feature": {
 				"mainTitle": "Support Hundreds Of Data Sources, \nFast Speed & High Accuracy",
-				"subTitle": "Inteagate massive data between Transaction DB, Cloud DB, SaaS, \n Binlog with SQL-like code or Drag & Drop.",
+				"subTitle": "Integrate massive data between Transaction DB, Cloud DB, SaaS, \n Binlog with SQL-like code or Drag & Drop.",
 				"reduceComplexity": "The connector developed based on API can be compatible with offline synchronization, real-time synchronization, full synchronization, incremental synchronization and other scenarios.",
 				"lesstime": "Provides visual job management, scheduling, running, and monitoring capabilities. Accelerates the integration of low-code and no-code tools.",
 				"simplicity": "Support stand-alone, cluster deployment, choose Zeta engine deployment, no need to rely on Spark, Flink and other big data components.",
