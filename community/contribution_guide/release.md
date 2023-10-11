@@ -216,52 +216,15 @@ git commit -m "[Release][${RELEASE.VERSION}][release-note] Add release-note"
 git push
 ```
 
-### Disable spotless check
-```bash
-vim pom.xml
-```
-
-Find maven-release-plugin and comment it out like this:
-
-```bash
-<!-- disable spotless check during release -->
-<!--
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-release-plugin</artifactId>
-    <configuration>
-        <autoVersionSubmodules>true</autoVersionSubmodules>
-        <tagNameFormat>@{project.version}</tagNameFormat>
-        <tagBase>${project.version}</tagBase>
-    </configuration>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.maven.scm</groupId>
-            <artifactId>maven-scm-provider-jgit</artifactId>
-            <version>${maven-scm-provider-jgit.version}</version>
-        </dependency>
-    </dependencies>
-</plugin>
--->
-```
-
-Commit and push
-
-```bash
-git add pom.xml
-git commit -m "[Release][${RELEASE.VERSION}][spotless] Disable spotless check when release"
-git push
-```
-
 ### Precompiled test
 
 ```bash
-mvn release:prepare -Prelease -Darguments="-DskipTests" -DdryRun=true -Dusername=${GITHUB USERNAME}
+mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -DdryRun=true -Dusername=${GITHUB USERNAME}
 ```
 ### Compile
 ```bash
 mvn release:clean
-mvn release:prepare -Prelease -Darguments="-DskipTests" -DpushChanges=false -Dusername=${GITHUB USERNAME}
+mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -DpushChanges=false -Dusername=${GITHUB USERNAME}
 ```
 ### Submit source code
 
@@ -273,7 +236,7 @@ git push origin --tags
 - Upload jar packages
 
 ```bash
-mvn release:perform -Prelease -Darguments="-DskipTests" -Dusername=${GITHUB USERNAME}
+mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Dusername=${GITHUB USERNAME}
 ```
 - Close the stage repository
   [https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
