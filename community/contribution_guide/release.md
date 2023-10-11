@@ -218,12 +218,12 @@ git push
 ### Precompiled test
 
 ```bash
-mvn release:prepare -Prelease -Darguments="-DskipTests" -DdryRun=true -Dusername=${GITHUB USERNAME}
+mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -DdryRun=true -Dusername=${GITHUB USERNAME}
 ```
 ### Compile
 ```bash
 mvn release:clean
-mvn release:prepare -Prelease -Darguments="-DskipTests" -DpushChanges=false -Dusername=${GITHUB USERNAME}
+mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -DpushChanges=false -Dusername=${GITHUB USERNAME}
 ```
 ### Submit source code
 
@@ -235,7 +235,7 @@ git push origin --tags
 - Upload jar packages
 
 ```bash
-mvn release:perform -Prelease -Darguments="-DskipTests" -Dusername=${GITHUB USERNAME}
+mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Dusername=${GITHUB USERNAME}
 ```
 Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.
 
