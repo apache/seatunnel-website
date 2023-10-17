@@ -1,6 +1,7 @@
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const versions = require('./versions.json');
+const st_web_versions = require('./seatunnel_web_versions.json');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -105,6 +106,20 @@ const config = {
                         {
                             label: "All versions",
                             to: "/versions/",
+                        }
+                    ]
+                },
+                {
+                    position: 'right',
+                    label: 'SeaTunnel Web Document',
+                    items: [
+                        ...st_web_versions.slice(0, st_web_versions.length).map((version) => ({
+                            label: version,
+                            to: `seatunnel_web/${version}/about`,
+                        })),
+                        {
+                            label: "Next",
+                            to: "/seatunnel_web/next/about",
                         }
                     ]
                 },
@@ -297,6 +312,24 @@ const config = {
     }),
     plugins: [
         'docusaurus-plugin-less',
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'seatunnel_web',
+                path: 'seatunnel_web',
+                routeBasePath: 'seatunnel_web',
+                sidebarCollapsible: true,
+                editLocalizedFiles: true,
+                // Please change this to your repo.
+                editUrl: 'https://github.com/apache/incubator-seatunnel-website/edit/main/',
+                versions: {
+                    [st_web_versions[0]]: {
+                        path: st_web_versions[0],
+                    }
+                },
+                sidebarPath: require.resolve('./sidebarsSeaTunnelWeb.js'),
+            },
+        ],
         [
             '@docusaurus/plugin-content-docs',
             {
