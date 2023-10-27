@@ -189,7 +189,7 @@ network:
 
 > |         name         |   type   | data type |            description            |
 > |----------------------|----------|-----------|-----------------------------------|
-> | jobId                | optional | string    | job id                            |
+> | jobId                | required | string    | job id                            |
 > | jobName              | optional | string    | job name                          |
 > | isStartWithSavePoint | optional | string    | if job is started with save point |
 
@@ -233,6 +233,18 @@ network:
     "jobName": "rest_api_test"
 }
 ```
+
+### Stop Job.
+
+<details>
+
+ <summary><code>POST</code> <code><b>/hazelcast/rest/maps/stop-job/:jobId</b></code> <code>(Stops a job.)</code></summary>
+
+#### Parameters
+
+> | name  |   type   | data type | description |
+> |-------|----------|-----------|-------------|
+> | jobId | required | long      | job id      |
 
 </details>
 
