@@ -36,6 +36,7 @@ To run the image with SeaTunnel, first create a `Dockerfile`:
   defaultValue="flink"
   values={[
     {label: 'Flink', value: 'flink'},
+    {label: 'Spark', value: 'spark'},
   ]}>
 <TabItem value="flink">
 
@@ -64,6 +65,36 @@ minikube image load seatunnel:2.3.0-flink-1.13
 ```
 
 </TabItem>
+
+<TabItem value="spark">
+
+```Dockerfile
+FROM apache/spark:3.3.3-scala2.12-java11-ubuntu
+
+USER root
+
+ENV SEATUNNEL_VERSION="2.3.3"
+ENV SEATUNNEL_HOME="/opt/seatunnel"
+
+RUN wget https://dlcdn.apache.org/seatunnel/${SEATUNNEL_VERSION}/apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
+RUN tar -xzvf apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
+RUN mv apache-seatunnel-${SEATUNNEL_VERSION} ${SEATUNNEL_HOME}
+
+RUN cd ${SEATUNNEL_HOME}||sh bin/install-plugin.sh ${SEATUNNEL_VERSION}
+```
+
+Then run the following commands to build the image:
+```bash
+docker build -t seatunnel:2.3.0-spark-3.3.3 -f Dockerfile .
+```
+Image `seatunnel:2.3.0-spark-3.3.3` need to be present in the host (minikube) so that the deployment can take place.
+
+Load image to minikube via:
+```bash
+minikube image load seatunnel:2.3.0-spark-3.3.3
+```
+
+</TabItem>
 </Tabs>
 
 ### Deploying the operator
@@ -73,6 +104,7 @@ minikube image load seatunnel:2.3.0-flink-1.13
   defaultValue="flink"
   values={[
     {label: 'Flink', value: 'flink'},
+    {label: 'Spark', value: 'spark'},
   ]}>
 <TabItem value="flink">
 
@@ -105,19 +137,44 @@ flink-kubernetes-operator-5f466b8549-mgchb             1/1     Running   3 (23h 
 ```
 
 </TabItem>
+
+<TabItem value="spark">
+
+The steps below provide a quick walk-through on setting up the Spark Kubernetes Operator.
+You can refer to [Spark Kubernetes Operator - Quick Start](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/docs/quick-start-guide.md) for more details.
+
+> Notice: All the Kubernetes resources bellow are created in default namespace.
+
+Install the certificate manager on your Kubernetes cluster to enable adding the webhook component (only needed once per Kubernetes cluster):
+
+```bash
+kubectl create -f https://github.com/jetstack/cert-manager/releases/download/v1.8.2/cert-manager.yaml
+```
+Now you can deploy the latest stable Flink Kubernetes Operator version using the included Helm chart:
+
+```bash
+helm repo add spark-operator https://googlecloudplatform.github.io/spark-on-k8s-operator
+
+helm install seatunnel spark-operator/spark-operator \
+--set webhook.create=false  --set serviceAccounts.spark.name=spark
+```
+
+You may verify your installation via `kubectl`:
+
+```bash
+kubectl get pods
+NAME                                         READY   STATUS    RESTARTS   AGE
+seatunnel-spark-operator-57d966fdfc-v2mmw   1/1     Running   0          17s
+
+```
+
+</TabItem>
 </Tabs>
 
 ## Run SeaTunnel Application
 
 **Run Application:**: SeaTunnel already providers out-of-the-box [configurations](https://github.com/apache/seatunnel/tree/dev/config).
 
-<Tabs
-  groupId="engine-type"
-  defaultValue="flink"
-  values={[
-    {label: 'Flink', value: 'flink'},
-  ]}>
-<TabItem value="flink">
 
 In this guide we are going to use [seatunnel.streaming.conf](https://github.com/apache/seatunnel/blob/2.3.0-release/config/v2.streaming.conf.template):
 
@@ -164,6 +221,16 @@ Generate a configmap named seatunnel-config in Kubernetes for the seatunnel.stre
 kubectl create cm seatunnel-config \
 --from-file=seatunnel.streaming.conf=seatunnel.streaming.conf
 ```
+
+<Tabs
+  groupId="engine-type"
+  defaultValue="flink"
+  values={[
+    {label: 'Flink', value: 'flink'},
+    {label: 'Spark', value: 'spark'},
+  ]}>
+
+<TabItem value="flink">
 
 Once the Flink Kubernetes Operator is running as seen in the previous steps you are ready to submit a Flink (SeaTunnel) job:
 - Create `seatunnel-flink.yaml` FlinkDeployment manifest:
@@ -216,9 +283,69 @@ kubectl apply -f seatunnel-flink.yaml
 ```
 
 </TabItem>
+
+<TabItem value="spark">
+
+Once the Spark Kubernetes Operator is running as seen in the previous steps you are ready to submit a Spark (SeaTunnel) job:
+- Create `seatunnel-spark.yaml` Spark Deployment manifest:
+```yaml
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: seatunnel-spark-streaming-example
+spec:
+  type: Java
+  mode: cluster
+  image: seatunnel:2.3.0-spark-3.3.3
+  imagePullPolicy: Always
+  mainClass: org.apache.seatunnel.core.starter.spark.SeaTunnelSpark
+  mainApplicationFile: "local:///opt/seatunnel/starter/seatunnel-spark-3-starter.jar"
+  arguments: ["--config", "/data/seatunnel.streaming.conf"]
+  sparkVersion: "3.3.3"
+  restartPolicy:
+    type: Never
+  volumes:
+    - name: "test-volume"
+      hostPath:
+        path: "/tmp"
+        type: Directory
+  driver:
+    cores: 1
+    coreLimit: "1200m"
+    memory: "512m"
+    labels:
+      version: 3.1.1
+    serviceAccount: spark
+    configMaps:
+      - name: seatunnel-config
+        path: seatunnel.streaming.conf
+    volumeMounts:
+      - name: "test-volume"
+        mountPath: "/tmp"
+  executor:
+    cores: 1
+    instances: 1
+    memory: "512m"
+    labels:
+      version: 3.1.1
+    configMaps:
+      - name: seatunnel-config
+        path: seatunnel.streaming.conf
+    volumeMounts:
+      - name: "test-volume"
+        mountPath: "/tmp"
+```
+
+- Run the example application:
+```bash
+kubectl apply -f seatunnel-spark.yaml
+```
+
+</TabItem>
+
 </Tabs>
 
-**See The Output**
+## See The Output
 
 <Tabs
   groupId="engine-type"
