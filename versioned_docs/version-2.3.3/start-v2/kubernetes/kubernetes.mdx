@@ -50,18 +50,18 @@ RUN wget https://dlcdn.apache.org/seatunnel/${SEATUNNEL_VERSION}/apache-seatunne
 RUN tar -xzvf apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
 RUN mv apache-seatunnel-${SEATUNNEL_VERSION} ${SEATUNNEL_HOME}
 
-RUN cd ${SEATUNNEL_HOME}||sh bin/install-plugin.sh ${SEATUNNEL_VERSION}
+RUN cd ${SEATUNNEL_HOME} && bash bin/install-plugin.sh ${SEATUNNEL_VERSION}
 ```
 
 Then run the following commands to build the image:
 ```bash
-docker build -t seatunnel:2.3.0-flink-1.13 -f Dockerfile .
+docker build -t seatunnel:2.3.3-flink-1.13 -f Dockerfile .
 ```
-Image `seatunnel:2.3.0-flink-1.13` need to be present in the host (minikube) so that the deployment can take place.
+Image `seatunnel:2.3.3-flink-1.13` need to be present in the host (minikube) so that the deployment can take place.
 
 Load image to minikube via:
 ```bash
-minikube image load seatunnel:2.3.0-flink-1.13
+minikube image load seatunnel:2.3.3-flink-1.13
 ```
 
 </TabItem>
@@ -80,18 +80,18 @@ RUN wget https://dlcdn.apache.org/seatunnel/${SEATUNNEL_VERSION}/apache-seatunne
 RUN tar -xzvf apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
 RUN mv apache-seatunnel-${SEATUNNEL_VERSION} ${SEATUNNEL_HOME}
 
-RUN cd ${SEATUNNEL_HOME}||sh bin/install-plugin.sh ${SEATUNNEL_VERSION}
+RUN cd ${SEATUNNEL_HOME} && bash bin/install-plugin.sh ${SEATUNNEL_VERSION}
 ```
 
 Then run the following commands to build the image:
 ```bash
-docker build -t seatunnel:2.3.0-spark-3.3.3 -f Dockerfile .
+docker build -t seatunnel:2.3.3-spark-3.3.3 -f Dockerfile .
 ```
-Image `seatunnel:2.3.0-spark-3.3.3` need to be present in the host (minikube) so that the deployment can take place.
+Image `seatunnel:2.3.3-spark-3.3.3` need to be present in the host (minikube) so that the deployment can take place.
 
 Load image to minikube via:
 ```bash
-minikube image load seatunnel:2.3.0-spark-3.3.3
+minikube image load seatunnel:2.3.3-spark-3.3.3
 ```
 
 </TabItem>
@@ -150,13 +150,13 @@ Install the certificate manager on your Kubernetes cluster to enable adding the 
 ```bash
 kubectl create -f https://github.com/jetstack/cert-manager/releases/download/v1.8.2/cert-manager.yaml
 ```
-Now you can deploy the latest stable Flink Kubernetes Operator version using the included Helm chart:
+Now you can deploy the latest stable spark Kubernetes Operator version using the included Helm chart:
 
 ```bash
 helm repo add spark-operator https://googlecloudplatform.github.io/spark-on-k8s-operator
 
 helm install seatunnel spark-operator/spark-operator \
---set webhook.create=false  --set serviceAccounts.spark.name=spark
+--set webhook.enable=true  --set serviceAccounts.spark.name=spark
 ```
 
 You may verify your installation via `kubectl`:
@@ -240,7 +240,7 @@ kind: FlinkDeployment
 metadata:
   name: seatunnel-flink-streaming-example
 spec:
-  image: seatunnel:2.3.0-flink-1.13
+  image: seatunnel:2.3.3-flink-1.13
   flinkVersion: v1_13
   flinkConfiguration:
     taskmanager.numberOfTaskSlots: "2"
@@ -296,7 +296,7 @@ metadata:
 spec:
   type: Java
   mode: cluster
-  image: seatunnel:2.3.0-spark-3.3.3
+  image: seatunnel:2.3.3-spark-3.3.3
   imagePullPolicy: Always
   mainClass: org.apache.seatunnel.core.starter.spark.SeaTunnelSpark
   mainApplicationFile: "local:///opt/seatunnel/starter/seatunnel-spark-3-starter.jar"
