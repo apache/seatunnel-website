@@ -189,7 +189,7 @@ network:
 
 > |         name         |   type   | data type |            description            |
 > |----------------------|----------|-----------|-----------------------------------|
-> | jobId                | required | string    | job id                            |
+> | jobId                | optional | string    | job id                            |
 > | jobName              | optional | string    | job name                          |
 > | isStartWithSavePoint | optional | string    | if job is started with save point |
 
