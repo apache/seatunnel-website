@@ -3,7 +3,7 @@
 		"date": "2023-10-16",
 		"version": "v1.0.0",
 		"sourceCode": {
-			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.3/apache-seatunnel-2.3.3-src.tar.gz",
+			"src": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz",
 			"asc": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz.asc",
 			"sha512": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz.sha512"
 		},
