@@ -33,7 +33,7 @@ The other way to get SeaTunnel Zeta Engine Server installer package is download 
 * After completing the previous step, you will receive an installation package that can be used to install SeaTunnel Zeta Engine Server on the server. Run `tar -zcvf apache-seatunnel-2.3.3-SNAPSHOT-bin.tar.gz apache-seatunnel-2.3.3-SNAPSHOT`
 
 ##### 2.1.3 Deploy SeaTunnel Zeta Server
-After 3.1.1 or 3.1.2 you can get an installer package `apache-seatunnel-2.3.3-SNAPSHOT-bin.tar.gz`, Then you can copy it to you server node and deploy reference https://seatunnel.apache.org/docs/seatunnel-engine/deployment.
+After 2.1.1 or 2.1.2 you can get an installer package `apache-seatunnel-2.3.3-SNAPSHOT-bin.tar.gz`, Then you can copy it to you server node and deploy reference https://seatunnel.apache.org/docs/seatunnel-engine/deployment.
 
 ##### 2.1.4 Deploy SeaTunnel Zeta Client In SeaTunnel Web Run Node
 If you use SeaTunnel Web, you need deploy a SeaTunnel Zeta Client in the SeaTunnel Web run Node. **If you run SeaTunnel Zeta Server and SeaTunnel Web in same node, you can skip this step**.
