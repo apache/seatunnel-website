@@ -62,7 +62,7 @@
         "name": "Lidong Dai"
       }
     ],
-    "ppmc": [
+    "pmc": [
       {
         "apacheId": "kirs",
         "avatarUrl": "https://avatars.githubusercontent.com/u/16631152?v=4",
@@ -150,6 +150,22 @@
         "gitUrl": "https://github.com/dijiekstra",
         "githubId": "dijiekstra",
         "name": "Jinxin Shen"
+      },
+      {
+        "apacheId": "wanghailin",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/14371345?v=4",
+        "email": "wanghailin@apache.org",
+        "gitUrl": "https://github.com/hailin0",
+        "githubId": "hailin0",
+        "name": "Hailin Wang"
+      },
+      {
+        "apacheId": "ic4y",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/83933160?v=4",
+        "email": "ic4y@apache.org",
+        "gitUrl": "https://github.com/ic4y",
+        "githubId": "ic4y",
+        "name": "Li Liu"
       }
     ],
     "committer": [
@@ -210,12 +226,20 @@
         "name": "Guangdong Liu"
       },
       {
-        "apacheId": "ic4y",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/83933160?v=4",
-        "email": "ic4y@apache.org",
-        "gitUrl": "https://github.com/ic4y",
-        "githubId": "ic4y",
-        "name": "Li Liu"
+        "apacheId": "zhouyao2023",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/67902676?v=4",
+        "email": "zhouyao2023@apache.org",
+        "gitUrl": "https://github.com/Carl-Zhou-CN",
+        "githubId": "Carl-Zhou-CN",
+        "name": "Yao Zhou"
+      },
+      {
+        "apacheId": "machengy",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/8068247?v=4",
+        "email": "machengy@apache.org",
+        "gitUrl": "https://github.com/rewerma",
+        "githubId": "rewerma",
+        "name": "Chengyuan Ma"
       }
     ]
   },
@@ -282,7 +306,7 @@
         "name": "Lidong Dai"
       }
     ],
-    "ppmc": [
+    "pmc": [
       {
         "apacheId": "kirs",
         "avatarUrl": "https://avatars.githubusercontent.com/u/16631152?v=4",
@@ -362,6 +386,30 @@
         "gitUrl": "https://github.com/EricJoy2048",
         "githubId": "EricJoy2048",
         "name": "Jun Gao"
+      },
+      {
+        "apacheId": "dijiekstra",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/19817318?v=4",
+        "email": "dijiekstra@apache.org",
+        "gitUrl": "https://github.com/dijiekstra",
+        "githubId": "dijiekstra",
+        "name": "Jinxin Shen"
+      },
+      {
+        "apacheId": "wanghailin",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/14371345?v=4",
+        "email": "wanghailin@apache.org",
+        "gitUrl": "https://github.com/hailin0",
+        "githubId": "hailin0",
+        "name": "Hailin Wang"
+      },
+      {
+        "apacheId": "ic4y",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/83933160?v=4",
+        "email": "ic4y@apache.org",
+        "gitUrl": "https://github.com/ic4y",
+        "githubId": "ic4y",
+        "name": "Li Liu"
       }
     ],
     "committer": [
@@ -406,14 +454,6 @@
         "name": "Simon"
       },
       {
-        "apacheId": "dijiekstra",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/19817318?v=4",
-        "email": "dijiekstra@apache.org",
-        "gitUrl": "https://github.com/dijiekstra",
-        "githubId": "dijiekstra",
-        "name": "Jinxin Shen"
-      },
-      {
         "apacheId": "zongwen",
         "avatarUrl": "https://avatars.githubusercontent.com/u/36807946?v=4",
         "email": "zongwen@apache.org",
@@ -430,12 +470,20 @@
         "name": "Guangdong Liu"
       },
       {
-        "apacheId": "ic4y",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/83933160?v=4",
-        "email": "ic4y@apache.org",
-        "gitUrl": "https://github.com/ic4y",
-        "githubId": "ic4y",
-        "name": "Li Liu"
+        "apacheId": "zhouyao2023",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/67902676?v=4",
+        "email": "zhouyao2023@apache.org",
+        "gitUrl": "https://github.com/Carl-Zhou-CN",
+        "githubId": "Carl-Zhou-CN",
+        "name": "Yao Zhou"
+      },
+      {
+        "apacheId": "machengy",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/8068247?v=4",
+        "email": "machengy@apache.org",
+        "gitUrl": "https://github.com/rewerma",
+        "githubId": "rewerma",
+        "name": "Chengyuan Ma"
       }
     ]
   }
