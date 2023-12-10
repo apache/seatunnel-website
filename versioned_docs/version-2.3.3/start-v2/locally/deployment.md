@@ -16,7 +16,7 @@ Before you would like to start to run Seatunnel locally, you need to install the
 
 ## Step 2: Download SeaTunnel
 
-Download the latest version of seatunnel distributive package `seatunnel-<version>-bin.tar.gz`from [seatunnel download page](https://seatunnel.apache.org/download)
+Download the latest version of seatunnel distributive package `seatunnel-<version>-bin.tar.gz`from [seatunnel download page](https://seatunnel.apache.org/download) 
 
 Or you can download it by using terminal
 
