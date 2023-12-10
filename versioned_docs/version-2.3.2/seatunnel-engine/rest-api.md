@@ -15,22 +15,22 @@ By default, this server listens at port 5801, which can be configured in hazelca
 
 ```yaml
 network:
-    rest-api:
-      enabled: true
-      endpoint-groups:
-        CLUSTER_WRITE:
-          enabled: true
-        DATA:
-          enabled: true
-    join:
-      tcp-ip:
+  rest-api:
+    enabled: true
+    endpoint-groups:
+      CLUSTER_WRITE:
         enabled: true
-        member-list:
-          - localhost
-    port:
-      auto-increment: true
-      port-count: 100
-      port: 5801
+      DATA:
+        enabled: true
+  join:
+    tcp-ip:
+      enabled: true
+      member-list:
+        - localhost
+  port:
+    auto-increment: true
+    port-count: 100
+    port: 5801
 ```
 
 ## API reference
