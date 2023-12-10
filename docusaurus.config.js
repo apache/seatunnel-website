@@ -1,6 +1,7 @@
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const versions = require('./versions.json');
+const st_web_versions = require('./seatunnel_web_versions.json');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -105,6 +106,20 @@ const config = {
                         {
                             label: "All versions",
                             to: "/versions/",
+                        }
+                    ]
+                },
+                {
+                    position: 'right',
+                    label: 'SeaTunnel Web Document',
+                    items: [
+                        ...st_web_versions.slice(0, st_web_versions.length).map((version) => ({
+                            label: version,
+                            to: `seatunnel_web/${version}/about`,
+                        })),
+                        {
+                            label: "Next",
+                            to: "/seatunnel_web/next/about",
                         }
                     ]
                 },
@@ -270,9 +285,51 @@ const config = {
         // would collapse all sibling categories when expanding one category
         autoCollapseSidebarCategories: true,
 
+        // https://docusaurus.io/zh-CN/docs/search#connecting-algolia
+        algolia: {
+          // The application ID provided by Algolia
+          appId: 'S2J1A7LWND',
+          // Public API key: it is safe to commit it
+          apiKey: 'a19997f611a73120d7dfb30af9db4d3a',
+          indexName: 'seatunnel-apache',
+
+          // Optional: see doc section below
+          contextualSearch: true,
+          // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+          externalUrlRegex: 'seatunnel\\.apache\\.org',
+          // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+          replaceSearchResultPathname: {
+            from: '/docs/', // or as RegExp: /\/docs\//
+            to: '/',
+          },
+          // Optional: Algolia search parameters
+          searchParameters: {},
+          // Optional: path for search page that enabled by default (`false` to disable it)
+          searchPagePath: 'search',
+          //... other Algolia params
+        },
+
     }),
     plugins: [
         'docusaurus-plugin-less',
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'seatunnel_web',
+                path: 'seatunnel_web',
+                routeBasePath: 'seatunnel_web',
+                sidebarCollapsible: true,
+                editLocalizedFiles: true,
+                // Please change this to your repo.
+                editUrl: 'https://github.com/apache/incubator-seatunnel-website/edit/main/',
+                versions: {
+                    [st_web_versions[0]]: {
+                        path: st_web_versions[0],
+                    }
+                },
+                sidebarPath: require.resolve('./sidebarsSeaTunnelWeb.js'),
+            },
+        ],
         [
             '@docusaurus/plugin-content-docs',
             {
