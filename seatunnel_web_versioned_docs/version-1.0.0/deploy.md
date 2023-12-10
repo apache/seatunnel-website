@@ -1,4 +1,4 @@
-# Quick Deployment of Apache SeaTunnel Web
+# Deployment of Apache SeaTunnel Web
 
 Apache SeaTunnel offers two methods for submitting tasks:
 
@@ -86,5 +86,4 @@ If you're using SeaTunnel Web, you need to deploy a SeaTunnel Zeta client on the
 3. Visit UI [http://127.0.0.1:8801/ui/](http://127.0.0.1:8801/ui/) and log in with the default credentials (username: admin, password: admin). A successful login screen indicates successful deployment.
     ```
     ![Login UI](https://github.com/apache/dolphinscheduler/assets/15833811/39505fec-64bd-4e94-9f60-de505b4bb0cb)
-
     ```
