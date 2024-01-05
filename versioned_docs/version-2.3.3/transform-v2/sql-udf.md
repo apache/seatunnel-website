@@ -49,6 +49,13 @@ Add the dependency of transform-v2 and provided scope to your maven project:
     <version>2.3.x</version>
     <scope>provided</scope>
 </dependency>
+
+<dependency>
+    <groupId>org.apache.seatunnel</groupId>
+    <artifactId>seatunnel-api</artifactId>
+    <version>2.3.x</version>
+    <scope>provided</scope>
+</dependency>
 ```
 
 Add a Java Class implements of ZetaUDF like this:

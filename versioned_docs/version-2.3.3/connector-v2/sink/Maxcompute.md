@@ -4,7 +4,7 @@
 
 ## Description
 
-Used to read data from Maxcompute.
+Used to write data from Maxcompute.
 
 ## Key features
 
