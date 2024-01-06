@@ -36,33 +36,64 @@ To run the image with SeaTunnel, first create a `Dockerfile`:
   defaultValue="Zeta (local-mode)"
   values={[
     {label: 'Flink', value: 'flink'},
+    {label: 'Spark', value: 'spark'},
     {label: 'Zeta (local-mode)', value: 'Zeta (local-mode)'},
     {label: 'Zeta (cluster-mode)', value: 'Zeta (cluster-mode)'},
   ]}>
 <TabItem value="flink">
 
 ```Dockerfile
-FROM flink:1.13
+FROM apache/flink:1.13
 
-ENV SEATUNNEL_VERSION="2.3.2"
+ENV SEATUNNEL_VERSION="2.3.3"
 ENV SEATUNNEL_HOME="/opt/seatunnel"
 
 RUN wget https://dlcdn.apache.org/seatunnel/${SEATUNNEL_VERSION}/apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
 RUN tar -xzvf apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
 RUN mv apache-seatunnel-${SEATUNNEL_VERSION} ${SEATUNNEL_HOME}
 
-RUN cd ${SEATUNNEL_HOME}||sh bin/install-plugin.sh ${SEATUNNEL_VERSION}
+RUN cd ${SEATUNNEL_HOME} && bash bin/install-plugin.sh ${SEATUNNEL_VERSION}
 ```
 
 Then run the following commands to build the image:
 ```bash
-docker build -t seatunnel:2.3.0-flink-1.13 -f Dockerfile .
+docker build -t seatunnel:2.3.3-flink-1.13 -f Dockerfile .
 ```
-Image `seatunnel:2.3.0-flink-1.13` need to be present in the host (minikube) so that the deployment can take place.
+Image `seatunnel:2.3.3-flink-1.13` need to be present in the host (minikube) so that the deployment can take place.
 
 Load image to minikube via:
 ```bash
-minikube image load seatunnel:2.3.0-flink-1.13
+minikube image load seatunnel:2.3.3-flink-1.13
+```
+
+</TabItem>
+
+<TabItem value="spark">
+
+```Dockerfile
+FROM apache/spark:3.3.3-scala2.12-java11-ubuntu
+
+USER root
+
+ENV SEATUNNEL_VERSION="2.3.3"
+ENV SEATUNNEL_HOME="/opt/seatunnel"
+
+RUN wget https://dlcdn.apache.org/seatunnel/${SEATUNNEL_VERSION}/apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
+RUN tar -xzvf apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
+RUN mv apache-seatunnel-${SEATUNNEL_VERSION} ${SEATUNNEL_HOME}
+
+RUN cd ${SEATUNNEL_HOME} && bash bin/install-plugin.sh ${SEATUNNEL_VERSION}
+```
+
+Then run the following commands to build the image:
+```bash
+docker build -t seatunnel:2.3.3-spark-3.3.3 -f Dockerfile .
+```
+Image `seatunnel:2.3.3-spark-3.3.3` need to be present in the host (minikube) so that the deployment can take place.
+
+Load image to minikube via:
+```bash
+minikube image load seatunnel:2.3.3-spark-3.3.3
 ```
 
 </TabItem>
@@ -132,6 +163,7 @@ minikube image load seatunnel:2.3.3
   defaultValue="Zeta (local-mode)"
   values={[
     {label: 'Flink', value: 'flink'},
+    {label: 'Spark', value: 'spark'},
     {label: 'Zeta (local-mode)', value: 'Zeta (local-mode)'},
     {label: 'Zeta (cluster-mode)', value: 'Zeta (cluster-mode)'},
   ]}>
@@ -150,10 +182,10 @@ kubectl create -f https://github.com/jetstack/cert-manager/releases/download/v1.
 Now you can deploy the latest stable Flink Kubernetes Operator version using the included Helm chart:
 
 ```bash
-helm repo add flink-operator-repo https://downloads.apache.org/flink/flink-kubernetes-operator-1.3.1/
+helm repo add flink-kubernetes-operator-1.3.1 https://archive.apache.org/dist/flink/flink-kubernetes-operator-1.3.1/
 
-helm install flink-kubernetes-operator flink-operator-repo/flink-kubernetes-operator \
---set image.repository=apache/flink-kubernetes-operator
+helm install flink-kubernetes-operator flink-kubernetes-operator-1.3.1/flink-kubernetes-operator \
+--set webhook.create=false --set image.repository=apache/flink-kubernetes-operator
 ```
 
 You may verify your installation via `kubectl`:
@@ -167,6 +199,36 @@ flink-kubernetes-operator-5f466b8549-mgchb             1/1     Running   3 (23h 
 
 </TabItem>
 
+<TabItem value="spark">
+
+The steps below provide a quick walk-through on setting up the Spark Kubernetes Operator.
+You can refer to [Spark Kubernetes Operator - Quick Start](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/docs/quick-start-guide.md) for more details.
+
+> Notice: All the Kubernetes resources bellow are created in default namespace.
+
+Install the certificate manager on your Kubernetes cluster to enable adding the webhook component (only needed once per Kubernetes cluster):
+
+```bash
+kubectl create -f https://github.com/jetstack/cert-manager/releases/download/v1.8.2/cert-manager.yaml
+```
+Now you can deploy the latest stable spark Kubernetes Operator version using the included Helm chart:
+
+```bash
+helm repo add spark-operator https://googlecloudplatform.github.io/spark-on-k8s-operator
+
+helm install seatunnel spark-operator/spark-operator \
+--set webhook.enable=true  --set serviceAccounts.spark.name=spark
+```
+
+You may verify your installation via `kubectl`:
+
+```bash
+kubectl get pods
+NAME                                         READY   STATUS    RESTARTS   AGE
+seatunnel-spark-operator-57d966fdfc-v2mmw   1/1     Running   0          17s
+
+```
+</TabItem>
 
 <TabItem value="Zeta (local-mode)">
 none
@@ -180,16 +242,6 @@ none
 ## Run SeaTunnel Application
 
 **Run Application:**: SeaTunnel already providers out-of-the-box [configurations](https://github.com/apache/seatunnel/tree/dev/config).
-
-<Tabs
-  groupId="engine-type"
-  defaultValue="Zeta (local-mode)"
-  values={[
-    {label: 'Flink', value: 'flink'},
-    {label: 'Zeta (local-mode)', value: 'Zeta (local-mode)'},
-    {label: 'Zeta (cluster-mode)', value: 'Zeta (cluster-mode)'},
-  ]}>
-<TabItem value="flink">
 
 In this guide we are going to use [seatunnel.streaming.conf](https://github.com/apache/seatunnel/blob/2.3.0-release/config/v2.streaming.conf.template):
 
@@ -237,6 +289,18 @@ kubectl create cm seatunnel-config \
 --from-file=seatunnel.streaming.conf=seatunnel.streaming.conf
 ```
 
+<Tabs
+  groupId="engine-type"
+  defaultValue="flink"
+  values={[
+    {label: 'Flink', value: 'flink'},
+    {label: 'Spark', value: 'spark'},
+    {label: 'Zeta (local-mode)', value: 'Zeta (local-mode)'},
+    {label: 'Zeta (cluster-mode)', value: 'Zeta (cluster-mode)'},
+  ]}>
+
+<TabItem value="flink">
+
 Once the Flink Kubernetes Operator is running as seen in the previous steps you are ready to submit a Flink (SeaTunnel) job:
 - Create `seatunnel-flink.yaml` FlinkDeployment manifest:
 ```yaml
@@ -245,7 +309,7 @@ kind: FlinkDeployment
 metadata:
   name: seatunnel-flink-streaming-example
 spec:
-  image: seatunnel:2.3.0-flink-1.13
+  image: seatunnel:2.3.3-flink-1.13
   flinkVersion: v1_13
   flinkConfiguration:
     taskmanager.numberOfTaskSlots: "2"
@@ -289,42 +353,66 @@ kubectl apply -f seatunnel-flink.yaml
 
 </TabItem>
 
+<TabItem value="spark">
+
+Once the Spark Kubernetes Operator is running as seen in the previous steps you are ready to submit a Spark (SeaTunnel) job:
+- Create `seatunnel-spark.yaml` Spark Deployment manifest:
+```yaml
+apiVersion: "sparkoperator.k8s.io/v1beta2"
+kind: SparkApplication
+metadata:
+  name: seatunnel-spark-streaming-example
+spec:
+  type: Java
+  mode: cluster
+  image: seatunnel:2.3.3-spark-3.3.3
+  imagePullPolicy: Always
+  mainClass: org.apache.seatunnel.core.starter.spark.SeaTunnelSpark
+  mainApplicationFile: "local:///opt/seatunnel/starter/seatunnel-spark-3-starter.jar"
+  arguments: ["--config", "/data/seatunnel.streaming.conf"]
+  sparkVersion: "3.3.3"
+  restartPolicy:
+    type: Never
+  volumes:
+    - name: "test-volume"
+      hostPath:
+        path: "/tmp"
+        type: Directory
+  driver:
+    cores: 1
+    coreLimit: "1200m"
+    memory: "512m"
+    labels:
+      version: 3.1.1
+    serviceAccount: spark
+    configMaps:
+      - name: seatunnel-config
+        path: seatunnel.streaming.conf
+    volumeMounts:
+      - name: "test-volume"
+        mountPath: "/tmp"
+  executor:
+    cores: 1
+    instances: 1
+    memory: "512m"
+    labels:
+      version: 3.1.1
+    configMaps:
+      - name: seatunnel-config
+        path: seatunnel.streaming.conf
+    volumeMounts:
+      - name: "test-volume"
+        mountPath: "/tmp"
+```
+
+- Run the example application:
+```bash
+kubectl apply -f seatunnel-spark.yaml
+```
+</TabItem>
+
 <TabItem value="Zeta (local-mode)">
 
-In this guide we are going to use [seatunnel.streaming.conf](https://github.com/apache/seatunnel/blob/2.3.0-release/config/v2.streaming.conf.template):
-
-```conf
-env {
-  execution.parallelism = 2
-  job.mode = "STREAMING"
-  checkpoint.interval = 2000
-}
-
-source {
-  FakeSource {
-    parallelism = 2
-    result_table_name = "fake"
-    row.num = 16
-    schema = {
-      fields {
-        name = "string"
-        age = "int"
-      }
-    }
-  }
-}
-
-sink {
-  Console {
-  }
-}
-```
-
-Generate a configmap named seatunnel-config in Kubernetes for the seatunnel.streaming.conf so that we can mount the config content in pod.
-```bash
-kubectl create cm seatunnel-config \
---from-file=seatunnel.streaming.conf=seatunnel.streaming.conf
-```
 - Create `seatunnel.yaml`:
 ```yaml
 apiVersion: v1
@@ -360,46 +448,9 @@ spec:
 ```bash
 kubectl apply -f seatunnel.yaml
 ```
-
 </TabItem>
 
-
 <TabItem value="Zeta (cluster-mode)">
-
-In this guide we are going to use [seatunnel.streaming.conf](https://github.com/apache/seatunnel/blob/2.3.0-release/config/v2.streaming.conf.template):
-
-```conf
-env {
-  execution.parallelism = 2
-  job.mode = "STREAMING"
-  checkpoint.interval = 2000
-}
-
-source {
-  FakeSource {
-    parallelism = 2
-    result_table_name = "fake"
-    row.num = 16
-    schema = {
-      fields {
-        name = "string"
-        age = "int"
-      }
-    }
-  }
-}
-
-sink {
-  Console {
-  }
-}
-```
-
-Generate a configmap named seatunnel-config in Kubernetes for the seatunnel.streaming.conf so that we can mount the config content in pod.
-```bash
-kubectl create cm seatunnel-config \
---from-file=seatunnel.streaming.conf=seatunnel.streaming.conf
-```
 
 Then, we use the following command to load some configuration files used by the seatunnel cluster into the configmap
 
@@ -619,13 +670,14 @@ kubectl exec -it  seatunnel-0  -- /opt/seatunnel/bin/seatunnel.sh --config /data
 
 </Tabs>
 
-**See The Output**
+## See The Output
 
 <Tabs
   groupId="engine-type"
   defaultValue="Zeta (local-mode)"
   values={[
     {label: 'Flink', value: 'flink'},
+    {label: 'Spark', value: 'spark'},
     {label: 'Zeta (local-mode)', value: 'Zeta (local-mode)'},
     {label: 'Zeta (cluster-mode)', value: 'Zeta (cluster-mode)'},
   ]}>
@@ -686,12 +738,47 @@ kubectl delete -f seatunnel-flink.yaml
 ```
 </TabItem>
 
+<TabItem value="spark">
+
+You may follow the logs of your job, after a successful startup (which can take on the order of a minute in a fresh environment, seconds afterwards) you can:
+
+```bash
+kubectl logs -f seatunnel-spark-example-driver
+```
+looks like the below:
+
+```shell
+...
+23/11/13 04:52:45 INFO SparkContext: Running Spark version 3.3.3
+23/11/13 04:52:45 INFO ResourceUtils: ==============================================================
+23/11/13 04:52:45 INFO ResourceUtils: No custom resources configured for spark.driver.
+23/11/13 04:52:45 INFO ResourceUtils: ==============================================================
+23/11/13 04:52:45 INFO SparkContext: Submitted application: SeaTunnel
+23/11/13 04:52:45 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+23/11/13 04:52:45 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+23/11/13 04:52:45 INFO ResourceProfileManager: Added ResourceProfile id: 0
+```
+
+
+To expose the Spark UI you may add a port-forward rule:
+```bash
+kubectl port-forward svc/seatunnel-spark-example-ui-svc 4040
+```
+Now the Spark UI is accessible at [localhost:4040](http://localhost:4040).
+
+To stop your job and delete your Spark application you can simply:
+
+```bash
+kubectl delete -f seatunnel-spark.yaml
+```
+</TabItem>
+
 <TabItem value="Zeta (local-mode)">
 
 You may follow the logs of your job, after a successful startup (which can take on the order of a minute in a fresh environment, seconds afterwards) you can:
 
 ```bash
-kubectl logs -f  seatunnel
+kubectl logs -f seatunnel
 ```
 
 looks like the below (your content may be different since we use `FakeSource` to automatically generate random stream data):
@@ -723,7 +810,7 @@ looks like the below (your content may be different since we use `FakeSource` to
 
 ```
 
-To stop your job and delete your FlinkDeployment you can simply:
+To stop your job and delete your SeaTunnel Deployment you can simply:
 
 ```bash
 kubectl delete -f seatunnel.yaml
@@ -755,7 +842,7 @@ looks like the below (your content may be different since we use `FakeSource` to
 
 ```
 
-To stop your job and delete your FlinkDeployment you can simply:
+To stop your job and delete your SeaTunnel Deployment you can simply:
 
 ```bash
 kubectl delete -f  seatunnel-cluster.yaml
