@@ -29,7 +29,7 @@ Transform plugin common parameters, please refer to [Transform Plugin](common-op
 
 ## Examples
 
-The RowKink of the data generate by FakeSource is `INSERT`, If we use `FilterRowKink` transform and exclude the `INSERT` data, we will write zero rows into sink.
+The RowKink of the data generate by FakeSource is `INSERT`, If we use `FilterRowKind` transform and exclude the `INSERT` data, we will write zero rows into sink.
 
 ```yaml
 
