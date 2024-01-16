@@ -70,4 +70,4 @@ SeaTunnel enriches the <a href="https://landscape.cncf.io/card-mode?category=str
 
 ## What's More
 
-You can see [Quick Start](/docs/category/start-v2) for the next step.
+You can see [Quick Start](start-v2/locally/deployment.md) for the next step.
