@@ -54,7 +54,7 @@ function cloneRepo(repo: string, branch: string, targetPath: string) {
 }
 
 // Utility function to replace image paths
-function replaceImagesPath(replaceDir: string) {
+function replaceImagesPath(replaceDir: string, to: string = '/image_en') {
   for (const fileName of fs.readdirSync(replaceDir)) {
     const filePath = path.join(replaceDir, fileName);
     if (fs.statSync(filePath).isDirectory()) {
@@ -62,7 +62,7 @@ function replaceImagesPath(replaceDir: string) {
     } else if (filePath.endsWith('.md') || filePath.endsWith('.mdx')) {
       console.log(`  ---> Replace images path to /doc/image_en in ${filePath}`);
       let content = fs.readFileSync(filePath, 'utf-8');
-      content = content.replace(/(\.\.\/)*images/g, '/image_en');
+      content = content.replace(/(\.\.\/)*images/g, to);
       fs.writeFileSync(filePath, content);
     }
   }
@@ -87,17 +87,20 @@ function prepareDocs() {
   console.log(`===>>>: Rsync images to ${PROJECT_SITE_IMG_DIR}`);
   copySync(PROJECT_IMG_DIR, PROJECT_SITE_IMG_DIR, {});
 
-  // console.log(`===>>>: Rsync images to ${PROJECT_SITE_ZH_IMG_DIR}`);
-  // copySync(PROJECT_IMG_DIR, PROJECT_SITE_ZH_IMG_DIR, {});
+  console.log(`===>>>: Rsync images to ${PROJECT_SITE_ZH_IMG_DIR}`);
+  copySync(PROJECT_IMG_DIR, PROJECT_SITE_ZH_IMG_DIR, {});
 
   console.log(`===>>>: Rsync documents exclude images to ${PROJECT_SITE_DOC_DIR}`);
   copySync(PROJECT_DOC_DIR, PROJECT_SITE_DOC_DIR, { filter: (src) => !src.endsWith('images') });
 
   console.log(`===>>>: Rsync zh documents to ${PROJECT_ZH_DOC_DIR}`);
-  copySync(PROJECT_ZH_DOC_DIR, PROJECT_SITE_ZH_DOC_DIR);
+  copySync(PROJECT_ZH_DOC_DIR, PROJECT_SITE_ZH_DOC_DIR, { filter: (src) => !src.endsWith('images') });
 
   console.log(`===>>>: Replace images path in ${PROJECT_SITE_DOC_DIR}`);
   replaceImagesPath(PROJECT_SITE_DOC_DIR);
+
+  console.log(`===>>>: Replace images path in ${PROJECT_SITE_ZH_DOC_DIR}`);
+  replaceImagesPath(PROJECT_SITE_ZH_DOC_DIR, '/image_zh');
 
   console.log('===>>>: End documents sync');
 }
