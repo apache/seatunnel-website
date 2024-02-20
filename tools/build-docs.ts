@@ -21,10 +21,10 @@ const DOCUSAURUS_DOC_SIDEBARS_FILE = path.join(SOURCE_PATH, 'sidebars.js');
 
 // Determine protocol mode
 const PROTOCOL_MODE = process.env.PROTOCOL_MODE || 'HTTP';
-const PROJECT_REPO =
-  PROTOCOL_MODE === 'ssh'
-    ? `git@github.com:apache/${PROJECT_NAME}.git`
-    : `https://github.com/apache/${PROJECT_NAME}.git`;
+const PROJECT_REPO = 'https://github.com/baicie/seatunnel.git'
+// PROTOCOL_MODE === 'ssh'
+//   ? `git@github.com:apache/${PROJECT_NAME}.git`
+//   : `https://github.com/apache/${PROJECT_NAME}.git`;
 
 // Utility function to rebuild directories
 function rebuildDirs(...dirs: string[]) {
