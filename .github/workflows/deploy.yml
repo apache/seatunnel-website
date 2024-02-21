@@ -25,6 +25,7 @@ jobs:
           node-version: 16.19.0
       - name: install
         run: |
+          npm set strict-ssl false
           npm install
       - name: Documents Sync
         run: |
