@@ -23,13 +23,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 20
-      - name: Documents Sync
-        run: |
-          npm run sync
-        shell: bash
       - name: install
         run: |
           npm install
+      - name: Documents Sync
+        run: |
+          npm run sync
       - name: Build
         run: |
           npm run build
