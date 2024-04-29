@@ -62,6 +62,12 @@ const config = {
         ],
     ],
     themeConfig: ({
+        docs:{
+            sidebar:{
+                hideable:true,
+                autoCollapseCategories: true,
+            }
+        },
         announcementBar: {
             id: 'announcementBar', // Increment on change
             content: `🤔 Have queries regarding Apache SeaTunnel, Join Slack channel to discuss them join <a target="_blank" rel="noopener noreferrer" href="https://s.apache.org/seatunnel-slack">#SeaTunnel</a> channel! 🌟`,
@@ -69,7 +75,6 @@ const config = {
             isCloseable: false,
         },
         hideOnScroll: false, // Whether to hide the sidebar on scroll
-        hideableSidebar: true, // Whether to hide the sidebar in mobile
         colorMode: {
             defaultMode: 'light',
             disableSwitch: true
@@ -191,8 +196,7 @@ const config = {
                             to: "https://apache.org/foundation/policies/privacy.html",
                         },
                     ],
-                },
-
+                }, 
                 {
                     href: 'https://github.com/apache/incubator-seatunnel',
                     label: 'GitHub',
@@ -205,10 +209,10 @@ const config = {
                     position: 'right',
                     activeBaseRegex: `/security`,
                 },
-                // {
-                //     type: "localeDropdown",
-                //     position: "right",
-                // },
+                {
+                    type: "localeDropdown",
+                    position: "right",
+                },
             ],
         },
 
@@ -281,10 +285,6 @@ const config = {
             theme: require('prism-react-renderer/themes/dracula'),
             darkTheme: darkCodeTheme,
         },
-
-        // would collapse all sibling categories when expanding one category
-        autoCollapseSidebarCategories: true,
-
         // https://docusaurus.io/zh-CN/docs/search#connecting-algolia
         algolia: {
           // The application ID provided by Algolia
