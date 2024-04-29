@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[6980],{89520:e=>{e.exports=JSON.parse('{"label":"Hive","permalink":"/blog/tags/hive","allTagsPath":"/blog/tags","count":1}')}}]);

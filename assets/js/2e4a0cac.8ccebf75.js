@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[59248],{16564:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"The practice of SeaTunnel in Vip","permalink":"/user_cases/The-practice-of-SeaTunnel-in-Vip"}]}')}}]);

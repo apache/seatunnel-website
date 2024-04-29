@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[18790],{81116:e=>{e.exports=JSON.parse('{"permalink":"/blog/page/3","page":3,"postsPerPage":10,"totalPages":3,"totalCount":22,"previousPage":"/blog/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

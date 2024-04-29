@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[59325],{36134:e=>{e.exports=JSON.parse('{"label":"Release","permalink":"/zh-CN/blog/tags/release","allTagsPath":"/zh-CN/blog/tags","count":1}')}}]);

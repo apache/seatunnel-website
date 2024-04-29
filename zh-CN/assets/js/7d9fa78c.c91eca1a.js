@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[72305],{93688:function(a){a.exports=JSON.parse('{"allTagsPath":"/zh-CN/blog/tags","slug":"/zh-CN/blog/tags/kafka","name":"Kafka","count":1,"permalink":"/zh-CN/blog/tags/kafka"}')}}]);
