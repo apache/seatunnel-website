@@ -50,10 +50,10 @@
       "nextLink": "/docs/about",
       "latestData": [
         {
-          "versionLabel": "2.3.4",
-          "docUrl": "/docs/2.3.4/about",
-          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.4",
-          "sourceTag": "2.3.4"
+          "versionLabel": "2.3.5",
+          "docUrl": "/docs/2.3.5/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.5",
+          "sourceTag": "2.3.5"
         }
       ],
       "nextData": [
@@ -63,6 +63,12 @@
         }
       ],
       "historyData": [
+        {
+          "versionLabel": "2.3.5",
+          "docUrl": "/docs/2.3.5/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.5",
+          "sourceTag": "2.3.5"
+        },
         {
           "versionLabel": "2.3.4",
           "docUrl": "/docs/2.3.4/about",
