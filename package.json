@@ -15,7 +15,9 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "version": "npm run sync && docusaurus docs:version"
+    "image-copy":"tsx tools/image-copy.ts",
+    "version": "npm run sync && docusaurus docs:version",
+    "postversion": "npm run image-copy"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.3",
