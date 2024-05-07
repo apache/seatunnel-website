@@ -32,7 +32,7 @@ SeaTunnel专注于数据集成和数据同步，主要旨在解决数据集成�
 
 ## SeaTunnel work flowchart
 
-![SeaTunnel work flowchart](/image_zh/architecture_diagram.png)
+![SeaTunnel work flowchart](images/architecture_diagram.png)
 
 SeaTunnel的运行流程如上图所示。
 
@@ -60,7 +60,7 @@ SeaTunnel 拥有大量用户。 您可以在[用户](https://seatunnel.apache.or
 
 <p align="center">
 <br/><br/>
-<img src="https://landscape.cncf.io//image_zh/left-logo.svg" width="150" alt=""/>&nbsp;&nbsp;<img src="https://landscape.cncf.io//image_zh/right-logo.svg" width="200" alt=""/>
+<img src="https://landscape.cncf.io/images/left-logo.svg" width="150" alt=""/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200" alt=""/>
 <br/><br/>
 SeaTunnel 丰富了<a href="https://landscape.cncf.io/card-mode?category=streaming-messaging&license=apache-license-2-0&grouping=category&selected=sea-tunnal">CNCF 云原生景观</a >。
 </p >

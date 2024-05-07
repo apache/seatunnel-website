@@ -10,7 +10,7 @@ const config = {
     url: 'https://seatunnel.apache.org',
     baseUrl: '/',
     onBrokenLinks: 'ignore',
-    onBrokenMarkdownLinks: 'warn',
+    onBrokenMarkdownLinks: 'ignore',
     favicon: 'image/favicon.ico',
     organizationName: 'Apache SeaTunnel',
     projectName: 'Apache SeaTunnel',
@@ -307,8 +307,7 @@ const config = {
           // Optional: path for search page that enabled by default (`false` to disable it)
           searchPagePath: 'search',
           //... other Algolia params
-        },
-
+        }
     }),
     plugins: [
         'docusaurus-plugin-less',
