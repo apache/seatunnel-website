@@ -44,18 +44,17 @@ export const VERSION = readJsonSync(path.join(SOURCE_PATH, "versions.json"));
 export function replaceImagesPath(
   replaceDir: string,
   to: string = "/image_en",
-  form: string = "images"
+  from: string = "images"
 ) {
-  const regex = new RegExp(
-    `(\\.\\.\\/)*${form}(?!\\/[^\\/]*\\.(?:png|jpg|jpeg|gif|svg))`,
-    "g"
-  );
+  const regex = new RegExp(`(\\.\\.\\/)*${from}`, "g");
   for (const fileName of fs.readdirSync(replaceDir)) {
     const filePath = path.join(replaceDir, fileName);
     if (fs.statSync(filePath).isDirectory()) {
-      replaceImagesPath(filePath);
+      replaceImagesPath(filePath, to, from);
     } else if (filePath.endsWith(".md") || filePath.endsWith(".mdx")) {
-      console.log(`  ---> Replace images path to ${to} in ${filePath}`);
+      console.log(
+        `  ---> Replace images path form ${from} to ${to} in ${filePath}`
+      );
       let content = fs.readFileSync(filePath, "utf-8");
       content = content.replace(regex, to);
       fs.writeFileSync(filePath, content);
