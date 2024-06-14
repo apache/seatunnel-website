@@ -6,6 +6,7 @@
       "security_team": "Apache Security Team",
       "security_p_two": " by dropping a mail at ",
       "security_p_three": " In the mail, specify the project name SeaTunnel with the description of the issue or potential threat. You are also urged to recommend the way to reproduce and replicate the issue. The security team and the SeaTunnel community will get back to you after assessing and analysing the findings.",
+      "security_p_notice": "Before using SeaTunnel, please review the usage documentation to ensure you understand the purpose and impact of each operation.",
       "tip": "PLEASE PAY ATTENTION to report the security issue on the security email before disclosing it on public domain."
     }
   }
