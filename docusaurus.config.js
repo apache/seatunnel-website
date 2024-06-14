@@ -1,274 +1,265 @@
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-const versions = require('./versions.json');
-const st_web_versions = require('./seatunnel_web_versions.json');
+const versions = require("./versions.json");
+const st_web_versions = require("./seatunnel_web_versions.json");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Apache SeaTunnel',
-    tagline: 'Dinosaurs are cool',
-    url: 'https://seatunnel.apache.org',
-    baseUrl: '/',
-    onBrokenLinks: 'ignore',
-    onBrokenMarkdownLinks: 'ignore',
-    favicon: 'image/favicon.ico',
-    organizationName: 'Apache SeaTunnel',
-    projectName: 'Apache SeaTunnel',
-    i18n: {
-        defaultLocale: "en",
-        locales: ["en", "zh-CN"],
-        localeConfigs: {
-            en: {
-                label: "English",
-                direction: 'ltr',
-            },
-            'zh-CN': {
-                label: "简体中文",
-                direction: 'ltr',
-            },
-        },
+  title: "Apache SeaTunnel",
+  tagline: "Dinosaurs are cool",
+  url: "https://seatunnel.apache.org",
+  baseUrl: "/",
+  onBrokenLinks: "ignore",
+  onBrokenMarkdownLinks: "ignore",
+  favicon: "image/favicon.ico",
+  organizationName: "Apache SeaTunnel",
+  projectName: "Apache SeaTunnel",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "zh-CN"],
+    localeConfigs: {
+      en: {
+        label: "English",
+        direction: "ltr",
+      },
+      "zh-CN": {
+        label: "简体中文",
+        direction: "ltr",
+      },
     },
-    presets: [
-        [
-            'classic',
-            ({
-                docs: {
-                    path: 'docs',
-                    routeBasePath: 'docs',
-                    sidebarPath: require.resolve('./sidebars.js'),
-                    sidebarCollapsible: true,
-                    editLocalizedFiles: true,
-                    // Please change this to your repo.
-                    editUrl: 'https://github.com/apache/incubator-seatunnel-website/edit/main/',
-                    versions: {
-                        current: {
-                            path: '',
-                        },
-                        [versions[0]]: {
-                            path: versions[0],
-                        }
-                    }
-                },
-                blog: {
-                    showReadingTime: true,
-                    // Please change this to your repo.
-                    editUrl:
-                        'https://github.com/apache/incubator-seatunnel-website/edit/main/',
-                },
-                theme: {
-                    customCss: require.resolve('./src/css/custom.css'),
-                },
-            }),
-        ],
-    ],
-    themeConfig: ({
-        docs:{
-            sidebar:{
-                hideable:true,
-                autoCollapseCategories: true,
-            }
-        },
-        announcementBar: {
-            id: 'announcementBar', // Increment on change
-            content: `🤔 Have queries regarding Apache SeaTunnel, Join Slack channel to discuss them join <a target="_blank" rel="noopener noreferrer" href="https://s.apache.org/seatunnel-slack">#SeaTunnel</a> channel! 🌟`,
-            backgroundColor: "rgb(70, 125, 175, 0.8)",
-            isCloseable: false,
-        },
-        hideOnScroll: false, // Whether to hide the sidebar on scroll
-        colorMode: {
-            defaultMode: 'light',
-            disableSwitch: true
-        },
-        navbar: {
-            title: 'Apache SeaTunnel',
-            logo: {
-                alt: 'Apache SeaTunnel Logo',
-                src: 'image/logo.png',
+  },
+  presets: [
+    [
+      "classic",
+      {
+        docs: {
+          path: "docs",
+          routeBasePath: "docs",
+          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarCollapsible: true,
+          editLocalizedFiles: true,
+          // Please change this to your repo.
+          editUrl:
+            "https://github.com/apache/incubator-seatunnel-website/edit/main/",
+          versions: {
+            current: {
+              path: "",
             },
-            items: [
-                {
-                    to: '/',
-                    position: 'right',
-                    label: 'Home',
-                    activeBaseRegex: `^/$`,
-                },
-                {
-                    position: 'right',
-                    label: 'Document',
-                    items: [
-                        ...versions.slice(0, versions.length - 2).map((version) => ({
-                            label: version,
-                            to: (version >= '2.3.0') ? `docs/${version}/about` : `docs/${version}/intro/about`,
-                        })),
-                        ...versions.slice(versions.length - 2, versions.length).map((version) => ({
-                            label: (version === "1.x") ? "1.x(Not Apache Release)" : version,
-                            to: `docs/${version}/introduction`,
-                        })),
-                        {
-                            label: "Next",
-                            to: "/docs/about",
-                        },
-                        {
-                            label: "All versions",
-                            to: "/versions/",
-                        }
-                    ]
-                },
-                {
-                    position: 'right',
-                    label: 'SeaTunnel Web Document',
-                    items: [
-                        ...st_web_versions.slice(0, st_web_versions.length).map((version) => ({
-                            label: version,
-                            to: `seatunnel_web/${version}/about`,
-                        })),
-                        {
-                            label: "Next",
-                            to: "/seatunnel_web/next/about",
-                        }
-                    ]
-                },
-                {
-                    to: '/download',
-                    position: 'right',
-                    label: 'Download',
-                    activeBaseRegex: `/download`,
-                },
-                {
-                    label: 'Community',
-                    position: 'right',
-                    to: '/community/contribution_guide/contribute'
-                },
-                {
-                    to: '/blog',
-                    label: 'Blog',
-                    position: 'right',
-                    activeBaseRegex: `/blog`,
-                },
-                {
-                    to: '/user_cases',
-                    label: 'UserCases',
-                    position: 'right',
-                    activeBaseRegex: `/user_cases`,
-                },
-                {
-                    to: '/team',
-                    label: 'Team',
-                    position: 'right',
-                    activeBaseRegex: `/team`,
-                },
-                {
-                    to: '/user',
-                    label: 'Users',
-                    position: 'right',
-                    activeBaseRegex: `/user/`,
-                },
-                {
-                    label: 'ASF',
-                    position: 'right',
-                    items: [
-                        {
-                            label: "Foundation",
-                            to: "https://www.apache.org/",
-                        },
-                        {
-                            label: "License",
-                            to: "https://www.apache.org/licenses/",
-                        },
-                        {
-                            label: "Events",
-                            to: "https://www.apache.org/events/current-event",
-                        },
-                        {
-                            label: "Security",
-                            to: "https://www.apache.org/security/",
-                        },
-                        {
-                            label: "Sponsorship",
-                            to: "https://www.apache.org/foundation/sponsorship.html",
-                        },
-                        {
-                            label: "Thanks",
-                            to: "https://www.apache.org/foundation/thanks.html",
-                        },
-                        {
-                            label: "Privacy",
-                            to: "https://apache.org/foundation/policies/privacy.html",
-                        },
-                    ],
-                }, 
-                {
-                    href: 'https://github.com/apache/incubator-seatunnel',
-                    label: 'GitHub',
-                    position: 'right',
-                },
-
-                {
-                    to: '/security',
-                    label: 'Security',
-                    position: 'right',
-                    activeBaseRegex: `/security`,
-                },
-                {
-                    type: "localeDropdown",
-                    position: "right",
-                },
-            ],
+            [versions[0]]: {
+              path: versions[0],
+            },
+          },
+        },
+        blog: {
+          showReadingTime: true,
+          // Please change this to your repo.
+          editUrl:
+            "https://github.com/apache/incubator-seatunnel-website/edit/main/",
+        },
+        theme: {
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      },
+    ],
+  ],
+  themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
+    announcementBar: {
+      id: "announcementBar", // Increment on change
+      content: `🤔 Have queries regarding Apache SeaTunnel, Join Slack channel to discuss them join <a target="_blank" rel="noopener noreferrer" href="https://s.apache.org/seatunnel-slack">#SeaTunnel</a> channel! 🌟`,
+      backgroundColor: "rgb(70, 125, 175, 0.8)",
+      isCloseable: false,
+    },
+    hideOnScroll: false, // Whether to hide the sidebar on scroll
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+    },
+    navbar: {
+      title: "Apache SeaTunnel",
+      logo: {
+        alt: "Apache SeaTunnel Logo",
+        src: "image/logo.png",
+      },
+      items: [
+        {
+          to: "/",
+          position: "right",
+          label: "Home",
+          activeBaseRegex: `^/$`,
+        },
+        {
+          position: "right",
+          label: "Document",
+          items: [
+            ...versions.slice(0, versions.length - 2).map((version) => ({
+              label: version,
+              to:
+                version >= "2.3.0"
+                  ? `docs/${version}/about`
+                  : `docs/${version}/intro/about`,
+            })),
+            ...versions
+              .slice(versions.length - 2, versions.length)
+              .map((version) => ({
+                label: version === "1.x" ? "1.x(Not Apache Release)" : version,
+                to: `docs/${version}/introduction`,
+              })),
+            {
+              label: "Next",
+              to: "/docs/about",
+            },
+            {
+              label: "All versions",
+              to: "/versions/",
+            },
+          ],
+        },
+        {
+          to: "/download",
+          position: "right",
+          label: "Download",
+          activeBaseRegex: `/download`,
+        },
+        {
+          label: "Community",
+          position: "right",
+          to: "/community/contribution_guide/contribute",
+        },
+        {
+          to: "/blog",
+          label: "Blog",
+          position: "right",
+          activeBaseRegex: `/blog`,
+        },
+        {
+          to: "/user_cases",
+          label: "UserCases",
+          position: "right",
+          activeBaseRegex: `/user_cases`,
+        },
+        {
+          to: "/team",
+          label: "Team",
+          position: "right",
+          activeBaseRegex: `/team`,
+        },
+        {
+          to: "/user",
+          label: "Users",
+          position: "right",
+          activeBaseRegex: `/user/`,
+        },
+        {
+          label: "ASF",
+          position: "right",
+          items: [
+            {
+              label: "Foundation",
+              to: "https://www.apache.org/",
+            },
+            {
+              label: "License",
+              to: "https://www.apache.org/licenses/",
+            },
+            {
+              label: "Events",
+              to: "https://www.apache.org/events/current-event",
+            },
+            {
+              label: "Security",
+              to: "https://www.apache.org/security/",
+            },
+            {
+              label: "Sponsorship",
+              to: "https://www.apache.org/foundation/sponsorship.html",
+            },
+            {
+              label: "Thanks",
+              to: "https://www.apache.org/foundation/thanks.html",
+            },
+            {
+              label: "Privacy",
+              to: "https://apache.org/foundation/policies/privacy.html",
+            },
+          ],
+        },
+        {
+          href: "https://github.com/apache/incubator-seatunnel",
+          label: "GitHub",
+          position: "right",
         },
 
-        footer: {
-            style: 'light',
-            links: [
-                {
-                    title: 'SeaTunnel',
-                    items: [
-                        {
-                            label: 'FAQ',
-                            href: '/docs/faq',
-                        },
-                        {
-                            label: 'Releases',
-                            href: 'https://github.com/apache/incubator-seatunnel/releases',
-                        },
-                    ],
-                },
-                {
-                    title: 'Community',
-                    items: [
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/apache/incubator-seatunnel',
-                        },
-                        {
-                            label: 'Issue Tracker',
-                            href: 'https://github.com/apache/incubator-seatunnel/issues',
-                        },
-                        {
-                            label: 'Pull Requests',
-                            href: 'https://github.com/apache/incubator-seatunnel/pulls',
-                        },
-                    ],
-                },
-                {
-                    title: 'Subscribe Mailing List',
-                    items: [
-                        {
-                            label: 'How to Subscribe',
-                            to: '/community/contribution_guide/subscribe',
-                        },
-                        {
-                            label: 'Subscribe Mail',
-                            href: 'mailto:dev-subscribe@seatunnel.apache.org',
-                        },
-                        {
-                            label: 'Mail Archive',
-                            href: 'https://lists.apache.org/list.html?dev@seatunnel.apache.org',
-                        },
-                    ],
-                },
+        {
+          to: "/security",
+          label: "Security",
+          position: "right",
+          activeBaseRegex: `/security`,
+        },
+        {
+          type: "localeDropdown",
+          position: "right",
+        },
+      ],
+    },
 
-            ],
-            copyright: `
+    footer: {
+      style: "light",
+      links: [
+        {
+          title: "SeaTunnel",
+          items: [
+            {
+              label: "FAQ",
+              href: "/docs/faq",
+            },
+            {
+              label: "Releases",
+              href: "https://github.com/apache/incubator-seatunnel/releases",
+            },
+          ],
+        },
+        {
+          title: "Community",
+          items: [
+            {
+              label: "GitHub",
+              href: "https://github.com/apache/incubator-seatunnel",
+            },
+            {
+              label: "Issue Tracker",
+              href: "https://github.com/apache/incubator-seatunnel/issues",
+            },
+            {
+              label: "Pull Requests",
+              href: "https://github.com/apache/incubator-seatunnel/pulls",
+            },
+          ],
+        },
+        {
+          title: "Subscribe Mailing List",
+          items: [
+            {
+              label: "How to Subscribe",
+              to: "/community/contribution_guide/subscribe",
+            },
+            {
+              label: "Subscribe Mail",
+              href: "mailto:dev-subscribe@seatunnel.apache.org",
+            },
+            {
+              label: "Mail Archive",
+              href: "https://lists.apache.org/list.html?dev@seatunnel.apache.org",
+            },
+          ],
+        },
+      ],
+      copyright: `
             <div style="margin-top: 20px;background: #f4f8fa">
                 <img style="height:50px;margin: 30px 0 10px;" alt="Apache Software Foundation" src="/image/asf_logo_wide.svg" />
                 <div style="border-top: 1px solid #ccc;min-height: 60px;line-height: 20px;text-align: center;font-family: Avenir-Medium;font-size: 14px;color: #999;display: flex;align-items: center;"><span>Copyright © 2021-${new Date().getFullYear()} The Apache Software Foundation. Apache SeaTunnel, SeaTunnel, and its feather logo are trademarks of The Apache Software Foundation.</span></div>
@@ -279,80 +270,81 @@ const config = {
                     <a href="https://github.com/apache/seatunnel" target="_blank" title="GitHub" style="margin-left: 20px;"><svg t="1644553223000" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6156" width="36" height="36"><path d="M512 12.64c-282.752 0-512 229.216-512 512 0 226.208 146.72 418.144 350.144 485.824 25.6 4.736 35.008-11.104 35.008-24.64 0-12.192-0.48-52.544-0.704-95.328-142.464 30.976-172.512-60.416-172.512-60.416-23.296-59.168-56.832-74.912-56.832-74.912-46.464-31.776 3.52-31.136 3.52-31.136 51.392 3.616 78.464 52.768 78.464 52.768 45.664 78.272 119.776 55.648 148.992 42.56 4.576-33.088 17.856-55.68 32.512-68.48-113.728-12.928-233.28-56.864-233.28-253.024 0-55.904 20-101.568 52.768-137.44-5.312-12.896-22.848-64.96 4.96-135.488 0 0 43.008-13.76 140.832 52.48a491.296 491.296 0 0 1 128.16-17.248c43.488 0.192 87.328 5.888 128.256 17.248 97.728-66.24 140.64-52.48 140.64-52.48 27.872 70.528 10.336 122.592 5.024 135.488 32.832 35.84 52.704 81.536 52.704 137.44 0 196.64-119.776 239.936-233.792 252.64 18.368 15.904 34.72 47.04 34.72 94.816 0 68.512-0.608 123.648-0.608 140.512 0 13.632 9.216 29.6 35.168 24.576C877.472 942.624 1024 750.784 1024 524.64c0-282.784-229.248-512-512-512z" p-id="6157" fill="#909094"></path></svg></a> 
                 </div>
             <div>`,
-        },
+    },
 
-        prism: {
-            theme: require('prism-react-renderer/themes/dracula'),
-            darkTheme: darkCodeTheme,
-        },
-        // https://docusaurus.io/zh-CN/docs/search#connecting-algolia
-        algolia: {
-          // The application ID provided by Algolia
-          appId: 'S2J1A7LWND',
-          // Public API key: it is safe to commit it
-          apiKey: 'a19997f611a73120d7dfb30af9db4d3a',
-          indexName: 'seatunnel-apache',
+    prism: {
+      theme: require("prism-react-renderer/themes/dracula"),
+      darkTheme: darkCodeTheme,
+    },
+    // https://docusaurus.io/zh-CN/docs/search#connecting-algolia
+    algolia: {
+      // The application ID provided by Algolia
+      appId: "S2J1A7LWND",
+      // Public API key: it is safe to commit it
+      apiKey: "a19997f611a73120d7dfb30af9db4d3a",
+      indexName: "seatunnel-apache",
 
-          // Optional: see doc section below
-          contextualSearch: true,
-          // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-          externalUrlRegex: 'seatunnel\\.apache\\.org',
-          // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-          replaceSearchResultPathname: {
-            from: '/docs/', // or as RegExp: /\/docs\//
-            to: '/',
+      // Optional: see doc section below
+      contextualSearch: true,
+      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+      externalUrlRegex: "seatunnel\\.apache\\.org",
+      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+      replaceSearchResultPathname: {
+        from: "/docs/", // or as RegExp: /\/docs\//
+        to: "/",
+      },
+      // Optional: Algolia search parameters
+      searchParameters: {},
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: "search",
+      //... other Algolia params
+    },
+  },
+  plugins: [
+    "docusaurus-plugin-less",
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "seatunnel_web",
+        path: "seatunnel_web",
+        routeBasePath: "seatunnel_web",
+        sidebarCollapsible: true,
+        editLocalizedFiles: true,
+        // Please change this to your repo.
+        editUrl:
+          "https://github.com/apache/incubator-seatunnel-website/edit/main/",
+        versions: {
+          [st_web_versions[0]]: {
+            path: st_web_versions[0],
           },
-          // Optional: Algolia search parameters
-          searchParameters: {},
-          // Optional: path for search page that enabled by default (`false` to disable it)
-          searchPagePath: 'search',
-          //... other Algolia params
-        }
-    }),
-    plugins: [
-        'docusaurus-plugin-less',
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'seatunnel_web',
-                path: 'seatunnel_web',
-                routeBasePath: 'seatunnel_web',
-                sidebarCollapsible: true,
-                editLocalizedFiles: true,
-                // Please change this to your repo.
-                editUrl: 'https://github.com/apache/incubator-seatunnel-website/edit/main/',
-                versions: {
-                    [st_web_versions[0]]: {
-                        path: st_web_versions[0],
-                    }
-                },
-                sidebarPath: require.resolve('./sidebarsSeaTunnelWeb.js'),
-            },
-        ],
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'community',
-                path: 'community',
-                routeBasePath: 'community',
-                editUrl: ({locale, versionDocsDirPath, docPath}) => {
-                    if (locale !== 'en') {
-                        return `https://github.com/apache/incubator-seatunnel-website/edit/main/i18n/${locale}/${docPath}`;
-                    }
-                    return `https://github.com/apache/incubator-seatunnel-website/edit/main/${versionDocsDirPath}/${docPath}`;
-                },
-                sidebarPath: require.resolve('./sidebarsCommunity.js'),
-            },
-        ],
-        [
-            '@docusaurus/plugin-content-blog',
-            {
-                id: 'user_cases',
-                path: 'user_cases',
-                routeBasePath: 'user_cases',
-            },
-        ],
+        },
+        sidebarPath: require.resolve("./sidebarsSeaTunnelWeb.js"),
+      },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "community",
+        path: "community",
+        routeBasePath: "community",
+        editUrl: ({ locale, versionDocsDirPath, docPath }) => {
+          if (locale !== "en") {
+            return `https://github.com/apache/incubator-seatunnel-website/edit/main/i18n/${locale}/${docPath}`;
+          }
+          return `https://github.com/apache/incubator-seatunnel-website/edit/main/${versionDocsDirPath}/${docPath}`;
+        },
+        sidebarPath: require.resolve("./sidebarsCommunity.js"),
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        id: "user_cases",
+        path: "user_cases",
+        routeBasePath: "user_cases",
+      },
+    ],
+  ],
 };
 
 module.exports = config;
