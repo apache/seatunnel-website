@@ -166,6 +166,14 @@
         "gitUrl": "https://github.com/ic4y",
         "githubId": "ic4y",
         "name": "Li Liu"
+      },
+      {
+        "apacheId": "liugddx",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/48236177?v=4",
+        "email": "liugddx@apache.org",
+        "gitUrl": "https://github.com/liugddx",
+        "githubId": "liugddx",
+        "name": "Guangdong Liu"
       }
     ],
     "committer": [
@@ -216,14 +224,6 @@
         "gitUrl": "https://github.com/ashulin",
         "githubId": "ashulin",
         "name": "Zongwen Li"
-      },
-      {
-        "apacheId": "liugddx",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/48236177?v=4",
-        "email": "liugddx@apache.org",
-        "gitUrl": "https://github.com/liugddx",
-        "githubId": "liugddx",
-        "name": "Guangdong Liu"
       },
       {
         "apacheId": "zhouyao2023",
