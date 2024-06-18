@@ -172,10 +172,6 @@ const config = {
               to: "https://www.apache.org/events/current-event",
             },
             {
-              label: "Security",
-              to: "https://www.apache.org/security/",
-            },
-            {
               label: "Sponsorship",
               to: "https://www.apache.org/foundation/sponsorship.html",
             },
