@@ -177,11 +177,7 @@ seatunnel:
       interval: 6000
       timeout: 7000
       storage:
-        type: hdfs
-        max-retained: 3
-        plugin-config:
-          storage.type: hdfs
-          fs.defaultFS: file:/// # Ensure that the directory has written permission 
-
+        type: localfile
+        max-retained: 3 #ocalfile (native local file) is the default, Default is in the current directory
 ```
 
