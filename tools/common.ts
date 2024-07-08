@@ -26,7 +26,7 @@ export const PROJECT_SITE_ZH_DOC_DIR = path.join(
   "current"
 );
 export const PROJECT_DIR = path.join(SWAP_DIR, PROJECT_NAME);
-export const PROJECT_IMG_DIR = path.join(PROJECT_DIR, "docs", "en", "images");
+export const PROJECT_IMG_DIR = path.join(PROJECT_DIR, "docs", "images");
 export const PROJECT_DOC_DIR = path.join(PROJECT_DIR, "docs", "en");
 export const PROJECT_ZH_DOC_DIR = path.join(PROJECT_DIR, "docs", "zh");
 export const PROJECT_SIDEBAR_PATH = path.join(
