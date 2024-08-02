@@ -37,13 +37,13 @@ export default function () {
                                         <td>
                                             <a href={st_item.binaryDistribution.bin}>[bin] {getLastPath(st_item.binaryDistribution.bin)}</a>
                                             <a href={st_item.binaryDistribution.asc}>[asc] {getLastPath(st_item.binaryDistribution.asc)}</a>
-                                            <hr />
+                                            <hr/>
                                             <a href={st_item.binaryDistribution.sha512}>[sha512] {getLastPath(st_item.binaryDistribution.sha512)}</a>
                                         </td>
                                         <td>
                                             <a href={st_item.sourceCode.src}>[src] {getLastPath(st_item.sourceCode.src)}</a>
                                             <a href={st_item.sourceCode.asc}>[asc] {getLastPath(st_item.sourceCode.asc)}</a>
-                                            <hr />
+                                            <hr/>
                                             <a href={st_item.sourceCode.sha512}>[sha512] {getLastPath(st_item.sourceCode.sha512)}</a>
                                         </td>
                                     </tr>
@@ -53,6 +53,7 @@ export default function () {
                         </tbody>
                     </table>
                     <h2>SeaTunnel Web</h2>
+                    <p>WARNING: SeaTunnel Web is an experimental project and is not yet production ready.</p>
                     <table className="version-table">
                         <thead>
                         <tr>
@@ -72,13 +73,13 @@ export default function () {
                                         <td>
                                             <a href={st_web_item.binaryDistribution.bin}>[bin] {getLastPath(st_web_item.binaryDistribution.bin)}</a>
                                             <a href={st_web_item.binaryDistribution.asc}>[asc] {getLastPath(st_web_item.binaryDistribution.asc)}</a>
-                                            <hr />
+                                            <hr/>
                                             <a href={st_web_item.binaryDistribution.sha512}>[sha512] {getLastPath(st_web_item.binaryDistribution.sha512)}</a>
                                         </td>
                                         <td>
                                             <a href={st_web_item.sourceCode.src}>[src] {getLastPath(st_web_item.sourceCode.src)}</a>
                                             <a href={st_web_item.sourceCode.asc}>[asc] {getLastPath(st_web_item.sourceCode.asc)}</a>
-                                            <hr />
+                                            <hr/>
                                             <a href={st_web_item.sourceCode.sha512}>[sha512] {getLastPath(st_web_item.sourceCode.sha512)}</a>
                                         </td>
                                     </tr>
@@ -87,8 +88,6 @@ export default function () {
                         }
                         </tbody>
                     </table>
-                    <h2>Historical versions of non-Apache</h2>
-                    <a href="https://github.com/apache/incubator-seatunnel/releases">Historical versions</a>
                 </div>
             </div>
         </Layout>

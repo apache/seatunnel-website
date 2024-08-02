@@ -14,46 +14,10 @@
       "nextLink": "/docs/intro/about",
       "latestData": [
         {
-          "versionLabel": "2.1.0",
-          "docUrl": "/docs/2.1.0/introduction",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.1.0",
-          "sourceTag": "2.1.0"
-        }
-      ],
-      "nextData": [
-        {
-          "versionLabel": "Next",
-          "docUrl": "/docs/intro/about"
-        }
-      ],
-      "historyData": [
-        {
-          "versionLabel": "2.1.0",
-          "docUrl": "/docs/2.1.0/introduction",
-          "sourceTag": "2.1.0"
-        }
-      ]
-    }
-  },
-  "en": {
-    "title": "Apache SeaTunnel all document versions",
-    "latestVersion": "This is the current document version",
-    "latestVersionExplain": "Here you can find the currently published version of the document",
-    "nextVersion": "This is an unpublished document version",
-    "nextVersionExplain": "Here you can find the unpublished version of the document",
-    "historyVersion": "This is the previously published version of the document",
-    "historyVersionExplain": "Here you can find the previously published version of the document",
-    "table": {
-      "doc": "Document",
-      "source": "Source Code",
-      "release": "Release Note",
-      "nextLink": "/docs/about",
-      "latestData": [
-        {
-          "versionLabel": "2.3.5",
-          "docUrl": "/docs/2.3.5/about",
-          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.5",
-          "sourceTag": "2.3.5"
+          "versionLabel": "2.3.6",
+          "docUrl": "/docs/2.3.6/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.6",
+          "sourceTag": "2.3.6"
         }
       ],
       "nextData": [
@@ -63,6 +27,12 @@
         }
       ],
       "historyData": [
+        {
+          "versionLabel": "2.3.6",
+          "docUrl": "/docs/2.3.6/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.6",
+          "sourceTag": "2.3.6"
+        },
         {
           "versionLabel": "2.3.5",
           "docUrl": "/docs/2.3.5/about",
@@ -98,49 +68,79 @@
           "docUrl": "/docs/2.3.0/about",
           "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.3.0",
           "sourceTag": "2.3.0"
-        },
+        }
+      ]
+    }
+  },
+  "en": {
+    "title": "Apache SeaTunnel all document versions",
+    "latestVersion": "This is the current document version",
+    "latestVersionExplain": "Here you can find the currently published version of the document",
+    "nextVersion": "This is an unpublished document version",
+    "nextVersionExplain": "Here you can find the unpublished version of the document",
+    "historyVersion": "This is the previously published version of the document",
+    "historyVersionExplain": "Here you can find the previously published version of the document",
+    "table": {
+      "doc": "Document",
+      "source": "Source Code",
+      "release": "Release Note",
+      "nextLink": "/docs/about",
+      "latestData": [
         {
-          "versionLabel": "2.3.0-beta",
-          "docUrl": "/docs/2.3.0-beta/intro/about",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.3.0-beta",
-          "sourceTag": "2.3.0-beta"
-        },
-        {
-          "versionLabel": "2.2.0-beta",
-          "docUrl": "/docs/2.2.0-beta/intro/about",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.2.0-beta",
-          "sourceTag": "2.2.0-beta"
-        },
-        {
-          "versionLabel": "2.1.3",
-          "docUrl": "/docs/2.1.3/intro/about",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.1.3",
-          "sourceTag": "2.1.3"
-        },
-        {
-          "versionLabel": "2.1.2",
-          "docUrl": "/docs/2.1.2/intro/about",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.1.2",
-          "sourceTag": "2.1.2"
-        },
-        {
-          "versionLabel": "2.1.1",
-          "docUrl": "/docs/2.1.1/intro/about",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.1.1",
-          "sourceTag": "2.1.1"
-        },
-        {
-          "versionLabel": "2.1.0",
-          "docUrl": "/docs/2.1.0/introduction",
-          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.1.0",
-          "sourceTag": "2.1.0"
+          "versionLabel": "2.3.6",
+          "docUrl": "/docs/2.3.6/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.6",
+          "sourceTag": "2.3.6"
         }
       ],
-      "historyData1.x": [
+      "nextData": [
         {
-          "versionLabel": "1.x",
-          "docUrl": "/docs/1.x/introduction",
-          "sourceTag": "1.x"
+          "versionLabel": "Next",
+          "docUrl": "/docs/about"
+        }
+      ],
+      "historyData": [
+        {
+          "versionLabel": "2.3.6",
+          "docUrl": "/docs/2.3.6/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.6",
+          "sourceTag": "2.3.6"
+        },
+        {
+          "versionLabel": "2.3.5",
+          "docUrl": "/docs/2.3.5/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.5",
+          "sourceTag": "2.3.5"
+        },
+        {
+          "versionLabel": "2.3.4",
+          "docUrl": "/docs/2.3.4/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.4",
+          "sourceTag": "2.3.4"
+        },
+        {
+          "versionLabel": "2.3.3",
+          "docUrl": "/docs/2.3.3/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.3",
+          "sourceTag": "2.3.3"
+        },
+        {
+          "versionLabel": "2.3.2",
+          "docUrl": "/docs/2.3.2/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.2",
+          "sourceTag": "2.3.2"
+        },
+        {
+          "versionLabel": "2.3.1",
+          "docUrl": "/docs/2.3.1/about",
+          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.3.1",
+          "sourceTag": "2.3.1"
+        },
+        {
+          "versionLabel": "2.3.0",
+          "docUrl": "/docs/2.3.0/about",
+          "downloadUrl": "https://github.com/apache/incubator-seatunnel/releases/tag/2.3.0",
+          "sourceTag": "2.3.0"
         }
       ]
     }
