@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-[English](README.md) | [中文](README_ZH.md)
+[English](README.md) | [中文](README_ZH.md) | [日本語](README_JP.md)
 
 This is the repository containing all the source code of `https://seatunnel.apache.org`.
 This guide will guide you how to contribute to the SeaTunnel website.
