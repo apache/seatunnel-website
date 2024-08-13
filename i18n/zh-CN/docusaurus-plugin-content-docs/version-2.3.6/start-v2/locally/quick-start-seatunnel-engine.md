@@ -94,6 +94,12 @@ SeaTunnel控制台将会打印一些如下日志信息:
 2022-12-19 11:01:46,491 INFO  org.apache.seatunnel.connectors.seatunnel.console.sink.ConsoleSinkWriter - subtaskIndex=0 rowIndex=16: SeaTunnelRow#tableId=-1 SeaTunnelRow#kind=INSERT: mIJDt, 995616438
 ```
 
+## 扩展Demo：MySQL To Doris
+
+
+
+
+
 ## 此外
 
 现在,您已经快速浏览了SeaTunnel，可以通过[连接器](../../../en/connector-v2/source/FakeSource.md)来找到SeaTunnel所支持的所有sources和sinks。
