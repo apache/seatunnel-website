@@ -110,6 +110,10 @@ sh bin/install-plugin.sh
 ## 步骤3：添加作业配置文件来定义作业
 
 ```bash
+cd seatunnel/job/
+
+vim st.conf
+
 env {
   parallelism = 2
   job.mode = "BATCH"
@@ -143,6 +147,40 @@ sink {
 }
 ```
 
+关于配置的更多信息请查看[配置的基本概念](../../concept/config.md)
+
+## 步骤 4: 运行SeaTunnel应用程序
+
+您可以通过以下命令启动应用程序：
+
+:::tip
+
+从2.3.1版本开始，seatunnel.sh中的-e参数被废弃，请改用-m参数。
+
+:::
+
+```shell
+cd seatunnel/
+./bin/seatunnel.sh --config ./job/st.conf -m local
+
+```
+
+**查看输出**: 当您运行该命令时，您可以在控制台中看到它的输出。您可以认为这是命令运行成功或失败的标志。
+
+SeaTunnel控制台将会打印一些如下日志信息:
+
+```shell
+***********************************************
+           Job Statistic Information
+***********************************************
+Start Time                : 2024-08-13 10:21:49
+End Time                  : 2024-08-13 10:21:53
+Total Time(s)             :                   4
+Total Read Count          :                1000
+Total Write Count         :                1000
+Total Failed Count        :                   0
+***********************************************
+```
 
 ## 此外
 
