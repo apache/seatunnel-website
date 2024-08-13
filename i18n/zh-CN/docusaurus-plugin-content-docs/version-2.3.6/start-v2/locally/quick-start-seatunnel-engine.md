@@ -94,10 +94,54 @@ SeaTunnel控制台将会打印一些如下日志信息:
 2022-12-19 11:01:46,491 INFO  org.apache.seatunnel.connectors.seatunnel.console.sink.ConsoleSinkWriter - subtaskIndex=0 rowIndex=16: SeaTunnelRow#tableId=-1 SeaTunnelRow#kind=INSERT: mIJDt, 995616438
 ```
 
-## 扩展Demo：MySQL To Doris
+## 扩展示例：从 MySQL 到 Doris 批处理模式
 
+## 步骤1：下载插件
+首先放入所需插件`connector-jdbc`、`connector-doris`到`${SEATUNNEL_HOME}/connectors/`目录下，您需要执行以下命令来安装连接器并且需要在`${SEATUNNEL_HOME}/config/plugin_config`目录下加入插件名称：(当然，您也可以从 [Apache Maven Repository](https://repo.maven.apache.org/maven2/org/apache/seatunnel/) 手动下载连接器，然后将其移动至`connectors/seatunnel`目录下)。
 
+```bash
+sh bin/install-plugin.sh
+```
 
+## 步骤2：放入 MySQL 驱动 
+
+您需要下载 [jdbc driver jar package](https://mvnrepository.com/artifact/mysql/mysql-connector-java) 驱动，并放置在 `${SEATUNNEL_HOME}/lib/`目录下
+
+## 步骤3：添加作业配置文件来定义作业
+
+```bash
+env {
+  parallelism = 2
+  job.mode = "BATCH"
+}
+source {
+    Jdbc {
+        url = "jdbc:mysql://localhost:3306/test"
+        driver = "com.mysql.cj.jdbc.Driver"
+        connection_check_timeout_sec = 100
+        user = "user"
+        password = "pwd"
+        table_path = "test.table_name"
+        query = "select  * from test.table_name"
+    }
+}
+
+sink {
+   Doris {
+          fenodes = "doris_ip:8030"
+          username = "user"
+          password = "pwd"
+          database = "test_db"
+          table = "table_name"
+          sink.enable-2pc = "true"
+          sink.label-prefix = "test-cdc"
+          doris.config = {
+            format = "json"
+            read_json_by_line="true"
+          }
+      }
+}
+```
 
 
 ## 此外
