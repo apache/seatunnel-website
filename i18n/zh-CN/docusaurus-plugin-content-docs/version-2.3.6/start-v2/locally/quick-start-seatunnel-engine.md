@@ -186,6 +186,8 @@ Total Failed Count        :                   0
 
 如果您先优化自己的作业，请查看[Source-MySQL](../../../../../../versioned_docs/version-2.3.6/connector-v2/source/Mysql.md) 和 [Sink-Doris](../../../../../../versioned_docs/version-2.3.6/connector-v2/sink/Doris.md)
 
+:::
+
 
 ## 此外
 
