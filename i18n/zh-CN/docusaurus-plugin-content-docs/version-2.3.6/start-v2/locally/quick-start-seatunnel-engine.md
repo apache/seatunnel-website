@@ -182,6 +182,11 @@ Total Failed Count        :                   0
 ***********************************************
 ```
 
+:::tip
+
+如果您先优化自己的作业，请查看[Source-MySQL](../../../en/connector-v2/source/Mysql.md) 和 [Sink-Doris](../../../en/connector-v2/sink/Doris.md)
+
+
 ## 此外
 
 现在,您已经快速浏览了SeaTunnel，可以通过[连接器](../../../en/connector-v2/source/FakeSource.md)来找到SeaTunnel所支持的所有sources和sinks。
