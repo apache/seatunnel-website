@@ -42,7 +42,7 @@ export default function () {
                 <td>
                   <a
                     target="_blank"
-                    href={ "https://github.com/apache/incubator-seatunnel/tree/" + item.sourceTag }
+                    href={ "https://github.com/apache/seatunnel/tree/" + item.sourceTag }
                   >
                     { dataSource.table.source }
                   </a>
@@ -100,7 +100,7 @@ export default function () {
                 <td>
                   <a
                     target="_blank"
-                    href={ "https://github.com/apache/incubator-seatunnel/tree/" + item.sourceTag }
+                    href={ "https://github.com/apache/seatunnel/tree/" + item.sourceTag }
                   >
                     { dataSource.table.source }
                   </a>
