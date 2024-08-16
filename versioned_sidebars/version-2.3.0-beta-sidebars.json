@@ -110,7 +110,6 @@
         }
       ]
     },
-    "Connector-v2-release-state",
     {
       "type": "category",
       "label": "Connector-V2",
