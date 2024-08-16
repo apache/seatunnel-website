@@ -1,6 +1,5 @@
 import * as child_process from "child_process";
 import * as fs from "fs";
-import * as path from "path";
 import { copySync } from "fs-extra";
 import {
   PROJECT_NAME,
@@ -18,10 +17,10 @@ import {
   PROJECT_SITE_ZH_DOC_DIR,
   replaceImagesPath,
 } from "./common";
-
+const PROJECT_TAG_NAME = process.argv[2];
 // Determine protocol mode
 const PROTOCOL_MODE = process.env.PROTOCOL_MODE || "HTTP";
-const PROJECT_REPO =
+let PROJECT_REPO =
   PROTOCOL_MODE === "ssh"
     ? `git@github.com:apache/${PROJECT_NAME}.git`
     : `https://github.com/apache/${PROJECT_NAME}.git`;
@@ -68,7 +67,11 @@ function prepareDocs() {
   rmExistsFiles(DOCUSAURUS_DOC_SIDEBARS_FILE);
 
   console.log("===>>>: Clone project main codebase repositories.");
-  cloneRepo(PROJECT_REPO, PROJECT_BRANCH_NAME, PROJECT_DIR);
+  cloneRepo(
+    PROJECT_REPO,
+    PROJECT_TAG_NAME ? PROJECT_TAG_NAME : PROJECT_BRANCH_NAME,
+    PROJECT_DIR
+  );
 
   console.log(`===>>>: Rsync sidebars.js to ${DOCUSAURUS_DOC_SIDEBARS_FILE}`);
   fs.copyFileSync(PROJECT_SIDEBAR_PATH, DOCUSAURUS_DOC_SIDEBARS_FILE);
