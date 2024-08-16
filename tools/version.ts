@@ -37,7 +37,6 @@ async function main() {
   });
   stepOne.stderr.on("data", (data) => {
     console.error(color.red(`syncerr: ${data}`));
-    process.exit(1);
   });
   await stepOne;
 
