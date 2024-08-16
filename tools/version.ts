@@ -37,6 +37,7 @@ async function main() {
   });
   stepOne.stderr.on("data", (data) => {
     console.error(color.red(`syncerr: ${data}`));
+    process.exit(1);
   });
   await stepOne;
 
@@ -49,6 +50,7 @@ async function main() {
   });
   stepTwo.stderr.on("data", (data) => {
     console.error(color.red(`syncerr: ${data}`));
+    process.exit(1);
   });
   await stepTwo;
 
@@ -61,6 +63,7 @@ async function main() {
   });
   stepThree.stderr.on("data", (data) => {
     console.error(color.red(`syncerr: ${data}`));
+    process.exit(1);
   });
   await stepThree;
 
