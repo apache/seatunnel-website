@@ -1,22 +1,9 @@
-import * as child_process from "child_process";
-import * as fs from "fs";
 import * as path from "path";
-import { copySync, readJsonSync } from "fs-extra";
+import { copySync } from "fs-extra";
 import {
   VERSION,
-  PROJECT_NAME,
-  SWAP_DIR,
-  PROJECT_SITE_DOC_DIR,
   PROJECT_SITE_IMG_DIR,
-  DOCUSAURUS_DOC_SIDEBARS_FILE,
-  PROJECT_BRANCH_NAME,
-  PROJECT_DIR,
-  PROJECT_SIDEBAR_PATH,
-  PROJECT_IMG_DIR,
   PROJECT_SITE_ZH_IMG_DIR,
-  PROJECT_DOC_DIR,
-  PROJECT_ZH_DOC_DIR,
-  PROJECT_SITE_ZH_DOC_DIR,
   SOURCE_PATH,
   replaceImagesPath,
 } from "./common";
