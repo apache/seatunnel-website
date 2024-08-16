@@ -167,5 +167,5 @@ Located in `src/pages/versions`
 
 ### 3.9 add a new version for documents
 
-- 1、Run `npm run docusaurus docs:version replace_by_target_version` locally to copy a document.
+- 1、Run `npm run version replace_by_target_version` locally to copy a document.
 - 2、Modify `/src/pages/version/config.json` for the latest and history versions.
