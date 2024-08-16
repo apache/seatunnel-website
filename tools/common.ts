@@ -53,7 +53,7 @@ export function replaceImagesPath(
   to: string = "/image_en",
   from: string = "images"
 ) {
-  const regex = new RegExp(`(\\.\\.\\/)*${from}`, "g");
+  const regex = new RegExp(`(\\.\\.\\/)?${from}`, "g");
   for (const fileName of fs.readdirSync(replaceDir)) {
     const filePath = path.resolve(replaceDir, fileName);
     if (fs.statSync(filePath).isDirectory()) {

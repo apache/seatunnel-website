@@ -1,6 +1,7 @@
 import { execa } from "execa";
 import { readJSONSync, writeJSONSync } from "fs-extra";
 import { VERSION_FILE } from "./common";
+import color from "picocolors";
 
 const version = process.argv[2];
 
@@ -12,10 +13,10 @@ async function stepFour() {
     downloadUrl: `https://github.com/apache/seatunnel/releases/tag/${version}`,
     sourceTag: version,
   };
-  json.en.table.latestData = current;
+  json.en.table.latestData = [current];
   json.en.table.historyData = [current, ...json.en.table.historyData];
 
-  json["zh-CN"].table.latestData = current;
+  json["zh-CN"].table.latestData = [current];
   json["zh-CN"].table.historyData = [
     current,
     ...json["zh-CN"].table.historyData,
@@ -35,7 +36,7 @@ async function main() {
     console.log(`sync: ${data}`);
   });
   stepOne.stderr.on("data", (data) => {
-    console.error(`syncerr: ${data}`);
+    console.error(color.red(`syncerr: ${data}`));
   });
   await stepOne;
 
@@ -47,7 +48,7 @@ async function main() {
     console.log(`sync: ${data}`);
   });
   stepTwo.stderr.on("data", (data) => {
-    console.error(`syncerr: ${data}`);
+    console.error(color.red(`syncerr: ${data}`));
   });
   await stepTwo;
 
@@ -59,7 +60,7 @@ async function main() {
     console.log(`sync: ${data}`);
   });
   stepThree.stderr.on("data", (data) => {
-    console.error(`syncerr: ${data}`);
+    console.error(color.red(`syncerr: ${data}`));
   });
   await stepThree;
 
@@ -67,6 +68,6 @@ async function main() {
 }
 
 main().catch((e) => {
-  console.error(e);
+  console.error(color.red(e));
   process.exit(1);
 });
