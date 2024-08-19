@@ -1,0 +1,100 @@
+[
+	{
+		"date": "2024-08-02",
+		"version": "v2.3.6",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.6/apache-seatunnel-2.3.6-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.6/apache-seatunnel-2.3.6-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.6/apache-seatunnel-2.3.6-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.6/apache-seatunnel-2.3.6-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.6/apache-seatunnel-2.3.6-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.6/apache-seatunnel-2.3.6-bin.tar.gz.sha512"
+		}
+	},
+	{
+		"date": "2024-04-20",
+		"version": "v2.3.5",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.5/apache-seatunnel-2.3.5-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.5/apache-seatunnel-2.3.5-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.5/apache-seatunnel-2.3.5-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.5/apache-seatunnel-2.3.5-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.5/apache-seatunnel-2.3.5-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.5/apache-seatunnel-2.3.5-bin.tar.gz.sha512"
+		}
+	},
+	{
+		"date": "2024-02-19",
+		"version": "v2.3.4",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.4/apache-seatunnel-2.3.4-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.4/apache-seatunnel-2.3.4-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.4/apache-seatunnel-2.3.4-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.4/apache-seatunnel-2.3.4-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.4/apache-seatunnel-2.3.4-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.4/apache-seatunnel-2.3.4-bin.tar.gz.sha512"
+		}
+	},
+	{
+		"date": "2023-08-21",
+		"version": "v2.3.3",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.3/apache-seatunnel-2.3.3-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.3/apache-seatunnel-2.3.3-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.3/apache-seatunnel-2.3.3-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.3/apache-seatunnel-2.3.3-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.3/apache-seatunnel-2.3.3-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.3/apache-seatunnel-2.3.3-bin.tar.gz.sha512"
+		}
+	},
+	{
+		"date": "2023-06-16",
+		"version": "v2.3.2",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.2/apache-seatunnel-2.3.2-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.2/apache-seatunnel-2.3.2-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.2/apache-seatunnel-2.3.2-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.2/apache-seatunnel-2.3.2-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.2/apache-seatunnel-2.3.2-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.2/apache-seatunnel-2.3.2-bin.tar.gz.sha512"
+		}
+	},
+	{
+		"date": "2023-03-26",
+		"version": "v2.3.1",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.3.1/apache-seatunnel-incubating-2.3.1-src.tar.gz",
+			"asc": "https://downloads.apache.org/incubator/seatunnel/2.3.1/apache-seatunnel-incubating-2.3.1-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/incubator/seatunnel/2.3.1/apache-seatunnel-incubating-2.3.1-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.3.1/apache-seatunnel-incubating-2.3.1-bin.tar.gz",
+			"asc": "https://downloads.apache.org/incubator/seatunnel/2.3.1/apache-seatunnel-incubating-2.3.1-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/incubator/seatunnel/2.3.1/apache-seatunnel-incubating-2.3.1-bin.tar.gz.sha512"
+		}
+	},
+	{
+		"date": "2022-12-30",
+		"version": "v2.3.0",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-src.tar.gz",
+			"asc": "https://downloads.apache.org/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-bin.tar.gz",
+			"asc": "https://downloads.apache.org/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/incubator/seatunnel/2.3.0/apache-seatunnel-incubating-2.3.0-bin.tar.gz.sha512"
+		}
+	}
+]

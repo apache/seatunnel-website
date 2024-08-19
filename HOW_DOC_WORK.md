@@ -8,7 +8,7 @@ Indeed, you could fetch it by your hand, but we provide the more convenience way
 `tools`. It will
 
 * Create the directory named `swap` under your project directory, as well `docs` and `static/image_en`.
-* Fetch the latest code in codebase repository(apache/dolphinscheduler) to directory `swap`.
+* Fetch the latest code in codebase repository(apache/seatunnel) to directory `swap`.
 * Sync the latest `incubator-seatunnel/docs/en` and `incubator-seatunnel/docs/en/image` to directory `docs` and `static/image_en`.
 
 When the main library code is synchronized to the local, HTTP is used by default as the protocol for git to communicate with the server, because it do not requests password or secret key. such as local development where we already have RSA public key, run command `export PROTOCOL_MODE=ssh` in terminal change protocol to SSH which in is faster and stable in many cases.
