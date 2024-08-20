@@ -25,6 +25,7 @@ export const PROJECT_SITE_ZH_IMG_DIR = path.resolve(
   "image_zh"
 );
 export const PROJECT_SITE_DOC_DIR = path.resolve(SOURCE_PATH, "docs");
+export const PROJECT_SITE_DOC_IMG_DIR = path.resolve(SOURCE_PATH, "docs", "images");
 export const PROJECT_SITE_ZH_DOC_DIR = path.resolve(
   SOURCE_PATH,
   "i18n",
