@@ -99,10 +99,10 @@ function prepareDocs() {
   });
 
   console.log(`===>>>: Replace images path in ${PROJECT_SITE_DOC_DIR}`);
-  replaceImagesPath(PROJECT_SITE_DOC_DIR);
+  replaceImagesPath(PROJECT_SITE_DOC_DIR, "images", "images");
 
   console.log(`===>>>: Replace images path in ${PROJECT_SITE_ZH_DOC_DIR}`);
-  replaceImagesPath(PROJECT_SITE_ZH_DOC_DIR, "/image_zh");
+  replaceImagesPath(PROJECT_SITE_ZH_DOC_DIR, "images", "images");
 
   console.log("===>>>: End documents sync");
 }
