@@ -35,8 +35,8 @@ function copyAndReplaceImagesPath() {
   );
 
   // replace images path in versioned docs
-  replaceImagesPath(newVersionedDir, `${IMAGEDIR}`, "/image_en");
-  replaceImagesPath(newVersionedZHDir, `${IMAGEDIR}`, "/image_zh");
+//   replaceImagesPath(newVersionedDir, `${IMAGEDIR}`, "/image_en");
+//   replaceImagesPath(newVersionedZHDir, `${IMAGEDIR}`, "/image_zh");
 }
 
 copyAndReplaceImagesPath();

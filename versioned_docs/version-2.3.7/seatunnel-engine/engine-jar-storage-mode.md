@@ -15,7 +15,7 @@ We are committed to ongoing efforts to enhance and stabilize this functionality,
 We can enable the optimization job submission process, which is configured in the `seatunel.yaml`. After enabling the optimization of the Seatunnel job submission process configuration item,
 users can use the Seatunnel engine(Zeta) as the execution engine without placing the connector jar packages required for task execution or the third-party jar packages that the connector relies on in each engine `connector` directory.
 Users only need to place all the jar packages for task execution on the client that submits the job, and the client will automatically upload the jars required for task execution to the Zeta engine. It is necessary to enable this configuration item when submitting jobs in Docker or k8s mode,
-which can fundamentally solve the problem of large container /image_en caused by the heavy weight of the Seatunnel Zeta engine. In the image, only the core framework package of the Zeta engine needs to be provided,
+which can fundamentally solve the problem of large container images caused by the heavy weight of the Seatunnel Zeta engine. In the image, only the core framework package of the Zeta engine needs to be provided,
 and then the jar package of the connector and the third-party jar package that the connector relies on can be separately uploaded to the pod for distribution.
 
 After enabling the optimization job submission process configuration item, you do not need to place the following two types of jar packages in the Zeta engine:

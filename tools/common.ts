@@ -25,6 +25,7 @@ export const PROJECT_SITE_ZH_IMG_DIR = path.resolve(
   "image_zh"
 );
 export const PROJECT_SITE_DOC_DIR = path.resolve(SOURCE_PATH, "docs");
+export const PROJECT_SITE_DOC_IMG_DIR = path.resolve(PROJECT_SITE_DOC_DIR, "images");
 export const PROJECT_SITE_ZH_DOC_DIR = path.resolve(
   SOURCE_PATH,
   "i18n",
@@ -32,6 +33,7 @@ export const PROJECT_SITE_ZH_DOC_DIR = path.resolve(
   "docusaurus-plugin-content-docs",
   "current"
 );
+export const PROJECT_SITE_ZH_DOC_IMG_DIR = path.resolve(PROJECT_SITE_ZH_DOC_DIR, "images");
 export const PROJECT_DIR = path.resolve(SWAP_DIR, PROJECT_NAME);
 export const PROJECT_IMG_DIR = path.resolve(PROJECT_DIR, "docs", "images");
 export const PROJECT_DOC_DIR = path.resolve(PROJECT_DIR, "docs", "en");
@@ -50,20 +52,21 @@ export const VERSION = readJsonSync(path.resolve(SOURCE_PATH, "versions.json"));
 // Utility function to replace image paths
 export function replaceImagesPath(
   replaceDir: string,
-  to: string = "/image_en",
-  from: string = "images"
+  from: string = "images",
+  to: string = "images"
 ) {
-  const regex = new RegExp(`(\\.\\.\\/)*${from}`, "g");
+  const regex = new RegExp(`../${from}`, "g");
   for (const fileName of fs.readdirSync(replaceDir)) {
     const filePath = path.resolve(replaceDir, fileName);
     if (fs.statSync(filePath).isDirectory()) {
-      replaceImagesPath(filePath, to, from);
+      replaceImagesPath(filePath, from, to);
     } else if (filePath.endsWith(".md") || filePath.endsWith(".mdx")) {
       console.log(
-        `  ---> Replace images path form ${from} to ${to} in ${filePath}`
+        `  ---> Replace images path form ${regex} to ${to} in ${filePath}`
       );
       let content = fs.readFileSync(filePath, "utf-8");
-      content = content.replace(regex, to);
+      content = content.replace(regex, to)
+      content = content.replace(new RegExp(`(\\.)${to}`, "g"), `.io/${to}`);
       fs.writeFileSync(filePath, content);
     }
   }
