@@ -25,7 +25,7 @@ export const PROJECT_SITE_ZH_IMG_DIR = path.resolve(
   "image_zh"
 );
 export const PROJECT_SITE_DOC_DIR = path.resolve(SOURCE_PATH, "docs");
-export const PROJECT_SITE_DOC_IMG_DIR = path.resolve(SOURCE_PATH, "docs", "images");
+export const PROJECT_SITE_DOC_IMG_DIR = path.resolve(PROJECT_SITE_DOC_DIR, "images");
 export const PROJECT_SITE_ZH_DOC_DIR = path.resolve(
   SOURCE_PATH,
   "i18n",
@@ -33,6 +33,7 @@ export const PROJECT_SITE_ZH_DOC_DIR = path.resolve(
   "docusaurus-plugin-content-docs",
   "current"
 );
+export const PROJECT_SITE_ZH_DOC_IMG_DIR = path.resolve(PROJECT_SITE_ZH_DOC_DIR, "images");
 export const PROJECT_DIR = path.resolve(SWAP_DIR, PROJECT_NAME);
 export const PROJECT_IMG_DIR = path.resolve(PROJECT_DIR, "docs", "images");
 export const PROJECT_DOC_DIR = path.resolve(PROJECT_DIR, "docs", "en");

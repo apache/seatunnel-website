@@ -16,6 +16,7 @@ import {
   PROJECT_SITE_DOC_IMG_DIR,
   PROJECT_ZH_DOC_DIR,
   PROJECT_SITE_ZH_DOC_DIR,
+  PROJECT_SITE_ZH_DOC_IMG_DIR,
   replaceImagesPath,
 } from "./common";
 const PROJECT_TAG_NAME = process.argv[2];
@@ -90,13 +91,16 @@ function prepareDocs() {
     filter: (src) => !src.endsWith("images"),
   });
 
-  console.log(`===>>>: Rsync images to ${PROJECT_SITE_DOC_IMG_DIR}`);
+  console.log(`===>>>: Rsync en images to ${PROJECT_SITE_DOC_IMG_DIR}`);
   copySync(PROJECT_IMG_DIR, PROJECT_SITE_DOC_IMG_DIR, {});
 
   console.log(`===>>>: Rsync zh documents to ${PROJECT_SITE_ZH_DOC_DIR}`);
   copySync(PROJECT_ZH_DOC_DIR, PROJECT_SITE_ZH_DOC_DIR, {
     filter: (src) => !src.endsWith("images"),
   });
+
+  console.log(`===>>>: Rsync zh images to ${PROJECT_SITE_ZH_DOC_IMG_DIR}`);
+  copySync(PROJECT_IMG_DIR, PROJECT_SITE_ZH_DOC_IMG_DIR, {});
 
   console.log(`===>>>: Replace images path in ${PROJECT_SITE_DOC_DIR}`);
   replaceImagesPath(PROJECT_SITE_DOC_DIR, "images", "images");
