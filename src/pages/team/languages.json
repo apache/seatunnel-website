@@ -242,6 +242,14 @@
         "name": "Chengyuan Ma"
       },
       {
+        "apacheId": "taozex",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/45089228?v=4",
+        "email": "taozex@apache.org",
+        "gitUrl": "https://github.com/TaoZex",
+        "githubId": "TaoZex",
+        "name": "Bingye Chen"
+      },
+      {
         "apacheId": "jarvis",
         "avatarUrl": "https://avatars.githubusercontent.com/u/28497357?v=4",
         "email": "jarvis@apache.org",
@@ -492,6 +500,14 @@
         "gitUrl": "https://github.com/rewerma",
         "githubId": "rewerma",
         "name": "Chengyuan Ma"
+      },
+      {
+        "apacheId": "taozex",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/45089228?v=4",
+        "email": "taozex@apache.org",
+        "gitUrl": "https://github.com/TaoZex",
+        "githubId": "TaoZex",
+        "name": "Bingye Chen"
       },
       {
         "apacheId": "jarvis",
