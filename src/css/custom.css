@@ -59,3 +59,11 @@ html {
 .footer__link-item svg,.navbar__link svg {
   display: none;
 }
+
+.menu__link {
+  font-weight: var(--ifm-font-weight-bold);
+}
+
+html[data-theme='dark']  img {
+  filter: brightness(.8) contrast(1.2)
+}
