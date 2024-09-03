@@ -78,7 +78,8 @@ const config = {
     hideOnScroll: false, // Whether to hide the sidebar on scroll
     colorMode: {
       defaultMode: "light",
-      disableSwitch: true,
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: "Apache SeaTunnel",
@@ -247,7 +248,7 @@ const config = {
         },
       ],
       copyright: `
-            <div style="margin-top: 20px;background: #f4f8fa">
+            <div style="margin-top: 20px;">
                 <img style="height:50px;margin: 30px 0 10px;" alt="Apache Software Foundation" src="/image/asf_logo_wide.svg" />
                 <div style="border-top: 1px solid #ccc;min-height: 60px;line-height: 20px;text-align: center;font-family: Avenir-Medium;font-size: 14px;color: #999;display: flex;align-items: center;"><span>Copyright © 2021-${new Date().getFullYear()} The Apache Software Foundation. Apache SeaTunnel, SeaTunnel, and its feather logo are trademarks of The Apache Software Foundation.</span></div>
                 <div style="text-align: center;">
