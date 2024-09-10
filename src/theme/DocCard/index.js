@@ -109,9 +109,6 @@ function CardLink({ item }) {
     );
 }
 
-
-
-
 export default function DocCard({item}) {
   switch (item.type) {
     case 'link':
