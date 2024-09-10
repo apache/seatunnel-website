@@ -35,7 +35,6 @@ function CardLayout({href, icon, title, description}) {
 }
 function CardCategory({item}) {
   const href = findFirstCategoryLink(item);
-  // Unexpected: categories that don't have a link have been filtered upfront
   if (!href) {
     return null;
   }
