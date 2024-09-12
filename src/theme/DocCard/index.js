@@ -77,7 +77,7 @@ function CardLink({ item }) {
     };
 
     const getIconElement = () => {
-        const myEmoji = item?.customProps?.myEmoji;
+        const myEmoji = item?.customProps?.link;
 
         if (isLocalImage(myEmoji)) {
             const localImagePath = myEmoji.replace('img:', '');
