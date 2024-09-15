@@ -8,6 +8,17 @@ import {
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import {translate} from '@docusaurus/Translate';
 import styles from './styles.module.css';
+
+function importAllIcons(r) {
+    let images = {};
+    r.keys().forEach((item, index) => {
+        images[item.replace('./', '').replace(/\.[^/.]+$/, '')] = r(item);
+    });
+    return images;
+}
+
+const images = importAllIcons(require.context('../../../docs/images/icons', false, /\.(png|jpe?g|svg)$/));
+
 function CardContainer({href, children}) {
   return (
     <Link
@@ -59,38 +70,10 @@ function CardCategory({item}) {
   );
 }
 function CardLink({ item }) {
-    const isUrl = (str) => {
-        try {
-            new URL(str);
-            return true;
-        } catch {
-            return false;
-        }
-    };
-
-    const isLocalImage = (str) => {
-        return str && str.startsWith('img:');
-    };
-
-    const isSvg = (str) => {
-        return str && (str.endsWith('.svg') || str.includes('.svg?'));
-    };
-
     const getIconElement = () => {
-        const myEmoji = item?.customProps?.link;
-
-        if (isLocalImage(myEmoji)) {
-            const localImagePath = myEmoji.replace('img:', '');
-            return <img src={localImagePath} alt={item.label} style={{ width: '17px', height: '17px' }} />;
-        } else if (isSvg(myEmoji)) {
-            return <img
-                src={myEmoji}
-                alt={item.label}
-                style={{width: '18px', height: '18px'}}
-                className="svg-icon"
-            />
-        } else if (isUrl(myEmoji)) {
-            return <img src={myEmoji} alt={item.label} style={{ width: '24px', height: '24px' }} />;
+        if (images[item.label]) {
+            return <img src={images[item.label].default} alt={item.label}
+                        style={{width: '24px', height: '24px'}}/>;
         } else {
             return isInternalUrl(item.href) ? '📄️' : '🔗';
         }
