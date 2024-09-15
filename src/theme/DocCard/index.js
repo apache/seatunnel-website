@@ -12,7 +12,7 @@ import styles from './styles.module.css';
 function importAllIcons(r) {
     let images = {};
     r.keys().forEach((item, index) => {
-        images[item.replace('./', '').replace(/\.[^/.]+$/, '')] = r(item);
+        images[item.replace('./', '').replace(/\.[^/.]+$/, '').toLowerCase()] = r(item);
     });
     return images;
 }
@@ -72,7 +72,7 @@ function CardCategory({item}) {
 function CardLink({ item }) {
     const getIconElement = () => {
         if (images[item.label]) {
-            return <img src={images[item.label].default} alt={item.label}
+            return <img src={images[item.label.toLowerCase()].default} alt={item.label}
                         style={{width: '24px', height: '24px'}}/>;
         } else {
             return isInternalUrl(item.href) ? '📄️' : '🔗';
