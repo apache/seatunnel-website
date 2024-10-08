@@ -64,7 +64,7 @@ const config = {
           editLocalizedFiles: true,
           // Please change this to your repo.
           editUrl:
-            "https://github.com/apache/incubator-seatunnel-website/edit/main/",
+            "https://github.com/apache/seatunnel-website/edit/main/",
           versions: {
             current: {
               path: "",
@@ -78,10 +78,22 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            "https://github.com/apache/incubator-seatunnel-website/edit/main/",
+            "https://github.com/apache/seatunnel-website/edit/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+        },
+        sitemap: {
+          changefreq: 'daily',
+          priority: 0.5,
+          filename: 'sitemap.xml',
+          ignorePatterns: (() => {
+            const latestVersion = versions[0];
+            const oldVersions = versions.filter(version => version !== latestVersion);
+            const ignorePatterns = oldVersions.map(version => `/docs/${version}/**`);
+            ignorePatterns.push('/blog/**');
+            return ignorePatterns;
+          })()
         },
       },
     ],
