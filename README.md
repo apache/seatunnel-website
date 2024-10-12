@@ -168,4 +168,4 @@ Located in `src/pages/versions`
 ### 3.9 add a new version for documents
 
 - 1、Run `npm run version replace_by_target_version` locally to copy a document.
-- 2、Modify `/src/pages/version/config.json` for the latest and history versions.
+- 2、Modify `/src/pages/download/st_data.json` for the latest download link address.
