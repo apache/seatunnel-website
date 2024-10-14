@@ -35,7 +35,7 @@ tar -xzvf "apache-seatunnel-${version}-bin.tar.gz"
 sh bin/install-plugin.sh
 ```
 
-如果您需要指定的连接器版本，以2.3.7为例，您需要执行如下命令：
+如果您需要指定的连接器版本，以2.3.8为例，您需要执行如下命令：
 
 ```bash
 sh bin/install-plugin.sh 2.3.8
@@ -44,7 +44,7 @@ sh bin/install-plugin.sh 2.3.8
 通常情况下，你不需要所有的连接器插件。你可以通过配置`config/plugin_config`来指定所需的插件。例如，如果你想让示例应用程序正常工作，你将需要`connector-console`和`connector-fake`插件。你可以修改`plugin_config`配置文件，如下所示：
 
 ```plugin_config
---seatunnel-connectors--
+--connectors-v2--
 connector-fake
 connector-console
 --end--
