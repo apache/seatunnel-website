@@ -236,8 +236,8 @@ Edit the configuration file of your local maven environment, the general path is
 ```bash
 mkdir -p ~/seatunnel-release-prepare
 cd ~/seatunnel-release-prepare
-git clone git@github.com:apache/incubator-seatunnel.git
-cd incubator-seatunnel
+git clone git@github.com:apache/seatunnel.git
+cd seatunnel
 git checkout -b ${RELEASE.VERSION}-release
 ```
 ### Update release-note
@@ -351,11 +351,11 @@ svn --username=${APACHE LDAP USERNAME} commit -m "release ${RELEASE.VERSION}"
 ### dev@seatunnel.apache.org Voting
 #### Voting initiate
 ```bash
-[VOTE] Release Apache SeaTunnel 2.3.8
+[VOTE] Release Apache SeaTunnel 2.3.8 (RC1)
 
 Hello SeaTunnel Community,
 
-This is a call for vote to release Apache SeaTunnel version 2.3.8
+This is a call for vote to release Apache SeaTunnel version 2.3.8 (RC1)
 
 Release notes:
 https://github.com/apache/seatunnel/blob/2.3.8/release-note.md
@@ -419,18 +419,22 @@ Hi SeaTunnel community,
 
 This vote now closes since 72 hours have passed.
 
-The vote PASSES with
+There are 6 approving votes.
 
-4 (+1 binding) votes from the PMC,
-- Jia Fan
-- Guangdong Liu
-- hailin0
-- David
+4 of which are binding:
+- User1
+- User2
+- User3
+- User4
 
-1 (+0 no opinion) vote from the developer from the community
-- Arshad
 
-and no further -1 votes.
+2 (+0 no opinion) vote
+- User5
+- User6
+
+There are no disapproving votes
+
+The vote passes with 4 binding +1 votes and 2 non-binding +1 votes
 
 
 The vote thread:
@@ -447,12 +451,18 @@ Naijie Liu
 
 ```
 
+How to get vote email thread link:  
+open this page https://lists.apache.org/list.html?dev@seatunnel.apache.org, find the vote email thread. and click the link copy icon.
+
+![](/image/20230324/image.png)
+
+
 
 ## Official Release
 ### Moving files
 Moving files from the dev repository to the release repository. This step only PMC member has permission.
 ```bash
-svn mv https://dist.apache.org/repos/dist/dev/incubator/seatunnel/${RELEASE.VERSION} https://dist.apache.org/repos/dist/release/incubator/seatunnel/
+svn mv https://dist.apache.org/repos/dist/dev/seatunnel/${RELEASE.VERSION} https://dist.apache.org/repos/dist/release/seatunnel/
 ```
 
 ### Generate website document
