@@ -413,29 +413,27 @@ Naijie Liu
 
 #### Voting close
 ```bash
-[RESULT] [VOTE] Release Apache SeaTunnel 2.3.8
+[RESULT] [VOTE] Release Apache SeaTunnel 2.3.8 (RC1)
 
 Hi SeaTunnel community,
 
 This vote now closes since 72 hours have passed.
 
-There are 6 approving votes.
+There are 6 approving votes, 4 of which are binding:
+- Jia Fan (binding)
+- Guangdong Liu (binding)
+- hailin0 (binding)
+- David (binding)
+- Mohammad Arshad
+- User name 6
 
-4 of which are binding:
-- User1
-- User2
-- User3
-- User4
-
-
-2 (+0 no opinion) vote
-- User5
-- User6
+There are 2 (+0 no opinion) vote
+- User name 7
+- User name 8
 
 There are no disapproving votes
 
 The vote passes with 4 binding +1 votes and 2 non-binding +1 votes
-
 
 The vote thread:
 
@@ -443,17 +441,16 @@ https://lists.apache.org/thread/xf18yy6nw03m38k4rjn1tk1bjw84rqlz
 
 I will publish the release and make an announcement once it is done.
 
-
 — 
 
 Best Regards
 Naijie Liu
 
 ```
+Only the PMC membere has binding vote. 
 
 How to get vote email thread link:  
 open this page https://lists.apache.org/list.html?dev@seatunnel.apache.org, find the vote email thread. and click the link copy icon.
-
 ![](/image/20230324/image.png)
 
 
