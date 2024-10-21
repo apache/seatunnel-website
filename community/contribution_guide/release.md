@@ -228,7 +228,7 @@ Edit the configuration file of your local maven environment, the general path is
 </settings>
 ```
 
-> Tips: If you get a 403 forbidden error during the svn push step, and you are absolutely sure that you used the correct password, when you are using your own laptop, you can skip password encryption and use the original password value.
+> Tips: If you get a 403 forbidden error during the maven release step, and you are absolutely sure that you used the correct password, when you are using your own laptop, you can skip password encryption and use the original password value.
 
 ## Project version preparation
 
@@ -261,6 +261,7 @@ mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Dp
 After this step, the code has changed, and it not match our project's code style requirement, so you need run this command to fix code style and commit change.
 ```bash
 ./mvnw spotless:apply
+git commit -am "fix code style"
 ```
 
 ### Submit source code
@@ -275,7 +276,7 @@ git push origin --tags
 ```bash
 mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Dusername=${GITHUB USERNAME}
 ```
-** Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.**
+> ** Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.**
 
 - Close the stage repository
 [https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
@@ -465,7 +466,7 @@ https://github.com/apache/seatunnel-website?tab=readme-ov-file#39-add-a-new-vers
 [dev@seatunnel.apache.org](dev@seatunnel.apache.org)
 [announce@apache.org](announce@apache.org)
 
-** Please note that you should send emails in plain text mode, otherwise they will be rejected by Apache's email server.**
+> ** Please note that you should send emails in plain text mode, otherwise they will be rejected by Apache's email server.**
 
 ```bash
 Hi all,
@@ -513,6 +514,7 @@ SeaTunnel Resources:
 
 
 ### Update project snapshot version
+some PR for refer
 - https://github.com/apache/seatunnel/pull/7841
 - https://github.com/apache/seatunnel/pull/7435
 - https://github.com/apache/seatunnel/pull/7305
