@@ -32,18 +32,8 @@ Note: The commands of 1. x and 2. x versions of GnuPG are slightly different. Th
 gpg --full-gen-key
 ```
 
-### Install SHASUM
-Used to generate signatures for files.
-
-### SVN
-Used to pull the Apache Release SVN repository. Apache uses svn to host the release of the project.
-
-### MAVEN
-Used to compile the project.
-
-## Environment Configuration
-### Configure GPG KEY
-#### Create the Key
+#### Configure GPG KEY
+##### Create the Key
 ```shell
 gpg --full-gen-key
 ```
@@ -119,7 +109,7 @@ sub   4***R/B7****46 2022-12-28
 
 Note: gpg keys, which need to be remembered and used in subsequent releases.
 
-#### Verify Key
+##### Verify Key
 ```bash
 gpg --list-keys
 ```
@@ -132,7 +122,7 @@ sub   4***R/B7****46 2022-12-28
 ```
 Tips: 0983DF85 is your public key abbreviation.
 
-#### Upload the key to the public server
+##### Upload the key to the public server
 The public key is sent to the keyserver using the key id.
 ```bash
 $ gpg --keyserver keyserver.ubuntu.com --send-key 0983DF85
@@ -140,7 +130,7 @@ $ gpg --keyserver keyserver.ubuntu.com --send-key 0983DF85
 keyserver.ubuntu.com specifies the selected keyserver. 
 This is recommended because Apache Nexus uses this keyserver for verification.
 
-#### Verify that the key is uploaded properly
+##### Verify that the key is uploaded properly
 You can use the following two methods to verify whether the key is uploaded properly:
 
 - Command line validation
@@ -154,13 +144,53 @@ gpg --keyserver keyserver.ubuntu.com --search-keys 0983DF85
 Tips: This screenshot is the key that has been uploaded before. 
 It is normal that the key generated in the previous step is inconsistent with that in the previous step.
 
-### Configure maven
-#### Create a master password
+
+
+### Install SHASUM
+Used to generate signatures for files.
+
+### SVN
+Used to pull the Apache Release SVN repository. Apache uses svn to host the release of the project.
+
+#### Pull the release and dev repositories to the local
+```bash
+mkdir -p ~/seatunnel-release-prepare/dev
+mkdir -p ~/seatunnel-release-prepare/release
+cd ~/seatunnel-release-prepare/dev
+svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/dev/seatunnel
+cd ~/seatunnel-release-prepare/release
+svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/release/seatunnel
+```
+
+#### Upload the key to the dev and release repositories
+> Tips: You only need to do this when you release this project for the first time.
+
+```bash
+cd ~/seatunnel-release-prepare/dev/seatunnel
+gpg -a --export ${GPG USERNAME} >> KEYS
+svn add KEYS
+svn --username=${APACHE LDAP USERNAME} commit -m "Add ${APACHE LDAP USERNAME} GPG key"
+```
+
+Committer not have permission of `release` folder, You should find a PMC member to help you add this KEYS file to release folder.
+```bash
+cd ~/seatunnel-release-prepare/release/seatunnel
+gpg -a --export ${GPG USERNAME} >> KEYS
+svn add KEYS
+svn --username=${APACHE LDAP USERNAME} commit -m "Add ${APACHE LDAP USERNAME} GPG key"
+```
+
+
+### MAVEN
+Used to compile the project.
+
+#### Configure maven
+##### Create a master password
 ```bash
 mvn --encrypt-master-password <apache password>
 ```
 
-#### Configure the master password
+##### Configure the master password
 Add the file `${user.home}/.m2/settings-security.xml` to configure the password created in the previous step.
 
 ```xml
@@ -170,11 +200,11 @@ Add the file `${user.home}/.m2/settings-security.xml` to configure the password 
 ```
 
 
-#### Encrypt the Apache LDAP password
+##### Encrypt the Apache LDAP password
 ```bash
 mvn --encrypt-password <apache password>
 ```
-#### Add new profile
+##### Add new profile
 Edit the configuration file of your local maven environment, the general path is `~/.m2/setting.xml`, and add the following xml file:
 
 ```xml
@@ -198,14 +228,16 @@ Edit the configuration file of your local maven environment, the general path is
 </settings>
 ```
 
+> Tips: If you get a 403 forbidden error during the maven release step, and you are absolutely sure that you used the correct password, when you are using your own laptop, you can skip password encryption and use the original password value.
+
 ## Project version preparation
 
 ### Branch preparation
 ```bash
 mkdir -p ~/seatunnel-release-prepare
 cd ~/seatunnel-release-prepare
-git clone git@github.com:apache/incubator-seatunnel.git
-cd incubator-seatunnel
+git clone git@github.com:apache/seatunnel.git
+cd seatunnel
 git checkout -b ${RELEASE.VERSION}-release
 ```
 ### Update release-note
@@ -221,10 +253,17 @@ git push
 mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -DdryRun=true -Dusername=${GITHUB USERNAME}
 ```
 ### Compile
+before this step, you need edit the `.gitignore` file, delete `seatunnel-examples` first.
 ```bash
 mvn release:clean
 mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -DpushChanges=false -Dusername=${GITHUB USERNAME}
 ```
+After this step, the code has changed, and it not match our project's code style requirement, so you need run this command to fix code style and commit change.
+```bash
+./mvnw spotless:apply
+git commit -am "fix code style"
+```
+
 ### Submit source code
 
 ```bash
@@ -237,38 +276,13 @@ git push origin --tags
 ```bash
 mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Dusername=${GITHUB USERNAME}
 ```
-Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.
+> ** Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.**
 
 - Close the stage repository
 [https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
 ![](/image/20230324/20221228225445.png)
 
 ## Upload to SVN
-### Pull the release and dev repositories to the local
-```bash
-mkdir -p ~/seatunnel-release-prepare/dev
-mkdir -p ~/seatunnel-release-prepare/release
-cd ~/seatunnel-release-prepare/dev
-svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/dev/seatunnel
-cd ~/seatunnel-release-prepare/release
-svn --username=${APACHE LDAP username} co https://dist.apache.org/repos/dist/release/seatunnel
-```
-
-### Upload the key to the dev and release repositories
-Tips: Only the first Release Manager needs to do this step.
-
-```bash
-cd ~/seatunnel-release-prepare/dev/seatunnel
-gpg -a --export ${GPG USERNAME} >> KEYS
-svn add KEYS
-svn --username=${APACHE LDAP USERNAME} commit -m "Add ${APACHE LDAP USERNAME} GPG key"
-```
-```bash
-cd ~/seatunnel-release-prepare/release/seatunnel
-gpg -a --export ${GPG USERNAME} >> KEYS
-svn add KEYS
-svn --username=${APACHE LDAP USERNAME} commit -m "Add ${APACHE LDAP USERNAME} GPG key"
-```
 
 ### Upload source code and binary packages to the dev repository
 #### Copy source code and binary packages
@@ -337,31 +351,35 @@ svn --username=${APACHE LDAP USERNAME} commit -m "release ${RELEASE.VERSION}"
 ### dev@seatunnel.apache.org Voting
 #### Voting initiate
 ```bash
-[VOTE] Release Apache SeaTunnel 2.3.3
+[VOTE] Release Apache SeaTunnel 2.3.8 (RC1)
 
 Hello SeaTunnel Community,
 
-This is a call for vote to release Apache SeaTunnel version 2.3.3
+This is a call for vote to release Apache SeaTunnel version 2.3.8 (RC1)
 
 Release notes:
-https://github.com/apache/seatunnel/blob/2.3.3/release-note.md
+https://github.com/apache/seatunnel/blob/2.3.8/release-note.md
 
 The release candidates:
-https://dist.apache.org/repos/dist/dev/seatunnel/2.3.3 
+https://dist.apache.org/repos/dist/dev/seatunnel/2.3.8
 
 Git tag for the release:
-https://github.com/apache/seatunnel/tree/2.3.3
+https://github.com/apache/seatunnel/tree/2.3.8
+
+Docker image
+https://hub.docker.com/layers/apache/seatunnel/2.3.8/images/sha256-7ba69f18989b73afb159884c2e8717ff548087c334794fd4a13439726ce974d3?context=explore
 
 Maven 2 staging repository:
-https://repository.apache.org/content/repositories/orgapacheseatunnel-1015/org/apache/seatunnel/
+https://repository.apache.org/content/repositories/orgapacheseatunnel-1120/org/apache/seatunnel/
 
 Release Commit ID:
-https://github.com/apache/seatunnel/commit/6977e9f10ff766944a925ddaae31ea9a8ca3bfef
+https://github.com/apache/seatunnel/commit/860463186a4ae954496c223dd2055e6fc195b8d2
 
-Keys to verify the Release Candidate: 
+Keys to verify the Release Candidate:
 https://downloads.apache.org/seatunnel/KEYS
- 
-The vote will be open for at least 72 hours or until necessary numbers of votes are reached.
+
+The vote will be open for at least 72 hours or until necessary numbers of
+votes are reached.
 
 Please vote accordingly:
 
@@ -385,73 +403,68 @@ Checklist for reference:
 
 [ ] No compiled archives bundled in source archive.
 
-More detail checklist please refer:
-https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist
 
-
---
+— 
 
 Best Regards
-Chao Tian
+Naijie Liu
+
 ```
 
 #### Voting close
 ```bash
-[VOTE] Release Apache SeaTunnel 2.3.3
-
-Hi SeaTunnel Community,
-
-Thanks, everyone, I will close this vote thread and the results will be tallied.
-
-Best wishes!
-Chao Tian
-#### 归票
-[RESULT] [VOTE] Release Apache SeaTunnel 2.3.3
+[RESULT] [VOTE] Release Apache SeaTunnel 2.3.8 (RC1)
 
 Hi SeaTunnel community,
 
 This vote now closes since 72 hours have passed.
 
-The vote PASSES with
+There are 6 approving votes, 4 of which are binding:
+- Jia Fan (binding)
+- Guangdong Liu (binding)
+- hailin0 (binding)
+- David (binding)
+- Mohammad Arshad
+- User name 6
 
-3 (+1 binding) votes from the IPMC,
-David,
-Guo Wei,
-Calvin Kirs  
+There are 2 (+0 no opinion) vote
+- User name 7
+- User name 8
 
-6 (+1 non-binding) votes from the developer from the community
+There are no disapproving votes
 
-Jun Gao, 
-TaoZex, 
-hailin0,
-Peng Yuan,
-Zongwen Li,
-Guangdong Liu
-and no further 0 or -1 votes.
+The vote passes with 4 binding +1 votes and 2 non-binding +1 votes
 
+The vote thread:
 
-The vote thread: 
+https://lists.apache.org/thread/xf18yy6nw03m38k4rjn1tk1bjw84rqlz
 
-https://lists.apache.org/thread/98oc6q6vghlg8qpfyf5yttzy925tfp9g 
+I will publish the release and make an announcement once it is done.
 
+— 
 
-Thanks for your participation, I will now bring the vote to
-[general@incubator.apache.org](mailto:general@incubator.apache.org) <mailto:
-[general@incubator.apache.org](mailto:general@incubator.apache.org)> to get
-approval by the IPMC.
-If this vote passes also, the release is accepted and will be published.
+Best Regards
+Naijie Liu
 
-Best wishes,
-Chao Tian
 ```
+Only the PMC membere has binding vote. 
+
+How to get vote email thread link:  
+open this page https://lists.apache.org/list.html?dev@seatunnel.apache.org, find the vote email thread. and click the link copy icon.
+![](/image/20230324/image.png)
+
 
 
 ## Official Release
 ### Moving files
-Moving files from the dev repository to the release repository.
+Moving files from the dev repository to the release repository. This step only PMC member has permission.
 ```bash
-svn mv https://dist.apache.org/repos/dist/dev/incubator/seatunnel/${RELEASE.VERSION} https://dist.apache.org/repos/dist/release/incubator/seatunnel/
+svn mv https://dist.apache.org/repos/dist/dev/seatunnel/${RELEASE.VERSION} https://dist.apache.org/repos/dist/release/seatunnel/
 ```
+
+### Generate website document
+https://github.com/apache/seatunnel-website?tab=readme-ov-file#39-add-a-new-version-for-documents
+
 
 ### Release Maven Repository
 ![](/image/20230324/20221228232210.png)
@@ -460,11 +473,12 @@ svn mv https://dist.apache.org/repos/dist/dev/incubator/seatunnel/${RELEASE.VERS
 [dev@seatunnel.apache.org](dev@seatunnel.apache.org)
 [announce@apache.org](announce@apache.org)
 
-Please note that you should send emails in plain text mode, otherwise they will be rejected by Apache's email server.
+> ** Please note that you should send emails in plain text mode, otherwise they will be rejected by Apache's email server.**
+
 ```bash
 Hi all,
 
-We are glad to announce the release of Apache SeaTunnel 2.3.3.
+We are glad to announce the release of Apache SeaTunnel 2.3.8.
 
 Once again I would like to express my thanks to your help.
 
@@ -481,11 +495,11 @@ https://seatunnel.apache.org/download/
 
 Release Notes:
 
-https://github.com/apache/seatunnel/blob/2.3.3/release-note.md
+https://github.com/apache/seatunnel/blob/2.3.8/release-note.md
 
 Documents: 
 
-https://seatunnel.apache.org/docs/2.3.3/about/
+https://seatunnel.apache.org/docs/2.3.8/about/
 
 Twitter: 
 
@@ -497,4 +511,17 @@ SeaTunnel Resources:
 - Mailing list: dev@seatunnel.apache.org
 
 - Apache SeaTunnel Team
+
 ```
+
+
+## Something After Release
+### Update github repo releases
+- https://github.com/apache/seatunnel/releases
+
+
+### Update project snapshot version
+some PR for refer
+- https://github.com/apache/seatunnel/pull/7841
+- https://github.com/apache/seatunnel/pull/7435
+- https://github.com/apache/seatunnel/pull/7305
