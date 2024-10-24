@@ -1,16 +1,16 @@
 [
 	{
-		"date": "2023-10-16",
-		"version": "v1.0.0",
+		"date": "2024-10-24",
+		"version": "v1.0.2",
 		"sourceCode": {
-			"src": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz",
-			"asc": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz.asc",
-			"sha512": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz.sha512"
+			"src": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.2/apache-seatunnel-web-1.0.2-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.2/apache-seatunnel-web-1.0.2-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.2/apache-seatunnel-web-1.0.2-src.tar.gz.sha512"
 		},
 		"binaryDistribution": {
-			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-bin.tar.gz",
-			"asc": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-bin.tar.gz.asc",
-			"sha512": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-bin.tar.gz.sha512"
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/seatunnel-web/1.0.2/apache-seatunnel-web-1.0.2-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.2/apache-seatunnel-web-1.0.2-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.2/apache-seatunnel-web-1.0.2-bin.tar.gz.sha512"
 		}
 	},
 	{
@@ -26,5 +26,20 @@
 			"asc": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.1/apache-seatunnel-web-1.0.1-bin.tar.gz.asc",
 			"sha512": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.1/apache-seatunnel-web-1.0.1-bin.tar.gz.sha512"
 		}
+	},
+	{
+		"date": "2023-10-16",
+		"version": "v1.0.0",
+		"sourceCode": {
+			"src": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/seatunnel-web/1.0.0/apache-seatunnel-web-1.0.0-bin.tar.gz.sha512"
+		}
 	}
+
 ]
