@@ -107,7 +107,9 @@ const config = {
     },
     announcementBar: {
       id: "announcementBar", // Increment on change
-      content: `🤔 Have queries regarding Apache SeaTunnel, Join Slack channel to discuss them join <a target="_blank" rel="noopener noreferrer" href="https://s.apache.org/seatunnel-slack">#SeaTunnel</a> channel! 🌟`,
+      content: `<a href="https://github.com/apache/seatunnel" target="_blank" style="display: flex; width: 100%; align-items: center; justify-content: center; margin-left: 4px; text-decoration: none; ">⭐️ If you like Apache SeaTunnel, give it a star on GitHub 
+                <img style="width: 1.2rem; height: 1.2rem; margin-left: 0.4rem;" src="/home/icons/github1.svg"> ⭐️
+                    </a>`,
       backgroundColor: "rgb(70, 125, 175, 0.8)",
       isCloseable: false,
     },
