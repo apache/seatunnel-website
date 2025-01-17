@@ -107,7 +107,7 @@ sink {
     fields = ["name", "age", "card"]
     username = "default"
     password = ""
-    source_table_name = "fake1"
+    source_table_name = "fake"
   }
 }
 ```
