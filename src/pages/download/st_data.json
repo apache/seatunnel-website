@@ -1,5 +1,19 @@
 [
 	{
+		"date": "2025-01-18",
+		"version": "v2.3.9",
+		"sourceCode": {
+			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.9/apache-seatunnel-2.3.9-src.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.9/apache-seatunnel-2.3.9-src.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.9/apache-seatunnel-2.3.9-src.tar.gz.sha512"
+		},
+		"binaryDistribution": {
+			"bin": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.9/apache-seatunnel-2.3.9-bin.tar.gz",
+			"asc": "https://downloads.apache.org/seatunnel/2.3.9/apache-seatunnel-2.3.9-bin.tar.gz.asc",
+			"sha512": "https://downloads.apache.org/seatunnel/2.3.9/apache-seatunnel-2.3.9-bin.tar.gz.sha512"
+		}
+	},
+	{
 		"date": "2024-10-12",
 		"version": "v2.3.8",
 		"sourceCode": {
