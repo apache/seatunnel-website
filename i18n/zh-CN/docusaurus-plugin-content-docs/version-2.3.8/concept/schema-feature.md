@@ -163,7 +163,7 @@ constraintKeys = [
 |:------------------|:-----|:----|------------------------------------------------------------------------|
 | constraintName    | 是    | -   | 约束键的名称                                                                 |
 | constraintType    | 否    | KEY | 约束键的类型                                                                 |
-| constraintColumns | 是    | -   | PrimaryKey中的列列表，每列应包含constraintType和sortType，sortType支持ASC和DESC，默认为ASC |
+| constraintColumns | 是    | -   | PrimaryKey中的列列表，每列应包含columnName和sortType，sortType支持ASC和DESC，默认为ASC |
 
 #### 目前支持哪些约束类型
 
