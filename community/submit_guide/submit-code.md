@@ -11,19 +11,21 @@ sidebar_position: 2
     * **dev**   daily development branch
       > Every day dev development branch, newly submitted code can pull request to this branch.
 
-    * **3.2.0-release** release version branch
-      > The release version branch, there will be 4.0...and other version branches in the future.
+    * **2.3.9-release** release version branch
+      > The release version branch, there will be 3.0...and other version branches in the future.
+
+* Take your fork repository named `seatunnel` as an example
 
 * Clone your repository to your local
 
     ```shell
-    git clone https://github.com/apache/seatunnel
+    git clone git@github.com:<YOUR_GITHUB_ID>/seatunnel.git
     ```
 
 * Add remote repository address, named upstream
 
     ```shell
-    git remote add upstream https://github.com/apache/seatunnel
+    git remote add upstream git@github.com:apache/seatunnel.git
     ```
 
 * View repository
@@ -46,12 +48,11 @@ sidebar_position: 2
     git checkout origin/dev
     git merge --no-ff upstream/dev
     ```
-
-* If remote branch has a new branch such as `dev-1.0`, you need to synchronize this branch to the local repository
+  
+* Create a new branch to modify the code
 
     ```shell
-    git checkout -b dev upstream/dev-1.0
-    git push --set-upstream origin dev-1.0
+    git checkout -b feature-xxx
     ```
 
 * After modifying the code locally, submit it to your own repository:
@@ -63,10 +64,10 @@ sidebar_position: 2
 
 * Submit changes to the remote repository
 
-* On the github page, click "New pull request".
+* On the GitHub page, click "New pull request".
 
 * Select the modified local branch and the branch you want to merge with the past, click "Create pull request".
 
 * Then the community Committers will do CodeReview, and then he will discuss some details (including design, implementation, performance, etc.) with you. When everyone on the team is satisfied with this modification, the commit will be merged into the dev branch
 
-* Finally, congratulations, you have become an official contributor to Apache SeaTunnel !
+* Finally, congratulations, you have become an official contributor to Apache SeaTunnel!
