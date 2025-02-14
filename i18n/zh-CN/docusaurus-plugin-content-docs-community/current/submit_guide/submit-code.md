@@ -5,25 +5,27 @@ sidebar_position: 2
 
 # 提交代码
 
-* 首先从远端仓库 <https://github.com/apache/incubator-seatunnel.git> fork一份代码到自己的仓库中
+* 首先从远端仓库 <https://github.com/apache/seatunnel.git> fork一份代码到自己的仓库中
 
 * 远端仓库中目前有三个分支：
     * **dev**    日常开发分支
     > 日常dev开发分支，新提交的代码都可以pull request到这个分支上。
 
-    * **1.0.0-release** 发布版本分支
-    > 发布版本分支，后续会有2.0...等版本分支。
+    * **2.3.9-release** 发布版本分支
+    > 发布版本分支，后续会有3.0...等版本分支。
+
+* 以您fork的仓库命名为`seatunnel`为例
 
 * 把自己仓库clone到本地
 
     ```shell
-    git clone git@github.com:apache/incubator-seatunnel.git
+    git clone git@github.com:<YOUR_GITHUB_ID>/seatunnel.git
     ```
 
 * 添加远端仓库地址，命名为upstream
 
     ```shell
-    git remote add upstream git@github.com:apache/incubator-seatunnel.git
+    git remote add upstream git@github.com:apache/seatunnel.git
     ```
 
 * 查看仓库：
@@ -47,11 +49,10 @@ sidebar_position: 2
     git merge --no-ff upstream/dev
     ```
 
-* 如果远端分支有新加的分支比如`dev-1.0`,需要同步这个分支到本地仓库
+* 创建一个新的分支来修改代码
 
     ```shell
-    git checkout -b dev-1.0 upstream/dev-1.0
-    git push --set-upstream origin dev-1.0
+    git checkout -b feature-xxx
     ```
 
 * 在本地修改代码以后，提交到自己仓库：
@@ -63,10 +64,10 @@ sidebar_position: 2
 
 * 将修改提交到远端仓库
 
-    * 在 github 的 PullRequest 页面，点击 "New pull request".
+    * 在 GitHub 的 PullRequest 页面，点击 "New pull request".
 
     * 选择修改完的本地分支和要合并的目的分支，点击 "Create pull request".
 
 * 接着社区 Committer 们会做 CodeReview，然后他会与您讨论一些细节（包括设计，实现，性能等）。当团队中所有人员对本次修改满意后，会将提交合并到dev分支
 
-* 最后，恭喜您已经成为了 Apache Seatunnel 的官方贡献者！
+* 最后，恭喜您已经成为了 Apache SeaTunnel 的官方贡献者！
