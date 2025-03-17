@@ -30,18 +30,18 @@ const resolveVersionedImageDir = (version) =>
   path.join(versionedDir, `version-${version}`);
 
 /**
- * 解析版本化中文图片目录
- * @param {string} version - 版本号
- * @returns {string} 版本化中文图片目录路径
+ * Parse versioned Chinese image directory
+ * @param {string} version - Version number
+ * @returns {string} Versioned Chinese image directory path
  */
 const resolveVersionedZHImageDir = (version) =>
   path.join(versionedZHDir, `version-${version}`);
 
-/** @type {string} 图片目录名称 */
+/** @type {string} Image directory name */
 const IMAGEDIR = "images";
 
 /**
- * 复制并替换图片路径
+ * Copy and replace image paths
  */
 function copyAndReplaceImagesPath() {
   const newVersion = VERSION[0];
