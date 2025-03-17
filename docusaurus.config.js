@@ -28,6 +28,24 @@ const config = {
       },
     },
   },
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // config url is: https://github.com/easyops-cn/docusaurus-search-local#theme-options
+        hashed: true,
+        indexDocs: true,
+        indexPages: true,
+        highlightSearchTermsOnTargetPage: false, // Highlight search terms on target page.
+        explicitSearchResultPath: true,
+        searchBarPosition: "right",
+        searchBarShortcutHint: false, // Whether to show keyboard shortcut hint in search bar. Disable it if you need to hide the hint while shortcut is still enabled.
+        language: ["zh", "en"],
+        hideSearchBarWithNoSearchContext: true,
+      }),
+    ],
+  ],
   headTags: [
     {
       tagName: 'script',
@@ -300,29 +318,6 @@ const config = {
     prism: {
       theme: require("prism-react-renderer/themes/dracula"),
       darkTheme: darkCodeTheme,
-    },
-    // https://docusaurus.io/zh-CN/docs/search#connecting-algolia
-    algolia: {
-      // The application ID provided by Algolia
-      appId: "S2J1A7LWND",
-      // Public API key: it is safe to commit it
-      apiKey: "a19997f611a73120d7dfb30af9db4d3a",
-      indexName: "seatunnel-apache",
-
-      // Optional: see doc section below
-      contextualSearch: true,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      externalUrlRegex: "seatunnel\\.apache\\.org",
-      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-      replaceSearchResultPathname: {
-        from: "/docs/", // or as RegExp: /\/docs\//
-        to: "/",
-      },
-      // Optional: Algolia search parameters
-      searchParameters: {},
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: "search",
-      //... other Algolia params
     },
   },
   plugins: [

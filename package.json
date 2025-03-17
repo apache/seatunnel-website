@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "1": "npm run image-copy",
     "docusaurus": "docusaurus",
     "sync": "tsx tools/build-docs.ts",
     "start": "docusaurus start",
@@ -24,7 +23,6 @@
     "@docusaurus/core": "^2.4.3",
     "@docusaurus/plugin-content-docs": "^2.4.3",
     "@docusaurus/preset-classic": "^2.4.3",
-    "@docusaurus/theme-search-algolia": "^2.4.3",
     "@mdx-js/react": "^1.6.22",
     "@svgr/webpack": "^6.2.1",
     "clsx": "^1.1.1",
@@ -36,6 +34,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.4.3",
+    "@easyops-cn/docusaurus-search-local": "^0.49.1",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/fs-extra": "^11.0.4",
     "cross-env": "^7.0.3",
