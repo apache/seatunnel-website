@@ -1,10 +1,20 @@
-import { execa } from "execa";
-import { readJSONSync, writeJSONSync } from "fs-extra";
-import { VERSION_FILE } from "./common";
-import color from "picocolors";
+/**
+ * 版本管理工具脚本
+ * @module version
+ */
 
+const { execa } = require("execa");
+const { readJSONSync, writeJSONSync } = require("fs-extra");
+const { VERSION_FILE } = require("./common");
+const color = require("picocolors");
+
+/** @type {string} 版本号 */
 const version = process.argv[2];
 
+/**
+ * 步骤四：更新版本配置文件
+ * @async
+ */
 async function stepFour() {
   const json = readJSONSync(VERSION_FILE);
   const current = {
@@ -24,6 +34,10 @@ async function stepFour() {
   writeJSONSync(VERSION_FILE, json, { spaces: 2 });
 }
 
+/**
+ * 主函数
+ * @async
+ */
 async function main() {
   if (!version) {
     throw new Error("Missing version number");

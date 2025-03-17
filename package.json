@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "sync": "tsx tools/build-docs.ts",
+    "sync": "node tools/build-docs.js",
     "start": "docusaurus start",
     "start-zh": "docusaurus start --locale zh-CN",
     "build": "cross-env NODE_OPTIONS=--max_old_space_size=10240 docusaurus build",
+    "build:fast": "cross-env NODE_OPTIONS=--max_old_space_size=10240 DOCUSAURUS_PARALLELIZE=true docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -15,9 +16,9 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "image-copy": "tsx tools/image-copy.ts",
+    "image-copy": "node tools/image-copy.js",
     "version-back": "npm run sync && docusaurus docs:version",
-    "version": "tsx tools/version.ts"
+    "version": "node tools/version.js"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.3",

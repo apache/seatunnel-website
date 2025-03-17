@@ -1,7 +1,12 @@
-import * as child_process from "child_process";
-import * as fs from "fs";
-import { copySync } from "fs-extra";
-import {
+/**
+ * 构建文档的工具脚本
+ * @module build-docs
+ */
+
+const child_process = require("child_process");
+const fs = require("fs");
+const { copySync } = require("fs-extra");
+const {
   PROJECT_NAME,
   SWAP_DIR,
   PROJECT_SITE_DOC_DIR,
@@ -18,7 +23,8 @@ import {
   PROJECT_SITE_ZH_DOC_DIR,
   PROJECT_SITE_ZH_DOC_IMG_DIR,
   replaceImagesPath,
-} from "./common";
+} = require("./common");
+
 const PROJECT_TAG_NAME = process.argv[2];
 // Determine protocol mode
 const PROTOCOL_MODE = process.env.PROTOCOL_MODE || "HTTP";
@@ -27,8 +33,11 @@ let PROJECT_REPO =
     ? `git@github.com:apache/${PROJECT_NAME}.git`
     : `https://github.com/apache/${PROJECT_NAME}.git`;
 
-// Utility function to rebuild directories
-function rebuildDirs(...dirs: string[]) {
+/**
+ * 重建目录的工具函数
+ * @param {...string} dirs - 需要重建的目录路径
+ */
+function rebuildDirs(...dirs) {
   for (const dir of dirs) {
     console.log(`  ---> Rebuild directory ${dir}`);
     if (fs.existsSync(dir)) {
@@ -38,8 +47,11 @@ function rebuildDirs(...dirs: string[]) {
   }
 }
 
-// Utility function to remove existing files
-function rmExistsFiles(...files: string[]) {
+/**
+ * 删除已存在文件的工具函数
+ * @param {...string} files - 需要删除的文件路径
+ */
+function rmExistsFiles(...files) {
   for (const file of files) {
     console.log(`  ---> Remove exists ${file}`);
     if (fs.existsSync(file)) {
@@ -48,8 +60,13 @@ function rmExistsFiles(...files: string[]) {
   }
 }
 
-// Utility function to clone repository
-function cloneRepo(repo: string, branch: string, targetPath: string) {
+/**
+ * 克隆仓库的工具函数
+ * @param {string} repo - 仓库地址
+ * @param {string} branch - 分支名称
+ * @param {string} targetPath - 目标路径
+ */
+function cloneRepo(repo, branch, targetPath) {
   console.log(
     `  ---> Start clone repository ${repo} branch ${branch} to directory ${targetPath}`
   );
@@ -58,7 +75,9 @@ function cloneRepo(repo: string, branch: string, targetPath: string) {
   );
 }
 
-// Main function to prepare docs
+/**
+ * 准备文档的主函数
+ */
 function prepareDocs() {
   console.log("===>>>: Start documents sync.");
 

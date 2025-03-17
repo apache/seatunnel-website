@@ -1,27 +1,48 @@
-import * as path from "path";
-import { copySync } from "fs-extra";
-import {
+/**
+ * 图片复制工具脚本
+ * @module image-copy
+ */
+
+const path = require("path");
+const { copySync } = require("fs-extra");
+const {
   VERSION,
   PROJECT_SITE_IMG_DIR,
   PROJECT_SITE_ZH_IMG_DIR,
   SOURCE_PATH,
   replaceImagesPath,
-} from "./common";
+} = require("./common");
 
+/** @type {string} 版本化文档目录 */
 const versionedDir = path.join(SOURCE_PATH, "versioned_docs");
+/** @type {string} 版本化中文文档目录 */
 const versionedZHDir = path.join(
   SOURCE_PATH,
   "i18n/zh-CN/docusaurus-plugin-content-docs"
 );
 
-const resolveVersionedImageDir = (version: string) =>
+/**
+ * 解析版本化图片目录
+ * @param {string} version - 版本号
+ * @returns {string} 版本化图片目录路径
+ */
+const resolveVersionedImageDir = (version) =>
   path.join(versionedDir, `version-${version}`);
 
-const resolveVersionedZHImageDir = (version: string) =>
+/**
+ * 解析版本化中文图片目录
+ * @param {string} version - 版本号
+ * @returns {string} 版本化中文图片目录路径
+ */
+const resolveVersionedZHImageDir = (version) =>
   path.join(versionedZHDir, `version-${version}`);
 
+/** @type {string} 图片目录名称 */
 const IMAGEDIR = "images";
 
+/**
+ * 复制并替换图片路径
+ */
 function copyAndReplaceImagesPath() {
   const newVersion = VERSION[0];
   const newVersionedDir = resolveVersionedImageDir(newVersion);
@@ -35,8 +56,8 @@ function copyAndReplaceImagesPath() {
   );
 
   // replace images path in versioned docs
-//   replaceImagesPath(newVersionedDir, `${IMAGEDIR}`, "/image_en");
-//   replaceImagesPath(newVersionedZHDir, `${IMAGEDIR}`, "/image_zh");
+  // replaceImagesPath(newVersionedDir, `${IMAGEDIR}`, "/image_en");
+  // replaceImagesPath(newVersionedZHDir, `${IMAGEDIR}`, "/image_zh");
 }
 
 copyAndReplaceImagesPath();
