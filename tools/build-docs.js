@@ -1,5 +1,5 @@
 /**
- * 构建文档的工具脚本
+ * Tool script for building documentation
  * @module build-docs
  */
 
@@ -34,8 +34,8 @@ let PROJECT_REPO =
     : `https://github.com/apache/${PROJECT_NAME}.git`;
 
 /**
- * 重建目录的工具函数
- * @param {...string} dirs - 需要重建的目录路径
+ * Utility function to rebuild directories
+ * @param {...string} dirs - Directory paths to rebuild
  */
 function rebuildDirs(...dirs) {
   for (const dir of dirs) {
@@ -48,8 +48,8 @@ function rebuildDirs(...dirs) {
 }
 
 /**
- * 删除已存在文件的工具函数
- * @param {...string} files - 需要删除的文件路径
+ * Utility function to remove existing files
+ * @param {...string} files - File paths to remove
  */
 function rmExistsFiles(...files) {
   for (const file of files) {
@@ -61,10 +61,10 @@ function rmExistsFiles(...files) {
 }
 
 /**
- * 克隆仓库的工具函数
- * @param {string} repo - 仓库地址
- * @param {string} branch - 分支名称
- * @param {string} targetPath - 目标路径
+ * Utility function to clone repository
+ * @param {string} repo - Repository URL
+ * @param {string} branch - Branch name
+ * @param {string} targetPath - Target path
  */
 function cloneRepo(repo, branch, targetPath) {
   console.log(
@@ -76,7 +76,7 @@ function cloneRepo(repo, branch, targetPath) {
 }
 
 /**
- * 准备文档的主函数
+ * Main function to prepare documentation
  */
 function prepareDocs() {
   console.log("===>>>: Start documents sync.");

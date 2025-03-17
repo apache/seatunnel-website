@@ -1,5 +1,5 @@
 /**
- * 图片复制工具脚本
+ * Image copy tool script
  * @module image-copy
  */
 
@@ -13,18 +13,18 @@ const {
   replaceImagesPath,
 } = require("./common");
 
-/** @type {string} 版本化文档目录 */
+/** @type {string} Versioned docs directory */
 const versionedDir = path.join(SOURCE_PATH, "versioned_docs");
-/** @type {string} 版本化中文文档目录 */
+/** @type {string} Versioned Chinese docs directory */
 const versionedZHDir = path.join(
   SOURCE_PATH,
   "i18n/zh-CN/docusaurus-plugin-content-docs"
 );
 
 /**
- * 解析版本化图片目录
- * @param {string} version - 版本号
- * @returns {string} 版本化图片目录路径
+ * Parse versioned image directory
+ * @param {string} version - Version number
+ * @returns {string} Versioned image directory path
  */
 const resolveVersionedImageDir = (version) =>
   path.join(versionedDir, `version-${version}`);

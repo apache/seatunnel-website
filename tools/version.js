@@ -1,5 +1,5 @@
 /**
- * 版本管理工具脚本
+ * Version management tool script
  * @module version
  */
 
@@ -8,11 +8,11 @@ const { readJSONSync, writeJSONSync } = require("fs-extra");
 const { VERSION_FILE } = require("./common");
 const color = require("picocolors");
 
-/** @type {string} 版本号 */
+/** @type {string} Version number */
 const version = process.argv[2];
 
 /**
- * 步骤四：更新版本配置文件
+ * Step Four: Update version configuration file
  * @async
  */
 async function stepFour() {
@@ -35,7 +35,7 @@ async function stepFour() {
 }
 
 /**
- * 主函数
+ * Main function
  * @async
  */
 async function main() {
