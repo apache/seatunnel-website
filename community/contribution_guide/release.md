@@ -276,7 +276,7 @@ git push origin --tags
 generate the connector change log
 
 ```bash
-python3 ./tools/documents/update_connector_change_log.py
+python ./tools/documents/update_connector_change_log.py
 ```
 
 push the change log to the remote repository
