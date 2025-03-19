@@ -18,9 +18,6 @@ Run the following SQL command to check the version：
 -- Check version information 
 select version();
 ```
-![](https：//miro.medium.com/v2/resize：fit：700/0*ON6im57v5nMibMQl.png)
-
-![](https：//miro.medium.com/v2/resize：fit：700/0*VmhTIvPw9gsgZGV4.png)
 
 # Enable Master-Slave Replication
 
@@ -29,7 +26,6 @@ select version();
 show variables where variable_name in ('log_bin', 'binlog_format', 'binlog_row_image', 'gtid_mode', 'enforce_gtid_consistency');
 ```
 
-![](https：//miro.medium.com/v2/resize：fit：700/0*W04fu6RagpF4iQSJ.png)
 
 For MySQL CDC data synchronization, SeaTunnel needs to read the MySQL`binlog`and act as a slave node in the MySQL cluster.  
 
@@ -45,7 +41,6 @@ SET GLOBAL enforce_gtid_consistency=ON;
 SET GLOBAL gtid_mode=ON;
 ```
 
-![](https：//miro.medium.com/v2/resize：fit：700/1*wTk3WgF9vz8bYP7g9ltctw.png)
 
 # Grant Necessary User Permissions
 
