@@ -39,6 +39,10 @@
     "message": "用户",
     "description": "Navbar item with label Team"
   },
+  "item.label.Language":{
+    "message": "语言",
+    "description": "Navbar item with label Language"
+  },
   "item.label.ASF": {
     "message": "Apache",
     "description": "Navbar item with label ASF"
