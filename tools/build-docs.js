@@ -90,7 +90,7 @@ function prepareDocs() {
   console.log("===>>>: Clone project main codebase repositories.");
   cloneRepo(
     PROJECT_REPO,
-    PROJECT_TAG_NAME ? PROJECT_TAG_NAME : PROJECT_BRANCH_NAME,
+      PROJECT_TAG_NAME ? PROJECT_TAG_NAME + "-release" : PROJECT_BRANCH_NAME,
     PROJECT_DIR
   );
 

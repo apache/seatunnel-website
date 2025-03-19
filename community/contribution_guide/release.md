@@ -270,6 +270,22 @@ git commit -am "fix code style"
 git push
 git push origin --tags
 ```
+
+### Update the connector change log
+
+generate the connector change log
+
+```bash
+python ./tools/documents/update_connector_change_log.py
+```
+
+push the change log to the remote repository
+
+```bash
+git commit -am "[Release][${RELEASE.VERSION}][connector-change-log] Update connector change log"
+git push
+```
+
 ### Deploy jar packages
 - Upload jar packages
 
