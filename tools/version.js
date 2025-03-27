@@ -3,7 +3,6 @@
  * @module version
  */
 
-const { execa } = require("execa");
 const { readJSONSync, writeJSONSync } = require("fs-extra");
 const { VERSION_FILE } = require("./common");
 const color = require("picocolors");
@@ -39,6 +38,9 @@ async function stepFour() {
  * @async
  */
 async function main() {
+  // Dynamic import execa
+  const { execa } = await import('execa');
+
   if (!version) {
     throw new Error("Missing version number");
   }
