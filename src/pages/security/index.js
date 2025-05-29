@@ -20,6 +20,8 @@ export default function () {
                 </p>
                 <p className="team_desc">{dataSource.info.securitylink}</p>
                 <p className="team_desc">{dataSource.info.security_p_notice}</p>
+                <p className="team_desc">{dataSource.info.security_p_seatunnel_web_notice}</p>
+                <p className="team_desc">{dataSource.info.security_p_seatunnel_zeta_notice}</p>
                 <p className="team_desc">{dataSource.info.tip}</p>
             </div>
         </Layout>
