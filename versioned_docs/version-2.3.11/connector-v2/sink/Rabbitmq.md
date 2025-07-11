@@ -22,6 +22,9 @@ Used to write data to Rabbitmq.
 | username                   | string  | yes      | -             |
 | password                   | string  | yes      | -             |
 | queue_name                 | string  | yes      | -             |
+| durable                    | boolean | yes      | -             |
+| exclusive                  | boolean | yes      | -             |
+| auto_delete                | boolean | yes      | -             |
 | url                        | string  | no       | -             |
 | network_recovery_interval  | int     | no       | -             |
 | topology_recovery_enabled  | boolean | no       | -             |
