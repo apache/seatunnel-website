@@ -34,6 +34,9 @@ The source must be non-parallel (parallelism set to 1) in order to achieve exact
 | password                   | string  | yes      | -             |
 | queue_name                 | string  | yes      | -             |
 | schema                     | config  | yes      | -             |
+| durable                    | boolean | yes      | -             |
+| exclusive                  | boolean | yes      | -             |
+| auto_delete                | boolean | yes      | -             |
 | url                        | string  | no       | -             |
 | routing_key                | string  | no       | -             |
 | exchange                   | string  | no       | -             |
