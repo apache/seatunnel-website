@@ -25,7 +25,7 @@
 		},
 		"home": {
 			"banner": {
-				"slogan": "下一代高性能、分布式、海量数据集成框架"
+				"slogan": "多模态、高性能、分布式、海量数据集成框架"
 			},
 			"introduction": {
 				"texts": [
@@ -127,7 +127,7 @@
 		},
 		"home": {
 			"banner": {
-				"slogan": "Next-generation high-performance,\n distributed, massive data integration tool."
+				"slogan": "multimodal, high-performance,\n distributed, massive data integration tool."
 			},
 			"introduction": {
 				"texts": [
