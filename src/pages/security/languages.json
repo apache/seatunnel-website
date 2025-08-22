@@ -9,7 +9,11 @@
       "security_p_notice": "Before using SeaTunnel, please review the usage documentation to ensure you understand the purpose and impact of each operation.",
       "security_p_seatunnel_web_notice": "In seatunnel-web, it's up to the system administrator to handle user authentication. Once a user is logged in, they get full access to the system. seatunnel-web won’t perform any extra security checks when calling third-party SDKs.",
       "security_p_seatunnel_zeta_notice": "The same goes for seatunnel-zeta: any client that has been authenticated will have full access. System don’t do additional security checks when those client connections interact with third-party SDKs.",
-      "tip": "PLEASE PAY ATTENTION to report the security issue on the security email before disclosing it on public domain."
+      "tip": "PLEASE PAY ATTENTION to report the security issue on the security email before disclosing it on public domain.",
+      "faq_p_one": "During a security analysis of SeaTunnel, I noticed that SeaTunnel allows for remote code execution, is this an issue?",
+      "faq_p_one_answer_1": "Apache SeaTunnel is a framework for executing user-supplied code and config in clusters. Users can submit code to SeaTunnel processes, which will be executed unconditionally, without any attempts to limit what code can run. Starting other processes, establishing network connections or accessing and modifying local files is possible.",
+      "faq_p_one_answer_2": "Historically, we’ve received numerous remote code execution vulnerability reports, which we had to reject, as this is by design.",
+      "faq_p_one_answer_3": "We strongly discourage users to expose SeaTunnel processes to the public internet. Within company networks or “cloud” accounts, we recommend restricting access to a SeaTunnel cluster via appropriate means."
     }
   }
 }
