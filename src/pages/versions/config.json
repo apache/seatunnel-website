@@ -14,10 +14,10 @@
       "nextLink": "/docs/intro/about",
       "latestData": [
         {
-          "versionLabel": "2.3.11",
-          "docUrl": "/docs/2.3.11/about",
-          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.11",
-          "sourceTag": "2.3.11"
+          "versionLabel": "2.3.12",
+          "docUrl": "/docs/2.3.12/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.12",
+          "sourceTag": "2.3.12"
         }
       ],
       "nextData": [
@@ -27,6 +27,12 @@
         }
       ],
       "historyData": [
+        {
+          "versionLabel": "2.3.12",
+          "docUrl": "/docs/2.3.12/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.12",
+          "sourceTag": "2.3.12"
+        },
         {
           "versionLabel": "2.3.11",
           "docUrl": "/docs/2.3.11/about",
@@ -153,10 +159,10 @@
       "nextLink": "/docs/about",
       "latestData": [
         {
-          "versionLabel": "2.3.11",
-          "docUrl": "/docs/2.3.11/about",
-          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.11",
-          "sourceTag": "2.3.11"
+          "versionLabel": "2.3.12",
+          "docUrl": "/docs/2.3.12/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.12",
+          "sourceTag": "2.3.12"
         }
       ],
       "nextData": [
@@ -166,6 +172,12 @@
         }
       ],
       "historyData": [
+        {
+          "versionLabel": "2.3.12",
+          "docUrl": "/docs/2.3.12/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.12",
+          "sourceTag": "2.3.12"
+        },
         {
           "versionLabel": "2.3.11",
           "docUrl": "/docs/2.3.11/about",
