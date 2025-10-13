@@ -137,7 +137,13 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/48236177?v=4",
       "githubId": "liugddx",
       "name": "Guangdong Liu"
-    }
+    },
+    {
+      "apacheId": "jarvis",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/28497357?v=4",
+      "githubId": "liunaijie",
+      "name": "Naijie Liu"
+    }    
   ],
   "committer": [
     {
@@ -193,12 +199,6 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/45089228?v=4",
       "githubId": "TaoZex",
       "name": "Bingye Chen"
-    },
-    {
-      "apacheId": "jarvis",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/28497357?v=4",
-      "githubId": "liunaijie",
-      "name": "Naijie Liu"
     },
     {
       "apacheId": "dailai",
