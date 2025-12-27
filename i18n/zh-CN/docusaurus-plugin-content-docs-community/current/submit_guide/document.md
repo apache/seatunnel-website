@@ -9,12 +9,12 @@ sidebar_position: 1
 
 ## 获取文档项目
 
-Seatunnel 项目的文档维护在独立的 [git 仓库] (https://github.com/apache/incubator-seatunnel-website) 中。
+Seatunnel 项目的文档维护在独立的 [git 仓库] (https://github.com/apache/seatunnel-website) 中。
 
 首先你需要先将文档项目 fork 到自己的 github 仓库中，然后将 fork 的文档克隆到本地计算机中。
 
 ```
-git clone https://github.com/<your-github-user-name>/incubator-seatunnel-website
+git clone https://github.com/<your-github-user-name>/seatunnel-website
 ```
 
 ## 预览并生成静态文件
@@ -22,7 +22,7 @@ git clone https://github.com/<your-github-user-name>/incubator-seatunnel-website
 本网站是使用node编译的，使用的是Docusaurus框架组件
 
 1. 下载并安装 nodejs(version>12.5.0)
-2. 克隆代码到本地 `git clone  git@github.com:apache/incubator-seatunnel-website.git`
+2. 克隆代码到本地 `git clone  git@github.com:apache/seatunnel-website.git`
 2. 运行 `npm install` 来安装所需的依赖库。
 3. 在根目录运行`npm run start`，可以访问http://localhost:3000查看站点英文模式预览
 4. 在根目录运行`npm run start-zh`，可以访问http://localhost:3000查看站点的中文模式预览

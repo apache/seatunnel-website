@@ -234,7 +234,7 @@ const config = {
           ],
         },
         {
-          href: "https://github.com/apache/incubator-seatunnel",
+          href: "https://github.com/apache/seatunnel",
           label: "GitHub",
           position: "right",
         },
@@ -263,7 +263,7 @@ const config = {
             },
             {
               label: "Releases",
-              href: "https://github.com/apache/incubator-seatunnel/releases",
+              href: "https://github.com/apache/seatunnel/releases",
             },
           ],
         },
@@ -272,15 +272,15 @@ const config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/apache/incubator-seatunnel",
+              href: "https://github.com/apache/seatunnel",
             },
             {
               label: "Issue Tracker",
-              href: "https://github.com/apache/incubator-seatunnel/issues",
+              href: "https://github.com/apache/seatunnel/issues",
             },
             {
               label: "Pull Requests",
-              href: "https://github.com/apache/incubator-seatunnel/pulls",
+              href: "https://github.com/apache/seatunnel/pulls",
             },
           ],
         },
@@ -332,7 +332,7 @@ const config = {
         editLocalizedFiles: true,
         // Please change this to your repo.
         editUrl:
-          "https://github.com/apache/incubator-seatunnel-website/edit/main/",
+          "https://github.com/apache/seatunnel-website/edit/main/",
         versions: {
           [st_web_versions[0]]: {
             path: st_web_versions[0],
@@ -349,9 +349,9 @@ const config = {
         routeBasePath: "community",
         editUrl: ({ locale, versionDocsDirPath, docPath }) => {
           if (locale !== "en") {
-            return `https://github.com/apache/incubator-seatunnel-website/edit/main/i18n/${locale}/${docPath}`;
+            return `https://github.com/apache/seatunnel-website/edit/main/i18n/${locale}/${docPath}`;
           }
-          return `https://github.com/apache/incubator-seatunnel-website/edit/main/${versionDocsDirPath}/${docPath}`;
+          return `https://github.com/apache/seatunnel-website/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         sidebarPath: require.resolve("./sidebarsCommunity.js"),
       },

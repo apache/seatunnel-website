@@ -22,8 +22,8 @@ asf-staging 官网测试环境  通过https://seatunnel.staged.apache.org 访问
 本网站是使用node编译的，使用的是Docusaurus框架组件
 
 1. 下载并安装 nodejs(version>14)
-2. 克隆代码到本地 `git clone  git@github.com:apache/incubator-seatunnel-website.git`
-3. 运行 `./tools/build-docs.sh` 从 **apache/incubator-seatunnel** 中拉取、准备文档。如果想要了解更多细节和操作请阅读[文档如何工作](HOW_DOC_WORK.md)
+2. 克隆代码到本地 `git clone  git@github.com:apache/seatunnel-website.git`
+3. 运行 `./tools/build-docs.sh` 从 **apache/seatunnel** 中拉取、准备文档。如果想要了解更多细节和操作请阅读[文档如何工作](HOW_DOC_WORK.md)
 4. 运行 `npm install` 来安装所需的依赖库。
 5. 在根目录运行`npm run start`，可以访问http://localhost:3000查看站点英文模式预览
 6. 在根目录运行`npm run start-zh`，可以访问http://localhost:3000查看站点的中文模式预览

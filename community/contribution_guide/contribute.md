@@ -39,7 +39,7 @@ feedback on any performance or correctness issues found in the newer release.
 ## Contributing by reviewing changes
 
 Changes to SeaTunnel source code are proposed, reviewed and committed via
-[GitHub pull requests ](https://github.com/apache/incubator-seatunnel/pulls) (described later).
+[GitHub pull requests ](https://github.com/apache/seatunnel/pulls) (described later).
 Anyone can view and comment on active changes here.
 Reviewing others' changes is a good way to learn how the change process works and gain exposure
 to activity in various parts of the code. You can help by reviewing the changes and asking
@@ -48,16 +48,16 @@ questions or pointing out issues -- as simple as typos or small issues of style.
 ## Contributing documentation changes
 
 To propose a change to _release_ documentation (that is, docs that appear under
-[docs](https://github.com/apache/incubator-seatunnel/tree/dev/docs)
+[docs](https://github.com/apache/seatunnel/tree/dev/docs)
 edit the Markdown source files in SeaTunnel's
-[docs](https://github.com/apache/incubator-seatunnel/tree/dev/docs) directory,
+[docs](https://github.com/apache/seatunnel/tree/dev/docs) directory,
 whose `README` file shows how to build the documentation locally to test your changes.
 The process to propose a doc change is otherwise the same as the process for proposing code
 changes below.
 
 To propose a change to the rest of the documentation (that is, docs that do _not_ appear under
-[docs](https://github.com/apache/incubator-seatunnel/tree/dev/docs) , similarly, edit the Markdown in the
-[website](https://github.com/apache/incubator-seatunnel-website) and open a pull request.
+[docs](https://github.com/apache/seatunnel/tree/dev/docs) , similarly, edit the Markdown in the
+[website](https://github.com/apache/seatunnel-website) and open a pull request.
 
 ## Contributing bug reports
 
@@ -140,7 +140,7 @@ new and actionable:
   Often, the problem has been discussed before, with a resolution that doesn't require a code
   change, or recording what kinds of changes will not be accepted as a resolution.
 - Search ISSUE for existing issues:
-  [ISSUES](https://github.com/apache/incubator-seatunnel/issues)
+  [ISSUES](https://github.com/apache/seatunnel/issues)
 - Type `SeaTunnel [search terms]` at the top right search box. If a logically similar issue already
   exists, then contribute to the discussion on the existing ISSUE and pull request first, instead of
   creating a new one.
@@ -218,9 +218,9 @@ have the legal authority to do so.**
 If you are interested in working with the newest under-development code or contributing to Apache SeaTunnel development, you can check out the master branch from Git:
 
     # Master development branch
-    git clone git@github.com:apache/incubator-seatunnel.git
+    git clone git@github.com:apache/seatunnel.git
 
-Once you've downloaded SeaTunnel, you can find instructions for installing and building it on the [documentation page](https://github.com/apache/incubator-seatunnel/tree/dev/docs)
+Once you've downloaded SeaTunnel, you can find instructions for installing and building it on the [documentation page](https://github.com/apache/seatunnel/tree/dev/docs)
 
 ### ISSUE
 
@@ -283,7 +283,7 @@ decisions are discussed in ISSUE.
 ### Pull request
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the GitHub repository at
-   [incubator-seatunnel](https://github.com/apache/incubator-seatunnel/) if you haven't already
+   [seatunnel](https://github.com/apache/seatunnel/) if you haven't already
 1. Clone your fork, create a new branch, push commits to the branch.
 1. Consider whether documentation or tests need to be added or updated as part of the change,
    and add them as needed.
@@ -321,7 +321,7 @@ decisions are discussed in ISSUE.
   judicious use of LGTMs is a great way to gain credibility as a reviewer with the broader community.
 - Sometimes, other changes will be merged which conflict with your pull request's changes. The
   PR can't be merged until the conflict is resolved. This can be resolved by, for example, adding a remote
-  to keep up with upstream changes by `git remote add upstream git@github.com:apache/incubator-seatunnel.git`,
+  to keep up with upstream changes by `git remote add upstream git@github.com:apache/seatunnel.git`,
   running `git fetch upstream` followed by `git rebase upstream/master` and resolving the conflicts by hand,
   then pushing the result to your branch.
 - Try to be responsive to the discussion rather than let days pass between replies

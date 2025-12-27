@@ -6,8 +6,8 @@ We hope that code reviewers strictly adhere to this guidance, especially in term
 
 1. Is the title of PR in compliance with regulations and the correct expression of meaning
 2. Is there any issue link related to bugs in the description of PR, and is there a design document link for major modifications.
-3. Check if documents have been added/changed, and if the document description is correct. A good example is https://github.com/apache/incubator-seatunnel/pull/4590
-4. Check whether to add e2e and the correctness of e2e test (function coverage and result data validation, including whether to cover all supported data types, check whether the columns between the source and target should be aligned, the number of rows should be aligned, and the data in each row should also be aligned). A good example is https://github.com/apache/incubator-seatunnel/tree/dev/seatunnel-e2e/seatunnel-connector-v2-e2e/connector-clickhouse-e2e
+3. Check if documents have been added/changed, and if the document description is correct. A good example is https://github.com/apache/seatunnel/pull/4590
+4. Check whether to add e2e and the correctness of e2e test (function coverage and result data validation, including whether to cover all supported data types, check whether the columns between the source and target should be aligned, the number of rows should be aligned, and the data in each row should also be aligned). A good example is https://github.com/apache/seatunnel/tree/dev/seatunnel-e2e/seatunnel-connector-v2-e2e/connector-clickhouse-e2e
 5. Check if there are any incompatible changes (especially modifications to parameters, with special attention paid. If incompatible changes are indeed needed, they need to be discussed by email)
 6. Check CI results, license updates, etc
 7. Enumerator update, check if the split snapshot and restore are correct, including whether the split allocation strategy is stable
