@@ -134,8 +134,36 @@ css等样式文件放在`src/css`目录下
 ├── team
         ├── index.js
         ├── index.less
-        └── languages.json
+        ├── languages.json
+        └── github-avatars.json
 ```
+
+#### 更新团队成员头像
+
+团队成员头像使用 Base64 编码存储，不依赖外部 GitHub 资源。当有新成员加入或需要更新头像时：
+
+1. 修改 `languages.json`，在 `pmc` 或 `committer` 数组中添加新成员信息：
+
+```json
+{
+  "apacheId": "newmember",
+  "githubId": "newmember",
+  "name": "New Member",
+  "userId": "12345678"  // GitHub 用户 ID（从 https://api.github.com/users/{githubId} 获取）
+}
+```
+
+2. 运行头像获取脚本：
+
+```bash
+node tools/fetch-team-avatars.js
+```
+
+该脚本会：
+- 从 GitHub 下载所有成员头像
+- 转换为 Base64 并保存到 `github-avatars.json`
+- 更新 `languages.json` 中的 `userId` 字段
+
 
 ### 3.7  用户 列表页面修改
 

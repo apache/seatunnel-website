@@ -134,8 +134,36 @@ Located in `src/pages/team`
 ├── team
         ├── index.js
         ├── index.less
-        └── languages.json
+        ├── languages.json
+        └── github-avatars.json
 ```
+
+#### Update Team Member Avatars
+
+Team member avatars are stored as Base64 encoded strings, independent of external GitHub resources. When adding new members or updating avatars:
+
+1. Modify `languages.json`, add new member info to `pmc` or `committer` array:
+
+```json
+{
+  "apacheId": "newmember",
+  "githubId": "newmember",
+  "name": "New Member",
+  "userId": "12345678"
+}
+```
+
+2. Run the avatar fetch script:
+
+```bash
+node tools/fetch-team-avatars.js
+```
+
+The script will:
+- Download all member avatars from GitHub
+- Convert to Base64 and save to `github-avatars.json`
+- Update `userId` field in `languages.json`
+
 
 ### 3.7 User list page modification
 
