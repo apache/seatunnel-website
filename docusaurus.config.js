@@ -185,12 +185,12 @@ const config = {
           position: "right",
           activeBaseRegex: `/blog`,
         },
-        {
-          to: "/user_cases",
-          label: "UserCases",
-          position: "right",
-          activeBaseRegex: `/user_cases`,
-        },
+        // {
+        //   to: "/user_cases",
+        //   label: "UserCases",
+        //   position: "right",
+        //   activeBaseRegex: `/user_cases`,
+        // },
         {
           to: "/team",
           label: "Team",
