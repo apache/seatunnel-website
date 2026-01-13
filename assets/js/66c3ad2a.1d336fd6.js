@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[33789],{83263:e=>{e.exports=JSON.parse('{"label":"Zeta","permalink":"/blog/tags/zeta","allTagsPath":"/blog/tags","count":1}')}}]);
