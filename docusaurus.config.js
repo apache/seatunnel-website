@@ -2,6 +2,55 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const versions = require("./versions.json");
 const st_web_versions = require("./seatunnel_web_versions.json");
+const fs = require("fs");
+const path = require("path");
+
+function listMarkdownFiles(rootDir) {
+  /** @type {string[]} */
+  const results = [];
+
+  /** @param {string} dir */
+  function walk(dir) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.name.startsWith(".")) continue;
+      const absPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(absPath);
+        continue;
+      }
+      if (!entry.isFile()) continue;
+      if (!entry.name.endsWith(".md") && !entry.name.endsWith(".mdx")) continue;
+      results.push(path.relative(rootDir, absPath));
+    }
+  }
+
+  if (fs.existsSync(rootDir)) {
+    walk(rootDir);
+  }
+
+  return results;
+}
+
+function getZhBlogExcludePatterns() {
+  const blogRoot = path.join(__dirname, "blog");
+  const zhRoot = path.join(
+    __dirname,
+    "i18n",
+    "zh-CN",
+    "docusaurus-plugin-content-blog"
+  );
+
+  const blogFiles = listMarkdownFiles(blogRoot);
+  const exclude = [];
+  for (const rel of blogFiles) {
+    const translatedPath = path.join(zhRoot, rel);
+    if (!fs.existsSync(translatedPath)) {
+      exclude.push(rel);
+    }
+  }
+  return exclude;
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -94,6 +143,12 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          postsPerPage: 100,
+          blogSidebarCount: "ALL",
+          exclude:
+            process.env.DOCUSAURUS_CURRENT_LOCALE === "zh-CN"
+              ? getZhBlogExcludePatterns()
+              : [],
           // Please change this to your repo.
           editUrl:
             "https://github.com/apache/seatunnel-website/edit/main/",

@@ -6,13 +6,13 @@ tags: [Zeta, SeaTunnel Engine, Metadata]
 
 # Deep Dive into Apache SeaTunnel Metadata Cache: Running Tens of Thousands of Sync Jobs in Parallel
 
-![Apache SeaTunnel metadata cache](https://openwrite-whaleops.oss-cn-zhangjiakou.aliyuncs.com/2026/01/12/seatunnel-yuan-shu-ju-huan-cun.png)
+![Apache SeaTunnel metadata cache](/image/20260113/seatunnel-metadata-cache/seatunnel-metadata-cache.png)
 
 In large-scale data integration, the throughput bottleneck is often not the data pipeline itself, but the “metadata path”: loading connector JARs during startup, managing state and recovery during runtime, and fetching schemas/partitions from external systems (databases, Hive Metastore, etc.) while initializing jobs. Once job concurrency reaches thousands (or more), these seemingly small operations can easily turn into cluster-wide pressure.
 
 Apache SeaTunnel Engine (Zeta) caches high-frequency, reusable, and expensive metadata on the engine side, and combines it with distributed storage and lifecycle cleanup. This is a key reason why the engine can run massive numbers of sync jobs concurrently with better stability.
 
-![Metadata flow in SeaTunnel’s distributed architecture](https://openwrite-whaleops.oss-cn-zhangjiakou.aliyuncs.com/2026/01/12/17681903454189.jpg)
+![Metadata flow in SeaTunnel’s distributed architecture](/image/20260113/seatunnel-metadata-cache/metadata-flow.jpg)
 
 ## Why metadata becomes the bottleneck
 
@@ -99,4 +99,4 @@ Flink is primarily designed for long-running streaming jobs and complex operator
 - **Monitor metadata-related signals**: besides JVM metrics, watch checkpoint latency/failure rate, Hazelcast memory usage, IMap size and growth, and historical job accumulation.
 - **Set eviction policies**: tune `history-job-expire-minutes` to balance observability and long-term memory safety.
 
-![Example dashboard for metadata-related signals](https://openwrite-whaleops.oss-cn-zhangjiakou.aliyuncs.com/2026/01/12/17681903091498.jpg)
+![Example dashboard for metadata-related signals](/image/20260113/seatunnel-metadata-cache/dashboard.jpg)

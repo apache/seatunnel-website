@@ -1,18 +1,17 @@
 ---
 slug: seatunnel-metadata-cache
 title: "深度拆解 Apache SeaTunnel 元数据缓存：支撑数万同步任务并行运行"
-tags: [Zeta, SeaTunnel Engine, Metadata]
 ---
 
 # 深度拆解 Apache SeaTunnel 元数据缓存：支撑数万同步任务并行运行
 
-![Apache SeaTunnel 元数据缓存](https://openwrite-whaleops.oss-cn-zhangjiakou.aliyuncs.com/2026/01/12/seatunnel-yuan-shu-ju-huan-cun.png)
+![Apache SeaTunnel 元数据缓存](/image/20260113/seatunnel-metadata-cache/seatunnel-metadata-cache.png)
 
 在大规模数据集成场景中，吞吐瓶颈往往不在数据通道本身，而在“元数据路径”上：启动时的 Connector/Jar 加载、运行中的状态管理与恢复、以及初始化阶段对外部系统（如数据库、Hive Metastore）的 Schema/分区查询。任务量一旦上到千级、万级，这些“看似轻量”的动作会被放大成集群级别的压力。
 
 Apache SeaTunnel Engine（Zeta）把一部分高频、可复用且昂贵的元数据下沉到引擎侧进行缓存，并配合分布式存储与自动清理策略，让海量同步任务可以更稳定地并行运行。
 
-![SeaTunnel 分布式架构下的元数据流转](https://openwrite-whaleops.oss-cn-zhangjiakou.aliyuncs.com/2026/01/12/17681903454189.jpg)
+![SeaTunnel 分布式架构下的元数据流转](/image/20260113/seatunnel-metadata-cache/metadata-flow.jpg)
 
 ## 为什么“元数据”会成为瓶颈
 
@@ -99,4 +98,4 @@ Flink 的设计重心是长生命周期的流作业与复杂算子状态；Spark
 - **关注“元数据指标”**：除了 JVM 指标，建议关注 Checkpoint 延迟/失败率、Hazelcast 内存使用、IMap 大小与增长速率、历史作业累积速度等。
 - **配置过期策略**：根据排障与审计需求设置 `history-job-expire-minutes`，避免“为了可观测性而撑爆内存”。
 
-![元数据缓存相关指标示意](https://openwrite-whaleops.oss-cn-zhangjiakou.aliyuncs.com/2026/01/12/17681903091498.jpg)
+![元数据缓存相关指标示意](/image/20260113/seatunnel-metadata-cache/dashboard.jpg)
