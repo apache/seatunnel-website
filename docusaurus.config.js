@@ -215,7 +215,7 @@ const config = {
             })),
             {
               label: "Next",
-              to: "/docs/about",
+              to: "/docs/introduction/about",
             },
             {
               label: "All versions",
@@ -240,12 +240,12 @@ const config = {
           position: "right",
           activeBaseRegex: `/blog`,
         },
-        {
-          to: "/user_cases",
-          label: "UserCases",
-          position: "right",
-          activeBaseRegex: `/user_cases`,
-        },
+        // {
+        //   to: "/user_cases",
+        //   label: "UserCases",
+        //   position: "right",
+        //   activeBaseRegex: `/user_cases`,
+        // },
         {
           to: "/team",
           label: "Team",
