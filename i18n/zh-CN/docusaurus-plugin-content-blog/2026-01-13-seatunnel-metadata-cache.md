@@ -5,7 +5,7 @@ title: "深度拆解 Apache SeaTunnel 元数据缓存：支撑数万同步任务
 
 # 深度拆解 Apache SeaTunnel 元数据缓存：支撑数万同步任务并行运行
 
-![Apache SeaTunnel 元数据缓存](/image/20260113/seatunnel-metadata-cache/seatunnel-metadata-cache.png)
+![Apache SeaTunnel 元数据缓存](/image/20260113/seatunnel-metadata-cache/seatunnel-metadata-cache.jpg)
 
 在大规模数据集成场景中，吞吐瓶颈往往不在数据通道本身，而在“元数据路径”上：启动时的 Connector/Jar 加载、运行中的状态管理与恢复、以及初始化阶段对外部系统（如数据库、Hive Metastore）的 Schema/分区查询。任务量一旦上到千级、万级，这些“看似轻量”的动作会被放大成集群级别的压力。
 

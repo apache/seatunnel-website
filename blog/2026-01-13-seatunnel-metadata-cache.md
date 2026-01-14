@@ -6,7 +6,7 @@ tags: [Zeta, SeaTunnel Engine, Metadata]
 
 # Deep Dive into Apache SeaTunnel Metadata Cache: Running Tens of Thousands of Sync Jobs in Parallel
 
-![Apache SeaTunnel metadata cache](/image/20260113/seatunnel-metadata-cache/seatunnel-metadata-cache.png)
+![Apache SeaTunnel metadata cache](/image/20260113/seatunnel-metadata-cache/seatunnel-metadata-cache.jpg)
 
 In large-scale data integration, the throughput bottleneck is often not the data pipeline itself, but the “metadata path”: loading connector JARs during startup, managing state and recovery during runtime, and fetching schemas/partitions from external systems (databases, Hive Metastore, etc.) while initializing jobs. Once job concurrency reaches thousands (or more), these seemingly small operations can easily turn into cluster-wide pressure.
 
