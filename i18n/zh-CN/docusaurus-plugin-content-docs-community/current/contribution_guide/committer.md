@@ -140,6 +140,6 @@ PMC 的 V.P. 和主席是秘书，负责初始化董事会报告。
 
 在大多数情况下，新 PMC 成员是从 Committer 团队提名的。但也有可能直接成为 PMC 成员，只要 PMC 同意提名并确信候选人已准备好。例如，这可以通过他/她已经是 Apache 成员、Apache 官员或其他项目的 PMC 成员这一事实来证明。
 
-新 PMC 投票过程也应遵循 `[DISCUSS]`、`[VOTE]` 和 `[RESULT][VOTE]` 程序，使用私人邮件列表，就像 [新 Committer 投票过程](#提名新-committer) 一样。
+新 PMC 投票过程也应遵循 `[DISCUSS]`、`[VOTE]` 和 `[RESULT][VOTE]` 程序，使用私人邮件列表，就像 [新 Committer 投票过程](#new-committer-nomination) 一样。
 
 一旦邀请被接受，PMC 成员应通过 [roster](https://whimsy.apache.org/roster/pmc/seatunnel) 将新成员添加到官方 PMC 列表中。
