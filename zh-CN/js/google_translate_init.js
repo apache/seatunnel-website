@@ -3,7 +3,8 @@ function googleTranslateElementInit() {
         {
             pageLanguage: "en",
             // Only languages NOT provided by native Docusaurus i18n
-            includedLanguages: "zh-CN,ja,ko,fr,es,ru,de",
+            // en and zh-CN are handled by Docusaurus natively
+            includedLanguages: "ja,ko,fr,es,ru,de",
             autoDisplay: false,
         },
         "google_translate_element"
