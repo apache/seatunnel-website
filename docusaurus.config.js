@@ -54,6 +54,9 @@ function getZhBlogExcludePatterns() {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  markdown: {
+    mermaid: true,
+  },
   title: "Apache SeaTunnel",
   tagline: "Dinosaurs are cool",
   url: "https://seatunnel.apache.org",
@@ -78,6 +81,7 @@ const config = {
     },
   },
   themes: [
+    "@docusaurus/theme-mermaid",
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
