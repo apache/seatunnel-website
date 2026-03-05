@@ -5,7 +5,9 @@ on:
     branches: [main]
   push:
     branches: [main]
-  schedule:
+  schedule:  workflow_dispatch:
+
+
     # Run everyday at 5:00 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
     - cron: "0 5 * * *"
 
