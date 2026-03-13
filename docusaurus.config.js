@@ -5,6 +5,34 @@ const st_web_versions = require("./seatunnel_web_versions.json");
 const fs = require("fs");
 const path = require("path");
 
+function getVersionHomePage(version) {
+  const sidebarFile = path.join(
+    __dirname,
+    "versioned_sidebars",
+    `version-${version}-sidebars.json`
+  );
+  if (fs.existsSync(sidebarFile)) {
+    try {
+      const sidebar = JSON.parse(fs.readFileSync(sidebarFile, "utf8"));
+      const docs = sidebar.docs || [];
+      const first = docs[0];
+      if (typeof first === "string") {
+        return first;
+      }
+      if (first && first.type === "category" && Array.isArray(first.items)) {
+        for (const item of first.items) {
+          if (typeof item === "string") {
+            return item;
+          }
+        }
+      }
+    } catch (e) {
+      // fallback to default
+    }
+  }
+  return "about";
+}
+
 function listMarkdownFiles(rootDir) {
   /** @type {string[]} */
   const results = [];
@@ -222,7 +250,7 @@ const config = {
           items: [
             ...versions.slice(0, 5).map((version) => ({
               label: version,
-              to: `docs/${version}/about`
+              to: `docs/${version}/${getVersionHomePage(version)}`
             })),
             {
               label: "Next",
