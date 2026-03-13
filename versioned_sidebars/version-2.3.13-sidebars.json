@@ -301,7 +301,7 @@
     },
     {
       "type": "category",
-      "label": "Tools",
+      "label": "Ecosystem",
       "items": [
         "tools/overview",
         "tools/seatunnel-skill",
