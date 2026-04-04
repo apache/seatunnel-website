@@ -220,6 +220,6 @@ Recommendation:
 
 ## What's More
 
-- Start writing your own config file, choose the [connector](../../connector-v2/source) you want to use, and configure the parameters according to the connector documentation.
+- Start writing your own config file, choose the [connector](../../connectors/source) you want to use, and configure the parameters according to the connector documentation.
 - If you want to deploy a multi-node SeaTunnel Engine cluster, continue with [SeaTunnel Engine(Zeta) Deployment](../../engines/zeta/deployment.md).
 - See [SeaTunnel Engine(Zeta)](../../engines/zeta/about.md) if you want to learn more about SeaTunnel Engine.
