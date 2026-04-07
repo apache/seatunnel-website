@@ -25,7 +25,7 @@
 		},
 		"home": {
 			"banner": {
-				"slogan": "多模态、高性能、分布式、海量数据集成框架",
+				"slogan": "多模态、高性能、分布式、海量数据集成工具",
 				"slackNotice": {
 					"prefix": "由于 Slack 端的原因，SeaTunnel 的 Slack 空间被停用，现在如果你有问题需要讨论，欢迎通过 ",
 					"linkText": "SeaTunnel GitHub Issue",
@@ -41,7 +41,7 @@
 				"subscribe": "订阅"
 			},
 			"feature": {
-				"mainTitle": "支持上百个数据源、传输速度快、准确率高",
+				"mainTitle": "支持数百个数据源，在保证数据准确性的同时使得传输速度极快",
 				"subTitle": "丰富易扩展的连接器和插件化的连接器设计，能够更轻松的运行复杂的集成。",
 				"components": "内置丰富插件,支持各种数据产品方便快捷的传输和集成数据",
 				"scalability": "基于模块化和插件化设计,支持热插拔, 带来更好的扩展性",
@@ -90,7 +90,7 @@
 					"features": [
 						{
 							"title": "易管理维护",
-							"desc": "提供统一的开发和管理平台。",
+							"desc": "提供统一的开发和管理。",
 							"link": ""
 						},
 						{
@@ -102,7 +102,7 @@
 				}
 			],
 			"architecture": {
-				"desc": "Apache SeaTunnel是下一代高性能、分布式、海量数据集成框架。通过我们的努力让Spark的使用更简单，更高效，并将业界和我们使用Spark的优质经验固化到seatunnel这个产品中，明显减少学习成本，加快分布式数据处理能力在生产环境落地."
+				"desc": "Apache SeaTunnel是下一代高性能、分布式、支持海量数据的多模态数据集成工具。"
 			}
 		}
 	},
@@ -149,7 +149,7 @@
 			},
 			"feature": {
 				"mainTitle": "Support Hundreds Of Data Sources, \nFast Speed & High Accuracy",
-				"subTitle": "Integrate massive data between Transaction DB, Cloud DB, SaaS, \n Binlog with SQL-like code or Drag & Drop.",
+				"subTitle": "Integrate massive data between Transaction DB, Cloud DB, SaaS, \n Binlog with SQL-like code.",
 				"reduceComplexity": "The connector developed based on API can be compatible with offline synchronization, real-time synchronization, full synchronization, incremental synchronization and other scenarios.",
 				"lesstime": "Provides visual job management, scheduling, running, and monitoring capabilities. Accelerates the integration of low-code and no-code tools.",
 				"simplicity": "Support stand-alone, cluster deployment, choose Zeta engine deployment, no need to rely on Spark, Flink and other big data components.",
