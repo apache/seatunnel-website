@@ -240,7 +240,7 @@ services:
     ports:
       - "5801:5801"  
     networks:
-      seatunnel_network
+      - seatunnel_network
 
   worker1:
     image: apache/seatunnel
@@ -255,7 +255,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network
+      - seatunnel_network
 
   worker2:
     image: apache/seatunnel
@@ -270,7 +270,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network
+      - seatunnel_network
 
 networks:
   seatunnel_network:
@@ -307,7 +307,7 @@ services:
     ports:
       - "5801:5801"  
     networks:
-      seatunnel_network
+      - seatunnel_network
 
   worker1:
     image: apache/seatunnel
@@ -322,14 +322,14 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network
+      - seatunnel_network
 
   worker2:
     image: apache/seatunnel
     container_name: seatunnel_worker_2
     restart: unless-stopped
     environment:
-      - ST_DOCKER_MEMBER_LIST=- ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801
+      - ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801
     entrypoint: >
       /bin/sh -c "
       /opt/seatunnel/bin/seatunnel-cluster.sh -r worker
@@ -337,7 +337,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network
+      - seatunnel_network
 
   ####
   ## add new worker node
@@ -355,7 +355,7 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network
+      - seatunnel_network
 
 networks:
   seatunnel_network:
