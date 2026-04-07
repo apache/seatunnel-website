@@ -25,7 +25,12 @@
 		},
 		"home": {
 			"banner": {
-				"slogan": "多模态、高性能、分布式、海量数据集成框架"
+				"slogan": "多模态、高性能、分布式、海量数据集成框架",
+				"slackNotice": {
+					"prefix": "由于 Slack 端的原因，SeaTunnel 的 Slack 空间被停用，现在如果你有问题需要讨论，欢迎通过 ",
+					"linkText": "SeaTunnel GitHub Issue",
+					"suffix": " 与我们联系。"
+				}
 			},
 			"introduction": {
 				"texts": [
@@ -127,7 +132,12 @@
 		},
 		"home": {
 			"banner": {
-				"slogan": "Multimodal, high-performance,\n distributed, massive data integration tool."
+				"slogan": "Multimodal, high-performance,\n distributed, massive data integration tool.",
+				"slackNotice": {
+					"prefix": "SeaTunnel's Slack workspace has been disabled due to a Slack-side issue. If you need to discuss a question, please contact us through ",
+					"linkText": "SeaTunnel GitHub Issues",
+					"suffix": "."
+				}
 			},
 			"introduction": {
 				"texts": [

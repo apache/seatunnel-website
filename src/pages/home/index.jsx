@@ -74,6 +74,21 @@ export default function () {
                 <div className="block">
 
                     <div className="banner text_center">
+                        <div className="community_notice">
+                            <span className="notice_icon" aria-hidden="true">!</span>
+                            <span>
+                                {dataSource.home.banner.slackNotice.prefix}
+                                <a
+                                    href="https://github.com/apache/seatunnel/issues"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="notice_link"
+                                >
+                                    {dataSource.home.banner.slackNotice.linkText}
+                                </a>
+                                {dataSource.home.banner.slackNotice.suffix}
+                            </span>
+                        </div>
                         <h1 className="main_title notranslate" translate="no"><span className="apache">Apache</span> <span
                             className="seatunnel">SeaTunnel</span>
                         </h1>
