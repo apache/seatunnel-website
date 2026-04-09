@@ -87,6 +87,10 @@ accompanied by detail, such as a design document and/or code change. Large new c
 should consider be discussed on the mailing list first.
 Feature requests may be rejected, or closed after a long period of inactivity.
 
+For significant new features or architectural changes, consider opening a
+[SeaTunnel Improvement Proposal (STIP)](./STIP.md) before starting implementation.
+STIPs provide a structured way to gain community consensus and preserve design decisions.
+
 ## Contributing to ISSUE maintenance
 
 Given the sheer volume of issues raised in the Apache SeaTunnel ISSUE, inevitably some issues are
@@ -279,6 +283,8 @@ decisions are discussed in ISSUE.
     1. Do not include a patch file; pull requests are used to propose the actual change.
 1. If the change is a large change, consider inviting discussion on the issue at
    `dev@seatunnel.apache.org` first before proceeding to implement the change.
+   For architectural changes or new API/SPI surface, a
+   [SeaTunnel Improvement Proposal (STIP)](./STIP.md) is strongly recommended.
 
 ### Pull request
 
