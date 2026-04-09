@@ -370,9 +370,7 @@ and run `docker-compose up -d` command, the new worker node will start, and the 
 ### Job Operation on cluster
 
 #### use docker as a client
-Use `-m cluster` here so the job is submitted to the SeaTunnel cluster started above.
-
-- submit job (cluster):
+- submit job:
 ```shell
 docker run --name seatunnel_client \
     --network seatunnel-network \

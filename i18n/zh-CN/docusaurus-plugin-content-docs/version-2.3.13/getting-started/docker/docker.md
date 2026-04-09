@@ -359,9 +359,7 @@ networks:
 ### 提交作业到集群
 
 #### 使用docker container作为客户端
-这里需要显式使用 `-m cluster`，这样任务才会提交到上面启动的 SeaTunnel 集群。
-
-- 提交集群任务
+- 提交任务
 ```shell
 docker run --name seatunnel_client \
     --network seatunnel-network \
