@@ -83,7 +83,6 @@ and create a new issue with:
 
 - **Title:** `[STIP-N] [Module] Brief description`
   (e.g., `[STIP-23] [Connector] Support multi-catalog source`)
-- **Label:** `design`
 
 Write the issue body following the [STIP Content Template](#stip-content-template) below.
 
