@@ -143,6 +143,12 @@
       "githubId": "liunaijie",
       "name": "Naijie Liu",
       "userId": "28497357"
+    },
+    {
+      "apacheId": "shenghang",
+      "githubId": "zhangshenghang",
+      "name": "Shenghang Zhang",
+      "userId": "29418975"
     }
   ],
   "committer": [
@@ -211,12 +217,6 @@
       "githubId": "arshadmohammad",
       "name": "Mohammad Arshad",
       "userId": "5720433"
-    },
-    {
-      "apacheId": "shenghang",
-      "githubId": "zhangshenghang",
-      "name": "Shenghang Zhang",
-      "userId": "29418975"
     },
     {
       "apacheId": "zhangdonghao",
