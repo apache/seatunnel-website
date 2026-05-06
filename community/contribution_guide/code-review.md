@@ -8,7 +8,27 @@ We expect reviewers and committers to follow this guidance consistently, especia
 
 GitHub currently shows the `dev` branch as requiring only one approval before merge. This is only the global branch protection baseline.
 
-By community consensus, PRs that modify core modules still require **two committer approvals** before merge. GitHub cannot enforce this per-module rule automatically today, so reviewers and committers must inspect the changed files manually. If a PR touches core modules but does not yet have two committer approvals, do not merge it even if GitHub reports that the required review check has passed.
+For PRs that **do not** touch core modules, the merge baseline is:
+
+1. **One committer approval**
+2. Passing automated bot checks, such as CI, code style, and license validation
+3. At least one collaborator or AI bot review, where applicable
+
+The following modules are considered core and therefore still require **two committer approvals** before merge:
+
+- `seatunnel-api`
+- `seatunnel-engine/seatunnel-engine-core`
+- `seatunnel-engine/seatunnel-engine-server`
+- `seatunnel-engine/seatunnel-engine-client`
+- `seatunnel-engine/seatunnel-engine-common`
+- `seatunnel-engine/seatunnel-engine-serializer`
+- `seatunnel-engine/seatunnel-engine-storage`
+
+All other modules, including connectors, transforms, e2e tests, documentation, and tooling, follow the relaxed baseline above as long as they do not modify any of the core modules listed here.
+
+This policy is determined by **module scope**, not by the number of changed files or lines of code. If a PR touches any core module, the stricter **two committer approvals** rule applies to the whole PR.
+
+GitHub cannot enforce this per-module rule automatically today, so reviewers and committers must inspect the changed files manually. If a PR touches core modules but does not yet have two committer approvals, do not merge it even if GitHub reports that the required review check has passed.
 
 ## General review checklist
 
