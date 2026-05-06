@@ -22,6 +22,42 @@ const GOOGLE_LANGUAGES = [
     { label: 'Deutsch', code: 'de' },
 ];
 
+/**
+ * Google Translate may persist the same cookie on multiple domain scopes
+ * such as the host, the parent domain, and the current page host-only scope.
+ * Enumerating all reachable variants lets us clear stale cookies before
+ * writing the next target language.
+ */
+function getGoogleTranslateCookieDomains(hostname) {
+    if (!hostname || hostname === 'localhost' || hostname === '127.0.0.1') {
+        return [''];
+    }
+
+    const domains = new Set(['', hostname, `.${hostname}`]);
+    const parts = hostname.split('.').filter(Boolean);
+
+    for (let index = 1; index < parts.length - 1; index += 1) {
+        const parentDomain = parts.slice(index).join('.');
+        if (!parentDomain.includes('.')) {
+            continue;
+        }
+        domains.add(parentDomain);
+        domains.add(`.${parentDomain}`);
+    }
+
+    return Array.from(domains);
+}
+
+function writeGoogleTranslateCookie(name, value, hostname, expires) {
+    const domainCandidates = getGoogleTranslateCookieDomains(hostname);
+
+    domainCandidates.forEach((domain) => {
+        const domainAttribute = domain ? `; domain=${domain}` : '';
+        const expiresAttribute = expires ? `; expires=${expires}` : '';
+        document.cookie = `${name}=${value}${expiresAttribute}; path=/${domainAttribute}`;
+    });
+}
+
 export default function LocaleDropdownNavbarItem({
     mobile,
     dropdownItemsBefore,
@@ -37,11 +73,18 @@ export default function LocaleDropdownNavbarItem({
     // Helper function to get current Google Translate language code from cookie
     const getGoogleTranslateLangCode = () => {
         if (typeof document === 'undefined') return null;
-        const cookie = document.cookie.split('; ').find(row => row.startsWith('googtrans='));
-        if (cookie) {
-            const match = cookie.match(/googtrans=\/[^\/]+\/([^;]+)/);
-            return match ? match[1] : null;
+
+        const cookies = document.cookie
+            .split('; ')
+            .filter((row) => row.startsWith('googtrans='));
+
+        for (let index = cookies.length - 1; index >= 0; index -= 1) {
+            const match = cookies[index].match(/googtrans=\/[^\/]+\/([^;]+)/);
+            if (match) {
+                return match[1];
+            }
         }
+
         return null;
     };
 
@@ -87,16 +130,9 @@ export default function LocaleDropdownNavbarItem({
 
     // Helper function to trigger Google Translate programmatically
     const handleGoogleTranslate = (langCode) => {
-        // Set Google Translate cookie
         const cookieValue = '/en/' + langCode;
-
-        // Set cookie without domain for localhost compatibility
-        document.cookie = 'googtrans=' + cookieValue + '; path=/';
-
-        // Also set with domain if not localhost
-        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-            document.cookie = 'googtrans=' + cookieValue + '; path=/; domain=' + window.location.hostname;
-        }
+        writeGoogleTranslateCookie('googtrans', '', window.location.hostname, 'Thu, 01 Jan 1970 00:00:00 UTC');
+        writeGoogleTranslateCookie('googtrans', cookieValue, window.location.hostname);
 
         // If currently on a /zh-CN/ page, redirect to English version first
         const currentPath = window.location.pathname;
@@ -131,15 +167,7 @@ export default function LocaleDropdownNavbarItem({
             autoAddBaseUrl: false,
             className: `notranslate ${isActive ? activeClass : ''}`.trim(),
             onClick: () => {
-                // Clear Google Translate cookies when switching to native locales
-                const clearCookie = (name) => {
-                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/seatunnel-website;';
-                    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-                        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.' + window.location.hostname + '; path=/;';
-                    }
-                };
-                clearCookie('googtrans');
+                writeGoogleTranslateCookie('googtrans', '', window.location.hostname, 'Thu, 01 Jan 1970 00:00:00 UTC');
                 // Update the label immediately
                 setCurrentLangLabel(localeConfigs[locale].label);
             }

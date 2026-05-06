@@ -21,3 +21,5 @@ Local模式：只用于测试，每个任务都会启动一个独立的进程，
 [混合集群模式部署](hybrid-cluster-deployment.md)
 
 [分离集群模式部署](separated-cluster-deployment.md)
+
+如果您不是从零开始部署，而是要升级已有的 SeaTunnel Engine 环境，请继续阅读[SeaTunnel Engine(Zeta) 版本升级](version-upgrade.md)。

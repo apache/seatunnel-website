@@ -216,20 +216,9 @@ Total Failed Count        :                   0
 - 如果您只是想在一台机器上快速验证配置和任务链路，使用本页中的 Local 模式即可。
 - 如果您需要多节点运行、资源隔离或更贴近测试和生产环境的部署方式，请进入集群部署文档继续操作。
 
-## 第三部分：版本升级
-
-如果您已经在本地环境或集群环境中运行 SeaTunnel Engine，并计划升级到更新版本，建议按受控流程执行，而不是直接覆盖正在运行环境中的安装文件。
-
-1. 做好升级前准备。暂停新的作业变更，记录当前版本，并备份 `config/`、`connectors/`、`plugins/` 以及自定义启动脚本。如果只是想在本地试用新版本，建议把新版本解压到新的目录，而不是直接覆盖现有目录。
-2. 保护运行状态。对于有状态或长时间运行的作业，升级前先创建 savepoint 或完成可恢复暂停。`--savepoint` 和 `--restore` 的命令用法可参考[客户端命令行工具](../../engines/zeta/user-command.md)。
-3. 替换程序并检查兼容项。升级 SeaTunnel 发行包后，确认所需连接器 JAR 和 JDBC 驱动仍然存在，并在重启前核对集群名、端口以及 checkpoint 相关配置等关键参数。
-4. 升级后先做验证。先运行一个小型验证任务，确认提交作业、查看作业列表和读取日志、监控信息都正常，再恢复正式流量或定时批任务。
-5. 保留回滚路径。如果升级验证失败，优先回退到升级前的安装包和配置备份，再恢复关键作业。
-
-如果此次升级还涉及集群拓扑或部署模式调整，建议先继续阅读[SeaTunnel Engine(Zeta) 安装部署](../../engines/zeta/deployment.md)，再在多节点环境中应用新版本。
-
 ## 下一步
 
 - 开始编写您自己的配置文件，选择您想要使用的[连接器](../../connectors/source)，并根据连接器的文档配置参数。
+- 如果您是在已有 SeaTunnel Engine 环境上做升级，请继续阅读[SeaTunnel Engine(Zeta) 版本升级](../../engines/zeta/version-upgrade.md)。
 - 如果您要部署多节点 SeaTunnel Engine 集群，请继续阅读[SeaTunnel Engine(Zeta) 安装部署](../../engines/zeta/deployment.md)。
 - 如果您想进一步了解 SeaTunnel Engine，请参阅[SeaTunnel引擎](../../engines/zeta/about.md)。

@@ -64,7 +64,7 @@ docker images | grep apache/seatunnel
 
 Dockerfile文件内容为：
 ```dockerfile
-FROM openjdk:8
+FROM seatunnelhub/openjdk:8u342
 
 ARG VERSION
 # Build from Source Code And Copy it into image
@@ -223,14 +223,13 @@ docker run -d --name seatunnel_worker_1 \
 ### 使用docker-compose
 `docker-compose.yaml` 配置文件为：
 ```yaml
-version: '3.8'
-
 services:
   master:
     image: apache/seatunnel
     container_name: seatunnel_master
+    restart: unless-stopped
     environment:
-      - ST_DOCKER_MEMBER_LIST=172.16.0.2,172.16.0.3,172.16.0.4
+      - ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801
     entrypoint: >
       /bin/sh -c "
       /opt/seatunnel/bin/seatunnel-cluster.sh -r master
@@ -238,14 +237,14 @@ services:
     ports:
       - "5801:5801"
     networks:
-      seatunnel_network:
-        ipv4_address: 172.16.0.2
+      - seatunnel_network
 
   worker1:
     image: apache/seatunnel
     container_name: seatunnel_worker_1
+    restart: unless-stopped
     environment:
-      - ST_DOCKER_MEMBER_LIST=172.16.0.2,172.16.0.3,172.16.0.4
+      - ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801
     entrypoint: >
       /bin/sh -c "
       /opt/seatunnel/bin/seatunnel-cluster.sh -r worker
@@ -253,14 +252,14 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
-        ipv4_address: 172.16.0.3
+      - seatunnel_network
 
   worker2:
     image: apache/seatunnel
     container_name: seatunnel_worker_2
+    restart: unless-stopped
     environment:
-      - ST_DOCKER_MEMBER_LIST=172.16.0.2,172.16.0.3,172.16.0.4
+      - ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801
     entrypoint: >
       /bin/sh -c "
       /opt/seatunnel/bin/seatunnel-cluster.sh -r worker
@@ -268,34 +267,30 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
-        ipv4_address: 172.16.0.4
+      - seatunnel_network
 
 networks:
   seatunnel_network:
+    name: seatunnel-network
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.16.0.0/24
 
 ```
-运行 `docker-compose up`命令来启动集群，该配置会启动一个master节点，2个worker节点
+运行 `docker-compose up -d` 命令来启动集群，该配置会启动一个 master 节点和 2 个 worker 节点。
 
 
-启动完成后，可以运行`docker logs -f seatunnel_master`, `docker logs -f seatunnel_worker_1`来查看节点的日志  
-当你访问`http://localhost:5801/hazelcast/rest/maps/system-monitoring-information` 时，可以看到集群的状态为1个master节点，2个worker节点.
+启动完成后，可以运行 `docker logs -f seatunnel_master`、`docker logs -f seatunnel_worker_1` 查看节点日志。
+当访问 `http://localhost:5801/hazelcast/rest/maps/system-monitoring-information` 时，可以看到集群状态已经符合预期。
 
 #### 集群扩容
 当你需要对集群扩容, 例如需要添加一个worker节点时
 ```yaml
-version: '3.8'
-
 services:
   master:
     image: apache/seatunnel
     container_name: seatunnel_master
+    restart: unless-stopped
     environment:
-      - ST_DOCKER_MEMBER_LIST=172.16.0.2,172.16.0.3,172.16.0.4    
+      - ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801
     entrypoint: >
       /bin/sh -c "
       /opt/seatunnel/bin/seatunnel-cluster.sh -r master
@@ -303,14 +298,14 @@ services:
     ports:
       - "5801:5801"  
     networks:
-      seatunnel_network:
-        ipv4_address: 172.16.0.2
+      - seatunnel_network
 
   worker1:
     image: apache/seatunnel
     container_name: seatunnel_worker_1
+    restart: unless-stopped
     environment:
-      - ST_DOCKER_MEMBER_LIST=172.16.0.2,172.16.0.3,172.16.0.4
+      - ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801
     entrypoint: >
       /bin/sh -c "
       /opt/seatunnel/bin/seatunnel-cluster.sh -r worker
@@ -318,14 +313,14 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
-        ipv4_address: 172.16.0.3
+      - seatunnel_network
 
   worker2:
     image: apache/seatunnel
     container_name: seatunnel_worker_2
+    restart: unless-stopped
     environment:
-      - ST_DOCKER_MEMBER_LIST=172.16.0.2,172.16.0.3,172.16.0.4
+      - ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801
     entrypoint: >
       /bin/sh -c "
       /opt/seatunnel/bin/seatunnel-cluster.sh -r worker
@@ -333,16 +328,16 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
-        ipv4_address: 172.16.0.4
+      - seatunnel_network
   ####
   ## 添加新节点配置
   ####      
   worker3:
     image: apache/seatunnel
     container_name: seatunnel_worker_3
+    restart: unless-stopped
     environment:
-      - ST_DOCKER_MEMBER_LIST=172.16.0.2,172.16.0.3,172.16.0.4,172.16.0.5 # 添加ip到这里
+      - ST_DOCKER_MEMBER_LIST=seatunnel_master:5801,seatunnel_worker_1:5801,seatunnel_worker_2:5801,seatunnel_worker_3:5801 # 在这里补充新节点
     entrypoint: >
       /bin/sh -c "
       /opt/seatunnel/bin/seatunnel-cluster.sh -r worker
@@ -350,15 +345,12 @@ services:
     depends_on:
       - master
     networks:
-      seatunnel_network:
-        ipv4_address: 172.16.0.5        # 设置新节点ip
+      - seatunnel_network
 
 networks:
   seatunnel_network:
+    name: seatunnel-network
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.16.0.0/24
 
 ```
 
@@ -369,21 +361,19 @@ networks:
 #### 使用docker container作为客户端
 - 提交任务
 ```shell
-# 将ST_DOCKER_MEMBER_LIST设置为master容器的ip
 docker run --name seatunnel_client \
     --network seatunnel-network \
-    -e ST_DOCKER_MEMBER_LIST=172.18.0.2:5801 \
+    -e ST_DOCKER_MEMBER_LIST=seatunnel_master:5801 \
     --rm \
     apache/seatunnel \
-    ./bin/seatunnel.sh  -c config/v2.batch.config.template
+    ./bin/seatunnel.sh  -c config/v2.batch.config.template -m cluster
 ```
 
 - 查看作业列表
 ```shell
-# 将ST_DOCKER_MEMBER_LIST设置为master容器的ip
 docker run --name seatunnel_client \
     --network seatunnel-network \
-    -e ST_DOCKER_MEMBER_LIST=172.18.0.2:5801 \
+    -e ST_DOCKER_MEMBER_LIST=seatunnel_master:5801 \
     --rm \
     apache/seatunnel \
     ./bin/seatunnel.sh  -l

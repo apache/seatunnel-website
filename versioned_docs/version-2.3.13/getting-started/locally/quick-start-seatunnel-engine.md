@@ -218,20 +218,9 @@ Recommendation:
 - Use the local mode on this page when you want to verify configs and job pipelines on a single machine.
 - Use the deployment guide when you need multi-node execution, resource isolation, or an environment closer to staging or production.
 
-## Part 3: Version Upgrade
-
-If you are already running SeaTunnel Engine in a local environment or a cluster and want to move to a newer release, use a controlled upgrade process instead of replacing files directly in a running installation.
-
-1. Prepare the upgrade window. Pause new job changes, record the current version, and back up `config/`, `connectors/`, `plugins/`, and any customized startup scripts. If you only want to try a newer version locally, extract it into a separate directory instead of overwriting the existing one.
-2. Protect running state when needed. For stateful or long-running jobs, create a savepoint or pause point before the upgrade. See [Client Command Line Tool](../../engines/zeta/user-command.md) for the `--savepoint` and `--restore` workflow.
-3. Replace the package and review compatibility. After upgrading the SeaTunnel distribution, confirm that the required connector JARs and JDBC drivers are still present, and compare important settings such as cluster name, ports, and checkpoint-related configuration before restarting.
-4. Validate after restart. Run a small smoke test first, verify that job submission and job listing still work, and check logs and monitoring information before resuming production traffic or scheduled batch jobs.
-5. Keep a rollback path. If validation fails, roll back to the previous package and configuration backup before resubmitting critical jobs.
-
-If your upgrade also includes topology or deployment mode changes, continue with [SeaTunnel Engine(Zeta) Deployment](../../engines/zeta/deployment.md) before applying the new version in a multi-node environment.
-
 ## What's More
 
-- Start writing your own config file, choose the [connector](../../connector-v2/source) you want to use, and configure the parameters according to the connector documentation.
+- Start writing your own config file, choose the [connector](../../connectors/source) you want to use, and configure the parameters according to the connector documentation.
+- If you are upgrading an existing SeaTunnel Engine environment, see [SeaTunnel Engine(Zeta) Version Upgrade](../../engines/zeta/version-upgrade.md).
 - If you want to deploy a multi-node SeaTunnel Engine cluster, continue with [SeaTunnel Engine(Zeta) Deployment](../../engines/zeta/deployment.md).
 - See [SeaTunnel Engine(Zeta)](../../engines/zeta/about.md) if you want to learn more about SeaTunnel Engine.

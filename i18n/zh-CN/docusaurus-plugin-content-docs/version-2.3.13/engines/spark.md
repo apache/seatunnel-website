@@ -22,13 +22,13 @@ env {
 
 ### 命令行示例
 
-#### Spark on Yarn集群
+#### Spark on Yarn cluster模式
 
 ```
 ./bin/start-seatunnel-spark-3-connector-v2.sh --master yarn --deploy-mode cluster --config config/example.conf
 ```
 
-#### Spark on Yarn集群
+#### Spark on Yarn client模式
 
 ```
 ./bin/start-seatunnel-spark-3-connector-v2.sh --master yarn --deploy-mode client --config config/example.conf

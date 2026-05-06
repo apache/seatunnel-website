@@ -21,3 +21,5 @@ Each deployment mode has different usage scenarios, advantages, and disadvantage
 [Hybrid Cluster Mode Deployment](hybrid-cluster-deployment.md)
 
 [Separated Cluster Mode Deployment](separated-cluster-deployment.md)
+
+If you are upgrading an existing SeaTunnel Engine installation instead of deploying a new one from scratch, see [SeaTunnel Engine(Zeta) Version Upgrade](version-upgrade.md).
