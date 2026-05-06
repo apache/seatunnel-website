@@ -28,7 +28,7 @@ env {
 ./bin/start-seatunnel-spark-3-connector-v2.sh --master yarn --deploy-mode cluster --config config/example.conf
 ```
 
-#### Spark on yarn client模式
+#### Spark on Yarn client模式
 
 ```
 ./bin/start-seatunnel-spark-3-connector-v2.sh --master yarn --deploy-mode client --config config/example.conf
