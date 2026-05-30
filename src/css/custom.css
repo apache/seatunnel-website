@@ -67,3 +67,35 @@ html {
 html[data-theme='dark']  img {
   filter: brightness(.8) contrast(1.2)
 }
+
+/* Hide Google Translate banner and fix body positioning */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.skiptranslate {
+  display: none !important;
+}
+
+body > .skiptranslate {
+  display: none !important;
+}
+
+/* Hide Google Translate branding at the bottom */
+#goog-gt-tt, .goog-te-balloon-frame {
+  display: none !important;
+}
+
+/* Ensure page isn't pushed down by Google Translate */
+html body {
+  position: static !important;
+}
+
+/* Prevent Google Translate from translating specific elements */
+.notranslate {
+  translate: no;
+}

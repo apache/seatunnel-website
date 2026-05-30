@@ -7,13 +7,76 @@
       "security_p_two": " by dropping a mail at ",
       "security_p_three": " In the mail, specify the project name SeaTunnel with the description of the issue or potential threat. You are also urged to recommend the way to reproduce and replicate the issue. The security team and the SeaTunnel community will get back to you after assessing and analysing the findings.",
       "security_p_notice": "Before using SeaTunnel, please review the usage documentation to ensure you understand the purpose and impact of each operation.",
-      "security_p_seatunnel_web_notice": "In seatunnel-web, it's up to the system administrator to handle user authentication. Once a user is logged in, they get full access to the system. seatunnel-web won’t perform any extra security checks when calling third-party SDKs.",
-      "security_p_seatunnel_zeta_notice": "The same goes for seatunnel-zeta: any client that has been authenticated will have full access. System don’t do additional security checks when those client connections interact with third-party SDKs.",
+      "security_model_title": "Supported Security Model",
+      "security_model_intro": "Apache SeaTunnel management interfaces are designed for trusted, operator-controlled environments.",
+      "security_model_seatunnel_web_title": "seatunnel-web",
+      "security_p_seatunnel_web_notice": "seatunnel-web delegates user authentication to the surrounding deployment. Once a user is admitted, SeaTunnel treats that user as having full administrative access. seatunnel-web does not provide per-operation authorization checks for third-party SDK calls.",
+      "security_model_seatunnel_zeta_title": "seatunnel-zeta",
+      "security_p_seatunnel_zeta_notice": "SeaTunnel Engine management access is administrative access. Any client that can reach a management interface should be treated as a cluster administrator. SeaTunnel does not perform additional authorization checks when those clients submit jobs or interact with connectors, plugins, or third-party SDKs.",
+      "security_model_items": [
+        "SeaTunnel management interfaces are not intended to be exposed directly to the public Internet.",
+        "SeaTunnel does not currently provide role-based access control (RBAC), multi-tenant isolation, or per-user authorization for management operations.",
+        "SeaTunnel executes user-supplied jobs, connector logic, and plugin code with the privileges of the SeaTunnel process. It does not provide workload sandboxing.",
+        "If a deployment admits a user or client to a SeaTunnel management interface, that access should be protected like administrator access."
+      ],
+      "deployment_title": "Deployment Recommendations",
+      "deployment_items": [
+        "Expose only the management endpoints that you intentionally use.",
+        "Place SeaTunnel behind a private network, VPN, reverse proxy, ingress policy, or an equivalent access-control layer.",
+        "Use TLS or mutual TLS when management traffic crosses less-trusted networks.",
+        "Protect credentials, tokens, and cluster access like administrator credentials."
+      ],
       "tip": "PLEASE PAY ATTENTION to report the security issue on the security email before disclosing it on public domain.",
       "faq_p_one": "During a security analysis of SeaTunnel, I noticed that SeaTunnel allows for remote code execution, is this an issue?",
       "faq_p_one_answer_1": "Apache SeaTunnel is a framework for executing user-supplied code and config in clusters. Users can submit code to SeaTunnel processes, which will be executed unconditionally, without any attempts to limit what code can run. Starting other processes, establishing network connections or accessing and modifying local files is possible.",
       "faq_p_one_answer_2": "Historically, we’ve received numerous remote code execution vulnerability reports, which we had to reject, as this is by design.",
-      "faq_p_one_answer_3": "We strongly discourage users to expose SeaTunnel processes to the public internet. Within company networks or “cloud” accounts, we recommend restricting access to a SeaTunnel cluster via appropriate means."
+      "faq_p_one_answer_3": "We strongly discourage users from exposing SeaTunnel processes to the public Internet. Within company networks or cloud accounts, we recommend restricting access to a SeaTunnel cluster via appropriate means.",
+      "faq_p_two": "Does SeaTunnel provide RBAC or fine-grained authorization for management APIs?",
+      "faq_p_two_answer_1": "No. Once a user or client is admitted to a SeaTunnel management interface, SeaTunnel treats that access as administrative access.",
+      "faq_p_two_answer_2": "If you need finer-grained access control, enforce it outside of SeaTunnel by using your identity provider, reverse proxy, API gateway, ingress policy, or network segmentation.",
+      "faq_p_three": "Can I expose SeaTunnel management interfaces directly to the public Internet?",
+      "faq_p_three_answer_1": "No. SeaTunnel management interfaces are intended for trusted operator environments.",
+      "faq_p_three_answer_2": "Expose them only through private networking or an explicit access-control layer, and use TLS where appropriate."
+    }
+  },
+  "zh-CN": {
+    "info": {
+      "desc": "Apache 软件基金会会严肃对待其软件项目中的安全问题。Apache SeaTunnel 对涉及其特性和功能的安全问题同样保持高度敏感并积极响应。",
+      "security_p_one": "如果您对 SeaTunnel 的安全性有疑问，或者发现了漏洞或潜在威胁，请及时联系",
+      "security_team": "Apache Security Team",
+      "security_p_two": "，发送邮件至 ",
+      "security_p_three": "。请在邮件中注明项目名称 SeaTunnel，并描述问题或潜在威胁，同时尽量提供复现方式。安全团队和 SeaTunnel 社区会在评估分析后与您联系。",
+      "security_p_notice": "在使用 SeaTunnel 之前，请先阅读相关使用文档，确保您理解每项操作的目的和影响。",
+      "security_model_title": "支持的安全模型",
+      "security_model_intro": "Apache SeaTunnel 的管理接口面向受信任、由运维人员控制的环境设计。",
+      "security_model_seatunnel_web_title": "seatunnel-web",
+      "security_p_seatunnel_web_notice": "seatunnel-web 将用户认证交给外围部署体系处理。一旦用户被允许访问，SeaTunnel 会将其视为拥有完整管理权限的用户。seatunnel-web 不会针对第三方 SDK 调用提供逐操作授权检查。",
+      "security_model_seatunnel_zeta_title": "seatunnel-zeta",
+      "security_p_seatunnel_zeta_notice": "SeaTunnel Engine 的管理访问本质上就是管理员访问。任何能够到达管理接口的客户端，都应被视为集群管理员。SeaTunnel 不会在这些客户端提交作业或与连接器、插件、第三方 SDK 交互时再做额外授权检查。",
+      "security_model_items": [
+        "SeaTunnel 管理接口不适合直接暴露到公网。",
+        "SeaTunnel 当前不提供基于角色的访问控制（RBAC）、多租户隔离或面向管理操作的按用户细粒度授权。",
+        "SeaTunnel 会以自身进程权限执行用户提交的作业、连接器逻辑和插件代码，不提供工作负载沙箱隔离。",
+        "如果某个部署允许用户或客户端访问 SeaTunnel 管理接口，就应按管理员权限来保护这类访问。"
+      ],
+      "deployment_title": "部署建议",
+      "deployment_items": [
+        "只暴露您明确需要使用的管理接口。",
+        "将 SeaTunnel 放在私有网络、VPN、反向代理、Ingress 策略或同类访问控制层之后。",
+        "当管理流量需要经过低信任网络时，启用 TLS 或双向 TLS。",
+        "像保护管理员凭证一样保护凭据、令牌和集群访问权限。"
+      ],
+      "tip": "请务必先通过安全邮箱报告安全问题，再考虑在公开渠道披露。",
+      "faq_p_one": "在对 SeaTunnel 做安全分析时，我发现它允许远程代码执行，这是漏洞吗？",
+      "faq_p_one_answer_1": "Apache SeaTunnel 是一个在集群中执行用户提供代码和配置的框架。用户可以向 SeaTunnel 进程提交代码，这些代码会按设计被无条件执行，系统不会尝试限制可运行代码的能力。启动其他进程、建立网络连接、访问和修改本地文件都是可能的。",
+      "faq_p_one_answer_2": "历史上我们收到过许多远程代码执行类漏洞报告，但这些能力属于产品设计本身，因此被判定为非安全漏洞。",
+      "faq_p_one_answer_3": "我们强烈不建议将 SeaTunnel 进程直接暴露到公网。在公司内网或云账号内部，也建议通过适当方式限制对 SeaTunnel 集群的访问。",
+      "faq_p_two": "SeaTunnel 是否提供 RBAC 或面向管理 API 的细粒度授权？",
+      "faq_p_two_answer_1": "不提供。一旦某个用户或客户端被允许访问 SeaTunnel 管理接口，SeaTunnel 就会将该访问视为管理访问。",
+      "faq_p_two_answer_2": "如果您需要更细粒度的访问控制，请在 SeaTunnel 之外通过身份提供方、反向代理、API 网关、Ingress 策略或网络分段来实现。",
+      "faq_p_three": "我可以把 SeaTunnel 管理接口直接暴露到公网吗？",
+      "faq_p_three_answer_1": "不可以。SeaTunnel 管理接口面向受信任的运维环境设计。",
+      "faq_p_three_answer_2": "请只通过私有网络或显式的访问控制层暴露这些接口，并在适当场景下启用 TLS。"
     }
   }
 }

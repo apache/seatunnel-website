@@ -50,8 +50,8 @@
     },
     {
       "apacheId": "lidongdai",
-      "githubId": "dailidong",
-      "name": "Lidong Dai",
+      "githubId": "davidzollo",
+      "name": "David Zollo",
       "userId": "15833811"
     },
     {
@@ -143,6 +143,12 @@
       "githubId": "liunaijie",
       "name": "Naijie Liu",
       "userId": "28497357"
+    },
+    {
+      "apacheId": "shenghang",
+      "githubId": "zhangshenghang",
+      "name": "Shenghang Zhang",
+      "userId": "29418975"
     }
   ],
   "committer": [
@@ -213,12 +219,6 @@
       "userId": "5720433"
     },
     {
-      "apacheId": "shenghang",
-      "githubId": "zhangshenghang",
-      "name": "Shenghang Zhang",
-      "userId": "29418975"
-    },
-    {
       "apacheId": "zhangdonghao",
       "githubId": "hawk9821",
       "name": "Donghao Zhang",
@@ -229,6 +229,12 @@
       "githubId": "corgy-w",
       "name": "Chao Wang",
       "userId": "73771213"
+    },
+    {
+      "apacheId": "doyeon",
+      "githubId": "dybyte",
+      "name": "Doyeon Kim",
+      "userId": "132787602"
     }
   ]
 }

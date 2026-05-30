@@ -56,7 +56,7 @@ StarRocks数据接收器内部实现采用了缓存，通过stream load将数据
 
 ### save_mode_create_template
 
-StarRocks数据接收器使用模板，在需求需要的时候也可以修改模板，并结合上游数据类型和结构生成表的创建语句来自动创建StarRocks表。当前仅在多表模式下有效。
+StarRocks支持使用创建模版建表(主键表和明细表)，数据接收器使用模板如下，在需求需要的时候也可以修改模板，并结合上游数据类型和结构生成表的创建语句来自动创建StarRocks表。当前仅在多表模式下有效。
 
 默认模板如下：
 
@@ -72,6 +72,22 @@ DISTRIBUTED BY HASH (${rowtype_primary_key})PROPERTIES (
 )
 ```
 
+完整示例如下：
+save_mode_create_template = """
+    CREATE TABLE IF NOT EXISTS shop.`${table_name}` (
+        ${rowtype_primary_key},
+        ${rowtype_fields}
+        ) ENGINE=OLAP
+        PRIMARY KEY (${rowtype_primary_key})
+        DISTRIBUTED BY HASH (${rowtype_primary_key})
+        PROPERTIES (
+                "replication_num" = "1",
+                "in_memory" = "false",
+                "enable_persistent_index" = "true",
+                "replicated_storage" = "true",
+                "compression" = "LZ4"
+          )
+    """
 在模板中添加自定义字段，比如说加上`id`字段的修改模板如下：
 
 ```sql

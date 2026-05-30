@@ -1,17 +1,48 @@
 # Code Review Guidance
 
-In order to continuously improve the quality of Apache SeaTunnel code, we have compiled a code review guide.
+To continuously improve the quality of Apache SeaTunnel code, we have compiled this code review guide.
 
-We hope that code reviewers strictly adhere to this guidance, especially in terms of document and e2e inspections.
+We expect reviewers and committers to follow this guidance consistently, especially for documentation, e2e coverage, and compatibility-sensitive changes.
 
-1. Is the title of PR in compliance with regulations and the correct expression of meaning
-2. Is there any issue link related to bugs in the description of PR, and is there a design document link for major modifications.
-3. Check if documents have been added/changed, and if the document description is correct. A good example is https://github.com/apache/seatunnel/pull/4590
-4. Check whether to add e2e and the correctness of e2e test (function coverage and result data validation, including whether to cover all supported data types, check whether the columns between the source and target should be aligned, the number of rows should be aligned, and the data in each row should also be aligned). A good example is https://github.com/apache/seatunnel/tree/dev/seatunnel-e2e/seatunnel-connector-v2-e2e/connector-clickhouse-e2e
-5. Check if there are any incompatible changes (especially modifications to parameters, with special attention paid. If incompatible changes are indeed needed, they need to be discussed by email)
-6. Check CI results, license updates, etc
-7. Enumerator update, check if the split snapshot and restore are correct, including whether the split allocation strategy is stable
-8. Reader update, check split snapshot and checkpoint lock range and various end conditions in pollnext
-9. Sink update, check for two-stage submission of XXXCommitter (if any)
-10. Writer updates, checking data refresh frequency, interval, memory like batch size, etc
-11. After passing the above functional checks, please review the code style (ensuring that the functionality is based on the code style), and the style is related to personal preferences. You can also refer to this: https://shardingsphere.apache.org/community/cn/involved/conduct/code/
+## Approval policy for PRs targeting `dev`
+
+GitHub currently shows the `dev` branch as requiring only one approval before merge. This is only the global branch protection baseline.
+
+For PRs that **do not** touch core modules, the merge baseline is:
+
+1. **One committer approval**
+2. Passing automated bot checks, such as CI, code style, and license validation
+3. At least one collaborator or AI bot review, where applicable
+
+The following modules are considered core and therefore still require **two committer approvals** before merge:
+
+- `seatunnel-api`
+- `seatunnel-engine/seatunnel-engine-core`
+- `seatunnel-engine/seatunnel-engine-server`
+- `seatunnel-engine/seatunnel-engine-client`
+- `seatunnel-engine/seatunnel-engine-common`
+- `seatunnel-engine/seatunnel-engine-serializer`
+- `seatunnel-engine/seatunnel-engine-storage`
+
+All other modules, including connectors, transforms, e2e tests, documentation, and tooling, follow the relaxed baseline above as long as they do not modify any of the core modules listed here.
+
+This policy is determined by **module scope**, not by the number of changed files or lines of code. If a PR touches any core module, the stricter **two committer approvals** rule applies to the whole PR.
+
+GitHub cannot enforce this per-module rule automatically today, so reviewers and committers must inspect the changed files manually. If a PR touches core modules but does not yet have two committer approvals, do not merge it even if GitHub reports that the required review check has passed.
+
+## General review checklist
+
+1. Check whether the PR title follows project conventions and accurately describes the change.
+2. Check whether bug fixes link the related issue, and whether major changes link a design document.
+3. Check whether documentation has been added or updated when needed, and whether the documentation is correct. A good example is [PR #4590](https://github.com/apache/seatunnel/pull/4590).
+4. Check whether e2e tests should be added, and whether the e2e coverage is correct. Review both function coverage and result validation, including supported data types, source and target column alignment, row counts, and row-level data correctness. A good example is the [ClickHouse e2e case](https://github.com/apache/seatunnel/tree/dev/seatunnel-e2e/seatunnel-connector-v2-e2e/connector-clickhouse-e2e).
+5. Check whether the change introduces incompatible behavior, especially parameter changes. If an incompatible change is really necessary, it should be discussed on the mailing list first.
+6. Check CI results, license updates, and other release-readiness signals.
+
+## Component-specific review checklist
+
+7. For enumerator changes, check whether split snapshot and restore are correct, and whether the split allocation strategy remains stable.
+8. For reader changes, check split snapshot handling, checkpoint lock scope, and all end conditions in `pollNext`.
+9. For sink changes, check whether two-phase commit logic in `XXXCommitter` (if any) is still correct.
+10. For writer changes, check data flush frequency, flush interval, memory usage, batch size, and other resource-sensitive behavior.
+11. After the functional checks above pass, review the code style. Code style should support readability without weakening functional correctness. For additional style references, see [ShardingSphere's code conduct guide](https://shardingsphere.apache.org/community/cn/involved/conduct/code/).

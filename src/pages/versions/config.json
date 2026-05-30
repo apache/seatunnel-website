@@ -11,22 +11,28 @@
       "doc": "文档",
       "source": "源代码",
       "release": "Release Note",
-      "nextLink": "/docs/intro/about",
+      "nextLink": "/docs/introduction/about",
       "latestData": [
         {
-          "versionLabel": "2.3.12",
-          "docUrl": "/docs/2.3.12/about",
-          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.12",
-          "sourceTag": "2.3.12"
+          "versionLabel": "2.3.13",
+          "docUrl": "/docs/2.3.13/introduction/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.13",
+          "sourceTag": "2.3.13"
         }
       ],
       "nextData": [
         {
           "versionLabel": "Next",
-          "docUrl": "/docs/about"
+          "docUrl": "/docs/introduction/about"
         }
       ],
       "historyData": [
+        {
+          "versionLabel": "2.3.13",
+          "docUrl": "/docs/2.3.13/introduction/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.13",
+          "sourceTag": "2.3.13"
+        },
         {
           "versionLabel": "2.3.12",
           "docUrl": "/docs/2.3.12/about",
@@ -156,22 +162,28 @@
       "doc": "Document",
       "source": "Source Code",
       "release": "Release Note",
-      "nextLink": "/docs/about",
+      "nextLink": "/docs/introduction/about",
       "latestData": [
         {
-          "versionLabel": "2.3.12",
-          "docUrl": "/docs/2.3.12/about",
-          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.12",
-          "sourceTag": "2.3.12"
+          "versionLabel": "2.3.13",
+          "docUrl": "/docs/2.3.13/introduction/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.13",
+          "sourceTag": "2.3.13"
         }
       ],
       "nextData": [
         {
           "versionLabel": "Next",
-          "docUrl": "/docs/about"
+          "docUrl": "/docs/introduction/about"
         }
       ],
       "historyData": [
+        {
+          "versionLabel": "2.3.13",
+          "docUrl": "/docs/2.3.13/introduction/about",
+          "downloadUrl": "https://github.com/apache/seatunnel/releases/tag/2.3.13",
+          "sourceTag": "2.3.13"
+        },
         {
           "versionLabel": "2.3.12",
           "docUrl": "/docs/2.3.12/about",
