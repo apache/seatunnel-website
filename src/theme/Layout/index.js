@@ -23,9 +23,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 const ASK_AI_TRIGGER_ID = 'st-global-ask-ai-trigger';
 const KAPA_PROJECT_COLOR = '#7db9f5';
 const KAPA_SHADOW_STYLE_ID = 'st-kapa-shadow-overrides';
+
 const KAPA_SHADOW_OVERRIDES = `
   #kapa-widget-root [data-modal-content],
-  #kapa-widget-root [role='dialog'] {
+  #kapa-widget-root #kapa-modal-content {
     width: min(1120px, calc(100vw - 28px)) !important;
     min-width: min(1120px, calc(100vw - 28px)) !important;
     max-width: 1120px !important;
@@ -94,6 +95,21 @@ const KAPA_SHADOW_OVERRIDES = `
     border: 1px solid rgba(160, 202, 240, 0.5) !important;
     background: rgba(255, 255, 255, 0.9) !important;
   }
+
+  /*
+   * Avoid affecting Kapa internal dropdown/popover dialogs.
+   * Deep thinking may create an internal Mantine dropdown on hover.
+   */
+  #kapa-widget-root [id*='dropdown'],
+  #kapa-widget-root [class*='Popover-dropdown'],
+  #kapa-widget-root [class*='mantine-Popover-dropdown'] {
+    width: auto !important;
+    min-width: unset !important;
+    max-width: 360px !important;
+    min-height: unset !important;
+    border-radius: 14px !important;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12) !important;
+  }
 `;
 
 /**
@@ -141,9 +157,11 @@ function KapaWidgetOverrides() {
       }
 
       applyKapaWidgetOverrides(shadowRoot);
+
       shadowObserver?.disconnect();
       shadowObserver = new MutationObserver(() => applyKapaWidgetOverrides(shadowRoot));
       shadowObserver.observe(shadowRoot, {childList: true, subtree: true});
+
       return true;
     };
 
@@ -153,6 +171,7 @@ function KapaWidgetOverrides() {
           hostObserver.disconnect();
         }
       });
+
       hostObserver.observe(document.body, {childList: true, subtree: true});
     }
 
@@ -187,7 +206,13 @@ function MessageIcon() {
 
 function GlobalAskAi() {
   return (
-    <button id={ASK_AI_TRIGGER_ID} type="button" className="st-global-ask-ai" aria-label="Ask AI" title="Ask AI">
+    <button
+      id={ASK_AI_TRIGGER_ID}
+      type="button"
+      className="st-global-ask-ai"
+      aria-label="Ask AI"
+      title="Ask AI"
+    >
       <span className="st-global-ask-ai-button">
         <MessageIcon />
         <span>Ask AI</span>
@@ -199,9 +224,15 @@ function GlobalAskAi() {
 
 export default function LayoutWrapper(props) {
   const {i18n} = useDocusaurusContext();
-  const widgetLanguage = typeof window !== 'undefined'
-    ? (window.location.pathname.startsWith('/zh-CN/') ? 'zh' : 'en')
-    : (i18n.currentLocale === 'zh-CN' ? 'zh' : 'en');
+
+  const widgetLanguage =
+    typeof window !== 'undefined'
+      ? window.location.pathname.startsWith('/zh-CN/')
+        ? 'zh'
+        : 'en'
+      : i18n.currentLocale === 'zh-CN'
+        ? 'zh'
+        : 'en';
 
   // Inject the global Ask AI shortcut once so docs pages and custom pages stay consistent.
   return (
@@ -240,6 +271,7 @@ export default function LayoutWrapper(props) {
           data-bot-protection-mechanism="hcaptcha"
         ></script>
       </Head>
+
       <Layout {...props} />
       <KapaWidgetOverrides />
       <GlobalAskAi />
