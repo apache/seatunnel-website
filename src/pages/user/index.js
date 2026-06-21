@@ -27,26 +27,17 @@ export default function UserPage() {
                             {
                                 users.map((item, i) => (
                                     <div
-                                        key={i}
+                                        key={`${item.label}-${i}`}
                                         index={i}
-                                        className={`case_item${item.icon ? ' case_item--text-logo' : ''}`}
+                                        className="case_item case_item--text-logo"
                                         title={item.title || item.label || item.alt || 'User logo'}
                                     >
-                                        {item.icon ? (
-                                            <>
-                                                <img
-                                                    className="case_icon"
-                                                    src={withBaseUrl('/user/' + item.icon)}
-                                                    alt={item.alt || item.label || 'User logo'}
-                                                />
-                                                <span className="case_label">{item.label}</span>
-                                            </>
-                                        ) : (
-                                            <img
-                                                src={withBaseUrl('/user/' + item.url)}
-                                                alt={item.alt || item.url || 'User logo'}
-                                            />
-                                        )}
+                                        <img
+                                            className="case_icon"
+                                            src={withBaseUrl('/user/' + item.icon)}
+                                            alt={item.alt || item.label || 'User logo'}
+                                        />
+                                        <span className="case_label">{item.label}</span>
                                     </div>
                                 ))
                             }

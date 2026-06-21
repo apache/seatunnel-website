@@ -1,47 +1,222 @@
 [
-    {"url":"JPM.jpg"},
-    {"url":"coupang.jpg"},
-    {"url":"stey.jpg"},
-    {"url":"Byte.jpg"},
-    {"url":"360.png"},
-    {"url":"bilibili.png"},
-    {"url":"boss直聘.png"},
-    {"url":"CMCC.png"},
-    {"url":"foxcoon.png"},
-    {"url":"T3出行.png"},
-    {"url":"tencent_cloud.png"},
-    {"url":"chinaentercom.jpeg"},
-    {"url":"hangzhoujingxiao.jpg"},
-    {"url":"jingdongkeji.jpeg"},
-    {"url":"Dmall.jpg"},
-    {"url":"huya.png"},
-    {"url":"qunar.png"},
-    {"url":"anchnet.png"},
-    {"url":"shuguanguyun.jpg"},
-    {"url":"GridSum.png"},
-    {"url":"数字广东.png"},
-    {"url":"guanyuzuiyou.png"},
-    {"url":"youzu.png"},
-    {"url":"boton.png"},
-    {"url":"SunYard.png"},
-    {"url":"AURORA.png"},
-    {"url":"ZhuoFan.png"},
-    {"url":"Big_Data_Academy.png"},
-    {"url":"ShiHang_Fresh.png"},
-    {"url":"OPPO.png"},
-    {"url":"Shopee.png"},
-    {"url":"songguo.png"},
-    {"url":"cqdw.jpg"},
-    {"url":"SYzz.jpg"},
-    {"url":"sfy.jpg"},
-    {"url":"aibao.png"},
-    {"url":"aima.png"},
-    {"url":"huafenggaoke.jpeg"},
-    {"url":"Keepawake.png"},
-    {"url":"sichuan.png"},
-    {"url":"yunde.png"},
-    {"url":"zhiliwulian.png"},
-    {"url":"s7.png"},
-    {"url":"58.png"}
-
+    {
+        "icon": "brand-icons/jpmorgan.png",
+        "label": "JPMorgan",
+        "alt": "JPMorgan logo"
+    },
+    {
+        "icon": "brand-icons/coupang.png",
+        "label": "Coupang",
+        "alt": "Coupang logo"
+    },
+    {
+        "icon": "brand-icons/stey.png",
+        "label": "Stey",
+        "alt": "Stey logo"
+    },
+    {
+        "icon": "brand-icons/bytedance.png",
+        "label": "ByteDance",
+        "alt": "ByteDance logo"
+    },
+    {
+        "icon": "brand-icons/360.png",
+        "label": "360",
+        "alt": "360 logo"
+    },
+    {
+        "icon": "brand-icons/bilibili.png",
+        "label": "Bilibili",
+        "alt": "Bilibili logo"
+    },
+    {
+        "icon": "brand-icons/boss-zhipin.png",
+        "label": "BOSS Zhipin",
+        "alt": "BOSS Zhipin logo"
+    },
+    {
+        "icon": "brand-icons/china-mobile.png",
+        "label": "China Mobile",
+        "alt": "China Mobile logo"
+    },
+    {
+        "icon": "brand-icons/foxconn.png",
+        "label": "Foxconn",
+        "alt": "Foxconn logo"
+    },
+    {
+        "icon": "brand-icons/t3-mobility.png",
+        "label": "T3 Mobility",
+        "alt": "T3 Mobility logo"
+    },
+    {
+        "icon": "brand-icons/tencent-cloud.png",
+        "label": "Tencent Cloud",
+        "alt": "Tencent Cloud logo"
+    },
+    {
+        "icon": "brand-icons/china-entercom.png",
+        "label": "China Entercom",
+        "alt": "China Entercom logo"
+    },
+    {
+        "icon": "brand-icons/hangzhou-consumer-finance.png",
+        "label": "Hangzhou Consumer Finance",
+        "alt": "Hangzhou Consumer Finance logo"
+    },
+    {
+        "icon": "brand-icons/jd-technology.png",
+        "label": "JD Technology",
+        "alt": "JD Technology logo"
+    },
+    {
+        "icon": "brand-icons/dmall.png",
+        "label": "DMALL",
+        "alt": "DMALL logo"
+    },
+    {
+        "icon": "brand-icons/huya.png",
+        "label": "HUYA",
+        "alt": "HUYA logo"
+    },
+    {
+        "icon": "brand-icons/qunar.png",
+        "label": "Qunar",
+        "alt": "Qunar logo"
+    },
+    {
+        "icon": "brand-icons/anchnet.png",
+        "label": "Anchnet",
+        "alt": "Anchnet logo"
+    },
+    {
+        "icon": "brand-icons/sugon-cloud.png",
+        "label": "Sugon Cloud",
+        "alt": "Sugon Cloud logo"
+    },
+    {
+        "icon": "brand-icons/gridsum.png",
+        "label": "GridSum",
+        "alt": "GridSum logo"
+    },
+    {
+        "icon": "brand-icons/digital-guangdong.png",
+        "label": "Digital Guangdong",
+        "alt": "Digital Guangdong logo"
+    },
+    {
+        "icon": "brand-icons/zuiyou.png",
+        "label": "ZUIYOU",
+        "alt": "ZUIYOU logo"
+    },
+    {
+        "icon": "brand-icons/yoozoo.png",
+        "label": "YOOZOO",
+        "alt": "YOOZOO logo"
+    },
+    {
+        "icon": "brand-icons/boton.png",
+        "label": "BOTON",
+        "alt": "BOTON logo"
+    },
+    {
+        "icon": "brand-icons/sunyard.png",
+        "label": "Sunyard",
+        "alt": "Sunyard logo"
+    },
+    {
+        "icon": "brand-icons/aurora-group.png",
+        "label": "Aurora Group",
+        "alt": "Aurora Group logo"
+    },
+    {
+        "icon": "brand-icons/zhuofan-information.png",
+        "label": "Zhuofan Information",
+        "alt": "Zhuofan Information logo"
+    },
+    {
+        "icon": "brand-icons/zhongke-big-data-academy.png",
+        "label": "Zhongke Big Data Academy",
+        "alt": "Zhongke Big Data Academy logo"
+    },
+    {
+        "icon": "brand-icons/shihang-fresh.png",
+        "label": "Shihang Fresh",
+        "alt": "Shihang Fresh logo"
+    },
+    {
+        "icon": "brand-icons/oppo.png",
+        "label": "OPPO",
+        "alt": "OPPO logo"
+    },
+    {
+        "icon": "brand-icons/shopee.png",
+        "label": "Shopee",
+        "alt": "Shopee logo"
+    },
+    {
+        "icon": "brand-icons/songguo-mobility.png",
+        "label": "Songguo Mobility",
+        "alt": "Songguo Mobility logo"
+    },
+    {
+        "icon": "brand-icons/state-grid-chongqing.png",
+        "label": "State Grid Chongqing",
+        "alt": "State Grid Chongqing logo"
+    },
+    {
+        "icon": "brand-icons/boulder-ai.png",
+        "label": "Boulder AI",
+        "alt": "Boulder AI logo"
+    },
+    {
+        "icon": "brand-icons/sophia-home.png",
+        "label": "Sophia Home",
+        "alt": "Sophia Home logo"
+    },
+    {
+        "icon": "brand-icons/aibao.png",
+        "label": "Aibao",
+        "alt": "Aibao logo"
+    },
+    {
+        "icon": "brand-icons/aima-hi-tech.png",
+        "label": "AIMA Hi-Tech",
+        "alt": "AIMA Hi-Tech logo"
+    },
+    {
+        "icon": "brand-icons/huafeng-gaoke.png",
+        "label": "Huafeng Gaoke",
+        "alt": "Huafeng Gaoke logo"
+    },
+    {
+        "icon": "brand-icons/keep-awake.png",
+        "label": "Keep Awake",
+        "alt": "Keep Awake logo"
+    },
+    {
+        "icon": "brand-icons/sichuan-zhi-li-wulian.png",
+        "label": "Sichuan Zhi Li Wulian",
+        "alt": "Sichuan Zhi Li Wulian logo"
+    },
+    {
+        "icon": "brand-icons/yundee.png",
+        "label": "Yundee",
+        "alt": "Yundee logo"
+    },
+    {
+        "icon": "brand-icons/zhi-li-wulian.png",
+        "label": "Zhi Li Wulian",
+        "alt": "Zhi Li Wulian logo"
+    },
+    {
+        "icon": "brand-icons/s7-airlines.png",
+        "label": "S7 Airlines",
+        "alt": "S7 Airlines logo"
+    },
+    {
+        "icon": "brand-icons/58-com.png",
+        "label": "58.com",
+        "alt": "58.com logo"
+    }
 ]

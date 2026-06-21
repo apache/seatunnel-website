@@ -41,46 +41,41 @@
     .case_item {
       display: flex;
       min-width: 0;
-      padding: 12px 14px;
+      gap: 12px;
+      padding: 14px 16px;
       background: #FFFFFF;
-      min-height: 76px;
+      min-height: 84px;
       border: 1px solid rgba(15, 23, 42, 0.12);
       box-shadow: 0 3px 10px rgb(47 85 212 / 8%);
       border-radius: 6px;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
 
-      > img {
-        max-width: 90%;
-        max-height: 90%;
+      .case_icon {
+        width: 40px;
+        height: 40px;
+        padding: 7px;
+        max-width: none;
+        max-height: none;
+        flex-shrink: 0;
         object-fit: contain;
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        box-sizing: border-box;
       }
 
-      &--text-logo {
-        gap: 12px;
-        justify-content: flex-start;
+      .case_label {
+        display: -webkit-box;
+        overflow: hidden;
+        color: #334155;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
         text-align: left;
-
-        .case_icon {
-          width: 32px;
-          height: 32px;
-          max-width: none;
-          max-height: none;
-          flex-shrink: 0;
-          border-radius: 8px;
-        }
-
-        .case_label {
-          display: -webkit-box;
-          overflow: hidden;
-          color: #334155;
-          font-size: 14px;
-          line-height: 18px;
-          font-weight: 600;
-          letter-spacing: -0.01em;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-        }
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
     }
   }
@@ -118,21 +113,19 @@
       grid-column-gap: 12px;
 
       .case_item {
-        min-height: 72px;
-        padding: 10px 12px;
+        gap: 10px;
+        min-height: 76px;
+        padding: 12px;
 
-        &--text-logo {
-          gap: 10px;
+        .case_icon {
+          width: 36px;
+          height: 36px;
+          padding: 6px;
+        }
 
-          .case_icon {
-            width: 28px;
-            height: 28px;
-          }
-
-          .case_label {
-            font-size: 13px;
-            line-height: 16px;
-          }
+        .case_label {
+          font-size: 13px;
+          line-height: 16px;
         }
       }
     }
