@@ -273,12 +273,6 @@ const config = {
           position: "right",
           activeBaseRegex: `/blog`,
         },
-        // {
-        //   to: "/user_cases",
-        //   label: "UserCases",
-        //   position: "right",
-        //   activeBaseRegex: `/user_cases`,
-        // },
         {
           to: "/team",
           label: "Team",
@@ -443,11 +437,30 @@ const config = {
       },
     ],
     [
-      "@docusaurus/plugin-content-blog",
+      "@docusaurus/plugin-client-redirects",
       {
-        id: "user_cases",
-        path: "user_cases",
-        routeBasePath: "user_cases",
+        redirects: [
+          {
+            from: "/user_cases",
+            to: "/blog",
+          },
+          {
+            from: "/user_cases/tags",
+            to: "/blog/tags",
+          },
+          {
+            from: "/user_cases/The-practice-of-SeaTunnel-in-Vip",
+            to: "/blog/The-practice-of-SeaTunnel-in-Vip",
+          },
+          {
+            from: "/user_cases/tags/vip",
+            to: "/blog/tags/vip",
+          },
+          {
+            from: "/user_cases/tags/click-house",
+            to: "/blog/tags/click-house",
+          },
+        ],
       },
     ],
   ],
