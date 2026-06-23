@@ -2,13 +2,17 @@
   "zh-CN": {
     "info": {
       "desc": "SeaTunnel 社区由贡献者组成。 贡献者可以直接访问 SeaTunnel 项目的源代码并参与贡献当中(包括但不限于代码的贡献)。 贡献者通过提交补丁和建议来改善项目。 该项目的贡献者数量是无限的。 无论是琐碎的清理工作，重要的新功能还是其他重大的奖励，对 SeaTunnel 所做的所有贡献都将受到极大的赞赏。",
-      "tip": "(排名不分先后)"
+      "tip": "(排名不分先后)",
+      "prContributorTitle": "PR Contributors",
+      "prContributorDesc": "除上方 PMC 与 Committer 外，以下 {count} 位贡献者都曾向 Apache SeaTunnel 官网仓库提交过至少一个 PR，已一并加入荣誉榜。"
     }
   },
   "en": {
     "info": {
       "desc": "The SeaTunnel team is comprised of Members and Contributors. Members have direct access to the source of SeaTunnel project and actively evolve the code-base. Contributors improve the project through submission of patches and suggestions to the Members. The number of Contributors to the project is unbounded. All contributions to SeaTunnel are greatly appreciated, whether for trivial cleanups, big new features or other material rewards.",
-      "tip": "(In no particular order)"
+      "tip": "(In no particular order)",
+      "prContributorTitle": "PR Contributors",
+      "prContributorDesc": "In addition to the PMC members and committers listed above, the following {count} contributors have each submitted at least one pull request to the Apache SeaTunnel website repository."
     }
   },
   "pmc": [
