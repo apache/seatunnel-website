@@ -31,6 +31,8 @@ jobs:
         run: |
           npm run sync
       - name: Build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run build
       - name: Copy .asf.yaml and .htaccess
