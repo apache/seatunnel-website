@@ -3,7 +3,7 @@ const path = require('path');
 const {execSync} = require('child_process');
 
 const REPO_OWNER = 'apache';
-const REPO_NAME = 'seatunnel-website';
+const REPO_NAME = 'seatunnel';
 const ROOT_DIR = path.resolve(__dirname, '..');
 const TEAM_CONFIG_PATH = path.join(ROOT_DIR, 'src/pages/team/languages.json');
 const OUTPUT_PATH = path.join(ROOT_DIR, 'src/pages/team/pr-contributors.json');
