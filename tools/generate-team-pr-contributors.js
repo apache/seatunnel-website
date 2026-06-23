@@ -7,7 +7,7 @@ const REPO_NAME = 'seatunnel';
 const ROOT_DIR = path.resolve(__dirname, '..');
 const TEAM_CONFIG_PATH = path.join(ROOT_DIR, 'src/pages/team/languages.json');
 const OUTPUT_PATH = path.join(ROOT_DIR, 'src/pages/team/pr-contributors.json');
-const GRAPHQL_ENDPOINT = 'https://api.github.com/graphql';
+const CONTRIBUTORS_ENDPOINT = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contributors`;
 
 function readGithubToken() {
   const envToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
@@ -29,30 +29,20 @@ function readGithubToken() {
   }
 }
 
-async function graphqlRequest(token, query, variables) {
-  const response = await fetch(GRAPHQL_ENDPOINT, {
-    method: 'POST',
+async function githubRequest(token, url) {
+  const response = await fetch(url, {
+    method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
       'User-Agent': 'seatunnel-website-team-contributors-script',
     },
-    body: JSON.stringify({query, variables}),
   });
 
   if (!response.ok) {
-    throw new Error(`GitHub GraphQL request failed: ${response.status} ${response.statusText}`);
+    throw new Error(`GitHub request failed: ${response.status} ${response.statusText}`);
   }
 
-  const payload = await response.json();
-
-  if (payload.errors?.length) {
-    throw new Error(
-      `GitHub GraphQL errors: ${payload.errors.map((item) => item.message).join('; ')}`
-    );
-  }
-
-  return payload.data;
+  return response.json();
 }
 
 function readExistingGithubIds() {
@@ -63,90 +53,70 @@ function readExistingGithubIds() {
   );
 }
 
-async function fetchAllPullRequestAuthors(token) {
-  const query = `
-    query PullRequestAuthors($owner: String!, $name: String!, $cursor: String) {
-      repository(owner: $owner, name: $name) {
-        pullRequests(
-          first: 100
-          after: $cursor
-          states: [OPEN, CLOSED, MERGED]
-          orderBy: {field: CREATED_AT, direction: ASC}
-        ) {
-          pageInfo {
-            hasNextPage
-            endCursor
-          }
-          nodes {
-            author {
-              __typename
-              login
-              avatarUrl(size: 240)
-              url
-              ... on User {
-                name
-              }
-            }
-          }
+function createUserContributor(contributor) {
+  return {
+    avatarUrl: contributor.avatar_url,
+    githubId: contributor.login,
+    key: `github:${contributor.login.toLowerCase()}`,
+    name: contributor.login,
+    profileUrl: contributor.html_url,
+    type: 'User',
+  };
+}
+
+async function fetchAllContributors(token, existingGithubIds) {
+  const contributors = [];
+  let excludedExistingTeam = 0;
+  let page = 1;
+
+  while (true) {
+    const pageContributors = await githubRequest(
+      token,
+      `${CONTRIBUTORS_ENDPOINT}?per_page=100&page=${page}`
+    );
+
+    if (!pageContributors.length) {
+      break;
+    }
+
+    for (const contributor of pageContributors) {
+      const login = contributor.login?.trim();
+
+      if (login) {
+        const normalizedLogin = login.toLowerCase();
+
+        if (existingGithubIds.has(normalizedLogin)) {
+          excludedExistingTeam += 1;
+          continue;
         }
-      }
-    }
-  `;
 
-  const authors = new Map();
-  let cursor = null;
-  let hasNextPage = true;
-
-  while (hasNextPage) {
-    const data = await graphqlRequest(token, query, {
-      owner: REPO_OWNER,
-      name: REPO_NAME,
-      cursor,
-    });
-    const pullRequests = data.repository.pullRequests;
-
-    for (const node of pullRequests.nodes) {
-      const author = node.author;
-
-      if (!author?.login) {
-        continue;
-      }
-
-      const login = author.login.trim();
-      const normalizedLogin = login.toLowerCase();
-
-      if (normalizedLogin === 'ghost' || normalizedLogin.endsWith('[bot]')) {
-        continue;
-      }
-
-      if (!authors.has(normalizedLogin)) {
-        authors.set(normalizedLogin, {
-          avatarUrl: author.avatarUrl,
-          githubId: login,
-          name: author.name || login,
-          profileUrl: author.url,
-        });
+        contributors.push(createUserContributor(contributor));
       }
     }
 
-    hasNextPage = pullRequests.pageInfo.hasNextPage;
-    cursor = pullRequests.pageInfo.endCursor;
+    page += 1;
   }
 
-  return authors;
+  return {
+    contributors,
+    summary: {
+      displayedContributors: contributors.length,
+      existingTeamContributors: excludedExistingTeam,
+      repository: `${REPO_OWNER}/${REPO_NAME}`,
+      totalContributors: contributors.length + excludedExistingTeam,
+    },
+  };
 }
 
 async function main() {
   const token = readGithubToken();
   const existingGithubIds = readExistingGithubIds();
-  const authors = await fetchAllPullRequestAuthors(token);
-  const contributors = [...authors.entries()]
-    .filter(([githubId]) => !existingGithubIds.has(githubId))
-    .map(([, contributor]) => contributor)
-    .sort((left, right) => left.githubId.localeCompare(right.githubId, 'en', {sensitivity: 'base'}));
+  const contributorData = await fetchAllContributors(token, existingGithubIds);
 
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(contributors, null, 2) + '\n');
-  console.log(`Generated ${contributors.length} PR contributors in ${path.relative(ROOT_DIR, OUTPUT_PATH)}.`);
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(contributorData, null, 2) + '\n');
+  console.log(
+    `Generated ${contributorData.summary.displayedContributors} contributors from ${contributorData.summary.repository} in ${path.relative(ROOT_DIR, OUTPUT_PATH)}.`
+  );
 }
 
 main().catch((error) => {
