@@ -5,8 +5,10 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "sync": "node tools/build-docs.js",
+    "prestart": "npm run team:contributors",
     "start": "docusaurus start",
     "start-zh": "docusaurus start --locale zh-CN",
+    "prebuild": "npm run team:contributors",
     "build": "cross-env NODE_OPTIONS=--max_old_space_size=10240 docusaurus build",
     "build:fast": "cross-env NODE_OPTIONS=--max_old_space_size=10240 DOCUSAURUS_PARALLELIZE=true docusaurus build",
     "swizzle": "docusaurus swizzle",
