@@ -1,0 +1,22 @@
+# Apache SeaTunnel crawl policy
+# OAI-SearchBot governs ChatGPT Search discovery and citation.
+# GPTBot governs whether public content may be fetched for OpenAI training crawls.
+# GPTBot rules express crawl permission only and do not guarantee model training inclusion.
+# ChatGPT-User represents user-triggered access instead of an autonomous indexing path.
+# LLM index: https://seatunnel.apache.org/llms.txt
+# Full docs index: https://seatunnel.apache.org/llms-full.txt
+
+User-agent: *
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+Sitemap: https://seatunnel.apache.org/sitemap.xml
+Sitemap: https://seatunnel.apache.org/zh-CN/sitemap.xml

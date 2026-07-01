@@ -1,0 +1,12 @@
+# Apache SeaTunnel
+> Machine-readable discovery entry points for the current public Apache SeaTunnel documentation.
+- Canonical site: https://seatunnel.apache.org/
+- Sitemap: https://seatunnel.apache.org/sitemap.xml
+- Chinese sitemap: https://seatunnel.apache.org/zh-CN/sitemap.xml
+- Full docs inventory: https://seatunnel.apache.org/llms-full.txt
+- English docs home: https://seatunnel.apache.org/docs/introduction/about
+- Chinese docs home: https://seatunnel.apache.org/zh-CN/docs/introduction/about
+- Current English docs pages: 417
+- Current Chinese docs pages: 417
+- Build source: the scheduled website workflow syncs docs from apache/seatunnel before every build.
+- Scope: only public current docs URLs that actually landed in the final built HTML output are listed here.
