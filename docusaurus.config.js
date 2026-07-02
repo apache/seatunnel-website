@@ -80,6 +80,20 @@ function getZhBlogExcludePatterns() {
   return exclude;
 }
 
+const userCaseRedirects = {
+  "/blog": ["/user_cases"],
+  "/blog/tags": ["/user_cases/tags"],
+  "/blog/The-practice-of-SeaTunnel-in-Vip": [
+    "/user_cases/The-practice-of-SeaTunnel-in-Vip",
+  ],
+  "/blog/SeaTunnel 在唯品会的实践": [
+    "/user_cases/The-practice-of-SeaTunnel-in-Vip",
+  ],
+  "/blog/tags/vip": ["/user_cases/tags/vip"],
+  "/blog/tags/唯品会": ["/user_cases/tags/vip"],
+  "/blog/tags/click-house": ["/user_cases/tags/click-house"],
+};
+
 function getDocsEditUrl({ version, versionDocsDirPath, docPath, locale }) {
   if (version === "current") {
     const sourceLocaleDir = locale === "zh-CN" ? "zh" : "en";
@@ -447,28 +461,9 @@ const config = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        redirects: [
-          {
-            from: "/user_cases",
-            to: "/blog",
-          },
-          {
-            from: "/user_cases/tags",
-            to: "/blog/tags",
-          },
-          {
-            from: "/user_cases/The-practice-of-SeaTunnel-in-Vip",
-            to: "/blog/The-practice-of-SeaTunnel-in-Vip",
-          },
-          {
-            from: "/user_cases/tags/vip",
-            to: "/blog/tags/vip",
-          },
-          {
-            from: "/user_cases/tags/click-house",
-            to: "/blog/tags/click-house",
-          },
-        ],
+        createRedirects(existingPath) {
+          return userCaseRedirects[existingPath] || [];
+        },
       },
     ],
   ],
