@@ -3461,6 +3461,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/developer/test-coding-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/engines/command/connector-check</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -4071,27 +4076,22 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/user_cases/archive</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://seatunnel.apache.org/zh-CN/user_cases/SeaTunnel%20%E5%9C%A8%E5%94%AF%E5%93%81%E4%BC%9A%E7%9A%84%E5%AE%9E%E8%B7%B5</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://seatunnel.apache.org/zh-CN/user_cases/tags</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/user_cases/tags/%E5%94%AF%E5%93%81%E4%BC%9A</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/user_cases/tags/click-house</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/user_cases/tags/click-house</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/user_cases/tags/vip</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/user_cases/The-practice-of-SeaTunnel-in-Vip</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

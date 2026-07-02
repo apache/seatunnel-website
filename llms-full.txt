@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 834
+- Total current docs pages: 836
 
 ## English
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
@@ -323,6 +323,7 @@
 - https://seatunnel.apache.org/docs/developer/setup
 - https://seatunnel.apache.org/docs/developer/sink-connector-development
 - https://seatunnel.apache.org/docs/developer/source-connector-development
+- https://seatunnel.apache.org/docs/developer/test-coding-guide
 - https://seatunnel.apache.org/docs/engines/command/connector-check
 - https://seatunnel.apache.org/docs/engines/command/usage
 - https://seatunnel.apache.org/docs/engines/event-listener
@@ -742,6 +743,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/developer/setup
 - https://seatunnel.apache.org/zh-CN/docs/developer/sink-connector-development
 - https://seatunnel.apache.org/zh-CN/docs/developer/source-connector-development
+- https://seatunnel.apache.org/zh-CN/docs/developer/test-coding-guide
 - https://seatunnel.apache.org/zh-CN/docs/engines/command/connector-check
 - https://seatunnel.apache.org/zh-CN/docs/engines/command/usage
 - https://seatunnel.apache.org/zh-CN/docs/engines/event-listener

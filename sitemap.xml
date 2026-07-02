@@ -3461,6 +3461,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/developer/test-coding-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/engines/command/connector-check</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -4067,11 +4072,6 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/user_cases</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://seatunnel.apache.org/user_cases/archive</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
