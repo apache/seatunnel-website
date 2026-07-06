@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[97957],{7622:e=>{e.exports=JSON.parse('{"label":"ETL","permalink":"/blog/tags/etl","allTagsPath":"/blog/tags","count":1}')}}]);

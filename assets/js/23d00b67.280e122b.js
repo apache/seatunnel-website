@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[76061],{32368:e=>{e.exports=JSON.parse('{"label":"Data Engineering","permalink":"/blog/tags/data-engineering","allTagsPath":"/blog/tags","count":1}')}}]);
