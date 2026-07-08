@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 836
+- Total current docs pages: 840
 
 ## English
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
@@ -95,6 +95,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-onesignal
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-persistiq
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-wechat
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hudi
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hugegraph
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-iceberg
@@ -313,6 +314,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Vertica
 - https://seatunnel.apache.org/docs/connectors/source/Vitess-CDC
 - https://seatunnel.apache.org/docs/connectors/source/Web3j
+- https://seatunnel.apache.org/docs/connectors/source/Zendesk
 - https://seatunnel.apache.org/docs/developer/coding-guide
 - https://seatunnel.apache.org/docs/developer/contribute-plugin
 - https://seatunnel.apache.org/docs/developer/contribute-transform-v2-guide
@@ -515,6 +517,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-onesignal
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-persistiq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-wechat
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hudi
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hugegraph
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-iceberg
@@ -733,6 +736,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vertica
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vitess-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Web3j
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Zendesk
 - https://seatunnel.apache.org/zh-CN/docs/developer/coding-guide
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribute-plugin
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribute-transform-v2-guide
