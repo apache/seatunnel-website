@@ -95,6 +95,10 @@
     "message": "通用参数",
     "description": "The label for category Common Options in sidebar docs"
   },
+  "sidebar.docs.category.Scenario Recipes": {
+    "message": "场景教程",
+    "description": "The label for category Scenario Recipes in sidebar docs"
+  },
   "sidebar.docs.category.Changelog": {
     "message": "更新记录",
     "description": "The label for category Changelog in sidebar docs"
