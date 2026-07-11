@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[60611],{17299:e=>{e.exports=JSON.parse('{"label":"Lakehouse","permalink":"/zh-CN/blog/tags/lakehouse","allTagsPath":"/zh-CN/blog/tags","count":1}')}}]);
