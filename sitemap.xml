@@ -3656,7 +3656,32 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/kubernetes/configuration</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/getting-started/kubernetes/helm</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/kubernetes/hybrid-cluster-mode</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/kubernetes/local-mode</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/kubernetes/operations</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/kubernetes/separated-cluster-mode</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

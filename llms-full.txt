@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 840
+- Total current docs pages: 850
 
 ## English
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
@@ -362,7 +362,12 @@
 - https://seatunnel.apache.org/docs/getting-started/docker
 - https://seatunnel.apache.org/docs/getting-started/job-configuration-guide
 - https://seatunnel.apache.org/docs/getting-started/kubernetes
+- https://seatunnel.apache.org/docs/getting-started/kubernetes/configuration
 - https://seatunnel.apache.org/docs/getting-started/kubernetes/helm
+- https://seatunnel.apache.org/docs/getting-started/kubernetes/hybrid-cluster-mode
+- https://seatunnel.apache.org/docs/getting-started/kubernetes/local-mode
+- https://seatunnel.apache.org/docs/getting-started/kubernetes/operations
+- https://seatunnel.apache.org/docs/getting-started/kubernetes/separated-cluster-mode
 - https://seatunnel.apache.org/docs/getting-started/locally
 - https://seatunnel.apache.org/docs/getting-started/locally/deployment
 - https://seatunnel.apache.org/docs/getting-started/locally/quick-start-flink
@@ -784,7 +789,12 @@
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/docker
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/job-configuration-guide
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes/configuration
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes/helm
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes/hybrid-cluster-mode
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes/local-mode
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes/operations
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes/separated-cluster-mode
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/locally
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/locally/deployment
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/locally/quick-start-flink
