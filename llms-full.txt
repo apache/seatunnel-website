@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 850
+- Total current docs pages: 852
 
 ## English
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
@@ -420,6 +420,7 @@
 - https://seatunnel.apache.org/docs/transforms/llm
 - https://seatunnel.apache.org/docs/transforms/metadata
 - https://seatunnel.apache.org/docs/transforms/multi-table-transform-and-join-boundary
+- https://seatunnel.apache.org/docs/transforms/recipes
 - https://seatunnel.apache.org/docs/transforms/regexextract
 - https://seatunnel.apache.org/docs/transforms/replace
 - https://seatunnel.apache.org/docs/transforms/rowkind-extractor
@@ -847,6 +848,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/transforms/llm
 - https://seatunnel.apache.org/zh-CN/docs/transforms/metadata
 - https://seatunnel.apache.org/zh-CN/docs/transforms/multi-table-transform-and-join-boundary
+- https://seatunnel.apache.org/zh-CN/docs/transforms/recipes
 - https://seatunnel.apache.org/zh-CN/docs/transforms/regexextract
 - https://seatunnel.apache.org/zh-CN/docs/transforms/replace
 - https://seatunnel.apache.org/zh-CN/docs/transforms/rowkind-extractor
