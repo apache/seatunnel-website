@@ -3806,6 +3806,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-kafka</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/getting-started/submit-job-to-remote-zeta-cluster</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
