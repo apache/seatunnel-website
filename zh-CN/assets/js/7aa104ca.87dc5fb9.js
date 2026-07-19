@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[98425],{25663:e=>{e.exports=JSON.parse('{"permalink":"/zh-CN/blog/tags/\u67b6\u6784","page":1,"postsPerPage":100,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 878
+- Total current docs pages: 880
 
 ## English
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
@@ -393,6 +393,7 @@
 - https://seatunnel.apache.org/docs/getting-started/recipes/kafka-to-iceberg
 - https://seatunnel.apache.org/docs/getting-started/recipes/multi-table-cdc
 - https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-doris
+- https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-elasticsearch
 - https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-kafka
 - https://seatunnel.apache.org/docs/getting-started/recipes/postgresql-cdc-to-iceberg
 - https://seatunnel.apache.org/docs/getting-started/submit-job-to-remote-zeta-cluster
@@ -834,6 +835,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/kafka-to-iceberg
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/multi-table-cdc
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-doris
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-elasticsearch
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-kafka
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/postgresql-cdc-to-iceberg
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/submit-job-to-remote-zeta-cluster

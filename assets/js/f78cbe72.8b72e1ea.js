@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[22297],{27560:e=>{e.exports=JSON.parse('{"label":"Data Integration","permalink":"/blog/tags/data-integration","allTagsPath":"/blog/tags","count":2}')}}]);

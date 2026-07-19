@@ -3811,6 +3811,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-elasticsearch</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-kafka</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
