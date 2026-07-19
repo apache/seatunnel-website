@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 874
+- Total current docs pages: 878
 
 ## English
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
@@ -388,11 +388,13 @@
 - https://seatunnel.apache.org/docs/getting-started/recipes
 - https://seatunnel.apache.org/docs/getting-started/recipes/file-to-starrocks
 - https://seatunnel.apache.org/docs/getting-started/recipes/http-to-jdbc
+- https://seatunnel.apache.org/docs/getting-started/recipes/jdbc-to-jdbc
 - https://seatunnel.apache.org/docs/getting-started/recipes/jdbc-to-s3
 - https://seatunnel.apache.org/docs/getting-started/recipes/kafka-to-iceberg
 - https://seatunnel.apache.org/docs/getting-started/recipes/multi-table-cdc
 - https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-doris
 - https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-kafka
+- https://seatunnel.apache.org/docs/getting-started/recipes/postgresql-cdc-to-iceberg
 - https://seatunnel.apache.org/docs/getting-started/submit-job-to-remote-zeta-cluster
 - https://seatunnel.apache.org/docs/introduction/about
 - https://seatunnel.apache.org/docs/introduction/concepts/config
@@ -827,11 +829,13 @@
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/file-to-starrocks
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/http-to-jdbc
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/jdbc-to-jdbc
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/jdbc-to-s3
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/kafka-to-iceberg
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/multi-table-cdc
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-doris
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-kafka
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/postgresql-cdc-to-iceberg
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/submit-job-to-remote-zeta-cluster
 - https://seatunnel.apache.org/zh-CN/docs/introduction/about
 - https://seatunnel.apache.org/zh-CN/docs/introduction/concepts/config

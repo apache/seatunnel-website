@@ -6,7 +6,7 @@
 - Full docs inventory: https://seatunnel.apache.org/llms-full.txt
 - English docs home: https://seatunnel.apache.org/docs/introduction/about
 - Chinese docs home: https://seatunnel.apache.org/zh-CN/docs/introduction/about
-- Current English docs pages: 437
-- Current Chinese docs pages: 437
+- Current English docs pages: 439
+- Current Chinese docs pages: 439
 - Build source: the scheduled website workflow syncs docs from apache/seatunnel before every build.
 - Scope: only public current docs URLs that actually landed in the final built HTML output are listed here.

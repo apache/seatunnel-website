@@ -3786,6 +3786,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/recipes/jdbc-to-jdbc</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/getting-started/recipes/jdbc-to-s3</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3807,6 +3812,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-kafka</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/getting-started/recipes/postgresql-cdc-to-iceberg</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
