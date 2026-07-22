@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 880
+- Total current docs pages: 882
 
 ## English
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
@@ -343,6 +343,7 @@
 - https://seatunnel.apache.org/docs/engines/overview
 - https://seatunnel.apache.org/docs/engines/spark
 - https://seatunnel.apache.org/docs/engines/zeta/about
+- https://seatunnel.apache.org/docs/engines/zeta/busyness-and-backpressure
 - https://seatunnel.apache.org/docs/engines/zeta/checkpoint-storage
 - https://seatunnel.apache.org/docs/engines/zeta/deployment
 - https://seatunnel.apache.org/docs/engines/zeta/download-seatunnel
@@ -785,6 +786,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/engines/overview
 - https://seatunnel.apache.org/zh-CN/docs/engines/spark
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/about
+- https://seatunnel.apache.org/zh-CN/docs/engines/zeta/busyness-and-backpressure
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/checkpoint-storage
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/deployment
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/download-seatunnel
