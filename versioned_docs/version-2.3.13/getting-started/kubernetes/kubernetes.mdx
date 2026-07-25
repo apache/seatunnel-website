@@ -529,14 +529,17 @@ spec:
           ports:
             - containerPort: 5801
               name: client
-          command: ["/bin/sh","-c","/opt/seatunnel/bin/seatunnel-cluster.sh -DJvmOption=-Xms2G -Xmx2G"]
+          command:
+            - /bin/sh
+            - -c
+            - '/opt/seatunnel/bin/seatunnel-cluster.sh -DJvmOption="-Xms16G -Xmx16G"'
           resources:
             limits:
               cpu: "1"
-              memory: 4G
+              memory: 24Gi
             requests:
               cpu: "1"
-              memory: 2G
+              memory: 20Gi
           volumeMounts:
             - mountPath: "/opt/seatunnel/config/hazelcast.yaml"
               name: hazelcast
@@ -567,6 +570,8 @@ spec:
             - key: seatunnel.streaming.conf
               path: seatunnel.streaming.conf
 ```
+
+This Zeta cluster example uses a 16 GB JVM heap. Its 20 GiB memory request and 24 GiB memory limit leave additional container memory for metaspace, direct memory, thread stacks, and other native memory. For large-scale data processing, a 32 GB JVM heap is recommended; increase the memory request and limit accordingly, for example to 36 GiB and 40 GiB.
 
 - Starting a cluster:
 ```bash
