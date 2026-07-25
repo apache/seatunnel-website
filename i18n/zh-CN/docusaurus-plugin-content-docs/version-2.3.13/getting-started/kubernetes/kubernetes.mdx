@@ -529,14 +529,17 @@ spec:
           ports:
             - containerPort: 5801
               name: client
-          command: ["/bin/sh","-c","/opt/seatunnel/bin/seatunnel-cluster.sh -DJvmOption=-Xms2G -Xmx2G"]
+          command:
+            - /bin/sh
+            - -c
+            - '/opt/seatunnel/bin/seatunnel-cluster.sh -DJvmOption="-Xms16G -Xmx16G"'
           resources:
             limits:
               cpu: "1"
-              memory: 4G
+              memory: 24Gi
             requests:
               cpu: "1"
-              memory: 2G
+              memory: 20Gi
           volumeMounts:
             - mountPath: "/opt/seatunnel/config/hazelcast.yaml"
               name: hazelcast
@@ -576,6 +579,8 @@ spec:
             - key: seatunnel.streaming.conf
               path: seatunnel.streaming.conf
 ```
+
+此 Zeta 集群示例使用 16 GB JVM 堆内存。容器内存 request 设置为 20 GiB、limit 设置为 24 GiB，为 Metaspace、直接内存、线程栈和其他本地内存预留额外空间。对于大规模数据处理场景，建议使用 32 GB JVM 堆内存，并相应提高内存 request 和 limit，例如分别设置为 36 GiB 和 40 GiB。
 
 - 运行示例应用：
 ```bash
