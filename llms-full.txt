@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 882
+- Total current docs pages: 884
 
 ## English
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
@@ -446,6 +446,7 @@
 - https://seatunnel.apache.org/docs/transforms/table-filter
 - https://seatunnel.apache.org/docs/transforms/table-merge
 - https://seatunnel.apache.org/docs/transforms/table-rename
+- https://seatunnel.apache.org/docs/transforms/text-chunk
 - https://seatunnel.apache.org/docs/transforms/transform-multi-table
 
 ## Chinese
@@ -889,4 +890,5 @@
 - https://seatunnel.apache.org/zh-CN/docs/transforms/table-filter
 - https://seatunnel.apache.org/zh-CN/docs/transforms/table-merge
 - https://seatunnel.apache.org/zh-CN/docs/transforms/table-rename
+- https://seatunnel.apache.org/zh-CN/docs/transforms/text-chunk
 - https://seatunnel.apache.org/zh-CN/docs/transforms/transform-multi-table

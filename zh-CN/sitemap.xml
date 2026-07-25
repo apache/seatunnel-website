@@ -4076,6 +4076,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/transforms/text-chunk</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/transforms/transform-multi-table</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
