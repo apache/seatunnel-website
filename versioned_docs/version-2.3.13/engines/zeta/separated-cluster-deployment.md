@@ -29,8 +29,8 @@ The JVM parameters of the Master node are configured in the `$SEATUNNEL_HOME/con
 
 ```shell
 # JVM Heap
--Xms2g
--Xmx2g
+-Xms16g
+-Xmx16g
 
 # JVM Dump
 -XX:+HeapDumpOnOutOfMemoryError
@@ -47,8 +47,8 @@ The JVM parameters of the Worker node are configured in the `$SEATUNNEL_HOME/con
 
 ```shell
 # JVM Heap
--Xms2g
--Xmx2g
+-Xms16g
+-Xmx16g
 
 # JVM Dump
 -XX:+HeapDumpOnOutOfMemoryError
@@ -60,6 +60,8 @@ The JVM parameters of the Worker node are configured in the `$SEATUNNEL_HOME/con
 # G1GC
 -XX:+UseG1GC
 ```
+
+The examples above use a 16 GB JVM heap. For large-scale data processing, a 32 GB JVM heap is recommended.
 
 ## 4. Configure SeaTunnel Engine
 
