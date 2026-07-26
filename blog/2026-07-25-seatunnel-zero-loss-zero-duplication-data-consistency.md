@@ -1,6 +1,6 @@
 ---
 slug: seatunnel-zero-loss-zero-duplication-data-consistency
-title: "Achieving True Zero Loss and Zero Duplication: Deep Dive into SeaTunnel's Data Consistency"
+title: "Zero Loss and Zero Duplication with SeaTunnel: Guarantees, Prerequisites, and Limits"
 tags: [SeaTunnel, "Data Consistency", MySQL, CDC]
 ---
 
@@ -12,15 +12,17 @@ When using SeaTunnel for **batch and streaming data synchronization**, enterpris
 > 🔄 "Can data duplication or loss be avoided after task interruption or recovery?"
 > ⚙️ "How to guarantee consistency during full and incremental data synchronization?"
 
-Based on the latest version of SeaTunnel, this article will analyze in detail how SeaTunnel achieves end-to-end consistency guarantee through its advanced three-dimensional architecture of **Read Consistency, Write Consistency, and State Consistency**.
+This article uses **Apache SeaTunnel 2.3.13** as its configuration baseline and explains how **Read Consistency, Write Consistency, and State Consistency** work together. "Zero loss" and "zero duplication" are conditional outcomes, not defaults: they require compatible source and sink semantics, successful checkpoints, correct primary or unique keys, and the documented exactly-once settings.
+
+The examples and terminology below follow the versioned documentation for [MySQL-CDC Source](https://seatunnel.apache.org/docs/2.3.13/connectors/source/MySQL-CDC/), [JDBC Source](https://seatunnel.apache.org/docs/2.3.13/connectors/source/Jdbc/), [JDBC Sink](https://seatunnel.apache.org/docs/2.3.13/connectors/sink/Jdbc/), and [job environment configuration](https://seatunnel.apache.org/docs/2.3.13/introduction/configuration/JobEnvConfig/).
 
 ## I. Understanding the Three Dimensions of Data Consistency
 
-In data integration, "consistency" is not a single concept but a systematic guarantee covering multiple dimensions. Based on years of practical experience, SeaTunnel breaks down data consistency into three key dimensions:
+In data integration, "consistency" is not a single concept but a set of guarantees covering multiple dimensions. For practical analysis, this article groups the relevant SeaTunnel mechanisms into three dimensions:
 
 ```mermaid
 graph TD
-    A[SeaTunnel Data Consistency Model] --> B[Read Consistency]
+    A[Data Consistency Analysis] --> B[Read Consistency]
     A --> C[Write Consistency]
     A --> D[State Consistency]
 
@@ -43,15 +45,15 @@ graph TD
 
 - **Full Read**: Obtaining a complete data snapshot at a specific point in time
 - **Incremental Capture**: Accurately recording all data change events (CDC mode)
-- **Lock-free Snapshot Consistency**: Ensuring data continuity between full snapshot and incremental changes through low and high watermark mechanisms
+- **Lock-free Snapshot Consistency**: When `exactly_once = true`, using low and high watermarks to reconcile changes that occur during a snapshot
 
 ### Write Consistency
 
 **Write Consistency** ensures data is reliably and correctly written to the target system, addressing "how to write safely":
 
-- **Idempotent Writing**: Multiple writes of the same data won't produce duplicate records
-- **Transaction Integrity**: Ensuring related data is written atomically as a whole
-- **Error Handling**: Ability to rollback or safely retry in exceptional cases
+- **Idempotent Writing**: Replaying the same key updates one target record when a stable primary/unique key and upsert semantics are available
+- **Transaction Integrity**: Committing the records handled by a sink writer in a checkpoint-aligned transaction when the sink supports it
+- **Error Handling**: Recovering from a completed checkpoint, with replay behavior determined by the source and sink
 
 ### State Consistency
 
@@ -59,11 +61,11 @@ graph TD
 
 - **Position Management**: Recording read progress for precise incremental synchronization
 - **Checkpoint Mechanism**: Periodically saving task state
-- **Breakpoint Resume**: Ability to recover from the last interruption point without data loss or duplication
+- **Checkpoint Recovery**: Restoring a completed checkpoint; records after that checkpoint may be replayed unless the sink is idempotent or transactionally exactly-once
 
 ## II. MySQL Synchronization Architecture: CDC vs. JDBC Mode Comparison
 
-SeaTunnel provides two mainstream MySQL data synchronization modes: **JDBC Batch Mode** and **CDC Real-time Capture Mode**. These two modes are suitable for different business scenarios and have their own characteristics in consistency guarantee.
+SeaTunnel provides two mainstream MySQL data synchronization modes: **JDBC Batch Mode** and **CDC Real-time Capture Mode**. They serve different workloads and have different recovery and delivery characteristics.
 
 ```mermaid
 flowchart LR
@@ -91,22 +93,24 @@ flowchart LR
     D --> E
 ```
 
-### CDC Mode: Binlog-based High Real-time Solution
+### CDC Mode: Low-latency Binlog Change Capture
 
-The MySQL-CDC connector is based on embedded Debezium framework, directly reading and parsing MySQL's binlog change stream:
+The MySQL-CDC connector uses an embedded Debezium framework to read and parse MySQL's binlog change stream:
 
 **Core Advantages**:
 
-- **Real-time**: Millisecond-level delay in capturing data changes
-- **Low Impact**: Almost zero performance impact on source database
+- **Low Latency**: Reads binlog changes continuously; observed latency depends on source load, network, and job resources
+- **Reduced Polling**: Avoids repeated table polling, while the initial snapshot still consumes source resources
 - **Completeness**: Captures complete events for INSERT/UPDATE/DELETE
-- **Transaction Boundaries**: Preserves original transaction context
+- **Change Metadata**: Emits row-level change events with binlog position metadata
 
-**Consistency Guarantee**:
+**Recovery and Ordering Characteristics**:
 
-- Precise recording of binlog filename + position
+- Checkpointed binlog filename and position for recovery
 - Supports multiple startup modes (Initial snapshot + incremental / Incremental only)
-- Event order strictly consistent with source database
+- Preserves the order observed by a source reader; end-to-end ordering still depends on table routing, parallelism, and downstream processing
+
+MySQL-CDC does not turn one source transaction into one atomic downstream transaction. It emits individual row change events, while checkpoint and sink semantics determine the delivery guarantee.
 
 ### JDBC Mode: SQL-based Batch Synchronization Solution
 
@@ -119,17 +123,19 @@ The JDBC connector reads data from MySQL through SQL queries, suitable for perio
 - **Filtering Capability**: Supports complex WHERE condition filtering
 - **Parallel Loading**: Multi-shard parallel reading based on primary key or range
 
-**Consistency Guarantee**:
+**Recovery Characteristics**:
 
-- Records synchronization progress of Split + position
-- Supports breakpoint resume
+- Tracks JDBC splits, not a row offset inside an in-flight split
+- Reassigns or replays unfinished splits after failure
 - Table-level parallel processing
+
+Therefore, JDBC Source recovery is split-level. A failed in-flight split can be read again from its boundary, so duplicate prevention must be provided by an idempotent or transactionally exactly-once sink.
 
 ## III. Read Consistency: How to Ensure Complete Source Data Capture
 
 ### CDC Mode: Binlog-based Precise Incremental Reading
 
-MySQL-CDC connector's read consistency is based on two core mechanisms: **Initial Snapshot** and **Binlog Position Tracking**.
+The MySQL-CDC connector's read consistency is based on two core mechanisms: **Initial Snapshot** and **Binlog Position Tracking**.
 
 ```mermaid
 sequenceDiagram
@@ -149,7 +155,7 @@ sequenceDiagram
     loop Continuous Incremental Reading
         Source MySQL-->>CDC Connector: Change event stream
         CDC Connector->>SeaTunnel Task: Convert to unified format and transfer
-        SeaTunnel Task->>CDC Connector: Confirm processing and record new position
+        CDC Connector->>CDC Connector: Update the current split offset
     end
 
     Note over CDC Connector,SeaTunnel Task: 3. Watermark Switch
@@ -165,11 +171,12 @@ sequenceDiagram
 
 SeaTunnel's MySQL-CDC provides multiple startup modes to meet consistency requirements for different scenarios:
 
-1. **Initial Mode**: First creates full snapshot, then seamlessly switches to incremental mode
+1. **Initial Mode**: Creates a full snapshot and then continues with incremental binlog reading. Set `exactly_once = true` when the snapshot must backfill changes between its low and high watermarks.
 
    ```hocon
    MySQL-CDC {
      startup.mode = "initial"
+     exactly_once = true
    }
    ```
 
@@ -186,16 +193,16 @@ SeaTunnel's MySQL-CDC provides multiple startup modes to meet consistency requir
    ```hocon
    MySQL-CDC {
      startup.mode = "specific"
-     startup.specific.offset.file = "mysql-bin.000003"
-     startup.specific.offset.pos = 4571
+     startup.specific-offset.file = "mysql-bin.000003"
+     startup.specific-offset.pos = 4571
    }
    ```
 
-There's also an `earliest` startup mode: starts from the earliest offset found, though this mode is less common
+There is also an `earliest` startup mode, which starts from the earliest available offset.
 
 ### JDBC Mode: Shard-based Efficient Batch Reading
 
-JDBC connector achieves efficient parallel reading through smart sharding strategy:
+The JDBC connector supports parallel reading through a configurable sharding strategy:
 
 ```mermaid
 graph TD
@@ -203,23 +210,26 @@ graph TD
     B --> C1[Shard1: id < 10000]
     B --> C2[Shard2: id >= 10000 AND id < 20000]
     B --> C3[Shard3: id >= 20000]
-    C1 --> D[Position Recording & Breakpoint Resume]
+    C1 --> D[Split State & Replay on Recovery]
     C2 --> D
     C3 --> D
 ```
 
 **Sharding Strategy and Consistency**:
 
-- **Primary Key Sharding**: Automatically splits into multiple parallel tasks based on primary key range
-- **Range Sharding**: Supports custom numeric columns as sharding basis
-- **Modulo Sharding**: Suitable for balanced reading of hash-distributed data
+- **Primary/Unique Key Sharding**: Splits a table by a supported key when one is available
+- **Configured Partition Column**: Uses `partition_column` when automatic key discovery is not suitable
+- **Even or Sampled Splitting**: Selects a split strategy according to the key distribution and configured thresholds
 
 Example configuration for SeaTunnel JDBC reading shards:
 
 ```hocon
 Jdbc {
   url = "jdbc:mysql://source_mysql:3306/test"
-  table = "users"
+  driver = "com.mysql.cj.jdbc.Driver"
+  user = "root"
+  password = "password"
+  table_path = "test.users"
   split.size = 10000
   split.even-distribution.factor.upper-bound = 100
   split.even-distribution.factor.lower-bound = 0.05
@@ -229,13 +239,15 @@ Jdbc {
 
 Through this approach, SeaTunnel achieves:
 
-- Maximum parallelism for data reading
-- Position recording for each shard
-- Precise recovery of failed tasks
+- Parallel processing of independent splits
+- Checkpoint tracking of pending split state
+- Replay of an unfinished split from its split boundary after recovery
+
+This is not row-level breakpoint resume. If replay could reach the target twice, use target primary/unique keys with idempotent upsert or enable a supported exactly-once sink.
 
 ## IV. Write Consistency: How to Ensure Target Data Accuracy
 
-In the data writing phase, SeaTunnel provides multiple guarantee mechanisms to ensure consistency and completeness of target MySQL data.
+In the data writing phase, SeaTunnel provides configurable mechanisms for controlling replay and transaction behavior at the target MySQL database.
 
 ### Idempotent Writing: Ensuring No Data Duplication
 
@@ -257,6 +269,11 @@ Example configuration for idempotent writing:
 ```hocon
 Jdbc {
   url = "jdbc:mysql://target_mysql:3306/test"
+  driver = "com.mysql.cj.jdbc.Driver"
+  user = "root"
+  password = "password"
+  generate_sink_sql = true
+  database = "test"
   table = "users"
   primary_keys = ["id"]
   enable_upsert = true
@@ -265,33 +282,32 @@ Jdbc {
 
 **Batch Commit and Optimization**:
 
-SeaTunnel optimizes JDBC Sink's batch processing performance while ensuring transaction safety:
+JDBC Sink uses explicit, fixed configuration for batching and retries:
 
-- **Dynamic Batch Size**: Automatically adjusts batch size based on data volume
-- **Timeout Control**: Prevents resource occupation from long transactions
-- **Retry Mechanism**: Automatic transaction retry during network jitter
+- **Fixed Batch Size**: `batch_size` controls how many buffered records trigger a flush
+- **Checkpoint-aligned Flush**: Buffered records are also flushed as part of checkpoint processing
+- **Configured Retries**: `max_retries` controls batch execution retries and defaults to `0`; it must remain `0` when XA exactly-once is enabled
 
 ### Distributed Transaction: XA Guarantee and Two-Phase Commit
 
-For business scenarios requiring extremely high consistency, SeaTunnel provides distributed transaction support based on XA protocol:
+For connector paths that support it, JDBC Sink coordinates per-writer XA transactions with SeaTunnel checkpoints:
 
 ```mermaid
 sequenceDiagram
-    participant ST as SeaTunnel Engine
-    participant XA as XA Transaction Manager
+    participant ST as SeaTunnel Checkpoint
+    participant XA as JDBC Sink Writer
     participant DB as Target MySQL
 
-    ST->>XA: Create XA Transaction
     XA->>DB: XA START xid
-    ST->>DB: Batch Write Data
-    DB-->>ST: Write Complete
-    ST->>XA: Commit Phase One
-    XA->>DB: XA PREPARE xid
+    XA->>DB: Batch write records
+    ST->>XA: Trigger checkpoint
+    XA->>DB: XA END and XA PREPARE xid
     DB-->>XA: Prepare Complete
-    ST->>XA: Commit Phase Two
+    XA-->>ST: Return committable XID
+    ST->>ST: Complete checkpoint
+    ST->>XA: Commit checkpoint
     XA->>DB: XA COMMIT xid
     DB-->>XA: Commit Confirmation
-    XA-->>ST: Transaction Complete
 ```
 
 Example configuration for enabling XA distributed transactions:
@@ -299,28 +315,36 @@ Example configuration for enabling XA distributed transactions:
 ```hocon
 Jdbc {
   url = "jdbc:mysql://target_mysql:3306/test"
+  driver = "com.mysql.cj.jdbc.Driver"
+  user = "root"
+  password = "password"
+  generate_sink_sql = true
+  database = "test"
+  table = "users"
+  primary_keys = ["id"]
+  enable_upsert = true
+  max_retries = 0
   is_exactly_once = true
   xa_data_source_class_name = "com.mysql.cj.jdbc.MysqlXADataSource"
   max_commit_attempts = 3
-  transaction_timeout_sec = 300
 }
 ```
 
-**XA Transaction Consistency Guarantee**:
+**XA Transaction Scope**:
 
-- **Consistency**: Maintains database from one consistent state to another
-- **Isolation**: Concurrent transactions don't interfere with each other
-- **Durability**: Once committed, changes are permanent
+- Each sink writer prepares its XA transaction for a checkpoint
+- The prepared transaction is committed after the checkpoint completes
+- Recovery handles the writer's pending/prepared transaction according to the connector protocol
 
-This mechanism is particularly suitable for data synchronization scenarios across multiple tables and databases, ensuring business data relationship consistency.
+This provides checkpoint-aligned exactly-once delivery for each supported JDBC sink writer. It does **not** preserve a source transaction as one downstream transaction, and it is not a single global atomic transaction across multiple tables, writers, or databases. Cross-system business atomicity requires a separate transaction design.
 
 ## V. State Consistency: Breakpoint Resume and Failure Recovery
 
-SeaTunnel's state consistency mechanism is key to ensuring end-to-end data synchronization reliability. Through carefully designed state management and checkpoint mechanisms, it achieves reliable failure recovery capability.
+Checkpoint-based state management provides a recovery boundary for supported source and sink connectors.
 
 ### Distributed Checkpoint Mechanism
 
-SeaTunnel implements state consistency checkpoints in distributed environments:
+In distributed execution, checkpoints coordinate recoverable task state:
 
 ```mermaid
 flowchart LR
@@ -351,14 +375,14 @@ flowchart LR
 
 **Core Implementation Principles**:
 
-1. **Position Recording**: Records binlog filename and position in CDC mode, records shard and offset in JDBC mode
-2. **Checkpoint Trigger**: Triggers checkpoint creation based on time or data volume
+1. **Position Recording**: Records a CDC split offset; JDBC Source records split state but not a row offset inside an in-flight split
+2. **Checkpoint Trigger**: Periodically schedules checkpoints according to `checkpoint.interval`
 3. **State Persistence**: Persists state information to storage system
-4. **Failure Recovery**: Automatically loads most recent valid checkpoint on task restart
+4. **Failure Recovery**: Restores the latest completed checkpoint; work after that checkpoint can be replayed
 
-### End-to-End Consistency Guarantee
+### Conditional End-to-End Delivery Semantics
 
-SeaTunnel achieves end-to-end consistency guarantee by coordinating Source and Sink states:
+SeaTunnel coordinates Source and Sink states through checkpoints. The resulting delivery guarantee depends on both connectors and their configuration:
 
 ```mermaid
 sequenceDiagram
@@ -366,24 +390,25 @@ sequenceDiagram
     participant SeaTunnel
     participant Sink
 
-    Source->>SeaTunnel: Read Data Block
-    SeaTunnel->>Sink: Write Data
-    Sink-->>SeaTunnel: Confirm Write
-    SeaTunnel->>Source: Confirm Processing
+    Source->>SeaTunnel: Emit records and update current offset
+    SeaTunnel->>Sink: Write or buffer records
 
-    Note over Source,Sink: Checkpoint Trigger
-    SeaTunnel->>Source: Trigger Checkpoint
-    Source->>SeaTunnel: Provide Source Position
-    SeaTunnel->>Sink: Flush Buffer
-    Sink-->>SeaTunnel: Confirm Flush
-    SeaTunnel->>SeaTunnel: Save Checkpoint(Source Position + Sink State)
+    Note over Source,Sink: Periodic Checkpoint
+    SeaTunnel->>Source: Snapshot source state
+    SeaTunnel->>Sink: Prepare or flush sink state
+    Sink-->>SeaTunnel: Return committable state
+    SeaTunnel->>SeaTunnel: Persist checkpoint state
+    SeaTunnel->>Sink: Notify checkpoint completion
+    SeaTunnel->>Sink: Commit prepared transaction
 
     Note over Source,Sink: Failure Recovery
-    SeaTunnel->>SeaTunnel: Load Checkpoint
-    SeaTunnel->>Source: Set Recovery Position
-    SeaTunnel->>Sink: Restore Write State
-    Source->>SeaTunnel: Read from Recovery Position
+    SeaTunnel->>SeaTunnel: Load latest completed checkpoint
+    SeaTunnel->>Source: Restore checkpointed source state
+    SeaTunnel->>Sink: Recover pending/prepared sink state
+    Source->>SeaTunnel: Replay from recovered state if needed
 ```
+
+With an at-least-once sink, replay can produce duplicate writes. Idempotent upsert can absorb duplicates when a stable primary/unique key exists. JDBC XA exactly-once additionally requires `is_exactly_once = true`, a compatible XA data source, `max_retries = 0`, checkpointing, and database support.
 
 **Checkpoint Configuration Example**:
 
@@ -400,30 +425,33 @@ Let's demonstrate how to configure SeaTunnel for reliable MySQL to MySQL data sy
 
 ### Classic CDC Mode Configuration
 
-The following configuration implements a MySQL CDC to MySQL synchronization task with complete consistency guarantee:
+The following SeaTunnel 2.3.13 example enables MySQL-CDC snapshot consistency and checkpoint-aligned JDBC XA delivery. The guarantee is conditional on stable source/target primary keys, an XA-capable MySQL driver and server, durable checkpoint storage, and successful checkpoint completion. It is not a global transaction across the two target tables.
 
 ```hocon
 env {
   job.mode = "STREAMING"
   parallelism = 3
   checkpoint.interval = 60000
+  checkpoint.timeout = 120000
 }
 
 source {
   MySQL-CDC {
-    base-url="jdbc:mysql://xxx:3306/qa_source"
-    username = "xxxx"
-    password = "xxxxxx"
-    database-names=[
-        "test_db"
+    url = "jdbc:mysql://source_mysql:3306/test_db"
+    username = "root"
+    password = "password"
+    database-names = [
+      "test_db"
     ]
-    table-names=[
-        "test_db.mysqlcdc_to_mysql_table1",
-        "test_db.mysqlcdc_to_mysql_table2",
-     ]
+    table-names = [
+      "test_db.mysqlcdc_to_mysql_table1",
+      "test_db.mysqlcdc_to_mysql_table2"
+    ]
+    server-id = "5400-5408"
 
     # Initialization mode (full + incremental)
     startup.mode = "initial"
+    exactly_once = true
 
     # Enable DDL changes
     schema-changes.enabled = true
@@ -444,27 +472,29 @@ sink {
     driver = "com.mysql.cj.jdbc.Driver"
     user = "root"
     password = "password"
-    database = "test_db"
+    generate_sink_sql = true
+    database = "${database_name}"
     table = "${table_name}"
+    primary_keys = ["${primary_key}"]
     schema_save_mode = "CREATE_SCHEMA_WHEN_NOT_EXIST"
     data_save_mode = "APPEND_DATA"
-    # enable_upsert = false
-    # support_upsert_by_query_primary_key_exist = true
-
-    # Exactly-once semantics (optional)
-    #is_exactly_once = true
-    #xa_data_source_class_name = "com.mysql.cj.jdbc.MysqlXADataSource"
+    enable_upsert = true
+    max_retries = 0
+    is_exactly_once = true
+    xa_data_source_class_name = "com.mysql.cj.jdbc.MysqlXADataSource"
   }
 }
 ```
 
+Before production use, verify that `${primary_key}` resolves for every routed table and that the target has matching primary or unique keys. If those prerequisites are not available, describe the job as at-least-once rather than zero-duplication.
+
 ## VII. Consistency Validation and Monitoring
 
-After deploying data synchronization tasks in production environment, validating and monitoring consistency is crucial. SeaTunnel provides multiple methods for data consistency validation and monitoring.
+After deployment, consistency must be validated independently. Record a logical cut such as a source binlog position, wait for the target to reach it, and compare fixed snapshots or use a quiesced window. Comparing a changing source with a lagging target does not prove inconsistency or consistency.
 
 ### Data Consistency Validation Methods
 
-1. **Count Comparison**: Most basic validation method, comparing record counts between source and target tables
+1. **Count Comparison**: Compare record counts for the same primary-key range and the same consistency window
 
    ```sql
    -- Source database
@@ -474,84 +504,90 @@ After deploying data synchronization tasks in production environment, validating
    SELECT COUNT(*) FROM target_db.users;
    ```
 
-2. **Hash Comparison**: Calculate hash for key fields to compare data content consistency
+2. **Deterministic Range Digest**: Read canonical rows in primary-key order for a bounded range and compute a strong digest such as SHA-256 in a reconciliation process
 
    ```sql
-   -- Source database
-   SELECT SUM(CRC32(CONCAT_WS('|', id, name, updated_at))) FROM source_db.users;
-
-   -- Target database
-   SELECT SUM(CRC32(CONCAT_WS('|', id, name, updated_at))) FROM target_db.users;
+   SELECT id, name, updated_at
+   FROM users
+   WHERE id >= ? AND id < ?
+   ORDER BY id;
    ```
 
-3. **Sample Comparison**: Randomly sample records from source table and compare with target table
+   Serialize every field with an explicit NULL marker and unambiguous length/escaping rules before hashing. Compare both the row count and digest for each range. Avoid `SUM(CRC32(CONCAT_WS(...)))`: CRC32 collisions and NULL handling can hide differences.
+
+3. **Primary-key Drill-down**: When a range differs, compare individual rows by primary key. Random sampling is useful for diagnosis but is not proof of full consistency.
 
 ### Consistency Monitoring Metrics
 
-During SeaTunnel task execution, the following key metrics can be monitored to evaluate synchronization consistency status:
+During SeaTunnel task execution, monitor actual connector and checkpoint signals:
 
-- **Synchronization Lag**: Time difference between current time and latest processed record time
-- **Write Success Rate**: Proportion of successfully written records to total records
-- **Data Deviation Rate**: Difference rate between source and target database data (can be implemented through DolphinScheduler 3.1.x's data quality task)
+- **`CDCRecordFetchDelay`**: Delay observed while fetching CDC records
+- **`CDCRecordEmitDelay`**: Delay observed while emitting CDC records
+- **Checkpoint Status**: Completion, timeout, and failure signals from the engine
+- **External Reconciliation Results**: Count, digest, and row-level differences produced by a separate validation job or data-quality platform
+
+"Write success rate" and "data deviation rate" are not built-in SeaTunnel consistency proofs. Define them in the external monitoring system with an explicit time window and denominator.
 
 ## VIII. Best Practices and Performance Optimization
 
-Based on deployment experience from hundreds of production environments, we summarize the following best practices for MySQL to MySQL synchronization:
+The following recommendations follow the SeaTunnel 2.3.13 connector contracts. Benchmark them with representative data and failure scenarios before production rollout.
 
 ### Consistency Scenario Configuration Recommendations
 
 1. **High Reliability Scenario** (e.g., core business data):
 
-   - Use CDC mode + XA transactions
-   - Configure shorter checkpoint intervals
-   - Enable idempotent writing
-   - Configure reasonable retry strategy
+   - Enable MySQL-CDC `exactly_once` and periodic checkpoints
+   - Use JDBC XA only with a compatible driver/database and keep `max_retries = 0`
+   - Configure stable target primary/unique keys and idempotent upsert
+   - Store checkpoints durably and test restart, timeout, and prepared-transaction recovery
 
 2. **High Performance Scenario** (e.g., analytical applications):
 
    - Use CDC mode + batch writing
-   - Disable XA transactions, use normal transactions
+   - Disable XA only when at-least-once delivery or idempotent replay is acceptable
    - Increase batch size
    - Optimize parallelism settings
 
 3. **Large-scale Initialization Scenario**:
 
-   - Use JDBC mode for initialization
+   - Prefer MySQL-CDC `initial` mode when one job must cover snapshot and incremental changes
+   - Use JDBC initialization only with a coordinated cutover that records the corresponding binlog position
    - Configure appropriate shard size
    - Adjust parallelism to match server resources
-   - Switch to CDC mode after completion
+   - Do not switch from JDBC to CDC ad hoc; an uncoordinated cutover can create a gap or overlap
 
 ### Common Issues and Solutions
 
 1. **Unstable Network Environment**:
 
-   - Increase connection timeout and retry counts
-   - Enable breakpoint resume
+   - Tune connection timeout and job-level recovery settings
+   - Keep JDBC Sink `max_retries = 0` when XA exactly-once is enabled
+   - Rely on completed checkpoints and verify replay behavior
    - Consider using smaller batch sizes
 
 2. **High Concurrency Write Scenario**:
 
-   - Adjust target database connection pool size
-   - Consider using table partitioning or batch writing
+   - Tune job parallelism against the target database's connection and write capacity
+   - Consider table partitioning or larger batches after measuring lock and transaction pressure
 
 3. **Resource-constrained Environment**:
 
    - Reduce parallelism
-   - Increase checkpoint interval
+   - Increase checkpoint interval only after accepting the larger recovery/replay window
    - Optimize JVM memory configuration
 
 ## IX. Conclusion: SeaTunnel's Path to Consistency Guarantee
 
-Through its carefully designed three-dimensional consistency architecture, SeaTunnel successfully solves the critical data consistency issues in enterprise-level data synchronization. This design supports both high-throughput batch data processing and ensures precision in real-time incremental synchronization, providing a solid foundation for enterprise data architecture.
+SeaTunnel provides the building blocks for reliable batch and streaming synchronization, but the final guarantee is a property of the complete job configuration and external systems. Source offsets, completed checkpoints, idempotent keys, and sink transactions must be evaluated together.
 
 SeaTunnel's consistency guarantee philosophy can be summarized as:
 
-1. **End-to-end Consistency**: Full-chain guarantee from data reading to writing
-2. **Failure Recovery Capability**: Able to recover and continue synchronization even under extreme conditions
-3. **Flexible Consistency Levels**: Choose appropriate consistency strength based on business requirements
-4. **Verifiable Consistency**: Verify data integrity through multiple mechanisms
+1. **Source Recovery State**: CDC offsets or JDBC split state define where recovery resumes
+2. **Checkpoint Coordination**: Completed checkpoints align recoverable source and sink state
+3. **Explicit Sink Semantics**: Idempotent upsert or supported XA determines how replay is handled
+4. **Independent Verification**: Consistent-window reconciliation validates the result
 
-These features make SeaTunnel an ideal choice for building enterprise-level data integration platforms, capable of handling data synchronization challenges from TB to PB scale while ensuring enterprise data integrity and accuracy.
+With these prerequisites in place, SeaTunnel can provide zero-loss and zero-duplication delivery for supported connector paths. It does not automatically provide cross-table or cross-database atomicity, and achievable scale and latency must be established by workload-specific testing.
 
 ---
 
