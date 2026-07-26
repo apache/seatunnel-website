@@ -3,9 +3,13 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 884
+- Total current docs pages: 892
 
 ## English
+- https://seatunnel.apache.org/docs/ai-cli/benchmark
+- https://seatunnel.apache.org/docs/ai-cli/design
+- https://seatunnel.apache.org/docs/ai-cli/overview
+- https://seatunnel.apache.org/docs/ai-cli/quickstart
 - https://seatunnel.apache.org/docs/architecture/api-design/catalog-table
 - https://seatunnel.apache.org/docs/architecture/api-design/flink-translation-layer
 - https://seatunnel.apache.org/docs/architecture/api-design/sink-architecture
@@ -450,6 +454,10 @@
 - https://seatunnel.apache.org/docs/transforms/transform-multi-table
 
 ## Chinese
+- https://seatunnel.apache.org/zh-CN/docs/ai-cli/benchmark
+- https://seatunnel.apache.org/zh-CN/docs/ai-cli/design
+- https://seatunnel.apache.org/zh-CN/docs/ai-cli/overview
+- https://seatunnel.apache.org/zh-CN/docs/ai-cli/quickstart
 - https://seatunnel.apache.org/zh-CN/docs/architecture/api-design/catalog-table
 - https://seatunnel.apache.org/zh-CN/docs/architecture/api-design/flink-translation-layer
 - https://seatunnel.apache.org/zh-CN/docs/architecture/api-design/sink-architecture
