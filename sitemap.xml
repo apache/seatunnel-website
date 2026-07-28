@@ -3696,6 +3696,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/engines/zeta/timer-flush</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/engines/zeta/tuning-guide</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
