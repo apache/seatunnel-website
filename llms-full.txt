@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 894
+- Total current docs pages: 896
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -135,6 +135,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-typesense
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-web3j
 - https://seatunnel.apache.org/docs/connectors/common-options/sink-common-options
+- https://seatunnel.apache.org/docs/connectors/common-options/sink-write-modes
 - https://seatunnel.apache.org/docs/connectors/common-options/source-common-options
 - https://seatunnel.apache.org/docs/connectors/connector-faq
 - https://seatunnel.apache.org/docs/connectors/connector-isolated-dependency
@@ -584,6 +585,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-typesense
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-web3j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/common-options/sink-common-options
+- https://seatunnel.apache.org/zh-CN/docs/connectors/common-options/sink-write-modes
 - https://seatunnel.apache.org/zh-CN/docs/connectors/common-options/source-common-options
 - https://seatunnel.apache.org/zh-CN/docs/connectors/connector-faq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/connector-isolated-dependency

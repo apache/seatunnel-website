@@ -2521,6 +2521,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/common-options/sink-write-modes</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/common-options/source-common-options</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
