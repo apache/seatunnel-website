@@ -2541,6 +2541,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/file-object-storage-faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/formats</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3091,6 +3096,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/Fluss</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/FtpFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3446,7 +3456,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/type-schema-faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/developer/coding-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/developer/connector-runtime-boundaries</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4107,6 +4127,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/transforms/text-chunk</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/transforms/transform-faq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

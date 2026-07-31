@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 896
+- Total current docs pages: 906
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -139,6 +139,7 @@
 - https://seatunnel.apache.org/docs/connectors/common-options/source-common-options
 - https://seatunnel.apache.org/docs/connectors/connector-faq
 - https://seatunnel.apache.org/docs/connectors/connector-isolated-dependency
+- https://seatunnel.apache.org/docs/connectors/file-object-storage-faq
 - https://seatunnel.apache.org/docs/connectors/formats
 - https://seatunnel.apache.org/docs/connectors/formats/avro
 - https://seatunnel.apache.org/docs/connectors/formats/canal-json
@@ -249,6 +250,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/EdgeSocket
 - https://seatunnel.apache.org/docs/connectors/source/Elasticsearch
 - https://seatunnel.apache.org/docs/connectors/source/FakeSource
+- https://seatunnel.apache.org/docs/connectors/source/Fluss
 - https://seatunnel.apache.org/docs/connectors/source/FtpFile
 - https://seatunnel.apache.org/docs/connectors/source/Github
 - https://seatunnel.apache.org/docs/connectors/source/Gitlab
@@ -320,7 +322,9 @@
 - https://seatunnel.apache.org/docs/connectors/source/Vitess-CDC
 - https://seatunnel.apache.org/docs/connectors/source/Web3j
 - https://seatunnel.apache.org/docs/connectors/source/Zendesk
+- https://seatunnel.apache.org/docs/connectors/type-schema-faq
 - https://seatunnel.apache.org/docs/developer/coding-guide
+- https://seatunnel.apache.org/docs/developer/connector-runtime-boundaries
 - https://seatunnel.apache.org/docs/developer/contribute-plugin
 - https://seatunnel.apache.org/docs/developer/contribute-transform-v2-guide
 - https://seatunnel.apache.org/docs/developer/contribution-path
@@ -453,6 +457,7 @@
 - https://seatunnel.apache.org/docs/transforms/table-merge
 - https://seatunnel.apache.org/docs/transforms/table-rename
 - https://seatunnel.apache.org/docs/transforms/text-chunk
+- https://seatunnel.apache.org/docs/transforms/transform-faq
 - https://seatunnel.apache.org/docs/transforms/transform-multi-table
 
 ## Chinese
@@ -589,6 +594,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/common-options/source-common-options
 - https://seatunnel.apache.org/zh-CN/docs/connectors/connector-faq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/connector-isolated-dependency
+- https://seatunnel.apache.org/zh-CN/docs/connectors/file-object-storage-faq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/formats
 - https://seatunnel.apache.org/zh-CN/docs/connectors/formats/avro
 - https://seatunnel.apache.org/zh-CN/docs/connectors/formats/canal-json
@@ -699,6 +705,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/EdgeSocket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Elasticsearch
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/FakeSource
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Fluss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/FtpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Github
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Gitlab
@@ -770,7 +777,9 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vitess-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Web3j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Zendesk
+- https://seatunnel.apache.org/zh-CN/docs/connectors/type-schema-faq
 - https://seatunnel.apache.org/zh-CN/docs/developer/coding-guide
+- https://seatunnel.apache.org/zh-CN/docs/developer/connector-runtime-boundaries
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribute-plugin
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribute-transform-v2-guide
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribution-path
@@ -903,4 +912,5 @@
 - https://seatunnel.apache.org/zh-CN/docs/transforms/table-merge
 - https://seatunnel.apache.org/zh-CN/docs/transforms/table-rename
 - https://seatunnel.apache.org/zh-CN/docs/transforms/text-chunk
+- https://seatunnel.apache.org/zh-CN/docs/transforms/transform-faq
 - https://seatunnel.apache.org/zh-CN/docs/transforms/transform-multi-table
