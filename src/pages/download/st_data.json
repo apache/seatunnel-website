@@ -2,6 +2,7 @@
 	{
 		"date": "2026-03-12",
 		"version": "v2.3.13",
+		"releaseNotes": "https://github.com/apache/seatunnel/releases/tag/2.3.13",
 		"sourceCode": {
 			"src": "https://www.apache.org/dyn/closer.lua/seatunnel/2.3.13/apache-seatunnel-2.3.13-src.tar.gz",
 			"asc": "https://downloads.apache.org/seatunnel/2.3.13/apache-seatunnel-2.3.13-src.tar.gz.asc",

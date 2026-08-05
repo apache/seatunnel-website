@@ -25,6 +25,7 @@ export default function () {
                             <th>Version</th>
                             <th>Binary Distribution</th>
                             <th>Source Code</th>
+                            <th>Release Notes</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,6 +46,9 @@ export default function () {
                                             <a href={st_item.sourceCode.asc}>[asc] {getLastPath(st_item.sourceCode.asc)}</a>
                                             <hr/>
                                             <a href={st_item.sourceCode.sha512}>[sha512] {getLastPath(st_item.sourceCode.sha512)}</a>
+                                        </td>
+                                        <td>
+                                            {st_item.releaseNotes ? <a href={st_item.releaseNotes}>Release Notes</a> : '-'}
                                         </td>
                                     </tr>
                                 )
