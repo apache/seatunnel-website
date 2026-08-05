@@ -3641,6 +3641,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/engines/zeta/log-analysis-with-ai</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/engines/zeta/logging</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

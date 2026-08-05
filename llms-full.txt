@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 906
+- Total current docs pages: 908
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -359,6 +359,7 @@
 - https://seatunnel.apache.org/docs/engines/zeta/engine-jar-storage-mode
 - https://seatunnel.apache.org/docs/engines/zeta/hybrid-cluster-deployment
 - https://seatunnel.apache.org/docs/engines/zeta/local-mode-deployment
+- https://seatunnel.apache.org/docs/engines/zeta/log-analysis-with-ai
 - https://seatunnel.apache.org/docs/engines/zeta/logging
 - https://seatunnel.apache.org/docs/engines/zeta/python-sdk
 - https://seatunnel.apache.org/docs/engines/zeta/realtime-observability
@@ -814,6 +815,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/engine-jar-storage-mode
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/hybrid-cluster-deployment
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/local-mode-deployment
+- https://seatunnel.apache.org/zh-CN/docs/engines/zeta/log-analysis-with-ai
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/logging
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/python-sdk
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/realtime-observability
