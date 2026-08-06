@@ -3161,6 +3161,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/HugeGraph</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/Iceberg</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

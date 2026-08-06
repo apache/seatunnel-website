@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 908
+- Total current docs pages: 910
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -263,6 +263,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Hive
 - https://seatunnel.apache.org/docs/connectors/source/HiveJdbc
 - https://seatunnel.apache.org/docs/connectors/source/Http
+- https://seatunnel.apache.org/docs/connectors/source/HugeGraph
 - https://seatunnel.apache.org/docs/connectors/source/Iceberg
 - https://seatunnel.apache.org/docs/connectors/source/InfluxDB
 - https://seatunnel.apache.org/docs/connectors/source/IoTDB
@@ -719,6 +720,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Hive
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/HiveJdbc
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Http
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/HugeGraph
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Iceberg
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/InfluxDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/IoTDB
