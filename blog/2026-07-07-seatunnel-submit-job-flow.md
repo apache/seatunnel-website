@@ -1,7 +1,7 @@
 ---
 slug: seatunnel-submit-job-flow
-title: "SeaTunnel 提交一个任务都经过了什么？"
-tags: [SeaTunnel, 源码分析, 大数据, 任务调度]
+title: "What Happens When SeaTunnel Submits a Job?"
+tags: [SeaTunnel, "Source Code Analysis", "Big Data", "Job Scheduling"]
 authors:
   - name: Niu Zhiwei
     title: Apache SeaTunnel Contributor
@@ -9,54 +9,54 @@ authors:
     image_url: https://github.com/nzw921rx.png
 ---
 
-一次 SeaTunnel 任务提交，看起来只是一次 `submitJob` 请求；但在 Server 内部，它会经过 Master 判断、任务协调、`JobMaster` 初始化、物理执行计划构建、Pipeline 资源申请、TaskGroup 部署等多个阶段。
+Submitting a SeaTunnel job may look like a simple `submitJob` request. Inside the server, however, it passes through multiple stages: Master detection, job coordination, `JobMaster` initialization, physical execution plan construction, Pipeline resource allocation, and TaskGroup deployment.
 
-这篇文章基于我整理的 submitJob 时序，先聚焦一条主线：**任务从提交请求进入 SeaTunnel Server，到最终调用 `TaskExecutionService.deployTask()` 部署 TaskGroup，中间都经过了什么。**
+Based on the submitJob sequence I organized, this article focuses on one main path: **what happens between a job submission request entering SeaTunnel Server and the final call to `TaskExecutionService.deployTask()` that deploys the TaskGroup.**
 
-本文暂不展开 `TaskExecutionService` 内部的线程模型、Task 运行细节和数据流转，重点放在任务提交与调度部署链路上。
+This article does not cover the thread model inside `TaskExecutionService`, Task execution details, or data flow. It focuses on the job submission, scheduling, and deployment path.
 
-## 核心角色
+## Core Components
 
-在进入流程之前，先看 submitJob 主链路里几个关键对象分别负责什么。
+Before walking through the process, let's look at the responsibilities of the key objects on the submitJob path.
 
-| 角色 | 职责 |
+| Component | Responsibility |
 | --- | --- |
-| `SubmitJobServlet` | 接收外部提交任务请求，是 Server 侧入口之一。 |
-| `JobInfoService` | 处理任务提交入口逻辑，判断当前节点是 Master 还是 Worker。 |
-| `MasterNode` | 当前节点不是 Master 时，将任务提交请求转发给 Master。 |
-| `CoordinatorService` | 任务协调入口，判断任务是否已经运行，并创建 / 管理 `JobMaster`。 |
-| `JobMaster` | 单个 Job 的运行控制中心，负责初始化运行上下文、classloader、checkpoint 配置等。 |
-| `PhysicalPlan` | 从逻辑 DAG 构建出的物理执行计划，负责驱动 Job 级别状态流转。 |
-| `SubPlan` | Pipeline 级别的调度单元，负责资源申请和 Pipeline 状态推进。 |
-| `ResourceUtils` | 为 Pipeline 申请运行资源。 |
-| `PhysicalVertex` | 更细粒度的物理执行节点，负责 TaskGroup 部署。 |
-| `TaskExecutionService` | 最终接收并部署 TaskGroup 的执行服务。 |
+| `SubmitJobServlet` | Receives external job submission requests and serves as one of the server-side entry points. |
+| `JobInfoService` | Handles the job submission entry logic and determines whether the current node is the Master or a Worker. |
+| `MasterNode` | Forwards the job submission request to the Master when the current node is not the Master. |
+| `CoordinatorService` | Serves as the job coordination entry point, checks whether the job is already running, and creates or manages the `JobMaster`. |
+| `JobMaster` | Acts as the runtime control center for a single Job and initializes the runtime context, classloader, checkpoint configuration, and related resources. |
+| `PhysicalPlan` | Represents the physical execution plan built from the logical DAG and drives Job-level state transitions. |
+| `SubPlan` | Acts as the Pipeline-level scheduling unit and handles resource allocation and Pipeline state transitions. |
+| `ResourceUtils` | Allocates runtime resources for a Pipeline. |
+| `PhysicalVertex` | Represents a finer-grained physical execution node and deploys TaskGroups. |
+| `TaskExecutionService` | Receives and deploys TaskGroups. |
 
-## 总体流程
+## Overall Process
 
-先用一张简化流程图看全局链路。
+First, the following simplified flowchart provides an overview of the entire path.
 
 ```mermaid
 flowchart TD
-    A[SubmitJobServlet 接收提交请求] --> B[JobInfoService.submitJob]
-    B --> C{当前节点是否 Master?}
-    C -- 是 --> D[本地提交]
-    C -- 否 --> E[转发到 MasterNode]
+    A[SubmitJobServlet receives request] --> B[JobInfoService.submitJob]
+    B --> C{Is the current node the Master?}
+    C -- Yes --> D[Submit locally]
+    C -- No --> E[Forward to MasterNode]
     E --> D
     D --> F[CoordinatorService.submitJob]
-    F --> G{Job 是否已经运行?}
-    G -- 是 --> H[直接返回 success]
-    G -- 否 --> I[创建并初始化 JobMaster]
-    I --> J[构建 PhysicalPlan]
-    J --> K[Job 状态进入 PENDING / SCHEDULED]
-    K --> L[SubPlan 开始调度]
-    L --> M[申请 Pipeline 资源]
-    M --> N[PhysicalVertex 部署 TaskGroup]
+    F --> G{Is the Job already running?}
+    G -- Yes --> H[Return success directly]
+    G -- No --> I[Create and initialize JobMaster]
+    I --> J[Build PhysicalPlan]
+    J --> K[Job enters PENDING / SCHEDULED]
+    K --> L[SubPlan starts scheduling]
+    L --> M[Allocate Pipeline resources]
+    M --> N[PhysicalVertex deploys TaskGroup]
     N --> O[TaskExecutionService.deployTask]
-    O --> P[Task 进入 RUNNING]
+    O --> P[Task enters RUNNING]
 ```
 
-这条链路可以压缩成一句话：
+This path can be summarized in one sequence:
 
 ```text
 SubmitJobServlet
@@ -69,162 +69,162 @@ SubmitJobServlet
   -> TaskExecutionService
 ```
 
-下面按阶段拆开看。
+Let's examine it stage by stage.
 
-## 第一阶段：请求进入 JobInfoService
+## Stage 1: The Request Enters JobInfoService
 
-任务提交入口首先进入 `SubmitJobServlet`，随后交给 `JobInfoService` 处理。
+The job submission request first enters `SubmitJobServlet` and is then handed to `JobInfoService`.
 
-这里的关键点不是马上启动任务，而是先判断：**当前接收请求的节点是不是 Master。**
+The key action here is not starting the job immediately. The system first determines: **is the node that received the request the Master?**
 
 ```mermaid
 flowchart TD
     A[SubmitJobServlet] --> B[JobInfoService]
-    B --> C{当前节点是 Master?}
-    C -- 是 --> D[本地 submitJob]
-    C -- 否 --> E[MasterNode.submitJob]
-    E --> F[转发给 Master 处理]
+    B --> C{Is the current node the Master?}
+    C -- Yes --> D[Local submitJob]
+    C -- No --> E[MasterNode.submitJob]
+    E --> F[Forward to the Master]
 ```
 
-如果当前节点就是 Master，`JobInfoService` 可以继续本地提交；如果当前节点是 Worker，则需要通过 `MasterNode.submitJob()` 转发给 Master。
+If the current node is the Master, `JobInfoService` can continue the submission locally. If the current node is a Worker, it forwards the request to the Master through `MasterNode.submitJob()`.
 
-这个设计保证了任务提交最终由 Master 统一协调，避免多个节点各自独立创建 Job 调度上下文。
+This design ensures that job submission is coordinated centrally by the Master and prevents multiple nodes from creating independent Job scheduling contexts.
 
-## 第二阶段：CoordinatorService 接管任务
+## Stage 2: CoordinatorService Takes Over
 
-请求进入 Master 后，会继续调用 `CoordinatorService.submitJob()`。
+After the request reaches the Master, it proceeds to `CoordinatorService.submitJob()`.
 
-`CoordinatorService` 在这里主要做两件事：
+`CoordinatorService` mainly performs two tasks here:
 
-1. 判断这个 Job 是否已经存在或正在运行。
-2. 如果是新任务，则创建并初始化对应的 `JobMaster`。
+1. Determine whether the Job already exists or is running.
+2. For a new job, create and initialize the corresponding `JobMaster`.
 
-如果任务已经运行，SeaTunnel 不需要重复创建调度上下文，可以直接返回提交成功。如果是一个新任务，就会进入 `JobMaster` 初始化流程。
+If the job is already running, SeaTunnel does not need to create another scheduling context and can return a successful submission response directly. A new job enters the `JobMaster` initialization process.
 
-也就是说，`submitJob` 到这里已经从“接口请求处理”进入了“调度系统处理”。
+At this point, `submitJob` has moved from API request handling into the scheduling system.
 
-## 第三阶段：JobMaster 初始化
+## Stage 3: JobMaster Initialization
 
-`JobMaster` 可以理解为一个 Job 的运行控制中心。
+`JobMaster` can be understood as the runtime control center for a Job.
 
-创建 `JobMaster` 后，会完成一些运行前准备工作，例如：
+After a `JobMaster` is created, it performs the preparation required before execution, including:
 
-- 构建任务运行所需的 classloader。
-- 初始化 checkpoint 相关配置。
-- 准备从逻辑 DAG 构建物理执行计划所需的上下文。
+- Building the classloader required by the job.
+- Initializing checkpoint-related configuration.
+- Preparing the context required to construct the physical execution plan from the logical DAG.
 
-这一阶段还没有真正部署 Task，它更像是在为后续调度准备运行环境。
+No Task is deployed at this stage. It prepares the runtime environment for subsequent scheduling.
 
-## 第四阶段：从逻辑 DAG 到 PhysicalPlan
+## Stage 4: From the Logical DAG to PhysicalPlan
 
-`JobMaster` 初始化后，会基于逻辑 DAG 构建 `PhysicalPlan`。
+After `JobMaster` initialization, SeaTunnel builds a `PhysicalPlan` from the logical DAG.
 
 ```mermaid
 flowchart TD
-    A[JobMaster 初始化完成] --> B[PlanUtils.fromLogicalDAG]
-    B --> C[创建 PhysicalPlan]
-    C --> D[初始化 Job 状态 Future]
-    D --> E[CoordinatorService 更新 Job 状态为 PENDING]
+    A[JobMaster initialization completes] --> B[PlanUtils.fromLogicalDAG]
+    B --> C[Create PhysicalPlan]
+    C --> D[Initialize Job state Future]
+    D --> E[CoordinatorService updates Job state to PENDING]
     E --> F[PhysicalPlan.stateProcess]
-    F --> G{当前 Job 状态}
-    G -- CREATED --> H[更新为 SCHEDULED]
-    G -- SCHEDULED --> I[启动 SubPlan 状态处理]
+    F --> G{Current Job state}
+    G -- CREATED --> H[Update to SCHEDULED]
+    G -- SCHEDULED --> I[Start SubPlan state processing]
 ```
 
-这里有一个重要概念：**SeaTunnel 不是一次性把任务全部启动，而是通过状态机逐步推进。**
+One important concept here is that **SeaTunnel does not start the entire job at once. It advances execution step by step through a state machine.**
 
-在 Job 级别，核心状态推进可以简化理解为：
+At the Job level, the core state transition can be simplified as:
 
 ```text
 CREATED -> SCHEDULED -> startSubPlanStateProcess
 ```
 
-`PhysicalPlan` 负责 Job 级别状态流转，而真正的 Pipeline 调度会继续下沉到 `SubPlan`。
+`PhysicalPlan` drives Job-level state transitions, while actual Pipeline scheduling continues at the `SubPlan` level.
 
-## 第五阶段：SubPlan 申请资源并进入部署
+## Stage 5: SubPlan Allocates Resources and Starts Deployment
 
-到了 `SubPlan` 这一层，SeaTunnel 关注的粒度已经从整个 Job 下沉到 Pipeline。
+At the `SubPlan` level, SeaTunnel's scheduling granularity moves from the entire Job down to an individual Pipeline.
 
-`SubPlan.stateProcess()` 会根据当前 Pipeline 状态执行不同逻辑：
+`SubPlan.stateProcess()` performs different actions according to the current Pipeline state:
 
 ```mermaid
 flowchart TD
-    A[SubPlan.stateProcess] --> B{Pipeline 状态}
+    A[SubPlan.stateProcess] --> B{Pipeline state}
     B -- CREATED --> C[updatePipelineState SCHEDULED]
     B -- SCHEDULED --> D[ResourceUtils.applyResourceForPipeline]
-    D --> E{资源申请结果}
-    E -- 成功 --> F[updatePipelineState DEPLOYING]
-    E -- 失败 --> G[makePipelineFailing]
-    B -- DEPLOYING --> H[部署 PhysicalVertex]
-    H --> I[Pipeline 进入 RUNNING]
+    D --> E{Resource allocation result}
+    E -- Success --> F[updatePipelineState DEPLOYING]
+    E -- Failure --> G[makePipelineFailing]
+    B -- DEPLOYING --> H[Deploy PhysicalVertex]
+    H --> I[Pipeline enters RUNNING]
 ```
 
-这一层的重点是：
+The key points at this level are:
 
-- `CREATED` 状态下，Pipeline 会先推进到 `SCHEDULED`。
-- `SCHEDULED` 状态下，开始通过 `ResourceUtils.applyResourceForPipeline()` 申请资源。
-- 资源申请成功后，Pipeline 进入 `DEPLOYING`。
-- 如果资源申请失败，则进入 `makePipelineFailing(e)`。
+- In the `CREATED` state, the Pipeline first transitions to `SCHEDULED`.
+- In the `SCHEDULED` state, it starts allocating resources through `ResourceUtils.applyResourceForPipeline()`.
+- After resource allocation succeeds, the Pipeline enters `DEPLOYING`.
+- If resource allocation fails, the Pipeline enters `makePipelineFailing(e)`.
 
-因此，Pipeline 不是被立即部署的；它必须先具备运行资源。
+Therefore, a Pipeline is not deployed immediately. It must first obtain the resources required to run.
 
-## 第六阶段：PhysicalVertex 部署 TaskGroup
+## Stage 6: PhysicalVertex Deploys the TaskGroup
 
-当 Pipeline 进入 `DEPLOYING` 后，`SubPlan` 会开始启动内部的 `PhysicalVertex`。
+When the Pipeline enters `DEPLOYING`, the `SubPlan` starts the `PhysicalVertex` instances it contains.
 
-`PhysicalVertex` 会先把 Task 状态更新为 `DEPLOYING`，然后根据分配到的 `slotProfile` 执行部署。
+`PhysicalVertex` first updates the Task state to `DEPLOYING`, then deploys it according to the allocated `slotProfile`.
 
-部署时有一个关键分支：目标 Worker 是本地还是远端。
+Deployment has one important branch: is the target Worker local or remote?
 
 ```mermaid
 flowchart TD
-    A[PhysicalVertex.deploy slotProfile] --> B{目标 Worker 是否本地?}
-    B -- 本地 --> C[TaskExecutionService.deployTask]
-    B -- 远端 --> D[DeployTaskOperation 发送到远端 Worker]
-    D --> E[远端 TaskExecutionService.deployTask]
-    C --> F{部署结果}
+    A[PhysicalVertex.deploy slotProfile] --> B{Is the target Worker local?}
+    B -- Yes --> C[TaskExecutionService.deployTask]
+    B -- No --> D[DeployTaskOperation sends to remote Worker]
+    D --> E[Remote TaskExecutionService.deployTask]
+    C --> F{Deployment result}
     E --> F
-    F -- 成功 --> G[updateTaskState RUNNING]
-    F -- 失败 --> H[makeTaskGroupFailing]
+    F -- Success --> G[updateTaskState RUNNING]
+    F -- Failure --> H[makeTaskGroupFailing]
 ```
 
-如果目标 Worker 就是当前节点，可以直接调用本地 `TaskExecutionService.deployTask(taskGroupInfo)`。
+If the target Worker is the current node, SeaTunnel can call the local `TaskExecutionService.deployTask(taskGroupInfo)` directly.
 
-如果目标 Worker 是远端节点，则需要通过 `DeployTaskOperation` 把部署请求发送过去，最终仍然会在目标 Worker 上进入 `TaskExecutionService.deployTask(taskGroupInfo)`。
+If the target Worker is remote, SeaTunnel sends the deployment request through `DeployTaskOperation`. The request ultimately enters `TaskExecutionService.deployTask(taskGroupInfo)` on the target Worker.
 
-部署成功后，`PhysicalVertex` 会把 Task 状态更新为 `RUNNING`；如果失败，则进入 `makeTaskGroupFailing()`。
+After successful deployment, `PhysicalVertex` updates the Task state to `RUNNING`. If deployment fails, it enters `makeTaskGroupFailing()`.
 
-当 Pipeline 内部的 TaskGroup 部署完成并进入运行态后，`SubPlan` 也会推进到 `RUNNING`。
+When the TaskGroups inside the Pipeline have been deployed and entered the running state, the `SubPlan` also transitions to `RUNNING`.
 
-## 失败、取消与恢复分支
+## Failure, Cancellation, and Recovery Branches
 
-除了正常提交和部署，`SubPlan` 状态机里还需要处理失败、取消和恢复。
+In addition to normal submission and deployment, the `SubPlan` state machine handles failure, cancellation, and recovery.
 
-可以简化成下面这张图：
+The following diagram provides a simplified view:
 
 ```mermaid
 flowchart TD
-    A[SubPlan 状态机] --> B{当前状态}
-    B -- FAILING / CANCELING --> C[取消每个 PhysicalVertex]
-    B -- FAILED / CANCELED --> D{是否可以恢复?}
-    D -- 可以 --> E[释放并重新申请资源]
+    A[SubPlan state machine] --> B{Current state}
+    B -- FAILING / CANCELING --> C[Cancel each PhysicalVertex]
+    B -- FAILED / CANCELED --> D{Can it recover?}
+    D -- Yes --> E[Release and reallocate resources]
     E --> F[restorePipeline]
-    D -- 不可以 --> G[subPlanDone 并完成 future]
-    B -- FINISHED --> H[subPlanDone 并完成 future]
+    D -- No --> G[subPlanDone and complete future]
+    B -- FINISHED --> H[subPlanDone and complete future]
 ```
 
-这也是为什么前面的状态机设计很重要：
+This is why the preceding state-machine design matters:
 
-- 正常路径可以推进部署和运行。
-- 失败路径可以进入 failing / failed。
-- 取消路径可以进入 canceling / canceled。
-- 如果满足恢复条件，还可以释放资源后重新申请并恢复 Pipeline。
+- The normal path can advance deployment and execution.
+- The failure path can enter failing and failed states.
+- The cancellation path can enter canceling and canceled states.
+- If recovery conditions are met, the Pipeline can release its resources, allocate them again, and recover.
 
-换句话说，状态机不是为了让流程复杂，而是为了让任务生命周期可控。
+In other words, the state machine does not exist merely to make the process more complex. It makes the job lifecycle controllable.
 
-## 完整时序图
+## Complete Sequence Diagram
 
-最后，把主流程用时序图串起来，方便对照整体调用顺序。
+Finally, the following sequence diagram connects the main process and makes the overall call order easier to follow.
 
 ```mermaid
 sequenceDiagram
@@ -307,11 +307,11 @@ sequenceDiagram
     end
 ```
 
-## 总结
+## Summary
 
-SeaTunnel 提交任务后的核心逻辑，并不是“收到请求后直接启动任务”。
+The core logic after SeaTunnel receives a job submission is not simply to start the job immediately.
 
-它大致会经过下面这条主链路：
+It generally follows this main path:
 
 ```text
 SubmitJobServlet
@@ -324,14 +324,14 @@ SubmitJobServlet
   -> TaskExecutionService
 ```
 
-其中：
+In this process:
 
-- `JobInfoService` 负责处理提交入口，并判断是否需要转发到 Master。
-- `CoordinatorService` 负责接管任务协调，避免重复提交，并创建 `JobMaster`。
-- `JobMaster` 负责初始化 Job 运行上下文。
-- `PhysicalPlan` 负责 Job 级别状态推进。
-- `SubPlan` 负责 Pipeline 级别的资源申请和调度。
-- `PhysicalVertex` 负责 TaskGroup 部署。
-- `TaskExecutionService` 是最终执行 TaskGroup 部署的入口。
+- `JobInfoService` handles the submission entry point and determines whether the request must be forwarded to the Master.
+- `CoordinatorService` coordinates the job, prevents duplicate submissions, and creates the `JobMaster`.
+- `JobMaster` initializes the Job runtime context.
+- `PhysicalPlan` drives Job-level state transitions.
+- `SubPlan` handles Pipeline-level resource allocation and scheduling.
+- `PhysicalVertex` deploys TaskGroups.
+- `TaskExecutionService` is the final entry point for TaskGroup deployment.
 
-理解这条链路之后，再去看 SeaTunnel 的 Task 执行线程模型、数据流转和 checkpoint 机制，就会更容易把各个模块放到正确的位置上。
+After understanding this path, it becomes easier to place SeaTunnel's Task execution thread model, data flow, and checkpoint mechanism in the correct part of the architecture.
