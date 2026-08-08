@@ -1,7 +1,7 @@
 ---
 slug: seatunnel-submit-job-flow
 title: "What Happens When SeaTunnel Submits a Job?"
-tags: [SeaTunnel, "Source Code Analysis", "Big Data", "Job Scheduling"]
+tags: [SeaTunnel, Zeta, Architecture]
 authors:
   - name: Niu Zhiwei
     title: Apache SeaTunnel Contributor

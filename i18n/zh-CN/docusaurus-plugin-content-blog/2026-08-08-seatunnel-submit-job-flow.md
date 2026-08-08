@@ -1,7 +1,7 @@
 ---
 slug: seatunnel-submit-job-flow
 title: "SeaTunnel 提交一个任务都经过了什么？"
-tags: [SeaTunnel, 源码分析, 大数据, 任务调度]
+tags: [SeaTunnel, Zeta, Architecture]
 authors:
   - name: Niu Zhiwei
     title: Apache SeaTunnel Contributor
