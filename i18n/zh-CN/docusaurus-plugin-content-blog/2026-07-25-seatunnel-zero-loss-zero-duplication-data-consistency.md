@@ -198,7 +198,7 @@ SeaTunnel 的 MySQL-CDC 提供多种启动模式，用于满足不同场景下�
    }
    ```
 
-此外还有 `earliest` 启动模式：从能够找到的最早 offset 开始。
+此外还有 `earliest` 启动模式：从能够找到的最早 offset 开始；以及 `timestamp` 启动模式（`startup.timestamp`）：从用户指定的毫秒级时间戳开始。
 
 ### JDBC 模式：基于分片的高效批量读取
 
@@ -340,7 +340,7 @@ Jdbc {
 
 ## 五、状态一致性：断点续传与失败恢复
 
-SeaTunnel 的状态一致性机制，是保障端到端数据同步可靠性的关键。通过精心设计的状态管理和 checkpoint 机制，SeaTunnel 具备可靠的失败恢复能力。
+基于 Checkpoint 的状态管理为受支持的 Source 和 Sink Connector 提供可恢复的边界。
 
 ### 分布式 Checkpoint 机制
 
@@ -366,9 +366,9 @@ flowchart LR
     style B fill:#bbf,stroke:#333,stroke-width:2px
     style C fill:#ddf,stroke:#333,stroke-width:2px
     style D fill:#bfb,stroke:#333,stroke-width:2px
-    style E fill:#ffd,stroke:#333,stroke-width:2px,shape:diamond
+    style E fill:#ffd,stroke:#333,stroke-width:2px
     style F fill:#bbf,stroke:#333,stroke-width:2px
-    style G fill:#ffd,stroke:#333,stroke-width:2px,shape:diamond
+    style G fill:#ffd,stroke:#333,stroke-width:2px
     style H fill:#fbb,stroke:#333,stroke-width:2px
     style I fill:#dfd,stroke:#333,stroke-width:2px
 ```

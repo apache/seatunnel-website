@@ -198,7 +198,7 @@ SeaTunnel's MySQL-CDC provides multiple startup modes to meet consistency requir
    }
    ```
 
-There is also an `earliest` startup mode, which starts from the earliest available offset.
+There is also an `earliest` startup mode, which starts from the earliest available offset, and a `timestamp` startup mode (`startup.timestamp`), which starts from a user-supplied millisecond timestamp.
 
 ### JDBC Mode: Shard-based Efficient Batch Reading
 
@@ -366,9 +366,9 @@ flowchart LR
     style B fill:#bbf,stroke:#333,stroke-width:2px
     style C fill:#ddf,stroke:#333,stroke-width:2px
     style D fill:#bfb,stroke:#333,stroke-width:2px
-    style E fill:#ffd,stroke:#333,stroke-width:2px,shape:diamond
+    style E fill:#ffd,stroke:#333,stroke-width:2px
     style F fill:#bbf,stroke:#333,stroke-width:2px
-    style G fill:#ffd,stroke:#333,stroke-width:2px,shape:diamond
+    style G fill:#ffd,stroke:#333,stroke-width:2px
     style H fill:#fbb,stroke:#333,stroke-width:2px
     style I fill:#dfd,stroke:#333,stroke-width:2px
 ```
