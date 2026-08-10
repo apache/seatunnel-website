@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[46125],{66463:e=>{e.exports=JSON.parse('{"label":"Kafka","permalink":"/blog/tags/kafka","allTagsPath":"/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[88786],{42061:e=>{e.exports=JSON.parse('{"label":"MySQL","permalink":"/zh-CN/blog/tags/my-sql","allTagsPath":"/zh-CN/blog/tags","count":1}')}}]);

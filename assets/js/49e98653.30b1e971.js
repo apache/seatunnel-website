@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[5638],{77665:e=>{e.exports=JSON.parse('{"label":"CDC","permalink":"/blog/tags/cdc","allTagsPath":"/blog/tags","count":1}')}}]);

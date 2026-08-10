@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[24868],{499689:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/click-house","page":1,"postsPerPage":100,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[31794],{87269:e=>{e.exports=JSON.parse('{"label":"Tongcheng Travel","permalink":"/blog/tags/tongcheng-travel","allTagsPath":"/blog/tags","count":1}')}}]);
