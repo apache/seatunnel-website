@@ -2411,6 +2411,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-nats-jetstream</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-neo4j</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2852,6 +2857,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/sink/Mysql</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/sink/NatsJetStream</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

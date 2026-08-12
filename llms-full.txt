@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 912
+- Total current docs pages: 916
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -113,6 +113,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-milvus
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-mongodb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-mqtt
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-nats-jetstream
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-neo4j
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-openmldb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-paimon
@@ -202,6 +203,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/MongoDB
 - https://seatunnel.apache.org/docs/connectors/sink/Mqtt
 - https://seatunnel.apache.org/docs/connectors/sink/Mysql
+- https://seatunnel.apache.org/docs/connectors/sink/NatsJetStream
 - https://seatunnel.apache.org/docs/connectors/sink/Neo4j
 - https://seatunnel.apache.org/docs/connectors/sink/ObsFile
 - https://seatunnel.apache.org/docs/connectors/sink/OceanBase
@@ -571,6 +573,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-milvus
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-mongodb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-mqtt
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-nats-jetstream
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-neo4j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-openmldb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-paimon
@@ -660,6 +663,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/MongoDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Mqtt
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Mysql
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/NatsJetStream
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Neo4j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/ObsFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/OceanBase
