@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 916
+- Total current docs pages: 920
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -55,6 +55,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cloudberry
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-common
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-console
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-couchbase
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-databend
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-datahub
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-dingtalk
@@ -164,6 +165,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Cloudberry
 - https://seatunnel.apache.org/docs/connectors/sink/Console
 - https://seatunnel.apache.org/docs/connectors/sink/CosFile
+- https://seatunnel.apache.org/docs/connectors/sink/Couchbase
 - https://seatunnel.apache.org/docs/connectors/sink/Databend
 - https://seatunnel.apache.org/docs/connectors/sink/Datahub
 - https://seatunnel.apache.org/docs/connectors/sink/DB2
@@ -515,6 +517,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cloudberry
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-common
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-console
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-couchbase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-databend
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-datahub
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-dingtalk
@@ -624,6 +627,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Cloudberry
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Console
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/CosFile
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Couchbase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Databend
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Datahub
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/DB2
