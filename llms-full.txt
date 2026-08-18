@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 920
+- Total current docs pages: 922
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -423,6 +423,7 @@
 - https://seatunnel.apache.org/docs/introduction/concepts/metadata-spi
 - https://seatunnel.apache.org/docs/introduction/concepts/schema-feature
 - https://seatunnel.apache.org/docs/introduction/configuration/config-encryption-decryption
+- https://seatunnel.apache.org/docs/introduction/configuration/error-handling
 - https://seatunnel.apache.org/docs/introduction/configuration/JobEnvConfig
 - https://seatunnel.apache.org/docs/introduction/configuration/metalake
 - https://seatunnel.apache.org/docs/introduction/configuration/schema-evolution
@@ -885,6 +886,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/introduction/concepts/metadata-spi
 - https://seatunnel.apache.org/zh-CN/docs/introduction/concepts/schema-feature
 - https://seatunnel.apache.org/zh-CN/docs/introduction/configuration/config-encryption-decryption
+- https://seatunnel.apache.org/zh-CN/docs/introduction/configuration/error-handling
 - https://seatunnel.apache.org/zh-CN/docs/introduction/configuration/JobEnvConfig
 - https://seatunnel.apache.org/zh-CN/docs/introduction/configuration/metalake
 - https://seatunnel.apache.org/zh-CN/docs/introduction/configuration/schema-evolution

@@ -3961,6 +3961,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/introduction/configuration/error-handling</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/introduction/configuration/JobEnvConfig</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
