@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 922
+- Total current docs pages: 926
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -120,6 +120,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-paimon
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-prometheus
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-pulsar
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-python
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-qdrant
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-rabbitmq
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-redis
@@ -306,6 +307,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/PostgreSQL-CDC
 - https://seatunnel.apache.org/docs/connectors/source/Prometheus
 - https://seatunnel.apache.org/docs/connectors/source/Pulsar
+- https://seatunnel.apache.org/docs/connectors/source/Python
 - https://seatunnel.apache.org/docs/connectors/source/Qdrant
 - https://seatunnel.apache.org/docs/connectors/source/Rabbitmq
 - https://seatunnel.apache.org/docs/connectors/source/Redis
@@ -583,6 +585,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-paimon
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-prometheus
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-pulsar
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-python
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-qdrant
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-rabbitmq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-redis
@@ -769,6 +772,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/PostgreSQL-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Prometheus
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Pulsar
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Python
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Qdrant
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Rabbitmq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Redis
