@@ -3541,6 +3541,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/developer/shade-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/developer/sink-connector-development</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 926
+- Total current docs pages: 928
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -339,6 +339,7 @@
 - https://seatunnel.apache.org/docs/developer/how-to-create-your-connector
 - https://seatunnel.apache.org/docs/developer/new-license
 - https://seatunnel.apache.org/docs/developer/setup
+- https://seatunnel.apache.org/docs/developer/shade-guide
 - https://seatunnel.apache.org/docs/developer/sink-connector-development
 - https://seatunnel.apache.org/docs/developer/source-connector-development
 - https://seatunnel.apache.org/docs/developer/test-coding-guide
@@ -804,6 +805,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/developer/how-to-create-your-connector
 - https://seatunnel.apache.org/zh-CN/docs/developer/new-license
 - https://seatunnel.apache.org/zh-CN/docs/developer/setup
+- https://seatunnel.apache.org/zh-CN/docs/developer/shade-guide
 - https://seatunnel.apache.org/zh-CN/docs/developer/sink-connector-development
 - https://seatunnel.apache.org/zh-CN/docs/developer/source-connector-development
 - https://seatunnel.apache.org/zh-CN/docs/developer/test-coding-guide
