@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 928
+- Total current docs pages: 934
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -82,6 +82,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-fluss
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-bigtable
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-firestore
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-google-pubsub
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-sheets
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-graphql
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hbase
@@ -183,6 +184,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/FtpFile
 - https://seatunnel.apache.org/docs/connectors/sink/GoogleBigtable
 - https://seatunnel.apache.org/docs/connectors/sink/GoogleFirestore
+- https://seatunnel.apache.org/docs/connectors/sink/GooglePubSub
 - https://seatunnel.apache.org/docs/connectors/sink/GraphQL
 - https://seatunnel.apache.org/docs/connectors/sink/Greenplum
 - https://seatunnel.apache.org/docs/connectors/sink/Hbase
@@ -377,6 +379,7 @@
 - https://seatunnel.apache.org/docs/engines/zeta/rest-api-job-lifecycle
 - https://seatunnel.apache.org/docs/engines/zeta/rest-api-v1
 - https://seatunnel.apache.org/docs/engines/zeta/rest-api-v2
+- https://seatunnel.apache.org/docs/engines/zeta/runtime-execution-graph
 - https://seatunnel.apache.org/docs/engines/zeta/security
 - https://seatunnel.apache.org/docs/engines/zeta/separated-cluster-deployment
 - https://seatunnel.apache.org/docs/engines/zeta/slot-allocation-strategy
@@ -548,6 +551,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-fluss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-bigtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-firestore
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-pubsub
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-sheets
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-graphql
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hbase
@@ -649,6 +653,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/FtpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GoogleBigtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GoogleFirestore
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GooglePubSub
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GraphQL
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Greenplum
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Hbase
@@ -843,6 +848,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/rest-api-job-lifecycle
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/rest-api-v1
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/rest-api-v2
+- https://seatunnel.apache.org/zh-CN/docs/engines/zeta/runtime-execution-graph
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/security
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/separated-cluster-deployment
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/slot-allocation-strategy

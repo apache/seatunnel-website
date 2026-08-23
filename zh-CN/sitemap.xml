@@ -2256,6 +2256,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-pubsub</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-sheets</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2757,6 +2762,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GoogleFirestore</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GooglePubSub</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3727,6 +3737,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/engines/zeta/rest-api-v2</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/engines/zeta/runtime-execution-graph</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
