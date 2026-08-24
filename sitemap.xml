@@ -2061,6 +2061,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-db2</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-mongodb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3097,6 +3102,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/DB2</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/DB2-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
