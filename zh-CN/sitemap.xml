@@ -2041,6 +2041,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-azure-queue-storage</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-bigquery</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2647,6 +2652,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Assert</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/AzureQueueStorage</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3697,6 +3707,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/engines/zeta/hybrid-cluster-deployment</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/engines/zeta/live-metrics-chart</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
