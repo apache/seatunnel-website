@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 944
+- Total current docs pages: 946
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -343,6 +343,7 @@
 - https://seatunnel.apache.org/docs/developer/contribution-path
 - https://seatunnel.apache.org/docs/developer/docs-format-specification
 - https://seatunnel.apache.org/docs/developer/how-to-create-your-connector
+- https://seatunnel.apache.org/docs/developer/merge-queue
 - https://seatunnel.apache.org/docs/developer/new-license
 - https://seatunnel.apache.org/docs/developer/setup
 - https://seatunnel.apache.org/docs/developer/shade-guide
@@ -817,6 +818,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribution-path
 - https://seatunnel.apache.org/zh-CN/docs/developer/docs-format-specification
 - https://seatunnel.apache.org/zh-CN/docs/developer/how-to-create-your-connector
+- https://seatunnel.apache.org/zh-CN/docs/developer/merge-queue
 - https://seatunnel.apache.org/zh-CN/docs/developer/new-license
 - https://seatunnel.apache.org/zh-CN/docs/developer/setup
 - https://seatunnel.apache.org/zh-CN/docs/developer/shade-guide

@@ -3561,6 +3561,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/developer/merge-queue</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/developer/new-license</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
