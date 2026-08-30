@@ -3176,6 +3176,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/GooglePubSub</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleSheets</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

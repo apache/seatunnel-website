@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 946
+- Total current docs pages: 948
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -266,6 +266,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Github
 - https://seatunnel.apache.org/docs/connectors/source/Gitlab
 - https://seatunnel.apache.org/docs/connectors/source/GoogleBigtable
+- https://seatunnel.apache.org/docs/connectors/source/GooglePubSub
 - https://seatunnel.apache.org/docs/connectors/source/GoogleSheets
 - https://seatunnel.apache.org/docs/connectors/source/GraphQL
 - https://seatunnel.apache.org/docs/connectors/source/Greenplum
@@ -741,6 +742,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Github
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Gitlab
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleBigtable
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/GooglePubSub
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleSheets
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GraphQL
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Greenplum
