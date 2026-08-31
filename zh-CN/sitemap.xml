@@ -2046,6 +2046,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-azurecosmosdb</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-bigquery</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2197,6 +2202,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-base-hadoop</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-bos</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2356,6 +2366,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-posthog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-wechat</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2436,6 +2451,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-nebulagraph</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-neo4j</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2512,6 +2532,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-sls</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-snmp</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2662,6 +2687,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/BigQuery</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/BosFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2906,6 +2936,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/NebulaGraph</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Neo4j</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3082,6 +3117,16 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonSqs</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureCosmosDB</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/BosFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3406,6 +3451,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/PostHog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/Prometheus</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3457,6 +3507,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/Sls</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/SNMP</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

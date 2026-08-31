@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 948
+- Total current docs pages: 970
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -40,6 +40,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-amazonsqs
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-assert
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-azure-queue-storage
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-azurecosmosdb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-bigquery
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cassandra
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc
@@ -71,6 +72,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-base
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-base-hadoop
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-file-bos
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-cos
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-ftp
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-hadoop
@@ -102,6 +104,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-notion
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-onesignal
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-persistiq
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-posthog
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-wechat
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hudi
@@ -118,6 +121,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-mongodb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-mqtt
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-nats-jetstream
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-nebulagraph
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-neo4j
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-openmldb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-paimon
@@ -134,6 +138,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-sentry
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-slack
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-sls
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-snmp
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-socket
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-starrocks
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-tablestore
@@ -164,6 +169,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Assert
 - https://seatunnel.apache.org/docs/connectors/sink/AzureQueueStorage
 - https://seatunnel.apache.org/docs/connectors/sink/BigQuery
+- https://seatunnel.apache.org/docs/connectors/sink/BosFile
 - https://seatunnel.apache.org/docs/connectors/sink/Cassandra
 - https://seatunnel.apache.org/docs/connectors/sink/Clickhouse
 - https://seatunnel.apache.org/docs/connectors/sink/ClickhouseFile
@@ -212,6 +218,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Mqtt
 - https://seatunnel.apache.org/docs/connectors/sink/Mysql
 - https://seatunnel.apache.org/docs/connectors/sink/NatsJetStream
+- https://seatunnel.apache.org/docs/connectors/sink/NebulaGraph
 - https://seatunnel.apache.org/docs/connectors/sink/Neo4j
 - https://seatunnel.apache.org/docs/connectors/sink/ObsFile
 - https://seatunnel.apache.org/docs/connectors/sink/OceanBase
@@ -248,6 +255,8 @@
 - https://seatunnel.apache.org/docs/connectors/source/Airtable
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonSqs
+- https://seatunnel.apache.org/docs/connectors/source/AzureCosmosDB
+- https://seatunnel.apache.org/docs/connectors/source/BosFile
 - https://seatunnel.apache.org/docs/connectors/source/Cassandra
 - https://seatunnel.apache.org/docs/connectors/source/Clickhouse
 - https://seatunnel.apache.org/docs/connectors/source/Cloudberry
@@ -312,6 +321,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Phoenix
 - https://seatunnel.apache.org/docs/connectors/source/PostgreSQL
 - https://seatunnel.apache.org/docs/connectors/source/PostgreSQL-CDC
+- https://seatunnel.apache.org/docs/connectors/source/PostHog
 - https://seatunnel.apache.org/docs/connectors/source/Prometheus
 - https://seatunnel.apache.org/docs/connectors/source/Pulsar
 - https://seatunnel.apache.org/docs/connectors/source/Python
@@ -323,6 +333,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/S3File
 - https://seatunnel.apache.org/docs/connectors/source/SftpFile
 - https://seatunnel.apache.org/docs/connectors/source/Sls
+- https://seatunnel.apache.org/docs/connectors/source/SNMP
 - https://seatunnel.apache.org/docs/connectors/source/Snowflake
 - https://seatunnel.apache.org/docs/connectors/source/Socket
 - https://seatunnel.apache.org/docs/connectors/source/SqlServer
@@ -516,6 +527,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-amazonsqs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-assert
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-azure-queue-storage
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-azurecosmosdb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-bigquery
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cassandra
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc
@@ -547,6 +559,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-base
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-base-hadoop
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-bos
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-cos
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-ftp
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-hadoop
@@ -578,6 +591,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-notion
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-onesignal
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-persistiq
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-posthog
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-wechat
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hudi
@@ -594,6 +608,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-mongodb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-mqtt
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-nats-jetstream
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-nebulagraph
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-neo4j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-openmldb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-paimon
@@ -610,6 +625,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-sentry
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-slack
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-sls
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-snmp
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-socket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-starrocks
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-tablestore
@@ -640,6 +656,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Assert
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/AzureQueueStorage
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/BigQuery
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/BosFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Cassandra
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Clickhouse
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/ClickhouseFile
@@ -688,6 +705,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Mqtt
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Mysql
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/NatsJetStream
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/NebulaGraph
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Neo4j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/ObsFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/OceanBase
@@ -724,6 +742,8 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Airtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonSqs
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureCosmosDB
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/BosFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Cassandra
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Clickhouse
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Cloudberry
@@ -788,6 +808,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Phoenix
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/PostgreSQL
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/PostgreSQL-CDC
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/PostHog
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Prometheus
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Pulsar
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Python
@@ -799,6 +820,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/S3File
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SftpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Sls
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/SNMP
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Snowflake
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Socket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SqlServer
