@@ -5,7 +5,10 @@
       "tip": "(排名不分先后)",
       "prContributorTitle": "Contributors",
       "prContributorDesc": "GitHub 当前将 Apache SeaTunnel 统计为 {totalCount} 位 Contributors。考虑到其中已有 {existingCount} 位已在上方 PMC 与 Committer 中展示，下面仅补充展示其余 {count} 位具名贡献者。",
-      "prContributorNetworkCount": "{count} 位贡献者"
+      "prContributorNetworkCount": "{count} 位贡献者",
+      "prContributorNetworkHint": "拖动探索 · 点击贡献者聚焦 · 悬停查看详情",
+      "prContributorNetworkProfile": "查看 GitHub 主页",
+      "prContributorNetworkControls": "贡献者关系图。使用方向键选择贡献者，按 Enter 聚焦，按 Escape 清除选择，然后按 Tab 访问所选贡献者的 GitHub 主页。"
     }
   },
   "en": {
@@ -14,7 +17,10 @@
       "tip": "(In no particular order)",
       "prContributorTitle": "Contributors",
       "prContributorDesc": "GitHub currently counts {totalCount} contributors for the Apache SeaTunnel repository. Since {existingCount} of them are already listed above as PMC members or committers, the remaining {count} identified contributors are shown below.",
-      "prContributorNetworkCount": "{count} contributors"
+      "prContributorNetworkCount": "{count} contributors",
+      "prContributorNetworkHint": "Drag to explore · Click a contributor to focus · Hover for details",
+      "prContributorNetworkProfile": "View GitHub profile",
+      "prContributorNetworkControls": "Contributor network. Use the arrow keys to select a contributor, Enter to focus, Escape to clear the selection, then Tab to visit the selected GitHub profile."
     }
   },
   "pmc": [
