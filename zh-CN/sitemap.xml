@@ -2151,6 +2151,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-deeplake</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-dingtalk</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2261,6 +2266,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-firebase</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-fluss</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2367,6 +2377,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-posthog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-stripe</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2742,6 +2757,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/DB2</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/DeepLake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3126,6 +3146,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureQueueStorage</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/BosFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3192,6 +3217,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/FakeSource</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/Firebase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3537,6 +3567,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/StarRocks</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/Stripe</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
