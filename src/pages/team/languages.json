@@ -4,7 +4,11 @@
       "desc": "SeaTunnel 社区由贡献者组成。 贡献者可以直接访问 SeaTunnel 项目的源代码并参与贡献当中(包括但不限于代码的贡献)。 贡献者通过提交补丁和建议来改善项目。 该项目的贡献者数量是无限的。 无论是琐碎的清理工作，重要的新功能还是其他重大的奖励，对 SeaTunnel 所做的所有贡献都将受到极大的赞赏。",
       "tip": "(排名不分先后)",
       "prContributorTitle": "Contributors",
-      "prContributorDesc": "GitHub 当前将 Apache SeaTunnel 统计为 {totalCount} 位 Contributors。考虑到其中已有 {existingCount} 位已在上方 PMC 与 Committer 中展示，下面仅补充展示其余 {count} 位具名贡献者。"
+      "prContributorDesc": "GitHub 当前将 Apache SeaTunnel 统计为 {totalCount} 位 Contributors。考虑到其中已有 {existingCount} 位已在上方 PMC 与 Committer 中展示，下面仅补充展示其余 {count} 位具名贡献者。",
+      "prContributorNetworkCount": "{count} 位贡献者",
+      "prContributorNetworkHint": "拖动探索 · 点击贡献者聚焦 · 悬停查看详情",
+      "prContributorNetworkProfile": "查看 GitHub 主页",
+      "prContributorNetworkControls": "贡献者关系图。使用方向键选择贡献者，按 Enter 聚焦，按 Escape 清除选择，然后按 Tab 访问所选贡献者的 GitHub 主页。"
     }
   },
   "en": {
@@ -12,7 +16,11 @@
       "desc": "The SeaTunnel team is comprised of Members and Contributors. Members have direct access to the source of SeaTunnel project and actively evolve the code-base. Contributors improve the project through submission of patches and suggestions to the Members. The number of Contributors to the project is unbounded. All contributions to SeaTunnel are greatly appreciated, whether for trivial cleanups, big new features or other material rewards.",
       "tip": "(In no particular order)",
       "prContributorTitle": "Contributors",
-      "prContributorDesc": "GitHub currently counts {totalCount} contributors for the Apache SeaTunnel repository. Since {existingCount} of them are already listed above as PMC members or committers, the remaining {count} identified contributors are shown below."
+      "prContributorDesc": "GitHub currently counts {totalCount} contributors for the Apache SeaTunnel repository. Since {existingCount} of them are already listed above as PMC members or committers, the remaining {count} identified contributors are shown below.",
+      "prContributorNetworkCount": "{count} contributors",
+      "prContributorNetworkHint": "Drag to explore · Click a contributor to focus · Hover for details",
+      "prContributorNetworkProfile": "View GitHub profile",
+      "prContributorNetworkControls": "Contributor network. Use the arrow keys to select a contributor, Enter to focus, Escape to clear the selection, then Tab to visit the selected GitHub profile."
     }
   },
   "pmc": [
