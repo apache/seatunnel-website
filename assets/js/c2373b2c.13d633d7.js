@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[37512],{256693:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/architecture","page":1,"postsPerPage":100,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
