@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 984
+- Total current docs pages: 988
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -76,6 +76,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-bos
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-cos
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-ftp
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-file-gcs
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-hadoop
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-jindo-oss
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-local
@@ -278,6 +279,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Firebase
 - https://seatunnel.apache.org/docs/connectors/source/Fluss
 - https://seatunnel.apache.org/docs/connectors/source/FtpFile
+- https://seatunnel.apache.org/docs/connectors/source/GcsFile
 - https://seatunnel.apache.org/docs/connectors/source/Github
 - https://seatunnel.apache.org/docs/connectors/source/Gitlab
 - https://seatunnel.apache.org/docs/connectors/source/GoogleBigtable
@@ -570,6 +572,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-bos
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-cos
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-ftp
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-gcs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-hadoop
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-jindo-oss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-local
@@ -772,6 +775,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Firebase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Fluss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/FtpFile
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/GcsFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Github
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Gitlab
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleBigtable

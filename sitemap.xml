@@ -2226,6 +2226,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-file-gcs</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-file-hadoop</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3232,6 +3237,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/FtpFile</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/GcsFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
