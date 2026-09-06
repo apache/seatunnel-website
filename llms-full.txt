@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 988
+- Total current docs pages: 998
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -36,6 +36,7 @@
 - https://seatunnel.apache.org/docs/connectors/cdc-production-cookbook
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-activemq
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-aerospike
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-amazondocumentdb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-amazondynamodb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-amazonsqs
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-assert
@@ -108,6 +109,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-onesignal
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-persistiq
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-posthog
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-shopify
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-stripe
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-wechat
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-zendesk
@@ -258,6 +260,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Vertica
 - https://seatunnel.apache.org/docs/connectors/source
 - https://seatunnel.apache.org/docs/connectors/source/Airtable
+- https://seatunnel.apache.org/docs/connectors/source/AmazonDocumentDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonSqs
 - https://seatunnel.apache.org/docs/connectors/source/AzureCosmosDB
@@ -340,6 +343,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/RocketMQ
 - https://seatunnel.apache.org/docs/connectors/source/S3File
 - https://seatunnel.apache.org/docs/connectors/source/SftpFile
+- https://seatunnel.apache.org/docs/connectors/source/Shopify
 - https://seatunnel.apache.org/docs/connectors/source/Sls
 - https://seatunnel.apache.org/docs/connectors/source/SNMP
 - https://seatunnel.apache.org/docs/connectors/source/Snowflake
@@ -446,6 +450,7 @@
 - https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-doris
 - https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-elasticsearch
 - https://seatunnel.apache.org/docs/getting-started/recipes/mysql-cdc-to-kafka
+- https://seatunnel.apache.org/docs/getting-started/recipes/mysql-to-hdfs
 - https://seatunnel.apache.org/docs/getting-started/recipes/postgresql-cdc-to-iceberg
 - https://seatunnel.apache.org/docs/getting-started/submit-job-to-remote-zeta-cluster
 - https://seatunnel.apache.org/docs/introduction/about
@@ -532,6 +537,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/cdc-production-cookbook
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-activemq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-aerospike
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-amazondocumentdb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-amazondynamodb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-amazonsqs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-assert
@@ -604,6 +610,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-onesignal
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-persistiq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-posthog
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-shopify
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-stripe
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-wechat
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-zendesk
@@ -754,6 +761,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Vertica
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Airtable
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDocumentDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonSqs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureCosmosDB
@@ -836,6 +844,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/RocketMQ
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/S3File
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SftpFile
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Shopify
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Sls
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SNMP
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Snowflake
@@ -942,6 +951,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-doris
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-elasticsearch
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-cdc-to-kafka
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/mysql-to-hdfs
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/recipes/postgresql-cdc-to-iceberg
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/submit-job-to-remote-zeta-cluster
 - https://seatunnel.apache.org/zh-CN/docs/introduction/about
