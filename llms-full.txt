@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 998
+- Total current docs pages: 1000
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -198,6 +198,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Feishu
 - https://seatunnel.apache.org/docs/connectors/sink/Fluss
 - https://seatunnel.apache.org/docs/connectors/sink/FtpFile
+- https://seatunnel.apache.org/docs/connectors/sink/GcsFile
 - https://seatunnel.apache.org/docs/connectors/sink/GoogleBigtable
 - https://seatunnel.apache.org/docs/connectors/sink/GoogleFirestore
 - https://seatunnel.apache.org/docs/connectors/sink/GooglePubSub
@@ -699,6 +700,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Feishu
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Fluss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/FtpFile
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GcsFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GoogleBigtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GoogleFirestore
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GooglePubSub
