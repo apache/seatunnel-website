@@ -3101,6 +3101,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SNMP</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Snowflake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3662,6 +3667,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/developer/connector-runtime-boundaries</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/developer/contribute-performance-guide</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

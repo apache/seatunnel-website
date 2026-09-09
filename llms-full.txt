@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1000
+- Total current docs pages: 1004
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -251,6 +251,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/SftpFile
 - https://seatunnel.apache.org/docs/connectors/sink/Slack
 - https://seatunnel.apache.org/docs/connectors/sink/Sls
+- https://seatunnel.apache.org/docs/connectors/sink/SNMP
 - https://seatunnel.apache.org/docs/connectors/sink/Snowflake
 - https://seatunnel.apache.org/docs/connectors/sink/Socket
 - https://seatunnel.apache.org/docs/connectors/sink/SqlServer
@@ -364,6 +365,7 @@
 - https://seatunnel.apache.org/docs/connectors/type-schema-faq
 - https://seatunnel.apache.org/docs/developer/coding-guide
 - https://seatunnel.apache.org/docs/developer/connector-runtime-boundaries
+- https://seatunnel.apache.org/docs/developer/contribute-performance-guide
 - https://seatunnel.apache.org/docs/developer/contribute-plugin
 - https://seatunnel.apache.org/docs/developer/contribute-transform-v2-guide
 - https://seatunnel.apache.org/docs/developer/contribution-path
@@ -753,6 +755,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SftpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Slack
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Sls
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SNMP
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Snowflake
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Socket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SqlServer
@@ -866,6 +869,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/type-schema-faq
 - https://seatunnel.apache.org/zh-CN/docs/developer/coding-guide
 - https://seatunnel.apache.org/zh-CN/docs/developer/connector-runtime-boundaries
+- https://seatunnel.apache.org/zh-CN/docs/developer/contribute-performance-guide
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribute-plugin
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribute-transform-v2-guide
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribution-path
