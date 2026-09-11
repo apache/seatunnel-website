@@ -3151,6 +3151,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/sink/Zendesk</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

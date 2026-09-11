@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1010
+- Total current docs pages: 1012
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -261,6 +261,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/TDengine
 - https://seatunnel.apache.org/docs/connectors/sink/Typesense
 - https://seatunnel.apache.org/docs/connectors/sink/Vertica
+- https://seatunnel.apache.org/docs/connectors/sink/Zendesk
 - https://seatunnel.apache.org/docs/connectors/source
 - https://seatunnel.apache.org/docs/connectors/source/Airtable
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDocumentDB
@@ -768,6 +769,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/TDengine
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Typesense
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Vertica
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Airtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDocumentDB
