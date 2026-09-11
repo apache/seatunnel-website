@@ -35,6 +35,8 @@ export default function () {
                 <p className="team_desc">{info.security_p_seatunnel_web_notice}</p>
                 <h3 className="team_title">{info.security_model_seatunnel_zeta_title}</h3>
                 <p className="team_desc">{info.security_p_seatunnel_zeta_notice}</p>
+                <p className="team_desc">{info.security_p_seatunnel_zeta_interfaces}</p>
+                <p className="team_desc">{info.security_p_seatunnel_zeta_trust_boundary}</p>
                 {renderList(info.security_model_items)}
 
                 <h2 className="team_title">{info.deployment_title}</h2>
