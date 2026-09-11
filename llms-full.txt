@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1004
+- Total current docs pages: 1010
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -31,6 +31,7 @@
 - https://seatunnel.apache.org/docs/architecture/plugin-discovery-and-class-loading
 - https://seatunnel.apache.org/docs/architecture/table-schema-and-type-system
 - https://seatunnel.apache.org/docs/architecture/transform-plugin-system
+- https://seatunnel.apache.org/docs/connector-v2/source/GoogleAds
 - https://seatunnel.apache.org/docs/connector-v2/source/Salesforce
 - https://seatunnel.apache.org/docs/connectors
 - https://seatunnel.apache.org/docs/connectors/cdc-production-cookbook
@@ -363,6 +364,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Web3j
 - https://seatunnel.apache.org/docs/connectors/source/Zendesk
 - https://seatunnel.apache.org/docs/connectors/type-schema-faq
+- https://seatunnel.apache.org/docs/developer/anydoc-document-parser-poc
 - https://seatunnel.apache.org/docs/developer/coding-guide
 - https://seatunnel.apache.org/docs/developer/connector-runtime-boundaries
 - https://seatunnel.apache.org/docs/developer/contribute-performance-guide
@@ -494,6 +496,7 @@
 - https://seatunnel.apache.org/docs/transforms/llm
 - https://seatunnel.apache.org/docs/transforms/metadata
 - https://seatunnel.apache.org/docs/transforms/multi-table-transform-and-join-boundary
+- https://seatunnel.apache.org/docs/transforms/python
 - https://seatunnel.apache.org/docs/transforms/recipes
 - https://seatunnel.apache.org/docs/transforms/regexextract
 - https://seatunnel.apache.org/docs/transforms/replace
@@ -535,6 +538,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/architecture/plugin-discovery-and-class-loading
 - https://seatunnel.apache.org/zh-CN/docs/architecture/table-schema-and-type-system
 - https://seatunnel.apache.org/zh-CN/docs/architecture/transform-plugin-system
+- https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/GoogleAds
 - https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/Salesforce
 - https://seatunnel.apache.org/zh-CN/docs/connectors
 - https://seatunnel.apache.org/zh-CN/docs/connectors/cdc-production-cookbook
@@ -867,6 +871,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Web3j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/type-schema-faq
+- https://seatunnel.apache.org/zh-CN/docs/developer/anydoc-document-parser-poc
 - https://seatunnel.apache.org/zh-CN/docs/developer/coding-guide
 - https://seatunnel.apache.org/zh-CN/docs/developer/connector-runtime-boundaries
 - https://seatunnel.apache.org/zh-CN/docs/developer/contribute-performance-guide
@@ -998,6 +1003,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/transforms/llm
 - https://seatunnel.apache.org/zh-CN/docs/transforms/metadata
 - https://seatunnel.apache.org/zh-CN/docs/transforms/multi-table-transform-and-join-boundary
+- https://seatunnel.apache.org/zh-CN/docs/transforms/python
 - https://seatunnel.apache.org/zh-CN/docs/transforms/recipes
 - https://seatunnel.apache.org/zh-CN/docs/transforms/regexextract
 - https://seatunnel.apache.org/zh-CN/docs/transforms/replace

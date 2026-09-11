@@ -2001,6 +2001,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connector-v2/source/GoogleAds</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connector-v2/source/Salesforce</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3661,6 +3666,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/developer/anydoc-document-parser-poc</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/developer/coding-guide</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -4312,6 +4322,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/transforms/multi-table-transform-and-join-boundary</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/transforms/python</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
