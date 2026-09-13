@@ -2001,7 +2001,17 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connector-v2/source/FacebookAds</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connector-v2/source/GoogleAds</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connector-v2/source/Http-Linear</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2546,6 +2556,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-salesforce</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-selectdb-cloud</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2592,6 +2607,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-tdengine</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-tiktok-ads</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3072,6 +3092,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/sink/S3File</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/sink/Salesforce</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3637,6 +3662,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/TiDB-CDC</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/TikTokAds</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

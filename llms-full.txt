@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1012
+- Total current docs pages: 1024
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -31,7 +31,9 @@
 - https://seatunnel.apache.org/docs/architecture/plugin-discovery-and-class-loading
 - https://seatunnel.apache.org/docs/architecture/table-schema-and-type-system
 - https://seatunnel.apache.org/docs/architecture/transform-plugin-system
+- https://seatunnel.apache.org/docs/connector-v2/source/FacebookAds
 - https://seatunnel.apache.org/docs/connector-v2/source/GoogleAds
+- https://seatunnel.apache.org/docs/connector-v2/source/Http-Linear
 - https://seatunnel.apache.org/docs/connector-v2/source/Salesforce
 - https://seatunnel.apache.org/docs/connectors
 - https://seatunnel.apache.org/docs/connectors/cdc-production-cookbook
@@ -140,6 +142,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-redis
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-rocketmq
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-s3-redshift
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-salesforce
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-selectdb-cloud
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-sensorsdata
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-sentry
@@ -150,6 +153,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-starrocks
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-tablestore
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-tdengine
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-tiktok-ads
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-typesense
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-web3j
 - https://seatunnel.apache.org/docs/connectors/common-options/sink-common-options
@@ -246,6 +250,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/RocketMQ
 - https://seatunnel.apache.org/docs/connectors/sink/S3-Redshift
 - https://seatunnel.apache.org/docs/connectors/sink/S3File
+- https://seatunnel.apache.org/docs/connectors/sink/Salesforce
 - https://seatunnel.apache.org/docs/connectors/sink/SelectDB-Cloud
 - https://seatunnel.apache.org/docs/connectors/sink/SensorsData
 - https://seatunnel.apache.org/docs/connectors/sink/Sentry
@@ -359,6 +364,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Tablestore
 - https://seatunnel.apache.org/docs/connectors/source/TDengine
 - https://seatunnel.apache.org/docs/connectors/source/TiDB-CDC
+- https://seatunnel.apache.org/docs/connectors/source/TikTokAds
 - https://seatunnel.apache.org/docs/connectors/source/Typesense
 - https://seatunnel.apache.org/docs/connectors/source/Vertica
 - https://seatunnel.apache.org/docs/connectors/source/Vitess-CDC
@@ -539,7 +545,9 @@
 - https://seatunnel.apache.org/zh-CN/docs/architecture/plugin-discovery-and-class-loading
 - https://seatunnel.apache.org/zh-CN/docs/architecture/table-schema-and-type-system
 - https://seatunnel.apache.org/zh-CN/docs/architecture/transform-plugin-system
+- https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/FacebookAds
 - https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/GoogleAds
+- https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/Http-Linear
 - https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/Salesforce
 - https://seatunnel.apache.org/zh-CN/docs/connectors
 - https://seatunnel.apache.org/zh-CN/docs/connectors/cdc-production-cookbook
@@ -648,6 +656,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-redis
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-rocketmq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-s3-redshift
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-salesforce
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-selectdb-cloud
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-sensorsdata
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-sentry
@@ -658,6 +667,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-starrocks
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-tablestore
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-tdengine
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-tiktok-ads
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-typesense
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-web3j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/common-options/sink-common-options
@@ -754,6 +764,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/RocketMQ
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/S3-Redshift
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/S3File
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Salesforce
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SelectDB-Cloud
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SensorsData
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Sentry
@@ -867,6 +878,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Tablestore
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/TDengine
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/TiDB-CDC
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/TikTokAds
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Typesense
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vertica
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vitess-CDC
