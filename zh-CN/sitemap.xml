@@ -2476,6 +2476,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-mem0</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-milvus</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2972,6 +2977,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Maxcompute</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Mem0</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1024
+- Total current docs pages: 1028
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -126,6 +126,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-kudu
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-lance
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-maxcompute
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-mem0
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-milvus
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-mongodb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-mqtt
@@ -226,6 +227,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Lance
 - https://seatunnel.apache.org/docs/connectors/sink/LocalFile
 - https://seatunnel.apache.org/docs/connectors/sink/Maxcompute
+- https://seatunnel.apache.org/docs/connectors/sink/Mem0
 - https://seatunnel.apache.org/docs/connectors/sink/Milvus
 - https://seatunnel.apache.org/docs/connectors/sink/MongoDB
 - https://seatunnel.apache.org/docs/connectors/sink/Mqtt
@@ -640,6 +642,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-kudu
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-lance
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-maxcompute
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-mem0
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-milvus
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-mongodb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-mqtt
@@ -740,6 +743,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Lance
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/LocalFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Maxcompute
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Mem0
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Milvus
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/MongoDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Mqtt
