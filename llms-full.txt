@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1028
+- Total current docs pages: 1042
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -91,6 +91,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-sftp
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-firebase
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-fluss
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-google-analytics4
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-bigtable
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-firestore
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-pubsub
@@ -110,6 +111,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-myhours
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-notion
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-onesignal
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-paypal
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-persistiq
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-posthog
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-shopify
@@ -152,6 +154,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-snmp
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-socket
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-starrocks
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-syslog
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-tablestore
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-tdengine
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-tiktok-ads
@@ -202,6 +205,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Email
 - https://seatunnel.apache.org/docs/connectors/sink/Enterprise-WeChat
 - https://seatunnel.apache.org/docs/connectors/sink/Feishu
+- https://seatunnel.apache.org/docs/connectors/sink/Firebase
 - https://seatunnel.apache.org/docs/connectors/sink/Fluss
 - https://seatunnel.apache.org/docs/connectors/sink/FtpFile
 - https://seatunnel.apache.org/docs/connectors/sink/GcsFile
@@ -264,6 +268,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Socket
 - https://seatunnel.apache.org/docs/connectors/sink/SqlServer
 - https://seatunnel.apache.org/docs/connectors/sink/StarRocks
+- https://seatunnel.apache.org/docs/connectors/sink/Syslog
 - https://seatunnel.apache.org/docs/connectors/sink/Tablestore
 - https://seatunnel.apache.org/docs/connectors/sink/TDengine
 - https://seatunnel.apache.org/docs/connectors/sink/Typesense
@@ -296,6 +301,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/GcsFile
 - https://seatunnel.apache.org/docs/connectors/source/Github
 - https://seatunnel.apache.org/docs/connectors/source/Gitlab
+- https://seatunnel.apache.org/docs/connectors/source/GoogleAnalytics4
 - https://seatunnel.apache.org/docs/connectors/source/GoogleBigtable
 - https://seatunnel.apache.org/docs/connectors/source/GooglePubSub
 - https://seatunnel.apache.org/docs/connectors/source/GoogleSheets
@@ -339,6 +345,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/OssFile
 - https://seatunnel.apache.org/docs/connectors/source/OssJindoFile
 - https://seatunnel.apache.org/docs/connectors/source/Paimon
+- https://seatunnel.apache.org/docs/connectors/source/PayPal
 - https://seatunnel.apache.org/docs/connectors/source/Persistiq
 - https://seatunnel.apache.org/docs/connectors/source/Phoenix
 - https://seatunnel.apache.org/docs/connectors/source/PostgreSQL
@@ -607,6 +614,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-sftp
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-firebase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-fluss
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-analytics4
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-bigtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-firestore
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-pubsub
@@ -626,6 +634,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-myhours
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-notion
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-onesignal
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-paypal
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-persistiq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-posthog
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-shopify
@@ -668,6 +677,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-snmp
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-socket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-starrocks
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-syslog
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-tablestore
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-tdengine
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-tiktok-ads
@@ -718,6 +728,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Email
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Enterprise-WeChat
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Feishu
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Firebase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Fluss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/FtpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/GcsFile
@@ -780,6 +791,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Socket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SqlServer
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/StarRocks
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Syslog
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Tablestore
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/TDengine
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Typesense
@@ -812,6 +824,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GcsFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Github
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Gitlab
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleAnalytics4
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleBigtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GooglePubSub
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleSheets
@@ -855,6 +868,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/OssFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/OssJindoFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Paimon
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/PayPal
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Persistiq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Phoenix
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/PostgreSQL

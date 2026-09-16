@@ -2301,6 +2301,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-analytics4</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-bigtable</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -2392,6 +2397,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-onesignal</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-paypal</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2602,6 +2612,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-starrocks</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-syslog</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2852,6 +2867,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Feishu</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Firebase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3166,6 +3186,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Syslog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Tablestore</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3322,6 +3347,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/Gitlab</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleAnalytics4</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -3537,6 +3567,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/Paimon</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/PayPal</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
