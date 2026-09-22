@@ -52,11 +52,11 @@ function ParallelReadsDiagram() {
             })}
             {[54, 87, 120].map((y, index) => (
                 <g key={y}>
-                    <path d={`M134 88 C168 88 174 ${y} 204 ${y}`} className="st-home-motion-diagram-line" fill="none" />
+                    <path d={`M134 88 C168 88 174 ${y} 204 ${y}`} className="st-home-motion-diagram-line st-home-motion-diagram-flow" fill="none" />
                     <rect x="205" y={y - 13} width="121" height="26" rx="7" className="st-home-motion-diagram-node" />
                     <circle cx="220" cy={y} r="3.5" className={index === 1 ? 'st-home-motion-diagram-teal-fill' : 'st-home-motion-diagram-blue-fill'} />
                     <text x="232" y={y + 5} className="st-home-motion-diagram-copy">Reader {index + 1}</text>
-                    <path d={`M326 ${y} C364 ${y} 384 88 428 88`} className="st-home-motion-diagram-line" fill="none" />
+                    <path d={`M326 ${y} C364 ${y} 384 88 428 88`} className="st-home-motion-diagram-line st-home-motion-diagram-flow" fill="none" />
                 </g>
             ))}
             <Arrow x="427" y="88" />
@@ -79,7 +79,7 @@ function SnapshotCdcDiagram() {
             <text x="29" y="104" className="st-home-motion-diagram-copy">42</text><text x="76" y="104" className="st-home-motion-diagram-copy">NEW</text>
             <rect x="201" y="24" width="98" height="23" rx="12" className="st-home-motion-diagram-soft" />
             <text x="250" y="40" textAnchor="middle" className="st-home-motion-diagram-accent-text">SNAPSHOT</text>
-            <path d="M153 82H367" className="st-home-motion-diagram-line" fill="none" />
+            <path d="M153 82H367" className="st-home-motion-diagram-line st-home-motion-diagram-flow" fill="none" />
             <Arrow x="367" y="82" />
             <rect x="235" y="70" width="48" height="23" rx="7" className="st-home-motion-diagram-teal" />
             <text x="259" y="86" textAnchor="middle" className="st-home-motion-diagram-on-teal">S:42</text>
@@ -102,7 +102,7 @@ function TransformDiagram() {
             <text x="28" y="57" className="st-home-motion-diagram-copy">1&nbsp;&nbsp; Ada</text>
             <text x="28" y="82" className="st-home-motion-diagram-copy">0&nbsp;&nbsp; Temp</text>
             <text x="28" y="107" className="st-home-motion-diagram-copy">2&nbsp;&nbsp; Lin</text>
-            <path d="M142 76H206M315 76h84" className="st-home-motion-diagram-line" fill="none" />
+            <path d="M142 76H206M315 76h84" className="st-home-motion-diagram-line st-home-motion-diagram-flow" fill="none" />
             <Arrow x="399" y="76" />
             <rect x="207" y="48" width="108" height="56" rx="13" className="st-home-motion-diagram-blue" />
             <text x="261" y="82" textAnchor="middle" className="st-home-motion-diagram-on-blue st-home-motion-diagram-sql">SQL</text>
@@ -129,7 +129,7 @@ function RoutingDiagram() {
                         <rect x="389" y={y + 8} width="16" height="14" rx="2" className="st-home-motion-diagram-table" />
                         <text x="55" y={y + 20} className="st-home-motion-diagram-copy">{table}</text>
                         <text x="416" y={y + 20} className="st-home-motion-diagram-copy">{table}</text>
-                        <path d={`M144 ${y + 15} C179 ${y + 15} 189 82 221 82M299 82 C333 82 343 ${y + 15} 376 ${y + 15}`} className="st-home-motion-diagram-line" fill="none" />
+                        <path d={`M144 ${y + 15} C179 ${y + 15} 189 82 221 82M299 82 C333 82 343 ${y + 15} 376 ${y + 15}`} className="st-home-motion-diagram-line st-home-motion-diagram-flow" fill="none" />
                         <Arrow x="375" y={y + 15} />
                     </g>
                 );
@@ -161,7 +161,7 @@ function SchemaDiagram() {
                     </g>
                 );
             })}
-            <path d="M152 82H364" className="st-home-motion-diagram-line" fill="none" /><Arrow x="364" y="82" />
+            <path d="M152 82H364" className="st-home-motion-diagram-line st-home-motion-diagram-flow" fill="none" /><Arrow x="364" y="82" />
             <rect x="225" y="48" width="58" height="22" rx="11" className="st-home-motion-diagram-soft" /><text x="254" y="64" textAnchor="middle" className="st-home-motion-diagram-accent-text">DDL</text>
             <rect x="217" y="74" width="42" height="23" rx="7" className="st-home-motion-diagram-blue" /><text x="238" y="90" textAnchor="middle" className="st-home-motion-diagram-on-blue">ADD</text>
         </svg>
@@ -171,13 +171,13 @@ function SchemaDiagram() {
 function CheckpointDiagram() {
     return (
         <svg viewBox="0 0 520 166" className="st-home-motion-diagram" aria-hidden="true">
-            <path d="M122 70h70M327 70h70" className="st-home-motion-diagram-line" fill="none" /><Arrow x="192" y="70" /><Arrow x="397" y="70" />
+            <path d="M122 70h70M327 70h70" className="st-home-motion-diagram-line st-home-motion-diagram-flow" fill="none" /><Arrow x="192" y="70" /><Arrow x="397" y="70" />
             {['Source', 'Writer', 'Sink'].map((label, index) => {
                 const x = [16, 198, 403][index];
                 return <g key={label}><rect x={x} y="47" width="104" height="43" rx="10" className="st-home-motion-diagram-node" /><text x={x + 52} y="74" textAnchor="middle" className="st-home-motion-diagram-strong">{label}</text></g>;
             })}
             <rect x="232" y="20" width="70" height="21" rx="10" className="st-home-motion-diagram-soft" /><text x="267" y="35" textAnchor="middle" className="st-home-motion-diagram-accent-text">BARRIER</text>
-            <path d="M68 91C68 130 157 137 215 137M250 91v25" className="st-home-motion-diagram-line" fill="none" />
+            <path d="M68 91C68 130 157 137 215 137M250 91v25" className="st-home-motion-diagram-line st-home-motion-diagram-flow st-home-motion-diagram-flow-teal" fill="none" />
             <rect x="215" y="114" width="134" height="38" rx="9" className="st-home-motion-diagram-node" />
             <text x="282" y="135" textAnchor="middle" className="st-home-motion-diagram-copy">Checkpoint state</text>
             <text x="282" y="147" textAnchor="middle" className="st-home-motion-diagram-label">COMPLETED</text>
@@ -198,10 +198,22 @@ function MotionDiagram({type}) {
     return diagrams[type];
 }
 
-export default function MotionMechanismGrid({caption, gridLabel, mechanisms}) {
+export default function MotionMechanismGrid({caption, controls, gridLabel, mechanisms}) {
+    const [isMotionPaused, setIsMotionPaused] = React.useState(false);
+
     return (
         <>
-            <ul className="st-home-motion-grid" aria-label={gridLabel}>
+            <div className="st-home-motion-toolbar" role="group" aria-label={controls.label}>
+                <button
+                    type="button"
+                    className="st-home-motion-control"
+                    aria-pressed={isMotionPaused}
+                    onClick={() => setIsMotionPaused((paused) => !paused)}
+                >
+                    {isMotionPaused ? controls.play : controls.pause}
+                </button>
+            </div>
+            <ul className={`st-home-motion-grid${isMotionPaused ? ' is-motion-paused' : ''}`} aria-label={gridLabel}>
                 {mechanisms.map((mechanism, index) => (
                     <li key={mechanism.title} className={`st-home-motion-card st-home-motion-card-${mechanism.diagram}`}>
                         <article>

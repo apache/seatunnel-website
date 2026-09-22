@@ -995,9 +995,41 @@ html[data-theme='light'] .st-home {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.15rem;
-  margin: 3rem 0 0;
+  margin: 1rem 0 0;
   padding: 0;
   list-style: none;
+}
+
+.st-home-motion-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.st-home-motion-control {
+  padding: 0.48rem 0.82rem;
+  border: 1px solid var(--motion-line);
+  border-radius: 999px;
+  background: var(--motion-card);
+  color: var(--motion-ink);
+  cursor: pointer;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.st-home-motion-control:hover,
+.st-home-motion-control:focus-visible {
+  border-color: var(--motion-teal);
+  background: var(--motion-highlight);
+  color: var(--motion-ink);
+}
+
+.st-home-motion-control:focus-visible {
+  outline: 2px solid var(--motion-blue);
+  outline-offset: 2px;
 }
 
 .st-home-motion-card {
@@ -1161,6 +1193,26 @@ html[data-theme='light'] .st-home {
   stroke-width: 1.6;
 }
 
+.st-home-motion-diagram-flow {
+  stroke: var(--motion-blue);
+  stroke-dasharray: 3 10;
+  stroke-dashoffset: 0;
+  animation: st-home-motion-flow 1.8s linear infinite;
+}
+
+.st-home-motion-diagram-flow-teal {
+  stroke: var(--motion-teal);
+  animation-delay: -0.6s;
+}
+
+.st-home-motion-card:nth-child(even) .st-home-motion-diagram-flow {
+  animation-delay: -0.9s;
+}
+
+.st-home-motion-card:nth-child(3n) .st-home-motion-diagram-flow {
+  animation-delay: -1.35s;
+}
+
 .st-home-motion-diagram-soft,
 .st-home-motion-diagram-chip {
   fill: var(--motion-soft);
@@ -1169,10 +1221,16 @@ html[data-theme='light'] .st-home {
 .st-home-motion-diagram-packet,
 .st-home-motion-diagram-blue {
   fill: var(--motion-blue);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: st-home-motion-pulse 2.4s ease-in-out infinite;
 }
 
 .st-home-motion-diagram-teal {
   fill: var(--motion-teal);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: st-home-motion-pulse 2.4s ease-in-out infinite -0.8s;
 }
 
 .st-home-motion-diagram-blue-fill {
@@ -1191,6 +1249,20 @@ html[data-theme='light'] .st-home {
 
 .st-home-motion-diagram-highlight {
   fill: var(--motion-highlight);
+  animation: st-home-motion-highlight 2.4s ease-in-out infinite;
+}
+
+.st-home-motion-card:hover .st-home-motion-diagram-flow,
+.st-home-motion-card:hover .st-home-motion-diagram-packet,
+.st-home-motion-card:hover .st-home-motion-diagram-blue,
+.st-home-motion-card:hover .st-home-motion-diagram-teal,
+.st-home-motion-card:hover .st-home-motion-diagram-highlight,
+.st-home-motion-grid.is-motion-paused .st-home-motion-diagram-flow,
+.st-home-motion-grid.is-motion-paused .st-home-motion-diagram-packet,
+.st-home-motion-grid.is-motion-paused .st-home-motion-diagram-blue,
+.st-home-motion-grid.is-motion-paused .st-home-motion-diagram-teal,
+.st-home-motion-grid.is-motion-paused .st-home-motion-diagram-highlight {
+  animation-play-state: paused;
 }
 
 .st-home-motion-card-detail {
@@ -3009,7 +3081,7 @@ html[data-theme='light'] .st-home .st-home-rv {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.875rem;
-    margin: 2.25rem 0 0;
+    margin: 1rem 0 0;
   }
 
   .st-home-motion-card article {
@@ -3082,6 +3154,36 @@ html[data-theme='light'] .st-home .st-home-rv {
 
   50% {
     opacity: 0.2;
+  }
+}
+
+@keyframes st-home-motion-flow {
+  to {
+    stroke-dashoffset: -52;
+  }
+}
+
+@keyframes st-home-motion-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes st-home-motion-highlight {
+  0%,
+  100% {
+    opacity: 0.68;
+  }
+
+  50% {
+    opacity: 1;
   }
 }
 

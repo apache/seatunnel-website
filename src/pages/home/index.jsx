@@ -264,6 +264,11 @@ const HOME_COPY = {
             title: 'Data integration, in motion.',
             lead: 'Six mechanisms that keep data moving through parallel workloads, continuous change, and recoverable failures.',
             gridLabel: 'SeaTunnel data integration mechanisms',
+            controls: {
+                label: 'Motion controls',
+                pause: 'Pause motion',
+                play: 'Resume motion',
+            },
             caption: 'Illustrative flows—not a deployment blueprint. Production behavior depends on the selected connector, engine, and configuration.',
             mechanisms: [
                 {diagram: 'parallel', title: 'Parallel batch reads', description: 'Divide the work. Read independent splits in parallel.', detail: 'Independent readers process assigned source splits.', note: 'JDBC example · Split assignment is source-specific.'},
@@ -525,6 +530,11 @@ const HOME_COPY = {
             title: 'Data integration, in motion.',
             lead: 'Six mechanisms that keep data moving through parallel workloads, continuous change, and recoverable failures.',
             gridLabel: 'SeaTunnel data integration mechanisms',
+            controls: {
+                label: 'Motion controls',
+                pause: 'Pause motion',
+                play: 'Resume motion',
+            },
             caption: 'Illustrative flows—not a deployment blueprint. Production behavior depends on the selected connector, engine, and configuration.',
             mechanisms: [
                 {diagram: 'parallel', title: 'Parallel batch reads', description: 'Divide the work. Read independent splits in parallel.', detail: 'Independent readers process assigned source splits.', note: 'JDBC example · Split assignment is source-specific.'},
