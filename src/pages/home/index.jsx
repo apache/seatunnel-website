@@ -21,7 +21,7 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './index.less';
 import systemConfiguration from '../../js/sysConfig';
-import MotionMechanismGrid from './MotionMechanismGrid';
+import MotionMechanismGrid from '../../components/home/MotionMechanismGrid';
 
 const versions = require('../../../versions.json');
 
