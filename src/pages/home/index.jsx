@@ -15,12 +15,13 @@
  * limitations under the License.
  */
 
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './index.less';
 import systemConfiguration from '../../js/sysConfig';
+import MotionMechanismGrid from './MotionMechanismGrid';
 
 const versions = require('../../../versions.json');
 
@@ -260,24 +261,17 @@ const HOME_COPY = {
             ],
         },
         motion: {
-            eyebrow: 'See it in motion',
-            title: 'Six mechanisms. One integration layer.',
-            lead: 'Explore independent examples of parallel reads, CDC, row transforms, table routing, schema evolution, and checkpoint recovery.',
-            openButton: 'Open interactive demo',
-            frameTitle: 'Interactive SeaTunnel data integration mechanisms demo',
-            controls: {
-                label: 'Motion demo controls',
-                play: 'Play animation',
-                pause: 'Pause animation',
-                overview: 'All mechanisms',
-            },
+            title: 'Data integration, in motion.',
+            lead: 'Six mechanisms that keep data moving through parallel workloads, continuous change, and recoverable failures.',
+            gridLabel: 'SeaTunnel data integration mechanisms',
+            caption: 'Illustrative flows—not a deployment blueprint. Production behavior depends on the selected connector, engine, and configuration.',
             mechanisms: [
-                {title: 'Parallel reads', description: 'Assign independent source splits to parallel readers.'},
-                {title: 'Snapshot + CDC', description: 'Start with a snapshot, then capture changes.'},
-                {title: 'Row transforms', description: 'Apply expressions and filters to individual records.'},
-                {title: 'Multi-table routing', description: 'Route each table identity to its matching destination.'},
-                {title: 'Schema evolution', description: 'Apply supported schema changes before data moves downstream.'},
-                {title: 'Checkpoint recovery', description: 'Resume from completed checkpoint state after a failure.'},
+                {diagram: 'parallel', title: 'Parallel batch reads', description: 'Divide the work. Read independent splits in parallel.', detail: 'Independent readers process assigned source splits.', note: 'JDBC example · Split assignment is source-specific.'},
+                {diagram: 'cdc', title: 'Snapshot + CDC', description: 'Bootstrap a snapshot, then keep changes flowing.', detail: 'Capture existing rows before streaming changes.', note: 'MySQL-CDC example · startup.mode = initial.'},
+                {diagram: 'transform', title: 'Row-level transforms', description: 'Shape, filter, and enrich records before they land.', detail: 'Apply row expressions and filters in the pipeline.', note: 'SQL example · expression + row filter.'},
+                {diagram: 'routing', title: 'Multi-table routing', description: 'Keep every record on its intended table path.', detail: 'Table identity selects the matching destination writer.', note: 'Logical routing · Physical connections may differ.'},
+                {diagram: 'schema', title: 'Schema evolution', description: 'Apply supported table changes before new data moves downstream.', detail: 'Propagate an added column through the compatible path.', note: 'Zeta example · MySQL-CDC → JDBC MySQL.'},
+                {diagram: 'checkpoint', title: 'Checkpoint recovery', description: 'Resume from a completed checkpoint after a failure.', detail: 'Capture state with a checkpoint barrier.', note: 'Exactly-once requires compatible source and sink support.'},
             ],
         },
         connectors: {
@@ -528,24 +522,17 @@ const HOME_COPY = {
             ],
         },
         motion: {
-            eyebrow: 'See it in motion',
-            title: 'Six mechanisms. One integration layer.',
-            lead: 'Explore independent examples of parallel reads, CDC, row transforms, table routing, schema evolution, and checkpoint recovery.',
-            openButton: 'Open interactive demo',
-            frameTitle: 'Interactive SeaTunnel data integration mechanisms demo',
-            controls: {
-                label: 'Motion demo controls',
-                play: 'Play animation',
-                pause: 'Pause animation',
-                overview: 'All mechanisms',
-            },
+            title: 'Data integration, in motion.',
+            lead: 'Six mechanisms that keep data moving through parallel workloads, continuous change, and recoverable failures.',
+            gridLabel: 'SeaTunnel data integration mechanisms',
+            caption: 'Illustrative flows—not a deployment blueprint. Production behavior depends on the selected connector, engine, and configuration.',
             mechanisms: [
-                {title: 'Parallel reads', description: 'Assign independent source splits to parallel readers.'},
-                {title: 'Snapshot + CDC', description: 'Start with a snapshot, then capture changes.'},
-                {title: 'Row transforms', description: 'Apply expressions and filters to individual records.'},
-                {title: 'Multi-table routing', description: 'Route each table identity to its matching destination.'},
-                {title: 'Schema evolution', description: 'Apply supported schema changes before data moves downstream.'},
-                {title: 'Checkpoint recovery', description: 'Resume from completed checkpoint state after a failure.'},
+                {diagram: 'parallel', title: 'Parallel batch reads', description: 'Divide the work. Read independent splits in parallel.', detail: 'Independent readers process assigned source splits.', note: 'JDBC example · Split assignment is source-specific.'},
+                {diagram: 'cdc', title: 'Snapshot + CDC', description: 'Bootstrap a snapshot, then keep changes flowing.', detail: 'Capture existing rows before streaming changes.', note: 'MySQL-CDC example · startup.mode = initial.'},
+                {diagram: 'transform', title: 'Row-level transforms', description: 'Shape, filter, and enrich records before they land.', detail: 'Apply row expressions and filters in the pipeline.', note: 'SQL example · expression + row filter.'},
+                {diagram: 'routing', title: 'Multi-table routing', description: 'Keep every record on its intended table path.', detail: 'Table identity selects the matching destination writer.', note: 'Logical routing · Physical connections may differ.'},
+                {diagram: 'schema', title: 'Schema evolution', description: 'Apply supported table changes before new data moves downstream.', detail: 'Propagate an added column through the compatible path.', note: 'Zeta example · MySQL-CDC → JDBC MySQL.'},
+                {diagram: 'checkpoint', title: 'Checkpoint recovery', description: 'Resume from a completed checkpoint after a failure.', detail: 'Capture state with a checkpoint barrier.', note: 'Exactly-once requires compatible source and sink support.'},
             ],
         },
         connectors: {
@@ -670,17 +657,6 @@ function handleFeatureGlow(event) {
     card.style.setProperty('--my', `${((event.clientY - rect.top) / rect.height) * 100}%`);
 }
 
-function prepareMotionDemo(event) {
-    const frameDocument = event.currentTarget.contentDocument;
-    if (!frameDocument) {
-        return;
-    }
-
-    frameDocument.querySelector('main')?.style.setProperty('padding', '0');
-    frameDocument.querySelector('nav')?.setAttribute('hidden', '');
-    frameDocument.querySelector('#hint')?.setAttribute('hidden', '');
-}
-
 function ArrowRightIcon() {
     return (
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -754,10 +730,6 @@ export default function Home() {
     const architectureEngineRef = useRef(null);
     const architectureSourceRefs = useRef([]);
     const architectureTargetRefs = useRef([]);
-    const motionFrameRef = useRef(null);
-    const [motionDemoReady, setMotionDemoReady] = useState(false);
-    const [motionPlaying, setMotionPlaying] = useState(true);
-    const [motionFocus, setMotionFocus] = useState(-1);
 
     const language = isBrowser
         ? (window.location.pathname.startsWith('/zh-CN/') ? 'zh-CN' : 'en')
@@ -770,48 +742,6 @@ export default function Home() {
     const quickStartPath = useBaseUrl(localizePath(language, `/docs/${version}/getting-started/locally/quick-start-seatunnel-engine`));
     const connectorsPath = useBaseUrl(localizePath(language, `/docs/${version}/connectors/source`));
     const logoPath = `${assetRoot}image/logo.png`;
-    const motionDemoPath = `${useBaseUrl('/home/seatunnel-motion.html')}?locale=${language}`;
-
-    const getMotionDemo = () => motionFrameRef.current?.contentWindow?.SeaTunnelMotion;
-
-    const syncMotionDemoState = () => {
-        const motionDemo = getMotionDemo();
-        if (!motionDemo) {
-            return;
-        }
-        setMotionPlaying(motionDemo.state.playing);
-        setMotionFocus(motionDemo.state.focus);
-    };
-
-    const handleMotionDemoLoad = (event) => {
-        prepareMotionDemo(event);
-        setMotionDemoReady(true);
-        syncMotionDemoState();
-
-        const frameDocument = event.currentTarget.contentDocument;
-        const scheduleMotionDemoStateSync = () => window.requestAnimationFrame(syncMotionDemoState);
-        frameDocument?.addEventListener('click', scheduleMotionDemoStateSync, true);
-        frameDocument?.addEventListener('keydown', scheduleMotionDemoStateSync, true);
-    };
-
-    const toggleMotionDemoPlayback = () => {
-        const motionDemo = getMotionDemo();
-        if (!motionDemo) {
-            return;
-        }
-        motionDemo.state.playing = !motionDemo.state.playing;
-        setMotionPlaying(motionDemo.state.playing);
-    };
-
-    const focusMotionDemo = (index) => {
-        const motionDemo = getMotionDemo();
-        if (!motionDemo) {
-            return;
-        }
-        motionDemo.setFocus(index);
-        setMotionFocus(index);
-    };
-
     useEffect(() => {
         if (!isBrowser || !pageRef.current) {
             return undefined;
@@ -1699,68 +1629,9 @@ export default function Home() {
 
             <section className="st-home-section st-home-motion-section">
                 <div className="st-home-container">
-                    <p className="st-home-eyebrow st-home-rv">{content.motion.eyebrow}</p>
                     <h2 className="st-home-section-title st-home-rv">{content.motion.title}</h2>
                     <p className="st-home-section-lead st-home-rv">{content.motion.lead}</p>
-                    <a
-                        href={motionDemoPath}
-                        className="st-home-motion-open st-home-rv"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        {content.motion.openButton} <ArrowRightIcon />
-                    </a>
-                    <div className="st-home-motion-controls st-home-rv" role="group" aria-label={content.motion.controls.label}>
-                        <button
-                            type="button"
-                            className="st-home-motion-control"
-                            disabled={!motionDemoReady}
-                            onClick={toggleMotionDemoPlayback}
-                        >
-                            {motionPlaying ? content.motion.controls.pause : content.motion.controls.play}
-                        </button>
-                        <button
-                            type="button"
-                            className={`st-home-motion-control${motionFocus === -1 ? ' is-active' : ''}`}
-                            disabled={!motionDemoReady}
-                            aria-pressed={motionFocus === -1}
-                            onClick={() => focusMotionDemo(-1)}
-                        >
-                            {content.motion.controls.overview}
-                        </button>
-                        {content.motion.mechanisms.map((mechanism, index) => (
-                            <button
-                                type="button"
-                                className={`st-home-motion-control${motionFocus === index ? ' is-active' : ''}`}
-                                disabled={!motionDemoReady}
-                                aria-pressed={motionFocus === index}
-                                key={mechanism.title}
-                                onClick={() => focusMotionDemo(index)}
-                            >
-                                {mechanism.title}
-                            </button>
-                        ))}
-                    </div>
-                    <div className="st-home-motion-frame st-home-rv">
-                        <iframe
-                            ref={motionFrameRef}
-                            className="st-home-motion-iframe"
-                            src={motionDemoPath}
-                            title={content.motion.frameTitle}
-                            loading="lazy"
-                            allowFullScreen
-                            onLoad={handleMotionDemoLoad}
-                        ></iframe>
-                    </div>
-                    <ul className="st-home-motion-mobile-grid">
-                        {content.motion.mechanisms.map((mechanism, index) => (
-                            <li className="st-home-motion-mobile-card" key={mechanism.title}>
-                                <span>{String(index + 1).padStart(2, '0')}</span>
-                                <h3>{mechanism.title}</h3>
-                                <p>{mechanism.description}</p>
-                            </li>
-                        ))}
-                    </ul>
+                    <MotionMechanismGrid {...content.motion} />
                 </div>
             </section>
 
