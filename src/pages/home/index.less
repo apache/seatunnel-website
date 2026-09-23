@@ -985,8 +985,9 @@ html[data-theme='light'] .st-home {
   background: var(--bg0);
 }
 
-.st-home-motion-section .st-home-container {
+.st-home-motion-panel {
   overflow: hidden;
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
   padding: clamp(2.25rem, 5vw, 4.5rem);
   border: 1px solid var(--motion-line);
   border-radius: 2rem;
@@ -1019,7 +1020,7 @@ html[data-theme='light'] .st-home {
 .st-home-motion-toolbar {
   display: flex;
   justify-content: flex-end;
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .st-home-motion-control {
@@ -2910,7 +2911,7 @@ html[data-theme='light'] .st-home .st-home-motion-section {
   background: #e7eef8;
 }
 
-html[data-theme='light'] .st-home .st-home-motion-section .st-home-container {
+html[data-theme='light'] .st-home .st-home-motion-panel {
   background:
     radial-gradient(circle at 10% 0%, rgba(103, 189, 238, 0.18), transparent 32%),
     radial-gradient(circle at 90% 10%, rgba(97, 208, 199, 0.15), transparent 28%),
@@ -3226,7 +3227,7 @@ html[data-theme='light'] .st-home .st-home-rv {
     padding: 2.5rem 1rem;
   }
 
-  .st-home-motion-section .st-home-container {
+  .st-home-motion-panel {
     padding: 2rem 1.25rem;
     border-radius: 1.35rem;
   }

@@ -1697,7 +1697,9 @@ export default function Home() {
                 <div className="st-home-container">
                     <h2 className="st-home-section-title st-home-rv">{content.motion.title}</h2>
                     <p className="st-home-section-lead st-home-rv">{content.motion.lead}</p>
-                    <MotionMechanismGrid {...content.motion} />
+                    <div className="st-home-motion-panel st-home-rv">
+                        <MotionMechanismGrid {...content.motion} />
+                    </div>
                 </div>
             </section>
 
