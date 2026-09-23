@@ -2106,6 +2106,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-oceanbase</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-opengauss</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3532,6 +3537,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/OceanBase</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/connectors/source/OceanBase-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

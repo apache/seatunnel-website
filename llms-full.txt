@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1048
+- Total current docs pages: 1052
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -52,6 +52,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-db2
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-mongodb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-mysql
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-oceanbase
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-opengauss
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-oracle
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-cdc-postgres
@@ -338,6 +339,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Notion
 - https://seatunnel.apache.org/docs/connectors/source/ObsFile
 - https://seatunnel.apache.org/docs/connectors/source/OceanBase
+- https://seatunnel.apache.org/docs/connectors/source/OceanBase-CDC
 - https://seatunnel.apache.org/docs/connectors/source/OneSignal
 - https://seatunnel.apache.org/docs/connectors/source/Opengauss-CDC
 - https://seatunnel.apache.org/docs/connectors/source/OpenMldb
@@ -578,6 +580,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-db2
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-mongodb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-mysql
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-oceanbase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-opengauss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-oracle
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-cdc-postgres
@@ -864,6 +867,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Notion
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/ObsFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/OceanBase
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/OceanBase-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/OneSignal
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Opengauss-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/OpenMldb
