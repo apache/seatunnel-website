@@ -48,6 +48,8 @@ const DEFAULT_DIAGRAM_LABELS = {
     completed: 'COMPLETED',
     customers: 'customers',
     input: 'INPUT',
+    fieldId: 'id',
+    fieldStatus: 'status',
     jdbcMysqlSink: 'JDBC MySQL sink',
     mysqlOrders: 'MySQL / orders',
     mysqlSource: 'MySQL source',
@@ -56,6 +58,7 @@ const DEFAULT_DIAGRAM_LABELS = {
     reader: 'Reader',
     readers: 'READERS',
     route: 'route',
+    routeTables: ['users', 'orders', 'items'],
     rowSql: 'ROW SQL',
     sink: 'Sink',
     snapshot: 'SNAPSHOT',
@@ -67,6 +70,10 @@ const DEFAULT_DIAGRAM_LABELS = {
     waiting: 'waiting…',
     workerLost: 'Worker lost',
     writer: 'Writer',
+    values: {
+        NEW: 'NEW',
+        PAID: 'PAID',
+    },
     applied: 'applied',
     filtered: 'id = 0 filtered',
     region: 'region',
@@ -222,11 +229,11 @@ function CdcTable({labels, x, rows}) {
         <>
             <rect x={x} y="31" width="136" height="103" rx="9" className="st-home-motion-diagram-node" />
             <rect x={x + 1} y="32" width="134" height="24" rx="7" className="st-home-motion-diagram-soft" />
-            <text x={x + 13} y="48" className="st-home-motion-diagram-label">id</text><text x={x + 60} y="48" className="st-home-motion-diagram-label">status</text>
+            <text x={x + 13} y="48" className="st-home-motion-diagram-label">{labels.fieldId}</text><text x={x + 60} y="48" className="st-home-motion-diagram-label">{labels.fieldStatus}</text>
             {rows.length === 0 ? <text x={x + 13} y="77" className="st-home-motion-diagram-muted-copy">{labels.waiting}</text> : rows.map(([id, value], index) => {
                 const y = 77 + index * 26;
                 const isPaid = value === 'PAID';
-                return <g key={id}>{isPaid ? <rect x={x + 5} y={y - 17} width="126" height="23" rx="5" className="st-home-motion-diagram-highlight" /> : null}<text x={x + 13} y={y} className={isPaid ? 'st-home-motion-diagram-teal-copy' : 'st-home-motion-diagram-copy'}>{id}</text><text x={x + 60} y={y} className={isPaid ? 'st-home-motion-diagram-teal-copy' : 'st-home-motion-diagram-copy'}>{value}</text></g>;
+                return <g key={id}>{isPaid ? <rect x={x + 5} y={y - 17} width="126" height="23" rx="5" className="st-home-motion-diagram-highlight" /> : null}<text x={x + 13} y={y} className={isPaid ? 'st-home-motion-diagram-teal-copy' : 'st-home-motion-diagram-copy'}>{id}</text><text x={x + 60} y={y} className={isPaid ? 'st-home-motion-diagram-teal-copy' : 'st-home-motion-diagram-copy'}>{labels.values[value]}</text></g>;
             })}
         </>
     );
@@ -341,7 +348,7 @@ function TransformDiagram({labels, time}) {
 }
 
 function RoutingDiagram({labels, time}) {
-    const rows = ['users', 'orders', 'items'];
+    const rows = labels.routeTables;
     const rowTones = ['blue', 'teal', 'dark'];
     return (
         <svg viewBox="0 0 520 166" className="st-home-motion-diagram" aria-hidden="true">

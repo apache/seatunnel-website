@@ -541,16 +541,19 @@ const HOME_COPY = {
                 checkpoint: 'Checkpoint',
                 checkpointState: 'Checkpoint 状态',
                 completed: '已完成',
-                customers: 'customers',
+                customers: '客户',
+                fieldId: '编号',
+                fieldStatus: '状态',
                 input: '输入',
                 jdbcMysqlSink: 'JDBC MySQL 目标端',
-                mysqlOrders: 'MySQL / orders',
+                mysqlOrders: 'MySQL / 订单',
                 mysqlSource: 'MySQL 源端',
                 output: '输出',
                 pending: '等待中',
                 reader: '读取器',
                 readers: '读取器',
                 route: '路由',
+                routeTables: ['用户', '订单', '条目'],
                 rowSql: '行级 SQL',
                 sink: '目标端',
                 snapshot: '快照',
@@ -558,10 +561,14 @@ const HOME_COPY = {
                 sourceSplits: '源端分片',
                 table: '表',
                 target: '目标端',
-                targetOrders: '目标端 / orders',
+                targetOrders: '目标端 / 订单',
                 waiting: '等待中…',
                 workerLost: '写入器丢失',
                 writer: '写入器',
+                values: {
+                    NEW: '新建',
+                    PAID: '已支付',
+                },
                 applied: '已应用',
                 filtered: 'id = 0 已过滤',
                 region: 'region',
@@ -791,7 +798,7 @@ export default function Home() {
     const architectureTargetRefs = useRef([]);
 
     const language = isBrowser
-        ? (window.location.pathname.startsWith('/zh-CN/') ? 'zh-CN' : 'en')
+        ? (/^\/zh-CN(?:\/|$)/.test(window.location.pathname) ? 'zh-CN' : 'en')
         : (i18n.currentLocale === 'zh-CN' ? 'zh-CN' : 'en');
     const isChinese = language === 'zh-CN';
     const content = HOME_COPY[language] || HOME_COPY.en;
