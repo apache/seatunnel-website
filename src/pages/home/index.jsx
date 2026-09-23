@@ -797,7 +797,9 @@ export default function Home() {
     const architectureSourceRefs = useRef([]);
     const architectureTargetRefs = useRef([]);
 
-    const language = i18n.currentLocale === 'zh-CN' ? 'zh-CN' : 'en';
+    const language = isBrowser
+        ? (/^\/zh-CN(?:\/|$)/.test(window.location.pathname) ? 'zh-CN' : 'en')
+        : (i18n.currentLocale === 'zh-CN' ? 'zh-CN' : 'en');
     const isChinese = language === 'zh-CN';
     const content = HOME_COPY[language] || HOME_COPY.en;
     const version = versions[0];
