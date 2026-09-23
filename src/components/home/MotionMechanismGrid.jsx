@@ -18,7 +18,6 @@
 import React from 'react';
 
 const MOTION_CYCLE_SECONDS = 8;
-const FRAME_INTERVAL_MS = 1000 / 30;
 const PARALLEL_SPLITS = Array.from({length: 6}, (_, index) => ({
     id: `S${index + 1}`,
     owner: index % 3,
@@ -36,6 +35,34 @@ const TRANSFORMS = [
     {id: 0, name: 'Temp', start: 2.35},
     {id: 2, name: 'Lin', start: 4.25},
 ];
+const DEFAULT_DIAGRAM_LABELS = {
+    barrier: 'BARRIER',
+    binlog: 'BINLOG',
+    checkpoint: 'Checkpoint',
+    checkpointState: 'Checkpoint state',
+    completed: 'COMPLETED',
+    customers: 'customers',
+    input: 'INPUT',
+    jdbcMysqlSink: 'JDBC MYSQL SINK',
+    mysqlOrders: 'MYSQL / ORDERS',
+    mysqlSource: 'MYSQL SOURCE',
+    output: 'OUTPUT',
+    pending: 'PENDING',
+    reader: 'Reader',
+    readers: 'READERS',
+    route: 'route',
+    rowSql: 'ROW SQL',
+    sink: 'Sink',
+    snapshot: 'SNAPSHOT',
+    source: 'Source',
+    sourceSplits: 'SOURCE SPLITS',
+    table: 'Table',
+    target: 'TARGET',
+    targetOrders: 'TARGET / ORDERS',
+    waiting: 'waiting…',
+    workerLost: 'Worker lost',
+    writer: 'Writer',
+};
 
 function cubicPoint(progress, path) {
     const clampedProgress = Math.min(1, Math.max(0, progress));
@@ -73,39 +100,34 @@ function usePrefersReducedMotion() {
 function useMotionClock(isPaused) {
     const [time, setTime] = React.useState(0);
     const timeRef = React.useRef(0);
+    const isPausedRef = React.useRef(isPaused);
 
     React.useEffect(() => {
-        timeRef.current = time;
-    }, [time]);
+        isPausedRef.current = isPaused;
+    }, [isPaused]);
 
     React.useEffect(() => {
-        if (isPaused) {
-            return undefined;
-        }
-
         let animationFrame;
         let previousFrame;
-        let lastRender = 0;
 
         const tick = (now) => {
             if (previousFrame === undefined) {
                 previousFrame = now;
             }
 
-            timeRef.current = (timeRef.current + (now - previousFrame) / 1000) % MOTION_CYCLE_SECONDS;
+            if (!isPausedRef.current) {
+                timeRef.current = (timeRef.current + (now - previousFrame) / 1000) % MOTION_CYCLE_SECONDS;
+                setTime(timeRef.current);
+            }
             previousFrame = now;
 
-            if (now - lastRender >= FRAME_INTERVAL_MS) {
-                setTime(timeRef.current);
-                lastRender = now;
-            }
-
+            // Keep the frame reference current while paused so playback resumes without a time jump.
             animationFrame = window.requestAnimationFrame(tick);
         };
 
         animationFrame = window.requestAnimationFrame(tick);
         return () => window.cancelAnimationFrame(animationFrame);
-    }, [isPaused]);
+    }, []);
 
     return time;
 }
@@ -155,13 +177,13 @@ function cdcRows(time, isTarget) {
     return [...rows.entries()];
 }
 
-function CdcTable({x, rows}) {
+function CdcTable({labels, x, rows}) {
     return (
         <>
             <rect x={x} y="31" width="136" height="103" rx="9" className="st-home-motion-diagram-node" />
             <rect x={x + 1} y="32" width="134" height="24" rx="7" className="st-home-motion-diagram-soft" />
             <text x={x + 13} y="48" className="st-home-motion-diagram-label">id</text><text x={x + 60} y="48" className="st-home-motion-diagram-label">status</text>
-            {rows.length === 0 ? <text x={x + 13} y="77" className="st-home-motion-diagram-muted-copy">waiting…</text> : rows.map(([id, value], index) => <g key={id}><text x={x + 13} y={77 + index * 26} className="st-home-motion-diagram-copy">{id}</text><text x={x + 60} y={77 + index * 26} className="st-home-motion-diagram-copy">{value}</text></g>)}
+            {rows.length === 0 ? <text x={x + 13} y="77" className="st-home-motion-diagram-muted-copy">{labels.waiting}</text> : rows.map(([id, value], index) => <g key={id}><text x={x + 13} y={77 + index * 26} className="st-home-motion-diagram-copy">{id}</text><text x={x + 60} y={77 + index * 26} className="st-home-motion-diagram-copy">{value}</text></g>)}
         </>
     );
 }
@@ -170,14 +192,14 @@ function transformedRows(time) {
     return TRANSFORMS.filter((transform) => transform.id > 0 && time >= transform.start + 1.65);
 }
 
-function ParallelReadsDiagram({time}) {
+function ParallelReadsDiagram({labels, time}) {
     const readerYPositions = [54, 87, 120];
 
     return (
         <svg viewBox="0 0 520 166" className="st-home-motion-diagram" aria-hidden="true">
-            <text x="18" y="20" className="st-home-motion-diagram-label">SOURCE SPLITS</text>
-            <text x="207" y="20" className="st-home-motion-diagram-label">READERS</text>
-            <text x="438" y="20" className="st-home-motion-diagram-label">TARGET</text>
+            <text x="18" y="20" className="st-home-motion-diagram-label">{labels.sourceSplits}</text>
+            <text x="207" y="20" className="st-home-motion-diagram-label">{labels.readers}</text>
+            <text x="438" y="20" className="st-home-motion-diagram-label">{labels.target}</text>
             <rect x="16" y="32" width="118" height="112" rx="10" className="st-home-motion-diagram-node" />
             {PARALLEL_SPLITS.map((split, index) => {
                 const x = 28 + (index % 2) * 49;
@@ -195,7 +217,7 @@ function ParallelReadsDiagram({time}) {
                     <path d={`M134 88 C168 88 174 ${y} 204 ${y}`} className="st-home-motion-diagram-line" fill="none" />
                     <rect x="205" y={y - 13} width="121" height="26" rx="7" className="st-home-motion-diagram-node" />
                     <circle cx="220" cy={y} r="3.5" className={index === 1 ? 'st-home-motion-diagram-teal-fill' : 'st-home-motion-diagram-blue-fill'} />
-                    <text x="232" y={y + 5} className="st-home-motion-diagram-copy">Reader {index + 1}</text>
+                    <text x="232" y={y + 5} className="st-home-motion-diagram-copy">{labels.reader} {index + 1}</text>
                     <path d={`M326 ${y} C364 ${y} 384 88 428 88`} className="st-home-motion-diagram-line" fill="none" />
                 </g>
             ))}
@@ -217,21 +239,21 @@ function ParallelReadsDiagram({time}) {
     );
 }
 
-function SnapshotCdcDiagram({time}) {
+function SnapshotCdcDiagram({labels, time}) {
     const sourceRows = cdcRows(time, false);
     const targetRows = cdcRows(time, true);
 
     return (
         <svg viewBox="0 0 520 166" className="st-home-motion-diagram" aria-hidden="true">
-            <text x="18" y="20" className="st-home-motion-diagram-label">MYSQL / ORDERS</text>
-            <text x="373" y="20" className="st-home-motion-diagram-label">TARGET / ORDERS</text>
-            <CdcTable x={16} rows={sourceRows} />
+            <text x="18" y="20" className="st-home-motion-diagram-label">{labels.mysqlOrders}</text>
+            <text x="373" y="20" className="st-home-motion-diagram-label">{labels.targetOrders}</text>
+            <CdcTable labels={labels} x={16} rows={sourceRows} />
             <rect x="201" y="24" width="98" height="23" rx="12" className="st-home-motion-diagram-soft" />
-            <text x="250" y="40" textAnchor="middle" className="st-home-motion-diagram-accent-text">{time < 2.8 ? 'SNAPSHOT' : 'BINLOG'}</text>
+            <text x="250" y="40" textAnchor="middle" className="st-home-motion-diagram-accent-text">{time < 2.8 ? labels.snapshot : labels.binlog}</text>
             <path d="M153 82H367" className="st-home-motion-diagram-line" fill="none" />
             <Arrow x="367" y="82" />
             <text x="260" y="116" textAnchor="middle" className="st-home-motion-diagram-copy">SeaTunnel</text>
-            <CdcTable x={370} rows={targetRows} />
+            <CdcTable labels={labels} x={370} rows={targetRows} />
             {CDC_EVENTS.map((event) => (
                 <MovingPacket key={`${event.op}-${event.id}-${event.start}`} label={`${event.op}:${event.id}`} path={[153, 82, 210, 82, 310, 82, 367, 82]} progress={(time - event.start) / 0.9} tone={event.op === 'S' || event.op === 'I' ? 'teal' : 'blue'} width={43} />
             ))}
@@ -239,14 +261,14 @@ function SnapshotCdcDiagram({time}) {
     );
 }
 
-function TransformDiagram({time}) {
+function TransformDiagram({labels, time}) {
     const outputRows = transformedRows(time);
 
     return (
         <svg viewBox="0 0 520 166" className="st-home-motion-diagram" aria-hidden="true">
-            <text x="18" y="20" className="st-home-motion-diagram-label">INPUT</text>
-            <text x="218" y="20" className="st-home-motion-diagram-label">ROW SQL</text>
-            <text x="421" y="20" className="st-home-motion-diagram-label">OUTPUT</text>
+            <text x="18" y="20" className="st-home-motion-diagram-label">{labels.input}</text>
+            <text x="218" y="20" className="st-home-motion-diagram-label">{labels.rowSql}</text>
+            <text x="421" y="20" className="st-home-motion-diagram-label">{labels.output}</text>
             <rect x="16" y="31" width="125" height="91" rx="9" className="st-home-motion-diagram-node" />
             <text x="28" y="57" className="st-home-motion-diagram-copy">1&nbsp;&nbsp; Ada</text>
             <text x="28" y="82" className="st-home-motion-diagram-copy">0&nbsp;&nbsp; Temp</text>
@@ -256,7 +278,7 @@ function TransformDiagram({time}) {
             <rect x="207" y="48" width="108" height="56" rx="13" className="st-home-motion-diagram-blue" />
             <text x="261" y="82" textAnchor="middle" className="st-home-motion-diagram-on-blue st-home-motion-diagram-sql">SQL</text>
             <rect x="402" y="31" width="102" height="91" rx="9" className="st-home-motion-diagram-node" />
-            {outputRows.length === 0 ? <text x="413" y="77" className="st-home-motion-diagram-muted-copy">waiting…</text> : outputRows.map((row, index) => <text key={row.id} x="413" y={60 + index * 27} className="st-home-motion-diagram-teal-copy">{row.id}&nbsp;&nbsp; {row.name}_</text>)}
+            {outputRows.length === 0 ? <text x="413" y="77" className="st-home-motion-diagram-muted-copy">{labels.waiting}</text> : outputRows.map((row, index) => <text key={row.id} x="413" y={60 + index * 27} className="st-home-motion-diagram-teal-copy">{row.id}&nbsp;&nbsp; {row.name}_</text>)}
             <text x="18" y="144" className="st-home-motion-diagram-code">CONCAT(name, '_')</text>
             {TRANSFORMS.map((transform) => (
                 <React.Fragment key={transform.id}>
@@ -268,7 +290,7 @@ function TransformDiagram({time}) {
     );
 }
 
-function RoutingDiagram({time}) {
+function RoutingDiagram({labels, time}) {
     const rows = ['users', 'orders', 'items'];
     return (
         <svg viewBox="0 0 520 166" className="st-home-motion-diagram" aria-hidden="true">
@@ -301,23 +323,23 @@ function RoutingDiagram({time}) {
                 );
             })}
             <rect x="221" y="52" width="78" height="61" rx="12" className="st-home-motion-diagram-blue" />
-            <text x="260" y="78" textAnchor="middle" className="st-home-motion-diagram-on-blue">Table</text>
-            <text x="260" y="98" textAnchor="middle" className="st-home-motion-diagram-on-blue">route</text>
+            <text x="260" y="78" textAnchor="middle" className="st-home-motion-diagram-on-blue">{labels.table}</text>
+            <text x="260" y="98" textAnchor="middle" className="st-home-motion-diagram-on-blue">{labels.route}</text>
         </svg>
     );
 }
 
-function SchemaDiagram({time}) {
+function SchemaDiagram({labels, time}) {
     const rows = [['id', 'BIGINT'], ['name', 'VARCHAR'], ['region', 'VARCHAR']];
     const sourceColumnCount = time >= 1.1 ? 3 : 2;
     const sinkColumnCount = time >= 3.8 ? 3 : 2;
 
     return (
         <svg viewBox="0 0 520 166" className="st-home-motion-diagram" aria-hidden="true">
-            <text x="18" y="20" className="st-home-motion-diagram-label">MYSQL SOURCE</text>
-            <text x="371" y="20" className="st-home-motion-diagram-label">JDBC MYSQL SINK</text>
+            <text x="18" y="20" className="st-home-motion-diagram-label">{labels.mysqlSource}</text>
+            <text x="371" y="20" className="st-home-motion-diagram-label">{labels.jdbcMysqlSink}</text>
             {[16, 369].map((x) => <rect key={x} x={x} y="31" width="135" height="104" rx="9" className="st-home-motion-diagram-node" />)}
-            {[16, 369].map((x) => <g key={x}><rect x={x + 1} y="32" width="133" height="24" rx="7" className="st-home-motion-diagram-soft" /><text x={x + 14} y="48" className="st-home-motion-diagram-copy">▦&nbsp; customers</text></g>)}
+            {[16, 369].map((x) => <g key={x}><rect x={x + 1} y="32" width="133" height="24" rx="7" className="st-home-motion-diagram-soft" /><text x={x + 14} y="48" className="st-home-motion-diagram-copy">▦&nbsp; {labels.customers}</text></g>)}
             {rows.map(([name, type], index) => {
                 const y = 76 + index * 24;
                 return (
@@ -337,7 +359,7 @@ function SchemaDiagram({time}) {
     );
 }
 
-function CheckpointDiagram({time}) {
+function CheckpointDiagram({labels, time}) {
     const isComplete = time >= 2.7;
     const isRestoring = time >= 4.65 && time < 5.55;
     const isWriterLost = time >= 3.65 && time < 4.65;
@@ -347,44 +369,64 @@ function CheckpointDiagram({time}) {
     return (
         <svg viewBox="0 0 520 166" className="st-home-motion-diagram" aria-hidden="true">
             <path d="M122 70h70M327 70h70" className="st-home-motion-diagram-line" fill="none" /><Arrow x="192" y="70" /><Arrow x="397" y="70" />
-            {['Source', 'Writer', 'Sink'].map((label, index) => {
+            {[labels.source, labels.writer, labels.sink].map((label, index) => {
                 const x = [16, 198, 403][index];
-                const isLostWriter = label === 'Writer' && isWriterLost;
-                return <g key={label}><rect x={x} y="47" width="104" height="43" rx="10" className={isLostWriter ? 'st-home-motion-diagram-blue' : 'st-home-motion-diagram-node'} /><text x={x + 52} y="74" textAnchor="middle" className={isLostWriter ? 'st-home-motion-diagram-on-blue' : 'st-home-motion-diagram-strong'}>{isLostWriter ? 'Worker lost' : label}</text></g>;
+                const isLostWriter = index === 1 && isWriterLost;
+                return <g key={label}><rect x={x} y="47" width="104" height="43" rx="10" className={isLostWriter ? 'st-home-motion-diagram-blue' : 'st-home-motion-diagram-node'} /><text x={x + 52} y="74" textAnchor="middle" className={isLostWriter ? 'st-home-motion-diagram-on-blue' : 'st-home-motion-diagram-strong'}>{isLostWriter ? labels.workerLost : label}</text></g>;
             })}
             <path d="M68 91C68 130 157 137 215 137M250 91v25" className="st-home-motion-diagram-line" fill="none" />
             <rect x="215" y="114" width="134" height="38" rx="9" className={isComplete ? 'st-home-motion-diagram-soft' : 'st-home-motion-diagram-node'} />
-            <text x="282" y="135" textAnchor="middle" className="st-home-motion-diagram-copy">{isComplete ? 'Checkpoint #42' : 'Checkpoint state'}</text>
-            <text x="282" y="147" textAnchor="middle" className={isComplete ? 'st-home-motion-diagram-teal-copy' : 'st-home-motion-diagram-label'}>{isComplete ? 'COMPLETED' : 'PENDING'}</text>
+            <text x="282" y="135" textAnchor="middle" className="st-home-motion-diagram-copy">{isComplete ? `${labels.checkpoint} #42` : labels.checkpointState}</text>
+            <text x="282" y="147" textAnchor="middle" className={isComplete ? 'st-home-motion-diagram-teal-copy' : 'st-home-motion-diagram-label'}>{isComplete ? labels.completed : labels.pending}</text>
             {showSignals ? <>
                 {[0, 1].map((offset) => <React.Fragment key={offset}>
                     <MovingPacket path={[122, 70, 145, 70, 170, 70, 192, 70]} progress={signalProgress - offset * 0.48} tone="teal" />
                     <MovingPacket path={[327, 70, 350, 70, 375, 70, 397, 70]} progress={signalProgress - offset * 0.48 + 0.2} tone="teal" />
                 </React.Fragment>)}
             </> : null}
-            <MovingPacket label="BARRIER" path={[93, 30, 225, 30, 350, 30, 488, 30]} progress={(time - 1.1) / 1.6} width={54} />
+            <MovingPacket label={labels.barrier} path={[93, 30, 225, 30, 350, 30, 488, 30]} progress={(time - 1.1) / 1.6} width={54} />
             {isRestoring ? <MovingPacket path={[215, 137, 165, 137, 112, 121, 68, 91]} progress={(time - 4.65) / 0.9} /> : null}
         </svg>
     );
 }
 
-function MotionDiagram({type, time}) {
+function MotionDiagram({labels, type, time}) {
     const diagrams = {
-        parallel: <ParallelReadsDiagram time={time} />,
-        cdc: <SnapshotCdcDiagram time={time} />,
-        transform: <TransformDiagram time={time} />,
-        routing: <RoutingDiagram time={time} />,
-        schema: <SchemaDiagram time={time} />,
-        checkpoint: <CheckpointDiagram time={time} />,
+        parallel: <ParallelReadsDiagram labels={labels} time={time} />,
+        cdc: <SnapshotCdcDiagram labels={labels} time={time} />,
+        transform: <TransformDiagram labels={labels} time={time} />,
+        routing: <RoutingDiagram labels={labels} time={time} />,
+        schema: <SchemaDiagram labels={labels} time={time} />,
+        checkpoint: <CheckpointDiagram labels={labels} time={time} />,
     };
 
     return diagrams[type];
 }
 
-export default function MotionMechanismGrid({caption, controls, gridLabel, mechanisms}) {
+export default function MotionMechanismGrid({caption, controls, gridLabel, labels = DEFAULT_DIAGRAM_LABELS, mechanisms}) {
     const [isMotionPaused, setIsMotionPaused] = React.useState(false);
     const prefersReducedMotion = usePrefersReducedMotion();
-    const time = useMotionClock(isMotionPaused || prefersReducedMotion);
+    const time = useMotionClock(isMotionPaused);
+
+    React.useEffect(() => {
+        if (prefersReducedMotion) {
+            setIsMotionPaused(true);
+        }
+    }, [prefersReducedMotion]);
+
+    React.useEffect(() => {
+        const onKeyDown = (event) => {
+            if (event.code !== 'Space' || ['INPUT', 'SELECT', 'TEXTAREA'].includes(event.target.tagName)) {
+                return;
+            }
+
+            event.preventDefault();
+            setIsMotionPaused((paused) => !paused);
+        };
+
+        window.addEventListener('keydown', onKeyDown);
+        return () => window.removeEventListener('keydown', onKeyDown);
+    }, []);
 
     return (
         <>
@@ -393,7 +435,7 @@ export default function MotionMechanismGrid({caption, controls, gridLabel, mecha
                     type="button"
                     className="st-home-motion-control"
                     aria-pressed={isMotionPaused}
-                    disabled={prefersReducedMotion}
+                    aria-keyshortcuts="Space"
                     onClick={() => setIsMotionPaused((paused) => !paused)}
                 >
                     {isMotionPaused ? controls.play : controls.pause}
@@ -410,7 +452,7 @@ export default function MotionMechanismGrid({caption, controls, gridLabel, mecha
                                     <p>{mechanism.description}</p>
                                 </div>
                             </div>
-                            <div className="st-home-motion-visual"><MotionDiagram type={mechanism.diagram} time={time} /></div>
+                            <div className="st-home-motion-visual"><MotionDiagram labels={labels} type={mechanism.diagram} time={time} /></div>
                             <p className="st-home-motion-card-detail">{mechanism.detail}</p>
                             <p className="st-home-motion-card-note">{mechanism.note}</p>
                         </article>
