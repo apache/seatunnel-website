@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1052
+- Total current docs pages: 1058
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -90,6 +90,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-oss-jindo
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-s3
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-sftp
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-file-smb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-firebase
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-fluss
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-analytics4
@@ -265,6 +266,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/SftpFile
 - https://seatunnel.apache.org/docs/connectors/sink/Slack
 - https://seatunnel.apache.org/docs/connectors/sink/Sls
+- https://seatunnel.apache.org/docs/connectors/sink/SmbFile
 - https://seatunnel.apache.org/docs/connectors/sink/SNMP
 - https://seatunnel.apache.org/docs/connectors/sink/Snowflake
 - https://seatunnel.apache.org/docs/connectors/sink/Socket
@@ -366,6 +368,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/SftpFile
 - https://seatunnel.apache.org/docs/connectors/source/Shopify
 - https://seatunnel.apache.org/docs/connectors/source/Sls
+- https://seatunnel.apache.org/docs/connectors/source/SmbFile
 - https://seatunnel.apache.org/docs/connectors/source/SNMP
 - https://seatunnel.apache.org/docs/connectors/source/Snowflake
 - https://seatunnel.apache.org/docs/connectors/source/Socket
@@ -618,6 +621,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-oss-jindo
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-s3
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-sftp
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-smb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-firebase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-fluss
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-analytics4
@@ -793,6 +797,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SftpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Slack
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Sls
+- https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SmbFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/SNMP
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Snowflake
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Socket
@@ -894,6 +899,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SftpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Shopify
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Sls
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/SmbFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SNMP
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Snowflake
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Socket
