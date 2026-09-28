@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1058
+- Total current docs pages: 1060
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -497,6 +497,7 @@
 - https://seatunnel.apache.org/docs/introduction/configuration/speed-limit
 - https://seatunnel.apache.org/docs/introduction/configuration/sql-config
 - https://seatunnel.apache.org/docs/introduction/how-it-works
+- https://seatunnel.apache.org/docs/introduction/rag-data-processing
 - https://seatunnel.apache.org/docs/tools/dolphinscheduler-integration
 - https://seatunnel.apache.org/docs/tools/overview
 - https://seatunnel.apache.org/docs/tools/seatunnel-mcp
@@ -1028,6 +1029,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/introduction/configuration/speed-limit
 - https://seatunnel.apache.org/zh-CN/docs/introduction/configuration/sql-config
 - https://seatunnel.apache.org/zh-CN/docs/introduction/how-it-works
+- https://seatunnel.apache.org/zh-CN/docs/introduction/rag-data-processing
 - https://seatunnel.apache.org/zh-CN/docs/tools/dolphinscheduler-integration
 - https://seatunnel.apache.org/zh-CN/docs/tools/overview
 - https://seatunnel.apache.org/zh-CN/docs/tools/seatunnel-mcp
