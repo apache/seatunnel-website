@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1060
+- Total current docs pages: 1064
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -43,6 +43,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-amazondynamodb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-amazonsqs
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-assert
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-azure-event-hubs
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-azure-queue-storage
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-azurecosmosdb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-bigquery
@@ -284,6 +285,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonSqs
 - https://seatunnel.apache.org/docs/connectors/source/AzureCosmosDB
+- https://seatunnel.apache.org/docs/connectors/source/AzureEventHubs
 - https://seatunnel.apache.org/docs/connectors/source/AzureQueueStorage
 - https://seatunnel.apache.org/docs/connectors/source/BosFile
 - https://seatunnel.apache.org/docs/connectors/source/Cassandra
@@ -575,6 +577,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-amazondynamodb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-amazonsqs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-assert
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-azure-event-hubs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-azure-queue-storage
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-azurecosmosdb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-bigquery
@@ -816,6 +819,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonSqs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureCosmosDB
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureEventHubs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureQueueStorage
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/BosFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Cassandra
