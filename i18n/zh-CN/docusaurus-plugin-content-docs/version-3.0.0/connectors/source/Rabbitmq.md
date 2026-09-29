@@ -1,0 +1,337 @@
+import ChangeLog from '../changelog/connector-rabbitmq.md';
+
+# RabbitMQ
+
+> RabbitMQ 源连接器
+
+## 引擎支持
+
+> Spark<br/>
+> Flink<br/>
+> SeaTunnel Zeta<br/>
+
+## 描述
+
+用于从 RabbitMQ 队列读取数据。
+
+## 主要特性
+
+- [ ] [批处理](../../introduction/concepts/connector-v2-features.md)
+- [x] [流处理](../../introduction/concepts/connector-v2-features.md)
+- [x] [精确一次](../../introduction/concepts/connector-v2-features.md)
+- [ ] [列投影](../../introduction/concepts/connector-v2-features.md)
+- [ ] [并行度](../../introduction/concepts/connector-v2-features.md)
+- [ ] [支持用户自定义分片](../../introduction/concepts/connector-v2-features.md)
+- [x] [支持多表读取](../../introduction/concepts/connector-v2-features.md)
+
+:::tip
+
+为了实现精确一次，源必须是非并行的（并行度设置为 1）。这个限制主要是由于 RabbitMQ 从单个队列向多个消费者分派消息的方式。
+
+:::
+
+## 选项
+
+| 参数名                        | 类型      | 必须 | 默认值   | 描述                                                                          |
+|----------------------------|---------|----|-------|-----------------------------------------------------------------------------|
+| host                       | string  | 是  | -     | 连接的默认主机                                                                     |
+| port                       | int     | 是  | -     | 连接的默认端口                                                                     |
+| virtual_host               | string  | 否  | -     | 虚拟主机 – 连接到代理时使用的虚拟主机                                                        |
+| username                   | string  | 否  | -     | 连接到代理时使用的 AMQP 用户名                                                          |
+| password                   | string  | 否  | -     | 连接到代理时使用的密码                                                                 |
+| queue_name                 | string  | 否  | -     | 要消费消息的队列                                                                    |
+| schema                     | config  | 否  | -     | 上游数据的模式。更多详情请参考 [Schema 特性](../../introduction/concepts/schema-feature.md)。 |
+| tables_configs             | array   | 否  | -     | 用于同时从多个队列读取消息。数组中的每个对象必须包含 queue_name 和 schema。                            |
+| format                     | string  | 否  | json  | 消息体格式，支持 json 和 protobuf                                                       |
+| protobuf_schema            | string  | 否  | -     | 当 format 为 protobuf 时生效，用于解析消息体的 Protobuf Schema                              |
+| protobuf_message_name      | string  | 否  | -     | 当 format 为 protobuf 时生效，指定要解析的 Protobuf Message 名称                            |
+| url                        | string  | 否  | -     | 便捷方法，用于设置 AMQP URI 中的字段：主机、端口、用户名、密码和虚拟主机                                   |
+| routing_key                | string  | 否  | -     | RabbitMQ 共享配置中的可选路由键                                                         |
+| exchange                   | string  | 否  | -     | RabbitMQ 共享配置中的可选 exchange                                                     |
+| network_recovery_interval  | int     | 否  | -     | 自动恢复在尝试重新连接之前等待多长时间（毫秒）                                                     |
+| topology_recovery_enabled  | boolean | 否  | -     | 如果为 true，启用拓扑恢复                                                             |
+| AUTOMATIC_RECOVERY_ENABLED | boolean | 否  | -     | 如果为 true，启用连接恢复                                                             |
+| connection_timeout         | int     | 否  | -     | 连接 tcp 建立超时（毫秒）；零表示无限                                                       |
+| requested_channel_max      | int     | 否  | -     | 最初请求的最大通道数；零表示无限制。**注意：值必须在 0 到 65535 之间（AMQP 0-9-1 中的无符号短整数）。**             |
+| requested_frame_max        | int     | 否  | -     | 请求的最大帧大小                                                                    |
+| requested_heartbeat        | int     | 否  | -     | 设置请求的心跳超时。**注意：值必须在 0 到 65535 之间（AMQP 0-9-1 中的无符号短整数）。**                     |
+| prefetch_count             | int     | 否  | -     | 预取计数，无需确认即可接收的最大消息数                                                         |
+| delivery_timeout           | int     | 否  | -     | 交付超时，等待下一条消息交付的最大时间（毫秒）                                                     |
+| use_correlation_id         | boolean | 否  | -     | 消息是否带有可用于去重的唯一 correlation id                                                 |
+| durable                    | boolean | 否  | true  | 队列是否在服务器重启时保留                                                               |
+| exclusive                  | boolean | 否  | false | 队列是否仅由当前连接使用                                                                |
+| auto_delete                | boolean | 否  | false | 队列是否在最后一个消费者取消订阅时自动删除                                                       |
+| common-options             |         | 否  | -     | 源插件通用参数                                                                     |
+
+### host [string]
+
+连接的默认主机
+
+### port [int]
+
+连接的默认端口
+
+### virtual_host [string]
+
+虚拟主机 – 连接到代理时使用的虚拟主机
+
+### username [string]
+
+连接到代理时使用的 AMQP 用户名
+
+### password [string]
+
+连接到代理时使用的密码
+
+`username` 和 `password` 需要一起配置。
+
+### url [string]
+
+便捷方法，用于设置 AMQP URI 中的字段：主机、端口、用户名、密码和虚拟主机
+
+### queue_name [string]
+
+要消费消息的队列。*注意：如果未配置 `tables_configs`，则为必填项。*
+
+### routing_key [string]
+
+RabbitMQ 共享配置中的可选路由键。普通队列消费不需要配置它。
+
+### exchange [string]
+
+RabbitMQ 共享配置中的可选 exchange。普通队列消费不需要配置它。
+
+### schema [Config]
+
+#### fields [Config]
+
+上游数据的模式字段。更多详情请参考 [Schema 特性](../../introduction/concepts/schema-feature.md)。*注意：如果未配置 `tables_configs`，则为必填项。*
+
+### tables_configs [array]
+
+用于同时从多个队列读取消息。数组中的每个对象必须包含 `queue_name` 和 `schema`。
+
+### format [string]
+
+消息体格式，支持 `json` 和 `protobuf`，默认值为 `json`。
+
+### protobuf_schema [string]
+
+当 `format` 为 `protobuf` 时生效，定义用于反序列化 RabbitMQ 消息体的 Protobuf Schema。
+
+### protobuf_message_name [string]
+
+当 `format` 为 `protobuf` 时生效，指定要反序列化的 Protobuf Message 名称。
+
+### network_recovery_interval [int]
+
+自动恢复在尝试重新连接之前等待多长时间（毫秒）
+
+### topology_recovery_enabled [boolean]
+
+如果为 true，启用拓扑恢复
+
+### AUTOMATIC_RECOVERY_ENABLED [boolean]
+
+如果为 true，启用连接恢复。
+
+当前连接器配置项名称使用大写形式。请写成 `AUTOMATIC_RECOVERY_ENABLED`，不要写成 `automatic_recovery_enabled`。
+
+### connection_timeout [int]
+
+连接 tcp 建立超时（毫秒）；零表示无限
+
+### requested_channel_max [int]
+
+最初请求的最大通道数；零表示无限制。**注意：值必须在 0 到 65535 之间（AMQP 0-9-1 中的无符号短整数）。**
+
+### requested_frame_max [int]
+
+请求的最大帧大小
+
+### requested_heartbeat [int]
+
+设置请求的心跳超时。**注意：值必须在 0 到 65535 之间（AMQP 0-9-1 中的无符号短整数）。**
+
+### prefetch_count [int]
+
+预取计数，无需确认即可接收的最大消息数
+
+### delivery_timeout [int]
+
+交付超时，等待下一条消息交付的最大时间（毫秒）
+
+### use_correlation_id [boolean]
+
+消费到的消息是否带有唯一 correlation id。开启后，当确认消息失败时，可用这个 id 辅助去重。
+
+### common options
+
+源插件通用参数，详情请参考 [源通用选项](../common-options/source-common-options.md)。
+
+### durable
+
+- true：队列将在服务器重启时保留。
+- false：队列将在服务器重启时删除。
+
+### exclusive
+
+- true：队列仅由当前连接使用，连接关闭时将删除。
+- false：队列可以由多个连接使用。
+
+### auto_delete
+
+- true：队列将在最后一个消费者取消订阅时自动删除。
+- false：队列不会自动删除。
+
+## 迁移指南与配置规则
+
+如果您从仅支持单表读取的早期版本升级，您现有的配置无需任何更改即可正常工作。
+
+**配置优先级：**
+- 不能同时配置 `tables_configs` 和根级别的 `queue_name`。它们是互斥的，同时配置会导致校验失败。
+- 使用 `tables_configs` 进行多表模式。
+- 使用根级别的 `queue_name` 和 `schema` 进行单队列模式。
+- 多表模式下，每个队列自己的 `schema` 应放在对应的 `tables_configs` 条目里。
+- 当 `format` 为 `protobuf` 时，需要在队列配置所在层级同时配置 `protobuf_schema` 和 `protobuf_message_name`。
+- 如果配置了 `username`，也必须配置 `password`，反过来也一样。
+- `host` 和 `port` 总是必填。`virtual_host` 是可选项，除非您的 RabbitMQ 环境要求使用非默认虚拟主机。
+
+## 示例
+
+### 单表读取示例
+
+```hocon
+env {
+    parallelism = 1
+    job.mode = "STREAMING"
+}
+
+source {
+    RabbitMQ {
+        host = "rabbitmq-e2e"
+        port = 5672
+        virtual_host = "/"
+        username = "guest"
+        password = "guest"
+        queue_name = "test"
+        durable = true
+        exclusive = false
+        auto_delete = false
+        schema = {
+            fields {
+                id = bigint
+                c_map = "map<string, smallint>"
+                c_array = "array<tinyint>"
+                c_string = string
+                c_boolean = boolean
+            }
+        }
+    }
+}
+
+sink {
+    Console {}
+}
+```
+
+### 多表读取示例
+您可以使用 `tables_configs` 选项在一个作业中同时从多个 RabbitMQ 队列消费消息。连接器将根据消息来源的队列自动为每行数据分配正确的表标识符，允许您使用 `plugin_input` 将它们路由到不同的 sink。
+
+```hocon
+env {
+    parallelism = 1
+    job.mode = "STREAMING"
+}
+
+source {
+  RabbitMQ {
+    host = "rabbitmq-e2e"
+    port = 5672
+    virtual_host = "/"
+    username = "guest"
+    password = "guest"
+
+    # 使用 tables_configs 从多个队列中读取
+    tables_configs = [
+      {
+        queue_name = "users_queue"
+        schema = {
+          table = "users_table" # 定义用于路由的表名
+          fields {
+            user_id = bigint
+            name = string
+          }
+        }
+      },
+      {
+        queue_name = "orders_queue"
+        schema = {
+          table = "orders_table" # 定义用于路由的表名
+          fields {
+            order_id = bigint
+            amount = double
+          }
+        }
+      }
+    ]
+  }
+}
+
+sink {
+  # 第一个 sink 将仅接收 users_table 的数据
+  Console {
+    plugin_input = "users_table"
+  }
+
+  # 第二个 sink 将仅接收 orders_table 的数据
+  Console {
+    plugin_input = "orders_table"
+  }
+}
+```
+
+### Protobuf 读取示例
+
+```hocon
+source {
+    RabbitMQ {
+        host = "rabbitmq-e2e"
+        port = 5672
+        queue_name = "protobuf_queue"
+        format = protobuf
+        protobuf_message_name = Person
+        protobuf_schema = """
+            syntax = "proto3";
+            message Person {
+              int64 id = 1;
+              string name = 2;
+            }
+        """
+        schema = {
+            fields {
+                id = bigint
+                name = string
+            }
+        }
+    }
+}
+```
+
+## 常见问题
+
+### 为什么实现精确一次必须将并行度设置为 1？
+
+RabbitMQ 会在同一个队列的多个活跃消费者之间以轮询方式分发消息。当多个并行 Reader 同时消费同一个队列时，无法保证消息顺序以及分布式 Worker 之间确定性的 offset/ack 协同。因此，必须将并行度设置为 1 才能实现精确一次。
+
+### RabbitMQ Source 支持哪些消息格式？
+
+RabbitMQ Source 默认支持 JSON。当 `format` 设置为 `protobuf` 时支持 Protobuf。连接器会按照配置的 `schema` 将每条 RabbitMQ 消息体反序列化为一行 SeaTunnel 数据。
+
+### 任务发生故障时未确认的消息如何处理？
+
+当 SeaTunnel 任务失败或异常退出时，与 RabbitMQ 的连接会断开，RabbitMQ 会自动将所有未确认（unacknowledged）的消息重新入队（requeue）。在任务从检查点恢复后，Reader 可以重新处理这些消息，避免数据丢失。
+
+## 变更日志
+
+<ChangeLog />
