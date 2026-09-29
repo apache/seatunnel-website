@@ -56,1822 +56,2592 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/api-design/catalog-table</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/ai-cli/benchmark</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/api-design/sink-architecture</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/ai-cli/design</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/api-design/source-architecture</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/ai-cli/overview</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/api-design/translation-layer</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/ai-cli/quickstart</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/design-philosophy</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/api-design/catalog-table</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/engine/dag-execution</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/api-design/flink-translation-layer</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/engine/engine-architecture</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/api-design/sink-architecture</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/engine/resource-management</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/api-design/source-architecture</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/fault-tolerance/checkpoint-mechanism</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/api-design/spark-translation-layer</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/fault-tolerance/exactly-once</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/api-design/translation-layer</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/features/multi-table</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/cdc-pipeline-architecture</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/architecture/overview</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/configuration-and-option-system</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/core-api-design</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-activemq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/data-format-handling</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-aerospike</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/design-philosophy</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-amazondynamodb</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/engine/dag-execution</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-amazonsqs</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/engine/engine-architecture</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-assert</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/engine/resource-management</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cassandra</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/fault-tolerance/checkpoint-mechanism</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/fault-tolerance/exactly-once</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc-base</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/features/multi-table</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc-mongodb</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/overview</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc-mysql</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/plugin-discovery-and-class-loading</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc-opengauss</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/table-schema-and-type-system</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc-oracle</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/architecture/transform-plugin-system</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc-postgres</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connector-v2/source/FacebookAds</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc-sqlserver</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connector-v2/source/GoogleAds</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cdc-tidb</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connector-v2/source/Http-Linear</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-clickhouse</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connector-v2/source/Salesforce</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-cloudberry</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-common</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/cdc-production-cookbook</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-console</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-activemq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-databend</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-aerospike</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-datahub</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-amazondocumentdb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-dingtalk</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-amazondynamodb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-doris</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-amazonsqs</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-druid</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-assert</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-easysearch</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-azure-queue-storage</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-elasticsearch</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-azurecosmosdb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-email</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-bigquery</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-fake</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cassandra</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-base</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-base</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-base-hadoop</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-db2</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-cos</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-mongodb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-ftp</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-mysql</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-hadoop</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-opengauss</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-jindo-oss</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-oracle</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-local</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-postgres</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-obs</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-sqlserver</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-oss</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-tidb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-oss-jindo</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cdc-vitess</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-s3</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-clickhouse</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-file-sftp</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-cloudberry</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-fluss</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-common</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-google-firestore</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-console</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-google-sheets</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-couchbase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-graphql</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-databend</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-hbase</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-datahub</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-hive</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-deeplake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-dingtalk</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-base</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-doris</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-feishu</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-druid</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-github</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-easysearch</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-gitlab</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-edge-socket</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-jira</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-elasticsearch</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-klaviyo</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-email</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-lemlist</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-facebook-ads</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-myhours</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-fake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-notion</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-onesignal</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-base</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-persistiq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-base-hadoop</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-http-wechat</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-bos</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-hudi</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-cos</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-hugegraph</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-ftp</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-iceberg</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-gcs</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-influxdb</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-hadoop</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-iotdb</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-jindo-oss</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-iotdb-v2</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-local</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-jdbc</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-obs</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-kafka</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-oss</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-kudu</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-oss-jindo</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-lance</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-s3</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-maxcompute</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-file-sftp</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-milvus</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-firebase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-mongodb</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-fluss</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-neo4j</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-google-ads</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-openmldb</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-google-bigtable</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-paimon</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-google-firestore</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-prometheus</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-google-pubsub</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-pulsar</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-google-sheets</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-qdrant</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-graphql</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-rabbitmq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-hbase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-redis</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-hive</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-rocketmq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-s3-redshift</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-airtable</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-selectdb-cloud</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-base</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-sensorsdata</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-feishu</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-sentry</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-github</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-slack</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-gitlab</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-sls</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-jira</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-socket</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-klaviyo</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-starrocks</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-lemlist</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-tablestore</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-linear</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-tdengine</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-myhours</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-typesense</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-notion</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/changelog/connector-web3j</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-onesignal</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/common-options/sink-common-options</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-persistiq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/common-options/source-common-options</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-posthog</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/connector-isolated-dependency</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-shopify</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-stripe</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats/avro</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-wechat</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats/canal-json</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-http-zendesk</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats/cdc-compatible-debezium-json</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-hudi</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats/debezium-json</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-hugegraph</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats/kafka-compatible-kafkaconnect-json</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-iceberg</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats/maxwell-json</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-influxdb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats/ogg-json</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-iotdb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/formats/protobuf</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-iotdb-v2</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-jdbc</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Activemq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-kafka</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Aerospike</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-kudu</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/AmazonDynamoDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-lance</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/AmazonSqs</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-maxcompute</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Assert</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-mem0</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Cassandra</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-milvus</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Clickhouse</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-mongodb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/ClickhouseFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-mqtt</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Cloudberry</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-nats-jetstream</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Console</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-nebulagraph</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/CosFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-neo4j</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Databend</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-openmldb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Datahub</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-paimon</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/DB2</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-prometheus</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/DingTalk</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-pulsar</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Doris</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-python</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Druid</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-qdrant</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/DuckDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-rabbitmq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Easysearch</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-redis</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Elasticsearch</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-rocketmq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Email</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-s3-redshift</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Enterprise-WeChat</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-salesforce</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Feishu</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-selectdb-cloud</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Fluss</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-sensorsdata</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/FtpFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-sentry</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/GoogleFirestore</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-slack</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/GraphQL</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-sls</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Greenplum</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-snmp</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Hbase</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-socket</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/HdfsFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-starrocks</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Hive</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-tablestore</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Http</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-tdengine</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Hudi</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-tiktok-ads</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/HugeGraph</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-typesense</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Iceberg</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/changelog/connector-web3j</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/InfluxDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/common-options/sink-common-options</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/IoTDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/common-options/sink-write-modes</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/IoTDBv2</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/common-options/source-common-options</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Jdbc</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/connector-faq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Kafka</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/connector-isolated-dependency</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Kingbase</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/file-object-storage-faq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Kudu</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Lance</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats/avro</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/LocalFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats/canal-json</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Maxcompute</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats/cdc-compatible-debezium-json</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Milvus</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats/debezium-json</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/MongoDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats/kafka-compatible-kafkaconnect-json</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Mysql</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats/maxwell-json</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Neo4j</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats/ogg-json</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/ObsFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/formats/protobuf</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/OceanBase</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Oracle</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Activemq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/OssFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Aerospike</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/OssJindoFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Airtable</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Paimon</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/AmazonDynamoDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Phoenix</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/AmazonSqs</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/PostgreSql</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Assert</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Prometheus</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/AzureQueueStorage</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Pulsar</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/BigQuery</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Qdrant</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/BosFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Rabbitmq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Cassandra</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Redis</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Clickhouse</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Redshift</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/ClickhouseFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/RocketMQ</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Cloudberry</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/S3-Redshift</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Console</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/S3File</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/CosFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/SelectDB-Cloud</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Couchbase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/SensorsData</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Databend</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Sentry</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Datahub</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/SftpFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/DB2</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Slack</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/DeepLake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Sls</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/DingTalk</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Snowflake</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Doris</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Socket</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Druid</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/SqlServer</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/DuckDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/StarRocks</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Easysearch</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Tablestore</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Elasticsearch</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/TDengine</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Email</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Typesense</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Enterprise-WeChat</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/sink/Vertica</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Feishu</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Fluss</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/AmazonDynamoDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/FtpFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/AmazonSqs</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/GcsFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Cassandra</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/GoogleBigtable</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Clickhouse</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/GoogleFirestore</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Cloudberry</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/GooglePubSub</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/CosFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/GraphQL</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Databend</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Greenplum</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/DB2</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Hbase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Doris</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/HdfsFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/DuckDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Hive</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Easysearch</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Http</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Elasticsearch</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Hudi</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/FakeSource</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/HugeGraph</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/FtpFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Iceberg</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Github</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/InfluxDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Gitlab</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/IoTDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/GoogleSheets</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/IoTDBv2</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/GraphQL</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Jdbc</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Greenplum</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Kafka</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Hbase</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Kingbase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/HdfsFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Kudu</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Hive</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Lance</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/HiveJdbc</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/LocalFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Http</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Maxcompute</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Iceberg</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Mem0</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/InfluxDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Milvus</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/IoTDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/MongoDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/IoTDBv2</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Mqtt</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Jdbc</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Mysql</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Jira</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/NatsJetStream</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Kafka</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/NebulaGraph</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Kingbase</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Neo4j</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Klaviyo</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/ObsFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Kudu</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/OceanBase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Lemlist</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Oracle</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/LocalFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/OssFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Maxcompute</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/OssJindoFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Milvus</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Paimon</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/MongoDB</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Phoenix</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/MongoDB-CDC</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/PostgreSql</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/MyHours</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Prometheus</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Mysql</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Pulsar</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/MySQL-CDC</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Qdrant</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Neo4j</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Rabbitmq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Notion</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Redis</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/ObsFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Redshift</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/OceanBase</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/RocketMQ</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/OneSignal</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/S3-Redshift</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Opengauss-CDC</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/S3File</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/OpenMldb</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Salesforce</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Oracle</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/SelectDB-Cloud</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Oracle-CDC</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/SensorsData</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/OssFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Sentry</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/OssJindoFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/SftpFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Paimon</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Slack</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Persistiq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Sls</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Phoenix</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/SNMP</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/PostgreSQL</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Snowflake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/PostgreSQL-CDC</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Socket</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Prometheus</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/SqlServer</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Pulsar</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/StarRocks</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Qdrant</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Tablestore</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Rabbitmq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/TDengine</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Redis</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Typesense</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Redshift</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Vertica</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/RocketMQ</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/sink/Zendesk</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/S3File</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/SftpFile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Airtable</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Sls</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/AmazonDocumentDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Snowflake</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/AmazonDynamoDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Socket</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/AmazonSqs</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/SqlServer</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/AzureCosmosDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/SqlServer-CDC</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/AzureQueueStorage</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/StarRocks</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/BosFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Tablestore</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Cassandra</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/TDengine</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Clickhouse</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/TiDB-CDC</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Cloudberry</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Typesense</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/CosFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Vertica</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Databend</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/connectors/source/Web3j</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/DB2</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/developer/coding-guide</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/DB2-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/developer/contribute-plugin</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Doris</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/developer/contribute-transform-v2-guide</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/DuckDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/developer/docs-format-specification</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Easysearch</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/developer/how-to-create-your-connector</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/EdgeSocket</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/developer/new-license</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Elasticsearch</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/developer/setup</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/FakeSource</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/command/connector-check</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Firebase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/command/usage</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Fluss</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/event-listener</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/FtpFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/flink</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/GcsFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/overview</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Github</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/spark</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Gitlab</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/about</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/GoogleBigtable</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/checkpoint-storage</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/GooglePubSub</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/deployment</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/GoogleSheets</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/download-seatunnel</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/GraphQL</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/engine-jar-storage-mode</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Greenplum</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/hybrid-cluster-deployment</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Hbase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/local-mode-deployment</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/HdfsFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/logging</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Hive</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/resource-isolation</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/HiveJdbc</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/rest-api-v1</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Http</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/rest-api-v2</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/HugeGraph</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/security</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Iceberg</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/separated-cluster-deployment</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/InfluxDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/slot-allocation-strategy</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/IoTDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/tcp</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/IoTDBv2</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/telemetry</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Jdbc</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/tuning-guide</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Jira</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/user-command</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Kafka</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/version-upgrade</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Kingbase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/engines/zeta/web-ui</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Klaviyo</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/faq</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Kudu</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/getting-started/docker</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Lemlist</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/getting-started/kubernetes</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/LocalFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/getting-started/kubernetes/helm</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Maxcompute</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/getting-started/locally/deployment</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Milvus</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/getting-started/locally/quick-start-flink</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/MongoDB</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/getting-started/locally/quick-start-seatunnel-engine</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/MongoDB-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/getting-started/locally/quick-start-spark</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Mqtt</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/about</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/MyHours</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/architecture</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Mysql</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/concepts/config</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/MySQL-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/concepts/connector-v2-features</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Neo4j</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/concepts/incompatible-changes</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Notion</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/concepts/schema-feature</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/ObsFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/configuration/config-encryption-decryption</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/OceanBase</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/configuration/JobEnvConfig</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/OneSignal</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/configuration/metalake</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Opengauss-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/configuration/schema-evolution</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/OpenMldb</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/configuration/sink-options-placeholders</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Oracle</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/configuration/speed-limit</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Oracle-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/introduction/configuration/sql-config</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/OssFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/tools/overview</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/OssJindoFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/tools/seatunnel-mcp</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Paimon</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/tools/seatunnel-skill</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Persistiq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/tools/x2seatunnel</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Phoenix</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/PostgreSQL</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/common-options</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/PostgreSQL-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/copy</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/PostHog</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/data-validator</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Prometheus</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/define-sink-type</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Pulsar</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/dynamic-compile</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Python</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/embedding</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Qdrant</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/field-mapper</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Rabbitmq</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/field-rename</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Redis</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/filter</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Redshift</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/filter-rowkind</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/RocketMQ</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/jsonpath</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/S3File</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/llm</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/SftpFile</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/metadata</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Shopify</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/regexextract</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Sls</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/replace</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/SNMP</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/rowkind-extractor</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Snowflake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/split</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Socket</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/sql</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/SqlServer</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/sql-functions</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/SqlServer-CDC</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/sql-udf</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/StarRocks</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/table-filter</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Stripe</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/table-merge</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Tablestore</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/table-rename</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/TDengine</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/zh-CN/docs/2.3.13/transforms/transform-multi-table</loc>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/TiDB-CDC</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/TikTokAds</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Typesense</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Vertica</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Vitess-CDC</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Web3j</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/source/Zendesk</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/connectors/type-schema-faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/anydoc-document-parser-poc</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/coding-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/connector-runtime-boundaries</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/contribute-performance-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/contribute-plugin</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/contribute-transform-v2-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/contribution-path</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/docs-format-specification</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/how-to-create-your-connector</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/merge-queue</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/new-license</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/setup</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/shade-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/sink-connector-development</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/source-connector-development</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/developer/test-coding-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/about</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/architecture-overview</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/configuration</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/deployment-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/download</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/input-configuration</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/operations</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/output-configuration</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/edge-agent/quick-start</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/command/connector-check</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/command/usage</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/event-listener</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/flink</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/overview</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/spark</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/about</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/benchmark</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/busyness-and-backpressure</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/checkpoint-storage</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/deployment</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/download-seatunnel</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/engine-jar-storage-mode</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/hybrid-cluster-deployment</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/live-metrics-chart</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/local-mode-deployment</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/log-analysis-with-ai</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/logging</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/python-sdk</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/realtime-observability</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/resource-isolation</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/rest-api-and-web-ui</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/rest-api-job-lifecycle</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/rest-api-v1</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/rest-api-v2</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/runtime-execution-graph</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/security</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/separated-cluster-deployment</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/slot-allocation-strategy</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/stain-trace</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/stain-trace-quickstart</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/state-storage-and-recovery</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/tcp</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/telemetry</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/timer-flush</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/tuning-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/user-command</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/engines/zeta/web-ui</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/docker</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/job-configuration-guide</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/kubernetes</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/kubernetes/configuration</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/kubernetes/helm</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/kubernetes/hybrid-cluster-mode</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/kubernetes/local-mode</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/kubernetes/operations</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/kubernetes/separated-cluster-mode</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/locally</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/locally/deployment</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/locally/quick-start-flink</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/locally/quick-start-seatunnel-engine</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/locally/quick-start-spark</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/locally/run-your-first-job</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/overview</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/file-to-starrocks</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/http-to-jdbc</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/jdbc-to-jdbc</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/jdbc-to-s3</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/kafka-to-iceberg</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/multi-table-cdc</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/mysql-cdc-to-doris</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/mysql-cdc-to-elasticsearch</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/mysql-cdc-to-kafka</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/mysql-to-hdfs</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/recipes/postgresql-cdc-to-iceberg</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/getting-started/submit-job-to-remote-zeta-cluster</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/about</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/concepts/config</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/concepts/connector-v2-features</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/concepts/gravitino-type-mapping</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/concepts/incompatible-changes</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/concepts/metadata-spi</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/concepts/schema-feature</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/configuration/config-encryption-decryption</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/configuration/error-handling</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/configuration/JobEnvConfig</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/configuration/metalake</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/configuration/schema-evolution</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/configuration/sink-options-placeholders</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/configuration/speed-limit</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/configuration/sql-config</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/introduction/how-it-works</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/tools/overview</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/tools/seatunnel-mcp</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/tools/seatunnel-skill</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/tools/x2seatunnel</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/calcite</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/calcite-udf</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/common-options</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/copy</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/data-validator</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/define-sink-type</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/dynamic-compile</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/embedding</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/encrypt</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/field-mapper</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/field-rename</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/filter</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/filter-rowkind</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/jsonpath</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/llm</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/metadata</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/multi-table-transform-and-join-boundary</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/python</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/recipes</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/regexextract</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/replace</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/rowkind-extractor</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/split</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/sql</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/sql-functions</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/sql-udf</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/table-filter</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/table-merge</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/table-rename</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/text-chunk</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/transform-faq</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/zh-CN/docs/3.0.0/transforms/transform-multi-table</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
