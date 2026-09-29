@@ -3,9 +3,12 @@ import './index.less';
 import Layout from '@theme/Layout';
 import data from './st_data.json'
 import st_web_data from './st_web_data.json'
+import st_edge_data from './st_edge_data.json'
 
 const getLastPath = path => {
-    if (!path) { return '' }
+    if (!path) {
+        return ''
+    }
 
     return path.substring(path.lastIndexOf('/') + 1)
 }
@@ -48,7 +51,43 @@ export default function () {
                                             <a href={st_item.sourceCode.sha512}>[sha512] {getLastPath(st_item.sourceCode.sha512)}</a>
                                         </td>
                                         <td>
-                                            {st_item.releaseNotes ? <a href={st_item.releaseNotes}>Release Notes</a> : '-'}
+                                            {st_item.releaseNotes ?
+                                                <a href={st_item.releaseNotes}>Release Notes</a> : '-'}
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+                        </tbody>
+                    </table>
+                    <h2>SeaTunnel Edge Agent</h2>
+                    <table className="version-table">
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Version</th>
+                            <th>Binary Distribution</th>
+                            <th>Source Code</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            st_edge_data.map(st_edge_item => {
+                                return (
+                                    <tr key={st_edge_item.version}>
+                                        <td>{st_edge_item.date}</td>
+                                        <td>{st_edge_item.version}</td>
+                                        <td>
+                                            <a href={st_edge_item.binaryDistribution.bin}>[bin] {getLastPath(st_edge_item.binaryDistribution.bin)}</a>
+                                            <a href={st_edge_item.binaryDistribution.asc}>[asc] {getLastPath(st_edge_item.binaryDistribution.asc)}</a>
+                                            <hr/>
+                                            <a href={st_edge_item.binaryDistribution.sha512}>[sha512] {getLastPath(st_edge_item.binaryDistribution.sha512)}</a>
+                                        </td>
+                                        <td>
+                                            <a href={st_edge_item.sourceCode.src}>[src] {getLastPath(st_edge_item.sourceCode.src)}</a>
+                                            <a href={st_edge_item.sourceCode.asc}>[asc] {getLastPath(st_edge_item.sourceCode.asc)}</a>
+                                            <hr/>
+                                            <a href={st_edge_item.sourceCode.sha512}>[sha512] {getLastPath(st_edge_item.sourceCode.sha512)}</a>
                                         </td>
                                     </tr>
                                 )
