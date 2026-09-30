@@ -1,0 +1,170 @@
+{
+  "version.label": {
+    "message": "3.0.0",
+    "description": "The label for version 3.0.0"
+  },
+  "sidebar.docs.category.Introduction": {
+    "message": "认识 SeaTunnel",
+    "description": "The label for category Introduction in sidebar docs"
+  },
+  "sidebar.docs.category.Concepts": {
+    "message": "核心概念",
+    "description": "The label for category Concepts in sidebar docs"
+  },
+  "sidebar.docs.category.Configuration": {
+    "message": "基础配置",
+    "description": "The label for category Configuration in sidebar docs"
+  },
+  "sidebar.docs.category.Architecture": {
+    "message": "架构与原理",
+    "description": "The label for category Architecture in sidebar docs"
+  },
+  "sidebar.docs.category.Edge Agent": {
+    "message": "Edge Agent",
+    "description": "The label for category Edge Agent in sidebar docs"
+  },
+  "sidebar.docs.category.AI CLI": {
+    "message": "AI CLI",
+    "description": "The label for category AI CLI in sidebar docs"
+  },
+  "sidebar.docs.category.Tools": {
+    "message": "工具",
+    "description": "The label for category Tools in sidebar docs"
+  },
+  "sidebar.docs.category.API Design": {
+    "message": "API 设计",
+    "description": "The label for category API Design in sidebar docs"
+  },
+  "sidebar.docs.category.Engine": {
+    "message": "引擎原理",
+    "description": "The label for category Engine in sidebar docs"
+  },
+  "sidebar.docs.category.Fault Tolerance": {
+    "message": "容错机制",
+    "description": "The label for category Fault Tolerance in sidebar docs"
+  },
+  "sidebar.docs.category.Features": {
+    "message": "关键特性",
+    "description": "The label for category Features in sidebar docs"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "快速上手",
+    "description": "The label for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Locally": {
+    "message": "本地体验",
+    "description": "The label for category Locally in sidebar docs"
+  },
+  "sidebar.docs.category.Docker": {
+    "message": "Docker 体验",
+    "description": "The label for category Docker in sidebar docs"
+  },
+  "sidebar.docs.category.Kubernetes": {
+    "message": "Kubernetes 部署",
+    "description": "The label for category Kubernetes in sidebar docs"
+  },
+  "sidebar.docs.category.Connectors": {
+    "message": "数据连接器",
+    "description": "The label for category Connectors in sidebar docs"
+  },
+  "sidebar.docs.category.Source": {
+    "message": "数据来源",
+    "description": "The label for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Source.link.generated-index.title": {
+    "message": "数据来源连接器",
+    "description": "The generated-index page title for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Source.link.generated-index.description": {
+    "message": "List all source connectors supported by Apache SeaTunnel.",
+    "description": "The generated-index page description for category Source in sidebar docs"
+  },
+  "sidebar.docs.category.Sink": {
+    "message": "数据写入",
+    "description": "The label for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.Sink.link.generated-index.title": {
+    "message": "数据写入连接器",
+    "description": "The generated-index page title for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.Sink.link.generated-index.description": {
+    "message": "List all sink connectors supported by Apache SeaTunnel.",
+    "description": "The generated-index page description for category Sink in sidebar docs"
+  },
+  "sidebar.docs.category.Formats": {
+    "message": "数据格式",
+    "description": "The label for category Formats in sidebar docs"
+  },
+  "sidebar.docs.category.Formats.link.generated-index.title": {
+    "message": "数据格式",
+    "description": "The generated-index page title for category Formats in sidebar docs"
+  },
+  "sidebar.docs.category.Formats.link.generated-index.description": {
+    "message": "List some special formats supported by Apache SeaTunnel.",
+    "description": "The generated-index page description for category Formats in sidebar docs"
+  },
+  "sidebar.docs.category.Common Options": {
+    "message": "通用参数",
+    "description": "The label for category Common Options in sidebar docs"
+  },
+  "sidebar.docs.category.Changelog": {
+    "message": "更新记录",
+    "description": "The label for category Changelog in sidebar docs"
+  },
+  "sidebar.docs.category.Changelog.link.generated-index.title": {
+    "message": "连接器更新记录",
+    "description": "The generated-index page title for category Changelog in sidebar docs"
+  },
+  "sidebar.docs.category.Changelog.link.generated-index.description": {
+    "message": "Changelog for all connectors supported by Apache SeaTunnel.",
+    "description": "The generated-index page description for category Changelog in sidebar docs"
+  },
+  "sidebar.docs.category.Scenario Recipes": {
+    "message": "场景配方",
+    "description": "The label for category Scenario Recipes in sidebar docs"
+  },
+  "sidebar.docs.category.Transforms": {
+    "message": "数据转换",
+    "description": "The label for category Transforms in sidebar docs"
+  },
+  "sidebar.docs.category.Transforms.link.generated-index.title": {
+    "message": "数据转换",
+    "description": "The generated-index page title for category Transforms in sidebar docs"
+  },
+  "sidebar.docs.category.Transforms.link.generated-index.description": {
+    "message": "查看 Apache SeaTunnel 支持的全部数据转换能力，并按场景选择合适的转换插件。",
+    "description": "The generated-index page description for category Transforms in sidebar docs"
+  },
+  "sidebar.docs.category.Engines": {
+    "message": "运行引擎",
+    "description": "The label for category Engines in sidebar docs"
+  },
+  "sidebar.docs.category.SeaTunnel Engine (Zeta)": {
+    "message": "SeaTunnel 自研引擎（Zeta）",
+    "description": "The label for category SeaTunnel Engine (Zeta) in sidebar docs"
+  },
+  "sidebar.docs.category.Deployment": {
+    "message": "部署方式",
+    "description": "The label for category Deployment in sidebar docs"
+  },
+  "sidebar.docs.category.REST API": {
+    "message": "REST API",
+    "description": "The label for category REST API in sidebar docs"
+  },
+  "sidebar.docs.category.REST API and Web UI": {
+    "message": "REST API 与 Web UI",
+    "description": "The label for category REST API and Web UI in sidebar docs"
+  },
+  "sidebar.docs.category.Command": {
+    "message": "命令行",
+    "description": "The label for category Command in sidebar docs"
+  },
+  "sidebar.docs.category.Ecosystem": {
+    "message": "实用工具",
+    "description": "The label for category Ecosystem in sidebar docs"
+  },
+  "sidebar.docs.category.Developer": {
+    "message": "开发者指南",
+    "description": "The label for category Developer in sidebar docs"
+  }
+}
