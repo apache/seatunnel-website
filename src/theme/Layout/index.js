@@ -23,6 +23,12 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 const ASK_AI_TRIGGER_ID = 'st-global-ask-ai-trigger';
 const KAPA_PROJECT_COLOR = '#7db9f5';
 const KAPA_SHADOW_STYLE_ID = 'st-kapa-shadow-overrides';
+const KAPA_MODAL_DISCLAIMER =
+  'This is a custom LLM with access to all [SeaTunnel documentation](https://seatunnel.apache.org/docs/introduction/about).';
+const KAPA_SLACK_PROMPTS = {
+  en: 'If the AI does not solve your problem, join us on Slack for a deeper discussion: [https://s.apache.org/seatunnel-slack](https://s.apache.org/seatunnel-slack).',
+  zh: '如果 AI 没有解决你的问题，欢迎加入 Slack 进行更深入的交流 [https://s.apache.org/seatunnel-slack](https://s.apache.org/seatunnel-slack)',
+};
 
 const KAPA_SHADOW_OVERRIDES = `
   #kapa-widget-root [data-modal-content],
@@ -233,6 +239,7 @@ export default function LayoutWrapper(props) {
       : i18n.currentLocale === 'zh-CN'
         ? 'zh'
         : 'en';
+  const modalDisclaimer = `${KAPA_MODAL_DISCLAIMER} ${KAPA_SLACK_PROMPTS[widgetLanguage]}`;
 
   // Inject the global Ask AI shortcut once so docs pages and custom pages stay consistent.
   return (
@@ -250,7 +257,7 @@ export default function LayoutWrapper(props) {
           data-button-hide="true"
           data-modal-border-radius="34px"
           data-modal-override-open-id-ask-ai={ASK_AI_TRIGGER_ID}
-          data-modal-disclaimer="This is a custom LLM with access to all [SeaTunnel documentation](https://seatunnel.apache.org/docs/introduction/about)."
+          data-modal-disclaimer={modalDisclaimer}
           data-modal-disclaimer-bg-color="#f4fbff"
           data-modal-disclaimer-text-color="#5b6b7e"
           data-query-input-border-color="#d9e8f5"
