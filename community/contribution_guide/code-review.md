@@ -20,6 +20,16 @@ A reviewer may ask for a **second committer review** when they consider a change
 
 If a second committer review has been requested, do not merge the PR until that review is given, even if GitHub reports that the required review check has passed.
 
+For PRs that touch core modules, committers are encouraged to wait at least 24 hours after approval before merging, so that committers in other time zones have a chance to review the change or request a second review. This is a recommendation, not a merge requirement. The core modules are:
+
+- `seatunnel-api`
+- `seatunnel-engine/seatunnel-engine-core`
+- `seatunnel-engine/seatunnel-engine-server`
+- `seatunnel-engine/seatunnel-engine-client`
+- `seatunnel-engine/seatunnel-engine-common`
+- `seatunnel-engine/seatunnel-engine-serializer`
+- `seatunnel-engine/seatunnel-engine-storage`
+
 ## General review checklist
 
 1. Check whether the PR title follows project conventions and accurately describes the change.

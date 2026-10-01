@@ -20,6 +20,16 @@ GitHub 对 `dev` 分支的分支保护要求合并前至少有 1 个 approval。
 
 如果已经要求了第二位 committer review，在该 review 完成之前不要合并，即使 GitHub 显示 review check 已经通过。
 
+对于涉及 core 模块的 PR，建议 committer 在 approval 之后至少等待 24 小时再合并，以便其他时区的 committer 有机会 review 该改动或要求第二位 committer review。这是一项建议，而不是合并的必要条件。core 模块包括：
+
+- `seatunnel-api`
+- `seatunnel-engine/seatunnel-engine-core`
+- `seatunnel-engine/seatunnel-engine-server`
+- `seatunnel-engine/seatunnel-engine-client`
+- `seatunnel-engine/seatunnel-engine-common`
+- `seatunnel-engine/seatunnel-engine-serializer`
+- `seatunnel-engine/seatunnel-engine-storage`
+
 ## 通用评审检查项
 
 1. 检查 PR 标题是否符合项目规范，是否准确表达了改动内容。
