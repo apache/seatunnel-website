@@ -6,15 +6,21 @@
 
 ## 面向 `dev` 分支 PR 的审批规则
 
-GitHub 当前展示的 `dev` 分支合并门槛是只需要 1 个 approval。但这只是全局分支保护的基础要求。
-
-对于**不涉及 core 模块**的 PR，合并基线为：
+GitHub 对 `dev` 分支的分支保护要求合并前至少有 1 个 approval。所有模块都遵循同一合并基线，包括 `seatunnel-api` 和 `seatunnel-engine` 等 core 模块：
 
 1. **1 个 committer approval**
 2. 自动化检查通过，例如 CI、代码风格检查和许可证校验
-3. 在适用的情况下，至少有 1 个 collaborator 或 AI bot review
 
-以下模块被视为 core 模块，因此仍然要求 **2 个 committer approvals** 后才能合并：
+如果 reviewer 认为某个改动风险较高，可以要求**第二位 committer 进行 review**。这取决于 reviewer 的判断，而不是 PR 修改了哪些模块。例如：
+
+- checkpoint 或序列化格式的变更
+- `seatunnel-api` 中公开 API 的变更
+- 通过 [STIP](./STIP.md) 提出的功能
+- 不兼容变更
+
+如果已经要求了第二位 committer review，在该 review 完成之前不要合并，即使 GitHub 显示 review check 已经通过。
+
+对于涉及 core 模块的 PR，建议 committer 在 approval 之后至少等待 24 小时再合并，以便其他时区的 committer 有机会 review 该改动或要求第二位 committer review。这是一项建议，而不是合并的必要条件。core 模块包括：
 
 - `seatunnel-api`
 - `seatunnel-engine/seatunnel-engine-core`
@@ -23,12 +29,6 @@ GitHub 当前展示的 `dev` 分支合并门槛是只需要 1 个 approval。但
 - `seatunnel-engine/seatunnel-engine-common`
 - `seatunnel-engine/seatunnel-engine-serializer`
 - `seatunnel-engine/seatunnel-engine-storage`
-
-其他模块，包括 connectors、transforms、e2e tests、documentation 和 tooling，只要没有修改上面列出的任何 core 模块，就遵循前面的放宽基线。
-
-这条规则按**模块范围**判断，而不是按修改文件数或代码行数判断。只要一个 PR 触及任意 core 模块，整条 PR 就必须遵循 **2 个 committer approvals** 的更严格规则。
-
-由于 GitHub 当前还不能自动按模块范围强制执行这条规则，因此 reviewer 和 committer 需要手动检查改动文件。如果一个 PR 触及了 core 模块，但还没有拿到 2 个 committer approvals，即使 GitHub 显示 review check 已经通过，也不要合并。
 
 ## 通用评审检查项
 
