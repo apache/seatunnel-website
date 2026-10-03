@@ -2771,22 +2771,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://seatunnel.apache.org/docs/connector-v2/source/FacebookAds</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://seatunnel.apache.org/docs/connector-v2/source/GoogleAds</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://seatunnel.apache.org/docs/connector-v2/source/Http-Linear</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://seatunnel.apache.org/docs/connector-v2/source/Salesforce</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -2991,6 +2976,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-facebook-ads</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-fake</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -3082,6 +3072,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-fluss</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-google-ads</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4116,6 +4111,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/FacebookAds</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/FakeSource</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -4147,6 +4147,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/Gitlab</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/GoogleAds</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -4447,6 +4452,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/S3File</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/Salesforce</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

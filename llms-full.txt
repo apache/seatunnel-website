@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1064
+- Total current docs pages: 1068
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -31,10 +31,7 @@
 - https://seatunnel.apache.org/docs/architecture/plugin-discovery-and-class-loading
 - https://seatunnel.apache.org/docs/architecture/table-schema-and-type-system
 - https://seatunnel.apache.org/docs/architecture/transform-plugin-system
-- https://seatunnel.apache.org/docs/connector-v2/source/FacebookAds
-- https://seatunnel.apache.org/docs/connector-v2/source/GoogleAds
 - https://seatunnel.apache.org/docs/connector-v2/source/Http-Linear
-- https://seatunnel.apache.org/docs/connector-v2/source/Salesforce
 - https://seatunnel.apache.org/docs/connectors
 - https://seatunnel.apache.org/docs/connectors/cdc-production-cookbook
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-activemq
@@ -75,6 +72,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-edge-socket
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-elasticsearch
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-email
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-facebook-ads
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-fake
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-base
@@ -94,6 +92,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-file-smb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-firebase
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-fluss
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-google-ads
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-analytics4
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-bigtable
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-google-firestore
@@ -300,6 +299,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Easysearch
 - https://seatunnel.apache.org/docs/connectors/source/EdgeSocket
 - https://seatunnel.apache.org/docs/connectors/source/Elasticsearch
+- https://seatunnel.apache.org/docs/connectors/source/FacebookAds
 - https://seatunnel.apache.org/docs/connectors/source/FakeSource
 - https://seatunnel.apache.org/docs/connectors/source/Firebase
 - https://seatunnel.apache.org/docs/connectors/source/Fluss
@@ -307,6 +307,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/GcsFile
 - https://seatunnel.apache.org/docs/connectors/source/Github
 - https://seatunnel.apache.org/docs/connectors/source/Gitlab
+- https://seatunnel.apache.org/docs/connectors/source/GoogleAds
 - https://seatunnel.apache.org/docs/connectors/source/GoogleAnalytics4
 - https://seatunnel.apache.org/docs/connectors/source/GoogleBigtable
 - https://seatunnel.apache.org/docs/connectors/source/GooglePubSub
@@ -367,6 +368,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Redshift
 - https://seatunnel.apache.org/docs/connectors/source/RocketMQ
 - https://seatunnel.apache.org/docs/connectors/source/S3File
+- https://seatunnel.apache.org/docs/connectors/source/Salesforce
 - https://seatunnel.apache.org/docs/connectors/source/SftpFile
 - https://seatunnel.apache.org/docs/connectors/source/Shopify
 - https://seatunnel.apache.org/docs/connectors/source/Sls
@@ -565,10 +567,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/architecture/plugin-discovery-and-class-loading
 - https://seatunnel.apache.org/zh-CN/docs/architecture/table-schema-and-type-system
 - https://seatunnel.apache.org/zh-CN/docs/architecture/transform-plugin-system
-- https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/FacebookAds
-- https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/GoogleAds
 - https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/Http-Linear
-- https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/Salesforce
 - https://seatunnel.apache.org/zh-CN/docs/connectors
 - https://seatunnel.apache.org/zh-CN/docs/connectors/cdc-production-cookbook
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-activemq
@@ -609,6 +608,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-edge-socket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-elasticsearch
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-email
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-facebook-ads
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-fake
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-base
@@ -628,6 +628,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-file-smb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-firebase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-fluss
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-ads
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-analytics4
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-bigtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-google-firestore
@@ -834,6 +835,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Easysearch
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/EdgeSocket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Elasticsearch
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/FacebookAds
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/FakeSource
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Firebase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Fluss
@@ -841,6 +843,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GcsFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Github
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Gitlab
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleAds
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleAnalytics4
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GoogleBigtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/GooglePubSub
@@ -901,6 +904,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Redshift
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/RocketMQ
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/S3File
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Salesforce
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SftpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Shopify
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Sls
