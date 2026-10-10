@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1068
+- Total current docs pages: 1074
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -163,6 +163,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-tiktok-ads
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-typesense
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-web3j
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-websocket
 - https://seatunnel.apache.org/docs/connectors/common-options/sink-common-options
 - https://seatunnel.apache.org/docs/connectors/common-options/sink-write-modes
 - https://seatunnel.apache.org/docs/connectors/common-options/source-common-options
@@ -279,6 +280,7 @@
 - https://seatunnel.apache.org/docs/connectors/sink/Vertica
 - https://seatunnel.apache.org/docs/connectors/sink/Zendesk
 - https://seatunnel.apache.org/docs/connectors/source
+- https://seatunnel.apache.org/docs/connectors/source/Activemq
 - https://seatunnel.apache.org/docs/connectors/source/Airtable
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDocumentDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDynamoDB
@@ -389,6 +391,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Vertica
 - https://seatunnel.apache.org/docs/connectors/source/Vitess-CDC
 - https://seatunnel.apache.org/docs/connectors/source/Web3j
+- https://seatunnel.apache.org/docs/connectors/source/WebSocket
 - https://seatunnel.apache.org/docs/connectors/source/Zendesk
 - https://seatunnel.apache.org/docs/connectors/type-schema-faq
 - https://seatunnel.apache.org/docs/developer/anydoc-document-parser-poc
@@ -699,6 +702,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-tiktok-ads
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-typesense
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-web3j
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-websocket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/common-options/sink-common-options
 - https://seatunnel.apache.org/zh-CN/docs/connectors/common-options/sink-write-modes
 - https://seatunnel.apache.org/zh-CN/docs/connectors/common-options/source-common-options
@@ -815,6 +819,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Vertica
 - https://seatunnel.apache.org/zh-CN/docs/connectors/sink/Zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Activemq
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Airtable
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDocumentDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDynamoDB
@@ -925,6 +930,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vertica
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vitess-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Web3j
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/WebSocket
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/type-schema-faq
 - https://seatunnel.apache.org/zh-CN/docs/developer/anydoc-document-parser-poc
