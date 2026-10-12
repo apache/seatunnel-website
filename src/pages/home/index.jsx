@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -146,6 +146,18 @@ const HOME_COPY = {
                 'CDC / Exactly-Once',
                 'Schema Evolution',
             ],
+        },
+        communityHelp: {
+            eyebrow: 'Community Help',
+            title: 'Need help with SeaTunnel?',
+            description: 'Join the SeaTunnel Slack community for setup help, connector advice, and answers from users and contributors.',
+            highlights: [
+                'Get help with setup, configuration, and connectors',
+                'Connect with SeaTunnel users and contributors',
+                'Share ideas and help improve SeaTunnel',
+            ],
+            joinSlack: 'Join Slack',
+            close: 'Close community help',
         },
         trust: {
             label: 'Used in production by',
@@ -412,6 +424,18 @@ const HOME_COPY = {
                 'CDC / Exactly-Once',
                 'Schema Evolution',
             ],
+        },
+        communityHelp: {
+            eyebrow: '社区帮助',
+            title: '需要 SeaTunnel 帮助？',
+            description: '加入 SeaTunnel Slack 社区，获取安装、配置和连接器方面的帮助，并与用户和贡献者交流。',
+            highlights: [
+                '咨询安装、配置和连接器问题',
+                '与 SeaTunnel 用户和贡献者交流',
+                '分享想法，一起改进 SeaTunnel',
+            ],
+            joinSlack: '加入 Slack',
+            close: '关闭社区帮助',
         },
         trust: {
             label: '已被以下团队用于生产环境',
@@ -786,6 +810,7 @@ function FeatureIcon({icon}) {
 export default function Home() {
     const {i18n} = useDocusaurusContext();
     const isBrowser = useIsBrowser();
+    const [isCommunityHelpVisible, setIsCommunityHelpVisible] = useState(true);
     const pageRef = useRef(null);
     const heroWarpCanvasRef = useRef(null);
     const ctaWarpCanvasRef = useRef(null);
@@ -808,6 +833,12 @@ export default function Home() {
     const quickStartPath = useBaseUrl(localizePath(language, `/docs/${version}/getting-started/locally/quick-start-seatunnel-engine`));
     const connectorsPath = useBaseUrl(localizePath(language, `/docs/${version}/connectors/source`));
     const logoPath = `${assetRoot}image/logo.png`;
+    const slackIconPath = `${assetRoot}home/icons/slack.svg`;
+
+    function closeCommunityHelp() {
+        setIsCommunityHelpVisible(false);
+    }
+
     useEffect(() => {
         if (!isBrowser || !pageRef.current) {
             return undefined;
@@ -1418,6 +1449,37 @@ export default function Home() {
 
     return (
         <div className="st-home" ref={pageRef}>
+            {isCommunityHelpVisible && (
+                <aside className="st-home-community-help" aria-labelledby="st-home-community-help-title">
+                    <button
+                        type="button"
+                        className="st-home-community-help-close"
+                        onClick={closeCommunityHelp}
+                        aria-label={content.communityHelp.close}
+                    >
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <p className="st-home-community-help-eyebrow">{content.communityHelp.eyebrow}</p>
+                    <h2 id="st-home-community-help-title" className="st-home-community-help-title">
+                        {content.communityHelp.title}
+                    </h2>
+                    <p className="st-home-community-help-description">{content.communityHelp.description}</p>
+                    <ul className="st-home-community-help-list">
+                        {content.communityHelp.highlights.map((highlight) => (
+                            <li key={highlight}>{highlight}</li>
+                        ))}
+                    </ul>
+                    <a
+                        className="st-home-community-help-button"
+                        href={SLACK_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src={slackIconPath} alt="" aria-hidden="true" />
+                        <span>{content.communityHelp.joinSlack}</span>
+                    </a>
+                </aside>
+            )}
             <section className="st-home-hero">
                 <div className="st-home-orb st-home-orb-1"></div>
                 <div className="st-home-orb st-home-orb-2"></div>
