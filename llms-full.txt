@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1074
+- Total current docs pages: 1076
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -371,6 +371,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/RocketMQ
 - https://seatunnel.apache.org/docs/connectors/source/S3File
 - https://seatunnel.apache.org/docs/connectors/source/Salesforce
+- https://seatunnel.apache.org/docs/connectors/source/Sentry
 - https://seatunnel.apache.org/docs/connectors/source/SftpFile
 - https://seatunnel.apache.org/docs/connectors/source/Shopify
 - https://seatunnel.apache.org/docs/connectors/source/Sls
@@ -910,6 +911,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/RocketMQ
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/S3File
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Salesforce
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Sentry
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/SftpFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Shopify
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Sls
