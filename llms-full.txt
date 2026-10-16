@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1076
+- Total current docs pages: 1082
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -103,6 +103,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hive
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-airtable
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-asana
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-base
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-feishu
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-github
@@ -285,6 +286,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDocumentDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonSqs
+- https://seatunnel.apache.org/docs/connectors/source/Asana
 - https://seatunnel.apache.org/docs/connectors/source/AzureCosmosDB
 - https://seatunnel.apache.org/docs/connectors/source/AzureEventHubs
 - https://seatunnel.apache.org/docs/connectors/source/AzureQueueStorage
@@ -406,6 +408,7 @@
 - https://seatunnel.apache.org/docs/developer/how-to-create-your-connector
 - https://seatunnel.apache.org/docs/developer/merge-queue
 - https://seatunnel.apache.org/docs/developer/new-license
+- https://seatunnel.apache.org/docs/developer/postgres-cdc-bounded-read-audit
 - https://seatunnel.apache.org/docs/developer/setup
 - https://seatunnel.apache.org/docs/developer/shade-guide
 - https://seatunnel.apache.org/docs/developer/sink-connector-development
@@ -643,6 +646,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hive
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-airtable
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-asana
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-base
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-feishu
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-github
@@ -825,6 +829,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDocumentDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonSqs
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Asana
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureCosmosDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureEventHubs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureQueueStorage
@@ -946,6 +951,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/developer/how-to-create-your-connector
 - https://seatunnel.apache.org/zh-CN/docs/developer/merge-queue
 - https://seatunnel.apache.org/zh-CN/docs/developer/new-license
+- https://seatunnel.apache.org/zh-CN/docs/developer/postgres-cdc-bounded-read-audit
 - https://seatunnel.apache.org/zh-CN/docs/developer/setup
 - https://seatunnel.apache.org/zh-CN/docs/developer/shade-guide
 - https://seatunnel.apache.org/zh-CN/docs/developer/sink-connector-development
