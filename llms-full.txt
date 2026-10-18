@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1082
+- Total current docs pages: 1086
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -108,6 +108,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-feishu
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-github
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-gitlab
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-intercom
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-jira
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-klaviyo
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-lemlist
@@ -326,6 +327,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/HugeGraph
 - https://seatunnel.apache.org/docs/connectors/source/Iceberg
 - https://seatunnel.apache.org/docs/connectors/source/InfluxDB
+- https://seatunnel.apache.org/docs/connectors/source/Intercom
 - https://seatunnel.apache.org/docs/connectors/source/IoTDB
 - https://seatunnel.apache.org/docs/connectors/source/IoTDBv2
 - https://seatunnel.apache.org/docs/connectors/source/Jdbc
@@ -651,6 +653,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-feishu
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-github
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-gitlab
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-intercom
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-jira
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-klaviyo
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-lemlist
@@ -869,6 +872,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/HugeGraph
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Iceberg
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/InfluxDB
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Intercom
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/IoTDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/IoTDBv2
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Jdbc

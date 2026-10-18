@@ -3156,6 +3156,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-intercom</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://seatunnel.apache.org/docs/connectors/changelog/connector-http-jira</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -4242,6 +4247,11 @@
   </url>
   <url>
     <loc>https://seatunnel.apache.org/docs/connectors/source/InfluxDB</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://seatunnel.apache.org/docs/connectors/source/Intercom</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
