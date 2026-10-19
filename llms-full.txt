@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1086
+- Total current docs pages: 1110
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -31,7 +31,6 @@
 - https://seatunnel.apache.org/docs/architecture/plugin-discovery-and-class-loading
 - https://seatunnel.apache.org/docs/architecture/table-schema-and-type-system
 - https://seatunnel.apache.org/docs/architecture/transform-plugin-system
-- https://seatunnel.apache.org/docs/connector-v2/source/Http-Linear
 - https://seatunnel.apache.org/docs/connectors
 - https://seatunnel.apache.org/docs/connectors/cdc-production-cookbook
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-activemq
@@ -112,6 +111,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-jira
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-klaviyo
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-lemlist
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-linear
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-myhours
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-notion
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-onesignal
@@ -121,6 +121,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-shopify
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-splunk
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-stripe
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-typeform
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-wechat
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hudi
@@ -324,6 +325,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Hive
 - https://seatunnel.apache.org/docs/connectors/source/HiveJdbc
 - https://seatunnel.apache.org/docs/connectors/source/Http
+- https://seatunnel.apache.org/docs/connectors/source/Http-Linear
 - https://seatunnel.apache.org/docs/connectors/source/HugeGraph
 - https://seatunnel.apache.org/docs/connectors/source/Iceberg
 - https://seatunnel.apache.org/docs/connectors/source/InfluxDB
@@ -392,6 +394,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/TDengine
 - https://seatunnel.apache.org/docs/connectors/source/TiDB-CDC
 - https://seatunnel.apache.org/docs/connectors/source/TikTokAds
+- https://seatunnel.apache.org/docs/connectors/source/Typeform
 - https://seatunnel.apache.org/docs/connectors/source/Typesense
 - https://seatunnel.apache.org/docs/connectors/source/Vertica
 - https://seatunnel.apache.org/docs/connectors/source/Vitess-CDC
@@ -465,6 +468,15 @@
 - https://seatunnel.apache.org/docs/engines/zeta/user-command
 - https://seatunnel.apache.org/docs/engines/zeta/web-ui
 - https://seatunnel.apache.org/docs/faq
+- https://seatunnel.apache.org/docs/getting-started/application/cli
+- https://seatunnel.apache.org/docs/getting-started/application/kubernetes/architecture
+- https://seatunnel.apache.org/docs/getting-started/application/kubernetes/checkpoint-recovery
+- https://seatunnel.apache.org/docs/getting-started/application/kubernetes/commands
+- https://seatunnel.apache.org/docs/getting-started/application/kubernetes/configuration
+- https://seatunnel.apache.org/docs/getting-started/application/kubernetes/faq
+- https://seatunnel.apache.org/docs/getting-started/application/kubernetes/overview
+- https://seatunnel.apache.org/docs/getting-started/application/kubernetes/quick-start
+- https://seatunnel.apache.org/docs/getting-started/application/overview
 - https://seatunnel.apache.org/docs/getting-started/docker
 - https://seatunnel.apache.org/docs/getting-started/job-configuration-guide
 - https://seatunnel.apache.org/docs/getting-started/kubernetes
@@ -576,7 +588,6 @@
 - https://seatunnel.apache.org/zh-CN/docs/architecture/plugin-discovery-and-class-loading
 - https://seatunnel.apache.org/zh-CN/docs/architecture/table-schema-and-type-system
 - https://seatunnel.apache.org/zh-CN/docs/architecture/transform-plugin-system
-- https://seatunnel.apache.org/zh-CN/docs/connector-v2/source/Http-Linear
 - https://seatunnel.apache.org/zh-CN/docs/connectors
 - https://seatunnel.apache.org/zh-CN/docs/connectors/cdc-production-cookbook
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-activemq
@@ -657,6 +668,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-jira
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-klaviyo
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-lemlist
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-linear
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-myhours
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-notion
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-onesignal
@@ -666,6 +678,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-shopify
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-splunk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-stripe
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-typeform
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-wechat
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hudi
@@ -869,6 +882,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Hive
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/HiveJdbc
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Http
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Http-Linear
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/HugeGraph
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Iceberg
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/InfluxDB
@@ -937,6 +951,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/TDengine
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/TiDB-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/TikTokAds
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Typeform
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Typesense
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vertica
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vitess-CDC
@@ -1010,6 +1025,15 @@
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/user-command
 - https://seatunnel.apache.org/zh-CN/docs/engines/zeta/web-ui
 - https://seatunnel.apache.org/zh-CN/docs/faq
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/cli
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/kubernetes/architecture
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/kubernetes/checkpoint-recovery
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/kubernetes/commands
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/kubernetes/configuration
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/kubernetes/faq
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/kubernetes/overview
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/kubernetes/quick-start
+- https://seatunnel.apache.org/zh-CN/docs/getting-started/application/overview
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/docker
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/job-configuration-guide
 - https://seatunnel.apache.org/zh-CN/docs/getting-started/kubernetes
