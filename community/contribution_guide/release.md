@@ -34,7 +34,7 @@ Use the same release version, tag and commit for Maven artifacts and distributio
 Read the [shared version and Maven preparation](#prepare-release-version-and-maven-artifacts-shared) first.
 Then choose exactly one [archive distribution route](#stage-and-publish-release-archives-choose-one-route).
 Choosing ATR does not remove the Maven staging/publication steps. Do not move the same candidate through SVN
-manually after ATR publishes it. See https://releases.apache.org/docs/moving-to-atr.
+manually after ATR publishes it. See the official [ATR migration guide](https://releases.apache.org/docs/moving-to-atr).
 
 ## Environment Preparation
 If this is the first time for a publisher to publish, you need to install the necessary environment, including the signature tool GnuPG and Maven repository certification-related preparations.
@@ -45,7 +45,7 @@ Use to clone project source code locally.
 ### Install GPG
 Used to generate a digital signature, leaving a trail of every action you take. Apache's maven and SVN repositories both use GPG signatures to verify the validity of files.
 
-Download GnuPG binary releases from https://www.gnupg.org/download/index.html.
+Download GnuPG binary releases from [the official GnuPG website](https://www.gnupg.org/download/index.html).
 
 Note: The commands of 1. x and 2. x versions of GnuPG are slightly different. The following description takes 2.2.28 as an example. After the installation, the GPG command is added to the system environment variable and is available.
 ```bash
@@ -159,7 +159,7 @@ You can use the following two methods to verify whether the key is uploaded prop
 gpg --keyserver keyserver.ubuntu.com --search-keys 0983DF85
 ```
 - Website verification
-http://keyserver.ubuntu.com/
+[OpenPGP Keyserver (ubuntu.com)](http://keyserver.ubuntu.com/)
 ![](/image/20230324/20221228223258.png)
 ![](/image/20230324/20221228223313.png)
 Tips: This screenshot is the key that has been uploaded before. 
@@ -309,7 +309,7 @@ mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Du
 > ** Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.**
 
 - Close the stage repository
-https://repository.apache.org/#stagingRepositories
+[https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
 ![](/image/20230324/20221228225445.png)
 
 ## Stage and publish release archives: choose one route
@@ -328,17 +328,17 @@ Complete the shared Git/version and Maven staging steps first. Use the release-t
 
 1. Before releasing, contact a SeaTunnel PMC member to designate you as a **Release Manager** in ATR.
    PMC members already have this role; non-PMC committers must be designated by a PMC member.
-   See https://releases.apache.org/docs/release-manager-setup.
+   See [Release manager setup](https://releases.apache.org/docs/release-manager-setup).
 2. Complete [Configure ATR credentials](#configure-atr-credentials) below.
 3. Select the local GnuPG signing key and confirm its public key is in the committee's `KEYS` file.
-4. Before running the commands below, sign in to https://releases.apache.org/ and create a version
+4. Before running the commands below, sign in to [ATR](https://releases.apache.org/) and create a version
    under the `seatunnel` project. Its version number must exactly match the release version in the POM
    and it must be in the composing state.
 
 ##### Configure ATR credentials
 
 1. Sign in with your ASF account and generate a **Personal Access Token (PAT)** at
-   https://releases.apache.org/tokens.
+   [ATR tokens](https://releases.apache.org/tokens).
 2. Optionally encrypt the PAT with Maven, reusing the `~/.m2/settings-security.xml` configured above:
 
    ```bash
@@ -361,7 +361,7 @@ The username is the same ASF/LDAP login username used for the Maven repository s
 
 #### Dry run
 
-First create the matching release version at https://releases.apache.org/ as described above.
+First create the matching release version in [ATR](https://releases.apache.org/) as described above.
 Then run from the release checkout root:
 
 ```bash
@@ -417,7 +417,7 @@ with their `.asc` and `.sha512` files from `seatunnel-dist/target`.
 
 #### Upload with rsync
 
-First register your **SSH public key** at https://releases.apache.org/keys and configure
+First register your **SSH public key** on the [ATR keys page](https://releases.apache.org/keys) and configure
 your local SSH client to use that key. This is an SSH authentication key, separate from the GPG signing key.
 
 Set `YOUR_FILES` to a directory containing only the release archives and their `.asc` and `.sha512` files,
@@ -435,13 +435,13 @@ rsync -av -e 'ssh -p 2222' "${YOUR_FILES}/" "${ASF_USERNAME}@releases.apache.org
 3. Start the mailing-list vote through ATR, linking to that candidate revision, release notes, commit/tag and `KEYS`.
 4. Keep the vote open for at least 72 hours and verify the binding-vote tally before resolving it.
 
-See https://releases.apache.org/docs/staging-and-voting.
+See [Staging and voting](https://releases.apache.org/docs/staging-and-voting).
 
 #### Publish
 
 After the vote passes, publish the approved candidate from ATR's finish page. Confirm the official download
 URLs are available, then continue with the shared Maven repository, image and website steps below.
-Do not also run the SVN move for this candidate. See https://releases.apache.org/docs/promoting-to-release.
+Do not also run the SVN move for this candidate. See [Promoting to release](https://releases.apache.org/docs/promoting-to-release).
 
 
 ### SVN distribution route
@@ -519,7 +519,7 @@ svn --username=${APACHE LDAP USERNAME} commit -m "release ${RELEASE.VERSION}"
 #### Vote by mail (SVN workflow only)
 
 The manual email steps below apply only to the SVN workflow. For ATR releases, start and resolve the vote
-at https://releases.apache.org/; ATR handles the corresponding mailing-list messages.
+in the [ATR system](https://releases.apache.org/); ATR handles the corresponding mailing-list messages.
 Do not send duplicate vote or result emails manually.
 ##### dev@seatunnel.apache.org Voting
 ###### Voting initiate
