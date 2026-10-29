@@ -319,22 +319,19 @@ mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Du
 
 ## ATR distribution workflow
 
-Use the archives produced by the shared release build from the same release tag and commit.
-
 ### Prepare ATR
 
-1. Contact a SeaTunnel PMC member to designate you as a **Release Manager** in ATR.
-   PMC members already have this role; non-PMC committers must be designated by a PMC member.
-   See [Release manager setup](https://releases.apache.org/docs/release-manager-setup).
-2. Add your GPG public key on the [ATR keys page](https://releases.apache.org/keys) and confirm it is in the
-   committee's `KEYS` file.
-3. Sign in to [ATR](https://releases.apache.org/) with your ASF account and create a version under
-   `seatunnel`. Its version must match the release version in the POM and its state must be **Composing**.
+1. If you are not on the PMC, ask a PMC member to designate you as a
+   [Release Manager](https://releases.apache.org/docs/release-manager-setup).
+2. Register your GPG public key on the [ATR keys page](https://releases.apache.org/keys) and include it in
+   the committee's `KEYS` file.
+3. Sign in to [ATR](https://releases.apache.org/) and create a `seatunnel` version matching the POM's release
+   version. It must be **Composing** before uploading.
 
 ### Sign the ATR candidate
 
-Copy the release archives from the release build's `seatunnel-dist/target` into a clean candidate directory.
-Reuse their `.asc` and `.sha512` files if the build already generated them. Otherwise, run from that directory:
+Copy the archives and any existing `.asc`/`.sha512` files from `seatunnel-dist/target` into a clean directory.
+If needed, generate signatures and checksums there:
 
 ```bash
 # For terminal-based GPG passphrase prompts, select the current terminal.
@@ -345,22 +342,20 @@ for archive in *.tar.gz; do
 done
 ```
 
-When prompted, enter your **GPG Signing Key Passphrase**, set when creating the signing key.
+Enter your **GPG Signing Key Passphrase** when prompted.
 
 ### Upload the ATR candidate
 
 #### Upload through the website
 
-Open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}`, select **Upload files**,
-and upload the archives with their `.asc` and `.sha512` files.
+Open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}` and use **Upload files** to upload
+the archives with their `.asc` and `.sha512` files.
 
 #### Upload with rsync
 
-First register your **SSH public key** on the [ATR keys page](https://releases.apache.org/keys) and configure
-your local SSH client to use it. This is an SSH authentication key, separate from the GPG signing key.
-
-Set `YOUR_FILES` to a directory containing only the release archives and their signature/checksum files,
-and `ASF_USERNAME` to your ASF login username. Replace `${RELEASE.VERSION}` with the release version:
+Register your **SSH public key** on the [ATR keys page](https://releases.apache.org/keys) and configure SSH
+to use it. Set `YOUR_FILES` to a directory containing only the candidate archives, signatures and checksums;
+`ASF_USERNAME` is your ASF username.
 
 ```bash
 # ATR SSH listens on port 2222 and authenticates with the registered SSH key.
@@ -369,28 +364,25 @@ rsync -av -e 'ssh -p 2222' "${YOUR_FILES}/" "${ASF_USERNAME}@releases.apache.org
 
 #### Retry an interrupted or failed upload
 
-While the draft is still composing, open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}`
-and remove failed or incomplete uploads. Upload the existing files again through the website or rsync.
-If the files have not changed, no rebuild or signing is needed.
+On the **Composing** page, remove failed or incomplete uploads and resend the existing files through the
+website or rsync. Unchanged files need no rebuild or signing.
 
 ### Validate the ATR candidate
 
-Check that all expected archives, signatures and checksums are present, then review ATR's automated checks.
+Confirm the file list and automated check results in ATR.
 
-Open the [ATR download page](https://releases.apache.org/download/all/seatunnel) from the candidate being
-reviewed and confirm its version and revision match the candidate under vote. Download and extract the ZIP,
-or use the page's Curl, Rsync or Wget commands to download into a new empty directory.
+Download from the [ATR download page](https://releases.apache.org/download/all/seatunnel), checking that the
+version and revision match the vote. Extract the ZIP or use the page's download commands in a new empty directory.
 
-If the signing key is not already in your local GPG keyring, import the committee's public keys first:
+Import the signing key if it is absent from your local GPG keyring:
 
 ```bash
 curl -fsS https://downloads.apache.org/seatunnel/KEYS -o KEYS
 gpg --import KEYS
 ```
 
-Verify the full signing-key fingerprint against the release manager and committee `KEYS`.
-Then run from the directory containing the downloaded archives and their signature/checksum files.
-This checks both SeaTunnel and Edge Agent when they are included in the candidate:
+Check the full signing-key fingerprint against the release manager and committee `KEYS`, then verify
+the downloaded archives from that directory:
 
 ```bash
 for archive in *.tar.gz; do
@@ -399,22 +391,19 @@ for archive in *.tar.gz; do
 done
 ```
 
-Inspect source/binary contents and `LICENSE`/`NOTICE`, and complete the project's functional and upgrade
-validation. Preserve the candidate revision and hashes. Do not modify candidate files while a vote is open.
+Inspect archive contents and `LICENSE`/`NOTICE`, and complete functional and upgrade validation.
+Record the revision and hashes; do not modify the candidate during voting.
 
 ### Vote and publish through ATR
 
-1. Start the vote through ATR, linking to the pinned candidate revision, release notes, commit/tag and `KEYS`.
-2. Keep the vote open for at least 72 hours and verify the binding-vote tally before resolving it.
-3. After the vote passes, publish the approved candidate from ATR's Finish page and confirm the official
-   download URLs are available.
+1. Start the vote in ATR with the pinned candidate revision, release notes, commit/tag and `KEYS`.
+2. Keep voting open for at least 72 hours and verify the binding-vote tally before resolving it.
+3. After approval, publish from **Finish** and confirm the official download URLs.
 4. Complete [Release Maven Repository](#release-maven-repository),
    [Generate website document](#generate-website-document) and [Something After Release](#something-after-release).
-   Publish any release images from the same approved version and source commit, and use ATR's announcement handling.
+   Use ATR's announcement handling.
 
-ATR handles the vote, result and announcement messages; do not send the manual SVN email templates again.
-ATR also publishes the approved archives to the ASF distribution area, so no manual SVN move is needed.
-See [Staging and voting](https://releases.apache.org/docs/staging-and-voting) and
+Details: [Staging and voting](https://releases.apache.org/docs/staging-and-voting) and
 [Promoting to release](https://releases.apache.org/docs/promoting-to-release).
 
 <a id="upload-to-svn"></a>
