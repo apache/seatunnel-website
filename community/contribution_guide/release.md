@@ -383,6 +383,19 @@ When the signing prompt appears during command execution, enter your **GPG Signi
 mvn -Prelease-atr -DskipTests -Dskip.spotless=true -Datr.dryRun=false package
 ```
 
+#### Package and sign, then upload through the website
+
+To package and sign without uploading through the Maven plugin, run:
+
+```bash
+# atr.skip=true: skip ATR draft checks and uploads; packaging, checksums and GPG signing still run.
+mvn -Prelease-atr -DskipTests -Dskip.spotless=true -Datr.skip=true package
+```
+
+Open the version's [ATR compose page](https://releases.apache.org/compose/seatunnel/%7Bversion%7D)
+(replace `{version}` with the release version), select **Upload files**, and upload the generated archives
+with their `.asc` and `.sha512` files from `seatunnel-dist/target`.
+
 #### Retry an interrupted or failed upload
 
 > ATR JWTs expire after 30 minutes. A long build can leave the token obtained before packaging expired at upload time.
