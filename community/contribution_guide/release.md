@@ -387,6 +387,21 @@ When the signing prompt appears during command execution, enter your **GPG Signi
 mvn -Prelease-atr -DskipTests -Dskip.spotless=true -Datr.dryRun=false package
 ```
 
+###### Retry an interrupted or failed upload
+
+> ATR JWTs expire after 30 minutes. A long build can leave the token obtained before packaging expired at upload time.
+> If upload fails with `Token has expired`, use the upload-only command below in a new Maven invocation to obtain a fresh JWT without repackaging.
+
+If the archives, signatures and checksums are complete in `seatunnel-dist/target` and the ATR draft is still
+composing, first open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}`
+and remove the failed or incomplete uploads.
+Then run from the repository root to skip packaging and re-upload:
+
+```bash
+# Re-upload existing files without compiling, packaging or signing again.
+mvn -N -f seatunnel-dist/pom.xml -Prelease-atr -Datr.dryRun=false atr:check-composing atr:upload@atr-upload-distributions
+```
+
 ##### Package and sign, then upload through the website
 
 To package and sign without uploading through the Maven plugin, run:
@@ -411,21 +426,6 @@ and `ASF_USERNAME` to your ASF login username. Replace `${RELEASE.VERSION}` with
 ```bash
 # ATR SSH listens on port 2222 and authenticates with the registered SSH key.
 rsync -av -e 'ssh -p 2222' "${YOUR_FILES}/" "${ASF_USERNAME}@releases.apache.org:/seatunnel/${RELEASE.VERSION}/"
-```
-
-#### Retry an interrupted or failed upload
-
-> ATR JWTs expire after 30 minutes. A long build can leave the token obtained before packaging expired at upload time.
-> If upload fails with `Token has expired`, use the upload-only command below in a new Maven invocation to obtain a fresh JWT without repackaging.
-
-If the archives, signatures and checksums are complete in `seatunnel-dist/target` and the ATR draft is still
-composing, first open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}`
-and remove the failed or incomplete uploads.
-Then run from the repository root to skip packaging and re-upload:
-
-```bash
-# Re-upload existing files without compiling, packaging or signing again.
-mvn -N -f seatunnel-dist/pom.xml -Prelease-atr -Datr.dryRun=false atr:check-composing atr:upload@atr-upload-distributions
 ```
 
 #### Validate and vote
