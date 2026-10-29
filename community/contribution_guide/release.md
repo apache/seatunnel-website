@@ -26,7 +26,7 @@ Use the same release version, tag and commit for Maven artifacts and distributio
 | --- | --- | --- |
 | Prepare versions, commits and tags | Shared `release:prepare` process | Same shared process |
 | Build and stage Maven artifacts | Shared `release:perform` process | Same shared process |
-| Stage source/binary release archives | Upload signed archives to SVN `dist/dev` | Build, sign and upload with `release-atr` to ATR compose |
+| Stage source/binary release archives | Upload signed archives to SVN `dist/dev` | Upload signed archives through the ATR website or rsync |
 | Vote on the archive candidate | Link to the SVN candidate | Link to a pinned ATR candidate revision |
 | Publish approved archives | Move from SVN `dist/dev` to `dist/release` | Publish through ATR to the ASF distribution area |
 | Publish Maven staging, images and website updates | Shared post-vote steps | Same shared steps |
@@ -172,9 +172,7 @@ Used to generate and verify SHA-512 checksums for files.
 
 ### Maven and release preparation
 
-Use a supported SeaTunnel JDK, such as JDK 17. The ATR plugin requires Maven **3.9.0 or newer**; the project
-Maven Wrapper uses 3.8.4, so select a separate Maven installation for ATR. The original workflow can continue
-using its existing tooling.
+Use the JDK and Maven versions supported by the SeaTunnel version being released.
 
 For either workflow, agree the release scope with the community, prepare the release checkout and notes,
 update the connector change log, complete the required validation and record the exact release commit/tag.
@@ -190,8 +188,7 @@ versions and identities must be replaced with the actual release values.
 and deploys the Maven artifacts to the configured staging repository. Keep the staging repository and release
 tag/commit URLs for reviewers. Final publication of that staging repository happens only after approval.
 
-`-DdryRun=true` controls the Release Plugin's SCM preparation; it does not control ATR upload.
-The archive route later uses the separate `-Datr.dryRun` switch.
+`-DdryRun=true` previews the Release Plugin's SCM preparation.
 
 ### Maven repository credentials
 Used to compile the project.
@@ -319,103 +316,46 @@ source/binary archive candidate. Candidate validation, binding-vote requirements
 
 ### ATR distribution route
 
-> **Requires Maven 3.9.0 or newer.** Use a compatible Maven installation instead of the project's Maven Wrapper (3.8.4).
-
-Complete the shared Git/version and Maven staging steps first. Use the release-tag checkout containing
-`release-atr`, with a non-SNAPSHOT POM version. This route replaces SVN archive distribution.
+Complete the shared Git/version and Maven staging steps first. Use the archives built from the same release
+tag and commit. Upload them to ATR, then manage the vote and publication in the ATR website.
 
 #### Prepare
 
 1. Before releasing, contact a SeaTunnel PMC member to designate you as a **Release Manager** in ATR.
    PMC members already have this role; non-PMC committers must be designated by a PMC member.
    See [Release manager setup](https://releases.apache.org/docs/release-manager-setup).
-2. Complete [Configure ATR credentials](#configure-atr-credentials) below.
-3. Select the local GnuPG signing key and confirm its public key is in the committee's `KEYS` file.
-4. Before running the commands below, sign in to [ATR](https://releases.apache.org/) and create a version
+2. Add your GPG public key on the [ATR keys page](https://releases.apache.org/keys) and confirm it is in the
+   committee's `KEYS` file.
+3. Sign in to [ATR](https://releases.apache.org/) with your ASF account and create a version
    under the `seatunnel` project. Its version number must exactly match the release version in the POM
    and it must be in the composing state.
 
-##### Configure ATR credentials
+#### Sign the candidate
 
-1. Sign in with your ASF account and generate a **Personal Access Token (PAT)** at
-   [ATR tokens](https://releases.apache.org/tokens).
-2. Optionally encrypt the PAT with Maven, reusing the `~/.m2/settings-security.xml` configured above:
-
-   ```bash
-   mvn --encrypt-password
-   ```
-
-   Enter the ATR token at the `Password:` prompt and retain the complete encrypted output, including `{...}`.
-3. Add this server to the existing `<servers>` section in `~/.m2/settings.xml`:
-
-   ```xml
-   <server>
-     <id>apache.atr</id>
-     <username> <!-- APACHE LDAP USERNAME --> </username>
-     <password> <!-- ATR PERSONAL ACCESS TOKEN, optionally encrypted in the previous step --> </password>
-   </server>
-   ```
-
-The username is the same ASF/LDAP login username used for the Maven repository servers. The password is the
-**ATR token**, not the ASF/LDAP password or GPG passphrase. If using `-s`, add the entry to that settings file.
-
-#### Dry run
-
-First create the matching release version in [ATR](https://releases.apache.org/) as described above.
-Then run from the release checkout root:
+Copy the release archives from the release build's `seatunnel-dist/target` into a clean candidate directory.
+If the build already produced their `.asc` and `.sha512` files, copy and reuse those files too. Otherwise,
+run the following from the candidate directory to generate them:
 
 ```bash
-# Allow up to 4 GB of heap for Maven; adjust for available memory if Java heap space occurs.
-export MAVEN_OPTS="${MAVEN_OPTS:-} -Xmx4g"
 # For terminal-based GPG passphrase prompts, select the current terminal.
 export GPG_TTY="$(tty)"
-# skipTests / skip.spotless: skip tests and formatting checks already completed.
-# atr.dryRun=true: build and sign normally, but simulate ATR checks and uploads.
-mvn -Prelease-atr -DskipTests -Dskip.spotless=true -Datr.dryRun=true package
+for archive in *.tar.gz; do
+  gpg --armor --detach-sign "$archive" || exit 1
+  shasum -a 512 "$archive" > "$archive.sha512" || exit 1
+done
 ```
 
-Builds both distributions and generates signatures/checksums without uploading.
-When the signing prompt appears during command execution, enter your **GPG Signing Key Passphrase**
-(the password set when creating the GPG signing key).
+When prompted, enter your **GPG Signing Key Passphrase** (the password set when creating the GPG signing key).
 
 #### Upload the candidate
 
-##### Upload with the Maven plugin
-
-```bash
-# atr.dryRun=false: build, sign and actually upload the candidate to ATR.
-mvn -Prelease-atr -DskipTests -Dskip.spotless=true -Datr.dryRun=false package
-```
-
-###### Retry an interrupted or failed upload
-
-> ATR JWTs expire after 30 minutes. A long build can leave the token obtained before packaging expired at upload time.
-> If upload fails with `Token has expired`, use the upload-only command below in a new Maven invocation to obtain a fresh JWT without repackaging.
-
-If the archives, signatures and checksums are complete in `seatunnel-dist/target` and the ATR draft is still
-composing, first open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}`
-and remove the failed or incomplete uploads.
-Then run from the repository root to skip packaging and re-upload:
-
-```bash
-# Re-upload existing files without compiling, packaging or signing again.
-mvn -N -f seatunnel-dist/pom.xml -Prelease-atr -Datr.dryRun=false atr:check-composing atr:upload@atr-upload-distributions
-```
-
-##### Package and sign, then upload through the website
-
-To package and sign without uploading through the Maven plugin, run:
-
-```bash
-# atr.skip=true: skip ATR draft checks and uploads; packaging, checksums and GPG signing still run.
-mvn -Prelease-atr -DskipTests -Dskip.spotless=true -Datr.skip=true package
-```
+##### Upload through the website
 
 Open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}`,
-select **Upload files**, and upload the generated archives
-with their `.asc` and `.sha512` files from `seatunnel-dist/target`.
+select **Upload files**, and upload the release archives with their `.asc` and `.sha512` files
+from the candidate directory.
 
-#### Upload with rsync
+##### Upload with rsync
 
 First register your **SSH public key** on the [ATR keys page](https://releases.apache.org/keys) and configure
 your local SSH client to use that key. This is an SSH authentication key, separate from the GPG signing key.
@@ -427,6 +367,12 @@ and `ASF_USERNAME` to your ASF login username. Replace `${RELEASE.VERSION}` with
 # ATR SSH listens on port 2222 and authenticates with the registered SSH key.
 rsync -av -e 'ssh -p 2222' "${YOUR_FILES}/" "${ASF_USERNAME}@releases.apache.org:/seatunnel/${RELEASE.VERSION}/"
 ```
+
+##### Retry an interrupted or failed upload
+
+While the draft is still composing, open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}`
+and remove failed or incomplete uploads. Upload the existing archives, signatures and checksums again through
+the website or rsync. If the files have not changed, no rebuild or signing is needed.
 
 #### Validate and vote
 
