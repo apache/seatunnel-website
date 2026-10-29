@@ -321,7 +321,7 @@ mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Du
 
 ### Prepare ATR
 
-1. If you are not on the PMC, ask a PMC member to designate you as a
+1. If you do not have release permissions in ATR, ask a PMC member to designate you as a
    [Release Manager](https://releases.apache.org/docs/release-manager-setup).
 2. Register your GPG public key on the [ATR keys page](https://releases.apache.org/keys) and include it in
    the committee's `KEYS` file.
