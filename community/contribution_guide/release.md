@@ -639,10 +639,20 @@ svn mv https://dist.apache.org/repos/dist/dev/seatunnel/${RELEASE.VERSION} https
 
 ## Candidate validation
 
-Use the same checks for either workflow: verify signatures and SHA-512 checksums, inspect source/binary
-contents and LICENSE/NOTICE files, and complete the project's functional and upgrade validation. For an ATR
-vote, fetch the exact pinned revision from ATR; for the original workflow, fetch the candidate from SVN.
-Verify the signing-key fingerprint against the release manager and committee `KEYS` before relying on it.
+### Download the candidate
+
+- **ATR:** Open the [ATR download page](https://releases.apache.org/download/all/seatunnel) and confirm the
+  displayed release version and candidate match the vote. Download the ZIP archive and extract it, or use
+  the Curl, Rsync or Wget command provided on that page to download into a new empty directory.
+- **SVN:** Download the archives and their `.asc` and `.sha512` files from
+  `https://dist.apache.org/repos/dist/dev/seatunnel/${RELEASE.VERSION}/`.
+
+### Verify the downloaded files (ATR and SVN)
+
+Enter the directory containing the downloaded archives, `.asc` signatures and `.sha512` checksums.
+The local verification commands are the same for both download sources. Verify signatures and SHA-512
+checksums, inspect source/binary contents and LICENSE/NOTICE files, and complete the project's functional
+and upgrade validation. Verify the signing-key fingerprint against the release manager and committee `KEYS`.
 
 For a `${RELEASE.VERSION}` candidate containing both distributions, run from the candidate directory:
 
