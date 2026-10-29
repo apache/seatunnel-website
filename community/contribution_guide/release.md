@@ -323,8 +323,9 @@ mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Du
 
 1. If you do not have release permissions in ATR, ask a PMC member to designate you as a
    [Release Manager](https://releases.apache.org/docs/release-manager-setup).
-2. Register your GPG public key on the [ATR keys page](https://releases.apache.org/keys) and include it in
-   the committee's `KEYS` file.
+2. Before your first release or after changing signing keys, register your GPG public key on the
+   [ATR keys page](https://releases.apache.org/keys). If it is missing from the committee's
+   [`KEYS` file](https://releases.apache.org/docs/moving-to-atr#the-keys-file), ask a PMC member to add it before publishing.
 3. Sign in to [ATR](https://releases.apache.org/) and create a `seatunnel` version matching the POM's release
    version. It must be **Composing** before uploading.
 
