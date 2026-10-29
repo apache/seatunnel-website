@@ -21,7 +21,7 @@ Complete [Environment Preparation](#environment-preparation) and [Project versio
 for either workflow. Maven/Nexus publication and Git version/tag preparation use the existing commands below.
 Use the same release version, tag and commit for Maven artifacts and distribution archives.
 
-- **SVN:** Prepare the SVN repositories, then follow [Upload to SVN](#upload-to-svn),
+- **SVN:** Prepare the SVN repositories, then follow [SVN distribution workflow](#svn-distribution-workflow),
   [Vote by mail](#vote-by-mail) and [Moving files](#moving-files).
 - **ATR:** Follow [ATR distribution workflow](#atr-distribution-workflow) after Maven staging.
   Use the ATR website for candidate uploads, voting and publication, or upload files with rsync.
@@ -417,7 +417,9 @@ ATR also publishes the approved archives to the ASF distribution area, so no man
 See [Staging and voting](https://releases.apache.org/docs/staging-and-voting) and
 [Promoting to release](https://releases.apache.org/docs/promoting-to-release).
 
-## Upload to SVN
+<a id="upload-to-svn"></a>
+
+## SVN distribution workflow
 
 The following upload steps apply only to the SVN workflow. For ATR, follow [ATR distribution workflow](#atr-distribution-workflow).
 
