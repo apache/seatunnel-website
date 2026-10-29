@@ -396,6 +396,19 @@ Open the version's [ATR compose page](https://releases.apache.org/compose/seatun
 (replace `{version}` with the release version), select **Upload files**, and upload the generated archives
 with their `.asc` and `.sha512` files from `seatunnel-dist/target`.
 
+#### Upload with rsync
+
+First register your **SSH public key** on the [ATR keys page](https://releases.apache.org/keys) and configure
+your local SSH client to use that key. This is an SSH authentication key, separate from the GPG signing key.
+
+Set `YOUR_FILES` to a directory containing only the release archives and their `.asc` and `.sha512` files,
+`ASF_USERNAME` to your ASF login username, and `RELEASE_VERSION` to the POM's release version:
+
+```bash
+# ATR SSH listens on port 2222 and authenticates with the registered SSH key.
+rsync -av -e 'ssh -p 2222' "${YOUR_FILES}/" "${ASF_USERNAME}@releases.apache.org:/seatunnel/${RELEASE_VERSION}/"
+```
+
 #### Retry an interrupted or failed upload
 
 > ATR JWTs expire after 30 minutes. A long build can leave the token obtained before packaging expired at upload time.
