@@ -15,6 +15,20 @@ For a release, you go through the following steps:
 
 The source code and build process must comply with the ASF legal and intellectual property requirements for a valid release, and the project must have the infrastructure in place to correctly sign the release artifacts.
 
+## Choose a distribution workflow
+
+Complete [Environment Preparation](#environment-preparation) and [Project version preparation](#project-version-preparation)
+for either workflow. Maven/Nexus publication and Git version/tag preparation use the existing commands below.
+Use the same release version, tag and commit for Maven artifacts and distribution archives.
+
+- **SVN:** Prepare the SVN repositories, then follow [SVN distribution workflow](#svn-distribution-workflow),
+  [Vote by mail](#vote-by-mail) and [Moving files](#moving-files).
+- **ATR:** Follow [ATR distribution workflow](#atr-distribution-workflow) after Maven staging.
+  Use the ATR website for candidate uploads, voting and publication, or upload files with rsync.
+
+`${RELEASE.VERSION}` is a documentation placeholder. Replace it and the example usernames/key IDs with
+the actual values before running commands.
+
 ## Environment Preparation
 If this is the first time for a publisher to publish, you need to install the necessary environment, including the signature tool GnuPG and Maven repository certification-related preparations.
 
@@ -24,7 +38,7 @@ Use to clone project source code locally.
 ### Install GPG
 Used to generate a digital signature, leaving a trail of every action you take. Apache's maven and SVN repositories both use GPG signatures to verify the validity of files.
 
-Download GnuPG binary releases from [the official GnuPG website](https://www.gnupg.org/download/index.html). 
+Download GnuPG binary releases from [the official GnuPG website](https://www.gnupg.org/download/index.html).
 
 Note: The commands of 1. x and 2. x versions of GnuPG are slightly different. The following description takes 2.2.28 as an example. After the installation, the GPG command is added to the system environment variable and is available.
 ```bash
@@ -150,6 +164,9 @@ It is normal that the key generated in the previous step is inconsistent with th
 Used to generate signatures for files.
 
 ### SVN
+
+This setup is required only for the SVN workflow. ATR setup is covered in [Prepare ATR](#prepare-atr).
+
 Used to pull the Apache Release SVN repository. Apache uses svn to host the release of the project.
 
 #### Pull the release and dev repositories to the local
@@ -205,7 +222,7 @@ Add the file `${user.home}/.m2/settings-security.xml` to configure the password 
 mvn --encrypt-password <apache password>
 ```
 ##### Add new profile
-Edit the configuration file of your local maven environment, the general path is `~/.m2/setting.xml`, and add the following xml file:
+Edit the configuration file of your local maven environment, the general path is `~/.m2/settings.xml`, and add the following xml file:
 
 ```xml
 <settings>
@@ -231,6 +248,8 @@ Edit the configuration file of your local maven environment, the general path is
 > Tips: If you get a 403 forbidden error during the maven release step, and you are absolutely sure that you used the correct password, when you are using your own laptop, you can skip password encryption and use the original password value.
 
 ## Project version preparation
+
+These Git and Maven/Nexus preparation steps apply to both SVN and ATR.
 
 ### Branch preparation
 ```bash
@@ -298,7 +317,101 @@ mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Du
 [https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
 ![](/image/20230324/20221228225445.png)
 
-## Upload to SVN
+## ATR distribution workflow
+
+### Prepare ATR
+
+1. If you do not have release permissions in ATR, ask a PMC member to designate you as a
+   [Release Manager](https://releases.apache.org/docs/release-manager-setup).
+2. Before your first release or after changing signing keys, register your GPG public key on the
+   [ATR keys page](https://releases.apache.org/keys). If it is missing from the committee's
+   [`KEYS` file](https://releases.apache.org/docs/moving-to-atr#the-keys-file), ask a PMC member to add it before publishing.
+3. Sign in to [ATR](https://releases.apache.org/) and create a `seatunnel` version matching the POM's release
+   version. It must be **Composing** before uploading.
+
+### Sign the ATR candidate
+
+Copy the archives and any existing `.asc`/`.sha512` files from `seatunnel-dist/target` into a clean directory.
+If needed, generate signatures and checksums there:
+
+```bash
+# For terminal-based GPG passphrase prompts, select the current terminal.
+export GPG_TTY="$(tty)"
+for archive in *.tar.gz; do
+  gpg --armor --detach-sign "$archive" || exit 1
+  shasum -a 512 "$archive" > "$archive.sha512" || exit 1
+done
+```
+
+Enter your **GPG Signing Key Passphrase** when prompted.
+
+### Upload the ATR candidate
+
+#### Upload through the website
+
+Open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}` and use **Upload files** to upload
+the archives with their `.asc` and `.sha512` files.
+
+#### Upload with rsync
+
+Register your **SSH public key** on the [ATR keys page](https://releases.apache.org/keys) and configure SSH
+to use it. Set `YOUR_FILES` to a directory containing only the candidate archives, signatures and checksums;
+`ASF_USERNAME` is your ASF username.
+
+```bash
+# ATR SSH listens on port 2222 and authenticates with the registered SSH key.
+rsync -av -e 'ssh -p 2222' "${YOUR_FILES}/" "${ASF_USERNAME}@releases.apache.org:/seatunnel/${RELEASE.VERSION}/"
+```
+
+#### Retry an interrupted or failed upload
+
+On the **Composing** page, remove failed or incomplete uploads and resend the existing files through the
+website or rsync. Unchanged files need no rebuild or signing.
+
+### Validate the ATR candidate
+
+Confirm the file list and automated check results in ATR.
+
+Download from the [ATR download page](https://releases.apache.org/download/all/seatunnel), checking that the
+version and revision match the vote. Extract the ZIP or use the page's download commands in a new empty directory.
+
+Import the signing key if it is absent from your local GPG keyring:
+
+```bash
+curl -fsS https://downloads.apache.org/seatunnel/KEYS -o KEYS
+gpg --import KEYS
+```
+
+Check the full signing-key fingerprint against the release manager and committee `KEYS`, then verify
+the downloaded archives from that directory:
+
+```bash
+for archive in *.tar.gz; do
+  gpg --verify "$archive.asc" "$archive" || exit 1
+  shasum -a 512 -c "$archive.sha512" || exit 1
+done
+```
+
+Inspect archive contents and `LICENSE`/`NOTICE`, and complete functional and upgrade validation.
+Record the revision and hashes; do not modify the candidate during voting.
+
+### Vote and publish through ATR
+
+1. Start the vote in ATR with the pinned candidate revision, release notes, commit/tag and `KEYS`.
+2. Keep voting open for at least 72 hours and verify the binding-vote tally before resolving it.
+3. After approval, publish from **Finish** and confirm the official download URLs.
+4. Complete [Release Maven Repository](#release-maven-repository),
+   [Generate website document](#generate-website-document) and [Something After Release](#something-after-release).
+   Use ATR's announcement handling.
+
+Details: [Staging and voting](https://releases.apache.org/docs/staging-and-voting) and
+[Promoting to release](https://releases.apache.org/docs/promoting-to-release).
+
+<a id="upload-to-svn"></a>
+
+## SVN distribution workflow
+
+The following upload steps apply only to the SVN workflow. For ATR, follow [ATR distribution workflow](#atr-distribution-workflow).
 
 ### Upload source code and binary packages to the dev repository
 #### Copy source code and binary packages
@@ -364,6 +477,10 @@ svn --username=${APACHE LDAP USERNAME} commit -m "release ${RELEASE.VERSION}"
 ```
 
 ## Vote by mail
+
+The manual vote and result emails below apply only to SVN. For ATR, start and resolve the vote in the
+[ATR system](https://releases.apache.org/); it handles the corresponding mailing-list messages.
+
 ### dev@seatunnel.apache.org Voting
 #### Voting initiate
 ```bash
@@ -473,6 +590,9 @@ open this page https://lists.apache.org/list.html?dev@seatunnel.apache.org, find
 
 ## Official Release
 ### Moving files
+
+This manual SVN move applies only to the SVN workflow. ATR publishes approved archives from its Finish page.
+
 Moving files from the dev repository to the release repository. This step only PMC member has permission.
 ```bash
 svn mv https://dist.apache.org/repos/dist/dev/seatunnel/${RELEASE.VERSION} https://dist.apache.org/repos/dist/release/seatunnel/
@@ -483,9 +603,15 @@ https://github.com/apache/seatunnel-website?tab=readme-ov-file#39-add-a-new-vers
 
 
 ### Release Maven Repository
+
+After the vote passes, release the Maven staging repository for either distribution workflow.
+
 ![](/image/20230324/20221228232210.png)
 
 ### Send notification email
+
+This manual announcement applies to the SVN workflow. ATR releases use the configured ATR announcement handling.
+
 [dev@seatunnel.apache.org](dev@seatunnel.apache.org)
 [announce@apache.org](announce@apache.org)
 
