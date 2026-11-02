@@ -311,7 +311,15 @@ git push
 ```bash
 mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Dusername=${GITHUB USERNAME}
 ```
-> ** Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.**
+> **Note: During the execution of this command, ensure that the IP address remains constant; otherwise, multiple unusable repositories might appear in stagingRepositories.**
+
+#### Retry a failed Maven upload
+
+```bash
+mvn deploy -Prelease -DskipTests -Dskip.spotless=true \
+  -DaltReleaseDeploymentRepository="apache.releases.https::https://repository.apache.org/service/local/staging/deployByRepositoryId/orgapacheseatunnel-1210"
+```
+> **Note: Run from the release build checkout (`target/checkout` for `release:perform`) and replace `orgapacheseatunnel-1210` with the existing Open Nexus staging repository ID.**
 
 - Close the stage repository
 [https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
@@ -351,6 +359,7 @@ Enter your **GPG Signing Key Passphrase** when prompted.
 
 Open `https://releases.apache.org/compose/seatunnel/${RELEASE.VERSION}` and use **Upload files** to upload
 the archives with their `.asc` and `.sha512` files.
+> **Note: For GitHub projects, enter the full 40-character SHA of the release branch's last commit used to build the archives in the Source commit hash field.**
 
 #### Upload with rsync
 
