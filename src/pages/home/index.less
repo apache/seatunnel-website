@@ -490,15 +490,43 @@ html[data-theme='light'] .st-home {
   z-index: 320;
   width: 360px;
   max-width: calc(100vw - 32px);
+  --st-home-community-help-edge: rgba(137, 161, 199, 0.26);
   padding: 26px 24px 24px;
-  border: 1px solid rgba(137, 161, 199, 0.26);
-  border-top: 3px solid var(--teal);
+  // The visible frame is painted by ::before. A solid border with a thicker
+  // colored top edge splits each rounded corner into two hard-edged color
+  // segments, so the accent never blends into the side edges.
+  border: 1px solid transparent;
+  border-top-width: 3px;
   border-radius: var(--r-md);
   background: rgba(11, 18, 37, 0.96);
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
   color: var(--t1);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+
+  // Gradient ring over the border box: the accent fades through the corner
+  // arcs into the side edges instead of switching color abruptly.
+  &::before {
+    position: absolute;
+    top: -3px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    padding: 3px 1px 1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      180deg,
+      var(--teal) 0,
+      var(--teal) 3px,
+      rgba(93, 184, 226, 0.5) var(--r-md),
+      var(--st-home-community-help-edge) 56px
+    );
+    content: '';
+    pointer-events: none;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  }
 
   .st-home-community-help-close {
     position: absolute;
@@ -626,7 +654,7 @@ html[data-theme='light'] .st-home {
 }
 
 html[data-theme='light'] .st-home .st-home-community-help {
-  border-color: rgba(90, 150, 230, 0.28);
+  --st-home-community-help-edge: rgba(90, 150, 230, 0.28);
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 24px 56px rgba(39, 63, 101, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
 }
