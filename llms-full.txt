@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1110
+- Total current docs pages: 1114
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -112,6 +112,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-klaviyo
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-lemlist
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-linear
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-mailchimp
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-myhours
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-notion
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-onesignal
@@ -340,6 +341,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Kudu
 - https://seatunnel.apache.org/docs/connectors/source/Lemlist
 - https://seatunnel.apache.org/docs/connectors/source/LocalFile
+- https://seatunnel.apache.org/docs/connectors/source/Mailchimp
 - https://seatunnel.apache.org/docs/connectors/source/Maxcompute
 - https://seatunnel.apache.org/docs/connectors/source/Milvus
 - https://seatunnel.apache.org/docs/connectors/source/MongoDB
@@ -669,6 +671,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-klaviyo
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-lemlist
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-linear
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-mailchimp
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-myhours
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-notion
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-onesignal
@@ -897,6 +900,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Kudu
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Lemlist
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/LocalFile
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Mailchimp
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Maxcompute
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Milvus
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/MongoDB
