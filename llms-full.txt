@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1114
+- Total current docs pages: 1118
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -124,6 +124,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-stripe
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-typeform
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-wechat
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-woocommerce
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hudi
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hugegraph
@@ -402,6 +403,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Vitess-CDC
 - https://seatunnel.apache.org/docs/connectors/source/Web3j
 - https://seatunnel.apache.org/docs/connectors/source/WebSocket
+- https://seatunnel.apache.org/docs/connectors/source/WooCommerce
 - https://seatunnel.apache.org/docs/connectors/source/Zendesk
 - https://seatunnel.apache.org/docs/connectors/type-schema-faq
 - https://seatunnel.apache.org/docs/developer/anydoc-document-parser-poc
@@ -683,6 +685,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-stripe
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-typeform
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-wechat
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-woocommerce
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hudi
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hugegraph
@@ -961,6 +964,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Vitess-CDC
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Web3j
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/WebSocket
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/WooCommerce
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Zendesk
 - https://seatunnel.apache.org/zh-CN/docs/connectors/type-schema-faq
 - https://seatunnel.apache.org/zh-CN/docs/developer/anydoc-document-parser-poc
