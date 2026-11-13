@@ -315,11 +315,21 @@ mvn release:perform -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Du
 
 #### Retry a failed Maven upload
 
+Run from the release build checkout (`target/checkout` by default for `release:perform`) and confirm
+that its POMs use the release version. After `release:prepare`, the original working directory
+may already use the next SNAPSHOT version.
+
 ```bash
 mvn deploy -Prelease -DskipTests -Dskip.spotless=true \
-  -DaltReleaseDeploymentRepository="apache.releases.https::https://repository.apache.org/service/local/staging/deployByRepositoryId/orgapacheseatunnel-1210"
+  -DaltReleaseDeploymentRepository="apache.releases.https::https://repository.apache.org/service/local/staging/deployByRepositoryId/orgapacheseatunnel-1210" \
+  -rf :<artifactId>
 ```
-> **Note: Run from the release build checkout (`target/checkout` for `release:perform`) and replace `orgapacheseatunnel-1210` with the existing Open Nexus staging repository ID.**
+
+Replace `orgapacheseatunnel-1210` with the existing **Open** Nexus staging repository ID.
+Replace `<artifactId>` (including the angle brackets) with the failed module's `artifactId` from its
+`pom.xml`, for example `-rf :seatunnel-e2e-common`. This resumes the reactor from that module and
+skips earlier modules. Reuse the same local Maven repository so their previously installed artifacts
+remain available.
 
 - Close the stage repository
 [https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
