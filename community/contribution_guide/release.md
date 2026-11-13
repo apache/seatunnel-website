@@ -319,8 +319,12 @@ Run from the release build checkout (`target/checkout` by default for `release:p
 that its POMs use the release version. After `release:prepare`, the original working directory
 may already use the next SNAPSHOT version.
 
+`release:perform` automatically enables the ASF parent POM's `apache-release` profile.
+Enable it explicitly when calling `deploy` directly to retain GPG signing and the source/Javadoc
+attachments.
+
 ```bash
-mvn deploy -Prelease -DskipTests -Dskip.spotless=true \
+mvn deploy -Prelease,apache-release -DskipTests -Dskip.spotless=true \
   -DaltReleaseDeploymentRepository="apache.releases.https::https://repository.apache.org/service/local/staging/deployByRepositoryId/orgapacheseatunnel-1210" \
   -rf :<artifactId>
 ```
@@ -330,6 +334,8 @@ Replace `<artifactId>` (including the angle brackets) with the failed module's `
 `pom.xml`, for example `-rf :seatunnel-e2e-common`. This resumes the reactor from that module and
 skips earlier modules. Reuse the same local Maven repository so their previously installed artifacts
 remain available.
+
+Confirm that the retry runs `maven-gpg-plugin:sign` and uploads the corresponding `.asc` files.
 
 - Close the stage repository
 [https://repository.apache.org/#stagingRepositories](https://repository.apache.org/#stagingRepositories)
