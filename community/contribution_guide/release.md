@@ -287,14 +287,6 @@ The preparation goals format and check the release POMs before packaging, commit
 The completion goals format and check the next development version's POMs before committing them.
 No separate formatting command or code-style commit is needed after `release:prepare` completes successfully.
 
-When `release:prepare` prompts for the release version and SCM tag, they have different meanings:
-
-- **Release version**, for example `3.1.0`, is written into the release POMs and used for artifact versions and archive names.
-- **SCM release tag or label**, for example `3.1.0-RC2`, is the Git tag identifying the source commit for that release candidate.
-  For a second candidate after source changes, keep the release version as `3.1.0` and enter `3.1.0-RC2` at the SCM tag prompt.
-
-Retrying a build from the same source tag does not require a new tag. Do not overwrite a tag already used for voting or publication.
-
 ### Submit source code
 
 ```bash
