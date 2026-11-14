@@ -275,13 +275,17 @@ mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Dd
 before this step, you need edit the `.gitignore` file, delete `seatunnel-examples` first.
 ```bash
 mvn release:clean
-mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -DpushChanges=false -Dusername=${GITHUB USERNAME}
+mvn release:prepare -Prelease \
+  -DpreparationGoals="clean spotless:apply spotless:check package" \
+  -DcompletionGoals="spotless:apply spotless:check" \
+  -Darguments="-DskipTests -Dskip.spotless=false" \
+  -DpushChanges=false \
+  -Dusername="${GITHUB_USERNAME}"
 ```
-After this step, the code has changed, and it not match our project's code style requirement, so you need run this command to fix code style and commit change.
-```bash
-./mvnw spotless:apply
-git commit -am "fix code style"
-```
+
+The preparation goals format and check the release POMs before packaging, committing and tagging.
+The completion goals format and check the next development version's POMs before committing them.
+No separate formatting command or code-style commit is needed after `release:prepare` completes successfully.
 
 ### Submit source code
 
