@@ -275,17 +275,10 @@ mvn release:prepare -Prelease -Darguments="-DskipTests -Dskip.spotless=true" -Dd
 before this step, you need edit the `.gitignore` file, delete `seatunnel-examples` first.
 ```bash
 mvn release:clean
-mvn release:prepare -Prelease \
-  -DpreparationGoals="clean spotless:apply spotless:check package" \
-  -DcompletionGoals="spotless:apply spotless:check" \
-  -Darguments="-DskipTests -Dskip.spotless=false" \
-  -DpushChanges=false \
-  -Dusername="${GITHUB_USERNAME}"
+mvn release:prepare -Prelease -DpreparationGoals="clean spotless:apply spotless:check package" -DcompletionGoals="spotless:apply spotless:check" -Darguments="-DskipTests -Dskip.spotless=false" -DpushChanges=false -Dusername="${GITHUB_USERNAME}"
 ```
 
-The preparation goals format and check the release POMs before packaging, committing and tagging.
-The completion goals format and check the next development version's POMs before committing them.
-No separate formatting command or code-style commit is needed after `release:prepare` completes successfully.
+This command formats and checks the POMs automatically, so no separate formatting commit is needed.
 
 ### Submit source code
 
