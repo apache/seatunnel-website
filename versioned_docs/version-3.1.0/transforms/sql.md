@@ -1,0 +1,210 @@
+# SQL
+
+> SQL transform plugin
+
+## Description
+
+Use SQL to transform given input row.
+
+SQL transform use memory SQL engine, we can via SQL functions and ability of SQL engine to implement the transform task.
+
+## Options
+
+|       name        |  type  | required | default value |
+|-------------------|--------|----------|---------------|
+| plugin_input | string | no       | -             |
+| plugin_output | string | no       | -             |
+| query             | string | yes      | -             |
+| engine            | string | no       | ZETA          |
+
+### plugin_input [string]
+
+The source table name, the query SQL table name must match this field. If not configured, the input catalog table name is used.
+
+### query [string]
+
+The query SQL, it's a simple SQL supported base function and criteria filter operation. But the complex SQL unsupported yet, include: multi source table/rows JOIN and AGGREGATE operation and the like.
+
+the query expression can be `select [table_name.]column_a` to query the column that named `column_a`. and the table name is optional.  
+or `select c_row.c_inner_row.column_b` to query the inline struct column that named `column_b` within `c_row` column and `c_inner_row` column. **In this query expression, can't have table name.**
+
+### engine [string]
+
+The SQL engine used by this transform. Supported values are `ZETA` and `INTERNAL`. If this option is not configured, `ZETA` is used.
+
+## Numeric comparisons
+
+Comparisons preserve numeric precision when both evaluated operands are integral
+types (`TINYINT`, `SMALLINT`, `INT`, `BIGINT`) or `DECIMAL`. This applies to `=`,
+`!=`, `<>`, `<`, `<=`, `>` and `>=`, numeric `IN` and `NOT IN` membership checks,
+and comparisons in searched and simple `CASE` expressions.
+For example, a `BIGINT` value of `9007199254740993` does not match
+`WHERE id = 9007199254740992`.
+
+If either operand is `FLOAT` or `DOUBLE`, comparisons continue to use
+floating-point conversion, retaining the existing behavior for NaN, infinity
+and signed zero. Numeric literals containing a decimal point are evaluated as
+`DOUBLE`, not `DECIMAL`: comparing a `DECIMAL` column to
+`123456789012345678.98` can still match `123456789012345678.99`. Integer literals
+evaluated as integral values, such as `-9007199254740993`, use the exact path
+when the other operand is also exact. Unary minus preserves `DECIMAL` precision,
+so both `-decimal_col` and `-CAST('...' AS DECIMAL(p, s))` retain exact decimal
+comparison semantics when the other operand is also exact.
+
+For an exact decimal constant, use a quoted string with sufficient scale, for
+example `amount = CAST('123456789012345678.99' AS DECIMAL(38, 2))`.
+For a negative constant, either `CAST('-123456789012345678.99' AS DECIMAL(38, 2))`
+or `-CAST('123456789012345678.99' AS DECIMAL(38, 2))` preserves decimal precision.
+Existing CAST rounding is unchanged: converting a string or `DECIMAL` to
+`DECIMAL(p, s)` uses `CEILING` (toward positive infinity) if scale is reduced,
+so `CAST('1.231' AS DECIMAL(10, 2))` is `1.24` and
+`CAST('-1.239' AS DECIMAL(10, 2))` is `-1.23`. Negating after CAST instead gives
+`-1.24` for `-CAST('1.239' AS DECIMAL(10, 2))`: reducing scale rounds before
+negation, so the two forms are not interchangeable in that case. Converting
+`FLOAT` or `DOUBLE` uses `HALF_UP`; casting a fractional numeric literal cannot recover precision
+already lost during its evaluation as `DOUBLE`.
+
+The exact-or-floating choice is made for each operand pair, including each
+element of an `IN` list. For `id = 9007199254740993`,
+`id IN (9007199254740992)` is false, but
+`id IN (9007199254740992, 9007199254740992.0)` is true because the second
+comparison uses `DOUBLE`. Equality is therefore not necessarily transitive
+across mixed exact and floating types; use exact operands consistently when
+precision matters. These rules apply to both `ZETA` and `INTERNAL`.
+
+## Example
+
+The data read from source is a table like this:
+
+| id |   name   | age |
+|----|----------|-----|
+| 1  | Joy Ding | 20  |
+| 2  | May Ding | 21  |
+| 3  | Kin Dom  | 24  |
+| 4  | Joy Dom  | 22  |
+
+We use SQL query to transform the source data like this:
+
+```
+transform {
+  Sql {
+    plugin_input = "fake"
+    plugin_output = "fake1"
+    query = "select id, concat(name, '_') as name, age+1 as age from dual where id>0"
+  }
+}
+```
+
+Then the data in result table `fake1` will update to
+
+| id |   name    | age |
+|----|-----------|-----|
+| 1  | Joy Ding_ | 21  |
+| 2  | May Ding_ | 22  |
+| 3  | Kin Dom_  | 25  |
+| 4  | Joy Dom_  | 23  |
+
+### Struct query
+
+if your upstream data schema is like this:
+
+```hacon
+source {
+  FakeSource {
+    plugin_output = "fake"
+    row.num = 100
+    string.template = ["innerQuery"]
+    schema = {
+      fields {
+        name = "string"
+        c_date = "date"
+        c_row = {
+          c_inner_row = {
+            c_inner_int = "int"
+            c_inner_string = "string"
+            c_inner_timestamp = "timestamp"
+            c_map_1 = "map<string, string>"
+            c_map_2 = "map<string, map<string,string>>"
+          }
+          c_string = "string"
+        }
+      }
+    }
+  }
+}
+```
+
+Those query all are valid:
+
+```sql
+select 
+name,
+c_date,
+c_row,
+c_row.c_inner_row,
+c_row.c_string,
+c_row.c_inner_row.c_inner_int,
+c_row.c_inner_row.c_inner_string,
+c_row.c_inner_row.c_inner_timestamp,
+c_row.c_inner_row.c_map_1,
+c_row.c_inner_row.c_map_1.some_key
+```
+
+But this query are not valid:
+
+```sql
+select 
+c_row.c_inner_row.c_map_2.some_key.inner_map_key
+```
+
+The map must be the latest struct, can't query the nesting map.
+
+## Job Config Example
+
+```
+env {
+  job.mode = "BATCH"
+}
+
+source {
+  FakeSource {
+    plugin_output = "fake"
+    row.num = 100
+    schema = {
+      fields {
+        id = "int"
+        name = "string"
+        age = "int"
+      }
+    }
+  }
+}
+
+transform {
+  Sql {
+    plugin_input = "fake"
+    plugin_output = "fake1"
+    query = "select id, concat(name, '_') as name, age+1 as age from dual where id>0"
+  }
+}
+
+sink {
+  Console {
+    plugin_input = "fake1"
+  }
+}
+```
+
+## Collection expressions
+
+ARRAY and MAP arguments may use unary `+`/`-` and parentheses. For example, `ARRAY(-1, +2, (3))` produces `[-1, 2, 3]`, and `MAP('negative', (-1))` produces a map with value `-1`.
+
+Signed collection expressions retain the numeric element type and propagate NULL operands. TINYINT arrays now use `ARRAY<TINYINT>` rather than the previous incorrect `ARRAY<STRING>` schema.
+
+## Changelog
+
+- Support struct query
+
+### new version
+
+- Add SQL Transform Connector
