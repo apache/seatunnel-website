@@ -88,7 +88,7 @@ In addition to the wonderful speeches, a number of lucky draw sessions were also
 
 ## **About SeaTunnel**
 
-SeaTunnel (formerly Waterdrop) is an easy-to-use, ultra-high-performance distributed data integration platform that supports real-time synchronization of massive amounts of data and can synchronize hundreds of billions of data per day in a stable and efficient manner.
+SeaTunnel (formerly Waterdrop) is an easy-to-use, ultra-high-performance distributed data integration tool that supports real-time synchronization of massive amounts of data and can synchronize hundreds of billions of data per day in a stable and efficient manner.
 
 ## **Why do we need SeaTunnel?**
 

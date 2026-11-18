@@ -16,7 +16,7 @@ SeaTunnel was formerly named Waterdrop , and renamed SeaTunnel since October 12,
 
 ---
 
-SeaTunnel is a very easy-to-use ultra-high-performance distributed data integration platform that supports real-time
+SeaTunnel is a very easy-to-use ultra-high-performance distributed data integration tool that supports real-time
 synchronization of massive data. It can synchronize tens of billions of data stably and efficiently every day, and has
 been used in the production of nearly 100 companies.
 

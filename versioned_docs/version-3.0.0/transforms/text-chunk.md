@@ -90,7 +90,7 @@ The data read from source is a table like this:
 
 | id |                    content                    |
 |----|-----------------------------------------------|
-| 1  | SeaTunnel is a data integration platform. ... |
+| 1  | SeaTunnel is a data integration tool. ... |
 
 We want to split the `content` field into overlapping chunks, so we can add a `TextChunk` transform
 like this:
@@ -114,8 +114,8 @@ fields and adding `chunk` / `chunk_index`:
 
 | id |                    content                    |         chunk          | chunk_index |
 |----|-----------------------------------------------|------------------------|-------------|
-| 1  | SeaTunnel is a data integration platform. ... | SeaTunnel is a data... | 0           |
-| 1  | SeaTunnel is a data integration platform. ... | ...platform that ...   | 1           |
+| 1  | SeaTunnel is a data integration tool. ... | SeaTunnel is a data... | 0           |
+| 1  | SeaTunnel is a data integration tool. ... | ...tool that ...   | 1           |
 
 ## Job Config Example
 

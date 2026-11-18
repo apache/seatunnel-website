@@ -24,7 +24,7 @@ The SeaTunnel community released a new connector API not long ago, which support
 
 After the new API is released, the old connector needs to be migrated, or the new connector should be supported.
 
-In order to motivate the community to actively participate in the SeaTunnel Connector Access work and help build SeaTunnel into a more efficient data integration platform, the SeaTunnel community-initiated activities, sponsored by Beluga Open Source.
+In order to motivate the community to actively participate in the SeaTunnel Connector Access work and help build SeaTunnel into a more efficient data integration tool, the SeaTunnel community-initiated activities, sponsored by Beluga Open Source.
 
 The activities have three modes: simple, medium, and hard for the task of accessing the connector. The threshold is low.
 

@@ -215,7 +215,7 @@ In fact, the implementations of Connectors like Feishu, DingTalk, and Facebook m
 We welcome everyone to make contributions and join our Apache SeaTunnel family!
 
 ## About SeaTunnel
-SeaTunnel (formerly Waterdrop) is an easy-to-use, ultra-high-performance distributed data integration platform that supports the real-time synchronization of massive amounts of data and can synchronize hundreds of billions of data per day stably and efficiently.
+SeaTunnel (formerly Waterdrop) is an easy-to-use, ultra-high-performance distributed data integration tool that supports the real-time synchronization of massive amounts of data and can synchronize hundreds of billions of data per day stably and efficiently.
 
 ### Why do we need SeaTunnel?
 
