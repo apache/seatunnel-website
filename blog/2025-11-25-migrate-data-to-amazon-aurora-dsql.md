@@ -12,7 +12,7 @@ Since Aurora DSQL's authentication mechanism is integrated with IAM, accessing t
 In view of this situation, the author **developed a Sink Connector specifically for Aurora DSQL based on the data synchronization tool Apache SeaTunnel**, to meet the demand for migrating data from other databases to Aurora DSQL.
 
 ## Introduction to SeaTunnel
-SeaTunnel is a very easy-to-use, multi-modal, ultra-high-performance distributed data integration platform suited for data integration and data synchronization, mainly aiming to solve common problems in the field of data integration.
+SeaTunnel is a very easy-to-use, multi-modal, ultra-high-performance distributed data integration tool suited for data integration and data synchronization, mainly aiming to solve common problems in the field of data integration.
 
 ### SeaTunnel Features
 *   **Rich and Extensible Connectors**: Currently, SeaTunnel supports over 190 Connectors, and the number is increasing. Connectors for mainstream databases like MySQL, Oracle, SQLServer, and PostgreSQL are already supported. The plugin-based design allows users to easily develop their own Connectors and integrate them into the SeaTunnel project.

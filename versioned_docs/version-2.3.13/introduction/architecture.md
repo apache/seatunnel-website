@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Overview
 
-SeaTunnel is a distributed data integration platform with a pluggable architecture. It decouples the connector layer from the execution engine, allowing the same connectors to run on different engines.
+SeaTunnel is a distributed data integration tool with a pluggable architecture. It decouples the connector layer from the execution engine, allowing the same connectors to run on different engines.
 
 ```mermaid
 flowchart LR

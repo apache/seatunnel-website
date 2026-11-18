@@ -8,7 +8,7 @@ tags: [Meetup]
 Apache SeaTunnel Committer | Zongwen Li
 
 ## Introduction to Apache SeaTunnel
-Apache SeaTunnel is a very easy-to-use ultra-high-performance distributed data integration platform that supports real-time synchronization of massive data.
+Apache SeaTunnel is a very easy-to-use ultra-high-performance distributed data integration tool that supports real-time synchronization of massive data.
 
 Apache SeaTunnel will try its best to solve the problems that may be encountered in the process of mass data synchronization, such as data loss and duplication, task accumulation and delay, low throughput, etc.
 

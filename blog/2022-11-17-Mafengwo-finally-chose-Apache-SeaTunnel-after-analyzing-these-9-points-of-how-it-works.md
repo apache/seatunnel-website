@@ -13,7 +13,7 @@ Bo Bi, data engineer at Mafengwo
 
 
 ## Introduction to the technical principle of SeaTunnel
-SeaTunnel is a distributed, high-performance data integration platform for the synchronization and transformation of large volumes of data (offline and real-time)
+SeaTunnel is a distributed, high-performance data integration tool for the synchronization and transformation of large volumes of data (offline and real-time)
 
 The diagram above shows the workflow of SeaTunnel, which in simple terms consists of 3 parts: input, transformation, and output; more complex data processing is just a combination of several actions.
 
@@ -300,5 +300,5 @@ Add full E2E testing and ensure that the E2E is passed before the Pull request.
 
 Finally, I hope more students will join the SeaTunnel community, where you can not only feel the open-source spirit and culture of Apache but also understand the management process of Apache projects and learn good code design ideas.
 
-We hope that by working together and growing together, we can build SeaTunnel into a top-notch data integration platform.
+We hope that by working together and growing together, we can build SeaTunnel into a top-notch data integration tool.
 

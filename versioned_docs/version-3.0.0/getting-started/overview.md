@@ -8,7 +8,7 @@ This page is the fastest way to understand how to approach SeaTunnel for the fir
 
 ## What SeaTunnel Helps You Do
 
-SeaTunnel is a distributed data integration platform built for moving data between heterogeneous systems with a unified connector model. In practice, teams use it for:
+SeaTunnel is a distributed data integration tool built for moving data between heterogeneous systems with a unified connector model. In practice, teams use it for:
 
 - batch synchronization between databases, files, and warehouses
 - CDC and real-time synchronization

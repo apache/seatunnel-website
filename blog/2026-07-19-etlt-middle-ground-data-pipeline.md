@@ -78,7 +78,7 @@ EtLT fills exactly that gap.
 
 ## SeaTunnel Is Built for EtLT
 
-Apache SeaTunnel describes itself in its official documentation as an **"EL(T) data integration platform"** — the parentheses around T are intentional. The Transform step is lightweight and optional. This is not a marketing choice; it's an architectural constraint.
+Apache SeaTunnel describes itself in its official documentation as an **"EL(T) data integration tool"** — the parentheses around T are intentional. The Transform step is lightweight and optional. This is not a marketing choice; it's an architectural constraint.
 
 ### The Three-Layer Model Maps Directly to EtLT
 

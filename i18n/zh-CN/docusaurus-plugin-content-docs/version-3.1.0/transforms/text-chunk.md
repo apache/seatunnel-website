@@ -75,7 +75,7 @@
 
 | id |                    content                    |
 |----|-----------------------------------------------|
-| 1  | SeaTunnel is a data integration platform. ... |
+| 1  | SeaTunnel is a data integration tool. ... |
 
 我们想要将 `content` 字段切分成带重叠的块，可以像这样添加 `TextChunk` 转换：
 
@@ -97,8 +97,8 @@ transform {
 
 | id |                    content                    |         chunk          | chunk_index |
 |----|-----------------------------------------------|------------------------|-------------|
-| 1  | SeaTunnel is a data integration platform. ... | SeaTunnel is a data... | 0           |
-| 1  | SeaTunnel is a data integration platform. ... | ...platform that ...   | 1           |
+| 1  | SeaTunnel is a data integration tool. ... | SeaTunnel is a data... | 0           |
+| 1  | SeaTunnel is a data integration tool. ... | ...tool that ...   | 1           |
 
 ## 作业配置示例
 
