@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1118
+- Total current docs pages: 1128
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -102,6 +102,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-hive
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-airtable
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-http-amplitude
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-asana
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-base
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-http-feishu
@@ -132,6 +133,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-influxdb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-iotdb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-jdbc
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-jms
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-kafka
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-kudu
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-lance
@@ -290,10 +292,12 @@
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDocumentDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/docs/connectors/source/AmazonSqs
+- https://seatunnel.apache.org/docs/connectors/source/Amplitude
 - https://seatunnel.apache.org/docs/connectors/source/Asana
 - https://seatunnel.apache.org/docs/connectors/source/AzureCosmosDB
 - https://seatunnel.apache.org/docs/connectors/source/AzureEventHubs
 - https://seatunnel.apache.org/docs/connectors/source/AzureQueueStorage
+- https://seatunnel.apache.org/docs/connectors/source/BigQuery
 - https://seatunnel.apache.org/docs/connectors/source/BosFile
 - https://seatunnel.apache.org/docs/connectors/source/Cassandra
 - https://seatunnel.apache.org/docs/connectors/source/Clickhouse
@@ -336,6 +340,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/IoTDBv2
 - https://seatunnel.apache.org/docs/connectors/source/Jdbc
 - https://seatunnel.apache.org/docs/connectors/source/Jira
+- https://seatunnel.apache.org/docs/connectors/source/Jms
 - https://seatunnel.apache.org/docs/connectors/source/Kafka
 - https://seatunnel.apache.org/docs/connectors/source/Kingbase
 - https://seatunnel.apache.org/docs/connectors/source/Klaviyo
@@ -663,6 +668,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-hive
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-airtable
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-amplitude
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-asana
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-base
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-http-feishu
@@ -693,6 +699,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-influxdb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-iotdb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-jdbc
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-jms
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-kafka
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-kudu
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-lance
@@ -851,10 +858,12 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDocumentDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonDynamoDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AmazonSqs
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Amplitude
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Asana
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureCosmosDB
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureEventHubs
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/AzureQueueStorage
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/BigQuery
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/BosFile
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Cassandra
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Clickhouse
@@ -897,6 +906,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/IoTDBv2
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Jdbc
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Jira
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Jms
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Kafka
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Kingbase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Klaviyo
