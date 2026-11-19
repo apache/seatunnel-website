@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseatunnel_website=self.webpackChunkseatunnel_website||[]).push([[498336],{899538:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/sea-tunnel","page":1,"postsPerPage":100,"totalPages":1,"totalCount":7,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
