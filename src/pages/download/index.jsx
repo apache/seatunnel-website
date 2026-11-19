@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.less';
 import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import data from './st_data.json'
 import st_web_data from './st_web_data.json'
 import st_edge_data from './st_edge_data.json'
@@ -14,6 +15,10 @@ const getLastPath = path => {
 }
 
 export default function () {
+    const {i18n: {currentLocale}} = useDocusaurusContext();
+    const isChinese = currentLocale === 'zh-CN';
+    const advisoryUrl = 'https://www.openwall.com/lists/oss-security/2026/11/18/3';
+    const cliUrl = '/docs/3.1.0/engines/zeta/user-command/';
     return (
         <Layout>
             <div className="main">
@@ -96,7 +101,23 @@ export default function () {
                         </tbody>
                     </table>
                     <h2>SeaTunnel Web</h2>
-                    <p>WARNING: SeaTunnel Web is an experimental project and is not yet production ready.</p>
+                    {isChinese ? (
+                        <p>
+                            <strong>SeaTunnel Web 已退役，不再维护。</strong>
+                            请勿部署 1.0.2；如仍在使用，请迁移。参见安全公告 <a href={advisoryUrl}>CVE-2026-128981</a>。
+                            此变更不影响 Apache SeaTunnel 主项目。请使用 <a href={cliUrl}>SeaTunnel Engine（Zeta）客户端命令行</a>管理同步作业。
+                            以下版本仅供历史查阅。
+                        </p>
+                    ) : (
+                        <p>
+                            <strong>SeaTunnel Web is retired and no longer maintained.</strong>{' '}
+                            Do not deploy version 1.0.2. If you still use it, plan to migrate.
+                            See the <a href={advisoryUrl}>CVE-2026-128981 advisory</a>.
+                            The core Apache SeaTunnel project is not affected by this retirement.
+                            Use the <a href={cliUrl}>SeaTunnel Engine (Zeta) client command line</a> to manage synchronization jobs.
+                            Releases below are listed for historical reference only.
+                        </p>
+                    )}
                     <table className="version-table">
                         <thead>
                         <tr>
