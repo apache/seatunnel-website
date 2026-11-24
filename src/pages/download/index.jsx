@@ -103,18 +103,15 @@ export default function () {
                     <h2>SeaTunnel Web</h2>
                     {isChinese ? (
                         <p>
-                            <strong>SeaTunnel Web 已退役，不再维护。</strong>
-                            请勿部署 1.0.2；如仍在使用，请迁移。参见安全公告 <a href={advisoryUrl}>CVE-2026-128981</a>。
-                            此变更不影响 Apache SeaTunnel 主项目。请使用 <a href={cliUrl}>SeaTunnel Engine（Zeta）客户端命令行</a>管理同步作业。
+                            <strong>Apache SeaTunnel Web 子仓库已退役，不再维护。</strong>
+                            此变更不影响 Apache SeaTunnel 主项目。请使用 <a href={cliUrl}>SeaTunnel Engine 客户端命令行</a>管理同步作业。
                             以下版本仅供历史查阅。
                         </p>
                     ) : (
                         <p>
-                            <strong>SeaTunnel Web is retired and no longer maintained.</strong>{' '}
-                            Do not deploy version 1.0.2. If you still use it, plan to migrate.
-                            See the <a href={advisoryUrl}>CVE-2026-128981 advisory</a>.
-                            The core Apache SeaTunnel project is not affected by this retirement.
-                            Use the <a href={cliUrl}>SeaTunnel Engine (Zeta) client command line</a> to manage synchronization jobs.
+                            <strong>Apache SeaTunnel Web sub-project has been retired and is no longer maintained.</strong>
+                            The Apache SeaTunnel project is not affected by this retirement.
+                            Use the <a href={cliUrl}>SeaTunnel Engine client command line</a> to manage jobs.
                             Releases below are listed for historical reference only.
                         </p>
                     )}
