@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1128
+- Total current docs pages: 1130
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -303,6 +303,7 @@
 - https://seatunnel.apache.org/docs/connectors/source/Clickhouse
 - https://seatunnel.apache.org/docs/connectors/source/Cloudberry
 - https://seatunnel.apache.org/docs/connectors/source/CosFile
+- https://seatunnel.apache.org/docs/connectors/source/Couchbase
 - https://seatunnel.apache.org/docs/connectors/source/Databend
 - https://seatunnel.apache.org/docs/connectors/source/DB2
 - https://seatunnel.apache.org/docs/connectors/source/DB2-CDC
@@ -869,6 +870,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Clickhouse
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Cloudberry
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/CosFile
+- https://seatunnel.apache.org/zh-CN/docs/connectors/source/Couchbase
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/Databend
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/DB2
 - https://seatunnel.apache.org/zh-CN/docs/connectors/source/DB2-CDC
