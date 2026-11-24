@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.less';
 import Layout from '@theme/Layout';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import data from './st_data.json'
 import st_web_data from './st_web_data.json'
 import st_edge_data from './st_edge_data.json'
@@ -14,6 +15,10 @@ const getLastPath = path => {
 }
 
 export default function () {
+    const {i18n: {currentLocale}} = useDocusaurusContext();
+    const isChinese = currentLocale === 'zh-CN';
+    const advisoryUrl = 'https://www.openwall.com/lists/oss-security/2026/11/18/3';
+    const cliUrl = '/docs/3.1.0/engines/zeta/user-command/';
     return (
         <Layout>
             <div className="main">
@@ -96,7 +101,20 @@ export default function () {
                         </tbody>
                     </table>
                     <h2>SeaTunnel Web</h2>
-                    <p>WARNING: SeaTunnel Web is an experimental project and is not yet production ready.</p>
+                    {isChinese ? (
+                        <p>
+                            <strong>Apache SeaTunnel Web 子仓库已退役，不再维护。</strong>
+                            此变更不影响 Apache SeaTunnel 主项目。请使用 <a href={cliUrl}>SeaTunnel Engine 客户端命令行</a>管理同步作业。
+                            以下版本仅供历史查阅。
+                        </p>
+                    ) : (
+                        <p>
+                            <strong>Apache SeaTunnel Web sub-project has been retired and is no longer maintained.</strong>
+                            The Apache SeaTunnel project is not affected by this retirement.
+                            Use the <a href={cliUrl}>SeaTunnel Engine client command line</a> to manage jobs.
+                            Releases below are listed for historical reference only.
+                        </p>
+                    )}
                     <table className="version-table">
                         <thead>
                         <tr>
