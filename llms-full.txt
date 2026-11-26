@@ -3,7 +3,7 @@
 - Canonical site: https://seatunnel.apache.org/
 - Source sitemap: https://seatunnel.apache.org/sitemap.xml
 - Source sitemap (zh-CN): https://seatunnel.apache.org/zh-CN/sitemap.xml
-- Total current docs pages: 1130
+- Total current docs pages: 1132
 
 ## English
 - https://seatunnel.apache.org/docs/ai-cli/benchmark
@@ -132,6 +132,7 @@
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-iceberg
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-influxdb
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-iotdb
+- https://seatunnel.apache.org/docs/connectors/changelog/connector-iotdb-v2
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-jdbc
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-jms
 - https://seatunnel.apache.org/docs/connectors/changelog/connector-kafka
@@ -699,6 +700,7 @@
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-iceberg
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-influxdb
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-iotdb
+- https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-iotdb-v2
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-jdbc
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-jms
 - https://seatunnel.apache.org/zh-CN/docs/connectors/changelog/connector-kafka
